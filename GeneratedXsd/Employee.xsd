@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://skjema.kxml.no/fint/arbeidstaker/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include/>
+	<xs:element name="Employee" type="Employee"/>
+	<xs:complexType name="Employee">
+		<xs:annotation>
+			<xs:documentation>Alle ressurser i HR</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="Person">
+				<xs:sequence>
+					<xs:element name="ansettelsesdato" type="Tidsperiode" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="employments" type="Stilling" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="kontaktinformasjon" type="Kontaktinformasjon2" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Stilling" type="Stilling"/>
+	<xs:complexType name="Stilling">
+		<xs:sequence>
+			<xs:element name="arbeidssted/skole" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="avdeling/org" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="stillingsdatoer" type="Tidsperiode" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="stillingsnummer" type="xs:int" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="stillingsprosent" type="xs:int" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="stillingstittel" type="xs:int" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Tidsperiode" type="Tidsperiode"/>
+	<xs:complexType name="Tidsperiode">
+		<xs:sequence>
+			<xs:element name="sluttdato" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="startdato" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Kontaktinformasjon2" type="Kontaktinformasjon2"/>
+	<xs:complexType name="Kontaktinformasjon2">
+		<xs:sequence>
+			<xs:element name="kontakttype" type="xs:int" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>privat/jobb</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
