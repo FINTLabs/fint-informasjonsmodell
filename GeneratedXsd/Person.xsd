@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation>
+		<xs:documentation>Author:Tor Kjetil.
+Created:24.08.16 11:11.
+Title:.
+Comment:.</xs:documentation>
+	</xs:annotation>
+	<xs:include/>
+	<xs:include/>
+	<xs:include/>
+	<xs:element name="Person" type="Person"/>
+	<xs:complexType name="Person" abstract="true">
+		<xs:annotation>
+			<xs:documentation>private, fysiske personer</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="Aktør">
+				<xs:sequence>
+					<xs:element name="dødsdato" type="xs:dateTime" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation> dato for dødsfall</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="dødsland" type="Landkode" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>land hvor dødsfall fant sted</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="dødssted" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>sted hvor dødsfall fant sted</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="fulltNavn" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>fullt utskrevet navn</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="fødeland" type="Landkode" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>land for fødsel</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="fødested" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>sted for fødsel</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="fødselsdato" type="xs:dateTime" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>dato for fødsel</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="kjønn" type="Kjønn" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>kjønn for person
+
+Merknad: Sosialt kjønn? Se ISO 5218 - Representation of Human Sexes. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="navn" type="Personnavn" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>navn på person</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="opprinneligNavn" type="Personnavn" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>navn før navneendring av ulike årsaker, for eksempel pikenavn</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="sivilstand" type="Sivilstand" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>persons stilling i forhold til ekteskap eller partnerskap</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="statsborgerskap" type="Landkode" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>rettslig bånd mellom en person og en stat og består av både plikter og rettigheter [wikipedia]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="adresse" type="GeografiskAdresse" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="Kjønn">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="kvinne"/>
+			<xs:enumeration value="mann"/>
+			<xs:enumeration value="ubestemt"/>
+			<xs:enumeration value="ukjent"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Sivilstand">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ugift"/>
+			<xs:enumeration value="gift"/>
+			<xs:enumeration value="enkeEllerEnkemann"/>
+			<xs:enumeration value="skilt"/>
+			<xs:enumeration value="separert"/>
+			<xs:enumeration value="registrertPartner"/>
+			<xs:enumeration value="separertPartner"/>
+			<xs:enumeration value="skiltPartner"/>
+			<xs:enumeration value="gjenlevendePartner"/>
+			<xs:enumeration value="uoppgitt"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
