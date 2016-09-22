@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Aktør" type="Aktør"/>
+	<xs:complexType name="Aktør" abstract="true">
+		<xs:annotation>
+			<xs:documentation>person eller enhet vi samhandler med</xs:documentation>
+		</xs:annotation>
+		<xs:sequence/>
+	</xs:complexType>
+</xs:schema>
