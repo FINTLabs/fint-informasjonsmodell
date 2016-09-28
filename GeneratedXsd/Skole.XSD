@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://skjema.kxml.no/fint/skole/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://skjema.kxml.no/fint/arbeidstaker/1.0" schemaLocation="Arbeidstaker.XSD"/>
+	<xs:include schemaLocation="ISO639.XSD"/>
+	<xs:include schemaLocation="Aktor.XSD"/>
+	<xs:include schemaLocation="Person.xsd"/>
+	<xs:include schemaLocation="Enhet.xsd"/>
+	<xs:element name="Medlemsskap" type="Medlemsskap"/>
+	<xs:complexType name="Medlemsskap">
+		<xs:sequence>
+			<xs:element name="endret" type="xs:dateTime" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Tidspunkt medlemskap/status ble sist ble endret</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="slutttidspunkt" type="xs:dateTime" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Gyldighetsperiode for medlemskap for hvert medlem</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="starttidspunkt" type="xs:dateTime" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Gyldighetsperiode for medlemskap for hvert medlem</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Lærerstilling" type="Lærerstilling"/>
+	<xs:complexType name="Lærerstilling">
+		<xs:complexContent>
+			<xs:extension base="Arbeidstaker">
+				<xs:sequence>
+					<xs:element name="systemIdentifikator" type="xs:string" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>systemIdentifikator i skole administrativt system (SAS)</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="medlemsskap" type="Medlemsskap" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Gruppe" type="Gruppe"/>
+	<xs:complexType name="Gruppe">
+		<xs:sequence>
+			<xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="grepkode" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="gyldighetsperiode" type="Gyldighetsperiode" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="kontaktinformasjon" type="Kontaktinformasjon" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="gruppe" type="Gruppe" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="medlem" type="Medlemsskap" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="Aktivstatus">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="aktiv"/>
+			<xs:enumeration value="inaktiv"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Elev" type="Elev"/>
+	<xs:complexType name="Elev">
+		<xs:complexContent>
+			<xs:extension base="Person">
+				<xs:sequence>
+					<xs:element name="aktivstatus" type="Aktivstatus" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Aktivstatus på personen (aktiv/inaktiv)</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="bilde" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="elevstatus" type="Elevstatus" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Elevstatus (heltid/deltid/privatist/voksen/utveksl. i utlandet/utveksl. i Norge)</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="foretrukketSpråkform" type="Språk" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="morsmål" type="Språk" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="studentnummer" type="xs:string" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="systemIdentifikator" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>systemIdentifikator i skole administrativt system (SAS)</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="medlemsskap" type="Medlemsskap" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="Elevstatus">
+		<xs:annotation>
+			<xs:documentation>heltid/deltid/privatist/voksen/utveksl. i utlandet/utveksl. i Norge</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="heltid"/>
+			<xs:enumeration value="deltid"/>
+			<xs:enumeration value="privatist"/>
+			<xs:enumeration value="voksen"/>
+			<xs:enumeration value="utvekslingUtlandet"/>
+			<xs:enumeration value="utvekslingNorge"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Foresatt" type="Foresatt"/>
+	<xs:complexType name="Foresatt">
+		<xs:complexContent>
+			<xs:extension base="Person">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Virksomhet" type="Virksomhet"/>
+	<xs:complexType name="Virksomhet">
+		<xs:complexContent>
+			<xs:extension base="Enhet">
+				<xs:sequence>
+					<xs:element name="fylkesnummer" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="kommunenummer" type="xs:string" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Skole" type="Skole"/>
+	<xs:complexType name="Skole">
+		<xs:complexContent>
+			<xs:extension base="Enhet">
+				<xs:sequence>
+					<xs:element name="skolenr" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>VIGOnummeret er et skolenummer som brukes i en oversikt over alle ungdoms- og videeregående skoler i Norge. Skolenummeret er femsifret, begynner med fylkesnummer og fortsetter med tre siffer som representerer skolen. Hver skole har et unikt VIGOnummer.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="gruppe" type="Gruppe" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

@@ -1,60 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema targetNamespace="http://skjema.kxml.no/fint/arbeidstaker/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-	<xs:include/>
-	<xs:element name="Employee" type="Employee"/>
-	<xs:complexType name="Employee">
+	<xs:include schemaLocation="Person.xsd"/>
+	<xs:element name="Arbeidstaker" type="Arbeidstaker"/>
+	<xs:complexType name="Arbeidstaker">
 		<xs:annotation>
 			<xs:documentation>Alle ressurser i HR</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="Person">
 				<xs:sequence>
-					<xs:element name="contactInformation" type="Kontaktinformasjon2" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="employments" type="employment" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="dateOfEmployment" type="TimePeriod" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="stillinger" type="Stilling" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="ansettelsesperiode" type="Tidsperiode" minOccurs="0" maxOccurs="1"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="employment" type="employment"/>
-	<xs:complexType name="employment">
+	<xs:element name="Stilling" type="Stilling"/>
+	<xs:complexType name="Stilling">
 		<xs:sequence>
-			<xs:element name="employmentNumber" type="xs:int" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="organizationId" type="xs:string" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>For eksempel: "Bjerke videregående skole". Tilsvarer Arbeidssted i HR-system, mens VFS kaller dette for Ansvar og beskriver det med: "Type 2 = Ansvar, benyttes til å plassere den ansatte på riktig skole".</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="departmentId" type="xs:string" minOccurs="1" maxOccurs="1">
+			<xs:element name="avdelingsId" type="xs:string" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Tilhørighet til avdeling, feks "Avdeling for Helse og mijlø" (dette er ikke med i Visma sitt API)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="functionId" type="xs:string" minOccurs="1" maxOccurs="1">
+			<xs:element name="funksjonsId" type="xs:string" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Eksempel (fra VFS-api): "Studiespesialisering" eller "PEDAGOGISK LEDELSE OG PEDAGOGISKE FELLESUTGIFTER"</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="employmentDate" type="TimePeriod" minOccurs="1" maxOccurs="1">
+			<xs:element name="grunnlønn" type="xs:int" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="organisasjonsId" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>For eksempel: "Bjerke videregående skole". Tilsvarer Arbeidssted i HR-system, mens VFS kaller dette for Ansvar og beskriver det med: "Type 2 = Ansvar, benyttes til å plassere den ansatte på riktig skole".</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="stillingsdatoer" type="Tidsperiode" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Hvilket tidsrom stillingen gjelder.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="equalityPercent" type="xs:double" minOccurs="1" maxOccurs="1">
+			<xs:element name="stillingsnummer" type="xs:int" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="stillingsprosent" type="xs:double" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Stillingsprossent</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="jobTitle" type="xs:string" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="baseSalary" type="xs:int" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="employmentDate" type="TimePeriod" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="stillingstittel" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="stillingsperiode" type="Tidsperiode" minOccurs="0" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:element name="TimePeriod" type="TimePeriod"/>
-	<xs:complexType name="TimePeriod">
+	<xs:element name="Tidsperiode" type="Tidsperiode"/>
+	<xs:complexType name="Tidsperiode">
 		<xs:sequence>
-			<xs:element name="endDate" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="startDate" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="sluttdato" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="startdato" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="Kontaktinformasjon2" type="Kontaktinformasjon2"/>
@@ -83,22 +82,22 @@
 	<xs:element name="Kodeverdier" type="Kodeverdier"/>
 	<xs:complexType name="Kodeverdier">
 		<xs:sequence>
-			<xs:element name="begrepsverdi" type="xs:string" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>For eksempel en verdi på en bestemt enhet i organisasjonshierarkiet: "354"</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="begrepsbeskrivelse" type="xs:string" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>For eksempel en beskrivelse til en bestemt enhet i organisasjonshierarkiet: "Avdeling for Design og håndverk"</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="validDatePeriod" type="TimePeriod" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="begrepskode" type="xs:string" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>For eksempel ORG, ANSV, etc. Samsvarer med kodeliste.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="begrepsverdi" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>For eksempel en verdi på en bestemt enhet i organisasjonshierarkiet: "354"</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="validDatePeriod" type="Tidsperiode" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
 </xs:schema>

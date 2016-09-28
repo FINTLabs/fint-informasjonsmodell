@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-	<xs:include/>
+	<xs:include schemaLocation="Aktor.XSD"/>
 	<xs:element name="Identifikator" type="Identifikator"/>
 	<xs:complexType name="Identifikator">
 		<xs:annotation>
@@ -10,9 +10,9 @@ Eksempel:
 fødselsnummer</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="identifikatorverdi" type="xs:string" minOccurs="1" maxOccurs="1">
+			<xs:element name="gyldighetsperiode" type="Periode" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>en konkret kombinasjonen av tegn og/eller bokstaver som utgjør en bestemt identifikator</xs:documentation>
+					<xs:documentation>perioden, gitt i form av fra-og-med-dato og til-dato, som en gitt identifikator er gyldig</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="identifikatortype" type="xs:string" minOccurs="0" maxOccurs="1">
@@ -20,9 +20,9 @@ fødselsnummer</xs:documentation>
 					<xs:documentation>en kategori av identifikatorer, f.eks. fødselsnummer, organisasjosnummer, d-nummer</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="utstedtdato" type="xs:date" minOccurs="0" maxOccurs="1">
+			<xs:element name="identifikatorverdi" type="xs:string" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>datoen en gitt identifikator ble utstedt</xs:documentation>
+					<xs:documentation>en konkret kombinasjonen av tegn og/eller bokstaver som utgjør en bestemt identifikator</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="utstedtAvAutoritet" type="xs:string" minOccurs="0" maxOccurs="1">
@@ -30,9 +30,9 @@ fødselsnummer</xs:documentation>
 					<xs:documentation>myndigheten, i Norge eller utlandet, som har utstedt en gitt identifikator</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="gyldighetsperiode" type="Periode" minOccurs="0" maxOccurs="1">
+			<xs:element name="utstedtdato" type="xs:date" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>perioden, gitt i form av fra-og-med-dato og til-dato, som en gitt identifikator er gyldig</xs:documentation>
+					<xs:documentation>datoen en gitt identifikator ble utstedt</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
