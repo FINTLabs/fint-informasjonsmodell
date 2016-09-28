@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:include schemaLocation="Adresse.xsd"/>
-	<xs:include schemaLocation="Aktor.XSD"/>
+	<xs:include schemaLocation="Aktor.xsd"/>
 	<xs:element name="Enhet" type="Enhet"/>
 	<xs:complexType name="Enhet" abstract="true">
 		<xs:annotation>
-			<xs:documentation>alle hovedenheter, underenheter og organisasjonsledd som er identifisert med et organisasjonsnummer
+			<xs:documentation>Alle hovedenheter, underenheter og organisasjonsledd som er identifisert med et organisasjonsnummer
 
-Merknad: Forslag til definisjon med utgangspunkt i Enhetsregisteret (bør diskuteres om denne må utvides)</xs:documentation>
+Merknad: Forslag til definisjon med utgangspunkt i Enhetsregisteret</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="Aktør">
 				<xs:sequence>
 					<xs:element name="navn" type="xs:string" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation>navn på enhet som er registrert i Enhetsregisteret</xs:documentation>
+							<xs:documentation>Navn på enhet som er registrert i Enhetsregisteret</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="næringskode" type="xs:string" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
-							<xs:documentation>femsifret kode som tildeles på bakgrunn av enhetens virksomhet/bransje. Bygger på EU sin næringsstandard (NACE) som består av fire siffer. Det femte sifferet er nasjonalt nivå</xs:documentation>
+							<xs:documentation>Femsifret kode som tildeles på bakgrunn av enhetens virksomhet/bransje. Bygger på EU sin næringsstandard (NACE) som består av fire siffer. Det femte sifferet er nasjonalt nivå</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="organisasjonsform" type="xs:string" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation>inndeling av enheter ut fra hvordan disse er organisert (eierform, ansvarsforhold, regelverk og lignende)</xs:documentation>
+							<xs:documentation>Inndeling av enheter ut fra hvordan disse er organisert (eierform, ansvarsforhold, regelverk og lignende)</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="organisasjonsnummer" type="xs:string" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation>nisifret nummer som entydig identifiserer enheter i Enhetsregisteret</xs:documentation>
+							<xs:documentation>Nisifret nummer som entydig identifiserer enheter i Enhetsregisteret</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="adresse" type="GeografiskAdresse" minOccurs="0" maxOccurs="1"/>

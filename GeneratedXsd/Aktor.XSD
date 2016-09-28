@@ -1,10 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Kontaktinformasjon" type="Kontaktinformasjon"/>
+	<xs:complexType name="Kontaktinformasjon">
+		<xs:annotation>
+			<xs:documentation>Informasjon som kan brukes for uformell kontakt med en aktør</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="epostadresse" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>navngitt elektronisk adresse for mottak av e-post</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="mobiltelefonummer" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>person sitt mobiltelefonnummer ihht norsk nummerplan for telefoni (E.164).
+
+Merknad:   
+8 siffer, evt. flere siffer dersom første to siffer er utenlandsprefix 00 eller “+”.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="telefonnummer" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>tallkode som telenettet bruker for å få fram teletrafikk til riktig adressat</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="websted" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:element name="Aktør" type="Aktør"/>
 	<xs:complexType name="Aktør" abstract="true">
 		<xs:annotation>
 			<xs:documentation>person eller enhet vi samhandler med</xs:documentation>
 		</xs:annotation>
-		<xs:sequence/>
+		<xs:sequence>
+			<xs:element name="kontaktinformasjon" type="Kontaktinformasjon" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>informasjon for å kontakte aktør</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
 	</xs:complexType>
 </xs:schema>

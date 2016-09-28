@@ -6,9 +6,21 @@ Created:24.08.16 11:11.
 Title:.
 Comment:.</xs:documentation>
 	</xs:annotation>
-	<xs:include schemaLocation="ISO3166-Landkoder.XSD"/>
+	<xs:include schemaLocation="ISO3166Landkoder.xsd"/>
 	<xs:include schemaLocation="Adresse.xsd"/>
-	<xs:include schemaLocation="Aktor.XSD"/>
+	<xs:include schemaLocation="Aktor.xsd"/>
+	<xs:element name="Personnavn" type="Personnavn"/>
+	<xs:complexType name="Personnavn">
+		<xs:sequence>
+			<xs:element name="etternavn" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="fornavn" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="mellomnavn" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Ikke i bruk.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:element name="Person" type="Person"/>
 	<xs:complexType name="Person" abstract="true">
 		<xs:annotation>
