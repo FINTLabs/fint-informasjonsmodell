@@ -1,0 +1,166 @@
+﻿<SyncHRMasterData xmlns="http://www.hr-xml.org/3" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DataArea>
+    <Sync>
+      <ActionCriteria>
+        <ActionExpression actionCode="Replace">/SyncHRMasterData/DataArea/HRMasterData</ActionExpression>
+        <!-- -->
+      </ActionCriteria>
+    </Sync>
+    <HRMasterData>
+      <EmployerIdentifiers>
+        <OrganizationID schemeID="Global">1</OrganizationID>
+        <!-- Id for organisasjonen i HRM-systemet -->
+        <OrganizationLegalID schemeID="National">958935420</OrganizationLegalID>
+        <!-- Organisasjonsnummer for organisasjonen -->
+      </EmployerIdentifiers>
+      <MasterPersonDossier>
+        <MasterPerson>
+          <PersonID schemeID="Global">18324</PersonID>
+          <!-- Tror dette er intern ansattId i HRM-systemet -->
+          <PersonLegalID>01038349380</PersonLegalID>
+          <!-- Fødselsnummer -->
+          <PersonName>
+            <GivenName>Ola</GivenName>
+            <!-- Fornavn -->
+            <FamilyName>Nordmann</FamilyName>
+            <!-- Etternavn -->
+          </PersonName>
+          <Communication sequence="1">
+            <ChannelCode>Email</ChannelCode>
+            <!-- Email sammen med -->
+            <UseCode>Business</UseCode>
+            <!-- Business viser at eposten er jobb-epost -->
+            <DialNumber>ola.nordmann@oslo.kommune.no</DialNumber>
+            <!-- Jobb-epost -->
+          </Communication>
+          <Communication sequence="2">
+            <ChannelCode>Email</ChannelCode>
+            <!-- Email sammen med -->
+            <UseCode>Personal</UseCode>
+            <!-- Personal viser at eposten er personlig epost -->
+            <DialNumber>ola.nordmann@gmail.com</DialNumber>
+            <!-- Personlig epost -->
+          </Communication>
+          <Communication sequence="1">
+            <ChannelCode>MobileTelephone</ChannelCode>
+            <!-- MobileTelephone sammen med -->
+            <UseCode>Business</UseCode>
+            <!-- Business viser at telefonnummeret er jobbtelefon -->
+            <DialNumber>47261141</DialNumber>
+            <!-- Jobbtelefon -->
+          </Communication>
+          <Communication sequence="2">
+            <ChannelCode>MobileTelephone</ChannelCode>
+            <!-- MobileTelephone sammen med -->
+            <UseCode>Personal</UseCode>
+            <!-- Personal viser at telefonnummeret er personlig telefon -->
+            <DialNumber>93460101</DialNumber>
+            <!-- Personlig telefon -->
+          </Communication>
+          <Communication sequence="1">
+            <ChannelCode>Address</ChannelCode>
+            <!-- Address sammen med -->
+            <UseCode>Personal</UseCode>
+            <!-- Personal viser at adressen er personlig adresse -->
+            <Address>
+              <AddressLine sequence="1">Karenslyst allé 56</AddressLine>
+              <!-- Gate -->
+              <PostalCode>0277</PostalCode>
+              <!-- Postnummer -->
+            </Address>
+          </Communication>
+          <BirthDate>1983-03-01</BirthDate>
+          <!-- Fødselsdato -->
+          <GenderCode>Male</GenderCode>
+          <!-- Kjønn -->
+        </MasterPerson>
+        <MasterEmployee>
+          <EmployeeID schemeID="Employee">21126800</EmployeeID>
+          <!-- Ansattnummer -->
+        </MasterEmployee>
+        <MasterEmployment>
+          <EmploymentLifecycle>
+            <Hire>
+              <HireDate>2015-08-01</HireDate>
+              <!-- Ansettelsesdato -->
+            </Hire>
+            <Termination/>
+          </EmploymentLifecycle>
+        </MasterEmployment>
+
+        <MasterDeployment allocationPercentage="44.7">
+          <!-- Benyttes ikke. Vi benytter FullTimeEquivalentRatio -->
+          <DeploymentOrganization>
+            <OrganizationIdentifiers>
+              <OrganizationID>123</OrganizationID>
+              <!-- Benyttes ikke. Vi benytter CostCenter -->
+              <OrganizationName>Bjerke videregående skole</OrganizationName>
+              <!-- Benyttes ikke. Vi benytter CostCenter -->
+            </OrganizationIdentifiers>
+            <UserArea>
+              <CostCenters>
+                <CostCenter name="BJERKE VIDEREGÅENDE SKOLE" schemeID="Visma" type="2">000000002145</CostCenter>
+                <!-- Type 2 = Ansvar, benyttes til å plassere den ansatte på riktig skole -->
+                <CostCenter name="STUDIESPESIALISERING" schemeID="Visma" type="3">000000005210</CostCenter>
+                <!-- Type 3 = Funksjon, usikker på om denne skal benyttes til noe -->
+              </CostCenters>
+            </UserArea>
+          </DeploymentOrganization>
+          <Job>
+            <JobID>6572</JobID>
+          </Job>
+          <MasterPosition validFrom="2015-08-01">
+            <!-- Ansatt fra for stillingen. Kan også ha validTo som angir sluttdato -->
+            <PositionID>1</PositionID>
+            <!-- Stillingsid -->
+            <PositionTitle>Lektor m/till.Utd.</PositionTitle>
+            <!-- Tittel/Stilling -->
+          </MasterPosition>
+          <FullTimeEquivalentRatio>0.447</FullTimeEquivalentRatio>
+          <!-- Stillingsprosent -->
+        </MasterDeployment>
+        
+        <MasterDeployment allocationPercentage="55.3">
+          <DeploymentOrganization>
+            <OrganizationIdentifiers>
+              <OrganizationID>234</OrganizationID>
+              <OrganizationName>Elvebakken videregående skole</OrganizationName>
+            </OrganizationIdentifiers>
+            <UserArea>
+              <CostCenters>
+                <CostCenter name="ELVEBAKKEN VIDEREGÅENDE SKOLE" schemeID="Visma" type="2">000000002305</CostCenter>
+                <CostCenter name="PEDAGOGISK LEDELSE OG PEDAGOGISKE FELLESUTGIFTER" schemeID="Visma" type="3">000000005200</CostCenter>
+              </CostCenters>
+            </UserArea>
+          </DeploymentOrganization>
+          <Job>
+            <JobID>6703</JobID>
+          </Job>
+          <MasterPosition validFrom="2016-01-01">
+            <PositionID>4</PositionID>
+            <PositionTitle>Pedagogisk leder</PositionTitle>
+          </MasterPosition>
+          <FullTimeEquivalentRatio>0.553</FullTimeEquivalentRatio>
+        </MasterDeployment>
+        
+        <PayCycleRemuneration validFrom="2016-01-01">
+          <Remuneration>
+            <ID schemeID="PositionID">1</ID>
+            <!-- Angir hvilken stilling dette gjelder for -->
+            <Amount currencyID="NOK">620230</Amount>
+            <!-- Ansatt->Stilling: Grunnlønn -->
+            <RemunerationRateIntervalCode>Year</RemunerationRateIntervalCode>
+            <!-- Angir at dette gjelder pr år -->
+          </Remuneration>
+        </PayCycleRemuneration>
+        <PayCycleRemuneration validFrom="2016-01-01">
+          <Remuneration>
+            <ID schemeID="positionID">4</ID>
+            <Amount currencyID="NOK">667900</Amount>
+            <RemunerationRateIntervalCode>Year</RemunerationRateIntervalCode>
+          </Remuneration>
+        </PayCycleRemuneration>
+      </MasterPersonDossier>
+    </HRMasterData>
+  </DataArea>
+</SyncHRMasterData>
