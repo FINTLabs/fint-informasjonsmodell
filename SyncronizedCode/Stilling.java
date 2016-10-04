@@ -2,12 +2,17 @@ package Arbeidstaker;
 
 import lombok.Data;
 
+/**
+ * Definisjon av stilling til en arbeidstaker.
+ * @author ole.anders
+ * @version 1.0
+ * @updated 04-okt-2016 09:54:50
+ */
 @Data
 public class Stilling {
 
 	/**
-	 * Tilhørighet til avdeling, feks "Avdeling for Helse og mijlø" (dette er ikke med
-	 * i Visma sitt API)
+	 * Tilhørighet til avdeling, feks "Avdeling for Helse og mijlø"
 	 */
     private String avdeling;
 	/**
@@ -15,16 +20,26 @@ public class Stilling {
 	 * PEDAGOGISKE FELLESUTGIFTER<b>"</b>
 	 */
     private String funksjon;
+	/**
+	 * Grunnlønn i gjeldende stilling
+	 */
     private long grunnlonn;
 	/**
-	 * For eksempel: "Bjerke videregående skole". Tilsvarer Arbeidssted i HR-system,
-	 * mens VFS kaller dette for Ansvar og beskriver det med: "Type 2 = Ansvar,
-	 * benyttes til å plassere den ansatte på riktig skole".
+	 * Tilknyttning i organisasjonen.  Tilsvarer Arbeidssted i HR-system, mens VFS
+	 * kaller dette for Ansvar og beskriver det med: "Type 2 = Ansvar, benyttes til å
+	 * plassere den ansatte på riktig skole".
+	 * 
+	 * For eksempel: "Bjerke videregående skole".
 	 */
     private String organisasjon;
+	/**
+	 * Definerer om stillingen er aktiv, utløpt eller slettet.
+	 * 
+	 * Gyldige verdier er: AKTIV, ...
+	 */
     private String status;
 	/**
-	 * Se liste fra KS. Flere fylkeskommuner har utvidet denne med 2 siffer ekstra.
+	 * En fire- eller sekssifret stillingskode. Se liste fra KS for firesiffret kode.
 	 */
     private String stillingskode;
 	/**
@@ -35,9 +50,12 @@ public class Stilling {
 	 * Stillingsprossent
 	 */
     private double stillingsprosent;
+	/**
+	 * Arbeidstakers stillingstittel i gjeldende stilling.
+	 */
     private String stillingstittel;
 	/**
-	 * stillingsperiode
+	 * Tidsperiode hvor stillingen er aktiv.
 	 */
 	private Periode stillingsperiode;
 }

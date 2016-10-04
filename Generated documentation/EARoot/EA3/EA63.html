@@ -42,7 +42,7 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">04.10.2016 09:31:27</td>
+			<td class="ObjectDetailsValue">04.10.2016 09:50:50</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -94,7 +94,8 @@ function nameClassifier(name, separator)
 			<td class="ObjectDetailsValue"><a href="EA59.html">Arbeidstaker</a></td>
 		</tr>
 	</table>
-	
+	<div class="ObjectDetailsNotes">Definisjon av stilling til en arbeidstaker.&lt;br/&gt;</div>
+
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
 			<li onClick="parent.toggleItem('LinkedDocument');" id="LinkedDocumentTitle">Linked Document</li>
@@ -162,7 +163,7 @@ function nameClassifier(name, separator)
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			Tilhørighet til avdeling, feks &quot;Avdeling for Helse og mijlø&quot; (dette er ikke med i Visma sitt API)&lt;br/&gt;
+			Tilhørighet til avdeling, feks &quot;Avdeling for Helse og mijlø&quot;&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -272,7 +273,17 @@ function nameClassifier(name, separator)
 					</table>
 					
 					
-						&nbsp;
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Grunnlønn i gjeldende stilling&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
 						
 				</td>
 			</tr>			<tr>
@@ -326,7 +337,7 @@ function nameClassifier(name, separator)
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			For eksempel: &quot;Bjerke videregående skole&quot;. Tilsvarer Arbeidssted i HR-system, mens VFS kaller dette for Ansvar og beskriver det med: &quot;Type 2 = Ansvar, benyttes til å plassere den ansatte på riktig skole&quot;.&lt;br/&gt;
+			Tilknyttning i organisasjonen.&#160; Tilsvarer Arbeidssted i HR-system, mens VFS kaller dette for Ansvar og beskriver det med: &quot;Type 2 = Ansvar, benyttes til å plassere den ansatte på riktig skole&quot;.&lt;br/&gt;&lt;br/&gt;For eksempel: &quot;Bjerke videregående skole&quot;.&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -378,7 +389,17 @@ function nameClassifier(name, separator)
 					</table>
 					
 					
-						&nbsp;
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Definerer om stillingen er aktiv, utløpt eller slettet. &lt;br/&gt;&lt;br/&gt;Gyldige verdier er: AKTIV, ...&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
 						
 				</td>
 			</tr>			<tr>
@@ -432,7 +453,7 @@ function nameClassifier(name, separator)
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			Se liste fra KS. Flere fylkeskommuner har utvidet denne med 2 siffer ekstra.&lt;br/&gt;
+			En fire- eller sekssifret stillingskode. Se liste fra KS for firesiffret kode.&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -600,7 +621,17 @@ function nameClassifier(name, separator)
 					</table>
 					
 					
-						&nbsp;
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Arbeidstakers stillingstittel i gjeldende stilling.&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
 						
 				</td>
 			</tr>			<tr>
@@ -654,7 +685,7 @@ function nameClassifier(name, separator)
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			stillingsperiode&lt;br/&gt;
+			Tidsperiode hvor stillingen er aktiv.&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
