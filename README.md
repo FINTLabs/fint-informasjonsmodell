@@ -15,3 +15,7 @@ I tillegg inneholder den utkast til informasjonsmodell for:
 1. Åpne FINT-informasjonsmodeller.eap i Sparx Enterprise Architect.
 2. Gjør ønskede endringer. 
 3. <del>Eksporter prosjekt til xml</del> (pr 4. okt brukes ikke denne filen)
+
+## Dokumentasjon
+
+* [Generert dokumentasjon](https://rawgit.com/FINTprosjektet/fint-arbeidstaker-informasjonsmodell/master/Generated%20documentation/)
