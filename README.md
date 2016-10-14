@@ -2,20 +2,29 @@
 
 Innehold i informasjonsmodellen: 
 
-* Skate sin fellesmodell for person og enhet
-* Arbeidstaker med stilling etc.
+* Tilpasset versjon av Skate sitt forslag til fellesmodell for person og enhet
+* Arbeidstaker med stilling
 
 I tillegg inneholder den utkast til informasjonsmodell for: 
 
 * Kodeverk
 * "Skole" - elev, lærer, foresatt
 
-## Arbeidsflyt
-
-1. Åpne FINT-informasjonsmodeller.eap i Sparx Enterprise Architect.
-2. Gjør ønskede endringer. 
-3. <del>Eksporter prosjekt til xml</del> (pr 4. okt brukes ikke denne filen)
-
 ## Dokumentasjon
 
-* [Generert dokumentasjon](https://rawgit.com/FINTprosjektet/fint-arbeidstaker-informasjonsmodell/master/Generated%20documentation/)
+[Midlertidig dokumentasjon av informasjonsmodell](https://rawgit.com/FINTprosjektet/fint-arbeidstaker-informasjonsmodell/master/Generated%20documentation/)
+
+
+## Arbeidsflyt
+
+### Første gang lastet ned
+
+1. Åpne Enterprise Architect og opprett et nytt prosjekt (med navn _FINT-informasjonsmodeller.eap_) i samme mappe som _FINT-informasjonsmodell.xml_
+
+### Hvordan åpne og gjøre endringer
+
+1. Åpne FINT-informasjonsmodeller.eap i Sparx Enterprise Architect
+2. Importer FINT-informasjonsmodell.xml ved å gå til følgende meny: _PACKAGE_ -> _Import/Export_ -> _Import Package for XMI_ (Ctrl + Alt + I)
+3. Gjør ønskede endringer
+4. Eksporter prosjekt til FINT-informasjonsmodell.xml ved å gå til følgende meny: _PACKAGE_ -> _Import/Export_ -> _Export Package for XMI_ (Ctrl + Alt + E)
+
