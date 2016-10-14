@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skjema.kxml.no/fint/felles/1.0" xmlns:fm="http://skjema.kxml.no/fint/felles/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 14.10.2016 09:32:43-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 14.10.2016 10:40:34-->
   <xs:element name="Spraak" type="fm:SpraakType" />
   <xs:complexType name="SpraakType">
     <xs:sequence>
@@ -147,13 +147,7 @@ Merknad: Forslag til definisjon med utgangspunkt i Enhetsregisteret</xs:document
           <xs:element name="kjoenn" minOccurs="0" maxOccurs="1" nillable="true" type="fm:KjoennType" />
           <xs:element name="statsborgerskap" minOccurs="0" maxOccurs="1" nillable="true" type="fm:LandkodeType" />
           <xs:element name="foedselsdato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime" />
-          <xs:element name="foedested" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
-          <xs:element name="foedeland" minOccurs="0" maxOccurs="1" nillable="true" type="fm:LandkodeType" />
-          <xs:element name="doedsdato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime" />
-          <xs:element name="doedssted" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
-          <xs:element name="doedsland" minOccurs="0" maxOccurs="1" nillable="true" type="fm:LandkodeType" />
           <xs:element name="sivilstand" minOccurs="0" maxOccurs="1" nillable="true" type="fm:SivilstandType" />
-          <xs:element name="opprinneligNavn" minOccurs="0" maxOccurs="1" nillable="true" type="fm:PersonnavnType" />
           <xs:element name="adresse" minOccurs="0" maxOccurs="1" nillable="true" type="fm:GeografiskAdresseListe" />
         </xs:sequence>
       </xs:extension>
@@ -172,7 +166,6 @@ Merknad: Forslag til definisjon med utgangspunkt i Enhetsregisteret</xs:document
     </xs:annotation>
     <xs:sequence>
       <xs:element name="fornavn" minOccurs="1" maxOccurs="1" type="xs:string" />
-      <xs:element name="mellomnavn" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
       <xs:element name="etternavn" minOccurs="1" maxOccurs="1" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
