@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skjema.kxml.no/fint/arbeidstaker/1.0" xmlns:ar="http://skjema.kxml.no/fint/arbeidstaker/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified" xmlns:fm="http://skjema.kxml.no/fint/felles/1.0">
+  <!-- Generert av MetaTrans(1.1.0.0) - 14.10.2016 09:32:30-->
+  <xs:import namespace="http://skjema.kxml.no/fint/felles/1.0" schemaLocation="fintfelles.xsd" />
+  <xs:element name="Arbeidstaker" type="ar:ArbeidstakerType" />
+  <xs:complexType name="ArbeidstakerListe">
+    <xs:sequence>
+      <xs:element name="arbeidstaker" type="ar:ArbeidstakerType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attributeGroup ref="xlink:simpleAttrs" />
+  </xs:complexType>
+  <xs:complexType name="ArbeidstakerType">
+    <xs:annotation>
+      <xs:documentation>Alle arbeidstakere i HR-systemet. 
+
+Inneholder "ordinære" ansatte i fast og vikariat, i tillegg til oppdragstakere (politikere, ressurser med timelønn, sensorer, etc).
+
+Inneholder ikke leverandørrepresentant (eksterne konsulenter etc).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="fm:AbstraktPersonType">
+        <xs:sequence>
+          <xs:element name="stillinger" minOccurs="0" maxOccurs="1" nillable="true" type="ar:StillingListe" />
+          <xs:element name="ansettelsesperiode" minOccurs="0" maxOccurs="1" nillable="true" type="fm:PeriodeType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Stilling" type="ar:StillingType" />
+  <xs:complexType name="StillingListe">
+    <xs:sequence>
+      <xs:element name="stilling" type="ar:StillingType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attributeGroup ref="xlink:simpleAttrs" />
+  </xs:complexType>
+  <xs:complexType name="StillingType">
+    <xs:sequence>
+      <xs:element name="avdeling" minOccurs="0" maxOccurs="1" nillable="true" type="xs:String" />
+      <xs:element name="funksjon" minOccurs="0" maxOccurs="1" nillable="true" type="xs:String" />
+      <xs:element name="grunnlonn" minOccurs="1" maxOccurs="1" type="xs:double" />
+      <xs:element name="organisasjon" minOccurs="0" maxOccurs="1" nillable="true" type="xs:String" />
+      <xs:element name="status" minOccurs="1" maxOccurs="1" type="xs:String" />
+      <xs:element name="stillingskode" minOccurs="0" maxOccurs="1" nillable="true" type="xs:String" />
+      <xs:element name="stillingsnummer" minOccurs="0" maxOccurs="1" nillable="true" type="xs:Integer" />
+      <xs:element name="stillingsprosent" minOccurs="0" maxOccurs="1" nillable="true" type="xs:double" />
+      <xs:element name="stillingstittel" minOccurs="0" maxOccurs="1" nillable="true" type="xs:String" />
+      <xs:element name="stillingsperiode" minOccurs="0" maxOccurs="1" nillable="true" type="fm:PeriodeType" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
