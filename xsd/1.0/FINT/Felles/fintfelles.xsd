@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skjema.kxml.no/fint/felles/1.0" xmlns:fm="http://skjema.kxml.no/fint/felles/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 14.10.2016 10:40:34-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://fk.no/fint//felles/1.0" xmlns:fm="http://fk.no/fint//felles/1.0" elementFormDefault="qualified">
+  <!-- Generert av MetaTrans(1.1.0.0) - 19.10.2016 17.02.33-->
   <xs:element name="Spraak" type="fm:SpraakType" />
   <xs:complexType name="SpraakType">
     <xs:sequence>
@@ -20,12 +20,8 @@
     <xs:sequence>
       <xs:element name="abstraktaktoer" type="fm:AbstraktAktoerType" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
-    <xs:attributeGroup ref="xlink:simpleAttrs" />
   </xs:complexType>
   <xs:complexType name="AbstraktAktoerType" abstract="true">
-    <xs:annotation>
-      <xs:documentation>Person eller enhet vi samhandler med.</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="identifikator" minOccurs="0" maxOccurs="1" nillable="true" type="fm:IdentifikatorListe" />
       <xs:element name="kontaktinformasjon" minOccurs="0" maxOccurs="1" nillable="true" type="fm:KontaktinformasjonListe" />
@@ -36,12 +32,8 @@
     <xs:sequence>
       <xs:element name="kontaktinformasjon" type="fm:KontaktinformasjonType" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
-    <xs:attributeGroup ref="xlink:simpleAttrs" />
   </xs:complexType>
   <xs:complexType name="KontaktinformasjonType">
-    <xs:annotation>
-      <xs:documentation>Informasjon som kan brukes for kontakt med en aktør</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="epostadresse" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
       <xs:element name="telefonnummer" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
@@ -55,12 +47,8 @@
     <xs:sequence>
       <xs:element name="geografiskadresse" type="fm:GeografiskAdresseType" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
-    <xs:attributeGroup ref="xlink:simpleAttrs" />
   </xs:complexType>
   <xs:complexType name="GeografiskAdresseType">
-    <xs:annotation>
-      <xs:documentation>Adresse til en aktør</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="gateadresse" minOccurs="0" maxOccurs="1" nillable="true" type="xs:String" />
       <xs:element name="postnummer" minOccurs="0" maxOccurs="1" nillable="true" type="xs:String" />
@@ -73,14 +61,8 @@
     <xs:sequence>
       <xs:element name="abstraktenhet" type="fm:AbstraktEnhetType" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
-    <xs:attributeGroup ref="xlink:simpleAttrs" />
   </xs:complexType>
   <xs:complexType name="AbstraktEnhetType" abstract="true">
-    <xs:annotation>
-      <xs:documentation>Alle hovedenheter, underenheter og organisasjonsledd som er identifisert med et organisasjonsnummer
-
-Merknad: Forslag til definisjon med utgangspunkt i Enhetsregisteret</xs:documentation>
-    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="fm:AbstraktAktoerType">
         <xs:sequence>
@@ -98,12 +80,8 @@ Merknad: Forslag til definisjon med utgangspunkt i Enhetsregisteret</xs:document
     <xs:sequence>
       <xs:element name="identifikator" type="fm:IdentifikatorType" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
-    <xs:attributeGroup ref="xlink:simpleAttrs" />
   </xs:complexType>
   <xs:complexType name="IdentifikatorType">
-    <xs:annotation>
-      <xs:documentation>En kombinasjon av tegn eller og/eller bokstaver som identifiserer en aktør eller objekt innenfor et sett av aktører eller objekter</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="identifikatorverdi" minOccurs="1" maxOccurs="1" type="xs:string" />
       <xs:element name="identifikatortype" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
@@ -117,12 +95,8 @@ Merknad: Forslag til definisjon med utgangspunkt i Enhetsregisteret</xs:document
     <xs:sequence>
       <xs:element name="periode" type="fm:PeriodeType" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
-    <xs:attributeGroup ref="xlink:simpleAttrs" />
   </xs:complexType>
   <xs:complexType name="PeriodeType">
-    <xs:annotation>
-      <xs:documentation>Tidsperiode (fra- og tildato).</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="start" minOccurs="1" maxOccurs="1" type="xs:dateTime" />
       <xs:element name="slutt" minOccurs="1" maxOccurs="1" type="xs:dateTime" />
@@ -133,12 +107,8 @@ Merknad: Forslag til definisjon med utgangspunkt i Enhetsregisteret</xs:document
     <xs:sequence>
       <xs:element name="abstraktperson" type="fm:AbstraktPersonType" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
-    <xs:attributeGroup ref="xlink:simpleAttrs" />
   </xs:complexType>
   <xs:complexType name="AbstraktPersonType" abstract="true">
-    <xs:annotation>
-      <xs:documentation>Fysiske personer</xs:documentation>
-    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="fm:AbstraktAktoerType">
         <xs:sequence>
@@ -158,12 +128,8 @@ Merknad: Forslag til definisjon med utgangspunkt i Enhetsregisteret</xs:document
     <xs:sequence>
       <xs:element name="personnavn" type="fm:PersonnavnType" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
-    <xs:attributeGroup ref="xlink:simpleAttrs" />
   </xs:complexType>
   <xs:complexType name="PersonnavnType">
-    <xs:annotation>
-      <xs:documentation>Navn på person</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="fornavn" minOccurs="1" maxOccurs="1" type="xs:string" />
       <xs:element name="etternavn" minOccurs="1" maxOccurs="1" type="xs:string" />
