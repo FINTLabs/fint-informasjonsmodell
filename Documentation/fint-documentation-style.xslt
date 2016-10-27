@@ -91,7 +91,7 @@
   
   <!-- PACAGE ELEMENT -->
   <xsl:template match="//UML:Package" mode="packages-mode">
-    <!-- hack for å fjerne uonskede h2 -->
+    <!-- hack for a fjerne uonskede h2 -->
     <xsl:if test="*/UML:Stereotype">
       <h2 id="package-{@xmi.id}" class="anchor">
         <!-- <span class="glyphicon glyphicon glyphicon-folder-open" aria-hidden="true"></span>-->
