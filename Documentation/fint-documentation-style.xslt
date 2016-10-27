@@ -20,12 +20,13 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
         <style>
+          .anchor:before { display: block; content: ""; height: 55px; margin: -55px 0 0; }
           body { padding-top: 50px; }
           .sub-header { padding-bottom: 10px; border-bottom: 1px solid #eee; }
           .navbar-fixed-top { border: 0; }
           .sidebar { display: none; }
-          @media (min-width: 768px) { 
-            .sidebar { position: fixed; top: 51px; bottom: 0; left: 0; z-index: 1000; display: block; padding: 20px; overflow-x: hidden; overflow-y: auto; background-color: #f5f5f5; border-right: 1px solid #eee; }
+          @media (min-width: 768px) {
+          .sidebar { position: fixed; top: 51px; bottom: 0; left: 0; z-index: 1000; display: block; padding: 20px; overflow-x: hidden; overflow-y: auto; background-color: #f5f5f5; border-right: 1px solid #eee; }
           }
           .nav-sidebar { margin-right: -21px; margin-bottom: 20px; margin-left: -20px; }
           .nav-sidebar > li > a { padding-right: 20px; padding-left: 20px; }
@@ -33,8 +34,8 @@
           .nav-sidebar > .active > a:hover,
           .nav-sidebar > .active > a:focus { color: #fff; background-color: #428bca; }
           .main { padding: 20px; }
-          @media (min-width: 768px) { 
-            .main { padding-right: 40px; padding-left: 40px; }
+          @media (min-width: 768px) {
+          .main { padding-right: 40px; padding-left: 40px; }
           }
           .main .page-header { margin-top: 0; }
           .placeholders { margin-bottom: 30px; text-align: center; }
@@ -88,38 +89,136 @@
       </body>
     </html>
   </xsl:template>
-    
+  
+  <!-- PACAGE ELEMENT -->
   <xsl:template match="//UML:Package" mode="packages-mode">
-      <div id="package-{@xmi.id}" style="padding-top: 50px"></div>
-      <h2><xsl:value-of select="@name"/></h2>
-      <i><xsl:value-of select="*/UML:TaggedValue[@tag='documentation']/@value"/></i>
+    <h2 id="package-{@xmi.id}" class="anchor">
+      <!-- <span class="glyphicon glyphicon glyphicon-folder-open" aria-hidden="true"></span>-->
+      <xsl:text>  </xsl:text>
+      <xsl:value-of select="@name"/>
+    </h2>
+    <i><xsl:value-of select="*/UML:TaggedValue[@tag='documentation']/@value"/></i>
     
-      <xsl:apply-templates select="*/UML:Class" mode="class-mode" />
+    <xsl:apply-templates select="*/UML:Class" mode="class-mode" />
     
   </xsl:template>
   
-  
+  <!-- CLASS ELEMENT -->
   <xsl:template match="*/UML:Class" mode="class-mode">
-    <h3><xsl:value-of select="@name"/> (class)</h3>
-    <i><xsl:value-of select="*/UML:TaggedValue[@tag='documentation']/@value"/></i>
+    <xsl:variable name="id" select="@xmi.id"/>
+    
+    <h3 id="class-{@xmi.id}" class="anchor">
+      <span class="glyphicon glyphicon glyphicon-list-alt" aria-hidden="true"></span><xsl:text> </xsl:text>
+      <xsl:value-of select="@name"/>
+    </h3>
+    <p><i><xsl:value-of select="*/UML:TaggedValue[@tag='documentation']/@value"/></i></p>
 
+    <!-- class er en generalisering av -->
+    <xsl:if test="//UML:Class[@xmi.id=//UML:Generalization[@subtype=$id]/@supertype]/@name != ''">
+      <p>
+        <xsl:value-of select="@name"/> er en generalisering av 
+        <xsl:for-each select="//UML:Class[@xmi.id=//UML:Generalization[@subtype=$id]/@supertype]">
+          <a href="#class-{@xmi.id}">
+            <xsl:value-of select="@name"/>
+          </a>
+          <xsl:if test="position() != last()">
+            <xsl:text>, </xsl:text>
+          </xsl:if>
+        </xsl:for-each>
+      </p>
+    </xsl:if>
+
+    <!-- class er generalisert som -->
+    <xsl:if test="//UML:Class[@xmi.id=//UML:Generalization[@supertype=$id]/@subtype]/@name != ''">
+      <p>
+        Det finnes følgende generaliseringer av <xsl:value-of select="@name"/>: 
+        <xsl:for-each select="//UML:Class[@xmi.id=//UML:Generalization[@supertype=$id]/@subtype]">
+          <a href="#class-{@xmi.id}">
+            <xsl:value-of select="@name"/>
+          </a>
+          <xsl:if test="position() != last()">
+            <xsl:text>, </xsl:text>
+          </xsl:if>
+        </xsl:for-each>
+      </p>
+    </xsl:if>
+    
+    <!-- felter i en klasse -->
     <table class="table">
       <thead>
         <tr>
           <th>Felt</th>
+          <th>Type</th>
           <th>Beskrivelse</th>
         </tr>
       </thead>
       <tbody>
         <xsl:apply-templates select="*/UML:Attribute" mode="attrubute-mode"/>
+        <xsl:if test="count(*/UML:Attribute) &lt; 1">
+          <tr><td rowspan="3"><em>Har ingen felter.</em></td></tr>
+        </xsl:if>
       </tbody>
     </table>
-  </xsl:template>  
 
+    <!-- assosiasjoner -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Assosiasjon</th>
+          <th>Target</th>
+          <th>Relasjon</th>
+          <th>Beskrivelse</th>
+        </tr>
+      </thead>
+      <tbody>
+        <xsl:apply-templates select="//UML:Association[*/UML:AssociationEnd[*/UML:TaggedValue[@tag='ea_end']/@value = 'source']/@type = $id]" mode="association-mode"/>
+        <xsl:if test="count(//UML:Association[*/UML:AssociationEnd[*/UML:TaggedValue[@tag='ea_end']/@value = 'source']/@type = $id]) &lt; 1">
+          <tr>
+            <td rowspan="3">
+              <em>Har ingen assosiasjoner.</em>
+            </td>
+          </tr>
+        </xsl:if>
+      </tbody>
+    </table>
+    
+  </xsl:template>
+
+  <xsl:template match="//UML:Association" mode ="association-mode">
+    <tr>
+      <td>
+        <xsl:value-of select="*/UML:TaggedValue[@tag='rt']/@value"/>
+      </td>
+      <td>
+        <a href="#class-{*/UML:AssociationEnd[*/UML:TaggedValue[@tag='ea_end']/@value = 'target']/@type}">
+          <xsl:value-of select="*/UML:TaggedValue[@tag='ea_targetName']/@value"/>
+        </a>
+      </td>
+      <td>
+        <xsl:value-of select="*/UML:TaggedValue[@tag='rb']/@value"/>
+      </td>
+      <td>
+        <em>
+          <xsl:value-of select="*/UML:TaggedValue[@tag='documentation']/@value"/>
+        </em>
+      </td>
+    </tr>
+  </xsl:template>
+  
   <!-- FIELD/ATTRIBUTE -->
   <xsl:template match="*/UML:Attribute" mode="attrubute-mode">
       <tr>
         <td><xsl:value-of select="@name"/></td>
+        <td>
+          <xsl:choose>
+            <xsl:when test="starts-with(*/UML:Classifier/@xmi.idref, 'EAID')">
+              <a href="#class-{*/UML:Classifier/@xmi.idref}"><xsl:value-of select="*/UML:TaggedValue[@tag='type']/@value"/></a>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="*/UML:TaggedValue[@tag='type']/@value"/>
+            </xsl:otherwise>
+          </xsl:choose>
+        </td>
         <td><em><xsl:value-of select="*/UML:TaggedValue[@tag='description']/@value"/></em></td>
       </tr>
   </xsl:template>    
