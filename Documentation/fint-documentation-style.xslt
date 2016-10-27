@@ -76,7 +76,6 @@
               <ul class="nav nav-sidebar">
                 <li><a href=""></a></li>
               </ul>
-              
             </div>
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
               <h1 class="page-header">Elementer i informasjonsmodellen</h1>
@@ -92,7 +91,7 @@
   
   <!-- PACAGE ELEMENT -->
   <xsl:template match="//UML:Package" mode="packages-mode">
-    <!-- hack for å fjerne uønskede h2 -->
+    <!-- hack for å fjerne uonskede h2 -->
     <xsl:if test="*/UML:Stereotype">
       <h2 id="package-{@xmi.id}" class="anchor">
         <!-- <span class="glyphicon glyphicon glyphicon-folder-open" aria-hidden="true"></span>-->
@@ -134,7 +133,7 @@
     <!-- class er generalisert som -->
     <xsl:if test="//UML:Class[@xmi.id=//UML:Generalization[@supertype=$id]/@subtype]/@name != ''">
       <p>
-        Det finnes følgende generaliseringer av <xsl:value-of select="@name"/>: 
+        Det finnes folgende generaliseringer av <xsl:value-of select="@name"/>: 
         <xsl:for-each select="//UML:Class[@xmi.id=//UML:Generalization[@supertype=$id]/@subtype]">
           <a href="#class-{@xmi.id}">
             <xsl:value-of select="@name"/>
