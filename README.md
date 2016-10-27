@@ -12,7 +12,7 @@ I tillegg inneholder den utkast til informasjonsmodell for:
 
 ## Dokumentasjon
 
-[Dokumentasjon av informasjonsmodell](https://raw.githack.com/FINTprosjektet/fint-arbeidstaker-informasjonsmodell/master/Documentation/fint-documentation.xml)
+[Dokumentasjon av informasjonsmodell](https://rawcdn.githack.com/FINTprosjektet/fint-arbeidstaker-informasjonsmodell/master/Documentation/fint-documentation.xml)
 
 
 ## Arbeidsflyt
