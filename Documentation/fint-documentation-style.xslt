@@ -92,12 +92,15 @@
   
   <!-- PACAGE ELEMENT -->
   <xsl:template match="//UML:Package" mode="packages-mode">
-    <h2 id="package-{@xmi.id}" class="anchor">
-      <!-- <span class="glyphicon glyphicon glyphicon-folder-open" aria-hidden="true"></span>-->
-      <xsl:text>  </xsl:text>
-      <xsl:value-of select="@name"/>
-    </h2>
-    <i><xsl:value-of select="*/UML:TaggedValue[@tag='documentation']/@value"/></i>
+    <!-- hack for å fjerne uønskede h2 -->
+    <xsl:if test="*/UML:Stereotype">
+      <h2 id="package-{@xmi.id}" class="anchor">
+        <!-- <span class="glyphicon glyphicon glyphicon-folder-open" aria-hidden="true"></span>-->
+        <xsl:text>  </xsl:text>
+        <xsl:value-of select="@name"/>
+      </h2>
+      <i><xsl:value-of select="*/UML:TaggedValue[@tag='documentation']/@value"/></i>
+    </xsl:if>
     
     <xsl:apply-templates select="*/UML:Class" mode="class-mode" />
     
