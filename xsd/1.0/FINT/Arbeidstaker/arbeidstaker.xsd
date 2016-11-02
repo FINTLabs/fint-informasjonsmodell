@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://fk.no/fint/arbeidstaker/1.0" xmlns:ar="http://fk.no/fint/arbeidstaker/1.0" elementFormDefault="qualified" xmlns:fm="http://fk.no/fint//felles/1.0">
-  <!-- Generert av MetaTrans(1.1.0.0) - 19.10.2016 17.02.51-->
-  <xs:import namespace="http://fk.no/fint//felles/1.0" schemaLocation="fintfelles.xsd" />
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skjema.kxml.no/fint/arbeidstaker/1.0" xmlns:ar="http://skjema.kxml.no/fint/arbeidstaker/1.0" elementFormDefault="qualified" xmlns:fm="http://skjema.kxml.no/fint/felles/1.0">
+  <!-- Generert av MetaTrans(1.1.0.0) - 02.11.2016 18.28.15-->
+  <xs:import namespace="http://skjema.kxml.no/fint/felles/1.0" schemaLocation="fintfelles.xsd" />
   <xs:element name="Arbeidstaker" type="ar:ArbeidstakerType" />
   <xs:complexType name="ArbeidstakerListe">
     <xs:sequence>
@@ -35,6 +35,7 @@
       <xs:element name="stillingsnummer" minOccurs="0" maxOccurs="1" nillable="true" type="xs:integer" />
       <xs:element name="stillingsprosent" minOccurs="0" maxOccurs="1" nillable="true" type="xs:double" />
       <xs:element name="stillingstittel" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
+      <xs:element name="ansettelsestype" minOccurs="1" maxOccurs="1" type="xs:string" />
       <xs:element name="stillingsperiode" minOccurs="0" maxOccurs="1" nillable="true" type="fm:PeriodeType" />
     </xs:sequence>
   </xs:complexType>
