@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://fk.no/fint/felles/1.0" xmlns:fm="http://fk.no/fint/felles/1.0" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 02.11.2016 19.50.14-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 03.11.2016 13.56.15-->
   <xs:element name="Periode" type="fm:PeriodeType" />
   <xs:complexType name="PeriodeListe">
     <xs:sequence>
@@ -35,8 +35,8 @@
   </xs:complexType>
   <xs:complexType name="AbstraktAktoerType" abstract="true">
     <xs:sequence>
-      <xs:element name="identifikator" minOccurs="0" maxOccurs="1" nillable="true" type="fm:IdentifikatorListe" />
-      <xs:element name="kontaktinformasjon" minOccurs="0" maxOccurs="1" nillable="true" type="fm:KontaktinformasjonListe" />
+      <xs:element name="identifikatorer" minOccurs="0" maxOccurs="1" nillable="true" type="fm:IdentifikatorListe" />
+      <xs:element name="kontaktinformasjoner" minOccurs="0" maxOccurs="1" nillable="true" type="fm:KontaktinformasjonListe" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Kontaktinformasjon" type="fm:KontaktinformasjonType" />
@@ -97,7 +97,7 @@
   <xs:complexType name="IdentifikatorType">
     <xs:sequence>
       <xs:element name="identifikatorverdi" minOccurs="1" maxOccurs="1" type="xs:string" />
-      <xs:element name="identifikatortype" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
+      <xs:element name="identifikatortype" minOccurs="1" maxOccurs="1" type="xs:string" />
       <xs:element name="utstedtdato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:date" />
       <xs:element name="utstedtAvAutoritet" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
       <xs:element name="gyldighetsperiode" minOccurs="0" maxOccurs="1" nillable="true" type="fm:PeriodeType" />
@@ -119,7 +119,7 @@
           <xs:element name="statsborgerskap" minOccurs="0" maxOccurs="1" nillable="true" type="fm:LandkodeType" />
           <xs:element name="foedselsdato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime" />
           <xs:element name="sivilstand" minOccurs="0" maxOccurs="1" nillable="true" type="fm:SivilstandType" />
-          <xs:element name="adresse" minOccurs="0" maxOccurs="1" nillable="true" type="fm:AdresseListe" />
+          <xs:element name="adresser" minOccurs="0" maxOccurs="1" nillable="true" type="fm:AdresseListe" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
