@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://fk.no/fint/arbeidstaker/1.0" xmlns:ar="http://fk.no/fint/arbeidstaker/1.0" elementFormDefault="qualified" xmlns:fm="http://fk.no/fint/felles/1.0">
-  <!-- Generert av MetaTrans(1.1.0.0) - 03.11.2016 13.56.29-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 09.11.2016 15.04.08-->
   <xs:import namespace="http://fk.no/fint/felles/1.0" schemaLocation="fintfelles.xsd" />
+  <xs:element name="Arbeidstakere" type="ar:ArbeidstakerListe" />
   <xs:element name="Arbeidstaker" type="ar:ArbeidstakerType" />
   <xs:complexType name="ArbeidstakerListe">
     <xs:sequence>
