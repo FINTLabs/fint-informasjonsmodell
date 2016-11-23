@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://fk.no/fint/orgstruktur/1.0" xmlns:org="http://fk.no/fint/orgstruktur/1.0" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 02.11.2016 19.49.57-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/orgstruktur/0.1" xmlns:org="https://ns.felleskomponent.no/hr/orgstruktur/0.1" elementFormDefault="qualified">
+  <!-- Generert av MetaTrans(1.1.0.0) - 23.11.2016 15.34.13-->
   <xs:element name="Organisasjonselement" type="org:OrganisasjonselementType" />
   <xs:complexType name="OrganisasjonselementListe">
     <xs:sequence>
@@ -13,11 +13,11 @@
       <xs:element name="kortnavn" minOccurs="1" maxOccurs="1" type="xs:string" />
       <xs:element name="leder" minOccurs="1" maxOccurs="1" type="xs:string" />
       <xs:element name="status" minOccurs="1" maxOccurs="1" type="xs:string" />
-      <xs:element name="overordnetId" minOccurs="1" maxOccurs="1" type="xs:string" />
+      <xs:element name="overordnetId" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
       <xs:element name="kostnadsbaerer" minOccurs="1" maxOccurs="1" type="xs:string" />
-      <xs:element name="periode" minOccurs="0" maxOccurs="1" nillable="true" type="fm:PeriodeType" />
-      <xs:element name="identifikatorer" minOccurs="0" maxOccurs="1" nillable="true" type="fm:IdentifikatorListe" />
       <xs:element name="adresser" minOccurs="0" maxOccurs="1" nillable="true" type="fm:AdresseListe" />
+      <xs:element name="identifikatorer" minOccurs="0" maxOccurs="1" nillable="true" type="fm:IdentifikatorListe" />
+      <xs:element name="periode" minOccurs="0" maxOccurs="1" nillable="true" type="fm:PeriodeType" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

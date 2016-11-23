@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://fk.no/fint/fullmaktstruktur/1.0" xmlns:fms="http://fk.no/fint/fullmaktstruktur/1.0" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 02.11.2016 19.48.49-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/fullmaktstruktur/0.1" xmlns:fms="https://ns.felleskomponent.no/hr/fullmaktstruktur/0.1" elementFormDefault="qualified">
+  <!-- Generert av MetaTrans(1.1.0.0) - 23.11.2016 15.33.57-->
   <xs:element name="Rolle" type="fms:RolleType" />
   <xs:complexType name="RolleListe">
     <xs:sequence>
@@ -12,7 +12,6 @@
       <xs:element name="rolletype" minOccurs="1" maxOccurs="1" type="xs:string" />
       <xs:element name="saksgang" minOccurs="1" maxOccurs="1" type="xs:string" />
       <xs:element name="organisasjonselement" minOccurs="0" maxOccurs="1" nillable="true" type="org:OrganisasjonselementListe" />
-      <xs:element name="arbeidstaker" minOccurs="0" maxOccurs="1" nillable="true" type="ar:ArbeidstakerListe" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>
