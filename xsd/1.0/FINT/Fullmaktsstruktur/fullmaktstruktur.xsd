@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/fullmaktstruktur/0.1" xmlns:fms="https://ns.felleskomponent.no/hr/fullmaktstruktur/0.1" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 29.11.2016 15.03.26-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 29.11.2016 15.40.58-->
   <xs:element name="Rolle" type="fms:RolleType" />
   <xs:complexType name="RolleListe">
     <xs:sequence>
@@ -16,6 +16,7 @@
           <xs:element name="gyldigTil" minOccurs="1" maxOccurs="1" type="xs:date" />
           <xs:element name="gjelderArbeidstaker" minOccurs="1" maxOccurs="1" type="ar:ArbeidstakerType" />
           <xs:element name="gjelderEnhet" minOccurs="1" maxOccurs="1" type="org:OrganisasjonselementType" />
+          <xs:element name="rolleId" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
           <xs:element name="gjelderEnhet" minOccurs="1" maxOccurs="1" type="org:OrganisasjonselementType" />
           <xs:element name="rolletype" minOccurs="1" maxOccurs="1" type="fms:RolleTypeType" />
           <xs:element name="gjelderArbeidstaker" minOccurs="1" maxOccurs="1" type="ar:ArbeidstakerType" />
@@ -34,7 +35,7 @@
       <xs:documentation>The type pf the role (access right). It is required since every FK can redefine access rights structure.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="navn" minOccurs="1" maxOccurs="1" type="xs:string" />
+      <xs:element name="navn" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
       <xs:element name="beskrivelse" minOccurs="1" maxOccurs="1" type="xs:string" />
     </xs:sequence>
   </xs:complexType>

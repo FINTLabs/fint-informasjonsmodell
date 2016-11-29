@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/arbeidstaker/0.1" xmlns:ar="https://ns.felleskomponent.no/hr/arbeidstaker/0.1" elementFormDefault="qualified" xmlns:fm="https://ns.felleskomponent.no/felles/0.1">
-  <!-- Generert av MetaTrans(1.1.0.0) - 29.11.2016 15.03.48-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 29.11.2016 15.41.22-->
   <xs:import namespace="https://ns.felleskomponent.no/felles/0.1" schemaLocation="fintfelles.xsd" />
   <xs:element name="Arbeidstaker" type="ar:ArbeidstakerType" />
   <xs:complexType name="ArbeidstakerListe">
@@ -19,12 +19,10 @@ Inneholder ikke leverandørrepresentant (eksterne konsulenter etc).</xs:document
     <xs:complexContent>
       <xs:extension base="fm:AbstraktPersonType">
         <xs:sequence>
-          <xs:element name="signatur" minOccurs="1" maxOccurs="1" type="xs:string" />
+          <xs:element name="signatur" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
           <xs:element name="utdanningsKodeId" minOccurs="1" maxOccurs="1" type="xs:string" />
           <xs:element name="tjenesteansienitet" minOccurs="1" maxOccurs="1" type="xs:date" />
-          <xs:element name="fagforeningId" minOccurs="1" maxOccurs="1" type="xs:string" />
           <xs:element name="pensjonType" minOccurs="1" maxOccurs="1" type="xs:string" />
-          <xs:element name="bankkonto" minOccurs="1" maxOccurs="1" type="xs:string" />
           <xs:element name="yrkesKodeId" minOccurs="1" maxOccurs="1" type="xs:string" />
           <xs:element name="stillinger" minOccurs="0" maxOccurs="1" nillable="true" type="ar:StillingListe" />
           <xs:element name="ansettelsesperiode" minOccurs="0" maxOccurs="1" nillable="true" type="fm:PeriodeType" />
