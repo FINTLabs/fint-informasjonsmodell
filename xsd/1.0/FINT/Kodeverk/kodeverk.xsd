@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/kodeverk/0.1" xmlns:kv="https://ns.felleskomponent.no/hr/kodeverk/0.1" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 24.11.2016 16.09.51-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 29.11.2016 09:23:15-->
   <xs:element name="Begrep" type="kv:BegrepType" />
+  <xs:element name="Begreper" type="kv:BegrepListe" /> <!-- lagt inn manuelt --> 
   <xs:complexType name="BegrepListe">
     <xs:sequence>
       <xs:element name="begrep" type="kv:BegrepType" minOccurs="0" maxOccurs="unbounded" />
@@ -12,12 +13,12 @@
       <xs:documentation>Definisjon av et begrep.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="begrepskode" minOccurs="1" maxOccurs="1" type="xs:string" />
       <xs:element name="beskrivelse" minOccurs="1" maxOccurs="1" type="xs:string" />
       <xs:element name="begrepskode" minOccurs="0" maxOccurs="1" nillable="true" type="kv:BegrepsverdiListe" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Begrepsverdi" type="kv:BegrepsverdiType" />
+  <xs:element name="Begrepsverdier" type="kv:BegrepsverdiListe" /> <!-- lagt inn manuelt --> 
   <xs:complexType name="BegrepsverdiListe">
     <xs:sequence>
       <xs:element name="begrepsverdi" type="kv:BegrepsverdiType" minOccurs="0" maxOccurs="unbounded" />
@@ -31,7 +32,9 @@
       <xs:element name="begrepskode" minOccurs="1" maxOccurs="1" type="xs:string" />
       <xs:element name="begrepsverdi" minOccurs="1" maxOccurs="1" type="xs:string" />
       <xs:element name="begrepsbeskrivelse" minOccurs="1" maxOccurs="1" type="xs:string" />
-      <xs:element name="validDatePeriod" minOccurs="1" maxOccurs="1" type="Tidsperiode" />
+      <xs:element name="fra" minOccurs="1" maxOccurs="1" type="xs:dateTime" />
+      <xs:element name="til" minOccurs="1" maxOccurs="1" type="xs:dateTime" />
+      <xs:element name="status" minOccurs="1" maxOccurs="1" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>
