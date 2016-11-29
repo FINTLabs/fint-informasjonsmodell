@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="windows-1252"?>
-<XMI xmi.version="1.1" xmlns:UML="omg.org/UML1.3" timestamp="2016-11-29 14:14:57">
+<XMI xmi.version="1.1" xmlns:UML="omg.org/UML1.3" timestamp="2016-11-29 15:03:09">
 	<XMI.header>
 		<XMI.documentation>
 			<XMI.exporter>Enterprise Architect</XMI.exporter>
@@ -401,7 +401,7 @@
 								</UML:Dependency>
 								<UML:Package name="Fullmaktsstruktur" xmi.id="EAPK_6D51E574_657D_41c0_BD8E_FCFA1B1BF88B" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
 									<UML:ModelElement.stereotype>
-										<UML:Stereotype xmi.idref="EAID_CD04B5BB_EC6D_403a_8638_D6D279E72BF1"/>
+										<UML:Stereotype xmi.idref="EAID_10DE51D0_A937_4f71_A89D_A2658AA774C8"/>
 									</UML:ModelElement.stereotype>
 									<UML:ModelElement.taggedValue>
 										<UML:TaggedValue tag="parent" value="EAPK_CF051141_D9AF_4231_A3D9_5907E487A8DD"/>
@@ -478,10 +478,14 @@
 													<UML:StructuralFeature.type>
 														<UML:Classifier xmi.idref="eaxmiid0"/>
 													</UML:StructuralFeature.type>
+													<UML:ModelElement.stereotype>
+														<UML:Stereotype name="identifier"/>
+													</UML:ModelElement.stereotype>
 													<UML:ModelElement.taggedValue>
 														<UML:TaggedValue tag="type" value="string"/>
 														<UML:TaggedValue tag="containment" value="Not Specified"/>
 														<UML:TaggedValue tag="ordered" value="0"/>
+														<UML:TaggedValue tag="stereotype" value="identifier"/>
 														<UML:TaggedValue tag="collection" value="false"/>
 														<UML:TaggedValue tag="position" value="0"/>
 														<UML:TaggedValue tag="lowerBound" value="1"/>
@@ -491,6 +495,7 @@
 														<UML:TaggedValue tag="ea_localid" value="221"/>
 														<UML:TaggedValue tag="styleex" value="volatile=0;"/>
 														<UML:TaggedValue tag="style" value="name"/>
+														<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={3AC82AC3-0A67-42cf-B472-BC6CD7CDD7FC}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=identifier;@ENDSTEREO;$DES;$CLT={285B2048-94CD-4b99-ADC4-76A1555F2A65}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 													</UML:ModelElement.taggedValue>
 												</UML:Attribute>
 											</UML:Classifier.feature>
@@ -817,7 +822,7 @@
 								</UML:Package>
 								<UML:Package name="Kodeverk" xmi.id="EAPK_8067A0C9_1FFF_4a84_997D_89395AC6E659" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
 									<UML:ModelElement.stereotype>
-										<UML:Stereotype xmi.idref="EAID_CD04B5BB_EC6D_403a_8638_D6D279E72BF1"/>
+										<UML:Stereotype xmi.idref="EAID_10DE51D0_A937_4f71_A89D_A2658AA774C8"/>
 									</UML:ModelElement.stereotype>
 									<UML:ModelElement.taggedValue>
 										<UML:TaggedValue tag="parent" value="EAPK_CF051141_D9AF_4231_A3D9_5907E487A8DD"/>
@@ -1143,7 +1148,7 @@
 								</UML:Package>
 								<UML:Package name="Organisasjonsstruktur" xmi.id="EAPK_9FF508E7_B4A7_4bf5_B441_F7F5733F001D" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
 									<UML:ModelElement.stereotype>
-										<UML:Stereotype xmi.idref="EAID_CD04B5BB_EC6D_403a_8638_D6D279E72BF1"/>
+										<UML:Stereotype xmi.idref="EAID_10DE51D0_A937_4f71_A89D_A2658AA774C8"/>
 									</UML:ModelElement.stereotype>
 									<UML:ModelElement.taggedValue>
 										<UML:TaggedValue tag="parent" value="EAPK_CF051141_D9AF_4231_A3D9_5907E487A8DD"/>
@@ -1519,7 +1524,7 @@
 								</UML:Package>
 								<UML:Package name="Felles" xmi.id="EAPK_3D763EF0_3066_4aa9_97D7_67827101CC20" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
 									<UML:ModelElement.stereotype>
-										<UML:Stereotype xmi.idref="EAID_CD04B5BB_EC6D_403a_8638_D6D279E72BF1"/>
+										<UML:Stereotype xmi.idref="EAID_10DE51D0_A937_4f71_A89D_A2658AA774C8"/>
 									</UML:ModelElement.stereotype>
 									<UML:ModelElement.taggedValue>
 										<UML:TaggedValue tag="parent" value="EAPK_CF051141_D9AF_4231_A3D9_5907E487A8DD"/>
@@ -3709,7 +3714,7 @@
 																<UML:TaggedValue tag="ea_eleType" value="element"/>
 																<UML:TaggedValue tag="$ea_attsclassified" value="{241ADD2B-4EB9-4e04-A8C4-76B9B4B1D095}"/>
 																<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-																<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={AA3636F1-B38D-435e-8586-5102DD8B459D}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isActive@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={5753C673-8AF7-4b23-A24C-4A52CA9E5772}$CLT;$ENDXREF;$XREFPROP=$XID={9AA0A201-927C-4581-93E8-BEAC767F2C4F}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=enumeration;GUID={FE40F933-FD2F-4903-8069-FC4988A189E8};@ENDSTEREO;$DES;$CLT={5753C673-8AF7-4b23-A24C-4A52CA9E5772}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+																<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={AA3636F1-B38D-435e-8586-5102DD8B459D}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isActive@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={5753C673-8AF7-4b23-A24C-4A52CA9E5772}$CLT;$ENDXREF;$XREFPROP=$XID={031E8662-7298-4ee3-90A8-6DCB25B5FC73}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=enumeration;GUID={FE40F933-FD2F-4903-8069-FC4988A189E8};@ENDSTEREO;$DES;$CLT={5753C673-8AF7-4b23-A24C-4A52CA9E5772}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 															</UML:ModelElement.taggedValue>
 															<UML:Classifier.feature>
 																<UML:Attribute name="kvinne" changeable="none" visibility="public" ownerScope="instance" targetScope="instance">
@@ -3834,7 +3839,7 @@
 																<UML:TaggedValue tag="ea_eleType" value="element"/>
 																<UML:TaggedValue tag="$ea_attsclassified" value="{0DF3D73A-7611-4331-81FD-6478B5F0258D}"/>
 																<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-																<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={9CCE0100-C299-4b7b-B85F-28E15B3BBEAB}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isActive@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={E6F8CE4F-B257-406e-8993-0BC72F07F152}$CLT;$ENDXREF;$XREFPROP=$XID={6F1400CE-EC82-4a44-8E78-F976D1EB1E2C}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=enumeration;GUID={FE40F933-FD2F-4903-8069-FC4988A189E8};@ENDSTEREO;$DES;$CLT={E6F8CE4F-B257-406e-8993-0BC72F07F152}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+																<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={9CCE0100-C299-4b7b-B85F-28E15B3BBEAB}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isActive@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={E6F8CE4F-B257-406e-8993-0BC72F07F152}$CLT;$ENDXREF;$XREFPROP=$XID={141FF98B-FC7C-40c4-904B-542AA70BD859}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=enumeration;GUID={FE40F933-FD2F-4903-8069-FC4988A189E8};@ENDSTEREO;$DES;$CLT={E6F8CE4F-B257-406e-8993-0BC72F07F152}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 															</UML:ModelElement.taggedValue>
 															<UML:Classifier.feature>
 																<UML:Attribute name="ugift" changeable="none" visibility="public" ownerScope="instance" targetScope="instance">
@@ -4077,7 +4082,7 @@
 								</UML:Package>
 								<UML:Package name="Arbeidstaker" xmi.id="EAPK_455D668D_96AB_4dee_A0DC_12FAC7139EC2" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
 									<UML:ModelElement.stereotype>
-										<UML:Stereotype xmi.idref="EAID_CD04B5BB_EC6D_403a_8638_D6D279E72BF1"/>
+										<UML:Stereotype xmi.idref="EAID_10DE51D0_A937_4f71_A89D_A2658AA774C8"/>
 									</UML:ModelElement.stereotype>
 									<UML:ModelElement.taggedValue>
 										<UML:TaggedValue tag="parent" value="EAPK_CF051141_D9AF_4231_A3D9_5907E487A8DD"/>
@@ -4811,7 +4816,7 @@
 								</UML:Package>
 								<UML:Package name="Skole (ikke i bruk)" xmi.id="EAPK_5367407B_E0BC_44c6_BB31_B1021810FE4B" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
 									<UML:ModelElement.stereotype>
-										<UML:Stereotype xmi.idref="EAID_CD04B5BB_EC6D_403a_8638_D6D279E72BF1"/>
+										<UML:Stereotype xmi.idref="EAID_10DE51D0_A937_4f71_A89D_A2658AA774C8"/>
 									</UML:ModelElement.stereotype>
 									<UML:ModelElement.taggedValue>
 										<UML:TaggedValue tag="parent" value="EAPK_CF051141_D9AF_4231_A3D9_5907E487A8DD"/>
@@ -5504,7 +5509,7 @@
 												<UML:TaggedValue tag="ea_eleType" value="element"/>
 												<UML:TaggedValue tag="$ea_attsclassified" value="{DB8CE011-FF41-4b06-BB22-9E9CEC774BE0}"/>
 												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-												<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={F8945A9F-CE6F-48a6-9E31-64CB406BD9F5}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=enumeration;GUID={FE40F933-FD2F-4903-8069-FC4988A189E8};@ENDSTEREO;$DES;$CLT={4B404005-4321-42be-8301-1BFCE05C55C3}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+												<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={1CF28A79-FF72-45e3-8250-DE6B1593553D}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=enumeration;GUID={FE40F933-FD2F-4903-8069-FC4988A189E8};@ENDSTEREO;$DES;$CLT={4B404005-4321-42be-8301-1BFCE05C55C3}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 											</UML:ModelElement.taggedValue>
 											<UML:Classifier.feature>
 												<UML:Attribute name="aktiv" changeable="none" visibility="public" ownerScope="instance" targetScope="instance">
@@ -5821,7 +5826,7 @@
 												<UML:TaggedValue tag="ea_eleType" value="element"/>
 												<UML:TaggedValue tag="$ea_attsclassified" value="{63891472-C559-4e2c-A4AD-85B1E3EE8612}"/>
 												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-												<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={2E274BF8-5B21-4112-94F6-C58116C0A6D9}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=enumeration;GUID={FE40F933-FD2F-4903-8069-FC4988A189E8};@ENDSTEREO;$DES;$CLT={6FD24BA9-D171-4605-8CFF-E81DB779E76E}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+												<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={459E9F3A-33C4-4792-B87D-CF2A5FC36CAD}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=enumeration;GUID={FE40F933-FD2F-4903-8069-FC4988A189E8};@ENDSTEREO;$DES;$CLT={6FD24BA9-D171-4605-8CFF-E81DB779E76E}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 											</UML:ModelElement.taggedValue>
 											<UML:Classifier.feature>
 												<UML:Attribute name="heltid" changeable="none" visibility="public" ownerScope="instance" targetScope="instance">
@@ -6275,7 +6280,7 @@
 						</UML:Package>
 					</UML:Namespace.ownedElement>
 				</UML:Package>
-				<UML:Stereotype xmi.id="EAID_CD04B5BB_EC6D_403a_8638_D6D279E72BF1" name="applicationSchema" isRoot="false" isLeaf="false" isAbstract="false">
+				<UML:Stereotype xmi.id="EAID_10DE51D0_A937_4f71_A89D_A2658AA774C8" name="applicationSchema" isRoot="false" isLeaf="false" isAbstract="false">
 					<UML:Stereotype.baseClass>Package</UML:Stereotype.baseClass>
 				</UML:Stereotype>
 				<UML:DataType xmi.id="eaxmiid4" visibility="private" isRoot="false" isLeaf="false" isAbstract="false"/>
