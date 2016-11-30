@@ -1,47 +1,44 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/arbeidstaker/0.1" xmlns:ar="https://ns.felleskomponent.no/hr/arbeidstaker/0.1" elementFormDefault="qualified" xmlns:fm="https://ns.felleskomponent.no/felles/0.1">
-  <!-- Generert av MetaTrans(1.1.0.0) - 29.11.2016 15.41.22-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 30.11.2016 15.40.13-->
   <xs:import namespace="https://ns.felleskomponent.no/felles/0.1" schemaLocation="fintfelles.xsd" />
-  <xs:element name="Arbeidstaker" type="ar:ArbeidstakerType" />
-  <xs:complexType name="ArbeidstakerListe">
+  <xs:element name="Personalressurs" type="ar:PersonalressursType" />
+  <xs:complexType name="PersonalressursListe">
     <xs:sequence>
-      <xs:element name="arbeidstaker" type="ar:ArbeidstakerType" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="personalressurs" type="ar:PersonalressursType" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="ArbeidstakerType">
+  <xs:complexType name="PersonalressursType">
     <xs:annotation>
-      <xs:documentation>Alle arbeidstakere i HR-systemet. 
+      <xs:documentation>Ansatt / Personalressurs
 
-Inneholder "ordinære" ansatte i fast og vikariat, i tillegg til oppdragstakere (politikere, ressurser med timelønn, sensorer, etc).
+Alle arbeidstakere og oppdragstakere i HR-systemet. 
+
+Inneholder "ordinære" ansatte i fast og midlertidige, i tillegg til oppdragstakere (politikere, ressurser med timelønn, sensorer, etc).
 
 Inneholder ikke leverandørrepresentant (eksterne konsulenter etc).</xs:documentation>
     </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="fm:AbstraktPersonType">
-        <xs:sequence>
-          <xs:element name="signatur" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
-          <xs:element name="utdanningsKodeId" minOccurs="1" maxOccurs="1" type="xs:string" />
-          <xs:element name="tjenesteansienitet" minOccurs="1" maxOccurs="1" type="xs:date" />
-          <xs:element name="pensjonType" minOccurs="1" maxOccurs="1" type="xs:string" />
-          <xs:element name="yrkesKodeId" minOccurs="1" maxOccurs="1" type="xs:string" />
-          <xs:element name="stillinger" minOccurs="0" maxOccurs="1" nillable="true" type="ar:StillingListe" />
-          <xs:element name="ansettelsesperiode" minOccurs="0" maxOccurs="1" nillable="true" type="fm:PeriodeType" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="Stilling" type="ar:StillingType" />
-  <xs:complexType name="StillingListe">
     <xs:sequence>
-      <xs:element name="stilling" type="ar:StillingType" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="signatur" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
+      <xs:element name="tjenesteansienitetFra" minOccurs="1" maxOccurs="1" type="xs:date" />
+      <xs:element name="ansattId" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
+      <xs:element name="pensjonType" minOccurs="1" maxOccurs="1" type="xs:string" />
+      <xs:element name="personId" minOccurs="1" maxOccurs="1" type="fm:PersonType" />
+      <xs:element name="utdanningsId" minOccurs="1" maxOccurs="1" type="xs:string" />
+      <xs:element name="stillinger" minOccurs="0" maxOccurs="1" nillable="true" type="ar:ArbeidsforholdListe" />
+      <xs:element name="ansettelsesperiode" minOccurs="0" maxOccurs="1" nillable="true" type="fm:PeriodeType" />
+      <xs:element name="personId" minOccurs="1" maxOccurs="1" type="fm:PersonType" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="StillingType">
+  <xs:element name="Arbeidsforhold" type="ar:ArbeidsforholdType" />
+  <xs:complexType name="ArbeidsforholdListe">
     <xs:sequence>
-      <xs:element name="avdeling" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
-      <xs:element name="funksjon" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
+      <xs:element name="arbeidsforhold" type="ar:ArbeidsforholdType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArbeidsforholdType">
+    <xs:sequence>
       <xs:element name="grunnlonn" minOccurs="1" maxOccurs="1" type="xs:double" />
-      <xs:element name="organisasjonId" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
       <xs:element name="statusId" minOccurs="1" maxOccurs="1" type="xs:string" />
       <xs:element name="stillingskodeId" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
       <xs:element name="stillingsnummer" minOccurs="0" maxOccurs="1" nillable="true" type="xs:integer" />
@@ -51,8 +48,12 @@ Inneholder ikke leverandørrepresentant (eksterne konsulenter etc).</xs:document
       <xs:element name="hovedStilling" minOccurs="1" maxOccurs="1" type="xs:boolean" />
       <xs:element name="dekningsProsent" minOccurs="1" maxOccurs="1" type="xs:double" />
       <xs:element name="kostSenterID" minOccurs="1" maxOccurs="1" type="xs:string" />
+      <xs:element name="arbeidforholdsPeriode" minOccurs="1" maxOccurs="1" type="fm:PeriodeType" />
       <xs:element name="kostSenterFunksjonId" minOccurs="1" maxOccurs="1" type="xs:string" />
-      <xs:element name="stillingsperiode" minOccurs="0" maxOccurs="1" nillable="true" type="fm:PeriodeType" />
+      <xs:element name="arbeidsgiverId" minOccurs="1" maxOccurs="1" type="org:OrganisasjonselementType" />
+      <xs:element name="ressurstypeId" minOccurs="1" maxOccurs="1" type="xs:string" />
+      <xs:element name="personalressurs" minOccurs="0" maxOccurs="1" nillable="true" type="ar:PersonalressursType" />
+      <xs:element name="arbeidssted" minOccurs="1" maxOccurs="1" type="org:OrganisasjonselementType" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

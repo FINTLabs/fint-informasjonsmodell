@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/kodeverk/0.1" xmlns:kv="https://ns.felleskomponent.no/hr/kodeverk/0.1" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 29.11.2016 15.41.06-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 30.11.2016 15.39.57-->
   <xs:element name="Begrep" type="kv:BegrepType" />
   <xs:complexType name="BegrepListe">
     <xs:sequence>
@@ -35,5 +35,14 @@
       <xs:element name="gyldigTil" minOccurs="1" maxOccurs="1" type="xs:dateTime" />
       <xs:element name="statusId" minOccurs="1" maxOccurs="1" type="xs:string" />
     </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Kontostreng" type="kv:KontostrengType" />
+  <xs:complexType name="KontostrengListe">
+    <xs:sequence>
+      <xs:element name="kontostreng" type="kv:KontostrengType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="KontostrengType">
+    <xs:sequence />
   </xs:complexType>
 </xs:schema>
