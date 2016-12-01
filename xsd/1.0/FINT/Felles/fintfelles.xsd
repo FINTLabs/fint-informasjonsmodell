@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/felles/0.1" xmlns:fm="https://ns.felleskomponent.no/felles/0.1" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 29.11.2016 12:42:10-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 24.11.2016 16.10.14-->
   <xs:element name="Periode" type="fm:PeriodeType" />
   <xs:complexType name="PeriodeListe">
     <xs:sequence>
@@ -139,9 +139,9 @@ Merknad: Forslag til definisjon med utgangspunkt i Enhetsregisteret</xs:document
           <xs:element name="kjoennId" minOccurs="1" maxOccurs="1" type="fm:KjoennType" />
           <xs:element name="foedselsdato" minOccurs="1" maxOccurs="1" type="xs:date" />
           <xs:element name="sivilstandId" minOccurs="1" maxOccurs="1" type="fm:SivilstandType" />
-          <xs:element name="navn" minOccurs="1" maxOccurs="1" type="fm:PersonnavnType" />
           <xs:element name="adresser" minOccurs="0" maxOccurs="1" nillable="true" type="fm:AdresseListe" />
-          <xs:element name="statsborgerskapId" minOccurs="0" maxOccurs="1" nillable="true" type="fm:LandkodeType" />
+          <xs:element name="navn" minOccurs="1" maxOccurs="1" type="fm:PersonnavnType" />
+          <xs:element name="statsborgerskapId" minOccurs="0" maxOccurs="1" nillable="true" type="fm:LandkodeListe" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
