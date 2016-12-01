@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/felles/0.1" xmlns:fm="https://ns.felleskomponent.no/felles/0.1" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 29.11.2016 14.11.51-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 29.11.2016 12:42:10-->
   <xs:element name="Periode" type="fm:PeriodeType" />
   <xs:complexType name="PeriodeListe">
     <xs:sequence>
@@ -14,27 +14,6 @@
     <xs:sequence>
       <xs:element name="start" minOccurs="1" maxOccurs="1" type="xs:dateTime" />
       <xs:element name="slutt" minOccurs="1" maxOccurs="1" type="xs:dateTime" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Sporbar" type="fm:SporbarType" />
-  <xs:complexType name="SporbarListe">
-    <xs:sequence>
-      <xs:element name="sporbar" type="fm:SporbarType" minOccurs="0" maxOccurs="unbounded" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="SporbarType">
-    <xs:annotation>
-      <xs:documentation>Abstract class that is used when there is necessity for these atributes:
-* createdBy
-* createdDate
-* changedBy
-* changedDate</xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="oprettetAv" minOccurs="1" maxOccurs="1" type="ar:ArbeidstakerType" />
-      <xs:element name="oprettetDato" minOccurs="1" maxOccurs="1" type="xs:date" />
-      <xs:element name="endretAv" minOccurs="1" maxOccurs="1" type="ar:ArbeidstakerType" />
-      <xs:element name="endretDato" minOccurs="1" maxOccurs="1" type="xs:date" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Spraak" type="fm:SpraakType" />

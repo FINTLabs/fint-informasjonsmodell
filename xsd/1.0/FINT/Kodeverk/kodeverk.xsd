@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/kodeverk/0.1" xmlns:kv="https://ns.felleskomponent.no/hr/kodeverk/0.1" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 29.11.2016 14.12.37-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 29.11.2016 09:23:15-->
   <xs:element name="Begrep" type="kv:BegrepType" />
+  <xs:element name="Begreper" type="kv:BegrepListe" /> <!-- lagt inn manuelt --> 
   <xs:complexType name="BegrepListe">
     <xs:sequence>
       <xs:element name="begrep" type="kv:BegrepType" minOccurs="0" maxOccurs="unbounded" />
@@ -17,6 +18,7 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Begrepsverdi" type="kv:BegrepsverdiType" />
+  <xs:element name="Begrepsverdier" type="kv:BegrepsverdiListe" /> <!-- lagt inn manuelt --> 
   <xs:complexType name="BegrepsverdiListe">
     <xs:sequence>
       <xs:element name="begrepsverdi" type="kv:BegrepsverdiType" minOccurs="0" maxOccurs="unbounded" />
