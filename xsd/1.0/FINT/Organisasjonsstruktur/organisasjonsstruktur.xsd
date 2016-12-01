@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/orgstruktur/0.1" xmlns:org="https://ns.felleskomponent.no/hr/orgstruktur/0.1" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 29.11.2016 15.41.11-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 29.11.2016 15.03.37-->
   <xs:element name="Organisasjonselement" type="org:OrganisasjonselementType" />
   <xs:complexType name="OrganisasjonselementListe">
     <xs:sequence>
@@ -9,11 +9,11 @@
   </xs:complexType>
   <xs:complexType name="OrganisasjonselementType">
     <xs:sequence>
-      <xs:element name="navn" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
-      <xs:element name="kortnavn" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
-      <xs:element name="leder" minOccurs="1" maxOccurs="1" type="ar:ArbeidstakerType" />
+      <xs:element name="navn" minOccurs="1" maxOccurs="1" type="xs:string" />
+      <xs:element name="kortnavn" minOccurs="1" maxOccurs="1" type="xs:string" />
+      <xs:element name="leder" minOccurs="1" maxOccurs="1" type="xs:string" />
       <xs:element name="status" minOccurs="1" maxOccurs="1" type="xs:string" />
-      <xs:element name="overordnetId" minOccurs="1" maxOccurs="1" type="org:OrganisasjonselementType" />
+      <xs:element name="overordnetId" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
       <xs:element name="kostnadsbaerer" minOccurs="1" maxOccurs="1" type="xs:string" />
       <xs:element name="adresser" minOccurs="0" maxOccurs="1" nillable="true" type="fm:AdresseListe" />
       <xs:element name="identifikatorer" minOccurs="0" maxOccurs="1" nillable="true" type="fm:IdentifikatorListe" />
