@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/arbeidstaker/0.1" xmlns:ar="https://ns.felleskomponent.no/hr/arbeidstaker/0.1" elementFormDefault="qualified" xmlns:fm="https://ns.felleskomponent.no/felles/0.1">
-  <!-- Generert av MetaTrans(1.1.0.0) - 24.11.2016 16.10.19-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 24.11.2016 10.40.35-->
   <xs:import namespace="https://ns.felleskomponent.no/felles/0.1" schemaLocation="fintfelles.xsd" />
   <xs:element name="Arbeidstaker" type="ar:ArbeidstakerType" />
   <xs:complexType name="ArbeidstakerListe">
@@ -20,12 +20,12 @@ Inneholder ikke leverandørrepresentant (eksterne konsulenter etc).</xs:document
       <xs:extension base="fm:AbstraktPersonType">
         <xs:sequence>
           <xs:element name="signatur" minOccurs="1" maxOccurs="1" type="xs:String" />
-          <xs:element name="utdanningsKodeId" minOccurs="1" maxOccurs="1" type="kv:BegrepType" />
+          <xs:element name="ansettelsedato" minOccurs="1" maxOccurs="1" type="xs:date" />
+          <xs:element name="utdanningsKode" minOccurs="1" maxOccurs="1" type="kv:BegrepType" />
           <xs:element name="tjenesteansienitet" minOccurs="1" maxOccurs="1" type="xs:date" />
-          <xs:element name="fagforeningId" minOccurs="1" maxOccurs="1" type="xs:String" />
+          <xs:element name="fagforening" minOccurs="1" maxOccurs="1" type="xs:String" />
           <xs:element name="pensjonType" minOccurs="1" maxOccurs="1" type="xs:String" />
           <xs:element name="bankkonto" minOccurs="1" maxOccurs="1" type="xs:String" />
-          <xs:element name="yrkesKodeId" minOccurs="1" maxOccurs="1" type="xs:String" />
           <xs:element name="stillinger" minOccurs="0" maxOccurs="1" nillable="true" type="ar:StillingListe" />
           <xs:element name="ansettelsesperiode" minOccurs="0" maxOccurs="1" nillable="true" type="fm:PeriodeType" />
         </xs:sequence>
@@ -43,17 +43,15 @@ Inneholder ikke leverandørrepresentant (eksterne konsulenter etc).</xs:document
       <xs:element name="avdeling" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
       <xs:element name="funksjon" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
       <xs:element name="grunnlonn" minOccurs="1" maxOccurs="1" type="xs:double" />
-      <xs:element name="organisasjonId" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
-      <xs:element name="statusId" minOccurs="1" maxOccurs="1" type="xs:string" />
-      <xs:element name="stillingskodeId" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
+      <xs:element name="organisasjon" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
+      <xs:element name="status" minOccurs="1" maxOccurs="1" type="xs:string" />
+      <xs:element name="stillingskode" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
       <xs:element name="stillingsnummer" minOccurs="0" maxOccurs="1" nillable="true" type="xs:integer" />
-      <xs:element name="stillingsProsent" minOccurs="0" maxOccurs="1" nillable="true" type="xs:double" />
+      <xs:element name="stillingsprosent" minOccurs="0" maxOccurs="1" nillable="true" type="xs:double" />
       <xs:element name="stillingstittel" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
-      <xs:element name="ansettelsestypeId" minOccurs="1" maxOccurs="1" type="xs:string" />
-      <xs:element name="hovedStilling" minOccurs="1" maxOccurs="1" type="xs:Boolean" />
-      <xs:element name="dekningsProsent" minOccurs="1" maxOccurs="1" type="xs:double" />
-      <xs:element name="kostSenterID" minOccurs="1" maxOccurs="1" type="xs:string" />
-      <xs:element name="kostSenterFunksjonId" minOccurs="1" maxOccurs="1" type="xs:string" />
+      <xs:element name="ansettelsestype" minOccurs="1" maxOccurs="1" type="xs:string" />
+      <xs:element name="startDato" minOccurs="1" maxOccurs="1" type="xs:date" />
+      <xs:element name="stoppDato" minOccurs="1" maxOccurs="1" type="xs:date" />
       <xs:element name="stillingsperiode" minOccurs="0" maxOccurs="1" nillable="true" type="fm:PeriodeType" />
     </xs:sequence>
   </xs:complexType>
