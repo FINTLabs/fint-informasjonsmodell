@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/kodeverk/0.1" xmlns:kv="https://ns.felleskomponent.no/hr/kodeverk/0.1" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 30.11.2016 15.39.57-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 02.12.2016 15.51.00-->
   <xs:element name="Begrep" type="kv:BegrepType" />
   <xs:complexType name="BegrepListe">
     <xs:sequence>
@@ -31,7 +31,7 @@
       <xs:element name="kode" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
       <xs:element name="verdi" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
       <xs:element name="beskrivelse" minOccurs="1" maxOccurs="1" type="xs:string" />
-      <xs:element name="gyldigFra" minOccurs="1" maxOccurs="1" type="xs:dateTime" />
+      <xs:element name="gyldigFra" minOccurs="1" maxOccurs="1" type="fm:PeriodeType" />
       <xs:element name="gyldigTil" minOccurs="1" maxOccurs="1" type="xs:dateTime" />
       <xs:element name="statusId" minOccurs="1" maxOccurs="1" type="xs:string" />
     </xs:sequence>

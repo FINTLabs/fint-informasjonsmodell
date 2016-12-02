@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/fullmaktstruktur/0.1" xmlns:fms="https://ns.felleskomponent.no/hr/fullmaktstruktur/0.1" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 30.11.2016 15.39.53-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 02.12.2016 15.50.55-->
   <xs:element name="Rolle" type="fms:RolleType" />
   <xs:complexType name="RolleListe">
     <xs:sequence>
@@ -17,9 +17,9 @@
           <xs:element name="gjelderArbeidstaker" minOccurs="1" maxOccurs="1" type="ar:PersonalressursType" />
           <xs:element name="gjelderEnhet" minOccurs="1" maxOccurs="1" type="org:OrganisasjonselementType" />
           <xs:element name="rolleId" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
-          <xs:element name="gjelderEnhet" minOccurs="1" maxOccurs="1" type="org:OrganisasjonselementType" />
-          <xs:element name="rolletype" minOccurs="1" maxOccurs="1" type="fms:RolleTypeType" />
           <xs:element name="gjelderArbeidstaker" minOccurs="1" maxOccurs="1" type="ar:PersonalressursType" />
+          <xs:element name="rolletype" minOccurs="1" maxOccurs="1" type="fms:RolleTypeType" />
+          <xs:element name="gjelderEnhet" minOccurs="1" maxOccurs="1" type="org:OrganisasjonselementType" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

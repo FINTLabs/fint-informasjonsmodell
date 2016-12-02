@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/orgstruktur/0.1" xmlns:org="https://ns.felleskomponent.no/hr/orgstruktur/0.1" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 30.11.2016 15.40.02-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 02.12.2016 15.51.05-->
   <xs:element name="Organisasjonselement" type="org:OrganisasjonselementType" />
   <xs:complexType name="OrganisasjonselementListe">
     <xs:sequence>
@@ -9,16 +9,16 @@
   </xs:complexType>
   <xs:complexType name="OrganisasjonselementType">
     <xs:sequence>
-      <xs:element name="navn" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
+      <xs:element name="navn" minOccurs="0" maxOccurs="1" nillable="true" type="fm:IdentifikatorType" />
       <xs:element name="kortnavn" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
       <xs:element name="leder" minOccurs="0" maxOccurs="1" nillable="true" type="ar:PersonalressursType" />
       <xs:element name="status" minOccurs="1" maxOccurs="1" type="xs:string" />
       <xs:element name="overordnetId" minOccurs="0" maxOccurs="1" nillable="true" type="org:OrganisasjonselementType" />
       <xs:element name="kostnadsbaerer" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
+      <xs:element name="arbeidsforhold" minOccurs="0" maxOccurs="1" nillable="true" type="ar:ArbeidsforholdListe" />
       <xs:element name="adresser" minOccurs="0" maxOccurs="1" nillable="true" type="fm:AdresseListe" />
       <xs:element name="identifikatorer" minOccurs="0" maxOccurs="1" nillable="true" type="fm:IdentifikatorListe" />
       <xs:element name="periode" minOccurs="0" maxOccurs="1" nillable="true" type="fm:PeriodeType" />
-      <xs:element name="arbeidsforhold" minOccurs="0" maxOccurs="1" nillable="true" type="ar:ArbeidsforholdListe" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>
