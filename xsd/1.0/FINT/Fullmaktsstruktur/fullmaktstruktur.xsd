@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/fullmaktstruktur/0.1" xmlns:fms="https://ns.felleskomponent.no/hr/fullmaktstruktur/0.1" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 19.12.2016 15.19.16-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 20.12.2016 15.56.00-->
   <xs:element name="Rolle" type="fms:RolleType" />
   <xs:complexType name="RolleListe">
     <xs:sequence>
@@ -12,13 +12,12 @@
       <xs:extension base="fm:SporbarType">
         <xs:sequence>
           <xs:element name="rolletype" minOccurs="1" maxOccurs="1" type="fms:RolleTypeType" />
-          <xs:element name="gyldigFra" minOccurs="1" maxOccurs="1" type="xs:date" />
-          <xs:element name="gyldigTil" minOccurs="1" maxOccurs="1" type="xs:date" />
-          <xs:element name="gjelderArbeidstaker" minOccurs="1" maxOccurs="1" type="ar:PersonalressursType" />
-          <xs:element name="gjelderEnhet" minOccurs="1" maxOccurs="1" type="org:OrganisasjonselementType" />
+          <xs:element name="gjelderArbeidsforhold" minOccurs="1" maxOccurs="1" type="ar:ArbeidsforholdType" />
+          <xs:element name="gjelderOrgElement" minOccurs="1" maxOccurs="1" type="org:OrganisasjonselementType" />
           <xs:element name="rolleId" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
-          <xs:element name="gjelderArbeidstaker" minOccurs="1" maxOccurs="1" type="ar:PersonalressursType" />
           <xs:element name="rolletype" minOccurs="1" maxOccurs="1" type="fms:RolleTypeType" />
+          <xs:element name="gyldighetsPeriode" minOccurs="0" maxOccurs="1" nillable="true" type="fm:PeriodeType" />
+          <xs:element name="gjelderArbeidsforhold" minOccurs="1" maxOccurs="1" type="ar:ArbeidsforholdType" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

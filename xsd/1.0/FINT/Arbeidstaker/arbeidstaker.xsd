@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/arbeidstaker/0.1" xmlns:ar="https://ns.felleskomponent.no/hr/arbeidstaker/0.1" elementFormDefault="qualified" xmlns:fm="https://ns.felleskomponent.no/felles/0.1">
-  <!-- Generert av MetaTrans(1.1.0.0) - 19.12.2016 15.19.41-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 20.12.2016 15.56.24-->
   <xs:import namespace="https://ns.felleskomponent.no/felles/0.1" schemaLocation="fintfelles.xsd" />
   <xs:element name="Personalressurs" type="ar:PersonalressursType" />
   <xs:complexType name="PersonalressursListe">
@@ -24,7 +24,7 @@ Inneholder ikke leverandørrepresentant (eksterne konsulenter etc).</xs:document
       <xs:element name="personId" minOccurs="1" maxOccurs="1" type="fm:PersonType" />
       <xs:element name="arbeidsforhold" minOccurs="0" maxOccurs="1" nillable="true" type="ar:ArbeidsforholdListe" />
       <xs:element name="personId" minOccurs="1" maxOccurs="1" type="fm:PersonType" />
-      <xs:element name="ansettelsesperiode" minOccurs="1" maxOccurs="1" type="fm:PeriodeType" />
+      <xs:element name="ansettelsesPeriode" minOccurs="1" maxOccurs="1" type="fm:PeriodeType" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Arbeidsforhold" type="ar:ArbeidsforholdType" />
