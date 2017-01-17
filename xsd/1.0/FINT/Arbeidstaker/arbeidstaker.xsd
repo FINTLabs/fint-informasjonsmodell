@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/arbeidstaker/0.1" xmlns:ar="https://ns.felleskomponent.no/hr/arbeidstaker/0.1" elementFormDefault="qualified" xmlns:fm="https://ns.felleskomponent.no/felles/0.1">
-  <!-- Generert av MetaTrans(1.1.0.0) - 12.01.2017 13:38:32-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 17.01.2017 14.16.20-->
   <xs:import namespace="https://ns.felleskomponent.no/felles/0.1" schemaLocation="fintfelles.xsd" />
   <xs:element name="Personalressurs" type="ar:PersonalressursType" />
   <xs:complexType name="PersonalressursListe">
@@ -20,6 +20,7 @@ Inneholder ikke leverandørrepresentant (eksterne konsulenter etc).</xs:document
     </xs:annotation>
     <xs:sequence>
       <xs:element name="signatur" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
+      <xs:element name="personalressursType" minOccurs="1" maxOccurs="1" type="FIXME:PersonalressurstypeType" />
       <xs:element name="ansattnummer" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
       <xs:element name="personId" minOccurs="1" maxOccurs="1" type="fm:PersonType" />
       <xs:element name="arbeidsforhold" minOccurs="0" maxOccurs="1" nillable="true" type="ar:ArbeidsforholdListe" />
@@ -37,16 +38,17 @@ Inneholder ikke leverandørrepresentant (eksterne konsulenter etc).</xs:document
     <xs:sequence>
       <xs:element name="grunnlonn" minOccurs="1" maxOccurs="1" type="xs:double" />
       <xs:element name="status" minOccurs="1" maxOccurs="1" type="xs:string" />
-      <xs:element name="stillingskode" minOccurs="0" maxOccurs="1" nillable="true" type="kv:BegrepType" />
+      <xs:element name="stillingskode" minOccurs="0" maxOccurs="1" nillable="true" type="FIXME:StillingskodeType" />
       <xs:element name="stillingsnummer" minOccurs="1" maxOccurs="1" type="xs:integer" />
       <xs:element name="stillingsprosent" minOccurs="1" maxOccurs="1" type="xs:double" />
       <xs:element name="stillingstittel" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
       <xs:element name="hovedstilling" minOccurs="1" maxOccurs="1" type="xs:boolean" />
-      <xs:element name="kostSenterID" minOccurs="1" maxOccurs="1" type="xs:string" />
+      <xs:element name="ansvar" minOccurs="1" maxOccurs="1" type="FIXME:AnsvarType" />
+      <xs:element name="skattetypekode" minOccurs="1" maxOccurs="1" type="FIXME:StattetypekodeType" />
       <xs:element name="kostSenterFunksjonId" minOccurs="1" maxOccurs="1" type="xs:string" />
       <xs:element name="ukeTimeTall" minOccurs="1" maxOccurs="1" type="xs:double" />
       <xs:element name="arbeidsgiverId" minOccurs="1" maxOccurs="1" type="org:OrganisasjonselementType" />
-      <xs:element name="arbeidforholdskode" minOccurs="1" maxOccurs="1" type="kv:BegrepType" />
+      <xs:element name="arbeidforholdskode" minOccurs="1" maxOccurs="1" type="FIXME:ArbeidforholdstypeType" />
       <xs:element name="personalressurs" minOccurs="1" maxOccurs="1" type="ar:PersonalressursType" />
       <xs:element name="arbeidforholdsPeriode" minOccurs="1" maxOccurs="1" type="fm:PeriodeType" />
       <xs:element name="arbeidssted" minOccurs="1" maxOccurs="1" type="org:OrganisasjonselementType" />
