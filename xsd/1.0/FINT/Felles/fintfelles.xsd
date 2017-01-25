@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/felles/0.1" xmlns:fm="https://ns.felleskomponent.no/felles/0.1" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 18.01.2017 15.01.35-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 25.01.2017 15.52.06-->
   <xs:element name="Periode" type="fm:PeriodeType" />
   <xs:complexType name="PeriodeListe">
     <xs:sequence>
@@ -9,7 +9,19 @@
   </xs:complexType>
   <xs:complexType name="PeriodeType">
     <xs:annotation>
-      <xs:documentation>Tidsperiode (fra- og tildato).</xs:documentation>
+      <xs:documentation>Tidsperiode (fra- og tildato).
+
+# Beskrivelse
+
+Tidsperiode (fra- og tildato).
+Sluttdato må være senere eller lik startdato om den er definert.
+
+# Eksempel
+
+For et arbeidsforhold det kan være gyldighetsperiode:
+* Fra 01.01.1999T00:00:00Z til ubestemt tid
+* Fra 01.01.1999T00:00:00Z til 01.01.2005T00:00:00Z
+</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="start" minOccurs="1" maxOccurs="1" type="xs:dateTime" />
@@ -46,6 +58,20 @@
   </xs:complexType>
   <xs:element name="Landkode" type="fm:LandkodeType" />
   <xs:complexType name="LandkodeType">
+    <xs:annotation>
+      <xs:documentation>Landskode i ISO 3166-1 alpha-2 format.
+
+# Beskrivelse
+
+Landskode i ISO 3166-1 alpha-2 format.
+
+# Referanser
+
+* "ISO standards page":http://www.iso.org/iso/country_codes.htm
+* Søk i kodeliste: "https://www.iso.org/obp/ui/#search":https://www.iso.org/obp/ui/#search
+* "XML data":http://www.iso.org/iso/home/standards/country_codes/country_names_and_code_elements_xml-temp.htm
+* "Wiki side":https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -62,7 +88,7 @@
       <xs:documentation>Person eller enhet vi samhandler med.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="identifikatorer" minOccurs="0" maxOccurs="1" nillable="true" type="fm:IdentifikatorListe" />
+      <xs:element name="hovedKontaktinformasjon" minOccurs="1" maxOccurs="1" type="fm:KontaktinformasjonType" />
       <xs:element name="kontaktinformasjoner" minOccurs="0" maxOccurs="1" nillable="true" type="fm:KontaktinformasjonListe" />
     </xs:sequence>
   </xs:complexType>
@@ -74,14 +100,22 @@
   </xs:complexType>
   <xs:complexType name="KontaktinformasjonType">
     <xs:annotation>
-      <xs:documentation>Informasjon som kan brukes for kontakt med en aktør</xs:documentation>
+      <xs:documentation>Informasjon som kan brukes for oppnå kontakt.
+
+# Beskrivelse
+
+Generell kontaktinformasjon, inneholder opplysninger om telefon, e-post, osv.
+
+En ikke-fysisk adresse, i motsetning til [Adrese](Class:Adresse) .
+
+
+</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="epostadresse" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
       <xs:element name="telefonnummer" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
       <xs:element name="mobiltelefonummer" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
-      <xs:element name="websted" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
-      <xs:element name="kontakttype" minOccurs="1" maxOccurs="1" type="xs:string" />
+      <xs:element name="nettsted" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Adresse" type="fm:AdresseType" />
@@ -92,11 +126,24 @@
   </xs:complexType>
   <xs:complexType name="AdresseType">
     <xs:annotation>
-      <xs:documentation>Adresse til en aktør</xs:documentation>
+      <xs:documentation>En fysisk adresse. Dette betyr det er adresse som kan motta fysiske pakker eller hvor det er mulig å besøke.
+
+# Beskrivelse
+
+En fysisk adresse. Dette betyr det er adresse som kan motta fysiske pakker eller hvor det er mulig å besøke.
+
+# Eksempel
+
+|               adresse               |    poststed    | postnummer | land |
+|-------------------------------------|----------------|------------|------|
+| Nydalen allé 11                     | Oslo           |       0484 | NO   |
+| ?????????????? ????? ??? 4 ?????? 1 | ??????         |     115304 | RU   |
+| Fakturamottak \n Postboks 501 Lund  | Kristiansand   |       4605 | -    |
+| Postboks 517 Lundsiden              | KRISTIANSAND S |       4605 | -    |
+</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="adressetype" minOccurs="1" maxOccurs="1" type="xs:string" />
-      <xs:element name="adresse" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
+      <xs:element name="adresse" minOccurs="1" maxOccurs="1" type="xs:string" />
       <xs:element name="postnummer" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
       <xs:element name="poststed" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
       <xs:element name="land" minOccurs="0" maxOccurs="1" nillable="true" type="fm:LandkodeType" />
@@ -134,14 +181,52 @@ Merknad: Forslag til definisjon med utgangspunkt i Enhetsregisteret</xs:document
   </xs:complexType>
   <xs:complexType name="IdentifikatorType">
     <xs:annotation>
-      <xs:documentation>En kombinasjon av tegn eller og/eller bokstaver som identifiserer en aktør eller objekt innenfor et sett av aktører eller objekter</xs:documentation>
+      <xs:documentation>En kombinasjon av tegn eller og/eller bokstaver som unikt identifiserer et objekt.
+
+# Beskrivelse
+
+En kombinasjon av tegn eller og/eller bokstaver som unikt identifiserer et objekt blant andre objekter av samme type uten arv.
+
+# Eksempel
+
+For en person det kan være fødselnummer
+
+For er personresurs det kan være ansattnummer eller signatur
+
+For er elev det kan være elevnummer.
+
+For organisasjonselement det kan være organisasjonsnummer fra Enhetsregistret.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="identifikatorverdi" minOccurs="1" maxOccurs="1" type="xs:string" />
-      <xs:element name="identifikatortype" minOccurs="1" maxOccurs="1" type="xs:string" />
-      <xs:element name="utstedtdato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:date" />
-      <xs:element name="utstedtAvAutoritet" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
       <xs:element name="gyldighetsperiode" minOccurs="0" maxOccurs="1" nillable="true" type="fm:PeriodeType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Kjoenn" type="fm:KjoennType" />
+  <xs:complexType name="KjoennType">
+    <xs:annotation>
+      <xs:documentation>Liste over verdier for kjønn basert på ISO/IEC 5218.
+
+# Beskrivelse
+
+Liste over verdier for kjønn basert på ISO/IEC 5218.
+
+# Referanser
+
+* "ISO/IEC 5218 standard":http://standards.iso.org/ittf/PubliclyAvailableStandards/c036266_ISO_IEC_5218_2004(E_F).zip
+* "Wiki artikkel":https://en.wikipedia.org/wiki/ISO/IEC_5218
+
+# Eksempler
+
+    0 = uvisst (not known)
+    1 = mann (male)
+    2 = kvinne (female)
+    9 = gjelder ikke (not applicable)
+</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Person" type="fm:PersonType" />
@@ -152,19 +237,37 @@ Merknad: Forslag til definisjon med utgangspunkt i Enhetsregisteret</xs:document
   </xs:complexType>
   <xs:complexType name="PersonType">
     <xs:annotation>
-      <xs:documentation>Fysiske personer</xs:documentation>
+      <xs:documentation>Fysiske private personer
+
+# Beskrivelse
+
+Fysiske personer
+
+# Referanse
+
+* [Wiki side](https://no.wikipedia.org/wiki/Fysisk_person)
+
+# Eksempler
+
+## Riktig
+
+* Karl August Haraldsen
+
+## Feil
+
+* Statsminister</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="fm:AbstraktAktoerType">
         <xs:sequence>
-          <xs:element name="kjonnId" minOccurs="0" maxOccurs="1" nillable="true" type="fm:KjoennType" />
+          <xs:element name="kjoenn" minOccurs="0" maxOccurs="1" nillable="true" type="fm:KjoennType" />
           <xs:element name="navn" minOccurs="1" maxOccurs="1" type="fm:PersonnavnType" />
-          <xs:element name="fodselsdato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:date" />
-          <xs:element name="statsborgerskap" minOccurs="0" maxOccurs="1" nillable="true" type="fm:LandkodeType" />
-          <xs:element name="fodselsnummer" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
-          <xs:element name="sivilstand" minOccurs="0" maxOccurs="1" nillable="true" type="fm:SivilstandType" />
-          <xs:element name="personalressurs" minOccurs="1" maxOccurs="1" type="ar:PersonalressursType" />
-          <xs:element name="adresser" minOccurs="0" maxOccurs="1" nillable="true" type="fm:AdresseListe" />
+          <xs:element name="foedselsdato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:date" />
+          <xs:element name="statsborgerskap" minOccurs="0" maxOccurs="1" nillable="true" type="fm:LandkodeListe" />
+          <xs:element name="foedselsnummer" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
+          <xs:element name="postadresse" minOccurs="0" maxOccurs="1" nillable="true" type="fm:AdresseType" />
+          <xs:element name="bostedsadresse" minOccurs="0" maxOccurs="1" nillable="true" type="fm:AdresseType" />
+          <xs:element name="personalressurs" minOccurs="0" maxOccurs="1" nillable="true" type="ar:PersonalressursType" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -176,42 +279,35 @@ Merknad: Forslag til definisjon med utgangspunkt i Enhetsregisteret</xs:document
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="PersonnavnType">
+    <xs:annotation>
+      <xs:documentation>Angir navn til en person
+
+# Beskrivelse
+
+Inneholder fornavn og etternavn for å beskrive navn til en person.
+
+Fornavn, mellomnavn og etternavn skal leveres fra fagsystemene som de er, uten noe endringer.
+
+# Referanse
+
+* "Navneloven":https://lovdata.no/dokument/NL/lov/2002-06-07-19/
+* "Håndbok i folkeregistrering":http://www.skatteetaten.no/no/Radgiver/Rettskilder/Handboker/Handbok-i-folkeregistrering/
+* "Skal du ha to etternavn?":http://www.skatteetaten.no/no/Person/Folkeregister/Endre-navn/Skal-du-ha-to-etternavn/
+
+# Eksempler
+
+|            Navn           |       Fornavn       | Mellomnavn | Etternavn   |
+|---------------------------|---------------------|------------|--------------|
+| Ole Olsen                 | Ole                 | -          | Olsen        |
+| Lise Sofie Fuglevik Olsen | Lise Sofie          | Fuglevik   | Olsen        |
+| Lise Sofie Fuglevik Olsen | Lise Sofie Fuglevik | -          | Olsen        |
+| Anne Kari Nilsen-Olsen    | Anne Kari           | -          | Nilsen-Olsen |
+</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
       <xs:element name="fornavn" minOccurs="1" maxOccurs="1" type="xs:string" />
       <xs:element name="etternavn" minOccurs="1" maxOccurs="1" type="xs:string" />
-      <xs:element name="mellomnavn" minOccurs="1" maxOccurs="1" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:simpleType name="KjoennType">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="kvinne" />
-      <xs:enumeration value="mann" />
-      <xs:enumeration value="ubestemt" />
-      <xs:enumeration value="ukjent" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="KjoennListe">
-    <xs:sequence>
-      <xs:element name="kjoenn" type="fm:KjoennType" minOccurs="0" maxOccurs="unbounded" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:simpleType name="SivilstandType">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="ugift" />
-      <xs:enumeration value="gift" />
-      <xs:enumeration value="enkeEllerEnkemann" />
-      <xs:enumeration value="skilt" />
-      <xs:enumeration value="separert" />
-      <xs:enumeration value="registrertPartner" />
-      <xs:enumeration value="separertPartner" />
-      <xs:enumeration value="skiltPartner" />
-      <xs:enumeration value="gjenlevendePartner" />
-      <xs:enumeration value="uoppgitt" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="SivilstandListe">
-    <xs:sequence>
-      <xs:element name="sivilstand" type="fm:SivilstandType" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="mellomnavn" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

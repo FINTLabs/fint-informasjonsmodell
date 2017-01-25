@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skjema.kxml.no/FIXME" xmlns:FIXME="http://skjema.kxml.no/FIXME" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 18.01.2017 15.01.53-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 25.01.2017 15.52.25-->
   <xs:element name="Anlegg" type="FIXME:AnleggType" />
   <xs:complexType name="AnleggListe">
     <xs:sequence>
@@ -75,8 +75,8 @@
       <xs:extension base="FIXME:AbstraktBegrepType">
         <xs:sequence>
           <xs:element name="forelder" minOccurs="0" maxOccurs="1" nillable="true" type="FIXME:ArtType" />
-          <xs:element name="prosjekt" minOccurs="0" maxOccurs="1" nillable="true" type="FIXME:ProsjektListe" />
           <xs:element name="kontostreng" minOccurs="0" maxOccurs="1" nillable="true" type="FIXME:KontostrengListe" />
+          <xs:element name="prosjekt" minOccurs="0" maxOccurs="1" nillable="true" type="FIXME:ProsjektListe" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -138,10 +138,10 @@
       <xs:element name="anlegg" minOccurs="0" maxOccurs="1" nillable="true" type="FIXME:AnleggType" />
       <xs:element name="tjeneste" minOccurs="1" maxOccurs="1" type="FIXME:TjenesteType" />
       <xs:element name="prosjekt" minOccurs="1" maxOccurs="1" type="FIXME:ProsjektType" />
-      <xs:element name="ansvar" minOccurs="1" maxOccurs="1" type="FIXME:AnsvarType" />
       <xs:element name="tjeneste" minOccurs="1" maxOccurs="1" type="FIXME:TjenesteType" />
-      <xs:element name="anlegg" minOccurs="1" maxOccurs="1" type="FIXME:AnleggType" />
       <xs:element name="art" minOccurs="1" maxOccurs="1" type="FIXME:ArtType" />
+      <xs:element name="ansvar" minOccurs="1" maxOccurs="1" type="FIXME:AnsvarType" />
+      <xs:element name="anlegg" minOccurs="1" maxOccurs="1" type="FIXME:AnleggType" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Personalressurstype" type="FIXME:PersonalressurstypeType" />
@@ -176,8 +176,8 @@
       <xs:extension base="FIXME:AbstraktBegrepType">
         <xs:sequence>
           <xs:element name="forelder" minOccurs="0" maxOccurs="1" nillable="true" type="FIXME:ProsjektType" />
-          <xs:element name="art" minOccurs="1" maxOccurs="1" type="FIXME:ArtType" />
           <xs:element name="konostreng" minOccurs="0" maxOccurs="1" nillable="true" type="FIXME:KontostrengListe" />
+          <xs:element name="art" minOccurs="1" maxOccurs="1" type="FIXME:ArtType" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
