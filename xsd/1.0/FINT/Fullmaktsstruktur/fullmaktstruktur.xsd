@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/fullmaktstruktur/0.1" xmlns:fms="https://ns.felleskomponent.no/hr/fullmaktstruktur/0.1" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 25.01.2017 15.51.38-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 26.01.2017 08.41.27-->
   <xs:element name="Rolle" type="fms:RolleType" />
   <xs:complexType name="RolleListe">
     <xs:sequence>
@@ -8,10 +8,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="RolleType">
-    <xs:annotation>
-      <xs:documentation>Rolle i fellesmodellen forstås som rettigheter for en gitte arbeidsforhold til organisasjonselementer.
-Nivå av tilgang defineres med RolleType.</xs:documentation>
-    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="fm:SporbarType">
         <xs:sequence>
@@ -33,11 +29,6 @@ Nivå av tilgang defineres med RolleType.</xs:documentation>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="RolleTypeType">
-    <xs:annotation>
-      <xs:documentation>The type pf the role (access right). It is required since every FK can redefine access rights structure.
-
-Er dette en kodeverk?</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="navn" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
       <xs:element name="beskrivelse" minOccurs="1" maxOccurs="1" type="xs:string" />

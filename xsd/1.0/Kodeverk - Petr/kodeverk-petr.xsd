@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/kodeverk/0.1" xmlns:kp="https://ns.felleskomponent.no/kodeverk/0.1" elementFormDefault="qualified">
+  <!-- Generert av MetaTrans(1.1.0.0) - 26.01.2017 08.57.00-->
+  <xs:element name="Anlegg" type="kp:AnleggType" />
+  <xs:complexType name="AnleggListe">
+    <xs:sequence>
+      <xs:element name="anlegg" type="kp:AnleggType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AnleggType">
+    <xs:complexContent>
+      <xs:extension base="kp:AbstraktBegrepType">
+        <xs:sequence>
+          <xs:element name="forelder" minOccurs="0" maxOccurs="1" nillable="true" type="kp:AnleggType" />
+          <xs:element name="kontostreng" minOccurs="0" maxOccurs="1" nillable="true" type="kp:KontostrengListe" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Ansvar" type="kp:AnsvarType" />
+  <xs:complexType name="AnsvarListe">
+    <xs:sequence>
+      <xs:element name="ansvar" type="kp:AnsvarType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AnsvarType">
+    <xs:complexContent>
+      <xs:extension base="kp:AbstraktBegrepType">
+        <xs:sequence>
+          <xs:element name="forelder" minOccurs="0" maxOccurs="1" nillable="true" type="kp:AnsvarType" />
+          <xs:element name="kontostreng" minOccurs="0" maxOccurs="1" nillable="true" type="kp:KontostrengListe" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Arbeidforholdstype" type="kp:ArbeidforholdstypeType" />
+  <xs:complexType name="ArbeidforholdstypeListe">
+    <xs:sequence>
+      <xs:element name="arbeidforholdstype" type="kp:ArbeidforholdstypeType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArbeidforholdstypeType">
+    <xs:complexContent>
+      <xs:extension base="kp:AbstraktBegrepType">
+        <xs:sequence>
+          <xs:element name="forelder" minOccurs="0" maxOccurs="1" nillable="true" type="kp:ArbeidforholdstypeType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Art" type="kp:ArtType" />
+  <xs:complexType name="ArtListe">
+    <xs:sequence>
+      <xs:element name="art" type="kp:ArtType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArtType">
+    <xs:complexContent>
+      <xs:extension base="kp:AbstraktBegrepType">
+        <xs:sequence>
+          <xs:element name="forelder" minOccurs="0" maxOccurs="1" nillable="true" type="kp:ArtType" />
+          <xs:element name="kontostreng" minOccurs="0" maxOccurs="1" nillable="true" type="kp:KontostrengListe" />
+          <xs:element name="prosjekt" minOccurs="0" maxOccurs="1" nillable="true" type="kp:ProsjektListe" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AbstraktBegrep" type="kp:AbstraktBegrepType" />
+  <xs:complexType name="AbstraktBegrepListe">
+    <xs:sequence>
+      <xs:element name="abstraktbegrep" type="kp:AbstraktBegrepType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AbstraktBegrepType" abstract="true">
+    <xs:sequence>
+      <xs:element name="navn" minOccurs="1" maxOccurs="1" type="xs:string" />
+      <xs:element name="beskrivelse" minOccurs="1" maxOccurs="1" type="xs:string" />
+      <xs:element name="kode" minOccurs="1" maxOccurs="1" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Feriekode" type="kp:FeriekodeType" />
+  <xs:complexType name="FeriekodeListe">
+    <xs:sequence>
+      <xs:element name="feriekode" type="kp:FeriekodeType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FeriekodeType">
+    <xs:complexContent>
+      <xs:extension base="kp:AbstraktBegrepType">
+        <xs:sequence>
+          <xs:element name="foreldrer" minOccurs="0" maxOccurs="1" nillable="true" type="kp:FeriekodeType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Fravaerskode" type="kp:FravaerskodeType" />
+  <xs:complexType name="FravaerskodeListe">
+    <xs:sequence>
+      <xs:element name="fravaerskode" type="kp:FravaerskodeType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FravaerskodeType">
+    <xs:complexContent>
+      <xs:extension base="kp:AbstraktBegrepType">
+        <xs:sequence>
+          <xs:element name="forelder" minOccurs="0" maxOccurs="1" nillable="true" type="kp:FravaerskodeType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Kontostreng" type="kp:KontostrengType" />
+  <xs:complexType name="KontostrengListe">
+    <xs:sequence>
+      <xs:element name="kontostreng" type="kp:KontostrengType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="KontostrengType">
+    <xs:sequence>
+      <xs:element name="art" minOccurs="1" maxOccurs="1" type="kp:ArtType" />
+      <xs:element name="prosjekt" minOccurs="1" maxOccurs="1" type="kp:ProsjektType" />
+      <xs:element name="ansvar" minOccurs="1" maxOccurs="1" type="kp:AnsvarType" />
+      <xs:element name="anlegg" minOccurs="0" maxOccurs="1" nillable="true" type="kp:AnleggType" />
+      <xs:element name="tjeneste" minOccurs="1" maxOccurs="1" type="kp:TjenesteType" />
+      <xs:element name="prosjekt" minOccurs="1" maxOccurs="1" type="kp:ProsjektType" />
+      <xs:element name="tjeneste" minOccurs="1" maxOccurs="1" type="kp:TjenesteType" />
+      <xs:element name="art" minOccurs="1" maxOccurs="1" type="kp:ArtType" />
+      <xs:element name="ansvar" minOccurs="1" maxOccurs="1" type="kp:AnsvarType" />
+      <xs:element name="anlegg" minOccurs="1" maxOccurs="1" type="kp:AnleggType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Personalressurstype" type="kp:PersonalressurstypeType" />
+  <xs:complexType name="PersonalressurstypeListe">
+    <xs:sequence>
+      <xs:element name="personalressurstype" type="kp:PersonalressurstypeType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PersonalressurstypeType">
+    <xs:complexContent>
+      <xs:extension base="kp:AbstraktBegrepType">
+        <xs:sequence>
+          <xs:element name="forelder" minOccurs="0" maxOccurs="1" nillable="true" type="kp:PersonalressurstypeType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Prosjekt" type="kp:ProsjektType" />
+  <xs:complexType name="ProsjektListe">
+    <xs:sequence>
+      <xs:element name="prosjekt" type="kp:ProsjektType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProsjektType">
+    <xs:complexContent>
+      <xs:extension base="kp:AbstraktBegrepType">
+        <xs:sequence>
+          <xs:element name="forelder" minOccurs="0" maxOccurs="1" nillable="true" type="kp:ProsjektType" />
+          <xs:element name="konostreng" minOccurs="0" maxOccurs="1" nillable="true" type="kp:KontostrengListe" />
+          <xs:element name="art" minOccurs="1" maxOccurs="1" type="kp:ArtType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Stattetypekode" type="kp:StattetypekodeType" />
+  <xs:complexType name="StattetypekodeListe">
+    <xs:sequence>
+      <xs:element name="stattetypekode" type="kp:StattetypekodeType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StattetypekodeType">
+    <xs:complexContent>
+      <xs:extension base="kp:AbstraktBegrepType">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Stillingskode" type="kp:StillingskodeType" />
+  <xs:complexType name="StillingskodeListe">
+    <xs:sequence>
+      <xs:element name="stillingskode" type="kp:StillingskodeType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StillingskodeType">
+    <xs:complexContent>
+      <xs:extension base="kp:AbstraktBegrepType">
+        <xs:sequence>
+          <xs:element name="forelder" minOccurs="0" maxOccurs="1" nillable="true" type="kp:StillingskodeType" />
+          <xs:element name="erKSkode" minOccurs="1" maxOccurs="1" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Tjeneste" type="kp:TjenesteType" />
+  <xs:complexType name="TjenesteListe">
+    <xs:sequence>
+      <xs:element name="tjeneste" type="kp:TjenesteType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TjenesteType">
+    <xs:complexContent>
+      <xs:extension base="kp:AbstraktBegrepType">
+        <xs:sequence>
+          <xs:element name="forelder" minOccurs="0" maxOccurs="1" nillable="true" type="kp:TjenesteType" />
+          <xs:element name="kontostreng" minOccurs="0" maxOccurs="1" nillable="true" type="kp:KontostrengListe" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TT-kode" type="kp:TT-kodeType" />
+  <xs:complexType name="TT-kodeListe">
+    <xs:sequence>
+      <xs:element name="tt-kode" type="kp:TT-kodeType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TT-kodeType">
+    <xs:complexContent>
+      <xs:extension base="kp:AbstraktBegrepType">
+        <xs:sequence>
+          <xs:element name="forelder" minOccurs="0," maxOccurs="1" type="kp:TT-kodeType" />
+          <xs:element name="antall" minOccurs="1" maxOccurs="1" type="xs:boolean" />
+          <xs:element name="klokkeSlett" minOccurs="1" maxOccurs="1" type="xs:boolean" />
+          <xs:element name="beloep" minOccurs="1" maxOccurs="1" type="xs:boolean" />
+          <xs:element name="landkode" minOccurs="1" maxOccurs="1" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

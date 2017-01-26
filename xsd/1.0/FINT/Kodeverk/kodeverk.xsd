@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/kodeverk/0.1" xmlns:kv="https://ns.felleskomponent.no/hr/kodeverk/0.1" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 25.01.2017 15.51.48-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 26.01.2017 08.41.44-->
   <xs:element name="Ansvar" type="kv:AnsvarType" />
   <xs:complexType name="AnsvarListe">
     <xs:sequence>
@@ -34,9 +34,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="BegrepType">
-    <xs:annotation>
-      <xs:documentation>Definisjon av et begrep.</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="beskrivelse" minOccurs="1" maxOccurs="1" type="xs:string" />
       <xs:element name="navn" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
@@ -50,9 +47,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="BegrepsverdiType">
-    <xs:annotation>
-      <xs:documentation>Definisjon av en enkelt begrepsverdi innenfor et begrep.</xs:documentation>
-    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
       <xs:element name="verdi" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
@@ -119,6 +113,15 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="KontostrengType">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="Kontostreng" type="kv:KontostrengType" />
+  <xs:complexType name="KontostrengListe">
+    <xs:sequence>
+      <xs:element name="kontostreng" type="kv:KontostrengType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="KontostrengType">
     <xs:sequence>
       <xs:element name="Dim1" minOccurs="1" maxOccurs="1" type="kv:KodeverkType" />
       <xs:element name="Dim2" minOccurs="1" maxOccurs="1" type="kv:KodeverkType" />
@@ -129,15 +132,6 @@
       <xs:element name="Dim7" minOccurs="1" maxOccurs="1" type="kv:KodeverkType" />
       <xs:element name="Dim8" minOccurs="1" maxOccurs="1" type="kv:KodeverkType" />
     </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Kontostreng" type="kv:KontostrengType" />
-  <xs:complexType name="KontostrengListe">
-    <xs:sequence>
-      <xs:element name="kontostreng" type="kv:KontostrengType" minOccurs="0" maxOccurs="unbounded" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="KontostrengType">
-    <xs:sequence />
   </xs:complexType>
   <xs:element name="Kontostreng 2" type="kv:Kontostreng 2Type" />
   <xs:complexType name="Kontostreng 2Liste">
