@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/kodeverk/0.1" xmlns:kp="https://ns.felleskomponent.no/kodeverk/0.1" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 26.01.2017 08.57.00-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 27.01.2017 09.21.30-->
   <xs:element name="Anlegg" type="kp:AnleggType" />
   <xs:complexType name="AnleggListe">
     <xs:sequence>
@@ -60,7 +60,6 @@
         <xs:sequence>
           <xs:element name="forelder" minOccurs="0" maxOccurs="1" nillable="true" type="kp:ArtType" />
           <xs:element name="kontostreng" minOccurs="0" maxOccurs="1" nillable="true" type="kp:KontostrengListe" />
-          <xs:element name="prosjekt" minOccurs="0" maxOccurs="1" nillable="true" type="kp:ProsjektListe" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -117,7 +116,7 @@
   <xs:complexType name="KontostrengType">
     <xs:sequence>
       <xs:element name="art" minOccurs="1" maxOccurs="1" type="kp:ArtType" />
-      <xs:element name="prosjekt" minOccurs="1" maxOccurs="1" type="kp:ProsjektType" />
+      <xs:element name="prosjekt" minOccurs="0" maxOccurs="1" nillable="true" type="kp:ProsjektType" />
       <xs:element name="ansvar" minOccurs="1" maxOccurs="1" type="kp:AnsvarType" />
       <xs:element name="anlegg" minOccurs="0" maxOccurs="1" nillable="true" type="kp:AnleggType" />
       <xs:element name="tjeneste" minOccurs="1" maxOccurs="1" type="kp:TjenesteType" />
@@ -127,6 +126,25 @@
       <xs:element name="ansvar" minOccurs="1" maxOccurs="1" type="kp:AnsvarType" />
       <xs:element name="anlegg" minOccurs="1" maxOccurs="1" type="kp:AnleggType" />
     </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Loennsart" type="kp:LoennsartType" />
+  <xs:complexType name="LoennsartListe">
+    <xs:sequence>
+      <xs:element name="loennsart" type="kp:LoennsartType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LoennsartType">
+    <xs:complexContent>
+      <xs:extension base="kp:AbstraktBegrepType">
+        <xs:sequence>
+          <xs:element name="forelder" minOccurs="0," maxOccurs="1" type="kp:LoennsartType" />
+          <xs:element name="antall" minOccurs="1" maxOccurs="1" type="xs:boolean" />
+          <xs:element name="klokkeSlett" minOccurs="1" maxOccurs="1" type="xs:boolean" />
+          <xs:element name="beloep" minOccurs="1" maxOccurs="1" type="xs:boolean" />
+          <xs:element name="landkode" minOccurs="1" maxOccurs="1" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
   <xs:element name="Personalressurstype" type="kp:PersonalressurstypeType" />
   <xs:complexType name="PersonalressurstypeListe">
@@ -155,7 +173,6 @@
         <xs:sequence>
           <xs:element name="forelder" minOccurs="0" maxOccurs="1" nillable="true" type="kp:ProsjektType" />
           <xs:element name="konostreng" minOccurs="0" maxOccurs="1" nillable="true" type="kp:KontostrengListe" />
-          <xs:element name="art" minOccurs="1" maxOccurs="1" type="kp:ArtType" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -201,25 +218,6 @@
         <xs:sequence>
           <xs:element name="forelder" minOccurs="0" maxOccurs="1" nillable="true" type="kp:TjenesteType" />
           <xs:element name="kontostreng" minOccurs="0" maxOccurs="1" nillable="true" type="kp:KontostrengListe" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="TT-kode" type="kp:TT-kodeType" />
-  <xs:complexType name="TT-kodeListe">
-    <xs:sequence>
-      <xs:element name="tt-kode" type="kp:TT-kodeType" minOccurs="0" maxOccurs="unbounded" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="TT-kodeType">
-    <xs:complexContent>
-      <xs:extension base="kp:AbstraktBegrepType">
-        <xs:sequence>
-          <xs:element name="forelder" minOccurs="0," maxOccurs="1" type="kp:TT-kodeType" />
-          <xs:element name="antall" minOccurs="1" maxOccurs="1" type="xs:boolean" />
-          <xs:element name="klokkeSlett" minOccurs="1" maxOccurs="1" type="xs:boolean" />
-          <xs:element name="beloep" minOccurs="1" maxOccurs="1" type="xs:boolean" />
-          <xs:element name="landkode" minOccurs="1" maxOccurs="1" type="xs:boolean" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

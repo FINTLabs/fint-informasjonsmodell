@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/orgstruktur/0.1" xmlns:org="https://ns.felleskomponent.no/hr/orgstruktur/0.1" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 26.01.2017 08.41.54-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/orgstruktur/0.1" xmlns:org="https://ns.felleskomponent.no/hr/orgstruktur/0.1" elementFormDefault="qualified" xmlns:kp="https://ns.felleskomponent.no/kodeverk/0.1" xmlns:ar="https://ns.felleskomponent.no/hr/arbeidstaker/0.1" xmlns:fm="https://ns.felleskomponent.no/felles/0.1">
+  <!-- Generert av MetaTrans(1.1.0.0) - 27.01.2017 09.20.54-->
+  <xs:import namespace="https://ns.felleskomponent.no/kodeverk/0.1" schemaLocation="kodeverk-petr.xsd" />
+  <xs:import namespace="https://ns.felleskomponent.no/hr/arbeidstaker/0.1" schemaLocation="arbeidstaker.xsd" />
+  <xs:import namespace="https://ns.felleskomponent.no/felles/0.1" schemaLocation="fintfelles.xsd" />
   <xs:element name="Organisasjonselement" type="org:OrganisasjonselementType" />
   <xs:complexType name="OrganisasjonselementListe">
     <xs:sequence>
@@ -11,16 +14,15 @@
     <xs:complexContent>
       <xs:extension base="fm:AbstraktEnhetType">
         <xs:sequence>
-          <xs:element name="navn" minOccurs="0" maxOccurs="1" nillable="true" type="fm:IdentifikatorType" />
-          <xs:element name="kortnavn" minOccurs="0" maxOccurs="1" nillable="true" type="fm:IdentifikatorType" />
-          <xs:element name="leder" minOccurs="0" maxOccurs="1" nillable="true" type="ar:ArbeidsforholdType" />
-          <xs:element name="status" minOccurs="1" maxOccurs="1" type="xs:string" />
-          <xs:element name="overordnetId" minOccurs="0" maxOccurs="1" nillable="true" type="org:OrganisasjonselementType" />
-          <xs:element name="kostnadsbaerer" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
+          <xs:element name="navn" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
+          <xs:element name="kortnavn" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
+          <xs:element name="leder" minOccurs="1" maxOccurs="1" type="ar:PersonalressursType" />
+          <xs:element name="erAktiv" minOccurs="1" maxOccurs="1" type="xs:boolean" />
+          <xs:element name="overordnet" minOccurs="1" maxOccurs="1" type="org:OrganisasjonselementType" />
+          <xs:element name="foreslaattAnsvar" minOccurs="0" maxOccurs="1" nillable="true" type="kp:AnsvarType" />
           <xs:element name="orgId" minOccurs="0" maxOccurs="1" nillable="true" type="fm:IdentifikatorType" />
-          <xs:element name="orgKode" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
-          <xs:element name="arbeidsgiverId" minOccurs="1" maxOccurs="1" type="org:OrganisasjonselementType" />
-          <xs:element name="orgNummer" minOccurs="0" maxOccurs="1" nillable="true" type="fm:IdentifikatorType" />
+          <xs:element name="orgKode" minOccurs="1" maxOccurs="1" type="xs:string" />
+          <xs:element name="arbeidsgiver" minOccurs="1" maxOccurs="1" type="org:OrganisasjonselementType" />
           <xs:element name="gyldighetsperiode" minOccurs="0" maxOccurs="1" nillable="true" type="fm:PeriodeType" />
           <xs:element name="ansatte" minOccurs="0" maxOccurs="1" nillable="true" type="ar:ArbeidsforholdListe" />
         </xs:sequence>

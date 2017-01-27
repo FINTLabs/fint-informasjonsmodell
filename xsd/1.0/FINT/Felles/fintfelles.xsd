@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/felles/0.1" xmlns:fm="https://ns.felleskomponent.no/felles/0.1" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 26.01.2017 08.42.18-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 27.01.2017 09.21.08-->
   <xs:element name="Periode" type="fm:PeriodeType" />
   <xs:complexType name="PeriodeListe">
     <xs:sequence>
@@ -49,8 +49,10 @@
   </xs:complexType>
   <xs:complexType name="AbstraktAktoerType" abstract="true">
     <xs:sequence>
-      <xs:element name="hovedKontaktinformasjon" minOccurs="1" maxOccurs="1" type="fm:KontaktinformasjonType" />
-      <xs:element name="kontaktinformasjoner" minOccurs="0" maxOccurs="1" nillable="true" type="fm:KontaktinformasjonListe" />
+      <xs:element name="kontaktinformasjon" minOccurs="0" maxOccurs="1" nillable="true" type="fm:KontaktinformasjonType" />
+      <xs:element name="postadresse" minOccurs="0" maxOccurs="1" nillable="true" type="fm:AdresseType" />
+      <xs:element name="" minOccurs="0" maxOccurs="1" nillable="true" type="fm:KontaktinformasjonType" />
+      <xs:element name="" minOccurs="0" maxOccurs="1" nillable="true" type="fm:AdresseType" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Kontaktinformasjon" type="fm:KontaktinformasjonType" />
@@ -78,6 +80,7 @@
       <xs:element name="adresse" minOccurs="1" maxOccurs="1" type="xs:string" />
       <xs:element name="postnummer" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
       <xs:element name="poststed" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
+      <xs:element name="kommunenummer" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
       <xs:element name="land" minOccurs="0" maxOccurs="1" nillable="true" type="fm:LandkodeType" />
     </xs:sequence>
   </xs:complexType>
@@ -91,11 +94,11 @@
     <xs:complexContent>
       <xs:extension base="fm:AbstraktAktoerType">
         <xs:sequence>
-          <xs:element name="organisasjonsnummer" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
-          <xs:element name="navn" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
-          <xs:element name="organisasjonsform" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
-          <xs:element name="naeringskode" minOccurs="0" maxOccurs="unbounded" nillable="true" type="xs:string" />
-          <xs:element name="adresse" minOccurs="0" maxOccurs="1" nillable="true" type="fm:AdresseListe" />
+          <xs:element name="organisasjonsnummer" minOccurs="0" maxOccurs="1" nillable="true" type="fm:IdentifikatorType" />
+          <xs:element name="organisasjonsnavn" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
+          <xs:element name="forretningsadresse" minOccurs="0" maxOccurs="1" nillable="true" type="fm:AdresseType" />
+          <xs:element name="" minOccurs="0" maxOccurs="1" nillable="true" type="fm:AdresseType" />
+          <xs:element name="" minOccurs="0" maxOccurs="1" nillable="true" type="fm:IdentifikatorType" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -134,7 +137,6 @@
           <xs:element name="foedselsdato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:date" />
           <xs:element name="statsborgerskap" minOccurs="0" maxOccurs="1" nillable="true" type="fm:LandkodeListe" />
           <xs:element name="foedselsnummer" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
-          <xs:element name="postadresse" minOccurs="0" maxOccurs="1" nillable="true" type="fm:AdresseType" />
           <xs:element name="bostedsadresse" minOccurs="0" maxOccurs="1" nillable="true" type="fm:AdresseType" />
           <xs:element name="personalressurs" minOccurs="0" maxOccurs="1" nillable="true" type="ar:PersonalressursType" />
           <xs:element name="" minOccurs="0" maxOccurs="1" nillable="true" type="fm:AdresseType" />
