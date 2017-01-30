@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/orgstruktur/0.1" xmlns:org="https://ns.felleskomponent.no/hr/orgstruktur/0.1" elementFormDefault="qualified" xmlns:kp="https://ns.felleskomponent.no/kodeverk/0.1" xmlns:ar="https://ns.felleskomponent.no/hr/arbeidstaker/0.1" xmlns:fm="https://ns.felleskomponent.no/felles/0.1">
-  <!-- Generert av MetaTrans(1.1.0.0) - 27.01.2017 09.20.54-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/orgstruktur/0.1" xmlns:org="https://ns.felleskomponent.no/hr/orgstruktur/0.1" elementFormDefault="qualified" xmlns:kp="https://ns.felleskomponent.no/kodeverk/0.1" xmlns:fm="https://ns.felleskomponent.no/felles/0.1" xmlns:ar="https://ns.felleskomponent.no/hr/arbeidstaker/0.1">
+  <!-- Generert av MetaTrans(1.1.0.0) - 30.01.2017 11:08:44-->
   <xs:import namespace="https://ns.felleskomponent.no/kodeverk/0.1" schemaLocation="kodeverk-petr.xsd" />
-  <xs:import namespace="https://ns.felleskomponent.no/hr/arbeidstaker/0.1" schemaLocation="arbeidstaker.xsd" />
   <xs:import namespace="https://ns.felleskomponent.no/felles/0.1" schemaLocation="fintfelles.xsd" />
+  <xs:import namespace="https://ns.felleskomponent.no/hr/arbeidstaker/0.1" schemaLocation="arbeidstaker.xsd" />
   <xs:element name="Organisasjonselement" type="org:OrganisasjonselementType" />
   <xs:complexType name="OrganisasjonselementListe">
     <xs:sequence>

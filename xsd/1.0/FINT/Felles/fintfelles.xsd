@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/felles/0.1" xmlns:fm="https://ns.felleskomponent.no/felles/0.1" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 27.01.2017 09.21.08-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 30.01.2017 11:01:27-->
   <xs:element name="Periode" type="fm:PeriodeType" />
   <xs:complexType name="PeriodeListe">
     <xs:sequence>
@@ -51,8 +51,6 @@
     <xs:sequence>
       <xs:element name="kontaktinformasjon" minOccurs="0" maxOccurs="1" nillable="true" type="fm:KontaktinformasjonType" />
       <xs:element name="postadresse" minOccurs="0" maxOccurs="1" nillable="true" type="fm:AdresseType" />
-      <xs:element name="" minOccurs="0" maxOccurs="1" nillable="true" type="fm:KontaktinformasjonType" />
-      <xs:element name="" minOccurs="0" maxOccurs="1" nillable="true" type="fm:AdresseType" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Kontaktinformasjon" type="fm:KontaktinformasjonType" />
@@ -97,8 +95,6 @@
           <xs:element name="organisasjonsnummer" minOccurs="0" maxOccurs="1" nillable="true" type="fm:IdentifikatorType" />
           <xs:element name="organisasjonsnavn" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
           <xs:element name="forretningsadresse" minOccurs="0" maxOccurs="1" nillable="true" type="fm:AdresseType" />
-          <xs:element name="" minOccurs="0" maxOccurs="1" nillable="true" type="fm:AdresseType" />
-          <xs:element name="" minOccurs="0" maxOccurs="1" nillable="true" type="fm:IdentifikatorType" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
