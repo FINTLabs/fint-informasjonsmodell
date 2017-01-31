@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/arbeidstaker/0.1" xmlns:ar="https://ns.felleskomponent.no/hr/arbeidstaker/0.1" elementFormDefault="qualified" xmlns:fm="https://ns.felleskomponent.no/felles/0.1">
-  <!-- Generert av MetaTrans(1.1.0.0) - 27.01.2017 09.21.19-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 31.01.2017 14:16:12-->
   <xs:import namespace="https://ns.felleskomponent.no/felles/0.1" schemaLocation="fintfelles.xsd" />
   <xs:element name="Personalressurs" type="ar:PersonalressursType" />
   <xs:complexType name="PersonalressursListe">
@@ -31,7 +31,7 @@
   <xs:complexType name="ArbeidsforholdType">
     <xs:sequence>
       <xs:element name="grunnloenn" minOccurs="1" maxOccurs="1" type="xs:double" />
-      <xs:element name="status" minOccurs="1" maxOccurs="1" type="xs:string" />
+      <xs:element name="erAktiv" minOccurs="1" maxOccurs="1" type="xs:boolean" />
       <xs:element name="stillingstittel" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
       <xs:element name="stillingskode" minOccurs="0" maxOccurs="1" nillable="true" type="kp:StillingskodeType" />
       <xs:element name="stillingsprosent" minOccurs="1" maxOccurs="1" type="xs:double" />
@@ -40,9 +40,10 @@
       <xs:element name="ansvar" minOccurs="1" maxOccurs="1" type="kp:AnsvarType" />
       <xs:element name="skattetypekode" minOccurs="1" maxOccurs="1" type="kp:StattetypekodeType" />
       <xs:element name="arbeidsforholdsperiode" minOccurs="1" maxOccurs="1" type="fm:PeriodeType" />
-      <xs:element name="funksjon" minOccurs="1" maxOccurs="1" type="kp:TjenesteType" />
+      <xs:element name="funksjon" minOccurs="1" maxOccurs="1" type="kp:FunksjonType" />
       <xs:element name="timerPerUke" minOccurs="1" maxOccurs="1" type="xs:double" />
-      <xs:element name="arbeidstaker" minOccurs="1" maxOccurs="1" type="org:OrganisasjonselementType" />
+      <xs:element name="arbeidsgiver" minOccurs="1" maxOccurs="1" type="org:OrganisasjonselementType" />
+      <xs:element name="loennsandel" minOccurs="1" maxOccurs="1" type="xs:double" />
       <xs:element name="arbeidforholdstype" minOccurs="1" maxOccurs="1" type="kp:ArbeidforholdstypeType" />
       <xs:element name="personalressurs" minOccurs="1" maxOccurs="1" type="ar:PersonalressursType" />
       <xs:element name="arbeidssted" minOccurs="1" maxOccurs="1" type="org:OrganisasjonselementType" />

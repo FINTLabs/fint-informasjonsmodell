@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/kodeverk/0.1" xmlns:kp="https://ns.felleskomponent.no/kodeverk/0.1" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 27.01.2017 09.21.30-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 31.01.2017 14:16:03-->
   <xs:element name="Anlegg" type="kp:AnleggType" />
   <xs:complexType name="AnleggListe">
     <xs:sequence>
@@ -107,6 +107,22 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:element name="Funksjon" type="kp:FunksjonType" />
+  <xs:complexType name="FunksjonListe">
+    <xs:sequence>
+      <xs:element name="funksjon" type="kp:FunksjonType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FunksjonType">
+    <xs:complexContent>
+      <xs:extension base="kp:AbstraktBegrepType">
+        <xs:sequence>
+          <xs:element name="forelder" minOccurs="0" maxOccurs="1" nillable="true" type="kp:FunksjonType" />
+          <xs:element name="kontostreng" minOccurs="0" maxOccurs="1" nillable="true" type="kp:KontostrengListe" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:element name="Kontostreng" type="kp:KontostrengType" />
   <xs:complexType name="KontostrengListe">
     <xs:sequence>
@@ -119,9 +135,9 @@
       <xs:element name="prosjekt" minOccurs="0" maxOccurs="1" nillable="true" type="kp:ProsjektType" />
       <xs:element name="ansvar" minOccurs="1" maxOccurs="1" type="kp:AnsvarType" />
       <xs:element name="anlegg" minOccurs="0" maxOccurs="1" nillable="true" type="kp:AnleggType" />
-      <xs:element name="tjeneste" minOccurs="1" maxOccurs="1" type="kp:TjenesteType" />
+      <xs:element name="funksjon" minOccurs="1" maxOccurs="1" type="kp:FunksjonType" />
       <xs:element name="prosjekt" minOccurs="1" maxOccurs="1" type="kp:ProsjektType" />
-      <xs:element name="tjeneste" minOccurs="1" maxOccurs="1" type="kp:TjenesteType" />
+      <xs:element name="tjeneste" minOccurs="1" maxOccurs="1" type="kp:FunksjonType" />
       <xs:element name="art" minOccurs="1" maxOccurs="1" type="kp:ArtType" />
       <xs:element name="ansvar" minOccurs="1" maxOccurs="1" type="kp:AnsvarType" />
       <xs:element name="anlegg" minOccurs="1" maxOccurs="1" type="kp:AnleggType" />
@@ -202,22 +218,6 @@
         <xs:sequence>
           <xs:element name="forelder" minOccurs="0" maxOccurs="1" nillable="true" type="kp:StillingskodeType" />
           <xs:element name="erKSkode" minOccurs="1" maxOccurs="1" type="xs:boolean" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="Tjeneste" type="kp:TjenesteType" />
-  <xs:complexType name="TjenesteListe">
-    <xs:sequence>
-      <xs:element name="tjeneste" type="kp:TjenesteType" minOccurs="0" maxOccurs="unbounded" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="TjenesteType">
-    <xs:complexContent>
-      <xs:extension base="kp:AbstraktBegrepType">
-        <xs:sequence>
-          <xs:element name="forelder" minOccurs="0" maxOccurs="1" nillable="true" type="kp:TjenesteType" />
-          <xs:element name="kontostreng" minOccurs="0" maxOccurs="1" nillable="true" type="kp:KontostrengListe" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
