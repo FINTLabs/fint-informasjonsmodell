@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/felles/0.1" xmlns:fm="https://ns.felleskomponent.no/felles/0.1" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 31.01.2017 14:43:29-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 01.02.2017 20.44.39-->
   <xs:element name="Periode" type="fm:PeriodeType" />
   <xs:complexType name="PeriodeListe">
     <xs:sequence>
@@ -27,8 +27,8 @@
       <xs:element name="endretDato" minOccurs="1" maxOccurs="1" type="xs:date" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="Spraak" type="fm:SpraakType" />
-  <xs:complexType name="SpraakType">
+  <xs:element name="Kjoenn" type="fm:KjoennType" />
+  <xs:complexType name="KjoennType">
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -36,6 +36,13 @@
   </xs:complexType>
   <xs:element name="Landkode" type="fm:LandkodeType" />
   <xs:complexType name="LandkodeType">
+    <xs:sequence>
+      <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Spraak" type="fm:SpraakType" />
+  <xs:complexType name="SpraakType">
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
@@ -78,7 +85,6 @@
       <xs:element name="adresse" minOccurs="1" maxOccurs="1" type="xs:string" />
       <xs:element name="postnummer" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
       <xs:element name="poststed" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
-      <xs:element name="kommunenummer" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
       <xs:element name="land" minOccurs="0" maxOccurs="1" nillable="true" type="fm:LandkodeType" />
     </xs:sequence>
   </xs:complexType>
@@ -111,13 +117,6 @@
       <xs:element name="gyldighetsperiode" minOccurs="0" maxOccurs="1" nillable="true" type="fm:PeriodeType" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="Kjoenn" type="fm:KjoennType" />
-  <xs:complexType name="KjoennType">
-    <xs:sequence>
-      <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1" />
-      <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:element name="Person" type="fm:PersonType" />
   <xs:complexType name="PersonListe">
     <xs:sequence>
@@ -128,14 +127,13 @@
     <xs:complexContent>
       <xs:extension base="fm:AbstraktAktoerType">
         <xs:sequence>
-          <xs:element name="kjoenn" minOccurs="0" maxOccurs="1" nillable="true" type="fm:KjoennType" />
+          <xs:element name="foedselsnummer" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
           <xs:element name="navn" minOccurs="1" maxOccurs="1" type="fm:PersonnavnType" />
+          <xs:element name="kjoenn" minOccurs="0" maxOccurs="1" nillable="true" type="fm:KjoennType" />
           <xs:element name="foedselsdato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:date" />
           <xs:element name="statsborgerskap" minOccurs="0" maxOccurs="1" nillable="true" type="fm:LandkodeListe" />
-          <xs:element name="foedselsnummer" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
           <xs:element name="bostedsadresse" minOccurs="0" maxOccurs="1" nillable="true" type="fm:AdresseType" />
           <xs:element name="personalressurs" minOccurs="0" maxOccurs="1" nillable="true" type="pr:PersonalressursType" />
-          <xs:element name="" minOccurs="0" maxOccurs="1" nillable="true" type="fm:AdresseType" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

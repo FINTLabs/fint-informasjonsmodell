@@ -1,22 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/kodeverk/0.1" xmlns:kv="https://ns.felleskomponent.no/hr/kodeverk/0.1" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 31.01.2017 14:43:12-->
-  <xs:element name="Anlegg" type="kv:AnleggType" />
-  <xs:complexType name="AnleggListe">
-    <xs:sequence>
-      <xs:element name="anlegg" type="kv:AnleggType" minOccurs="0" maxOccurs="unbounded" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="AnleggType">
-    <xs:complexContent>
-      <xs:extension base="kv:AbstraktBegrepType">
-        <xs:sequence>
-          <xs:element name="forelder" minOccurs="0" maxOccurs="1" nillable="true" type="kv:AnleggType" />
-          <xs:element name="kontostreng" minOccurs="0" maxOccurs="1" nillable="true" type="kv:KontostrengListe" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
+  <!-- Generert av MetaTrans(1.1.0.0) - 01.02.2017 20.44.03-->
   <xs:element name="Ansvar" type="kv:AnsvarType" />
   <xs:complexType name="AnsvarListe">
     <xs:sequence>
@@ -28,7 +12,6 @@
       <xs:extension base="kv:AbstraktBegrepType">
         <xs:sequence>
           <xs:element name="forelder" minOccurs="0" maxOccurs="1" nillable="true" type="kv:AnsvarType" />
-          <xs:element name="kontostreng" minOccurs="0" maxOccurs="1" nillable="true" type="kv:KontostrengListe" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -48,22 +31,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="Art" type="kv:ArtType" />
-  <xs:complexType name="ArtListe">
-    <xs:sequence>
-      <xs:element name="art" type="kv:ArtType" minOccurs="0" maxOccurs="unbounded" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="ArtType">
-    <xs:complexContent>
-      <xs:extension base="kv:AbstraktBegrepType">
-        <xs:sequence>
-          <xs:element name="forelder" minOccurs="0" maxOccurs="1" nillable="true" type="kv:ArtType" />
-          <xs:element name="kontostreng" minOccurs="0" maxOccurs="1" nillable="true" type="kv:KontostrengListe" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:element name="AbstraktBegrep" type="kv:AbstraktBegrepType" />
   <xs:complexType name="AbstraktBegrepListe">
     <xs:sequence>
@@ -72,40 +39,10 @@
   </xs:complexType>
   <xs:complexType name="AbstraktBegrepType" abstract="true">
     <xs:sequence>
-      <xs:element name="navn" minOccurs="1" maxOccurs="1" type="xs:string" />
-      <xs:element name="beskrivelse" minOccurs="1" maxOccurs="1" type="xs:string" />
       <xs:element name="kode" minOccurs="1" maxOccurs="1" type="xs:string" />
+      <xs:element name="navn" minOccurs="1" maxOccurs="1" type="xs:string" />
+      <xs:element name="gyldighetsperiode" minOccurs="0" maxOccurs="1" nillable="true" type="fm:PeriodeType" />
     </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Feriekode" type="kv:FeriekodeType" />
-  <xs:complexType name="FeriekodeListe">
-    <xs:sequence>
-      <xs:element name="feriekode" type="kv:FeriekodeType" minOccurs="0" maxOccurs="unbounded" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="FeriekodeType">
-    <xs:complexContent>
-      <xs:extension base="kv:AbstraktBegrepType">
-        <xs:sequence>
-          <xs:element name="foreldrer" minOccurs="0" maxOccurs="1" nillable="true" type="kv:FeriekodeType" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="Fravaerskode" type="kv:FravaerskodeType" />
-  <xs:complexType name="FravaerskodeListe">
-    <xs:sequence>
-      <xs:element name="fravaerskode" type="kv:FravaerskodeType" minOccurs="0" maxOccurs="unbounded" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="FravaerskodeType">
-    <xs:complexContent>
-      <xs:extension base="kv:AbstraktBegrepType">
-        <xs:sequence>
-          <xs:element name="forelder" minOccurs="0" maxOccurs="1" nillable="true" type="kv:FravaerskodeType" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
   </xs:complexType>
   <xs:element name="Funksjon" type="kv:FunksjonType" />
   <xs:complexType name="FunksjonListe">
@@ -116,49 +53,7 @@
   <xs:complexType name="FunksjonType">
     <xs:complexContent>
       <xs:extension base="kv:AbstraktBegrepType">
-        <xs:sequence>
-          <xs:element name="forelder" minOccurs="0" maxOccurs="1" nillable="true" type="kv:FunksjonType" />
-          <xs:element name="kontostreng" minOccurs="0" maxOccurs="1" nillable="true" type="kv:KontostrengListe" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="Kontostreng" type="kv:KontostrengType" />
-  <xs:complexType name="KontostrengListe">
-    <xs:sequence>
-      <xs:element name="kontostreng" type="kv:KontostrengType" minOccurs="0" maxOccurs="unbounded" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="KontostrengType">
-    <xs:sequence>
-      <xs:element name="art" minOccurs="1" maxOccurs="1" type="kv:ArtType" />
-      <xs:element name="prosjekt" minOccurs="0" maxOccurs="1" nillable="true" type="kv:ProsjektType" />
-      <xs:element name="ansvar" minOccurs="1" maxOccurs="1" type="kv:AnsvarType" />
-      <xs:element name="anlegg" minOccurs="0" maxOccurs="1" nillable="true" type="kv:AnleggType" />
-      <xs:element name="funksjon" minOccurs="1" maxOccurs="1" type="kv:FunksjonType" />
-      <xs:element name="prosjekt" minOccurs="1" maxOccurs="1" type="kv:ProsjektType" />
-      <xs:element name="tjeneste" minOccurs="1" maxOccurs="1" type="kv:FunksjonType" />
-      <xs:element name="art" minOccurs="1" maxOccurs="1" type="kv:ArtType" />
-      <xs:element name="ansvar" minOccurs="1" maxOccurs="1" type="kv:AnsvarType" />
-      <xs:element name="anlegg" minOccurs="1" maxOccurs="1" type="kv:AnleggType" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Loennsart" type="kv:LoennsartType" />
-  <xs:complexType name="LoennsartListe">
-    <xs:sequence>
-      <xs:element name="loennsart" type="kv:LoennsartType" minOccurs="0" maxOccurs="unbounded" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="LoennsartType">
-    <xs:complexContent>
-      <xs:extension base="kv:AbstraktBegrepType">
-        <xs:sequence>
-          <xs:element name="forelder" minOccurs="0," maxOccurs="1" type="kv:LoennsartType" />
-          <xs:element name="antall" minOccurs="1" maxOccurs="1" type="xs:boolean" />
-          <xs:element name="klokkeSlett" minOccurs="1" maxOccurs="1" type="xs:boolean" />
-          <xs:element name="beloep" minOccurs="1" maxOccurs="1" type="xs:boolean" />
-          <xs:element name="landkode" minOccurs="1" maxOccurs="1" type="xs:boolean" />
-        </xs:sequence>
+        <xs:sequence />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -177,29 +72,13 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="Prosjekt" type="kv:ProsjektType" />
-  <xs:complexType name="ProsjektListe">
+  <xs:element name="Skattetypekode" type="kv:SkattetypekodeType" />
+  <xs:complexType name="SkattetypekodeListe">
     <xs:sequence>
-      <xs:element name="prosjekt" type="kv:ProsjektType" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="skattetypekode" type="kv:SkattetypekodeType" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="ProsjektType">
-    <xs:complexContent>
-      <xs:extension base="kv:AbstraktBegrepType">
-        <xs:sequence>
-          <xs:element name="forelder" minOccurs="0" maxOccurs="1" nillable="true" type="kv:ProsjektType" />
-          <xs:element name="konostreng" minOccurs="0" maxOccurs="1" nillable="true" type="kv:KontostrengListe" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="Stattetypekode" type="kv:StattetypekodeType" />
-  <xs:complexType name="StattetypekodeListe">
-    <xs:sequence>
-      <xs:element name="stattetypekode" type="kv:StattetypekodeType" minOccurs="0" maxOccurs="unbounded" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="StattetypekodeType">
+  <xs:complexType name="SkattetypekodeType">
     <xs:complexContent>
       <xs:extension base="kv:AbstraktBegrepType">
         <xs:sequence />
@@ -217,7 +96,7 @@
       <xs:extension base="kv:AbstraktBegrepType">
         <xs:sequence>
           <xs:element name="forelder" minOccurs="0" maxOccurs="1" nillable="true" type="kv:StillingskodeType" />
-          <xs:element name="erKSkode" minOccurs="1" maxOccurs="1" type="xs:boolean" />
+          <xs:element name="ksKode" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

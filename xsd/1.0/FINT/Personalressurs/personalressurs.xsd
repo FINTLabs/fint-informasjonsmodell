@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/personalressurs/0.1" xmlns:pr="https://ns.felleskomponent.no/hr/personalressurs/0.1" elementFormDefault="qualified" xmlns:fm="https://ns.felleskomponent.no/felles/0.1">
-  <!-- Generert av MetaTrans(1.1.0.0) - 31.01.2017 14:43:38-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/personalressurs/0.1" xmlns:pr="https://ns.felleskomponent.no/hr/personalressurs/0.1" elementFormDefault="qualified" xmlns:kv="https://ns.felleskomponent.no/hr/kodeverk/0.1" xmlns:org="https://ns.felleskomponent.no/hr/orgstruktur/0.1" xmlns:fm="https://ns.felleskomponent.no/felles/0.1">
+  <!-- Generert av MetaTrans(1.1.0.0) - 01.02.2017 20.44.27-->
+  <xs:import namespace="https://ns.felleskomponent.no/hr/kodeverk/0.1" schemaLocation="kodeverk.xsd" />
+  <xs:import namespace="https://ns.felleskomponent.no/hr/orgstruktur/0.1" schemaLocation="organisasjonsstruktur.xsd" />
   <xs:import namespace="https://ns.felleskomponent.no/felles/0.1" schemaLocation="felles.xsd" />
   <xs:element name="Personalressurs" type="pr:PersonalressursType" />
   <xs:complexType name="PersonalressursListe">
@@ -16,10 +18,8 @@
       <xs:element name="ansattnummer" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
       <xs:element name="ansettelsesperiode" minOccurs="1" maxOccurs="1" type="fm:PeriodeType" />
       <xs:element name="kontaktinformasjon" minOccurs="0" maxOccurs="1" nillable="true" type="fm:KontaktinformasjonType" />
-      <xs:element name="person" minOccurs="1" maxOccurs="1" type="fm:PersonType" />
       <xs:element name="arbeidsforhold" minOccurs="0" maxOccurs="1" nillable="true" type="pr:ArbeidsforholdListe" />
       <xs:element name="person" minOccurs="1" maxOccurs="1" type="fm:PersonType" />
-      <xs:element name="" minOccurs="0" maxOccurs="1" nillable="true" type="fm:KontaktinformasjonType" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Arbeidsforhold" type="pr:ArbeidsforholdType" />
@@ -38,7 +38,7 @@
       <xs:element name="stillingsnummer" minOccurs="1" maxOccurs="1" type="xs:string" />
       <xs:element name="hovedstilling" minOccurs="1" maxOccurs="1" type="xs:boolean" />
       <xs:element name="ansvar" minOccurs="1" maxOccurs="1" type="kv:AnsvarType" />
-      <xs:element name="skattetypekode" minOccurs="1" maxOccurs="1" type="kv:StattetypekodeType" />
+      <xs:element name="skattetypekode" minOccurs="1" maxOccurs="1" type="kv:SkattetypekodeType" />
       <xs:element name="arbeidsforholdsperiode" minOccurs="1" maxOccurs="1" type="fm:PeriodeType" />
       <xs:element name="funksjon" minOccurs="1" maxOccurs="1" type="kv:FunksjonType" />
       <xs:element name="timerPerUke" minOccurs="1" maxOccurs="1" type="xs:double" />
