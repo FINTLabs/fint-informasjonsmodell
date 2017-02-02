@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/kodeverk/0.1" xmlns:kv="https://ns.felleskomponent.no/hr/kodeverk/0.1" elementFormDefault="qualified">
-  <!-- Generert av MetaTrans(1.1.0.0) - 01.02.2017 20.44.03-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 02.02.2017 13.45.47-->
   <xs:element name="Ansvar" type="kv:AnsvarType" />
   <xs:complexType name="AnsvarListe">
     <xs:sequence>
@@ -31,6 +31,19 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:element name="Art" type="kv:ArtType" />
+  <xs:complexType name="ArtListe">
+    <xs:sequence>
+      <xs:element name="art" type="kv:ArtType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArtType">
+    <xs:complexContent>
+      <xs:extension base="kv:AbstraktBegrepType">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:element name="AbstraktBegrep" type="kv:AbstraktBegrepType" />
   <xs:complexType name="AbstraktBegrepListe">
     <xs:sequence>
@@ -53,7 +66,9 @@
   <xs:complexType name="FunksjonType">
     <xs:complexContent>
       <xs:extension base="kv:AbstraktBegrepType">
-        <xs:sequence />
+        <xs:sequence>
+          <xs:element name="forelder" minOccurs="0" maxOccurs="1" nillable="true" type="kv:FunksjonType" />
+        </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -69,6 +84,19 @@
         <xs:sequence>
           <xs:element name="forelder" minOccurs="0" maxOccurs="1" nillable="true" type="kv:PersonalressurstypeType" />
         </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Prosjekt" type="kv:ProsjektType" />
+  <xs:complexType name="ProsjektListe">
+    <xs:sequence>
+      <xs:element name="prosjekt" type="kv:ProsjektType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProsjektType">
+    <xs:complexContent>
+      <xs:extension base="kv:AbstraktBegrepType">
+        <xs:sequence />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
