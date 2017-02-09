@@ -501,12 +501,12 @@
 							<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000103_75A8_421b_8FB2_AAE560E9F691" value="1"/>
 							<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000104_75A8_421b_8FB2_AAE560E9F691" value="1"/>
 						</ownedAttribute>
-						<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_045419F4_C8F9_450d_ACC3_EA09D89EA71B" name="personalressursType" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+						<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_045419F4_C8F9_450d_ACC3_EA09D89EA71B" name="personalressurstype" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 							<type xmi:idref="EAID_FF167961_8CC1_4bba_B57A_5B44976FA2FB"/>
 							<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000105_C8F9_450d_ACC3_EA09D89EA71B" value="1"/>
 							<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000106_C8F9_450d_ACC3_EA09D89EA71B" value="1"/>
 						</ownedAttribute>
-						<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_39447055_0ED6_44ca_94D9_8C844355745F" name="internId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+						<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_39447055_0ED6_44ca_94D9_8C844355745F" name="systemId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 							<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
 							<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000107_0ED6_44ca_94D9_8C844355745F" value="0"/>
 							<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000108_0ED6_44ca_94D9_8C844355745F" value="1"/>
@@ -1759,8 +1759,8 @@
 			</element>
 			<element xmi:idref="EAID_FF167961_8CC1_4bba_B57A_5B44976FA2FB" xmi:type="uml:Class" name="Personalressurstype" scope="public">
 				<model package="EAPK_8067A0C9_1FFF_4a84_997D_89395AC6E659" tpos="0" ea_localid="901" ea_eleType="element"/>
-				<properties documentation="Arbeidforholdstype fra hovedstillingen.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Alternativ navn:&#xA;* Ansatt (er ikke datatype, men kodeverk)&#xA;* Ansattkategori&#xA;* Ansattformer&quot;&#xA;&#xA;# Eksempel&#xA;&#xA;Midlertidig, fast, sluttet, politiker, oppdragstaker" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-01-17 12:16:21" modified="2017-02-09 10:57:09" complexity="1" status="Proposed"/>
+				<properties documentation="Arbeidforholdstype fra hovedstillingen.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Alternativ navn:&#xA;* Ansatt (er ikke datatype, men kodeverk)&#xA;* Ansattkategori&#xA;* Ansattformer&quot;&#xA;&#xA;# Eksempel&#xA;&#xA;## Eksempel fra Visma HR - Kategori:&#xA;&#xA;Kode | Beskrivelse&#xA;---|---&#xA;F | Fast&#xA;M | Midlertidig&#xA;O | Oppdragstaker&#xA;P | Politiker&#xA;S | Sluttet&#xA;&#xA;## Eksempel fra Agresso - Ressurstype:&#xA;&#xA;Kode  |	Beskrivelse&#xA;---|---&#xA;1 |	Ansatt - kommunal&#xA;10 |	Lærling/Ung arb.taker&#xA;2 |	Ansatt - undervisning&#xA;3 |	Honorar/godtgjørelse&#xA;4 |	Sluttet&#xA;5 |	Nyansatt&#xA;6 |	Ikke ansatt - kun bruker&#xA;7 |	Politikere&#xA;8| 	Selvstendig næringsdrivende&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-01-17 12:16:21" modified="2017-02-09 12:19:43" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -2866,8 +2866,8 @@
 			</element>
 			<element xmi:idref="EAID_0F87A52C_7EE0_45e3_9DE2_AE537A34659D" xmi:type="uml:Class" name="Personalressurs" scope="public">
 				<model package="EAPK_455D668D_96AB_4dee_A0DC_12FAC7139EC2" tpos="1" ea_localid="932" ea_eleType="element"/>
-				<properties documentation="Arbeidstaker eller oppdragstaker i organisasjonen.&#xA;&#xA;# Beskrivelse&#xA;&#xA;&quot;Personalressurs er *ordinære* ansatte i faste og midlertidige stillinger, i tillegg til oppdragstakere (politikere, ressurser med timelønn, sensorer, etc). Personalressurs er ikke leverandørrepresentant (eksterne konsulenter etc). &#xA;&#xA;Personer som har en personlig avtale med organisasjonen.&quot;&#xA;&#xA;# Eksempler&#xA;&#xA;" isSpecification="false" sType="Class" nType="0" alias="Employee" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Tor Kjetil" version="1.0" phase="1.0" created="2016-08-16 11:08:02" modified="2017-02-09 10:59:53" complexity="1" status="Proposed"/>
+				<properties documentation="Arbeidstaker eller oppdragstaker i organisasjonen&#xA;&#xA;# Beskrivelse&#xA;&#xA;Personalressurs er personer som leverer tjenester i form av å være ansatt. Registrert i HR-systemet.&#xA;&#xA;# Eksempler&#xA;&#xA;* *ordinære* ansatte i faste og midlertidige stillinger&#xA;* oppdragstakere: &#xA;  * politikere&#xA;  * ressurser med timelønn&#xA;  * sensorer&#xA;  * eksamensvakt&#xA;  * hospitant&#xA;&#xA;Inneholder i utgangspunktet ikke *leverandørrepresenanter* (ekstern vikar, foredragsholdere, konsulenter)." isSpecification="false" sType="Class" nType="0" alias="Employee" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Tor Kjetil" version="1.0" phase="1.0" created="2016-08-16 11:08:02" modified="2017-02-09 12:12:18" complexity="1" status="Proposed"/>
 				<code product_name="&lt;none&gt;" gentype="&lt;none&gt;"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;" object_style="MDoc=0;"/>
 				<tags>
@@ -2878,7 +2878,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_57FA0F15_75A8_421b_8FB2_AAE560E9F691" name="signatur" scope="Public">
 						<initial/>
-						<documentation value="Brukernavn eller initialer til en person.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Kan komme fra AD eller andre kilder til autoriseringsinformasjon.&#xA;Brukes som en identifikator som består når fødselsnr og andre parameterne endrer seg.&#xA;&#xA;&#xA;# Format&#xA;&#xA;&#xA;# Eksempler&#xA;"/>
+						<documentation value="Brukernavn eller initialer til en person&#xA;&#xA;# Beskrivelse&#xA;&#xA;Skal inneholde brukernavn for pålogging, som finnes i katalogtjenesten (feks Active Directory). Brukes som en identifikator som består, når fødselsnummer og/eller andre identifikatorer endrer seg.&#xA;&#xA;# Format&#xA;&#xA;Brukernavn i det format en personalressurs trenger for å logge seg på systemer i organisasjonen.&#xA;&#xA;# Eksempler&#xA;"/>
 						<model ea_localid="1139" ea_guid="{57FA0F15-75A8-421b-8FB2-AAE560E9F691}"/>
 						<properties type="Identifikator" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -2891,9 +2891,9 @@
 						<tags/>
 						<xrefs value="$XREFPROP=$XID={8B76F515-9459-4197-B71D-05A172D41FE5}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={57FA0F15-75A8-421b-8FB2-AAE560E9F691}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
-					<attribute xmi:idref="EAID_045419F4_C8F9_450d_ACC3_EA09D89EA71B" name="personalressursType" scope="Public">
+					<attribute xmi:idref="EAID_045419F4_C8F9_450d_ACC3_EA09D89EA71B" name="personalressurstype" scope="Public">
 						<initial/>
-						<documentation value="Angir hvilken type personalressurs&#xA;&#xA;# Beskrivelse&#xA;&#xA;# Format&#xA;&#xA;# Eksempel&#xA;&#xA;## Eksempel fra Visma HR - Kategori:&#xA;&#xA;Kode | Beskrivelse&#xA;---|---&#xA;F | Fast&#xA;M | Midlertidig&#xA;O | Oppdragstaker&#xA;P | Politiker&#xA;S | Sluttet&#xA;&#xA;## Eksempel fra Agresso - Stillingstype:&#xA;&#xA;Kode  |	Beskrivelse&#xA;---|---&#xA;1 |	Ansatt - kommunal&#xA;10 |	Lærling/Ung arb.taker&#xA;2 |	Ansatt - undervisning&#xA;3 |	Honorar/godtgjørelse&#xA;4 |	Sluttet&#xA;5 |	Nyansatt&#xA;6 |	Ikke ansatt - kun bruker&#xA;7 |	Politikere&#xA;8| 	Selvstendig næringsdrivende&#xA;"/>
+						<documentation value="Angir hvilken type personalressurs&#xA;&#xA;# Beskrivelse&#xA;&#xA;# Format&#xA;&#xA;# Eksempel&#xA;&#xA;## Eksempel fra Visma HR - Kategori:&#xA;&#xA;Kode | Beskrivelse&#xA;---|---&#xA;F | Fast&#xA;M | Midlertidig&#xA;O | Oppdragstaker&#xA;P | Politiker&#xA;S | Sluttet&#xA;&#xA;## Eksempel fra Agresso - Ressurstype:&#xA;&#xA;Kode  |	Beskrivelse&#xA;---|---&#xA;1 |	Ansatt - kommunal&#xA;10 |	Lærling/Ung arb.taker&#xA;2 |	Ansatt - undervisning&#xA;3 |	Honorar/godtgjørelse&#xA;4 |	Sluttet&#xA;5 |	Nyansatt&#xA;6 |	Ikke ansatt - kun bruker&#xA;7 |	Politikere&#xA;8| 	Selvstendig næringsdrivende&#xA;"/>
 						<model ea_localid="1140" ea_guid="{045419F4-C8F9-450d-ACC3-EA09D89EA71B}"/>
 						<properties type="Personalressurstype" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -2906,9 +2906,9 @@
 						<tags/>
 						<xrefs/>
 					</attribute>
-					<attribute xmi:idref="EAID_39447055_0ED6_44ca_94D9_8C844355745F" name="internId" scope="Public">
+					<attribute xmi:idref="EAID_39447055_0ED6_44ca_94D9_8C844355745F" name="systemId" scope="Public">
 						<initial/>
-						<documentation value="Unik intern id for personalressurs&#xA;&#xA;# Beskrivelse&#xA;&#xA;Systemspesifikk id, som ikke nødvendigivis er synlig i fagsystemet.&#xA;&#xA;# Format&#xA;&#xA;&#xA;# Eksempler&#xA;"/>
+						<documentation value="Unik intern system-id for personalressurs&#xA;&#xA;# Beskrivelse&#xA;&#xA;Systemspesifikk id, som normalt ikke er synlig i fagsystemet.&#xA;&#xA;# Format&#xA;&#xA;&#xA;# Eksempler&#xA;"/>
 						<model ea_localid="1141" ea_guid="{39447055-0ED6-44ca-94D9-8C844355745F}"/>
 						<properties type="Identifikator" derived="0" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -2923,7 +2923,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_2E3BCEA7_D74E_4acc_AB33_5D8489E72079" name="ansattnummer" scope="Public">
 						<initial/>
-						<documentation value="Den unike identifIkatoren til en ansatt i ansattregistret i HR-systemet&#xA;&#xA;# Beskrivelse&#xA;&#xA;Det er primærarbeidsforholdet og eller personalressurs forholdet som er grunnlaget for opprettelsen av dette nummeret. Ett nummer dekker flere ansettelsesforhold&#xA;&#xA;# Format&#xA;&#xA;&#xA;# Eksempler&#xA;"/>
+						<documentation value="Den unike identifIkatoren til en ansatt i ansatt-/ressursregistret i HR-systemet&#xA;&#xA;# Beskrivelse&#xA;&#xA;Identifiserer en personalressurs unikt. En personalressurs vil kun være registert med ett ansattnummer. &#xA;&#xA;# Format&#xA;&#xA;# Eksempler&#xA;"/>
 						<model ea_localid="1142" ea_guid="{2E3BCEA7-D74E-4acc-AB33-5D8489E72079}"/>
 						<properties type="Identifikator" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -2938,7 +2938,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_290BE257_A6FA_4f1b_A45D_F34484643028" name="ansettelsesperiode" scope="Public">
 						<initial/>
-						<documentation value="Tidsperiode for når personalressursen er i et forhold til fylkeskommunen&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Startdato: Den datoen du første gang begynte i fylkeskommunene.&#xA;* Sluttdato: Angir dato for når personalressursen sitt forhold til fylkeskommunen opphører.&#xA;&#xA;# Format&#xA;&#xA;&#xA;# Eksempler&#xA;&#xA;&#xA;"/>
+						<documentation value="Perioden personalressursen er i et forhold til fylkeskommunen&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Startdato: Datoen for når personalressursen første gang begynte i fylkeskommunene.&#xA;* Sluttdato: Dato for når personalressursen sitt forhold til fylkeskommunen opphører.&#xA;&#xA;# Format&#xA;&#xA;# Eksempler&#xA;"/>
 						<model ea_localid="1143" ea_guid="{290BE257-A6FA-4f1b-A45D-F34484643028}"/>
 						<properties type="Periode" derived="0" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
