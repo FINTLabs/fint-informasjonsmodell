@@ -553,7 +553,7 @@
 						</ownedEnd>
 					</packagedElement>
 					<packagedElement xmi:type="uml:Class" xmi:id="EAID_99474ABD_36AE_4dc7_9895_5BC9C901AC39" name="Arbeidsforhold" visibility="public">
-						<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_91AE90A8_7F18_4803_A036_8343E46EFDED" name="grunnlønn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+						<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_91AE90A8_7F18_4803_A036_8343E46EFDED" name="årslønn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 							<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#UnlimitedNatural"/>
 							<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000119_7F18_4803_A036_8343E46EFDED" value="1"/>
 							<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000120_7F18_4803_A036_8343E46EFDED" value="1"/>
@@ -2975,8 +2975,8 @@
 			</element>
 			<element xmi:idref="EAID_99474ABD_36AE_4dc7_9895_5BC9C901AC39" xmi:type="uml:Class" name="Arbeidsforhold" scope="public">
 				<model package="EAPK_455D668D_96AB_4dee_A0DC_12FAC7139EC2" tpos="2" ea_localid="933" ea_eleType="element"/>
-				<properties documentation="Arbeidsforhold er et avtaleforhold mellom personalressurs og organisasjonselement.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Arbeidsforhold defineres som et avtaleforhold hvor den ene part (arbeidstakeren / personalressurs) forplikter seg til å utføre arbeid for den annen part (arbeidsgiveren / organisasjonselement) i henhold til dennes ledelse, og hvor arbeidsgiveren har risikoen for at arbeidsinnsatsen resulterer i et arbeidsresultat&#xA;&#xA;Kilde: Henning Jakhelln / Oversikt over arbeidsretten. ISBN: 9788202413637&#xA;&#xA;# Eksempler&#xA;" isSpecification="false" sType="Class" nType="0" alias="Employment" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="ole.anders" version="1.0" phase="1.0" created="2016-09-15 10:09:44" modified="2017-02-09 10:57:09" complexity="1" status="Proposed"/>
+				<properties documentation="Arbeidsforhold er et avtaleforhold mellom personalressurs og arbeidsgiver&#xA;&#xA;# Beskrivelse&#xA;&#xA;Arbeidsforhold defineres som et avtaleforhold hvor den ene part (arbeidstakeren / personalressurs) forplikter seg til å utføre arbeid for den annen part (arbeidsgiveren / organisasjonselement).&#xA;&#xA;# Eksempler&#xA;&#xA;* Ansatt som rådgiver i fast stilling&#xA;* Vikariat for en annen person som er i permisjon fra sitt arbeidsforhold" isSpecification="false" sType="Class" nType="0" alias="Employment" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="ole.anders" version="1.0" phase="1.0" created="2016-09-15 10:09:44" modified="2017-02-09 13:00:39" complexity="1" status="Proposed"/>
 				<code genoptions="nKill=0;bConstructor=1;bConInline=0;sConScope=Public;bCpyConstructor=0;bCpyConInline=0;sCpyConScope=Public;bDestructor=1;bDesVirtual=1;bDesInline=0;sDesScope=Public;CHeader=.h;CBody=.cpp;JBody=.java;VBody=.cls;VBNetBody=.vb;WFSBody=.vbs;JavaScriptBody=.js;MDGBPSimExecutionEngineExtensionBody=;sAssocName=$LinkClass;bGetSet=1;bGenInterfaces=1;JCol=Vector;CCol=[];VCol=Collection;bVMultiuse=1;bVPersist=0;bVDatabind=0;bVDatasource=0;bVGlobal=0;bVCreatable=1;bVExposed=0;sMTS=0;sCRefType=*;sCGetPrefix=Get;sCSetPrefix=Set;sJGetPrefix=get;sJSetPrefix=set;sCSGetPrefix=Get;sCSSetPrefix=Set;sVVersion=6.0;CSBody=.cs;DBody=.pas;bJInnerClasses=1;sJCollection=;sCodePage=;sPHPBody=.php;sPHPVersion=;sPHPGetPrefix=get;sPHPSetPrefix=set;ASBody=.as;PyBody=.py;CPPVersion=;ASVersion=2.0;ANSICHeader=.h;ANSICBody=.c;ANSIC_OOSupport=0;ANSIC_NSDLMT=_;ANSIC_RefParam=1;ANSIC_RefStyle=*;ANSIC_RefName=this;ANSIC_ConstructorName=new;ANSIC_DestructorName=delete;CPPCollections=CArray&lt;#TYPE#&gt;_x241F_CMap&lt;CString,LPCTSTR,#TYPE#*,#TYPE#*&gt;_x241F_;CSCollections=List&lt;#TYPE#&gt;_x241F_Stack&lt;#TYPE#&gt;_x241F_Queue&lt;#TYPE#&gt;_x241F_;JCollections=HashSet&lt;#TYPE#&gt;_x241F_Map&lt;String,#TYPE#&gt;_x241F_List&lt;#TYPE#&gt;_x241F_;nLang=-1;sLang=&lt;none&gt;;" product_name="&lt;none&gt;" gentype="&lt;none&gt;"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;" object_style="MDoc=0;"/>
 				<tags>
@@ -2985,9 +2985,9 @@
 				<xrefs/>
 				<extendedProperties tagged="0" package_name="Personalressurs" eventflags="OBJ=8083;"/>
 				<attributes>
-					<attribute xmi:idref="EAID_91AE90A8_7F18_4803_A036_8343E46EFDED" name="grunnlønn" scope="Public">
+					<attribute xmi:idref="EAID_91AE90A8_7F18_4803_A036_8343E46EFDED" name="årslønn" scope="Public">
 						<initial/>
-						<documentation value="Årslønn/grunnlønn i 100 % stilling.&#xA;&#xA;# Beskrivelse&#xA;Årslønnen for stillingen i 100% stillingstørrelse. Inneholder ikke definerte tillegg.&#xA;&#xA;# Format&#xA;&#xA;&#xA;# Eksempel&#xA;&#xA;* &lt;font color=&quot;#009600&quot;&gt;`&lt;/font&gt;400 000&lt;font color=&quot;#009600&quot;&gt;`&lt;/font&gt;"/>
+						<documentation value="Årslønn/grunnlønn i 100 % stilling.&#xA;&#xA;# Beskrivelse&#xA;Lønn i 100% stilling. Inneholder ikke definerte tillegg.&#xA;&#xA;# Format&#xA;&#xA;&#xA;# Eksempel&#xA;&#xA;* `400000`"/>
 						<model ea_localid="1145" ea_guid="{91AE90A8-7F18-4803-A036-8343E46EFDED}"/>
 						<properties type="double" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
