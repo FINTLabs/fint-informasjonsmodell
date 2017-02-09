@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/kodeverk/0.1" xmlns:kv="https://ns.felleskomponent.no/hr/kodeverk/0.1" elementFormDefault="qualified" xmlns:fm="https://ns.felleskomponent.no/felles/0.1">
-  <!-- Generert av MetaTrans(1.1.0.0) - 02.02.2017 15:16:09-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 09.02.2017 13:49:31-->
   <xs:import namespace="https://ns.felleskomponent.no/felles/0.1" schemaLocation="felles.xsd" />
   <xs:element name="Ansvar" type="kv:AnsvarType" />
   <xs:complexType name="AnsvarListe">
@@ -127,6 +127,19 @@
           <xs:element name="forelder" minOccurs="0" maxOccurs="1" nillable="true" type="kv:StillingskodeType" />
           <xs:element name="ksKode" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string" />
         </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TimerPerUkeKode" type="kv:TimerPerUkeKodeType" />
+  <xs:complexType name="TimerPerUkeKodeListe">
+    <xs:sequence>
+      <xs:element name="timerperukekode" type="kv:TimerPerUkeKodeType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TimerPerUkeKodeType">
+    <xs:complexContent>
+      <xs:extension base="kv:AbstraktBegrepType">
+        <xs:sequence />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
