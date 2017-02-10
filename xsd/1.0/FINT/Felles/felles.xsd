@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/felles/0.1" xmlns:fm="https://ns.felleskomponent.no/felles/0.1" elementFormDefault="qualified" xmlns:pr="https://ns.felleskomponent.no/hr/personalressurs/0.1">
-  <!-- Generert av MetaTrans(1.1.0.0) - 02.02.2017 15:16:36-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 10.02.2017 09:00:04-->
   <xs:import namespace="https://ns.felleskomponent.no/hr/personalressurs/0.1" schemaLocation="personalressurs.xsd" />
   <xs:element name="Periode" type="fm:PeriodeType" />
   <xs:complexType name="PeriodeListe">
@@ -12,20 +12,6 @@
     <xs:sequence>
       <xs:element name="start" minOccurs="1" maxOccurs="1" type="xs:dateTime" />
       <xs:element name="slutt" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Sporbar" type="fm:SporbarType" />
-  <xs:complexType name="SporbarListe">
-    <xs:sequence>
-      <xs:element name="sporbar" type="fm:SporbarType" minOccurs="0" maxOccurs="unbounded" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="SporbarType">
-    <xs:sequence>
-      <xs:element name="oprettetAv" minOccurs="1" maxOccurs="1" type="pr:PersonalressursType" />
-      <xs:element name="oprettetDato" minOccurs="1" maxOccurs="1" type="xs:date" />
-      <xs:element name="endretAv" minOccurs="1" maxOccurs="1" type="pr:PersonalressursType" />
-      <xs:element name="endretDato" minOccurs="1" maxOccurs="1" type="xs:date" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Kjoenn" type="fm:KjoennType" />
@@ -134,7 +120,6 @@
           <xs:element name="foedselsdato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:date" />
           <xs:element name="statsborgerskap" minOccurs="0" maxOccurs="1" nillable="true" type="fm:LandkodeType" />
           <xs:element name="bostedsadresse" minOccurs="0" maxOccurs="1" nillable="true" type="fm:AdresseType" />
-          <xs:element name="personalressurs" minOccurs="0" maxOccurs="1" nillable="true" type="pr:PersonalressursType" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

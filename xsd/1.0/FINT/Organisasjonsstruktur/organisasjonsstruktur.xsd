@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ns.felleskomponent.no/hr/orgstruktur/0.1" xmlns:org="https://ns.felleskomponent.no/hr/orgstruktur/0.1" elementFormDefault="qualified" xmlns:kv="https://ns.felleskomponent.no/hr/kodeverk/0.1" xmlns:fm="https://ns.felleskomponent.no/felles/0.1" xmlns:pr="https://ns.felleskomponent.no/hr/personalressurs/0.1">
-  <!-- Generert av MetaTrans(1.1.0.0) - 02.02.2017 15:16:26-->
+  <!-- Generert av MetaTrans(1.1.0.0) - 10.02.2017 08:59:55-->
   <xs:import namespace="https://ns.felleskomponent.no/hr/kodeverk/0.1" schemaLocation="kodeverk.xsd" />
   <xs:import namespace="https://ns.felleskomponent.no/felles/0.1" schemaLocation="felles.xsd" />
   <xs:import namespace="https://ns.felleskomponent.no/hr/personalressurs/0.1" schemaLocation="personalressurs.xsd" />
@@ -22,9 +22,7 @@
           <xs:element name="foreslaattAnsvar" minOccurs="0" maxOccurs="1" nillable="true" type="kv:AnsvarType" />
           <xs:element name="orgId" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
           <xs:element name="orgKode" minOccurs="1" maxOccurs="1" type="fm:IdentifikatorType" />
-          <xs:element name="arbeidsgiver" minOccurs="0" maxOccurs="1" nillable="true" type="org:OrganisasjonselementType" />
           <xs:element name="gyldighetsperiode" minOccurs="0" maxOccurs="1" nillable="true" type="fm:PeriodeType" />
-          <xs:element name="ansatte" minOccurs="0" maxOccurs="1" nillable="true" type="pr:ArbeidsforholdListe" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
