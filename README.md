@@ -17,8 +17,8 @@ Dokumentasjon av informasjonsmodellen blir automatisk publisert på [dokumentasj
 ### Hvordan åpne og gjøre endringer
 
 1. Åpne FINT-informasjonsmodeller.eap i Sparx Enterprise Architect
-2. Importer FINT-informasjonsmodell.xml ved å gå til følgende meny: _PACKAGE_ -> _Import/Export_ -> _Import Package for XMI_ (**`Ctrl` + `Alt` + `I`**)
+2. Importer FINT-informasjonsmodell.xml ved å gå til følgende meny: _PACKAGE_ -> _Import/Export_ -> _Import Package for XMI_ (**`Ctrl + Alt + I`**)
 3. Gjør ønskede endringer
-4. Eksporter prosjekt til FINT-informasjonsmodell.xml ved å gå til følgende meny: _PACKAGE_ -> _Import/Export_ -> _Export Package for XMI_ (**`Ctrl` + `Alt` + `E`**)
+4. Eksporter prosjekt til FINT-informasjonsmodell.xml ved å gå til følgende meny: _PACKAGE_ -> _Import/Export_ -> _Export Package for XMI_ (**`Ctrl + Alt + E`**)
 5. Eksporter hver XSD med MetaKat.
 
