@@ -482,7 +482,7 @@
 					<packageImport xmi:type="uml:PackageImport" xmi:id="EAID_AA3F9D89_C9CB_4a04_9010_6C1F991E8FC3" visibility="public" importedPackage="EAPK_9FF508E7_B4A7_4bf5_B441_F7F5733F001D"/>
 					<packageImport xmi:type="uml:PackageImport" xmi:id="EAID_AAB041CC_A9BF_408c_B71C_0DB7D6E7EA41" visibility="public" importedPackage="EAPK_3D763EF0_3066_4aa9_97D7_67827101CC20"/>
 					<packagedElement xmi:type="uml:Class" xmi:id="EAID_0F87A52C_7EE0_45e3_9DE2_AE537A34659D" name="Personalressurs" visibility="public">
-						<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_57FA0F15_75A8_421b_8FB2_AAE560E9F691" name="signatur" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+						<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_57FA0F15_75A8_421b_8FB2_AAE560E9F691" name="brukernavn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 							<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
 							<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000093_75A8_421b_8FB2_AAE560E9F691" value="1"/>
 							<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000094_75A8_421b_8FB2_AAE560E9F691" value="1"/>
@@ -2773,7 +2773,7 @@
 				<xrefs/>
 				<extendedProperties tagged="0" package_name="Personalressurs" eventflags="OBJ=80ef;" ea_attsclassified="{94A0088B-389B-4977-94A7-7B8785741F07}"/>
 				<attributes>
-					<attribute xmi:idref="EAID_57FA0F15_75A8_421b_8FB2_AAE560E9F691" name="signatur" scope="Public">
+					<attribute xmi:idref="EAID_57FA0F15_75A8_421b_8FB2_AAE560E9F691" name="brukernavn" scope="Public">
 						<initial/>
 						<documentation value="Brukernavn til en person&#xA;&#xA;# Beskrivelse&#xA;&#xA;Skal inneholde brukernavn for pålogging, som finnes i katalogtjenesten (feks Active Directory). Brukes som en identifikator som består, når fødselsnummer og/eller andre identifikatorer endrer seg.&#xA;&#xA;# Format&#xA;&#xA;Brukernavn i det format en personalressurs trenger for å logge seg på systemer i organisasjonen.&#xA;&#xA;# Eksempler&#xA;"/>
 						<model ea_localid="1139" ea_guid="{57FA0F15-75A8-421b-8FB2-AAE560E9F691}"/>
@@ -6705,15 +6705,15 @@
 			<diagram xmi:id="EAID_2D6EB8B6_BE55_4470_A5B7_CD2FF003855D">
 				<model package="EAPK_455D668D_96AB_4dee_A0DC_12FAC7139EC2" localID="128" owner="EAPK_455D668D_96AB_4dee_A0DC_12FAC7139EC2"/>
 				<properties name="Personalressurs" type="Logical"/>
-				<project author="Tor Kjetil" version="1.0" created="2016-08-24 00:00:00" modified="2017-02-09 13:51:44"/>
+				<project author="Tor Kjetil" version="1.0" created="2016-08-24 00:00:00" modified="2017-02-10 11:10:15"/>
 				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=780;DocSize.cy=1134;ShowDetails=0;Orientation=P;Zoom=75;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
-				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=1;SuppressedCompartments=;Theme=:119;SaveTag=E979E5FD;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=1;SuppressedCompartments=;Theme=:119;SaveTag=47226873;"/>
 				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;cls=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:ARIAL,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
 				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
 				<extendedProperties/>
 				<elements>
 					<element geometry="Left=473;Top=657;Right=744;Bottom=846;" subject="EAID_941E2DF3_55A0_4321_8D0A_347FC274EEB3" seqno="1" style="DUID=2228794F;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
-					<element geometry="Left=61;Top=398;Right=325;Bottom=509;" subject="EAID_0F87A52C_7EE0_45e3_9DE2_AE537A34659D" seqno="2" style="DUID=F386C782;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
+					<element geometry="Left=67;Top=400;Right=331;Bottom=511;" subject="EAID_0F87A52C_7EE0_45e3_9DE2_AE537A34659D" seqno="2" style="DUID=F386C782;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="Left=567;Top=267;Right=692;Bottom=339;" subject="EAID_0CA4A60C_0085_42a3_A764_09EEEBBB8B90" seqno="3" style="DUID=11195146;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="Left=62;Top=650;Right=326;Bottom=873;" subject="EAID_99474ABD_36AE_4dc7_9895_5BC9C901AC39" seqno="4" style="DUID=7573729C;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="Left=555;Top=27;Right=708;Bottom=114;" subject="EAID_A6607BE5_95E0_4bcf_81F1_B1D9259F3C4B" seqno="5" style="DUID=8EDDE383;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
