@@ -147,7 +147,7 @@
 					<packagedElement xmi:type="uml:Class" xmi:id="EAID_99797F54_CCF8_49dc_9760_9C09E0B4246B" name="Kontostreng" visibility="public"/>
 					<packagedElement xmi:type="uml:Class" xmi:id="EAID_F5F78B78_5772_4d98_9DCA_F1CF43BFB771" name="Arbeidforhold" visibility="public"/>
 				</packagedElement>
-				<packagedElement xmi:type="uml:Package" xmi:id="EAPK_3D763EF0_3066_4aa9_97D7_67827101CC20" name="Delte modeller" visibility="public">
+				<packagedElement xmi:type="uml:Package" xmi:id="EAPK_3D763EF0_3066_4aa9_97D7_67827101CC20" name="Fellesmodell" visibility="public">
 					<packageImport xmi:type="uml:PackageImport" xmi:id="EAID_74DAF15C_ECCC_46e6_A8D9_6EE8B2197C79" visibility="public" importedPackage="EAPK_455D668D_96AB_4dee_A0DC_12FAC7139EC2"/>
 					<packagedElement xmi:type="uml:Class" xmi:id="EAID_3918321E_C706_4469_892B_CA90C03B4378" name="Person" visibility="public">
 						<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_A0F7264C_0AF1_429c_B322_3A7A987F1CA6" name="fødselsnummer" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
@@ -235,7 +235,7 @@
 							<generalization xmi:type="uml:Generalization" xmi:id="EAID_CCAC671B_790C_4773_BE31_886B6C1A7F18" general="EAID_BAD47592_9D29_4f48_AF17_C092E043B507"/>
 						</packagedElement>
 					</packagedElement>
-					<packagedElement xmi:type="uml:Package" xmi:id="EAPK_40CFF887_12C4_4ae7_B1CC_84B3C7D60265" name="Fellesklasser" visibility="public">
+					<packagedElement xmi:type="uml:Package" xmi:id="EAPK_40CFF887_12C4_4ae7_B1CC_84B3C7D60265" name="Komplekse datatyper" visibility="public">
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_A6607BE5_95E0_4bcf_81F1_B1D9259F3C4B" name="Adresse" visibility="public">
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_BB221354_D5B8_42f9_8AA6_1A0C793CDDA8" name="adresse" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000027_D5B8_42f9_8AA6_1A0C793CDDA8" value="1"/>
@@ -1538,10 +1538,10 @@
 				<xrefs/>
 				<extendedProperties tagged="0" package_name="Diagram"/>
 			</element>
-			<element xmi:idref="EAPK_3D763EF0_3066_4aa9_97D7_67827101CC20" xmi:type="uml:Package" name="Delte modeller" scope="public">
+			<element xmi:idref="EAPK_3D763EF0_3066_4aa9_97D7_67827101CC20" xmi:type="uml:Package" name="Fellesmodell" scope="public">
 				<model package2="EAID_3D763EF0_3066_4aa9_97D7_67827101CC20" package="EAPK_CF051141_D9AF_4231_A3D9_5907E487A8DD" tpos="4" ea_localid="276" ea_eleType="package"/>
 				<properties isSpecification="false" sType="Package" nType="0" scope="public" stereotype="applicationSchema"/>
-				<project author="Tor Kjetil" version="1.0" phase="1.0" created="2016-08-24 12:27:06" modified="2017-02-13 20:08:35" complexity="1" status="Proposed"/>
+				<project author="Tor Kjetil" version="1.0" phase="1.0" created="2016-08-24 12:27:06" modified="2017-02-15 10:45:29" complexity="1" status="Proposed"/>
 				<code gentype="&lt;none&gt;"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags>
@@ -1554,7 +1554,7 @@
 				<extendedProperties tagged="0" package_name="FINT"/>
 				<packageproperties version="1.0" owner="oae" xmiver="Enterprise Architect XMI 2.1/UML 2.1" tpos="4"/>
 				<paths xmlpath="Felles.xml"/>
-				<times created="2016-08-24 12:27:06" modified="2017-02-15 09:48:43" lastloaddate="2016-09-15 09:51:35" lastsavedate="2016-09-15 09:51:35"/>
+				<times created="2016-08-24 12:27:06" modified="2017-02-15 10:45:29" lastloaddate="2016-09-15 09:51:35" lastsavedate="2016-09-15 09:51:35"/>
 				<flags iscontrolled="FALSE" isprotected="FALSE" batchsave="0" batchload="0" usedtd="FALSE" logxml="FALSE" packageFlags="Recurse=1;"/>
 			</element>
 			<element xmi:idref="EAID_3918321E_C706_4469_892B_CA90C03B4378" xmi:type="uml:Class" name="Person" scope="public">
@@ -1567,7 +1567,7 @@
 					<tag xmi:id="EAID_E521BBD0_43A3_4606_9EBD_681B7E991D6E" name="md_guid" value="_18_4_13ab03b9_1472030486250_388614_4389" modelElement="EAID_3918321E_C706_4469_892B_CA90C03B4378"/>
 				</tags>
 				<xrefs value="$XREFPROP=$XID={F05B981F-693D-46e6-A2F5-086FA08F6D2E}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isActive@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={3918321E-C706-4469-892B-CA90C03B4378}$CLT;$ENDXREF;"/>
-				<extendedProperties tagged="0" package_name="Delte modeller"/>
+				<extendedProperties tagged="0" package_name="Fellesmodell"/>
 				<attributes>
 					<attribute xmi:idref="EAID_A0F7264C_0AF1_429c_B322_3A7A987F1CA6" name="fødselsnummer" scope="Public">
 						<initial/>
@@ -1673,7 +1673,7 @@
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
 				<xrefs/>
-				<extendedProperties tagged="0" package_name="Delte modeller"/>
+				<extendedProperties tagged="0" package_name="Fellesmodell"/>
 				<attributes>
 					<attribute xmi:idref="EAID_E2AAF169_9A53_4d9b_88E3_444018136A13" name="relasjonsId" scope="Public">
 						<initial/>
@@ -1700,7 +1700,7 @@
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
 				<xrefs/>
-				<extendedProperties tagged="0" package_name="Delte modeller"/>
+				<extendedProperties tagged="0" package_name="Fellesmodell"/>
 				<packageproperties version="1.0"/>
 				<paths/>
 				<times created="2017-02-13 19:52:02" modified="2017-02-15 09:48:43" lastloaddate="2017-02-15 09:48:43" lastsavedate="2017-02-15 09:48:43"/>
@@ -1817,18 +1817,18 @@
 					<Generalization xmi:id="EAID_20FE97FF_3DBC_425b_A64C_294CFD5B097D" start="EAID_941E2DF3_55A0_4321_8D0A_347FC274EEB3" end="EAID_88C124DF_F3E2_435a_BF1C_B4077CD6C1ED"/>
 				</links>
 			</element>
-			<element xmi:idref="EAPK_40CFF887_12C4_4ae7_B1CC_84B3C7D60265" xmi:type="uml:Package" name="Fellesklasser" scope="public">
+			<element xmi:idref="EAPK_40CFF887_12C4_4ae7_B1CC_84B3C7D60265" xmi:type="uml:Package" name="Komplekse datatyper" scope="public">
 				<model package2="EAID_40CFF887_12C4_4ae7_B1CC_84B3C7D60265" package="EAPK_3D763EF0_3066_4aa9_97D7_67827101CC20" tpos="0" ea_localid="278" ea_eleType="package"/>
 				<properties isSpecification="false" sType="Package" nType="0" scope="public"/>
-				<project author="ole.anders" version="1.0" phase="1.0" created="2017-02-13 19:53:23" modified="2017-02-13 19:53:23" complexity="1" status="Proposed"/>
+				<project author="ole.anders" version="1.0" phase="1.0" created="2017-02-13 19:53:23" modified="2017-02-15 10:47:42" complexity="1" status="Proposed"/>
 				<code gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
 				<xrefs/>
-				<extendedProperties tagged="0" package_name="Delte modeller"/>
+				<extendedProperties tagged="0" package_name="Fellesmodell"/>
 				<packageproperties version="1.0"/>
 				<paths/>
-				<times created="2017-02-13 19:53:23" modified="2017-02-15 09:48:43" lastloaddate="2017-02-15 09:48:43" lastsavedate="2017-02-15 09:48:43"/>
+				<times created="2017-02-13 19:53:23" modified="2017-02-15 10:47:42" lastloaddate="2017-02-15 09:48:43" lastsavedate="2017-02-15 09:48:43"/>
 				<flags iscontrolled="FALSE" isprotected="FALSE" batchsave="0" batchload="0" usedtd="FALSE" logxml="FALSE"/>
 			</element>
 			<element xmi:idref="EAID_A6607BE5_95E0_4bcf_81F1_B1D9259F3C4B" xmi:type="uml:Class" name="Adresse" scope="public">
@@ -1839,7 +1839,7 @@
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
 				<xrefs/>
-				<extendedProperties tagged="0" package_name="Fellesklasser" ea_attsclassified="{2D043D4E-C01A-4c73-920B-339327DCCD09},{D35BA343-83D4-475a-AF24-BA187C991295},{6BE503F3-8145-4c0f-97EE-3A0CC0604FFD}"/>
+				<extendedProperties tagged="0" package_name="Komplekse datatyper" ea_attsclassified="{2D043D4E-C01A-4c73-920B-339327DCCD09},{D35BA343-83D4-475a-AF24-BA187C991295},{6BE503F3-8145-4c0f-97EE-3A0CC0604FFD}"/>
 				<attributes>
 					<attribute xmi:idref="EAID_BB221354_D5B8_42f9_8AA6_1A0C793CDDA8" name="adresse" scope="Public">
 						<initial/>
@@ -1913,7 +1913,7 @@
 					<tag xmi:id="EAID_D5EC43DD_69BE_4b14_B08F_F4FE2322A063" name="md_guid" value="_18_4_13ab03b9_1472030486460_881186_4393" modelElement="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
 				</tags>
 				<xrefs value="$XREFPROP=$XID={FE1BE001-4806-4a5d-B2B7-9E3985E677F1}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isActive@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={16909330-2704-4b6a-A79C-D85F82732282}$CLT;$ENDXREF;"/>
-				<extendedProperties tagged="0" package_name="Fellesklasser" ea_attsclassified="{A93AF9FB-2C0E-4c4c-A131-79EC3E859003},{39AC64FD-69F2-425e-8201-4CD04519E2C3},{E2AAF169-9A53-4d9b-88E3-444018136A13},{FD892D6C-D5B0-476b-94B3-D2F3C14CB9D1},{A0F7264C-0AF1-429c-B322-3A7A987F1CA6},{57FA0F15-75A8-421b-8FB2-AAE560E9F691},{39447055-0ED6-44ca-94D9-8C844355745F},{2E3BCEA7-D74E-4acc-AB33-5D8489E72079},{3C299BDB-4B76-458e-964A-A60C28B3623E}"/>
+				<extendedProperties tagged="0" package_name="Komplekse datatyper" ea_attsclassified="{A93AF9FB-2C0E-4c4c-A131-79EC3E859003},{39AC64FD-69F2-425e-8201-4CD04519E2C3},{E2AAF169-9A53-4d9b-88E3-444018136A13},{FD892D6C-D5B0-476b-94B3-D2F3C14CB9D1},{A0F7264C-0AF1-429c-B322-3A7A987F1CA6},{57FA0F15-75A8-421b-8FB2-AAE560E9F691},{39447055-0ED6-44ca-94D9-8C844355745F},{2E3BCEA7-D74E-4acc-AB33-5D8489E72079},{3C299BDB-4B76-458e-964A-A60C28B3623E}"/>
 				<attributes>
 					<attribute xmi:idref="EAID_D058AEE1_E15F_40a1_B390_5BAD8F06C02E" name="identifikatorverdi" scope="Public">
 						<initial/>
@@ -1960,7 +1960,7 @@
 					<tag xmi:id="EAID_54BE1B90_2472_a624_8743_D87F2F6F267F" name="SOSI_navn" modelElement="EAID_7C37FE86_403B_4a89_AC8F_6EAA9D7A7EF2"/>
 				</tags>
 				<xrefs value="$XREFPROP=$XID={A68C9236-5A45-47e7-A6B9-1E181DFDAD41}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isActive@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={7C37FE86-403B-4a89-AC8F-6EAA9D7A7EF2}$CLT;$ENDXREF;"/>
-				<extendedProperties tagged="0" package_name="Fellesklasser" ea_attsclassified="{10B43614-655F-45fe-BC3F-D8E3C07E158F},{CFCAB717-EB22-4dc3-8705-7886850764F3}"/>
+				<extendedProperties tagged="0" package_name="Komplekse datatyper" ea_attsclassified="{10B43614-655F-45fe-BC3F-D8E3C07E158F},{CFCAB717-EB22-4dc3-8705-7886850764F3}"/>
 				<attributes>
 					<attribute xmi:idref="EAID_3BB5C3B5_768E_42bf_9277_A33495F986BA" name="epostadresse" scope="Public">
 						<initial/>
@@ -2032,7 +2032,7 @@
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
 				<xrefs/>
-				<extendedProperties tagged="0" package_name="Fellesklasser" ea_attsclassified="{72FCE183-3C03-42cf-A09B-ECF57B8FEBB2},{290BE257-A6FA-4f1b-A45D-F34484643028},{5B1C8A2A-BB5F-4b75-A710-BF7B2344FD10},{2247ECAC-CB42-438a-87CD-B7CA139CF98D},{F2E095C9-D534-4d72-B4B9-6D01E7FD6D43}"/>
+				<extendedProperties tagged="0" package_name="Komplekse datatyper" ea_attsclassified="{72FCE183-3C03-42cf-A09B-ECF57B8FEBB2},{290BE257-A6FA-4f1b-A45D-F34484643028},{5B1C8A2A-BB5F-4b75-A710-BF7B2344FD10},{2247ECAC-CB42-438a-87CD-B7CA139CF98D},{F2E095C9-D534-4d72-B4B9-6D01E7FD6D43}"/>
 				<attributes>
 					<attribute xmi:idref="EAID_0EC284F7_2DAA_4df8_B1D4_1A75B6FD1E22" name="start" scope="Public">
 						<initial/>
@@ -2076,7 +2076,7 @@
 					<tag xmi:id="EAID_0F55FC36_D839_45c1_8CF6_2D2F45747B6E" name="md_guid" value="_18_4_13ab03b9_1472030885381_871008_4806" modelElement="EAID_0B22B619_E452_4b80_A336_288B213B3D8B"/>
 				</tags>
 				<xrefs/>
-				<extendedProperties tagged="0" package_name="Fellesklasser" ea_attsclassified="{6C6BF712-ABDE-4bdb-9571-DED09F0DA657}"/>
+				<extendedProperties tagged="0" package_name="Komplekse datatyper" ea_attsclassified="{6C6BF712-ABDE-4bdb-9571-DED09F0DA657}"/>
 				<attributes>
 					<attribute xmi:idref="EAID_17997467_83A8_4289_8F73_B17DCBADBA53" name="fornavn" scope="Public">
 						<initial/>
@@ -2133,7 +2133,7 @@
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
 				<xrefs/>
-				<extendedProperties tagged="0" package_name="Fellesklasser"/>
+				<extendedProperties tagged="0" package_name="Komplekse datatyper"/>
 				<packageproperties version="1.0"/>
 				<paths/>
 				<times created="2016-08-24 13:25:49" modified="2017-02-15 09:48:43" lastloaddate="2016-09-15 09:51:35" lastsavedate="2016-09-15 09:51:35"/>
@@ -4622,7 +4622,7 @@
 			</connector>
 			<connector xmi:idref="EAID_74DAF15C_ECCC_46e6_A8D9_6EE8B2197C79">
 				<source xmi:idref="EAID_3D763EF0_3066_4aa9_97D7_67827101CC20">
-					<model ea_localid="1363" type="Package" name="Delte modeller"/>
+					<model ea_localid="1363" type="Package" name="Fellesmodell"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -4666,7 +4666,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_3D763EF0_3066_4aa9_97D7_67827101CC20">
-					<model ea_localid="1363" type="Package" name="Delte modeller"/>
+					<model ea_localid="1363" type="Package" name="Fellesmodell"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
