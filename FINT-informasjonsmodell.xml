@@ -379,7 +379,7 @@
 							<generalization xmi:type="uml:Generalization" xmi:id="EAID_69D21553_A142_45a9_8792_14925828352E" general="EAID_251BD438_32B1_413e_808E_2EDA923E17B8"/>
 						</packagedElement>
 						<packagedElement xmi:type="uml:Package" xmi:id="EAPK_A0EF9103_3AAF_4e12_8657_DFF6F774E3DC" name="Basisklasse" visibility="public">
-							<packagedElement xmi:type="uml:Class" xmi:id="EAID_251BD438_32B1_413e_808E_2EDA923E17B8" name="Begrep" visibility="public" isAbstract="true">
+							<packagedElement xmi:type="uml:Class" xmi:id="EAID_251BD438_32B1_413e_808E_2EDA923E17B8" name="Begrepskode" visibility="public" isAbstract="true">
 								<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_DA53C6C2_5CEF_45ef_9FA8_E538DD471F5C" name="kode" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 									<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000067_5CEF_45ef_9FA8_E538DD471F5C" value="1"/>
 									<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000068_5CEF_45ef_9FA8_E538DD471F5C" value="1"/>
@@ -2410,10 +2410,10 @@
 				<times created="2017-02-13 20:17:16" modified="2017-02-16 09:14:41" lastloaddate="2017-02-15 09:48:43" lastsavedate="2017-02-15 09:48:43"/>
 				<flags iscontrolled="FALSE" isprotected="FALSE" batchsave="0" batchload="0" usedtd="FALSE" logxml="FALSE"/>
 			</element>
-			<element xmi:idref="EAID_251BD438_32B1_413e_808E_2EDA923E17B8" xmi:type="uml:Class" name="Begrep" scope="public">
+			<element xmi:idref="EAID_251BD438_32B1_413e_808E_2EDA923E17B8" xmi:type="uml:Class" name="Begrepskode" scope="public">
 				<model package="EAPK_A0EF9103_3AAF_4e12_8657_DFF6F774E3DC" tpos="0" ea_localid="1016" ea_eleType="element"/>
 				<properties documentation="Overordnet beskrivelse av et element i et kodeverk&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Overordnet element har ingen forelder&#xA;Sjekker ved innhenting av data:&#xA;* Det skal være bare 1 overordnet element i hver kodeverk&#xA;* Det er ingen sykluser definert med forelder forholdet&#xA;&#xA;# Eksempel" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-01-17 12:05:00" modified="2017-02-16 09:14:41" complexity="1" status="Proposed"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-01-17 12:05:00" modified="2017-02-16 11:44:22" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -4739,7 +4739,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_251BD438_32B1_413e_808E_2EDA923E17B8">
-					<model ea_localid="1016" type="Class" name="Begrep"/>
+					<model ea_localid="1016" type="Class" name="Begrepskode"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -4773,7 +4773,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_251BD438_32B1_413e_808E_2EDA923E17B8">
-					<model ea_localid="1016" type="Class" name="Begrep"/>
+					<model ea_localid="1016" type="Class" name="Begrepskode"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -4807,7 +4807,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_251BD438_32B1_413e_808E_2EDA923E17B8">
-					<model ea_localid="1016" type="Class" name="Begrep"/>
+					<model ea_localid="1016" type="Class" name="Begrepskode"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -4841,7 +4841,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_251BD438_32B1_413e_808E_2EDA923E17B8">
-					<model ea_localid="1016" type="Class" name="Begrep"/>
+					<model ea_localid="1016" type="Class" name="Begrepskode"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -4875,7 +4875,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_251BD438_32B1_413e_808E_2EDA923E17B8">
-					<model ea_localid="1016" type="Class" name="Begrep"/>
+					<model ea_localid="1016" type="Class" name="Begrepskode"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -4909,7 +4909,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_251BD438_32B1_413e_808E_2EDA923E17B8">
-					<model ea_localid="1016" type="Class" name="Begrep"/>
+					<model ea_localid="1016" type="Class" name="Begrepskode"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -4943,7 +4943,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_251BD438_32B1_413e_808E_2EDA923E17B8">
-					<model ea_localid="1016" type="Class" name="Begrep"/>
+					<model ea_localid="1016" type="Class" name="Begrepskode"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -4977,7 +4977,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_251BD438_32B1_413e_808E_2EDA923E17B8">
-					<model ea_localid="1016" type="Class" name="Begrep"/>
+					<model ea_localid="1016" type="Class" name="Begrepskode"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
