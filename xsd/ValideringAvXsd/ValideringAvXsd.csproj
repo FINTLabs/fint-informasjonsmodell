@@ -29,6 +29,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ProjectView>ShowAllFiles</ProjectView>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -42,26 +45,11 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="felles.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="kodeverk.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="organisasjonsstruktur.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="personalressurs.xsd">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>copy ..\..\..\1.0\FINT\Felles\felles.xsd ..\..\felles.xsd
-copy ..\..\..\1.0\FINT\Kodeverk\kodeverk.xsd ..\..\kodeverk.xsd
-copy ..\..\..\1.0\FINT\Organisasjonsstruktur\organisasjonsstruktur.xsd ..\..\organisasjonsstruktur.xsd
-copy ..\..\..\1.0\FINT\Personalressurs\personalressurs.xsd ..\..\personalressurs.xsd</PreBuildEvent>
+    <PreBuildEvent>copy ..\..\..\1.0\FINT\Fellesmodell\felles.xsd ..\..\felles.xsd
+copy ..\..\..\1.0\FINT\Administrasjon\administrasjon.xsd ..\..\administrasjon.xsd
+</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
