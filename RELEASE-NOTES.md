@@ -5,6 +5,7 @@
 	- [Bugfixes](#bugfixes)
 	- [Known issues](#known-issues)
 - [v1.0.0](#v100)
+	- [Features](#features-1)
 
 <!-- /MarkdownTOC -->
 
@@ -41,3 +42,11 @@
 | Tag  | `v1.0.0`     |
 
 * Initial release
+
+## Features
+
+* Common classes (`Fellesmodell`) 
+* Classes for Administration domain (`Administrasjon`):
+  * `Personal`
+  * `Organisasjon`
+  * `Kodeverk`

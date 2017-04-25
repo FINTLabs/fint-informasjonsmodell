@@ -2,6 +2,8 @@
 
 Innehold i informasjonsmodellen som benyttes i felleskomponentene som lages i FINT-prosjektet. Se [fintprosjektet.no](http://fintprosjektet.no) 
 
+Release notater finner her: [RELEASE-NOTES.md](RELEASE-NOTES.md)
+
 ## Dokumentasjon
 
 Dokumentasjon av informasjonsmodellen blir automatisk publisert på [dokumentasjon.felleskomponent.no](https://dokumentasjon.felleskomponent.no/)
