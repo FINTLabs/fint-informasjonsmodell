@@ -153,6 +153,9 @@
 								<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000024__2D2B_47d1_9F63_2CBF5144EB1C" value="-1"/>
 							</ownedAttribute>
 						</packagedElement>
+						<packagedElement xmi:type="uml:Class" xmi:id="EAID_97DB78FC_319F_4188_891E_7CE72D2201B1" name="GruppeKode" visibility="public" isAbstract="true">
+							<generalization xmi:type="uml:Generalization" xmi:id="EAID_5BCA2450_3D94_4514_8A83_4CDDA317F453" general="EAID_251BD438_32B1_413e_808E_2EDA923E17B8"/>
+						</packagedElement>
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_4850EED7_F87E_4d59_AA2E_686981708BBF" name="Undervisningsforhold" visibility="public">
 							<generalization xmi:type="uml:Generalization" xmi:id="EAID_2C7B03DE_84E7_4c66_B6A9_40CA313086A1" general="EAID_77430B9D_9F45_4876_8CE1_3B8BB1FD0CB3"/>
 						</packagedElement>
@@ -316,9 +319,6 @@
 						<packagedElement xmi:type="uml:Association" xmi:id="EAID_721B63D5_72B7_4022_861D_7EA9B7B8A84A" visibility="public">
 							<memberEnd xmi:idref="EAID_dst1B63D5_72B7_4022_861D_7EA9B7B8A84A"/>
 							<memberEnd xmi:idref="EAID_src1B63D5_72B7_4022_861D_7EA9B7B8A84A"/>
-						</packagedElement>
-						<packagedElement xmi:type="uml:Class" xmi:id="EAID_97DB78FC_319F_4188_891E_7CE72D2201B1" name="GruppeKode" visibility="public" isAbstract="true">
-							<generalization xmi:type="uml:Generalization" xmi:id="EAID_5BCA2450_3D94_4514_8A83_4CDDA317F453" general="EAID_251BD438_32B1_413e_808E_2EDA923E17B8"/>
 						</packagedElement>
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_5E4721E0_E2A0_456b_9942_4355A40F460F" name="KarakterSkala" visibility="public">
 							<generalization xmi:type="uml:Generalization" xmi:id="EAID_55C32201_02D3_4671_89FB_44B49448C68E" general="EAID_251BD438_32B1_413e_808E_2EDA923E17B8"/>
@@ -1830,6 +1830,22 @@
 					<Generalization xmi:id="EAID_E6DD1AD6_1361_4050_ABDF_6975CC07D588" start="EAID_325D3C9A_7698_41ca_8D30_5ECE299439F7" end="EAID_F9FEEF7D_7A1E_4f35_880E_B73534E7AF12"/>
 				</links>
 			</element>
+			<element xmi:idref="EAID_97DB78FC_319F_4188_891E_7CE72D2201B1" xmi:type="uml:Class" name="GruppeKode" scope="public">
+				<model package="EAPK_21D77180_D686_4c0e_A30D_8A358EB5BFF5" tpos="0" ea_localid="165" ea_eleType="element"/>
+				<properties documentation="En kode som kan brukes for å definere innholdet som leveres innen grupper. Det er typisk Grep (NVB) eller Vigo kode&#xA;&#xA;# Eksempler&#xA;&#xA;* " isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-05-23 11:42:19" modified="2017-05-31 10:03:41" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Basisklasser"/>
+				<links>
+					<Generalization xmi:id="EAID_5BCA2450_3D94_4514_8A83_4CDDA317F453" start="EAID_97DB78FC_319F_4188_891E_7CE72D2201B1" end="EAID_251BD438_32B1_413e_808E_2EDA923E17B8"/>
+					<Generalization xmi:id="EAID_44DA0101_7C10_4417_B2C8_E5BA32EBB40B" start="EAID_9275A28E_7531_4e2e_8DA8_3AF5414C7581" end="EAID_97DB78FC_319F_4188_891E_7CE72D2201B1"/>
+					<Association xmi:id="EAID_4B7A666B_6A01_4891_A213_A31B91BF8844" start="EAID_ED72F787_FEAE_4ded_A3C0_86531D9EBBEC" end="EAID_97DB78FC_319F_4188_891E_7CE72D2201B1"/>
+					<Generalization xmi:id="EAID_7AA6D386_D7F5_4e76_941D_628DAD519295" start="EAID_9F3E3324_2FE8_477a_9704_51A7675C64E6" end="EAID_97DB78FC_319F_4188_891E_7CE72D2201B1"/>
+				</links>
+			</element>
 			<element xmi:idref="EAID_4850EED7_F87E_4d59_AA2E_686981708BBF" xmi:type="uml:Class" name="Undervisningsforhold" scope="public">
 				<model package="EAPK_21D77180_D686_4c0e_A30D_8A358EB5BFF5" tpos="0" ea_localid="97" ea_eleType="element"/>
 				<properties documentation="Undervisningsforhold til alle med en pedagogisk funksjon&#xA;&#xA;# Beskrivelse &#xA;&#xA;Alle med en pedagogisk funksjon på skolen kan ha et undervisningsforhold.&#xA;&#xA;# Eksempel&#xA;&#xA;Dette kan for eksempel være lærerens undervisningsforhold til skolen. Underviser en lærer på to skoler, vil det være naturlig å ha to undervisningsforhold." isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
@@ -2168,8 +2184,8 @@
 			<element xmi:idref="EAID_DC65509B_019C_4166_85D1_1F6691021887" xmi:type="uml:Class" name="ElevKategori" scope="public">
 				<model package="EAPK_75736DCA_EB8D_407d_A980_7B79DA7047A4" tpos="0" ea_localid="124" ea_eleType="element"/>
 				<properties documentation="Kategori som et elevforhold befinner seg innenfor&#xA;&#xA;# Beskrivelse &#xA;&#xA;Gyldige verdier er:&#xA;* heltid&#xA;* deltid&#xA;* voksen&#xA;* privatist&#xA;* norsk-utv-i-utlandet&#xA;* utenlandsk-utv-i-norge" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-05 13:59:39" modified="2017-05-24 15:38:37" complexity="1" status="Proposed"/>
-				<code gentype="Java"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-05 13:59:39" modified="2017-05-31 09:58:57" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
 				<xrefs/>
@@ -2182,8 +2198,8 @@
 			<element xmi:idref="EAID_D28DEE6C_E835_4828_A26E_552549BF1FEB" xmi:type="uml:Class" name="FraværType" scope="public">
 				<model package="EAPK_75736DCA_EB8D_407d_A980_7B79DA7047A4" tpos="0" ea_localid="154" ea_eleType="element"/>
 				<properties documentation="Skiller mellom enkelt og oppsummert fravær&#xA;&#xA;# Eksempler&#xA;&#xA;* enkelt – innslag for et enkelt fraværstilfelle&#xA;* oppsummert – sum av flere fraværstilfeller" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-05-11 13:43:59" modified="2017-05-23 14:54:01" complexity="1" status="Proposed"/>
-				<code gentype="Java"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-05-11 13:43:59" modified="2017-05-31 09:59:15" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
 				<xrefs/>
@@ -2196,8 +2212,8 @@
 			<element xmi:idref="EAID_9275A28E_7531_4e2e_8DA8_3AF5414C7581" xmi:type="uml:Class" name="GrepKode" scope="public">
 				<model package="EAPK_75736DCA_EB8D_407d_A980_7B79DA7047A4" tpos="0" ea_localid="138" ea_eleType="element"/>
 				<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-26 13:37:22" modified="2017-04-26 13:37:22" complexity="1" status="Proposed"/>
-				<code gentype="Java"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-26 13:37:22" modified="2017-05-31 10:03:34" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
 				<xrefs/>
@@ -2207,27 +2223,11 @@
 					<Association xmi:id="EAID_721B63D5_72B7_4022_861D_7EA9B7B8A84A" start="EAID_9F3E3324_2FE8_477a_9704_51A7675C64E6" end="EAID_9275A28E_7531_4e2e_8DA8_3AF5414C7581"/>
 				</links>
 			</element>
-			<element xmi:idref="EAID_97DB78FC_319F_4188_891E_7CE72D2201B1" xmi:type="uml:Class" name="GruppeKode" scope="public">
-				<model package="EAPK_75736DCA_EB8D_407d_A980_7B79DA7047A4" tpos="0" ea_localid="165" ea_eleType="element"/>
-				<properties documentation="En kode som kan brukes for å definere innholdet som leveres innen grupper. Det er typisk Grep (NVB) eller Vigo kode&#xA;&#xA;# Eksempler&#xA;&#xA;* " isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-05-23 11:42:19" modified="2017-05-24 15:56:41" complexity="1" status="Proposed"/>
-				<code product_name="Java" gentype="Java"/>
-				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-				<tags/>
-				<xrefs/>
-				<extendedProperties tagged="0" package_name="Kodeverk"/>
-				<links>
-					<Generalization xmi:id="EAID_5BCA2450_3D94_4514_8A83_4CDDA317F453" start="EAID_97DB78FC_319F_4188_891E_7CE72D2201B1" end="EAID_251BD438_32B1_413e_808E_2EDA923E17B8"/>
-					<Generalization xmi:id="EAID_44DA0101_7C10_4417_B2C8_E5BA32EBB40B" start="EAID_9275A28E_7531_4e2e_8DA8_3AF5414C7581" end="EAID_97DB78FC_319F_4188_891E_7CE72D2201B1"/>
-					<Association xmi:id="EAID_4B7A666B_6A01_4891_A213_A31B91BF8844" start="EAID_ED72F787_FEAE_4ded_A3C0_86531D9EBBEC" end="EAID_97DB78FC_319F_4188_891E_7CE72D2201B1"/>
-					<Generalization xmi:id="EAID_7AA6D386_D7F5_4e76_941D_628DAD519295" start="EAID_9F3E3324_2FE8_477a_9704_51A7675C64E6" end="EAID_97DB78FC_319F_4188_891E_7CE72D2201B1"/>
-				</links>
-			</element>
 			<element xmi:idref="EAID_5E4721E0_E2A0_456b_9942_4355A40F460F" xmi:type="uml:Class" name="KarakterSkala" scope="public">
 				<model package="EAPK_75736DCA_EB8D_407d_A980_7B79DA7047A4" tpos="0" ea_localid="158" ea_eleType="element"/>
 				<properties documentation="Gruppering av karakterer etter skala (bogstav, orden osv). &#xA;&#xA;# Eksempler&#xA;&#xA;* Bogstav – bokstavkarakterer&#xA;* Tall – tallkarakterer&#xA;* Binær- Bestått/Ikke-bestått&#xA;* Prosent - prosentpoeng." isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-05-11 14:51:48" modified="2017-05-23 15:21:54" complexity="1" status="Proposed"/>
-				<code gentype="Java"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-05-11 14:51:48" modified="2017-05-31 10:03:53" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
 				<xrefs/>
@@ -2240,8 +2240,8 @@
 			<element xmi:idref="EAID_8F3122A4_0BE1_49ef_BC80_55216C32E236" xmi:type="uml:Class" name="KarakterVerdi" scope="public">
 				<model package="EAPK_75736DCA_EB8D_407d_A980_7B79DA7047A4" tpos="0" ea_localid="159" ea_eleType="element"/>
 				<properties documentation="Karakterer, målestokk for vurdering av elevers faglige standpunkt, prøve- eller eksamensprestasjoner. De enkelte karakterer, som til sammen danner en karakterskala, blir betegnet med tall eller andre symboler.&#xA;&#xA;Den relaterte skalaen må refereres fra selve verdi.&#xA;&#xA;# Eksempel&#xA;&#xA;* 6 - Seks&#xA;* IM - Ikke møtt&#xA;* GK - Godkjent&#xA;* R - Realkompetanse&#xA;&#xA;# Referanse&#xA;&#xA;* Vigo Kodeverkdatabase. Karakter: [vigo.no/vigokv/karakter.action](https://www.vigo.no/vigokv/karakter.action)&#xA;* SNL. karakterer: [snl.no/karakterer](https://snl.no/karakterer)" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-05-11 14:51:54" modified="2017-05-23 16:19:40" complexity="1" status="Proposed"/>
-				<code gentype="Java"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-05-11 14:51:54" modified="2017-05-31 10:03:57" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
 				<xrefs/>
@@ -2255,8 +2255,8 @@
 			<element xmi:idref="EAID_9F3E3324_2FE8_477a_9704_51A7675C64E6" xmi:type="uml:Class" name="VigoKode" scope="public">
 				<model package="EAPK_75736DCA_EB8D_407d_A980_7B79DA7047A4" tpos="0" ea_localid="164" ea_eleType="element"/>
 				<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-05-23 11:42:05" modified="2017-05-23 11:42:05" complexity="1" status="Proposed"/>
-				<code gentype="Java"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-05-23 11:42:05" modified="2017-05-31 10:04:01" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
 				<xrefs/>
@@ -4624,6 +4624,108 @@
 				<xrefs/>
 				<tags/>
 			</connector>
+			<connector xmi:idref="EAID_5BCA2450_3D94_4514_8A83_4CDDA317F453">
+				<source xmi:idref="EAID_97DB78FC_319F_4188_891E_7CE72D2201B1">
+					<model ea_localid="165" type="Class" name="GruppeKode"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_251BD438_32B1_413e_808E_2EDA923E17B8">
+					<model ea_localid="61" type="Class" name="Begrep"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="115"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_44DA0101_7C10_4417_B2C8_E5BA32EBB40B">
+				<source xmi:idref="EAID_9275A28E_7531_4e2e_8DA8_3AF5414C7581">
+					<model ea_localid="138" type="Class" name="GrepKode"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_97DB78FC_319F_4188_891E_7CE72D2201B1">
+					<model ea_localid="165" type="Class" name="GruppeKode"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="142"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_7AA6D386_D7F5_4e76_941D_628DAD519295">
+				<source xmi:idref="EAID_9F3E3324_2FE8_477a_9704_51A7675C64E6">
+					<model ea_localid="164" type="Class" name="VigoKode"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_97DB78FC_319F_4188_891E_7CE72D2201B1">
+					<model ea_localid="165" type="Class" name="GruppeKode"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="143"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
 			<connector xmi:idref="EAID_28F39361_2799_46bb_BEE8_BA6DDD1B7581">
 				<source xmi:idref="EAID_4850EED7_F87E_4d59_AA2E_686981708BBF">
 					<model ea_localid="97" type="Class" name="Undervisningsforhold"/>
@@ -5071,40 +5173,6 @@
 				<xrefs/>
 				<tags/>
 			</connector>
-			<connector xmi:idref="EAID_44DA0101_7C10_4417_B2C8_E5BA32EBB40B">
-				<source xmi:idref="EAID_9275A28E_7531_4e2e_8DA8_3AF5414C7581">
-					<model ea_localid="138" type="Class" name="GrepKode"/>
-					<role visibility="Public" targetScope="instance"/>
-					<type aggregation="none" containment="Unspecified"/>
-					<constraints/>
-					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
-					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
-					<documentation/>
-					<xrefs/>
-					<tags/>
-				</source>
-				<target xmi:idref="EAID_97DB78FC_319F_4188_891E_7CE72D2201B1">
-					<model ea_localid="165" type="Class" name="GruppeKode"/>
-					<role visibility="Public" targetScope="instance"/>
-					<type aggregation="none" containment="Unspecified"/>
-					<constraints/>
-					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
-					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
-					<documentation/>
-					<xrefs/>
-					<tags/>
-				</target>
-				<model ea_localid="142"/>
-				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
-				<parameterSubstitutions/>
-				<documentation/>
-				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels/>
-				<extendedProperties virtualInheritance="0"/>
-				<style/>
-				<xrefs/>
-				<tags/>
-			</connector>
 			<connector xmi:idref="EAID_721B63D5_72B7_4022_861D_7EA9B7B8A84A">
 				<source xmi:idref="EAID_9F3E3324_2FE8_477a_9704_51A7675C64E6">
 					<model ea_localid="164" type="Class" name="VigoKode"/>
@@ -5136,74 +5204,6 @@
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
 				<labels lb="0..1" lt="+tilsvarende" rb="0..1" rt="+tilsvarende"/>
 				<extendedProperties/>
-				<style/>
-				<xrefs/>
-				<tags/>
-			</connector>
-			<connector xmi:idref="EAID_5BCA2450_3D94_4514_8A83_4CDDA317F453">
-				<source xmi:idref="EAID_97DB78FC_319F_4188_891E_7CE72D2201B1">
-					<model ea_localid="165" type="Class" name="GruppeKode"/>
-					<role visibility="Public" targetScope="instance"/>
-					<type aggregation="none" containment="Unspecified"/>
-					<constraints/>
-					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
-					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
-					<documentation/>
-					<xrefs/>
-					<tags/>
-				</source>
-				<target xmi:idref="EAID_251BD438_32B1_413e_808E_2EDA923E17B8">
-					<model ea_localid="61" type="Class" name="Begrep"/>
-					<role visibility="Public" targetScope="instance"/>
-					<type aggregation="none" containment="Unspecified"/>
-					<constraints/>
-					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
-					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
-					<documentation/>
-					<xrefs/>
-					<tags/>
-				</target>
-				<model ea_localid="115"/>
-				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
-				<parameterSubstitutions/>
-				<documentation/>
-				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels/>
-				<extendedProperties virtualInheritance="0"/>
-				<style/>
-				<xrefs/>
-				<tags/>
-			</connector>
-			<connector xmi:idref="EAID_7AA6D386_D7F5_4e76_941D_628DAD519295">
-				<source xmi:idref="EAID_9F3E3324_2FE8_477a_9704_51A7675C64E6">
-					<model ea_localid="164" type="Class" name="VigoKode"/>
-					<role visibility="Public" targetScope="instance"/>
-					<type aggregation="none" containment="Unspecified"/>
-					<constraints/>
-					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
-					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
-					<documentation/>
-					<xrefs/>
-					<tags/>
-				</source>
-				<target xmi:idref="EAID_97DB78FC_319F_4188_891E_7CE72D2201B1">
-					<model ea_localid="165" type="Class" name="GruppeKode"/>
-					<role visibility="Public" targetScope="instance"/>
-					<type aggregation="none" containment="Unspecified"/>
-					<constraints/>
-					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
-					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
-					<documentation/>
-					<xrefs/>
-					<tags/>
-				</target>
-				<model ea_localid="143"/>
-				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
-				<parameterSubstitutions/>
-				<documentation/>
-				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels/>
-				<extendedProperties virtualInheritance="0"/>
 				<style/>
 				<xrefs/>
 				<tags/>
