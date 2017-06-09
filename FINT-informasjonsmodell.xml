@@ -243,7 +243,7 @@
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000047_EA43_44c3_B29E_7971995053BB" value="1"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000048_EA43_44c3_B29E_7971995053BB" value="1"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstBAEB56_3E83_41b5_BC86_92868D489D36" name="fraværType" visibility="public" association="EAID_A8BAEB56_3E83_41b5_BC86_92868D489D36" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstBAEB56_3E83_41b5_BC86_92868D489D36" name="fraværstype" visibility="public" association="EAID_A8BAEB56_3E83_41b5_BC86_92868D489D36" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_D28DEE6C_E835_4828_A26E_552549BF1FEB"/>
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000049__3E83_41b5_BC86_92868D489D36" value="1"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000050__3E83_41b5_BC86_92868D489D36" value="1"/>
@@ -295,7 +295,7 @@
 						</packagedElement>
 					</packagedElement>
 					<packagedElement xmi:type="uml:Package" xmi:id="EAPK_75736DCA_EB8D_407d_A980_7B79DA7047A4" name="Kodeverk" visibility="public">
-						<packagedElement xmi:type="uml:Class" xmi:id="EAID_DC65509B_019C_4166_85D1_1F6691021887" name="ElevKategori" visibility="public">
+						<packagedElement xmi:type="uml:Class" xmi:id="EAID_DC65509B_019C_4166_85D1_1F6691021887" name="Elevkategori" visibility="public">
 							<generalization xmi:type="uml:Generalization" xmi:id="EAID_4C8A2D3D_CEC2_47c1_88E2_016F9FD822B2" general="EAID_251BD438_32B1_413e_808E_2EDA923E17B8"/>
 						</packagedElement>
 						<packagedElement xmi:type="uml:Association" xmi:id="EAID_34E04659_7972_4e9c_A171_C077B0305B8E" visibility="public">
@@ -305,7 +305,7 @@
 								<type xmi:idref="EAID_A8A7DF7A_AA87_4bf3_B240_FC559F3057DF"/>
 							</ownedEnd>
 						</packagedElement>
-						<packagedElement xmi:type="uml:Class" xmi:id="EAID_D28DEE6C_E835_4828_A26E_552549BF1FEB" name="FraværType" visibility="public">
+						<packagedElement xmi:type="uml:Class" xmi:id="EAID_D28DEE6C_E835_4828_A26E_552549BF1FEB" name="Fraværstype" visibility="public">
 							<generalization xmi:type="uml:Generalization" xmi:id="EAID_A282A425_088E_4e0a_A0AE_D22E28A03F63" general="EAID_251BD438_32B1_413e_808E_2EDA923E17B8"/>
 						</packagedElement>
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_9275A28E_7531_4e2e_8DA8_3AF5414C7581" name="GrepKode" visibility="public">
@@ -371,7 +371,7 @@
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000073_ECF8_46ac_848F_98FE024CAC75" value="0"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000074_ECF8_46ac_848F_98FE024CAC75" value="1"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_7850C80E_8A2C_4b68_9C92_BCB624B7D6B0" name="elevNummer" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_7850C80E_8A2C_4b68_9C92_BCB624B7D6B0" name="elevnummer" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000075_8A2C_4b68_9C92_BCB624B7D6B0" value="1"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000076_8A2C_4b68_9C92_BCB624B7D6B0" value="1"/>
@@ -579,7 +579,7 @@
 					</packagedElement>
 					<packagedElement xmi:type="uml:Package" xmi:id="EAPK_D12B6567_B87C_42d5_A23F_33C49E63F034" name="Organisasjon" visibility="public">
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_0F1201EE_0BE3_43fe_84F9_3911698D34C5" name="Skole" visibility="public">
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_2F853AE5_7FBC_46df_AAB0_FF4FB6A001A5" name="vigoNummer" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_2F853AE5_7FBC_46df_AAB0_FF4FB6A001A5" name="vigonummer" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000125_7FBC_46df_AAB0_FF4FB6A001A5" value="1"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000126_7FBC_46df_AAB0_FF4FB6A001A5" value="1"/>
@@ -1684,8 +1684,8 @@
 			</element>
 			<element xmi:idref="EAID_DB6D7D47_946C_4bb0_8E04_E7B51864C485" xmi:type="uml:Class" name="Medlemskap" scope="public">
 				<model package="EAPK_167E2532_354E_4b23_ADFA_53CB20A16223" tpos="0" ea_localid="119" ea_eleType="element"/>
-				<properties documentation="Måte å definere at en gitt elev eller lærer deltar i en gruppe. Informasjonen om fravær og elevets karakterer er definert ved hjelp av dette objektet." isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 14:19:55" modified="2017-05-23 16:27:20" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<properties documentation="Måte å definere at en gitt elev eller lærer deltar i en gruppe. Informasjonen om fravær og elevets karakterer er definert ved hjelp av dette objektet.&#xA;&#xA;# Eksempler&#xA;&#xA;* Elevers medlemskap i Undervisningsgrupper&#xA;* Lærerens medlemskap i Kontaktgruppe&#xA;* Viser Elevens fravær i en gitt undervisningsgruppe" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 14:19:55" modified="2017-06-09 13:54:11" complexity="1" status="Proposed" keywords="hovedklasse"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -1732,9 +1732,9 @@
 			</element>
 			<element xmi:idref="EAID_F9FEEF7D_7A1E_4f35_880E_B73534E7AF12" xmi:type="uml:Class" name="Gruppe" scope="public">
 				<model package="EAPK_21D77180_D686_4c0e_A30D_8A358EB5BFF5" tpos="0" ea_localid="95" ea_eleType="element"/>
-				<properties documentation="En generisk samling av elever og lærere.&#xA;&#xA;# Eksempler&#xA;&#xA;* Kontaktlærergruppe&#xA;* Trinn&#xA;* Undervisningsgruppe&#xA;* Fag" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:08:55" modified="2017-05-23 14:38:59" complexity="1" status="Proposed"/>
-				<code gentype="Java"/>
+				<properties documentation="En generisk samling av elever og lærere&#xA;&#xA;# Beskrivelse &#xA;&#xA;Gruppe representeres som en spesialisering (se eksempler).&#xA;&#xA;# Eksempler&#xA;&#xA;* Basisgruppe &#xA;* Kontaktlærergruppe&#xA;* Trinn (via Kodegruppe)&#xA;* Undervisningsgruppe (via Kodegruppe)&#xA;* Fag (via Kodegruppe)" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:08:55" modified="2017-06-09 11:57:15" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
 				<xrefs/>
@@ -1742,7 +1742,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_4C468E48_4459_416c_BCB5_2C136B48EF30" name="beskrivelse" scope="Public">
 						<initial/>
-						<documentation value="En utfyllende informasjon om gruppen"/>
+						<documentation value="Utfyllende informasjon om gruppen"/>
 						<model ea_localid="72" ea_guid="{4C468E48-4459-416c-BCB5-2C136B48EF30}"/>
 						<properties type="string" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -1751,13 +1751,13 @@
 						<bounds lower="1" upper="1"/>
 						<options/>
 						<style value="description"/>
-						<styleex value="volatile=0;"/>
+						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
 					</attribute>
 					<attribute xmi:idref="EAID_A1617CCD_4D36_4bae_BB2C_63B0E1DEEECC" name="systemId" scope="Public">
 						<initial/>
-						<documentation value="Unik intern system-id for gruppe&#xA;&#xA;# Beskrivelse&#xA;&#xA;Systemspesifikk id, som normalt ikke er synlig i fagsystemet.&#xA;&#xA;# Format&#xA;&#xA;&#xA;# Eksempler&#xA;&#xA;&#xA;"/>
+						<documentation value="Unik intern system-id for gruppe&#xA;&#xA;# Beskrivelse&#xA;&#xA;Systemspesifikk id, som normalt ikke er synlig i fagsystemet.&#xA;"/>
 						<model ea_localid="78" ea_guid="{A1617CCD-4D36-4bae-BB2C-63B0E1DEEECC}"/>
 						<properties type="Identifikator" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -1772,7 +1772,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_4949CA6F_4A7E_4363_A005_2888D67F8F66" name="navn" scope="Public">
 						<initial/>
-						<documentation value="Lesbar navn på gruppe"/>
+						<documentation value="Navn på gruppe"/>
 						<model ea_localid="84" ea_guid="{4949CA6F-4A7E-4363-A005-2888D67F8F66}"/>
 						<properties type="string" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -1781,7 +1781,7 @@
 						<bounds lower="1" upper="1"/>
 						<options/>
 						<style value="name"/>
-						<styleex value="volatile=0;"/>
+						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
 					</attribute>
@@ -1795,8 +1795,8 @@
 			</element>
 			<element xmi:idref="EAID_97DB78FC_319F_4188_891E_7CE72D2201B1" xmi:type="uml:Class" name="GruppeKode" scope="public">
 				<model package="EAPK_21D77180_D686_4c0e_A30D_8A358EB5BFF5" tpos="0" ea_localid="165" ea_eleType="element"/>
-				<properties documentation="En kode som kan brukes for å definere innholdet som leveres innen grupper. Det er typisk Grep (NVB) eller Vigo kode&#xA;&#xA;# Eksempler&#xA;&#xA;* http://data.udir.no/kl06/SSA1005&#xA;* Målform : B&#xA;&#xA;# Referanser&#xA;&#xA;* Vigo Kodeverkdatabaser: [vigo.no/vigokv](https://www.vigo.no/vigokv/index.action)&#xA;* UDir Grep koder: [data.udir.no/kl06/](http://data.udir.no/kl06/)&#xA;* Samordna opptak. Nasjonal vitnemålsdatabase: [samordnaopptak.no/info/om/nasjonal-vitnemalsdatabase/](http://www.samordnaopptak.no/info/om/nasjonal-vitnemalsdatabase/)&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-05-23 11:42:19" modified="2017-05-31 14:35:14" complexity="1" status="Proposed"/>
+				<properties documentation="Kode som kan brukes for å definere innholdet som leveres innen grupper. Det er typisk Grep (NVB) eller Vigo kode&#xA;&#xA;# Eksempler&#xA;&#xA;* Eksempel fra den nasjonale databasen for Grep hos Udir: [data.udir.no/kl06/SSA1005](http://data.udir.no/kl06/SSA1005)&#xA;* Målform: B&#xA;&#xA;# Referanser&#xA;&#xA;* Vigo Kodeverkdatabaser: [vigo.no/vigokv](https://www.vigo.no/vigokv/index.action)&#xA;* UDir Grep koder: [data.udir.no/kl06/](http://data.udir.no/kl06/)&#xA;* Samordna opptak. Nasjonal vitnemålsdatabase: [samordnaopptak.no/info/om/nasjonal-vitnemalsdatabase/](http://www.samordnaopptak.no/info/om/nasjonal-vitnemalsdatabase/)&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-05-23 11:42:19" modified="2017-06-09 12:12:03" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -1811,8 +1811,8 @@
 			</element>
 			<element xmi:idref="EAID_ED72F787_FEAE_4ded_A3C0_86531D9EBBEC" xmi:type="uml:Class" name="Kodegruppe" scope="public">
 				<model package="EAPK_21D77180_D686_4c0e_A30D_8A358EB5BFF5" tpos="0" ea_localid="114" ea_eleType="element"/>
-				<properties documentation="En gruppe som er knyttet til en bestemt GREP (NVB) eller Vigo kode&#xA;&#xA;# Eksempler&#xA;&#xA;* Utdanningsprogramm&#xA;* Kontaktlærergruppe" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 13:25:09" modified="2017-05-31 10:24:56" complexity="1" status="Proposed"/>
+				<properties documentation="Gruppe som er knyttet til en bestemt GREP (NVB) eller Vigo kode&#xA;&#xA;# Eksempler&#xA;&#xA;* Utdanningsprogramm&#xA;* Kontaktlærergruppe&#xA;* Undervisningsgruppe" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 13:25:09" modified="2017-06-09 12:12:51" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -1821,7 +1821,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_B836A31A_24E9_42db_A780_A888DD6AE2F6" name="gyldighetsperiode" scope="Public">
 						<initial/>
-						<documentation value="Guldighetsperiode for gruppen"/>
+						<documentation value="Guldighetsperiode for gruppen&#xA;&#xA;# Beskrivelse &#xA;&#xA;Tidsrom for når en gruppe er gjeldende."/>
 						<model ea_localid="83" ea_guid="{B836A31A-24E9-42db-A780-A888DD6AE2F6}"/>
 						<properties type="PeriodeGruppe" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -1830,7 +1830,7 @@
 						<bounds lower="1" upper="1"/>
 						<options/>
 						<style value="validityPeriod"/>
-						<styleex value="volatile=0;"/>
+						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
 					</attribute>
@@ -1862,8 +1862,8 @@
 			</element>
 			<element xmi:idref="EAID_77430B9D_9F45_4876_8CE1_3B8BB1FD0CB3" xmi:type="uml:Class" name="Utdanningsforhold" scope="public">
 				<model package="EAPK_21D77180_D686_4c0e_A30D_8A358EB5BFF5" tpos="0" ea_localid="110" ea_eleType="element"/>
-				<properties documentation="Et felles begrep for rollene til mennesker som deltar i undervisninger (elever, lærere, sensorer osv)&#xA;&#xA;# Beskrivelse &#xA;&#xA;Abstrakt klasse som inneholder relasjoner og informasjon som gjelder for både elevforhold og undervisningsforhold.&#xA;&#xA;# Eksempel&#xA;&#xA;* Lærer&#xA;* Elev&#xA;* Sensor" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:51:25" modified="2017-05-24 13:49:12" complexity="1" status="Proposed"/>
+				<properties documentation="Et felles begrep for rollene til mennesker (elever, lærere, sensorer osv) som deltar i undervisning&#xA;&#xA;# Beskrivelse &#xA;&#xA;Abstrakt klasse som inneholder relasjoner og informasjon som brukes som elevforhold eller undervisningsforhold.&#xA;&#xA;# Eksempel&#xA;&#xA;* Lærer&#xA;* Elev&#xA;* Sensor" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:51:25" modified="2017-06-09 12:17:56" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -1872,7 +1872,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_1B61E371_F819_40c9_888A_DE0257B7BE1E" name="systemId" scope="Public">
 						<initial/>
-						<documentation value="Systemidentifikator i fagsystem&#xA;&#xA;# Beskrivelse &#xA;&#xA;Dette kan være identifikator som eksisterer i SAS (SATS, Extens)."/>
+						<documentation value="Systemidentifikator i fagsystem&#xA;&#xA;# Beskrivelse &#xA;&#xA;Dette kan være identifikator som eksisterer i skoleadministrativt system."/>
 						<model ea_localid="62" ea_guid="{1B61E371-F819-40c9-888A-DE0257B7BE1E}"/>
 						<properties type="Identifikator" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -1887,7 +1887,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_D18B19EA_D7F4_4187_A15F_B85F7F1C589F" name="kommentar" scope="Public">
 						<initial/>
-						<documentation value="Beskrivende tekst om personens forhold."/>
+						<documentation value="Beskrivende tekst om personens forhold"/>
 						<model ea_localid="63" ea_guid="{D18B19EA-D7F4-4187-A15F-B85F7F1C589F}"/>
 						<properties type="string" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -1909,8 +1909,8 @@
 			</element>
 			<element xmi:idref="EAID_7FB0F06F_2E4D_4b51_A281_257708D1897F" xmi:type="uml:Class" name="Utdanningsorganisasjon" scope="public">
 				<model package="EAPK_21D77180_D686_4c0e_A30D_8A358EB5BFF5" tpos="0" ea_localid="109" ea_eleType="element"/>
-				<properties documentation="Et felles begrep for skole eller skoleeier.&#xA;Dvs: For en organisasjon i utdanningsdomenet som har en tilsvarende enhet i Administrasjon domenet" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:34:34" modified="2017-05-24 15:42:39" complexity="1" status="Proposed"/>
+				<properties documentation="Felles begrep for skole eller skoleeier&#xA;&#xA;# Beskrivelse &#xA;&#xA;For en organisasjon i utdanningsdomenet som har en tilsvarende enhet i Administrasjon domenet&#xA;&#xA;Vil opptre som skole eller skoleeier." isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:34:34" modified="2017-06-09 12:22:58" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -1928,7 +1928,7 @@
 						<bounds lower="0" upper="1"/>
 						<options/>
 						<style value="domainName"/>
-						<styleex value="volatile=0;"/>
+						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
 					</attribute>
@@ -1949,7 +1949,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_3280E2DB_CECB_4a6a_A01B_F7725E024DF1" name="navn" scope="Public">
 						<initial/>
-						<documentation value="Navnet på utdanningsorganisasjonen"/>
+						<documentation value="Navnet på utdanningsorganisasjonen&#xA;&#xA;# Beksrivelse &#xA;&#xA;Navn på skole eller skoleeier&#xA;&#xA;# Eksempel&#xA;&#xA;* Drammen videregående skole (som Skole)&#xA;* Moelv videregående skole (som Skole)&#xA;* Telemark fylkeskommune (som Skoleeier)"/>
 						<model ea_localid="71" ea_guid="{3280E2DB-CECB-4a6a-A01B-F7725E024DF1}"/>
 						<properties type="string" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -1964,7 +1964,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_0E83ED48_8A33_4876_9B7E_CC4443F55FAC" name="systemId" scope="Public">
 						<initial/>
-						<documentation value="Unik intern system-id for utdanningsorganisasjonen&#xA;&#xA;# Beskrivelse&#xA;&#xA;Systemspesifikk id, som normalt ikke er synlig i fagsystemet.&#xA;&#xA;# Format&#xA;&#xA;&#xA;# Eksempler&#xA;&#xA;"/>
+						<documentation value="Unik intern system-id for utdanningsorganisasjonen&#xA;&#xA;# Beskrivelse&#xA;&#xA;Systemspesifikk id, som normalt ikke er synlig i fagsystemet."/>
 						<model ea_localid="79" ea_guid="{0E83ED48-8A33-4876-9B7E-CC4443F55FAC}"/>
 						<properties type="Identifikator" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -2001,8 +2001,8 @@
 			</element>
 			<element xmi:idref="EAID_38E35381_3A3E_45c2_9CCD_72E06C6D4FB0" xmi:type="uml:Class" name="Fravær" scope="public">
 				<model package="EAPK_51E9821E_4EE6_44ee_85B8_C4F42F122D56" tpos="0" ea_localid="121" ea_eleType="element"/>
-				<properties documentation="Manglende oppmøte og aktivt deltakelse i opplæringen.&#xA;&#xA;# Referanser&#xA;&#xA;* UDir Registreringshåndbok: [regbok.udir.no/35004/3344/35042-1018643.html](http://regbok.udir.no/35004/3344/35042-1018643.html)&#xA;* Forskrift til opplæringslova § 3-47: [https://lovdata.no/forskrift/2006-06-23-724/§3-47](https://lovdata.no/forskrift/2006-06-23-724/§3-47)&#xA;* UDir. Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet, pkt 8: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/8-fravar/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/8-fravar/)&#xA;* SNL. Fravær: [https://snl.no/fravær](https://snl.no/fravær)&#xA;* UDir. Fravær i voderegående skole: [https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Vitnemal/fravar-i-videregaende-skole/](https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Vitnemal/fravar-i-videregaende-skole/)" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 15:08:16" modified="2017-05-23 16:27:24" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<properties documentation="Manglende oppmøte og aktivt deltakelse i opplæringen&#xA;&#xA;# Referanser&#xA;&#xA;* UDir Registreringshåndbok: [regbok.udir.no/35004/3344/35042-1018643.html](http://regbok.udir.no/35004/3344/35042-1018643.html)&#xA;* Forskrift til opplæringslova § 3-47: [https://lovdata.no/forskrift/2006-06-23-724/§3-47](https://lovdata.no/forskrift/2006-06-23-724/§3-47)&#xA;* UDir. Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet, pkt 8: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/8-fravar/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/8-fravar/)&#xA;* SNL. Fravær: [https://snl.no/fravær](https://snl.no/fravær)&#xA;* UDir. Fravær i voderegående skole: [https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Vitnemal/fravar-i-videregaende-skole/](https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Vitnemal/fravar-i-videregaende-skole/)" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 15:08:16" modified="2017-06-09 12:36:04" complexity="1" status="Proposed" keywords="hovedklasse"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -2011,7 +2011,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_3DEE1758_1A49_4ee3_BF04_88D9AA730428" name="erFraværetGyldig" scope="Public">
 						<initial/>
-						<documentation value="Boolsk parameter som angir om en gitt fraværet er gyldig eller ikke"/>
+						<documentation value="Angir om en gitt fraværet er gyldig eller ikke (ja/nei)"/>
 						<model ea_localid="86" ea_guid="{3DEE1758-1A49-4ee3-BF04-88D9AA730428}"/>
 						<properties type="boolean" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -2020,7 +2020,7 @@
 						<bounds lower="1" upper="1"/>
 						<options/>
 						<style value="isAbsebseLegal"/>
-						<styleex value="volatile=0;"/>
+						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
 					</attribute>
@@ -2041,7 +2041,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_7CF1F62E_F59E_4433_9BBE_998CFB0DAB3F" name="gjelderPeriode" scope="Public">
 						<initial/>
-						<documentation value="Tidsperioden fraværet oppstod/gjelder for. For kategorien &quot;enkelt&quot; vil det typisk være datoen fraværet var. For &quot;oppsummering&quot; vil det være perioden fraværet er summert opp over, for eksempel en termin eller hele skoleåret."/>
+						<documentation value="Tidsperioden fraværet oppstod/gjelder for&#xA;&#xA;# Beskrivelse &#xA;&#xA;For fraværstype __enkelt__ vil det typisk være datoen fraværet var. For fraværstype __oppsummering__ vil det være perioden fraværet er summert opp over, for eksempel en termin eller hele skoleåret."/>
 						<model ea_localid="88" ea_guid="{7CF1F62E-F59E-4433-9BBE-998CFB0DAB3F}"/>
 						<properties type="Periode" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -2050,13 +2050,13 @@
 						<bounds lower="1" upper="1"/>
 						<options/>
 						<style value="validForPeriod"/>
-						<styleex value="volatile=0;"/>
+						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
 					</attribute>
 					<attribute xmi:idref="EAID_EE284CD5_EA43_44c3_B29E_7971995053BB" name="varighet" scope="Public">
 						<initial/>
-						<documentation value="Varighet av fraværet. "/>
+						<documentation value="Varighet av fraværet"/>
 						<model ea_localid="89" ea_guid="{EE284CD5-EA43-44c3-B29E-7971995053BB}"/>
 						<properties type="Tidsvarighet" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -2065,7 +2065,7 @@
 						<bounds lower="1" upper="1"/>
 						<options/>
 						<style value="duration"/>
-						<styleex value="volatile=0;"/>
+						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
 					</attribute>
@@ -2087,7 +2087,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_B021A1D4_8BBD_4262_A894_0C3DBE7376CA" name="beskrivelse" scope="Public">
 						<initial/>
-						<documentation value="Kan for eksempel brukes til å sette lesbare navn på semesteravgrensninger og lignende.&#xA;&#xA;2010 – kalenderår&#xA;&#xA;2010/2011 – skoleår&#xA;&#xA;H2010 – høstsemesteret&#xA;&#xA;V2011 – vårsemesteret &#xA;&#xA;"/>
+						<documentation value="Brukes til å sette lesbare navn på semesteravgrensninger og andre tidsperioder&#xA;&#xA;# Eksempel&#xA;&#xA;* 2010 – kalenderår&#xA;* 2010/2011 – skoleår&#xA;* H2010 – høstsemesteret&#xA;* V2011 – vårsemesteret&#xA;&#xA;"/>
 						<model ea_localid="80" ea_guid="{B021A1D4-8BBD-4262-A894-0C3DBE7376CA}"/>
 						<properties type="string" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -2096,13 +2096,13 @@
 						<bounds lower="1" upper="1"/>
 						<options/>
 						<style value="description"/>
-						<styleex value="volatile=0;"/>
+						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
 					</attribute>
 					<attribute xmi:idref="EAID_C692ABC9_BECD_4cda_B149_F648AC71B13C" name="begrensFør" scope="Public">
 						<initial/>
-						<documentation value="Om en ønsker å si at elever ikke skal være medlem av en gruppe før datoen kan en sette denne til 1 ellers 0"/>
+						<documentation value="For å anngi om elever skal eller ikke skal være medlem av en gruppe før gitt dato"/>
 						<model ea_localid="81" ea_guid="{C692ABC9-BECD-4cda-B149-F648AC71B13C}"/>
 						<properties type="boolean" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -2111,13 +2111,13 @@
 						<bounds lower="0" upper="1"/>
 						<options/>
 						<style value="restrictBefore"/>
-						<styleex value="volatile=0;"/>
+						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
 					</attribute>
 					<attribute xmi:idref="EAID_1E588BA8_44E2_480d_9F9D_9C736CB6B23E" name="begrensEtter" scope="Public">
 						<initial/>
-						<documentation value="Om en ønsker å si at elever ikke skal være medlem av en gruppe etter datoen kan en sette denne til 1 ellers 0"/>
+						<documentation value="For å anngi om elever skal eller ikke skal være medlem av en gruppe etter gitt dato "/>
 						<model ea_localid="82" ea_guid="{1E588BA8-44E2-480d-9F9D-9C736CB6B23E}"/>
 						<properties type="boolean" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -2126,7 +2126,7 @@
 						<bounds lower="0" upper="1"/>
 						<options/>
 						<style value="restrictAfter"/>
-						<styleex value="volatile=0;"/>
+						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
 					</attribute>
@@ -2147,7 +2147,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_FFA7053D_6591_405e_9E60_1A073F4165EB" name="kommentar" scope="Public">
 						<initial/>
-						<documentation/>
+						<documentation value="Kommentar til resultatet"/>
 						<model ea_localid="90" ea_guid="{FFA7053D-6591-405e-9E60-1A073F4165EB}"/>
 						<properties type="string" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -2156,7 +2156,7 @@
 						<bounds lower="1" upper="1"/>
 						<options/>
 						<style value="comment"/>
-						<styleex value="volatile=0;"/>
+						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
 					</attribute>
@@ -2181,10 +2181,10 @@
 				<times created="2017-04-05 13:59:06" modified="2017-04-05 13:59:06"/>
 				<flags iscontrolled="FALSE" isprotected="FALSE" usedtd="FALSE" logxml="FALSE"/>
 			</element>
-			<element xmi:idref="EAID_DC65509B_019C_4166_85D1_1F6691021887" xmi:type="uml:Class" name="ElevKategori" scope="public">
+			<element xmi:idref="EAID_DC65509B_019C_4166_85D1_1F6691021887" xmi:type="uml:Class" name="Elevkategori" scope="public">
 				<model package="EAPK_75736DCA_EB8D_407d_A980_7B79DA7047A4" tpos="0" ea_localid="124" ea_eleType="element"/>
-				<properties documentation="Kategori som et elevforhold befinner seg innenfor&#xA;&#xA;# Beskrivelse &#xA;&#xA;Gyldige verdier er:&#xA;* heltid&#xA;* deltid&#xA;* voksen&#xA;* privatist&#xA;* norsk-utv-i-utlandet&#xA;* utenlandsk-utv-i-norge" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-05 13:59:39" modified="2017-05-31 09:58:57" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<properties documentation="Kategori som et elevforhold befinner seg innenfor&#xA;&#xA;# Eksempel&#xA;&#xA;Gyldige verdier kan være:&#xA;* heltid&#xA;* deltid&#xA;* voksen&#xA;* privatist&#xA;* norsk-utv-i-utlandet&#xA;* utenlandsk-utv-i-norge" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-05 13:59:39" modified="2017-06-09 12:53:42" complexity="1" status="Proposed" keywords="hovedklasse"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -2195,10 +2195,10 @@
 					<Association xmi:id="EAID_34E04659_7972_4e9c_A171_C077B0305B8E" start="EAID_A8A7DF7A_AA87_4bf3_B240_FC559F3057DF" end="EAID_DC65509B_019C_4166_85D1_1F6691021887"/>
 				</links>
 			</element>
-			<element xmi:idref="EAID_D28DEE6C_E835_4828_A26E_552549BF1FEB" xmi:type="uml:Class" name="FraværType" scope="public">
+			<element xmi:idref="EAID_D28DEE6C_E835_4828_A26E_552549BF1FEB" xmi:type="uml:Class" name="Fraværstype" scope="public">
 				<model package="EAPK_75736DCA_EB8D_407d_A980_7B79DA7047A4" tpos="0" ea_localid="154" ea_eleType="element"/>
 				<properties documentation="Skiller mellom enkelt og oppsummert fravær&#xA;&#xA;# Eksempler&#xA;&#xA;* enkelt – innslag for et enkelt fraværstilfelle&#xA;* oppsummert – sum av flere fraværstilfeller" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-05-11 13:43:59" modified="2017-05-31 09:59:15" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-05-11 13:43:59" modified="2017-06-09 11:00:23" complexity="1" status="Proposed" keywords="hovedklasse"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -2225,8 +2225,8 @@
 			</element>
 			<element xmi:idref="EAID_5E4721E0_E2A0_456b_9942_4355A40F460F" xmi:type="uml:Class" name="KarakterSkala" scope="public">
 				<model package="EAPK_75736DCA_EB8D_407d_A980_7B79DA7047A4" tpos="0" ea_localid="158" ea_eleType="element"/>
-				<properties documentation="Gruppering av karakterer etter skala (bogstav, orden osv). &#xA;&#xA;# Eksempler&#xA;&#xA;* Bogstav – bokstavkarakterer&#xA;* Tall – tallkarakterer&#xA;* Binær- Bestått/Ikke-bestått&#xA;* Prosent - prosentpoeng." isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-05-11 14:51:48" modified="2017-05-31 10:03:53" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<properties documentation="Gruppering av karakterer etter skala (bokstav, orden osv). &#xA;&#xA;# Eksempler&#xA;&#xA;* Bokstav – bokstavkarakterer&#xA;* Tall – tallkarakterer&#xA;* Binær- Bestått/Ikke-bestått&#xA;* Prosent - prosentpoeng." isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-05-11 14:51:48" modified="2017-06-09 12:59:23" complexity="1" status="Proposed" keywords="hovedklasse"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -2239,8 +2239,8 @@
 			</element>
 			<element xmi:idref="EAID_8F3122A4_0BE1_49ef_BC80_55216C32E236" xmi:type="uml:Class" name="KarakterVerdi" scope="public">
 				<model package="EAPK_75736DCA_EB8D_407d_A980_7B79DA7047A4" tpos="0" ea_localid="159" ea_eleType="element"/>
-				<properties documentation="Karakterer, målestokk for vurdering av elevers faglige standpunkt, prøve- eller eksamensprestasjoner. De enkelte karakterer, som til sammen danner en karakterskala, blir betegnet med tall eller andre symboler.&#xA;&#xA;Den relaterte skalaen må refereres fra selve verdi.&#xA;&#xA;# Eksempel&#xA;&#xA;* 6 - Seks&#xA;* IM - Ikke møtt&#xA;* GK - Godkjent&#xA;* R - Realkompetanse&#xA;&#xA;# Referanse&#xA;&#xA;* Vigo Kodeverkdatabase. Karakter: [vigo.no/vigokv/karakter.action](https://www.vigo.no/vigokv/karakter.action)&#xA;* SNL. karakterer: [snl.no/karakterer](https://snl.no/karakterer)" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-05-11 14:51:54" modified="2017-05-31 10:03:57" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<properties documentation="Karakterer, målestokk for vurdering av elevers faglige standpunkt, prøve- eller eksamensprestasjoner&#xA;&#xA;# Beskrivelse&#xA;&#xA;De enkelte karakterer, som til sammen danner en karakterskala, blir betegnet med tall eller andre symboler.&#xA;&#xA;Den relaterte skalaen må refereres fra selve verdi.&#xA;&#xA;# Eksempel&#xA;&#xA;* 6 - Seks&#xA;* IM - Ikke møtt&#xA;* GK - Godkjent&#xA;* R - Realkompetanse&#xA;&#xA;# Referanse&#xA;&#xA;* Vigo Kodeverkdatabase. Karakter: [vigo.no/vigokv/karakter.action](https://www.vigo.no/vigokv/karakter.action)&#xA;* SNL. karakterer: [snl.no/karakterer](https://snl.no/karakterer)" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-05-11 14:51:54" modified="2017-06-09 12:59:41" complexity="1" status="Proposed" keywords="hovedklasse"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -2297,8 +2297,8 @@
 			</element>
 			<element xmi:idref="EAID_CBFC8E03_81C3_467d_B0CC_4842D1B17F8A" xmi:type="uml:Class" name="Elevressurs" scope="public">
 				<model package="EAPK_6DA7E430_0C50_4c4a_9F58_4C1137639170" tpos="0" ea_localid="96" ea_eleType="element"/>
-				<properties documentation="Informasjon om en elev&#xA;&#xA;# Beskrivelse &#xA;&#xA;Unik informasjon om en elev innenfor en gitt fylkeskommune. Tilsvarende finnes for ansatte: &quot;Personalressurs&quot;." isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:09:41" modified="2017-05-24 10:13:08" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<properties documentation="Informasjon om en elev&#xA;&#xA;# Beskrivelse &#xA;&#xA;Unik informasjon om en elev innenfor en gitt fylkeskommune. Tilsvarende finnes for ansatte: __Personalressurs__." isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:09:41" modified="2017-06-09 13:02:28" complexity="1" status="Proposed" keywords="hovedklasse"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -2320,7 +2320,7 @@
 						<tags/>
 						<xrefs/>
 					</attribute>
-					<attribute xmi:idref="EAID_7850C80E_8A2C_4b68_9C92_BCB624B7D6B0" name="elevNummer" scope="Public">
+					<attribute xmi:idref="EAID_7850C80E_8A2C_4b68_9C92_BCB624B7D6B0" name="elevnummer" scope="Public">
 						<initial/>
 						<documentation value="Et unikt nummer som identifiserer en elev"/>
 						<model ea_localid="64" ea_guid="{7850C80E-8A2C-4b68-9C92-BCB624B7D6B0}"/>
@@ -2337,7 +2337,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_1ACEE78F_D6BD_40fc_A667_2ABFF8E3D968" name="brukernavn" scope="Public">
 						<initial/>
-						<documentation value="Brukernavn til en person&#xA;&#xA;# Beskrivelse&#xA;&#xA;Skal inneholde brukernavn for pålogging, som finnes i katalogtjenesten (feks Active Directory). Brukes som en identifikator som består, når fødselsnummer og/eller andre identifikatorer endrer seg.&#xA;&#xA;# Format&#xA;&#xA;Brukernavn i det format en personalressurs trenger for å logge seg på systemer i organisasjonen.&#xA;&#xA;# Eksempler&#xA;&#xA;"/>
+						<documentation value="Brukernavn til en person&#xA;&#xA;# Beskrivelse&#xA;&#xA;Skal inneholde brukernavn for pålogging, som finnes i katalogtjenesten (feks Active Directory). Brukes som en identifikator som består, når fødselsnummer og/eller andre identifikatorer endrer seg.&#xA;&#xA;# Format&#xA;&#xA;Brukernavn i det format en personalressurs trenger for å logge seg på systemer i organisasjonen.&#xA;"/>
 						<model ea_localid="65" ea_guid="{1ACEE78F-D6BD-40fc-A667-2ABFF8E3D968}"/>
 						<properties type="Identifikator" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -2346,7 +2346,7 @@
 						<bounds lower="1" upper="1"/>
 						<options/>
 						<style value="username"/>
-						<styleex value="volatile=0;"/>
+						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
 					</attribute>
@@ -2388,8 +2388,8 @@
 			</element>
 			<element xmi:idref="EAID_DB6CD84D_FDEF_46cf_B1FF_23DA43330088" xmi:type="uml:Class" name="Basisgruppe" scope="public">
 				<model package="EAPK_5FD613D7_24FE_428a_B4D3_8101CE1A96B7" tpos="0" ea_localid="98" ea_eleType="element"/>
-				<properties documentation="Begrepet som har tildligere vært kjent som &quot;klasse&quot;.&#xA;&#xA;&quot;Vanlig&quot; gruppe i SATS (klassegruppe)&#xA;&#xA;Viser info om:&#xA;* År på VGS person går i&#xA;* Programområdet&#xA;* A, B eller C klasse&#xA;&#xA;Synonym:&#xA;* Klasse&#xA;&#xA;Ingen øvre grense på antall elever" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:10:35" modified="2017-05-23 16:27:07" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<properties documentation="Elevgruppe som en kontaktlærer har ansvar for når det gjelder praktiske, administrative og sosialpedagogiske oppgaver.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Begrepet som har tildligere vært kjent som &quot;klasse&quot;.&#xA;&#xA;&quot;Vanlig&quot; gruppe i SATS (klassegruppe)&#xA;&#xA;Viser informasjon om:&#xA;* År på VGS person går i&#xA;* Programområdet&#xA;* A, B eller C klasse&#xA;&#xA;Synonym:&#xA;* Klasse&#xA;&#xA;Ingen øvre grense på antall elever" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:10:35" modified="2017-06-09 13:45:12" complexity="1" status="Proposed" keywords="hovedklasse"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -2420,8 +2420,8 @@
 			</element>
 			<element xmi:idref="EAID_2972DA51_718F_42ce_8022_D06675D06A74" xmi:type="uml:Class" name="Eksamengruppe" scope="public">
 				<model package="EAPK_5FD613D7_24FE_428a_B4D3_8101CE1A96B7" tpos="0" ea_localid="150" ea_eleType="element"/>
-				<properties documentation="Gruppering av elever som tar samme eksamen. Underordnet til fag.&#xA;&#xA;Kan brukes for å:&#xA;* Vise forhold mellom eksamenresultat og sensor&#xA;* Vise gruppering av elever som tok eksamen sammen&#xA;&#xA;Det er også mulig å koble resultater av eksamener direkte på klasse `Fag`." isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-05-03 12:55:22" modified="2017-05-23 16:26:43" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<properties documentation="Gruppering av elever som tar samme eksamen &#xA;&#xA;# Beskrivelse&#xA;&#xA;Underordnet til fag.&#xA;&#xA;Kan brukes for å:&#xA;* Vise forhold mellom eksamenresultat og sensor&#xA;* Vise gruppering av elever som tok eksamen sammen&#xA;&#xA;Det er også mulig å koble resultater av eksamener direkte på klasse `Fag`." isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-05-03 12:55:22" modified="2017-06-09 13:45:56" complexity="1" status="Proposed" keywords="hovedklasse"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -2444,7 +2444,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_64D428DD_A44A_4040_AB0A_616C3C3A8CB1" name="beskrivelseMiddels" scope="Public">
 						<initial/>
-						<documentation value="Beksrivelse som er begrenset med 256 karakterer"/>
+						<documentation value="Beksrivelse som er begrenset med 256 tegn"/>
 						<model ea_localid="73" ea_guid="{64D428DD-A44A-4040-AB0A-616C3C3A8CB1}"/>
 						<properties type="string" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -2482,8 +2482,8 @@
 			</element>
 			<element xmi:idref="EAID_325D3C9A_7698_41ca_8D30_5ECE299439F7" xmi:type="uml:Class" name="Kontaktlærergruppe" scope="public">
 				<model package="EAPK_5FD613D7_24FE_428a_B4D3_8101CE1A96B7" tpos="0" ea_localid="101" ea_eleType="element"/>
-				<properties documentation="Elevgruppe som en kontaktlærer har ansvar for når det gjelder praktiske, administrative og sosialpedagogiske oppgaver.&#xA;&#xA;Øvre grense på antall elever er 15 personer&#xA;&#xA;# Referanser&#xA;&#xA;* SNL. basisgruppe: [snl.no/basisgruppe](https://snl.no/basisgruppe)" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:11:20" modified="2017-05-23 16:27:11" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<properties documentation="Elevgruppe som en kontaktlærer har ansvar for når det gjelder praktiske, administrative og sosialpedagogiske oppgaver&#xA;&#xA;# Beskrivelse&#xA;&#xA;Øvre grense på antall elever er 15 personer&#xA;&#xA;# Referanser&#xA;&#xA;* SNL. basisgruppe: [snl.no/basisgruppe](https://snl.no/basisgruppe)" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:11:20" modified="2017-06-09 13:46:48" complexity="1" status="Proposed" keywords="hovedklasse"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -2513,8 +2513,8 @@
 			</element>
 			<element xmi:idref="EAID_FB6DC657_8860_42ec_902E_B8B8C430625F" xmi:type="uml:Class" name="Programområde" scope="public">
 				<model package="EAPK_5FD613D7_24FE_428a_B4D3_8101CE1A96B7" tpos="0" ea_localid="104" ea_eleType="element"/>
-				<properties documentation="Programområde er fra høsten 2006 betegnelsen på et kurs i den videregående skolen. Et programområde strekker seg vanligvis over ett eller flere år og er gjerne en spesialisert retning eller område for fordypning innen utdanningsprogrammet.&#xA;&#xA;Innenfor utdanningsprogrammet studiespesialisering, er eksempler på programområder realfag, språk, samfunnsfag og økonomi og formgivingsfag.&#xA;&#xA;Innenfor utdanningsprogrammet naturbruk, finnes det for eksempel i andre klasse (Vg2) programområdene akvakultur, anleggsgartner og driftsoperatør idrettsanlegg, fiske og fangst, heste- og hovslagerfag, landbruk og gartneri, reindrift og skogbruk.&#xA;&#xA;# Eksempler&#xA;&#xA;* Anleggsmaskinførerf,PB&#xA;* Asfaltfaget,PB&#xA;* Banemontørfaget,PB&#xA;* Betongfaget,PB&#xA;* Bioenergi (D)&#xA;* Byggdrifterfaget,PB&#xA;* FDV-utdanning, 1 år (D)&#xA;* Feierfaget,PB&#xA;* Matrosfaget,PB&#xA;* Modellbyggerfaget,PB&#xA;* Motormannfaget,PB&#xA;* Motormekanikerfaget,PB&#xA;* Motorsykkelfaget,PB&#xA;&#xA;# Referanser&#xA;&#xA;* UDir Registreringshåndbok: [regbok.udir.no/35004/3344/35042-1014307.html](http://regbok.udir.no/35004/3344/35042-1014307.html)&#xA;* Wiki: [no.wikipedia.org/wiki/Programområde](https://no.wikipedia.org/wiki/Programomr%C3%A5de)" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:11:50" modified="2017-05-23 16:26:32" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<properties documentation="Programområde er et kurs i den videregående skolen. Et programområde strekker seg vanligvis over ett eller flere år og er gjerne en spesialisert retning eller område for fordypning innen utdanningsprogrammet.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Innenfor utdanningsprogrammet studiespesialisering, er eksempler på programområder realfag, språk, samfunnsfag og økonomi og formgivingsfag.&#xA;&#xA;Innenfor utdanningsprogrammet naturbruk, finnes det for eksempel i andre klasse (Vg2) programområdene akvakultur, anleggsgartner og driftsoperatør idrettsanlegg, fiske og fangst, heste- og hovslagerfag, landbruk og gartneri, reindrift og skogbruk.&#xA;&#xA;# Eksempler&#xA;&#xA;* Anleggsmaskinførerf,PB&#xA;* Asfaltfaget,PB&#xA;* Banemontørfaget,PB&#xA;* Betongfaget,PB&#xA;* Bioenergi (D)&#xA;* Byggdrifterfaget,PB&#xA;* FDV-utdanning, 1 år (D)&#xA;* Feierfaget,PB&#xA;* Matrosfaget,PB&#xA;* Modellbyggerfaget,PB&#xA;* Motormannfaget,PB&#xA;* Motormekanikerfaget,PB&#xA;* Motorsykkelfaget,PB&#xA;&#xA;# Referanser&#xA;&#xA;* UDir Registreringshåndbok: [regbok.udir.no/35004/3344/35042-1014307.html](http://regbok.udir.no/35004/3344/35042-1014307.html)&#xA;* Wiki: [no.wikipedia.org/wiki/Programområde](https://no.wikipedia.org/wiki/Programomr%C3%A5de)" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:11:50" modified="2017-06-09 13:49:37" complexity="1" status="Proposed" keywords="hovedklasse"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -2529,8 +2529,8 @@
 			</element>
 			<element xmi:idref="EAID_5DD53E61_ACA7_4c2d_95F6_6D3549430331" xmi:type="uml:Class" name="Trinn" scope="public">
 				<model package="EAPK_5FD613D7_24FE_428a_B4D3_8101CE1A96B7" tpos="0" ea_localid="102" ea_eleType="element"/>
-				<properties documentation="Beskriver årstrinnet i videregående opplæring.&#xA;&#xA;# Eksempler&#xA;&#xA;* Vg1&#xA;* Vg2&#xA;* Vg3&#xA;&#xA;# Synonym&#xA;&#xA;* Nivå (Rogaland)&#xA;* Klassetrinn&#xA;* Årstrinn" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:11:30" modified="2017-05-23 16:27:03" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<properties documentation="Beskriver årstrinnet i videregående opplæring&#xA;&#xA;# Eksempler&#xA;&#xA;* Vg1&#xA;* Vg2&#xA;* Vg3&#xA;&#xA;# Synonym&#xA;&#xA;* Nivå (Rogaland)&#xA;* Klassetrinn&#xA;* Årstrinn" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:11:30" modified="2017-06-09 13:50:23" complexity="1" status="Proposed" keywords="hovedklasse"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -2575,8 +2575,8 @@
 			</element>
 			<element xmi:idref="EAID_E8F8A8A3_8C7B_4aad_A52C_B07B8857C7F0" xmi:type="uml:Class" name="Utdannigsprogram" scope="public">
 				<model package="EAPK_5FD613D7_24FE_428a_B4D3_8101CE1A96B7" tpos="0" ea_localid="103" ea_eleType="element"/>
-				<properties documentation="Utdanningsløpene i videregående skole som fører fram til studie- og/eller yrkeskompetanse/fagbrev&#xA;&#xA;Alias: Utdanningsgruppe&#xA;&#xA;# Eksempler&#xA;&#xA;* Bygg- og anleggsteknikk&#xA;* Design og håndverk&#xA;* Elektrofag&#xA;* Helse- og oppvekstfag&#xA;* Idrettsfag&#xA;* Kunst, design og arkitektur&#xA;* Medier og kommunikasjon&#xA;* Musikk, dans og drama&#xA;* Naturbruk&#xA;* Påbygging&#xA;* Restaurant- og matfag&#xA;* Service og samferdsel&#xA;* Studiespesialisering&#xA;* Teknikk og ind. produksjon&#xA;&#xA;# Referanser&#xA;&#xA;*  Fag- og timefordeling og tilbudsstruktur for Kunnskapsløftet Udir-1-2016 : [https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Innhold-i-opplaringen/udir-01-2016/](https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Innhold-i-opplaringen/udir-01-2016/)&#xA;* UDir Registreringshåndbok: [regbok.udir.no/35004/3344/35042-1018606.html](http://regbok.udir.no/35004/3344/35042-1018606.html)" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:11:40" modified="2017-05-24 09:49:39" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<properties documentation="Utdanningsløpene i videregående skole som fører fram til studie- og/eller yrkeskompetanse/fagbrev&#xA;&#xA;Synonym: Utdanningsgruppe&#xA;&#xA;# Eksempler&#xA;&#xA;* Bygg- og anleggsteknikk&#xA;* Design og håndverk&#xA;* Elektrofag&#xA;* Helse- og oppvekstfag&#xA;* Idrettsfag&#xA;* Kunst, design og arkitektur&#xA;* Medier og kommunikasjon&#xA;* Musikk, dans og drama&#xA;* Naturbruk&#xA;* Påbygging&#xA;* Restaurant- og matfag&#xA;* Service og samferdsel&#xA;* Studiespesialisering&#xA;* Teknikk og ind. produksjon&#xA;&#xA;# Referanser&#xA;&#xA;*  Fag- og timefordeling og tilbudsstruktur for Kunnskapsløftet Udir-1-2016 : [https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Innhold-i-opplaringen/udir-01-2016/](https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Innhold-i-opplaringen/udir-01-2016/)&#xA;* UDir Registreringshåndbok: [regbok.udir.no/35004/3344/35042-1018606.html](http://regbok.udir.no/35004/3344/35042-1018606.html)" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:11:40" modified="2017-06-09 13:51:07" complexity="1" status="Proposed" keywords="hovedklasse"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -2612,9 +2612,9 @@
 				<xrefs/>
 				<extendedProperties tagged="0" package_name="Organisasjon"/>
 				<attributes>
-					<attribute xmi:idref="EAID_2F853AE5_7FBC_46df_AAB0_FF4FB6A001A5" name="vigoNummer" scope="Public">
+					<attribute xmi:idref="EAID_2F853AE5_7FBC_46df_AAB0_FF4FB6A001A5" name="vigonummer" scope="Public">
 						<initial/>
-						<documentation value="Vigo sitt skolenummer som benyttes i VIGO og de skoleadministrative systemene. Benyttes også i forbindelse med rapportering til SSB, Utdanningsdirektoratet, Lånekassen og Samordna opptak.&#xA;&#xA;# Referanser&#xA;&#xA;* UDir Registreringshåndbok: [regbok.udir.no/35004/3344/35042-1024179.html](http://regbok.udir.no/35004/3344/35042-1024179.html)"/>
+						<documentation value="Vigo sitt skolenummer &#xA;&#xA;# Beskrivelse &#xA;&#xA;Benyttes i VIGO og de skoleadministrative systemene. Benyttes også i forbindelse med rapportering til SSB, Utdanningsdirektoratet, Lånekassen og Samordna opptak.&#xA;&#xA;# Referanser&#xA;&#xA;* UDir Registreringshåndbok: [regbok.udir.no/35004/3344/35042-1024179.html](http://regbok.udir.no/35004/3344/35042-1024179.html)&#xA;&#xA;# Eksempel &#xA;&#xA;* Byremo videregående skole har skolenummer 10022.&#xA;* Moelv videregående skole har skolenummer 4453.&#xA;"/>
 						<model ea_localid="69" ea_guid="{2F853AE5-7FBC-46df-AAB0-FF4FB6A001A5}"/>
 						<properties type="Identifikator" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -2636,8 +2636,8 @@
 			</element>
 			<element xmi:idref="EAID_270F5690_6D82_49c5_B718_E8533C2ACBBA" xmi:type="uml:Class" name="Skoleeier" scope="public">
 				<model package="EAPK_D12B6567_B87C_42d5_A23F_33C49E63F034" tpos="0" ea_localid="113" ea_eleType="element"/>
-				<properties documentation="Angir hvem som eier skolen&#xA;&#xA;# Beskrivelse&#xA;&#xA;Skoleeier angir hvem som er ansvarlig for skolen. Som skoleeier har fylkeskommunen plikt til å sørge for videregående opplæring og spesialpedagogisk hjelp.&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 13:24:05" modified="2017-05-24 09:48:46" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<properties documentation="Angir hvilken fylkeskommune (evt. andre) som eier skolen&#xA;&#xA;# Beskrivelse&#xA;&#xA;Skoleeier angir hvem som er ansvarlig for skolen. &#xA;&#xA;Som skoleeier har fylkeskommunen plikt til å sørge for videregående opplæring og spesialpedagogisk hjelp.&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 13:24:05" modified="2017-06-09 12:33:16" complexity="1" status="Proposed" keywords="hovedklasse"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -4979,13 +4979,13 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_D28DEE6C_E835_4828_A26E_552549BF1FEB">
-					<model ea_localid="154" type="Class" name="FraværType"/>
-					<role name="fraværType" visibility="Public" targetScope="instance"/>
+					<model ea_localid="154" type="Class" name="Fraværstype"/>
+					<role name="fraværstype" visibility="Public" targetScope="instance"/>
 					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="Er dette er en oppsummert eller enkeltfravær?"/>
+					<documentation value="Angir om det er oppsummert eller enkeltfravær"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -4995,7 +4995,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels rb="1" rt="+fraværType"/>
+				<labels rb="1" rt="+fraværstype"/>
 				<extendedProperties virtualInheritance="0"/>
 				<style/>
 				<xrefs/>
@@ -5072,7 +5072,7 @@
 			</connector>
 			<connector xmi:idref="EAID_4C8A2D3D_CEC2_47c1_88E2_016F9FD822B2">
 				<source xmi:idref="EAID_DC65509B_019C_4166_85D1_1F6691021887">
-					<model ea_localid="124" type="Class" name="ElevKategori"/>
+					<model ea_localid="124" type="Class" name="Elevkategori"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -5117,7 +5117,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_DC65509B_019C_4166_85D1_1F6691021887">
-					<model ea_localid="124" type="Class" name="ElevKategori"/>
+					<model ea_localid="124" type="Class" name="Elevkategori"/>
 					<role name="kategori" visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -5141,7 +5141,7 @@
 			</connector>
 			<connector xmi:idref="EAID_A282A425_088E_4e0a_A0AE_D22E28A03F63">
 				<source xmi:idref="EAID_D28DEE6C_E835_4828_A26E_552549BF1FEB">
-					<model ea_localid="154" type="Class" name="FraværType"/>
+					<model ea_localid="154" type="Class" name="Fraværstype"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -7574,9 +7574,9 @@
 			<diagram xmi:id="EAID_7DFEFE10_6565_41c3_9C5F_94FDA30C7D26">
 				<model package="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519" localID="11" owner="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519" tpos="1"/>
 				<properties name="Oversikt" type="Logical"/>
-				<project author="Petr Vasilev" version="1.0" created="2017-04-04 00:00:00" modified="2017-05-31 13:43:40"/>
+				<project author="Petr Vasilev" version="1.0" created="2017-04-04 00:00:00" modified="2017-06-09 12:12:01"/>
 				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=827;DocSize.cy=1169;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=1;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;ShowFQN=1;"/>
-				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;ShowFQN=1;SuppressedCompartments=;Theme=:119;SaveTag=7BFD92EA;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;ShowFQN=1;SuppressedCompartments=;Theme=:119;SaveTag=E6D02F25;"/>
 				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;cls=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
 				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
 				<extendedProperties/>
@@ -7606,7 +7606,7 @@
 					<element geometry="Left=15;Top=861;Right=105;Bottom=931;" subject="EAID_5DD53E61_ACA7_4c2d_95F6_6D3549430331" seqno="23" style="DUID=055E279C;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="Left=15;Top=649;Right=203;Bottom=719;" subject="EAID_325D3C9A_7698_41ca_8D30_5ECE299439F7" seqno="24" style="DUID=B88B6DE0;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="Left=244;Top=961;Right=374;Bottom=1031;" subject="EAID_F2E6050D_5E67_4dc5_9BB4_B43B9E99E43A" seqno="25" style="DUID=6646CBBF;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
-					<element geometry="Left=250;Top=649;Right=368;Bottom=719;" subject="EAID_F9FEEF7D_7A1E_4f35_880E_B73534E7AF12" seqno="26" style="DUID=8EC5D4F2;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
+					<element geometry="Left=250;Top=648;Right=368;Bottom=718;" subject="EAID_F9FEEF7D_7A1E_4f35_880E_B73534E7AF12" seqno="26" style="DUID=8EC5D4F2;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="Left=526;Top=687;Right=822;Bottom=973;" subject="EAID_10519DBE_863C_48be_903E_7594A720CC98" seqno="27" style="DUID=9818B52E;shape=rounded;"/>
 					<element geometry="Left=10;Top=628;Right=514;Bottom=1152;" subject="EAID_2368A084_DAF1_4be0_B775_298C03D45B4F" seqno="28" style="DUID=445AC3E8;shape=rounded;"/>
 					<element geometry="Left=182;Top=44;Right=590;Bottom=407;" subject="EAID_143A21BE_36A6_4673_B20B_D08BB13C46E5" seqno="29" style="DUID=088030CF;shape=rounded;"/>
@@ -7633,7 +7633,7 @@
 					<element geometry="EDGE=1;$LLB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=50:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=50:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=5:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_B641161B_83AE_4ef9_8C33_D3B01BB0632C" style="Mode=3;EOID=E0621923;SOID=17DB6DC9;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=1;SY=1;EDGE=2;EX=-44;EY=2;$LLB=;LLT=;LMT=;LMB=;LRT=CX=38:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_34E04659_7972_4e9c_A171_C077B0305B8E" style="Mode=3;EOID=A4DAACC0;SOID=17DB6DC9;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_28E14B19_4EC9_4c47_97B3_0D46D5860A14" style="Mode=3;EOID=2B2FC2A6;SOID=17DB6DC9;Color=-1;LWidth=0;Hidden=0;"/>
-					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=CX=52:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=5:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_A8BAEB56_3E83_41b5_BC86_92868D489D36" style="Mode=3;EOID=353CA08D;SOID=7753D507;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=CX=54:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=5:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_A8BAEB56_3E83_41b5_BC86_92868D489D36" style="Mode=3;EOID=353CA08D;SOID=7753D507;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=CX=39:CY=13:OX=-5:OY=2:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=5:CY=13:OX=-53:OY=13:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_D89D11F9_E8AB_4bda_9AF1_FD92B5410633" style="Mode=3;EOID=0A0A070B;SOID=E1E45BB7;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=-44;SY=-9;EX=0;EY=0;EDGE=4;$LLB=CX=5:CY=13:OX=-5:OY=-29:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=;LMT=;LMB=;LRT=CX=32:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_F01F30E0_30DF_4a23_8648_95C652456C98" style="Mode=3;EOID=7753D507;SOID=6BFFBB21;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_4F57FA03_A09F_463c_9195_C8592F3690AB" style="Mode=3;EOID=34705775;SOID=8629EA29;Color=-1;LWidth=0;Hidden=0;"/>
