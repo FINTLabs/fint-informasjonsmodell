@@ -280,7 +280,7 @@
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000052__9A9D_42d1_A134_75164902BEC6" value="1"/>
 							</ownedAttribute>
 						</packagedElement>
-						<packagedElement xmi:type="uml:Class" xmi:id="EAID_982C946E_1AD2_4b96_8112_0072724671E7" name="SkoleeierType" visibility="public">
+						<packagedElement xmi:type="uml:Class" xmi:id="EAID_982C946E_1AD2_4b96_8112_0072724671E7" name="Skoleeiertype" visibility="public">
 							<generalization xmi:type="uml:Generalization" xmi:id="EAID_AC5985EE_0AC1_4723_A0D2_607168BF50B5" general="EAID_251BD438_32B1_413e_808E_2EDA923E17B8"/>
 						</packagedElement>
 						<packagedElement xmi:type="uml:Association" xmi:id="EAID_267A3F01_E067_4d26_8026_84134520F6F2" visibility="public">
@@ -2055,10 +2055,10 @@
 					<Association xmi:id="EAID_D89D11F9_E8AB_4bda_9AF1_FD92B5410633" start="EAID_F57F57DA_5326_4e95_826E_D9F5061F8A96" end="EAID_8F3122A4_0BE1_49ef_BC80_55216C32E236"/>
 				</links>
 			</element>
-			<element xmi:idref="EAID_982C946E_1AD2_4b96_8112_0072724671E7" xmi:type="uml:Class" name="SkoleeierType" scope="public">
+			<element xmi:idref="EAID_982C946E_1AD2_4b96_8112_0072724671E7" xmi:type="uml:Class" name="Skoleeiertype" scope="public">
 				<model package="EAPK_75736DCA_EB8D_407d_A980_7B79DA7047A4" tpos="0" ea_localid="170" ea_eleType="element"/>
-				<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-06-14 15:33:28" modified="2017-06-14 15:36:58" complexity="1" status="Proposed"/>
+				<properties documentation="Angir hvem er det som eier skole&#xA;&#xA;# Eksempler&#xA;&#xA;1 = Fylke&#xA;2 = Stat&#xA;3 = Kommune&#xA;4 = Privat &#xA;&#xA;# Referanser&#xA;&#xA;* Vigo Kodeverkdatabase. Skole: [vigo.no/vigokv/skole.action](https://www.vigo.no/vigokv/skole.action)" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-06-14 15:33:28" modified="2017-06-22 14:56:46" complexity="1" status="Proposed"/>
 				<code gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -3377,8 +3377,8 @@
 			</element>
 			<element xmi:idref="EAID_3C16D10A_47D5_4f0c_8502_AD76367B48AD" xmi:type="uml:Class" name="Prosjekt" scope="public">
 				<model package="EAPK_7B786AED_39CF_419d_B521_3DFFB68573CD" tpos="0" ea_localid="80" ea_eleType="element"/>
-				<properties documentation="Del av kontostrenges som peker på løpende prosjekter&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-02-02 12:28:57" modified="2017-06-22 13:48:06" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<properties documentation="Del av kontostrenges som peker på løpende prosjekter&#xA;&#xA;&#xA;&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-02-02 12:28:57" modified="2017-06-22 15:01:13" complexity="1" status="Proposed" keywords="hovedklasse"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -4815,7 +4815,7 @@
 			</connector>
 			<connector xmi:idref="EAID_AC5985EE_0AC1_4723_A0D2_607168BF50B5">
 				<source xmi:idref="EAID_982C946E_1AD2_4b96_8112_0072724671E7">
-					<model ea_localid="170" type="Class" name="SkoleeierType"/>
+					<model ea_localid="170" type="Class" name="Skoleeiertype"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -4860,7 +4860,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_982C946E_1AD2_4b96_8112_0072724671E7">
-					<model ea_localid="170" type="Class" name="SkoleeierType"/>
+					<model ea_localid="170" type="Class" name="Skoleeiertype"/>
 					<role name="skoleeierType" visibility="Public" targetScope="instance"/>
 					<type multiplicity="0..1" aggregation="none" containment="Unspecified"/>
 					<constraints/>
