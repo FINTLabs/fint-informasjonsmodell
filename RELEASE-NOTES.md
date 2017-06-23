@@ -1,13 +1,40 @@
 <!-- MarkdownTOC -->
 
-- [v1.0.1](#v101)
+- [v1.1.0-rc1](#v110-rc1)
 	- [Features](#features)
 	- [Bugfixes](#bugfixes)
+- [v1.0.1](#v101)
+	- [Features](#features-1)
+	- [Bugfixes](#bugfixes-1)
 	- [Known issues](#known-issues)
 - [v1.0.0](#v100)
-	- [Features](#features-1)
+	- [Features](#features-2)
 
 <!-- /MarkdownTOC -->
+
+
+# v1.1.0-rc1
+
+|      |              |
+|------|--------------|
+| Date | `23.06.2017` |
+| Tag  | `v1.1.0-rc1` |
+
+## Features
+
+* Added initial release of `Utdanning` (`Education`) model
+* Changed name from `Fellesmodel` to `Felles` for common package
+* Expanded definition of `Person`
+* Added `Fylke` and `Kommmune` as common classes
+* Added `Tidsvarighet` (period of time) as a class
+* Added `pårørende` (related persons) to `Personalressurs` class
+
+## Bugfixes
+
+* Replaced fields related to complex types with associations
+* Rearranged and expanded diagrams (visible only in EAP file)
+* Mulitple fixes of markup in documentation
+* Error correction and grammar revision
 
 
 # v1.0.1
