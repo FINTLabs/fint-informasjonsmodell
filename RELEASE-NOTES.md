@@ -1,5 +1,6 @@
 <!-- MarkdownTOC -->
 
+- [master](#master)
 - [v1.1.0-rc1](#v110-rc1)
 	- [Features](#features)
 	- [Bugfixes](#bugfixes)
@@ -12,6 +13,10 @@
 
 <!-- /MarkdownTOC -->
 
+# master
+
+* [X] Relation `Person - Personalressurs` changed from Agregation to Association
+* [X] Fixed class name from `Arbeidforholdstype` to `Arbeidsforholdstype`
 
 # v1.1.0-rc1
 
@@ -58,7 +63,7 @@
 
 ## Known issues
 
-* Class `Språk` (`Language`) is not referred from any other classes
+* [ ] Class `Språk` (`Language`) is not referred from any other classes
 
 
 # v1.0.0
@@ -72,7 +77,7 @@
 
 ## Features
 
-* Common classes (`Fellesmodell`) 
+* Common classes (`Fellesmodell`)
 * Classes for Administration domain (`Administrasjon`):
   * `Personal`
   * `Organisasjon`
