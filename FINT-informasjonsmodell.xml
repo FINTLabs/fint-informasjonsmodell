@@ -849,7 +849,6 @@
 								<type xmi:idref="EAJava_string"/>
 							</ownedAttribute>
 						</packagedElement>
-						<packagedElement xmi:type="uml:Class" xmi:id="EAID_7733B824_59C6_4a24_85D4_1221FFFC32CE" name="Tidsvarighet" visibility="public"/>
 					</packagedElement>
 				</packagedElement>
 				<packagedElement xmi:type="uml:Package" xmi:id="EAPK_455D668D_96AB_4dee_A0DC_12FAC7139EC2" name="Administrasjon" visibility="public">
@@ -3443,16 +3442,6 @@
 						<xrefs/>
 					</attribute>
 				</attributes>
-			</element>
-			<element xmi:idref="EAID_7733B824_59C6_4a24_85D4_1221FFFC32CE" xmi:type="uml:Class" name="Tidsvarighet" scope="public">
-				<model package="EAPK_40CFF887_12C4_4ae7_B1CC_84B3C7D60265" tpos="0" ea_localid="155" ea_eleType="element"/>
-				<properties documentation="Viser varighet av tid. Datatypen inneholder tre tall som tilsvarer antall mikrosekunder, sekunder og dager i varigheten.&#xA;&#xA;Følgene regler må følges ved konvertering til andre varigheter:&#xA;* 1 millisekund tilsvarer 1000 microsekunder.&#xA;* 1 minutt tilsvarer to 60 sekunder&#xA;* 1 time tilsvarer 3600 sekunder&#xA;* 1 uke tilsvavrer 7 dager&#xA;&#xA;Parameterne kan være både positivt og negativt.&#xA;&#xA;# Referanser&#xA;&#xA;* Python 3.6 Docs. datetime.timedelta; [https://docs.python.org/3.6/library/datetime.html#datetime.timedelta](https://docs.python.org/3.6/library/datetime.html#datetime.timedelta)" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-05-11 14:07:03" modified="2017-05-11 14:15:33" complexity="1" status="Proposed"/>
-				<code gentype="Java"/>
-				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-				<tags/>
-				<xrefs/>
-				<extendedProperties tagged="0" package_name="Komplekse datatyper"/>
 			</element>
 			<element xmi:idref="EAPK_455D668D_96AB_4dee_A0DC_12FAC7139EC2" xmi:type="uml:Package" name="Administrasjon" scope="public">
 				<model package2="EAID_455D668D_96AB_4dee_A0DC_12FAC7139EC2" package="EAPK_CF051141_D9AF_4231_A3D9_5907E487A8DD" tpos="5" ea_localid="10" ea_eleType="package"/>
