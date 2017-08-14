@@ -65,30 +65,30 @@
 				</packagedElement>
 				<packagedElement xmi:type="uml:Package" xmi:id="EAPK_3D763EF0_3066_4aa9_97D7_67827101CC20" name="Felles" visibility="public">
 					<packagedElement xmi:type="uml:Class" xmi:id="EAID_3918321E_C706_4469_892B_CA90C03B4378" name="Person" visibility="public">
-						<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_E704FA02_A52A_49d9_BE78_7C547D09F012" name="bilde" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-							<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000001_A52A_49d9_BE78_7C547D09F012" value="0"/>
-							<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000002_A52A_49d9_BE78_7C547D09F012" value="1"/>
-							<type xmi:idref="EAJava_string"/>
+						<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_A0F7264C_0AF1_429c_B322_3A7A987F1CA6" name="fødselsnummer" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+							<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
+							<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000001_0AF1_429c_B322_3A7A987F1CA6" value="1"/>
+							<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000002_0AF1_429c_B322_3A7A987F1CA6" value="1"/>
 						</ownedAttribute>
-						<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_6BE503F3_8145_4c0f_97EE_3A0CC0604FFD" name="bostedsadresse" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-							<type xmi:idref="EAID_A6607BE5_95E0_4bcf_81F1_B1D9259F3C4B"/>
-							<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000003_8145_4c0f_97EE_3A0CC0604FFD" value="0"/>
-							<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000004_8145_4c0f_97EE_3A0CC0604FFD" value="1"/>
+						<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_6C6BF712_ABDE_4bdb_9571_DED09F0DA657" name="navn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+							<type xmi:idref="EAID_0B22B619_E452_4b80_A336_288B213B3D8B"/>
+							<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000003_ABDE_4bdb_9571_DED09F0DA657" value="1"/>
+							<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000004_ABDE_4bdb_9571_DED09F0DA657" value="1"/>
 						</ownedAttribute>
 						<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_4BA49EEA_FFF3_428b_8B6D_E9639A4ACFE7" name="fødselsdato" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 							<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000005_FFF3_428b_8B6D_E9639A4ACFE7" value="0"/>
 							<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000006_FFF3_428b_8B6D_E9639A4ACFE7" value="1"/>
 							<type xmi:idref="EAJava_date"/>
 						</ownedAttribute>
-						<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_A0F7264C_0AF1_429c_B322_3A7A987F1CA6" name="fødselsnummer" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-							<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
-							<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000007_0AF1_429c_B322_3A7A987F1CA6" value="1"/>
-							<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000008_0AF1_429c_B322_3A7A987F1CA6" value="1"/>
+						<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_E704FA02_A52A_49d9_BE78_7C547D09F012" name="bilde" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+							<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000007_A52A_49d9_BE78_7C547D09F012" value="0"/>
+							<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000008_A52A_49d9_BE78_7C547D09F012" value="1"/>
+							<type xmi:idref="EAJava_string"/>
 						</ownedAttribute>
-						<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_6C6BF712_ABDE_4bdb_9571_DED09F0DA657" name="navn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-							<type xmi:idref="EAID_0B22B619_E452_4b80_A336_288B213B3D8B"/>
-							<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000009_ABDE_4bdb_9571_DED09F0DA657" value="1"/>
-							<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000010_ABDE_4bdb_9571_DED09F0DA657" value="1"/>
+						<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_6BE503F3_8145_4c0f_97EE_3A0CC0604FFD" name="bostedsadresse" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+							<type xmi:idref="EAID_A6607BE5_95E0_4bcf_81F1_B1D9259F3C4B"/>
+							<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000009_8145_4c0f_97EE_3A0CC0604FFD" value="0"/>
+							<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000010_8145_4c0f_97EE_3A0CC0604FFD" value="1"/>
 						</ownedAttribute>
 						<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst878E66_DF90_4fd3_B3A4_CE35040CAE32" name="kjønn" visibility="public" association="EAID_7A878E66_DF90_4fd3_B3A4_CE35040CAE32" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 							<type xmi:idref="EAID_5753C673_8AF7_4b23_A24C_4A52CA9E5772"/>
@@ -198,10 +198,10 @@
 							</ownedAttribute>
 						</packagedElement>
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_251BD438_32B1_413e_808E_2EDA923E17B8" name="Begrep" visibility="public" isAbstract="true">
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_5B1C8A2A_BB5F_4b75_A710_BF7B2344FD10" name="gyldighetsperiode" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<type xmi:idref="EAID_0CA4A60C_0085_42a3_A764_09EEEBBB8B90"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000029_BB5F_4b75_A710_BF7B2344FD10" value="0"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000030_BB5F_4b75_A710_BF7B2344FD10" value="1"/>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_8D513046_DDFB_46cd_A141_59BD12FCE75C" name="systemId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000029_DDFB_46cd_A141_59BD12FCE75C" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000030_DDFB_46cd_A141_59BD12FCE75C" value="1"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_DA53C6C2_5CEF_45ef_9FA8_E538DD471F5C" name="kode" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000031_5CEF_45ef_9FA8_E538DD471F5C" value="1"/>
@@ -213,27 +213,27 @@
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000034_26D9_4e29_A523_C021A4918754" value="1"/>
 								<type xmi:idref="EAJava_string"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_8D513046_DDFB_46cd_A141_59BD12FCE75C" name="systemId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000035_DDFB_46cd_A141_59BD12FCE75C" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000036_DDFB_46cd_A141_59BD12FCE75C" value="1"/>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_5B1C8A2A_BB5F_4b75_A710_BF7B2344FD10" name="gyldighetsperiode" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<type xmi:idref="EAID_0CA4A60C_0085_42a3_A764_09EEEBBB8B90"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000035_BB5F_4b75_A710_BF7B2344FD10" value="0"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000036_BB5F_4b75_A710_BF7B2344FD10" value="1"/>
 							</ownedAttribute>
 						</packagedElement>
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_88C124DF_F3E2_435a_BF1C_B4077CD6C1ED" name="Enhet" visibility="public" isAbstract="true">
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_2D043D4E_C01A_4c73_920B_339327DCCD09" name="forretningsadresse" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<type xmi:idref="EAID_A6607BE5_95E0_4bcf_81F1_B1D9259F3C4B"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000037_C01A_4c73_920B_339327DCCD09" value="0"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000038_C01A_4c73_920B_339327DCCD09" value="1"/>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_39AC64FD_69F2_425e_8201_4CD04519E2C3" name="organisasjonsnummer" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000037_69F2_425e_8201_4CD04519E2C3" value="0"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000038_69F2_425e_8201_4CD04519E2C3" value="1"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_7C54F39B_FDF0_41b8_A19C_94A5BE97B122" name="organisasjonsnavn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000039_FDF0_41b8_A19C_94A5BE97B122" value="0"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000040_FDF0_41b8_A19C_94A5BE97B122" value="1"/>
 								<type xmi:idref="EAJava_string"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_39AC64FD_69F2_425e_8201_4CD04519E2C3" name="organisasjonsnummer" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000041_69F2_425e_8201_4CD04519E2C3" value="0"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000042_69F2_425e_8201_4CD04519E2C3" value="1"/>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_2D043D4E_C01A_4c73_920B_339327DCCD09" name="forretningsadresse" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<type xmi:idref="EAID_A6607BE5_95E0_4bcf_81F1_B1D9259F3C4B"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000041_C01A_4c73_920B_339327DCCD09" value="0"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000042_C01A_4c73_920B_339327DCCD09" value="1"/>
 							</ownedAttribute>
 							<generalization xmi:type="uml:Generalization" xmi:id="EAID_CCAC671B_790C_4773_BE31_886B6C1A7F18" general="EAID_BAD47592_9D29_4f48_AF17_C092E043B507"/>
 						</packagedElement>
@@ -302,15 +302,15 @@
 							</ownedAttribute>
 						</packagedElement>
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_16909330_2704_4b6a_A79C_D85F82732282" name="Identifikator" visibility="public">
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_D058AEE1_E15F_40a1_B390_5BAD8F06C02E" name="identifikatorverdi" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000055_E15F_40a1_B390_5BAD8F06C02E" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000056_E15F_40a1_B390_5BAD8F06C02E" value="1"/>
+								<type xmi:idref="EAJava_string"/>
+							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_F2E095C9_D534_4d72_B4B9_6D01E7FD6D43" name="gyldighetsperiode" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:idref="EAID_0CA4A60C_0085_42a3_A764_09EEEBBB8B90"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000055_D534_4d72_B4B9_6D01E7FD6D43" value="0"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000056_D534_4d72_B4B9_6D01E7FD6D43" value="1"/>
-							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_D058AEE1_E15F_40a1_B390_5BAD8F06C02E" name="identifikatorverdi" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000057_E15F_40a1_B390_5BAD8F06C02E" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000058_E15F_40a1_B390_5BAD8F06C02E" value="1"/>
-								<type xmi:idref="EAJava_string"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000057_D534_4d72_B4B9_6D01E7FD6D43" value="0"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000058_D534_4d72_B4B9_6D01E7FD6D43" value="1"/>
 							</ownedAttribute>
 						</packagedElement>
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_7C37FE86_403B_4a89_AC8F_6EAA9D7A7EF2" name="Kontaktinformasjon" visibility="public">
@@ -319,48 +319,48 @@
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000060_768E_42bf_9277_A33495F986BA" value="1"/>
 								<type xmi:idref="EAJava_string"/>
 							</ownedAttribute>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_EF7263F5_074A_4609_96CC_68FEEE940927" name="telefonnummer" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000061_074A_4609_96CC_68FEEE940927" value="0"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000062_074A_4609_96CC_68FEEE940927" value="1"/>
+								<type xmi:idref="EAJava_string"/>
+							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_91FF3C25_C611_430e_9AE7_2F63585024FF" name="mobiltelefonnummer" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000061_C611_430e_9AE7_2F63585024FF" value="0"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000062_C611_430e_9AE7_2F63585024FF" value="1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000063_C611_430e_9AE7_2F63585024FF" value="0"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000064_C611_430e_9AE7_2F63585024FF" value="1"/>
 								<type xmi:idref="EAJava_string"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_51633B22_ABA6_477a_8304_80D6471F59F7" name="nettsted" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000063_ABA6_477a_8304_80D6471F59F7" value="0"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000064_ABA6_477a_8304_80D6471F59F7" value="1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000065_ABA6_477a_8304_80D6471F59F7" value="0"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000066_ABA6_477a_8304_80D6471F59F7" value="1"/>
 								<type xmi:idref="EAJava_string"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_46C8261E_71D0_49fe_B7F1_DEF47FA95994" name="sip" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000065_71D0_49fe_B7F1_DEF47FA95994" value="0"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000066_71D0_49fe_B7F1_DEF47FA95994" value="1"/>
-								<type xmi:idref="EAJava_string"/>
-							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_EF7263F5_074A_4609_96CC_68FEEE940927" name="telefonnummer" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000067_074A_4609_96CC_68FEEE940927" value="0"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000068_074A_4609_96CC_68FEEE940927" value="1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000067_71D0_49fe_B7F1_DEF47FA95994" value="0"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000068_71D0_49fe_B7F1_DEF47FA95994" value="1"/>
 								<type xmi:idref="EAJava_string"/>
 							</ownedAttribute>
 						</packagedElement>
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_0CA4A60C_0085_42a3_A764_09EEEBBB8B90" name="Periode" visibility="public">
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_6A79C4DB_2C0D_4755_B413_D81E600ABDCE" name="slutt" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000069_2C0D_4755_B413_D81E600ABDCE" value="0"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000070_2C0D_4755_B413_D81E600ABDCE" value="1"/>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_0EC284F7_2DAA_4df8_B1D4_1A75B6FD1E22" name="start" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000069_2DAA_4df8_B1D4_1A75B6FD1E22" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000070_2DAA_4df8_B1D4_1A75B6FD1E22" value="1"/>
 								<type xmi:idref="EAJava_dateTime"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_0EC284F7_2DAA_4df8_B1D4_1A75B6FD1E22" name="start" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000071_2DAA_4df8_B1D4_1A75B6FD1E22" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000072_2DAA_4df8_B1D4_1A75B6FD1E22" value="1"/>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_6A79C4DB_2C0D_4755_B413_D81E600ABDCE" name="slutt" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000071_2C0D_4755_B413_D81E600ABDCE" value="0"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000072_2C0D_4755_B413_D81E600ABDCE" value="1"/>
 								<type xmi:idref="EAJava_dateTime"/>
 							</ownedAttribute>
 						</packagedElement>
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_0B22B619_E452_4b80_A336_288B213B3D8B" name="Personnavn" visibility="public">
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_9EC2D5B3_7BF4_49c8_A19B_ACE67FC137E8" name="etternavn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000073_7BF4_49c8_A19B_ACE67FC137E8" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000074_7BF4_49c8_A19B_ACE67FC137E8" value="1"/>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_17997467_83A8_4289_8F73_B17DCBADBA53" name="fornavn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000073_83A8_4289_8F73_B17DCBADBA53" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000074_83A8_4289_8F73_B17DCBADBA53" value="1"/>
 								<type xmi:idref="EAJava_string"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_17997467_83A8_4289_8F73_B17DCBADBA53" name="fornavn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000075_83A8_4289_8F73_B17DCBADBA53" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000076_83A8_4289_8F73_B17DCBADBA53" value="1"/>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_9EC2D5B3_7BF4_49c8_A19B_ACE67FC137E8" name="etternavn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000075_7BF4_49c8_A19B_ACE67FC137E8" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000076_7BF4_49c8_A19B_ACE67FC137E8" value="1"/>
 								<type xmi:idref="EAJava_string"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_18EE31DE_B1D9_4a46_9A93_EB3BC9C80167" name="mellomnavn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
@@ -521,30 +521,30 @@
 					</packagedElement>
 					<packagedElement xmi:type="uml:Package" xmi:id="EAPK_E0BA3737_CF68_4155_921B_DD8CD22AA127" name="Organisasjon" visibility="public">
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_941E2DF3_55A0_4321_8D0A_347FC274EEB3" name="Organisasjonselement" visibility="public">
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_72FCE183_3C03_42cf_A09B_ECF57B8FEBB2" name="gyldighetsperiode" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<type xmi:idref="EAID_0CA4A60C_0085_42a3_A764_09EEEBBB8B90"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000087_3C03_42cf_A09B_ECF57B8FEBB2" value="0"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000088_3C03_42cf_A09B_ECF57B8FEBB2" value="1"/>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_63CB0FC7_AA03_4286_AE74_87B92C0DAE3C" name="navn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000087_AA03_4286_AE74_87B92C0DAE3C" value="0"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000088_AA03_4286_AE74_87B92C0DAE3C" value="1"/>
+								<type xmi:idref="EAJava_string"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_47E5BE80_E293_4b97_B369_04A57DA6B476" name="kortnavn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000089_E293_4b97_B369_04A57DA6B476" value="0"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000090_E293_4b97_B369_04A57DA6B476" value="1"/>
 								<type xmi:idref="EAJava_string"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_63CB0FC7_AA03_4286_AE74_87B92C0DAE3C" name="navn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000091_AA03_4286_AE74_87B92C0DAE3C" value="0"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000092_AA03_4286_AE74_87B92C0DAE3C" value="1"/>
-								<type xmi:idref="EAJava_string"/>
-							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_FD892D6C_D5B0_476b_94B3_D2F3C14CB9D1" name="organisasjonsId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000093_D5B0_476b_94B3_D2F3C14CB9D1" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000094_D5B0_476b_94B3_D2F3C14CB9D1" value="1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000091_D5B0_476b_94B3_D2F3C14CB9D1" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000092_D5B0_476b_94B3_D2F3C14CB9D1" value="1"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_A93AF9FB_2C0E_4c4c_A131_79EC3E859003" name="organisasjonsKode" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000095_2C0E_4c4c_A131_79EC3E859003" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000096_2C0E_4c4c_A131_79EC3E859003" value="1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000093_2C0E_4c4c_A131_79EC3E859003" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000094_2C0E_4c4c_A131_79EC3E859003" value="1"/>
+							</ownedAttribute>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_72FCE183_3C03_42cf_A09B_ECF57B8FEBB2" name="gyldighetsperiode" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<type xmi:idref="EAID_0CA4A60C_0085_42a3_A764_09EEEBBB8B90"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000095_3C03_42cf_A09B_ECF57B8FEBB2" value="0"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000096_3C03_42cf_A09B_ECF57B8FEBB2" value="1"/>
 							</ownedAttribute>
 							<generalization xmi:type="uml:Generalization" xmi:id="EAID_20FE97FF_3DBC_425b_A64C_294CFD5B097D" general="EAID_88C124DF_F3E2_435a_BF1C_B4077CD6C1ED"/>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst5E2697_555A_4b6b_BB23_AC7E4FBDF388" name="overordnet" visibility="public" association="EAID_ED5E2697_555A_4b6b_BB23_AC7E4FBDF388" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
@@ -596,30 +596,30 @@
 					</packagedElement>
 					<packagedElement xmi:type="uml:Package" xmi:id="EAPK_6FF4218D_3F03_4f4e_A416_24CDE650B4F2" name="Personal" visibility="public">
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_0F87A52C_7EE0_45e3_9DE2_AE537A34659D" name="Personalressurs" visibility="public">
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_2E3BCEA7_D74E_4acc_AB33_5D8489E72079" name="ansattnummer" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000103_D74E_4acc_AB33_5D8489E72079" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000104_D74E_4acc_AB33_5D8489E72079" value="1"/>
-							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_290BE257_A6FA_4f1b_A45D_F34484643028" name="ansettelsesperiode" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<type xmi:idref="EAID_0CA4A60C_0085_42a3_A764_09EEEBBB8B90"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000105_A6FA_4f1b_A45D_F34484643028" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000106_A6FA_4f1b_A45D_F34484643028" value="1"/>
-							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_57FA0F15_75A8_421b_8FB2_AAE560E9F691" name="brukernavn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000107_75A8_421b_8FB2_AAE560E9F691" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000108_75A8_421b_8FB2_AAE560E9F691" value="1"/>
-							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_10B43614_655F_45fe_BC3F_D8E3C07E158F" name="kontaktinformasjon" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<type xmi:idref="EAID_7C37FE86_403B_4a89_AC8F_6EAA9D7A7EF2"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000109_655F_45fe_BC3F_D8E3C07E158F" value="0"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000110_655F_45fe_BC3F_D8E3C07E158F" value="1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000103_75A8_421b_8FB2_AAE560E9F691" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000104_75A8_421b_8FB2_AAE560E9F691" value="1"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_39447055_0ED6_44ca_94D9_8C844355745F" name="systemId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000111_0ED6_44ca_94D9_8C844355745F" value="0"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000112_0ED6_44ca_94D9_8C844355745F" value="1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000105_0ED6_44ca_94D9_8C844355745F" value="0"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000106_0ED6_44ca_94D9_8C844355745F" value="1"/>
+							</ownedAttribute>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_2E3BCEA7_D74E_4acc_AB33_5D8489E72079" name="ansattnummer" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000107_D74E_4acc_AB33_5D8489E72079" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000108_D74E_4acc_AB33_5D8489E72079" value="1"/>
+							</ownedAttribute>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_290BE257_A6FA_4f1b_A45D_F34484643028" name="ansettelsesperiode" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<type xmi:idref="EAID_0CA4A60C_0085_42a3_A764_09EEEBBB8B90"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000109_A6FA_4f1b_A45D_F34484643028" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000110_A6FA_4f1b_A45D_F34484643028" value="1"/>
+							</ownedAttribute>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_10B43614_655F_45fe_BC3F_D8E3C07E158F" name="kontaktinformasjon" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<type xmi:idref="EAID_7C37FE86_403B_4a89_AC8F_6EAA9D7A7EF2"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000111_655F_45fe_BC3F_D8E3C07E158F" value="0"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000112_655F_45fe_BC3F_D8E3C07E158F" value="1"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstE9A619_5877_4f2d_AD9D_C8E6E3D8EAA8" name="pårørende" visibility="public" association="EAID_B6E9A619_5877_4f2d_AD9D_C8E6E3D8EAA8" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_3918321E_C706_4469_892B_CA90C03B4378"/>
@@ -642,45 +642,45 @@
 							</ownedEnd>
 						</packagedElement>
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_99474ABD_36AE_4dc7_9895_5BC9C901AC39" name="Arbeidsforhold" visibility="public">
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_ABEF78DF_B8D5_4d9e_94F5_54A1DD5EE6FD" name="ansettelsesprosent" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#UnlimitedNatural"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000121_B8D5_4d9e_94F5_54A1DD5EE6FD" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000122_B8D5_4d9e_94F5_54A1DD5EE6FD" value="1"/>
-							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_2247ECAC_CB42_438a_87CD_B7CA139CF98D" name="gyldighetsperiode" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<type xmi:idref="EAID_0CA4A60C_0085_42a3_A764_09EEEBBB8B90"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000123_CB42_438a_87CD_B7CA139CF98D" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000124_CB42_438a_87CD_B7CA139CF98D" value="1"/>
-							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_78036C08_D320_4dc8_978C_0B44AC021AA9" name="hovedstilling" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#Boolean"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000125_D320_4dc8_978C_0B44AC021AA9" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000126_D320_4dc8_978C_0B44AC021AA9" value="1"/>
-							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_F7644D33_ABC0_4090_986A_5ED31FA097F2" name="lønnsprosent" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#UnlimitedNatural"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000127_ABC0_4090_986A_5ED31FA097F2" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000128_ABC0_4090_986A_5ED31FA097F2" value="1"/>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_3C299BDB_4B76_458e_964A_A60C28B3623E" name="systemId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000121_4B76_458e_964A_A60C28B3623E" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000122_4B76_458e_964A_A60C28B3623E" value="1"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_3272BB9E_9E27_46d7_8205_A915F22050A9" name="stillingsnummer" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#String"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000129_9E27_46d7_8205_A915F22050A9" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000130_9E27_46d7_8205_A915F22050A9" value="1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000123_9E27_46d7_8205_A915F22050A9" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000124_9E27_46d7_8205_A915F22050A9" value="1"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_9B2CF83D_7782_47f0_A1B5_9C6CC1BDB6D8" name="stillingstittel" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#String"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000131_7782_47f0_A1B5_9C6CC1BDB6D8" value="0"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000132_7782_47f0_A1B5_9C6CC1BDB6D8" value="1"/>
-							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_3C299BDB_4B76_458e_964A_A60C28B3623E" name="systemId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000133_4B76_458e_964A_A60C28B3623E" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000134_4B76_458e_964A_A60C28B3623E" value="1"/>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_2247ECAC_CB42_438a_87CD_B7CA139CF98D" name="gyldighetsperiode" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<type xmi:idref="EAID_0CA4A60C_0085_42a3_A764_09EEEBBB8B90"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000125_CB42_438a_87CD_B7CA139CF98D" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000126_CB42_438a_87CD_B7CA139CF98D" value="1"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_91AE90A8_7F18_4803_A036_8343E46EFDED" name="årslønn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#UnlimitedNatural"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000135_7F18_4803_A036_8343E46EFDED" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000136_7F18_4803_A036_8343E46EFDED" value="1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000127_7F18_4803_A036_8343E46EFDED" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000128_7F18_4803_A036_8343E46EFDED" value="1"/>
+							</ownedAttribute>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_9B2CF83D_7782_47f0_A1B5_9C6CC1BDB6D8" name="stillingstittel" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#String"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000129_7782_47f0_A1B5_9C6CC1BDB6D8" value="0"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000130_7782_47f0_A1B5_9C6CC1BDB6D8" value="1"/>
+							</ownedAttribute>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_ABEF78DF_B8D5_4d9e_94F5_54A1DD5EE6FD" name="ansettelsesprosent" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#UnlimitedNatural"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000131_B8D5_4d9e_94F5_54A1DD5EE6FD" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000132_B8D5_4d9e_94F5_54A1DD5EE6FD" value="1"/>
+							</ownedAttribute>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_F7644D33_ABC0_4090_986A_5ED31FA097F2" name="lønnsprosent" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#UnlimitedNatural"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000133_ABC0_4090_986A_5ED31FA097F2" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000134_ABC0_4090_986A_5ED31FA097F2" value="1"/>
+							</ownedAttribute>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_78036C08_D320_4dc8_978C_0B44AC021AA9" name="hovedstilling" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#Boolean"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000135_D320_4dc8_978C_0B44AC021AA9" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000136_D320_4dc8_978C_0B44AC021AA9" value="1"/>
 							</ownedAttribute>
 						</packagedElement>
 						<packagedElement xmi:type="uml:Association" xmi:id="EAID_28F39361_2799_46bb_BEE8_BA6DDD1B7581" visibility="public">
@@ -771,15 +771,15 @@
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000166_4459_416c_BCB5_2C136B48EF30" value="1"/>
 								<type xmi:idref="EAJava_string"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_4949CA6F_4A7E_4363_A005_2888D67F8F66" name="navn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000167_4A7E_4363_A005_2888D67F8F66" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000168_4A7E_4363_A005_2888D67F8F66" value="1"/>
-								<type xmi:idref="EAJava_string"/>
-							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_A1617CCD_4D36_4bae_BB2C_63B0E1DEEECC" name="systemId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000169_4D36_4bae_BB2C_63B0E1DEEECC" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000170_4D36_4bae_BB2C_63B0E1DEEECC" value="1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000167_4D36_4bae_BB2C_63B0E1DEEECC" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000168_4D36_4bae_BB2C_63B0E1DEEECC" value="1"/>
+							</ownedAttribute>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_4949CA6F_4A7E_4363_A005_2888D67F8F66" name="navn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000169_4A7E_4363_A005_2888D67F8F66" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000170_4A7E_4363_A005_2888D67F8F66" value="1"/>
+								<type xmi:idref="EAJava_string"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_srcB2D3BE_2D2B_47d1_9F63_2CBF5144EB1C" name="medlemskap" visibility="public" association="EAID_80B2D3BE_2D2B_47d1_9F63_2CBF5144EB1C" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_DB6D7D47_946C_4bb0_8E04_E7B51864C485"/>
@@ -823,15 +823,15 @@
 							<memberEnd xmi:idref="EAID_srcB0C752_5E18_4661_9481_54DC3981AD8B"/>
 						</packagedElement>
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_77430B9D_9F45_4876_8CE1_3B8BB1FD0CB3" name="Utdanningsforhold" visibility="public" isAbstract="true">
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_D18B19EA_D7F4_4187_A15F_B85F7F1C589F" name="kommentar" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000181_D7F4_4187_A15F_B85F7F1C589F" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000182_D7F4_4187_A15F_B85F7F1C589F" value="1"/>
-								<type xmi:idref="EAJava_string"/>
-							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_1B61E371_F819_40c9_888A_DE0257B7BE1E" name="systemId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000183_F819_40c9_888A_DE0257B7BE1E" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000184_F819_40c9_888A_DE0257B7BE1E" value="1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000181_F819_40c9_888A_DE0257B7BE1E" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000182_F819_40c9_888A_DE0257B7BE1E" value="1"/>
+							</ownedAttribute>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_D18B19EA_D7F4_4187_A15F_B85F7F1C589F" name="kommentar" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000183_D7F4_4187_A15F_B85F7F1C589F" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000184_D7F4_4187_A15F_B85F7F1C589F" value="1"/>
+								<type xmi:idref="EAJava_string"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_src3FCEC3_26AF_409e_A3B1_46ED80F9178A" name="medlemskap" visibility="public" association="EAID_283FCEC3_26AF_409e_A3B1_46ED80F9178A" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_DB6D7D47_946C_4bb0_8E04_E7B51864C485"/>
@@ -847,15 +847,15 @@
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000188_1A49_4ee3_BF04_88D9AA730428" value="1"/>
 								<type xmi:idref="EAJava_boolean"/>
 							</ownedAttribute>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_D29D28CE_7760_4608_9682_65CF3EBDFE64" name="kommentar" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000189_7760_4608_9682_65CF3EBDFE64" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000190_7760_4608_9682_65CF3EBDFE64" value="1"/>
+								<type xmi:idref="EAJava_string"/>
+							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_7CF1F62E_F59E_4433_9BBE_998CFB0DAB3F" name="gjelderPeriode" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:idref="EAID_0CA4A60C_0085_42a3_A764_09EEEBBB8B90"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000189_F59E_4433_9BBE_998CFB0DAB3F" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000190_F59E_4433_9BBE_998CFB0DAB3F" value="1"/>
-							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_D29D28CE_7760_4608_9682_65CF3EBDFE64" name="kommentar" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000191_7760_4608_9682_65CF3EBDFE64" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000192_7760_4608_9682_65CF3EBDFE64" value="1"/>
-								<type xmi:idref="EAJava_string"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000191_F59E_4433_9BBE_998CFB0DAB3F" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000192_F59E_4433_9BBE_998CFB0DAB3F" value="1"/>
 							</ownedAttribute>
 						</packagedElement>
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_CB67A99D_4FAB_4fda_8E79_78CA2087B32A" name="Periodegruppe" visibility="public">
@@ -965,20 +965,20 @@
 							<memberEnd xmi:idref="EAID_src41161B_83AE_4ef9_8C33_D3B01BB0632C"/>
 						</packagedElement>
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_CBFC8E03_81C3_467d_B0CC_4842D1B17F8A" name="Elevressurs" visibility="public">
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_1ACEE78F_D6BD_40fc_A667_2ABFF8E3D968" name="brukernavn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000211_D6BD_40fc_A667_2ABFF8E3D968" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000212_D6BD_40fc_A667_2ABFF8E3D968" value="1"/>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_1A0A5C66_ECF8_46ac_848F_98FE024CAC75" name="kontaktinformasjon" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<type xmi:idref="EAID_7C37FE86_403B_4a89_AC8F_6EAA9D7A7EF2"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000211_ECF8_46ac_848F_98FE024CAC75" value="0"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000212_ECF8_46ac_848F_98FE024CAC75" value="1"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_7850C80E_8A2C_4b68_9C92_BCB624B7D6B0" name="elevnummer" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000213_8A2C_4b68_9C92_BCB624B7D6B0" value="1"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000214_8A2C_4b68_9C92_BCB624B7D6B0" value="1"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_1A0A5C66_ECF8_46ac_848F_98FE024CAC75" name="kontaktinformasjon" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<type xmi:idref="EAID_7C37FE86_403B_4a89_AC8F_6EAA9D7A7EF2"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000215_ECF8_46ac_848F_98FE024CAC75" value="0"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000216_ECF8_46ac_848F_98FE024CAC75" value="1"/>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_1ACEE78F_D6BD_40fc_A667_2ABFF8E3D968" name="brukernavn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000215_D6BD_40fc_A667_2ABFF8E3D968" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000216_D6BD_40fc_A667_2ABFF8E3D968" value="1"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_B88DD692_31B7_4782_819C_3802BEB62BCD" name="systemId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
@@ -997,15 +997,15 @@
 							</ownedAttribute>
 						</packagedElement>
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_0FA7B565_603D_4fab_9038_77956A08F66E" name="Rom" visibility="public">
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_FCC9C978_8A80_467e_9F7E_B9F6CDFF203C" name="navn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#String"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000225_8A80_467e_9F7E_B9F6CDFF203C" value="0"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000226_8A80_467e_9F7E_B9F6CDFF203C" value="1"/>
-							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_24EE231D_9C73_4363_8BA4_FE772EA43ABB" name="systemId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000227_9C73_4363_8BA4_FE772EA43ABB" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000228_9C73_4363_8BA4_FE772EA43ABB" value="1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000225_9C73_4363_8BA4_FE772EA43ABB" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000226_9C73_4363_8BA4_FE772EA43ABB" value="1"/>
+							</ownedAttribute>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_FCC9C978_8A80_467e_9F7E_B9F6CDFF203C" name="navn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#String"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000227_8A80_467e_9F7E_B9F6CDFF203C" value="0"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000228_8A80_467e_9F7E_B9F6CDFF203C" value="1"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstB9526C_1A54_4150_B1C1_E75E077F7141" name="time" visibility="public" association="EAID_C4B9526C_1A54_4150_B1C1_E75E077F7141" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_C321C0B0_FC7D_477b_A64C_BF4B34E00924"/>
@@ -1175,25 +1175,25 @@
 					</packagedElement>
 					<packagedElement xmi:type="uml:Package" xmi:id="EAPK_D12B6567_B87C_42d5_A23F_33C49E63F034" name="Organisasjon" visibility="public">
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_0F1201EE_0BE3_43fe_84F9_3911698D34C5" name="Skole" visibility="public">
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_2F853AE5_7FBC_46df_AAB0_FF4FB6A001A5" name="skolenummer" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000267_7FBC_46df_AAB0_FF4FB6A001A5" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000268_7FBC_46df_AAB0_FF4FB6A001A5" value="1"/>
+							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_895AD056_EAA1_410b_94C0_42F8842F0A63" name="domenenavn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000267_EAA1_410b_94C0_42F8842F0A63" value="0"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000268_EAA1_410b_94C0_42F8842F0A63" value="1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000269_EAA1_410b_94C0_42F8842F0A63" value="0"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000270_EAA1_410b_94C0_42F8842F0A63" value="1"/>
 								<type xmi:idref="EAJava_string"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_88A58A95_80DA_4b2e_A292_240EE55EE035" name="juridiskNavn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000269_80DA_4b2e_A292_240EE55EE035" value="0"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000270_80DA_4b2e_A292_240EE55EE035" value="1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000271_80DA_4b2e_A292_240EE55EE035" value="0"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000272_80DA_4b2e_A292_240EE55EE035" value="1"/>
 								<type xmi:idref="EAJava_string"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_E60FD5FB_EAFC_47e8_8458_33017546772E" name="navn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000271_EAFC_47e8_8458_33017546772E" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000272_EAFC_47e8_8458_33017546772E" value="1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000273_EAFC_47e8_8458_33017546772E" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000274_EAFC_47e8_8458_33017546772E" value="1"/>
 								<type xmi:idref="EAJava_string"/>
-							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_2F853AE5_7FBC_46df_AAB0_FF4FB6A001A5" name="skolenummer" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000273_7FBC_46df_AAB0_FF4FB6A001A5" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000274_7FBC_46df_AAB0_FF4FB6A001A5" value="1"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_ADFF4CBA_7036_457c_B10F_C886407D88BB" name="systemId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
@@ -1218,25 +1218,25 @@
 					</packagedElement>
 					<packagedElement xmi:type="uml:Package" xmi:id="EAPK_DEF3E8AB_7F10_4a9c_B482_D6294A2E7E29" name="Timeplan" visibility="public">
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_C321C0B0_FC7D_477b_A64C_BF4B34E00924" name="Time" visibility="public">
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_6FE3AA4B_C97B_4f60_BFFF_646592ECFA27" name="varighet" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<type xmi:idref="EAID_0CA4A60C_0085_42a3_A764_09EEEBBB8B90"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000281_C97B_4f60_BFFF_646592ECFA27" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000282_C97B_4f60_BFFF_646592ECFA27" value="1"/>
+							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_823284F3_5555_4f19_ABBD_4C23E8F7ED22" name="beskrivelse" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#String"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000281_5555_4f19_ABBD_4C23E8F7ED22" value="0"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000282_5555_4f19_ABBD_4C23E8F7ED22" value="1"/>
-							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_19CC3838_11AA_4c9b_891F_56003FC3CA71" name="systemId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000283_11AA_4c9b_891F_56003FC3CA71" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000284_11AA_4c9b_891F_56003FC3CA71" value="1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000283_5555_4f19_ABBD_4C23E8F7ED22" value="0"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000284_5555_4f19_ABBD_4C23E8F7ED22" value="1"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_98B2F58B_0EB8_43f1_A29D_038ADCEB97C7" name="tittel" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#String"/>
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000285_0EB8_43f1_A29D_038ADCEB97C7" value="0"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000286_0EB8_43f1_A29D_038ADCEB97C7" value="1"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_6FE3AA4B_C97B_4f60_BFFF_646592ECFA27" name="varighet" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<type xmi:idref="EAID_0CA4A60C_0085_42a3_A764_09EEEBBB8B90"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000287_C97B_4f60_BFFF_646592ECFA27" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000288_C97B_4f60_BFFF_646592ECFA27" value="1"/>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_19CC3838_11AA_4c9b_891F_56003FC3CA71" name="systemId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000287_11AA_4c9b_891F_56003FC3CA71" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000288_11AA_4c9b_891F_56003FC3CA71" value="1"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst3433DF_CCD2_47bd_8287_A0F8554716B5" name="undervisningsgruppe" visibility="public" association="EAID_7A3433DF_CCD2_47bd_8287_A0F8554716B5" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_EA8C6A72_5795_443a_84EC_15FEAD1B9D34"/>
@@ -1928,51 +1928,6 @@
 				<xrefs value="$XREFPROP=$XID={F05B981F-693D-46e6-A2F5-086FA08F6D2E}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isActive@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={3918321E-C706-4469-892B-CA90C03B4378}$CLT;$ENDXREF;"/>
 				<extendedProperties tagged="0" package_name="Felles"/>
 				<attributes>
-					<attribute xmi:idref="EAID_E704FA02_A52A_49d9_BE78_7C547D09F012" name="bilde" scope="Public">
-						<initial/>
-						<documentation value="HTTP(S) lenke til et bilde av en person.&#xA;&#xA;Det forutsettes at det er bilde med den beste oppløsningen mulig."/>
-						<model ea_localid="56" ea_guid="{E704FA02-A52A-49d9-BE78-7C547D09F012}"/>
-						<properties type="string" collection="false" duplicates="0" changeability="changeable"/>
-						<coords ordered="0"/>
-						<containment containment="Not Specified" position="5"/>
-						<stereotype/>
-						<bounds lower="0" upper="1"/>
-						<options/>
-						<style value="picture"/>
-						<styleex value="volatile=0;"/>
-						<tags/>
-						<xrefs/>
-					</attribute>
-					<attribute xmi:idref="EAID_6BE503F3_8145_4c0f_97EE_3A0CC0604FFD" name="bostedsadresse" scope="Public">
-						<initial/>
-						<documentation value="Folkeregsitreret adresse til en person&#xA;&#xA;# Format&#xA;&#xA;Se beskrivelse av [klasse Adresse](Class:Adresse)"/>
-						<model ea_localid="5" ea_guid="{6BE503F3-8145-4c0f-97EE-3A0CC0604FFD}"/>
-						<properties type="Adresse" derived="0" collection="false" duplicates="0" changeability="changeable"/>
-						<coords ordered="0" scale="0"/>
-						<containment containment="Not Specified" position="6"/>
-						<stereotype/>
-						<bounds lower="0" upper="1"/>
-						<options/>
-						<style value="residentialAddress"/>
-						<styleex value="volatile=0;union=0;"/>
-						<tags/>
-						<xrefs/>
-					</attribute>
-					<attribute xmi:idref="EAID_4BA49EEA_FFF3_428b_8B6D_E9639A4ACFE7" name="fødselsdato" scope="Public">
-						<initial/>
-						<documentation value="Dato for fødsel&#xA;&#xA;# Format&#xA;&#xA;ISO format YYYY-MM-DD.&#xA;&#xA;# Referanser&#xA;&#xA;* [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)&#xA;&#xA;# Eksempler&#xA;&#xA;## Riktig&#xA;&#xA;* `1990-03-29`&#xA;&#xA;# Feil&#xA;&#xA;* `26.05.1678`&#xA;* `29. Mar 1984`&#xA;* `Første januar`&#xA;* `I fjor`"/>
-						<model ea_localid="4" ea_guid="{4BA49EEA-FFF3-428b-8B6D-E9639A4ACFE7}"/>
-						<properties type="date" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
-						<coords ordered="0" scale="0"/>
-						<containment position="3"/>
-						<stereotype/>
-						<bounds lower="0" upper="1"/>
-						<options/>
-						<style value="dateOfBirth"/>
-						<styleex value="IsLiteral=0;volatile=0;union=0;"/>
-						<tags/>
-						<xrefs/>
-					</attribute>
 					<attribute xmi:idref="EAID_A0F7264C_0AF1_429c_B322_3A7A987F1CA6" name="fødselsnummer" scope="Public">
 						<initial/>
 						<documentation value="Fødselsnummer, D-, eller H-nummer til en person&#xA;&#xA;# Beskrivelse&#xA;&#xA;Et ellevesifret identifikasjonsnummer som alle folkeregistrerte i Norge har. Fødselsnummeret består av fødselsdato (6 siffer) og personnummer (5 siffer).&#xA;&#xA;# Format &#xA;&#xA;11 siffer&#xA;&#xA;# Referanser&#xA;&#xA;* [Wiki side](https://no.wikipedia.org/wiki/Fødselsnummer)"/>
@@ -1999,6 +1954,51 @@
 						<bounds lower="1" upper="1"/>
 						<options/>
 						<style value="name"/>
+						<styleex value="volatile=0;union=0;"/>
+						<tags/>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_4BA49EEA_FFF3_428b_8B6D_E9639A4ACFE7" name="fødselsdato" scope="Public">
+						<initial/>
+						<documentation value="Dato for fødsel&#xA;&#xA;# Format&#xA;&#xA;ISO format YYYY-MM-DD.&#xA;&#xA;# Referanser&#xA;&#xA;* [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)&#xA;&#xA;# Eksempler&#xA;&#xA;## Riktig&#xA;&#xA;* `1990-03-29`&#xA;&#xA;# Feil&#xA;&#xA;* `26.05.1678`&#xA;* `29. Mar 1984`&#xA;* `Første januar`&#xA;* `I fjor`"/>
+						<model ea_localid="4" ea_guid="{4BA49EEA-FFF3-428b-8B6D-E9639A4ACFE7}"/>
+						<properties type="date" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment position="3"/>
+						<stereotype/>
+						<bounds lower="0" upper="1"/>
+						<options/>
+						<style value="dateOfBirth"/>
+						<styleex value="IsLiteral=0;volatile=0;union=0;"/>
+						<tags/>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_E704FA02_A52A_49d9_BE78_7C547D09F012" name="bilde" scope="Public">
+						<initial/>
+						<documentation value="HTTP(S) lenke til et bilde av en person.&#xA;&#xA;Det forutsettes at det er bilde med den beste oppløsningen mulig."/>
+						<model ea_localid="56" ea_guid="{E704FA02-A52A-49d9-BE78-7C547D09F012}"/>
+						<properties type="string" collection="false" duplicates="0" changeability="changeable"/>
+						<coords ordered="0"/>
+						<containment containment="Not Specified" position="5"/>
+						<stereotype/>
+						<bounds lower="0" upper="1"/>
+						<options/>
+						<style value="picture"/>
+						<styleex value="volatile=0;"/>
+						<tags/>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_6BE503F3_8145_4c0f_97EE_3A0CC0604FFD" name="bostedsadresse" scope="Public">
+						<initial/>
+						<documentation value="Folkeregsitreret adresse til en person&#xA;&#xA;# Format&#xA;&#xA;Se beskrivelse av [klasse Adresse](Class:Adresse)"/>
+						<model ea_localid="5" ea_guid="{6BE503F3-8145-4c0f-97EE-3A0CC0604FFD}"/>
+						<properties type="Adresse" derived="0" collection="false" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="6"/>
+						<stereotype/>
+						<bounds lower="0" upper="1"/>
+						<options/>
+						<style value="residentialAddress"/>
 						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
@@ -2088,18 +2088,18 @@
 				<xrefs/>
 				<extendedProperties tagged="0" package_name="Basisklasser"/>
 				<attributes>
-					<attribute xmi:idref="EAID_5B1C8A2A_BB5F_4b75_A710_BF7B2344FD10" name="gyldighetsperiode" scope="Public">
+					<attribute xmi:idref="EAID_8D513046_DDFB_46cd_A141_59BD12FCE75C" name="systemId" scope="Public">
 						<initial/>
-						<documentation value="Angir gyldighetsperioden for et begrep/kode"/>
-						<model ea_localid="11" ea_guid="{5B1C8A2A-BB5F-4b75-A710-BF7B2344FD10}"/>
-						<properties type="Periode" derived="0" collection="false" duplicates="0" changeability="changeable"/>
+						<documentation value="Intern identifikator som brukes enten i kildesystemmet eller i kildestandarden (for ISO, KS og lignende standarder)"/>
+						<model ea_localid="8" ea_guid="{8D513046-DDFB-46cd-A141-59BD12FCE75C}"/>
+						<properties type="Identifikator" derived="0" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
-						<containment containment="Not Specified" position="3"/>
+						<containment containment="Not Specified" position="0"/>
 						<stereotype/>
-						<bounds lower="0" upper="1"/>
+						<bounds lower="1" upper="1"/>
 						<options/>
 						<style/>
-						<styleex value="volatile=0;union=0;"/>
+						<styleex value="volatile=0;"/>
 						<tags/>
 						<xrefs/>
 					</attribute>
@@ -2133,18 +2133,18 @@
 						<tags/>
 						<xrefs/>
 					</attribute>
-					<attribute xmi:idref="EAID_8D513046_DDFB_46cd_A141_59BD12FCE75C" name="systemId" scope="Public">
+					<attribute xmi:idref="EAID_5B1C8A2A_BB5F_4b75_A710_BF7B2344FD10" name="gyldighetsperiode" scope="Public">
 						<initial/>
-						<documentation value="Intern identifikator som brukes enten i kildesystemmet eller i kildestandarden (for ISO, KS og lignende standarder)"/>
-						<model ea_localid="8" ea_guid="{8D513046-DDFB-46cd-A141-59BD12FCE75C}"/>
-						<properties type="Identifikator" derived="0" collection="false" duplicates="0" changeability="changeable"/>
+						<documentation value="Angir gyldighetsperioden for et begrep/kode"/>
+						<model ea_localid="11" ea_guid="{5B1C8A2A-BB5F-4b75-A710-BF7B2344FD10}"/>
+						<properties type="Periode" derived="0" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
-						<containment containment="Not Specified" position="0"/>
+						<containment containment="Not Specified" position="3"/>
 						<stereotype/>
-						<bounds lower="1" upper="1"/>
+						<bounds lower="0" upper="1"/>
 						<options/>
 						<style/>
-						<styleex value="volatile=0;"/>
+						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
 					</attribute>
@@ -2182,18 +2182,18 @@
 				<xrefs value="$XREFPROP=$XID={B917276C-1512-4527-BC1B-29535987EADA}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isActive@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={88C124DF-F3E2-435a-BF1C-B4077CD6C1ED}$CLT;$ENDXREF;"/>
 				<extendedProperties tagged="0" package_name="Basisklasser"/>
 				<attributes>
-					<attribute xmi:idref="EAID_2D043D4E_C01A_4c73_920B_339327DCCD09" name="forretningsadresse" scope="Public">
+					<attribute xmi:idref="EAID_39AC64FD_69F2_425e_8201_4CD04519E2C3" name="organisasjonsnummer" scope="Public">
 						<initial/>
-						<documentation value="Besøksadresse til en organisasjonsenhet i enhetsregisteret.&#xA;&#xA;# Beskrivelse&#xA;&#xA;&#xA;# Format&#xA;&#xA;&#xA;# Eksempler&#xA;"/>
-						<model ea_localid="14" ea_guid="{2D043D4E-C01A-4c73-920B-339327DCCD09}"/>
-						<properties type="Adresse" derived="0" collection="false" duplicates="0" changeability="changeable"/>
+						<documentation value="Nisifret nummer som entydig identifiserer enheter i Enhetsregisteret&#xA;&#xA;# Beskrivelse&#xA;&#xA;Organisasjonsnummeret består av 9 siffer hvor det siste sifferet er et kontrollsiffer beregnet med standard vekter, modulus 11. Etter dette blir vektene 3, 2, 7, 6, 5, 4, 3 og 2 regnet fra første siffer.&#xA;&#xA;[Se brreg.no](https://www.brreg.no/om-oss/samfunnsoppdraget-vart/registera-vare/einingsregisteret/organisasjonsnummeret/)&#xA;&#xA;# Format&#xA;9 siffer &#xA;&#xA;# Eksempler&#xA;&#xA;971042176&#xA;974770199&#xA;"/>
+						<model ea_localid="12" ea_guid="{39AC64FD-69F2-425e-8201-4CD04519E2C3}"/>
+						<properties type="Identifikator" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
-						<containment containment="Not Specified" position="4"/>
+						<containment position="0"/>
 						<stereotype/>
 						<bounds lower="0" upper="1"/>
 						<options/>
-						<style value="businessAddress"/>
-						<styleex value="volatile=0;union=0;"/>
+						<style value="organizationNumber"/>
+						<styleex value="IsLiteral=0;volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
 					</attribute>
@@ -2212,18 +2212,18 @@
 						<tags/>
 						<xrefs/>
 					</attribute>
-					<attribute xmi:idref="EAID_39AC64FD_69F2_425e_8201_4CD04519E2C3" name="organisasjonsnummer" scope="Public">
+					<attribute xmi:idref="EAID_2D043D4E_C01A_4c73_920B_339327DCCD09" name="forretningsadresse" scope="Public">
 						<initial/>
-						<documentation value="Nisifret nummer som entydig identifiserer enheter i Enhetsregisteret&#xA;&#xA;# Beskrivelse&#xA;&#xA;Organisasjonsnummeret består av 9 siffer hvor det siste sifferet er et kontrollsiffer beregnet med standard vekter, modulus 11. Etter dette blir vektene 3, 2, 7, 6, 5, 4, 3 og 2 regnet fra første siffer.&#xA;&#xA;[Se brreg.no](https://www.brreg.no/om-oss/samfunnsoppdraget-vart/registera-vare/einingsregisteret/organisasjonsnummeret/)&#xA;&#xA;# Format&#xA;9 siffer &#xA;&#xA;# Eksempler&#xA;&#xA;971042176&#xA;974770199&#xA;"/>
-						<model ea_localid="12" ea_guid="{39AC64FD-69F2-425e-8201-4CD04519E2C3}"/>
-						<properties type="Identifikator" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
+						<documentation value="Besøksadresse til en organisasjonsenhet i enhetsregisteret.&#xA;&#xA;# Beskrivelse&#xA;&#xA;&#xA;# Format&#xA;&#xA;&#xA;# Eksempler&#xA;"/>
+						<model ea_localid="14" ea_guid="{2D043D4E-C01A-4c73-920B-339327DCCD09}"/>
+						<properties type="Adresse" derived="0" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
-						<containment position="0"/>
+						<containment containment="Not Specified" position="4"/>
 						<stereotype/>
 						<bounds lower="0" upper="1"/>
 						<options/>
-						<style value="organizationNumber"/>
-						<styleex value="IsLiteral=0;volatile=0;union=0;"/>
+						<style value="businessAddress"/>
+						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
 					</attribute>
@@ -2434,21 +2434,6 @@
 				<xrefs value="$XREFPROP=$XID={FE1BE001-4806-4a5d-B2B7-9E3985E677F1}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isActive@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={16909330-2704-4b6a-A79C-D85F82732282}$CLT;$ENDXREF;"/>
 				<extendedProperties tagged="0" package_name="Komplekse datatyper" ea_attsclassified="{8D513046-DDFB-46cd-A141-59BD12FCE75C},{A1617CCD-4D36-4bae-BB2C-63B0E1DEEECC},{39AC64FD-69F2-425e-8201-4CD04519E2C3},{2E3BCEA7-D74E-4acc-AB33-5D8489E72079},{9E7370A9-7D03-4300-8BF2-31B85C91F022},{FD892D6C-D5B0-476b-94B3-D2F3C14CB9D1},{A93AF9FB-2C0E-4c4c-A131-79EC3E859003},{19CC3838-11AA-4c9b-891F-56003FC3CA71},{A0F7264C-0AF1-429c-B322-3A7A987F1CA6},{39447055-0ED6-44ca-94D9-8C844355745F},{1ACEE78F-D6BD-40fc-A667-2ABFF8E3D968},{B88DD692-31B7-4782-819C-3802BEB62BCD},{ADFF4CBA-7036-457c-B10F-C886407D88BB},{57FA0F15-75A8-421b-8FB2-AAE560E9F691},{2F853AE5-7FBC-46df-AAB0-FF4FB6A001A5},{7850C80E-8A2C-4b68-9C92-BCB624B7D6B0},{1B61E371-F819-40c9-888A-DE0257B7BE1E},{3C299BDB-4B76-458e-964A-A60C28B3623E},{24EE231D-9C73-4363-8BA4-FE772EA43ABB}"/>
 				<attributes>
-					<attribute xmi:idref="EAID_F2E095C9_D534_4d72_B4B9_6D01E7FD6D43" name="gyldighetsperiode" scope="Public">
-						<initial/>
-						<documentation value="Perioden, gitt i form av fra-og-med-dato og til-dato, som en gitt identifikator er gyldig."/>
-						<model ea_localid="19" ea_guid="{F2E095C9-D534-4d72-B4B9-6D01E7FD6D43}"/>
-						<properties type="Periode" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
-						<coords ordered="0" scale="0"/>
-						<containment position="4"/>
-						<stereotype/>
-						<bounds lower="0" upper="1"/>
-						<options/>
-						<style value="identifierPeriod"/>
-						<styleex value="IsLiteral=0;volatile=0;union=0;"/>
-						<tags/>
-						<xrefs/>
-					</attribute>
 					<attribute xmi:idref="EAID_D058AEE1_E15F_40a1_B390_5BAD8F06C02E" name="identifikatorverdi" scope="Public">
 						<initial/>
 						<documentation value="En konkret kombinasjonen av tegn og/eller bokstaver som utgjør en bestemt identifikator&#xA;&#xA;# Eksempel&#xA;&#xA;For eksempel et fødselsnummer, ansattnummer, etc."/>
@@ -2460,6 +2445,21 @@
 						<bounds lower="1" upper="1"/>
 						<options/>
 						<style value="identifierValue"/>
+						<styleex value="IsLiteral=0;volatile=0;union=0;"/>
+						<tags/>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_F2E095C9_D534_4d72_B4B9_6D01E7FD6D43" name="gyldighetsperiode" scope="Public">
+						<initial/>
+						<documentation value="Perioden, gitt i form av fra-og-med-dato og til-dato, som en gitt identifikator er gyldig."/>
+						<model ea_localid="19" ea_guid="{F2E095C9-D534-4d72-B4B9-6D01E7FD6D43}"/>
+						<properties type="Periode" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment position="4"/>
+						<stereotype/>
+						<bounds lower="0" upper="1"/>
+						<options/>
+						<style value="identifierPeriod"/>
 						<styleex value="IsLiteral=0;volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
@@ -2492,6 +2492,21 @@
 						<bounds lower="0" upper="1"/>
 						<options/>
 						<style value="emailAdress"/>
+						<styleex value="IsLiteral=0;volatile=0;union=0;"/>
+						<tags/>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_EF7263F5_074A_4609_96CC_68FEEE940927" name="telefonnummer" scope="Public">
+						<initial/>
+						<documentation value="Person sitt fasttelefonnummer ihht E.123,  international notation .&#xA;&#xA;# Format &#xA;   &#xA;8 siffer, evt. flere siffer dersom første to siffer er utenlandsprefix 00 eller “+”.&#xA;&#xA;# Referanser&#xA;&#xA;* [Standard fra ITU](http://www.itu.int/rec/T-REC-E.123/en)&#xA;* [Wiki side](https://en.wikipedia.org/wiki/E.123)&#xA;&#xA;# Eksempel&#xA;&#xA;## Riktig:&#xA;&#xA;* `+4747845326`&#xA;* `+1234234234234`&#xA;* `+79161238752`&#xA;* `+4781502645`&#xA;&#xA;## Feil:&#xA;&#xA;* `456 45 334`&#xA;* `0047 23 23 23 23`&#xA;* `56754345`&#xA;* `02643`&#xA;* `0VAFK`&#xA;&#xA;"/>
+						<model ea_localid="21" ea_guid="{EF7263F5-074A-4609-96CC-68FEEE940927}"/>
+						<properties type="string" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment position="1"/>
+						<stereotype/>
+						<bounds lower="0" upper="1"/>
+						<options/>
+						<style value="teleponeNumber"/>
 						<styleex value="IsLiteral=0;volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
@@ -2541,21 +2556,6 @@
 						<tags/>
 						<xrefs/>
 					</attribute>
-					<attribute xmi:idref="EAID_EF7263F5_074A_4609_96CC_68FEEE940927" name="telefonnummer" scope="Public">
-						<initial/>
-						<documentation value="Person sitt fasttelefonnummer ihht E.123,  international notation .&#xA;&#xA;# Format &#xA;   &#xA;8 siffer, evt. flere siffer dersom første to siffer er utenlandsprefix 00 eller “+”.&#xA;&#xA;# Referanser&#xA;&#xA;* [Standard fra ITU](http://www.itu.int/rec/T-REC-E.123/en)&#xA;* [Wiki side](https://en.wikipedia.org/wiki/E.123)&#xA;&#xA;# Eksempel&#xA;&#xA;## Riktig:&#xA;&#xA;* `+4747845326`&#xA;* `+1234234234234`&#xA;* `+79161238752`&#xA;* `+4781502645`&#xA;&#xA;## Feil:&#xA;&#xA;* `456 45 334`&#xA;* `0047 23 23 23 23`&#xA;* `56754345`&#xA;* `02643`&#xA;* `0VAFK`&#xA;&#xA;"/>
-						<model ea_localid="21" ea_guid="{EF7263F5-074A-4609-96CC-68FEEE940927}"/>
-						<properties type="string" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
-						<coords ordered="0" scale="0"/>
-						<containment position="1"/>
-						<stereotype/>
-						<bounds lower="0" upper="1"/>
-						<options/>
-						<style value="teleponeNumber"/>
-						<styleex value="IsLiteral=0;volatile=0;union=0;"/>
-						<tags/>
-						<xrefs/>
-					</attribute>
 				</attributes>
 			</element>
 			<element xmi:idref="EAID_0CA4A60C_0085_42a3_A764_09EEEBBB8B90" xmi:type="uml:Class" name="Periode" scope="public">
@@ -2568,21 +2568,6 @@
 				<xrefs/>
 				<extendedProperties tagged="0" package_name="Komplekse datatyper" ea_attsclassified="{2247ECAC-CB42-438a-87CD-B7CA139CF98D},{72FCE183-3C03-42cf-A09B-ECF57B8FEBB2},{F2E095C9-D534-4d72-B4B9-6D01E7FD6D43},{6FE3AA4B-C97B-4f60-BFFF-646592ECFA27},{290BE257-A6FA-4f1b-A45D-F34484643028},{7CF1F62E-F59E-4433-9BBE-998CFB0DAB3F},{5B1C8A2A-BB5F-4b75-A710-BF7B2344FD10}"/>
 				<attributes>
-					<attribute xmi:idref="EAID_6A79C4DB_2C0D_4755_B413_D81E600ABDCE" name="slutt" scope="Public">
-						<initial/>
-						<documentation value="Tildato&#xA;&#xA;# Beskrivelse&#xA;&#xA;Tildato&#xA;Sluttdato må være senere eller lik startdato om den er definert.&#xA;&#xA;# Format&#xA;&#xA;Det skal brukes UTC tid i [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601&quot;:https://en.wikipedia.org/wiki/ISO_8601)&#xA;&#xA;YYYY-MM-DDThh:mm:ssZ&#xA;&#xA;# Eksempel&#xA;&#xA;01.01.1999T00:00:00Z&#xA;"/>
-						<model ea_localid="26" ea_guid="{6A79C4DB-2C0D-4755-B413-D81E600ABDCE}"/>
-						<properties type="dateTime" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
-						<coords ordered="0" scale="0"/>
-						<containment containment="Not Specified" position="1"/>
-						<stereotype/>
-						<bounds lower="0" upper="1"/>
-						<options/>
-						<style value="stop"/>
-						<styleex value="volatile=0;union=0;"/>
-						<tags/>
-						<xrefs/>
-					</attribute>
 					<attribute xmi:idref="EAID_0EC284F7_2DAA_4df8_B1D4_1A75B6FD1E22" name="start" scope="Public">
 						<initial/>
 						<documentation value="Fradato&#xA;&#xA;# Beskrivelse&#xA;&#xA;Fradato&#xA;Sluttdato må være senere eller lik startdato om den er definert.&#xA;&#xA;# Format&#xA;&#xA;Det skal brukes UTC tid i [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601&quot;:https://en.wikipedia.org/wiki/ISO_8601)&#xA;&#xA;YYYY-MM-DDThh:mm:ssZ&#xA;&#xA;# Eksempel&#xA;&#xA;01.01.1999T00:00:00Z&#xA;"/>
@@ -2594,6 +2579,21 @@
 						<bounds lower="1" upper="1"/>
 						<options/>
 						<style value="start"/>
+						<styleex value="volatile=0;union=0;"/>
+						<tags/>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_6A79C4DB_2C0D_4755_B413_D81E600ABDCE" name="slutt" scope="Public">
+						<initial/>
+						<documentation value="Tildato&#xA;&#xA;# Beskrivelse&#xA;&#xA;Tildato&#xA;Sluttdato må være senere eller lik startdato om den er definert.&#xA;&#xA;# Format&#xA;&#xA;Det skal brukes UTC tid i [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601&quot;:https://en.wikipedia.org/wiki/ISO_8601)&#xA;&#xA;YYYY-MM-DDThh:mm:ssZ&#xA;&#xA;# Eksempel&#xA;&#xA;01.01.1999T00:00:00Z&#xA;"/>
+						<model ea_localid="26" ea_guid="{6A79C4DB-2C0D-4755-B413-D81E600ABDCE}"/>
+						<properties type="dateTime" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="1"/>
+						<stereotype/>
+						<bounds lower="0" upper="1"/>
+						<options/>
+						<style value="stop"/>
 						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
@@ -2615,21 +2615,6 @@
 				<xrefs/>
 				<extendedProperties tagged="0" package_name="Komplekse datatyper" ea_attsclassified="{6C6BF712-ABDE-4bdb-9571-DED09F0DA657}"/>
 				<attributes>
-					<attribute xmi:idref="EAID_9EC2D5B3_7BF4_49c8_A19B_ACE67FC137E8" name="etternavn" scope="Public">
-						<initial/>
-						<documentation value="Angir etternavn til en person.&#xA;&#xA;# Beskrivelse&#xA;Etternavn. &#xA;&#xA;# Format&#xA;Ren tekst.&#xA;&#xA;# Eksempler&#xA;&#xA;[Se eksempler på Personnavn](/docs/komplekse_datatyper_personnavn)"/>
-						<model ea_localid="28" ea_guid="{9EC2D5B3-7BF4-49c8-A19B-ACE67FC137E8}"/>
-						<properties type="string" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
-						<coords ordered="0" scale="0"/>
-						<containment position="2"/>
-						<stereotype/>
-						<bounds lower="1" upper="1"/>
-						<options/>
-						<style value="surname"/>
-						<styleex value="IsLiteral=0;volatile=0;union=0;"/>
-						<tags/>
-						<xrefs/>
-					</attribute>
 					<attribute xmi:idref="EAID_17997467_83A8_4289_8F73_B17DCBADBA53" name="fornavn" scope="Public">
 						<initial/>
 						<documentation value="Angir fornavn til en person.&#xA;&#xA;# Beskrivelse&#xA;Fornavn. &#xA;&#xA;# Format&#xA;Ren tekst.&#xA;&#xA;# Eksempler&#xA;&#xA;[Se eksempler på Personnavn](/docs/komplekse_datatyper_personnavn)"/>
@@ -2641,6 +2626,21 @@
 						<bounds lower="1" upper="1"/>
 						<options/>
 						<style value="firstName"/>
+						<styleex value="IsLiteral=0;volatile=0;union=0;"/>
+						<tags/>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_9EC2D5B3_7BF4_49c8_A19B_ACE67FC137E8" name="etternavn" scope="Public">
+						<initial/>
+						<documentation value="Angir etternavn til en person.&#xA;&#xA;# Beskrivelse&#xA;Etternavn. &#xA;&#xA;# Format&#xA;Ren tekst.&#xA;&#xA;# Eksempler&#xA;&#xA;[Se eksempler på Personnavn](/docs/komplekse_datatyper_personnavn)"/>
+						<model ea_localid="28" ea_guid="{9EC2D5B3-7BF4-49c8-A19B-ACE67FC137E8}"/>
+						<properties type="string" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment position="2"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style value="surname"/>
 						<styleex value="IsLiteral=0;volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
@@ -2758,8 +2758,8 @@
 			</element>
 			<element xmi:idref="EAID_FF167961_8CC1_4bba_B57A_5B44976FA2FB" xmi:type="uml:Class" name="Personalressurskategori" scope="public">
 				<model package="EAPK_7B786AED_39CF_419d_B521_3DFFB68573CD" tpos="0" ea_localid="79" ea_eleType="element"/>
-				<properties documentation="Arbeidforholdstype fra hovedstillingen.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Alternativ navn:&#xA;* Ansatt (er ikke datatype, men kodeverk)&#xA;* Ansattkategori&#xA;* Ansattformer&quot;&#xA;&#xA;# Eksempel&#xA;&#xA;## Eksempel fra Visma HR - Kategori:&#xA;&#xA;Kode | Beskrivelse&#xA;---|---&#xA;F | Fast&#xA;M | Midlertidig&#xA;O | Oppdragstaker&#xA;P | Politiker&#xA;S | Sluttet&#xA;&#xA;## Eksempel fra Agresso - Ressurstype:&#xA;&#xA;Kode  |	Beskrivelse&#xA;---|---&#xA;1 |	Ansatt - kommunal&#xA;10 |	Lærling/Ung arb.taker&#xA;2 |	Ansatt - undervisning&#xA;3 |	Honorar/godtgjørelse&#xA;4 |	Sluttet&#xA;5 |	Nyansatt&#xA;6 |	Ikke ansatt - kun bruker&#xA;7 |	Politikere&#xA;8| 	Selvstendig næringsdrivende&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-01-17 12:16:21" modified="2017-03-24 12:00:26" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<properties documentation="Ansattform til et arbeidsforhold&#xA;&#xA;# Beskrivelse&#xA;&#xA;Alternativ navn:&#xA;* Ansatt (er ikke datatype, men kodeverk)&#xA;* Ansattkategori&#xA;* Ansattformer&quot;&#xA;&#xA;# Eksempel&#xA;&#xA;## Eksempel fra Visma HR - Kategori:&#xA;&#xA;Kode | Beskrivelse&#xA;---|---&#xA;F | Fast&#xA;M | Midlertidig&#xA;O | Oppdragstaker&#xA;P | Politiker&#xA;S | Sluttet&#xA;&#xA;## Eksempel fra Agresso - Ressurstype:&#xA;&#xA;Kode  |	Beskrivelse&#xA;---|---&#xA;1 |	Ansatt - kommunal&#xA;10 |	Lærling/Ung arb.taker&#xA;2 |	Ansatt - undervisning&#xA;3 |	Honorar/godtgjørelse&#xA;4 |	Sluttet&#xA;5 |	Nyansatt&#xA;6 |	Ikke ansatt - kun bruker&#xA;7 |	Politikere&#xA;8| 	Selvstendig næringsdrivende&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-01-17 12:16:21" modified="2017-08-14 12:12:19" complexity="1" status="Proposed" keywords="hovedklasse"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -2837,17 +2837,17 @@
 				<xrefs/>
 				<extendedProperties tagged="0" package_name="Organisasjon"/>
 				<attributes>
-					<attribute xmi:idref="EAID_72FCE183_3C03_42cf_A09B_ECF57B8FEBB2" name="gyldighetsperiode" scope="Public">
+					<attribute xmi:idref="EAID_63CB0FC7_AA03_4286_AE74_87B92C0DAE3C" name="navn" scope="Public">
 						<initial/>
-						<documentation value="Tidsperiode for når organisasjonselementer er gjeldene"/>
-						<model ea_localid="40" ea_guid="{72FCE183-3C03-42cf-A09B-ECF57B8FEBB2}"/>
-						<properties type="Periode" derived="0" collection="false" duplicates="0" changeability="changeable"/>
+						<documentation value="Navnet til organisasjonsselemetet.&#xA;&#xA;# Beskrivelse&#xA;&#xA;&#xA;# Format&#xA;Tekst&#xA;&#xA;# Eksempler&#xA;&#xA;For eksempel:&#xA;* IT-seksjonen.&#xA;* Faggruppe lønn&#xA;* Askim Videregående skole&#xA;* Avdeling for helse og sosial"/>
+						<model ea_localid="35" ea_guid="{63CB0FC7-AA03-4286-AE74-87B92C0DAE3C}"/>
+						<properties type="string" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
-						<containment containment="Not Specified" position="9"/>
+						<containment containment="Not Specified" position="0"/>
 						<stereotype/>
 						<bounds lower="0" upper="1"/>
 						<options/>
-						<style value="validPeriod"/>
+						<style value="name"/>
 						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
@@ -2863,21 +2863,6 @@
 						<bounds lower="0" upper="1"/>
 						<options/>
 						<style value="shortName"/>
-						<styleex value="volatile=0;union=0;"/>
-						<tags/>
-						<xrefs/>
-					</attribute>
-					<attribute xmi:idref="EAID_63CB0FC7_AA03_4286_AE74_87B92C0DAE3C" name="navn" scope="Public">
-						<initial/>
-						<documentation value="Navnet til organisasjonsselemetet.&#xA;&#xA;# Beskrivelse&#xA;&#xA;&#xA;# Format&#xA;Tekst&#xA;&#xA;# Eksempler&#xA;&#xA;For eksempel:&#xA;* IT-seksjonen.&#xA;* Faggruppe lønn&#xA;* Askim Videregående skole&#xA;* Avdeling for helse og sosial"/>
-						<model ea_localid="35" ea_guid="{63CB0FC7-AA03-4286-AE74-87B92C0DAE3C}"/>
-						<properties type="string" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
-						<coords ordered="0" scale="0"/>
-						<containment containment="Not Specified" position="0"/>
-						<stereotype/>
-						<bounds lower="0" upper="1"/>
-						<options/>
-						<style value="name"/>
 						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
@@ -2908,6 +2893,21 @@
 						<bounds lower="1" upper="1"/>
 						<options/>
 						<style value="orgCode"/>
+						<styleex value="volatile=0;union=0;"/>
+						<tags/>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_72FCE183_3C03_42cf_A09B_ECF57B8FEBB2" name="gyldighetsperiode" scope="Public">
+						<initial/>
+						<documentation value="Tidsperiode for når organisasjonselementer er gjeldene"/>
+						<model ea_localid="40" ea_guid="{72FCE183-3C03-42cf-A09B-ECF57B8FEBB2}"/>
+						<properties type="Periode" derived="0" collection="false" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="9"/>
+						<stereotype/>
+						<bounds lower="0" upper="1"/>
+						<options/>
+						<style value="validPeriod"/>
 						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
@@ -2948,6 +2948,36 @@
 				<xrefs/>
 				<extendedProperties tagged="0" package_name="Personal" eventflags="OBJ=80ef;"/>
 				<attributes>
+					<attribute xmi:idref="EAID_57FA0F15_75A8_421b_8FB2_AAE560E9F691" name="brukernavn" scope="Public">
+						<initial/>
+						<documentation value="Brukernavn til en person&#xA;&#xA;# Beskrivelse&#xA;&#xA;Skal inneholde brukernavn for pålogging, som finnes i katalogtjenesten (feks Active Directory). Brukes som en identifikator som består, når fødselsnummer og/eller andre identifikatorer endrer seg.&#xA;&#xA;# Format&#xA;&#xA;Brukernavn i det format en personalressurs trenger for å logge seg på systemer i organisasjonen.&#xA;&#xA;&#xA;"/>
+						<model ea_localid="41" ea_guid="{57FA0F15-75A8-421b-8FB2-AAE560E9F691}"/>
+						<properties type="Identifikator" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="0"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style value="initials"/>
+						<styleex value="volatile=0;union=0;"/>
+						<tags/>
+						<xrefs value="$XREFPROP=$XID={8B76F515-9459-4197-B71D-05A172D41FE5}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={57FA0F15-75A8-421b-8FB2-AAE560E9F691}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+					</attribute>
+					<attribute xmi:idref="EAID_39447055_0ED6_44ca_94D9_8C844355745F" name="systemId" scope="Public">
+						<initial/>
+						<documentation value="Unik intern system-id for personalressurs&#xA;&#xA;# Beskrivelse&#xA;&#xA;Systemspesifikk id, som normalt ikke er synlig i fagsystemet.&#xA;"/>
+						<model ea_localid="43" ea_guid="{39447055-0ED6-44ca-94D9-8C844355745F}"/>
+						<properties type="Identifikator" derived="0" collection="false" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="4"/>
+						<stereotype/>
+						<bounds lower="0" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="volatile=0;union=0;"/>
+						<tags/>
+						<xrefs/>
+					</attribute>
 					<attribute xmi:idref="EAID_2E3BCEA7_D74E_4acc_AB33_5D8489E72079" name="ansattnummer" scope="Public">
 						<initial/>
 						<documentation value="Den unike identifIkatoren til en ansatt i ansatt-/ressursregistret i HR-systemet&#xA;&#xA;# Beskrivelse&#xA;&#xA;Identifiserer en personalressurs unikt. En personalressurs vil kun være registert med ett ansattnummer. &#xA;&#xA;"/>
@@ -2978,21 +3008,6 @@
 						<tags/>
 						<xrefs/>
 					</attribute>
-					<attribute xmi:idref="EAID_57FA0F15_75A8_421b_8FB2_AAE560E9F691" name="brukernavn" scope="Public">
-						<initial/>
-						<documentation value="Brukernavn til en person&#xA;&#xA;# Beskrivelse&#xA;&#xA;Skal inneholde brukernavn for pålogging, som finnes i katalogtjenesten (feks Active Directory). Brukes som en identifikator som består, når fødselsnummer og/eller andre identifikatorer endrer seg.&#xA;&#xA;# Format&#xA;&#xA;Brukernavn i det format en personalressurs trenger for å logge seg på systemer i organisasjonen.&#xA;&#xA;&#xA;"/>
-						<model ea_localid="41" ea_guid="{57FA0F15-75A8-421b-8FB2-AAE560E9F691}"/>
-						<properties type="Identifikator" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
-						<coords ordered="0" scale="0"/>
-						<containment containment="Not Specified" position="0"/>
-						<stereotype/>
-						<bounds lower="1" upper="1"/>
-						<options/>
-						<style value="initials"/>
-						<styleex value="volatile=0;union=0;"/>
-						<tags/>
-						<xrefs value="$XREFPROP=$XID={8B76F515-9459-4197-B71D-05A172D41FE5}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={57FA0F15-75A8-421b-8FB2-AAE560E9F691}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
-					</attribute>
 					<attribute xmi:idref="EAID_10B43614_655F_45fe_BC3F_D8E3C07E158F" name="kontaktinformasjon" scope="Public">
 						<initial/>
 						<documentation value="Arbeidsrelatert kontaktinformasjon til en personalressurs&#xA;&#xA;# Beskrivelse&#xA;&#xA;Den fortrukne måten å komme i kontakt med en personalressurs.&#xA;&#xA;&#xA;&#xA;"/>
@@ -3000,21 +3015,6 @@
 						<properties type="Kontaktinformasjon" derived="0" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
 						<containment containment="Not Specified" position="6"/>
-						<stereotype/>
-						<bounds lower="0" upper="1"/>
-						<options/>
-						<style/>
-						<styleex value="volatile=0;union=0;"/>
-						<tags/>
-						<xrefs/>
-					</attribute>
-					<attribute xmi:idref="EAID_39447055_0ED6_44ca_94D9_8C844355745F" name="systemId" scope="Public">
-						<initial/>
-						<documentation value="Unik intern system-id for personalressurs&#xA;&#xA;# Beskrivelse&#xA;&#xA;Systemspesifikk id, som normalt ikke er synlig i fagsystemet.&#xA;"/>
-						<model ea_localid="43" ea_guid="{39447055-0ED6-44ca-94D9-8C844355745F}"/>
-						<properties type="Identifikator" derived="0" collection="false" duplicates="0" changeability="changeable"/>
-						<coords ordered="0" scale="0"/>
-						<containment containment="Not Specified" position="4"/>
 						<stereotype/>
 						<bounds lower="0" upper="1"/>
 						<options/>
@@ -3044,24 +3044,39 @@
 				<xrefs/>
 				<extendedProperties tagged="0" package_name="Personal" eventflags="OBJ=8083;"/>
 				<attributes>
-					<attribute xmi:idref="EAID_ABEF78DF_B8D5_4d9e_94F5_54A1DD5EE6FD" name="ansettelsesprosent" scope="Public">
+					<attribute xmi:idref="EAID_3C299BDB_4B76_458e_964A_A60C28B3623E" name="systemId" scope="Public">
 						<initial/>
-						<documentation value="Den prosenten personalressursen eier, i henholdt til arbeidsavtalen&#xA;&#xA;# Beskrivelse&#xA;&#xA;&#xA;&#xA;# Format&#xA;Angitt fra 0 til 100, med to desimaler.&#xA;&#xA;# Eksempler&#xA;&#xA;* `10`&#xA;* `10,33`&#xA;* `80`&#xA;* `100`&#xA;* For tilkallingsvikar kan denne være `0`"/>
-						<model ea_localid="53" ea_guid="{ABEF78DF-B8D5-4d9e-94F5-54A1DD5EE6FD}"/>
-						<properties type="double" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
+						<documentation value="Unik identifikator innenfor alle arbeidsforhold&#xA;&#xA;# Beskrivelse&#xA;&#xA;Unik identifikator innenfor alle arbeidsforhold til alle ansatte."/>
+						<model ea_localid="47" ea_guid="{3C299BDB-4B76-458e-964A-A60C28B3623E}"/>
+						<properties type="Identifikator" derived="0" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
-						<containment containment="Not Specified" position="9"/>
+						<containment containment="Not Specified" position="0"/>
 						<stereotype/>
 						<bounds lower="1" upper="1"/>
 						<options/>
-						<style value="postionPercent"/>
-						<styleex value="volatile=0;union=0;"/>
+						<style value="systemId"/>
+						<styleex value="volatile=0;"/>
 						<tags/>
 						<xrefs/>
 					</attribute>
+					<attribute xmi:idref="EAID_3272BB9E_9E27_46d7_8205_A915F22050A9" name="stillingsnummer" scope="Public">
+						<initial/>
+						<documentation value="En identifikator for stilling til en ansatt&#xA;&#xA;# Beskrivelse&#xA;&#xA;Løpenummer over stillinger som arbeidstaker har eller har hatt som ansattressurs i organisasjonen. Innenfor en ansatt og arbeidsforholdsperiode skal denne være unik.&#xA;&#xA;# Format&#xA;&#xA;Id-verdi til en stilling.&#xA;&#xA;# Eksempler&#xA;&#xA;For en personalressurs med tre arbeidsforhold, kan det være:&#xA;`1`&#xA;`2`&#xA;`3`"/>
+						<model ea_localid="48" ea_guid="{3272BB9E-9E27-46d7-8205-A915F22050A9}"/>
+						<properties type="string" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="1"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style value="positionNumber"/>
+						<styleex value="volatile=0;union=0;"/>
+						<tags/>
+						<xrefs value="$XREFPROP=$XID={66824BEF-7ABD-4720-B17C-665F0821C011}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={3272BB9E-9E27-46d7-8205-A915F22050A9}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+					</attribute>
 					<attribute xmi:idref="EAID_2247ECAC_CB42_438a_87CD_B7CA139CF98D" name="gyldighetsperiode" scope="Public">
 						<initial/>
-						<documentation value="Varigeheten til et bestemt arbeidsforhold.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Periode en personalressurs har vært (eller er) ansatt i et bestemt arbeidsforhold.&#xA;&#xA;Inneholder en dato for start, og kan inneholde slutt-dato.  Har tilhørighet til stillingsnummeret på ansattforholdet&#xA;&#xA;# Format&#xA;&#xA;Dato&#xA;&#xA;&#xA;"/>
+						<documentation value="Varigeheten til et bestemt arbeidsforhold&#xA;&#xA;# Beskrivelse&#xA;&#xA;Periode en personalressurs har vært (eller er) ansatt i et bestemt arbeidsforhold.&#xA;&#xA;Inneholder en dato for start, og kan inneholde slutt-dato."/>
 						<model ea_localid="49" ea_guid="{2247ECAC-CB42-438a-87CD-B7CA139CF98D}"/>
 						<properties type="Periode" derived="0" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -3074,17 +3089,47 @@
 						<tags/>
 						<xrefs/>
 					</attribute>
-					<attribute xmi:idref="EAID_78036C08_D320_4dc8_978C_0B44AC021AA9" name="hovedstilling" scope="Public">
+					<attribute xmi:idref="EAID_91AE90A8_7F18_4803_A036_8343E46EFDED" name="årslønn" scope="Public">
 						<initial/>
-						<documentation value="Angir hvilket arbeidsforhold som er hovedarbeidsforhold.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Primærstillingen personalressursen er knyttet til, og som er grunnlaget for det juridiske arbeidsforholdet.&#xA;&#xA;En personalressurs kan ha flere arbeidsforhold, men kun en av disse kan være hovedstillingen.&#xA;&#xA;# Format&#xA;&#xA;true/false&#xA;&#xA;"/>
-						<model ea_localid="55" ea_guid="{78036C08-D320-4dc8-978C-0B44AC021AA9}"/>
-						<properties type="boolean" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
+						<documentation value="Årslønn/grunnlønn i 100 % stilling.&#xA;&#xA;# Beskrivelse&#xA;Lønn i 100% stilling. Inneholder ikke definerte tillegg.&#xA;&#xA;&#xA;# Eksempel&#xA;&#xA;* `400000`"/>
+						<model ea_localid="51" ea_guid="{91AE90A8-7F18-4803-A036-8343E46EFDED}"/>
+						<properties type="double" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
-						<containment containment="Not Specified" position="11"/>
+						<containment containment="Not Specified" position="6"/>
 						<stereotype/>
 						<bounds lower="1" upper="1"/>
 						<options/>
-						<style value="mainPosition"/>
+						<style value="baseSalary"/>
+						<styleex value="volatile=0;union=0;"/>
+						<tags/>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_9B2CF83D_7782_47f0_A1B5_9C6CC1BDB6D8" name="stillingstittel" scope="Public">
+						<initial/>
+						<documentation value="Arbeidstakers stillingstittel i gjeldende stilling.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Brukes i noen tilfeller som fritekst tittel slik at ansatte kan overstyre hva som skal vises på offentlige websider og intranett.&#xA;&#xA;Dette er ikke det samme som Stillingsbenevnelse som er titelen/tekstverdien til stillingskoden.&#xA;&#xA;# Format&#xA;&#xA;Tekst&#xA;&#xA;# Eksempler&#xA;&#xA;* &quot;IT-sjef&quot; (mens stillingsbenevnelse kan være &quot;SEKSJONSLEDER&quot;&#xA;* &quot;Rådgiver, IT&quot; (mens stillingsbenevnelse kan være &quot;Rådgiver 1&quot;&#xA;"/>
+						<model ea_localid="52" ea_guid="{9B2CF83D-7782-47f0-A1B5-9C6CC1BDB6D8}"/>
+						<properties type="string" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="7"/>
+						<stereotype/>
+						<bounds lower="0" upper="1"/>
+						<options/>
+						<style value="positionTitle"/>
+						<styleex value="volatile=0;union=0;"/>
+						<tags/>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_ABEF78DF_B8D5_4d9e_94F5_54A1DD5EE6FD" name="ansettelsesprosent" scope="Public">
+						<initial/>
+						<documentation value="Den prosenten personalressursen eier, i henholdt til arbeidsavtalen&#xA;&#xA;# Beskrivelse&#xA;&#xA;&#xA;&#xA;# Format&#xA;Angitt fra 0 til 100, med to desimaler.&#xA;&#xA;# Eksempler&#xA;&#xA;* `10`&#xA;* `10,33`&#xA;* `80`&#xA;* `100`&#xA;* For tilkallingsvikar kan denne være `0`"/>
+						<model ea_localid="53" ea_guid="{ABEF78DF-B8D5-4d9e-94F5-54A1DD5EE6FD}"/>
+						<properties type="double" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0" scale="0"/>
+						<containment containment="Not Specified" position="9"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style value="postionPercent"/>
 						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
@@ -3104,62 +3149,17 @@
 						<tags/>
 						<xrefs/>
 					</attribute>
-					<attribute xmi:idref="EAID_3272BB9E_9E27_46d7_8205_A915F22050A9" name="stillingsnummer" scope="Public">
+					<attribute xmi:idref="EAID_78036C08_D320_4dc8_978C_0B44AC021AA9" name="hovedstilling" scope="Public">
 						<initial/>
-						<documentation value="En identifikator for stilling til en ansatt&#xA;&#xA;# Beskrivelse&#xA;&#xA;Løpenummer over stillinger som arbeidstaker har eller har hatt som ansattressurs i organisasjonen. Innenfor en ansatt og arbeidsforholdsperiode skal denne være unik.&#xA;&#xA;# Format&#xA;&#xA;Id-verdi til en stilling.&#xA;&#xA;# Eksempler&#xA;&#xA;For en personalressurs med tre arbeidsforhold, kan det være:&#xA;`1`&#xA;`2`&#xA;`3`"/>
-						<model ea_localid="48" ea_guid="{3272BB9E-9E27-46d7-8205-A915F22050A9}"/>
-						<properties type="string" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
+						<documentation value="Angir hvilket arbeidsforhold som er hovedarbeidsforhold.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Primærstillingen personalressursen er knyttet til, og som er grunnlaget for det juridiske arbeidsforholdet.&#xA;&#xA;En personalressurs kan ha flere arbeidsforhold, men kun en av disse kan være hovedstillingen.&#xA;&#xA;# Format&#xA;&#xA;true/false&#xA;&#xA;"/>
+						<model ea_localid="55" ea_guid="{78036C08-D320-4dc8-978C-0B44AC021AA9}"/>
+						<properties type="boolean" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
-						<containment containment="Not Specified" position="1"/>
+						<containment containment="Not Specified" position="11"/>
 						<stereotype/>
 						<bounds lower="1" upper="1"/>
 						<options/>
-						<style value="positionNumber"/>
-						<styleex value="volatile=0;union=0;"/>
-						<tags/>
-						<xrefs value="$XREFPROP=$XID={66824BEF-7ABD-4720-B17C-665F0821C011}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={3272BB9E-9E27-46d7-8205-A915F22050A9}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
-					</attribute>
-					<attribute xmi:idref="EAID_9B2CF83D_7782_47f0_A1B5_9C6CC1BDB6D8" name="stillingstittel" scope="Public">
-						<initial/>
-						<documentation value="Arbeidstakers stillingstittel i gjeldende stilling.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Brukes i noen tilfeller som fritekst tittel slik at ansatte kan overstyre hva som skal vises på offentlige websider og intranett.&#xA;&#xA;Dette er ikke det samme som Stillingsbenevnelse som er titelen/tekstverdien til stillingskoden.&#xA;&#xA;# Format&#xA;&#xA;Tekst&#xA;&#xA;# Eksempler&#xA;&#xA;* &quot;IT-sjef&quot; (mens stillingsbenevnelse kan være &quot;SEKSJONSLEDER&quot;&#xA;* &quot;Rådgiver, IT&quot; (mens stillingsbenevnelse kan være &quot;Rådgiver 1&quot;&#xA;"/>
-						<model ea_localid="52" ea_guid="{9B2CF83D-7782-47f0-A1B5-9C6CC1BDB6D8}"/>
-						<properties type="string" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
-						<coords ordered="0" scale="0"/>
-						<containment containment="Not Specified" position="7"/>
-						<stereotype/>
-						<bounds lower="0" upper="1"/>
-						<options/>
-						<style value="positionTitle"/>
-						<styleex value="volatile=0;union=0;"/>
-						<tags/>
-						<xrefs/>
-					</attribute>
-					<attribute xmi:idref="EAID_3C299BDB_4B76_458e_964A_A60C28B3623E" name="systemId" scope="Public">
-						<initial/>
-						<documentation value="Unik identifikator innenfor alle arbeidsforhold&#xA;&#xA;# Beskrivelse&#xA;&#xA;Unik identifikator innenfor alle arbeidsforhold til alle ansatte."/>
-						<model ea_localid="47" ea_guid="{3C299BDB-4B76-458e-964A-A60C28B3623E}"/>
-						<properties type="Identifikator" derived="0" collection="false" duplicates="0" changeability="changeable"/>
-						<coords ordered="0" scale="0"/>
-						<containment containment="Not Specified" position="0"/>
-						<stereotype/>
-						<bounds lower="1" upper="1"/>
-						<options/>
-						<style/>
-						<styleex value="volatile=0;"/>
-						<tags/>
-						<xrefs/>
-					</attribute>
-					<attribute xmi:idref="EAID_91AE90A8_7F18_4803_A036_8343E46EFDED" name="årslønn" scope="Public">
-						<initial/>
-						<documentation value="Årslønn/grunnlønn i 100 % stilling.&#xA;&#xA;# Beskrivelse&#xA;Lønn i 100% stilling. Inneholder ikke definerte tillegg.&#xA;&#xA;&#xA;# Eksempel&#xA;&#xA;* `400000`"/>
-						<model ea_localid="51" ea_guid="{91AE90A8-7F18-4803-A036-8343E46EFDED}"/>
-						<properties type="double" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
-						<coords ordered="0" scale="0"/>
-						<containment containment="Not Specified" position="6"/>
-						<stereotype/>
-						<bounds lower="1" upper="1"/>
-						<options/>
-						<style value="baseSalary"/>
+						<style value="mainPosition"/>
 						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
@@ -3269,21 +3269,6 @@
 						<tags/>
 						<xrefs/>
 					</attribute>
-					<attribute xmi:idref="EAID_4949CA6F_4A7E_4363_A005_2888D67F8F66" name="navn" scope="Public">
-						<initial/>
-						<documentation value="Navn på gruppe"/>
-						<model ea_localid="84" ea_guid="{4949CA6F-4A7E-4363-A005-2888D67F8F66}"/>
-						<properties type="string" collection="false" duplicates="0" changeability="changeable"/>
-						<coords ordered="0"/>
-						<containment containment="Not Specified" position="2"/>
-						<stereotype/>
-						<bounds lower="1" upper="1"/>
-						<options/>
-						<style value="name"/>
-						<styleex value="volatile=0;union=0;"/>
-						<tags/>
-						<xrefs/>
-					</attribute>
 					<attribute xmi:idref="EAID_A1617CCD_4D36_4bae_BB2C_63B0E1DEEECC" name="systemId" scope="Public">
 						<initial/>
 						<documentation value="Unik intern system-id for gruppe&#xA;&#xA;# Beskrivelse&#xA;&#xA;Systemspesifikk id, som normalt ikke er synlig i fagsystemet.&#xA;"/>
@@ -3295,6 +3280,21 @@
 						<bounds lower="1" upper="1"/>
 						<options/>
 						<style value="systemId"/>
+						<styleex value="volatile=0;union=0;"/>
+						<tags/>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_4949CA6F_4A7E_4363_A005_2888D67F8F66" name="navn" scope="Public">
+						<initial/>
+						<documentation value="Navn på gruppe"/>
+						<model ea_localid="84" ea_guid="{4949CA6F-4A7E-4363-A005-2888D67F8F66}"/>
+						<properties type="string" collection="false" duplicates="0" changeability="changeable"/>
+						<coords ordered="0"/>
+						<containment containment="Not Specified" position="2"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style value="name"/>
 						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
@@ -3385,21 +3385,6 @@
 				<xrefs/>
 				<extendedProperties tagged="0" package_name="Basisklasser"/>
 				<attributes>
-					<attribute xmi:idref="EAID_D18B19EA_D7F4_4187_A15F_B85F7F1C589F" name="kommentar" scope="Public">
-						<initial/>
-						<documentation value="Beskrivende tekst om personens forhold"/>
-						<model ea_localid="63" ea_guid="{D18B19EA-D7F4-4187-A15F-B85F7F1C589F}"/>
-						<properties type="string" collection="false" duplicates="0" changeability="changeable"/>
-						<coords ordered="0"/>
-						<containment containment="Not Specified" position="2"/>
-						<stereotype/>
-						<bounds lower="1" upper="1"/>
-						<options/>
-						<style value="comment"/>
-						<styleex value="volatile=0;union=0;"/>
-						<tags/>
-						<xrefs/>
-					</attribute>
 					<attribute xmi:idref="EAID_1B61E371_F819_40c9_888A_DE0257B7BE1E" name="systemId" scope="Public">
 						<initial/>
 						<documentation value="Systemidentifikator i fagsystem&#xA;&#xA;# Beskrivelse &#xA;&#xA;Dette kan være identifikator som eksisterer i skoleadministrativt system."/>
@@ -3411,6 +3396,21 @@
 						<bounds lower="1" upper="1"/>
 						<options/>
 						<style value="systemId"/>
+						<styleex value="volatile=0;union=0;"/>
+						<tags/>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_D18B19EA_D7F4_4187_A15F_B85F7F1C589F" name="kommentar" scope="Public">
+						<initial/>
+						<documentation value="Beskrivende tekst om personens forhold"/>
+						<model ea_localid="63" ea_guid="{D18B19EA-D7F4-4187-A15F-B85F7F1C589F}"/>
+						<properties type="string" collection="false" duplicates="0" changeability="changeable"/>
+						<coords ordered="0"/>
+						<containment containment="Not Specified" position="2"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style value="comment"/>
 						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
@@ -3461,21 +3461,6 @@
 						<tags/>
 						<xrefs/>
 					</attribute>
-					<attribute xmi:idref="EAID_7CF1F62E_F59E_4433_9BBE_998CFB0DAB3F" name="gjelderPeriode" scope="Public">
-						<initial/>
-						<documentation value="Tidsperioden fraværet oppstod/gjelder for&#xA;&#xA;# Beskrivelse &#xA;&#xA;For fraværstype __enkelt__ vil det typisk være datoen fraværet var. For fraværstype __oppsummering__ vil det være perioden fraværet er summert opp over, for eksempel en termin eller hele skoleåret."/>
-						<model ea_localid="88" ea_guid="{7CF1F62E-F59E-4433-9BBE-998CFB0DAB3F}"/>
-						<properties type="Periode" collection="false" duplicates="0" changeability="changeable"/>
-						<coords ordered="0"/>
-						<containment containment="Not Specified" position="2"/>
-						<stereotype/>
-						<bounds lower="1" upper="1"/>
-						<options/>
-						<style value="validForPeriod"/>
-						<styleex value="volatile=0;union=0;"/>
-						<tags/>
-						<xrefs/>
-					</attribute>
 					<attribute xmi:idref="EAID_D29D28CE_7760_4608_9682_65CF3EBDFE64" name="kommentar" scope="Public">
 						<initial/>
 						<documentation value="Beskrivelse av fraværet, evt ekstrainformasjon"/>
@@ -3488,6 +3473,21 @@
 						<options/>
 						<style value="comment"/>
 						<styleex value="volatile=0;"/>
+						<tags/>
+						<xrefs/>
+					</attribute>
+					<attribute xmi:idref="EAID_7CF1F62E_F59E_4433_9BBE_998CFB0DAB3F" name="gjelderPeriode" scope="Public">
+						<initial/>
+						<documentation value="Tidsperioden fraværet oppstod/gjelder for&#xA;&#xA;# Beskrivelse &#xA;&#xA;For fraværstype __enkelt__ vil det typisk være datoen fraværet var. For fraværstype __oppsummering__ vil det være perioden fraværet er summert opp over, for eksempel en termin eller hele skoleåret."/>
+						<model ea_localid="88" ea_guid="{7CF1F62E-F59E-4433-9BBE-998CFB0DAB3F}"/>
+						<properties type="Periode" collection="false" duplicates="0" changeability="changeable"/>
+						<coords ordered="0"/>
+						<containment containment="Not Specified" position="2"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style value="validForPeriod"/>
+						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
 					</attribute>
@@ -3696,17 +3696,17 @@
 				<xrefs/>
 				<extendedProperties tagged="0" package_name="Ressurser"/>
 				<attributes>
-					<attribute xmi:idref="EAID_1ACEE78F_D6BD_40fc_A667_2ABFF8E3D968" name="brukernavn" scope="Public">
+					<attribute xmi:idref="EAID_1A0A5C66_ECF8_46ac_848F_98FE024CAC75" name="kontaktinformasjon" scope="Public">
 						<initial/>
-						<documentation value="Brukernavn til en person&#xA;&#xA;# Beskrivelse&#xA;&#xA;Skal inneholde brukernavn for pålogging, som finnes i katalogtjenesten (feks Active Directory). Brukes som en identifikator som består, når fødselsnummer og/eller andre identifikatorer endrer seg.&#xA;&#xA;# Format&#xA;&#xA;Brukernavn i det format en personalressurs trenger for å logge seg på systemer i organisasjonen.&#xA;"/>
-						<model ea_localid="65" ea_guid="{1ACEE78F-D6BD-40fc-A667-2ABFF8E3D968}"/>
-						<properties type="Identifikator" collection="false" duplicates="0" changeability="changeable"/>
+						<documentation value="Skolespesifik kontaktinformasjon til en Elev&#xA;&#xA;# Beskrivelse&#xA;&#xA;Den fortrukne måten å komme i kontakt med en elev på skolen.&#xA;"/>
+						<model ea_localid="57" ea_guid="{1A0A5C66-ECF8-46ac-848F-98FE024CAC75}"/>
+						<properties type="Kontaktinformasjon" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
-						<containment containment="Not Specified" position="3"/>
+						<containment containment="Not Specified" position="0"/>
 						<stereotype/>
-						<bounds lower="1" upper="1"/>
+						<bounds lower="0" upper="1"/>
 						<options/>
-						<style value="username"/>
+						<style value="contactInformation"/>
 						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
@@ -3726,17 +3726,17 @@
 						<tags/>
 						<xrefs/>
 					</attribute>
-					<attribute xmi:idref="EAID_1A0A5C66_ECF8_46ac_848F_98FE024CAC75" name="kontaktinformasjon" scope="Public">
+					<attribute xmi:idref="EAID_1ACEE78F_D6BD_40fc_A667_2ABFF8E3D968" name="brukernavn" scope="Public">
 						<initial/>
-						<documentation value="Skolespesifik kontaktinformasjon til en Elev&#xA;&#xA;# Beskrivelse&#xA;&#xA;Den fortrukne måten å komme i kontakt med en elev på skolen.&#xA;"/>
-						<model ea_localid="57" ea_guid="{1A0A5C66-ECF8-46ac-848F-98FE024CAC75}"/>
-						<properties type="Kontaktinformasjon" collection="false" duplicates="0" changeability="changeable"/>
+						<documentation value="Brukernavn til en person&#xA;&#xA;# Beskrivelse&#xA;&#xA;Skal inneholde brukernavn for pålogging, som finnes i katalogtjenesten (feks Active Directory). Brukes som en identifikator som består, når fødselsnummer og/eller andre identifikatorer endrer seg.&#xA;&#xA;# Format&#xA;&#xA;Brukernavn i det format en personalressurs trenger for å logge seg på systemer i organisasjonen.&#xA;"/>
+						<model ea_localid="65" ea_guid="{1ACEE78F-D6BD-40fc-A667-2ABFF8E3D968}"/>
+						<properties type="Identifikator" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
-						<containment containment="Not Specified" position="0"/>
+						<containment containment="Not Specified" position="3"/>
 						<stereotype/>
-						<bounds lower="0" upper="1"/>
+						<bounds lower="1" upper="1"/>
 						<options/>
-						<style value="contactInformation"/>
+						<style value="username"/>
 						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
@@ -3773,21 +3773,6 @@
 				<xrefs/>
 				<extendedProperties tagged="0" package_name="Ressurser"/>
 				<attributes>
-					<attribute xmi:idref="EAID_FCC9C978_8A80_467e_9F7E_B9F6CDFF203C" name="navn" scope="Public">
-						<initial/>
-						<documentation value="Lesbar navn på rommet"/>
-						<model ea_localid="101" ea_guid="{FCC9C978-8A80-467e-9F7E-B9F6CDFF203C}"/>
-						<properties type="string" derived="0" collection="false" duplicates="0" changeability="changeable"/>
-						<coords ordered="0"/>
-						<containment containment="Not Specified" position="1"/>
-						<stereotype/>
-						<bounds lower="0" upper="1"/>
-						<options/>
-						<style/>
-						<styleex/>
-						<tags/>
-						<xrefs value="$XREFPROP=$XID={499a6dea-28f0-656e-9802-7867fa8ca7f2}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={FCC9C978-8A80-467e-9F7E-B9F6CDFF203C}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
-					</attribute>
 					<attribute xmi:idref="EAID_24EE231D_9C73_4363_8BA4_FE772EA43ABB" name="systemId" scope="Public">
 						<initial/>
 						<documentation value="Id av rommet"/>
@@ -3802,6 +3787,21 @@
 						<styleex/>
 						<tags/>
 						<xrefs value="$XREFPROP=$XID={8be3fda6-30b4-82ed-75ca-37058ffaa445}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={24EE231D-9C73-4363-8BA4-FE772EA43ABB}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+					</attribute>
+					<attribute xmi:idref="EAID_FCC9C978_8A80_467e_9F7E_B9F6CDFF203C" name="navn" scope="Public">
+						<initial/>
+						<documentation value="Lesbar navn på rommet"/>
+						<model ea_localid="101" ea_guid="{FCC9C978-8A80-467e-9F7E-B9F6CDFF203C}"/>
+						<properties type="string" derived="0" collection="false" duplicates="0" changeability="changeable"/>
+						<coords ordered="0"/>
+						<containment containment="Not Specified" position="1"/>
+						<stereotype/>
+						<bounds lower="0" upper="1"/>
+						<options/>
+						<style/>
+						<styleex/>
+						<tags/>
+						<xrefs value="$XREFPROP=$XID={499a6dea-28f0-656e-9802-7867fa8ca7f2}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={FCC9C978-8A80-467e-9F7E-B9F6CDFF203C}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 				</attributes>
 				<links>
@@ -4017,6 +4017,21 @@
 				<xrefs/>
 				<extendedProperties tagged="0" package_name="Organisasjon"/>
 				<attributes>
+					<attribute xmi:idref="EAID_2F853AE5_7FBC_46df_AAB0_FF4FB6A001A5" name="skolenummer" scope="Public">
+						<initial/>
+						<documentation value="Vigo sitt skolenummer &#xA;&#xA;# Beskrivelse &#xA;&#xA;Benyttes i VIGO og de skoleadministrative systemene. Benyttes også i forbindelse med rapportering til SSB, Utdanningsdirektoratet, Lånekassen og Samordna opptak.&#xA;&#xA;# Referanser&#xA;&#xA;* UDir Registreringshåndbok: [regbok.udir.no/35004/3344/35042-1024179.html](http://regbok.udir.no/35004/3344/35042-1024179.html)&#xA;&#xA;# Eksempel &#xA;&#xA;* Byremo videregående skole har skolenummer 10022.&#xA;* Moelv videregående skole har skolenummer 4453.&#xA;"/>
+						<model ea_localid="69" ea_guid="{2F853AE5-7FBC-46df-AAB0-FF4FB6A001A5}"/>
+						<properties type="Identifikator" collection="false" duplicates="0" changeability="changeable"/>
+						<coords ordered="0"/>
+						<containment containment="Not Specified" position="0"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style value="vigoNumber"/>
+						<styleex value="volatile=0;union=0;"/>
+						<tags/>
+						<xrefs/>
+					</attribute>
 					<attribute xmi:idref="EAID_895AD056_EAA1_410b_94C0_42F8842F0A63" name="domenenavn" scope="Public">
 						<initial/>
 						<documentation value="Domenenavn om det er tilgjengelig&#xA;"/>
@@ -4058,21 +4073,6 @@
 						<bounds lower="1" upper="1"/>
 						<options/>
 						<style value="name"/>
-						<styleex value="volatile=0;union=0;"/>
-						<tags/>
-						<xrefs/>
-					</attribute>
-					<attribute xmi:idref="EAID_2F853AE5_7FBC_46df_AAB0_FF4FB6A001A5" name="skolenummer" scope="Public">
-						<initial/>
-						<documentation value="Vigo sitt skolenummer &#xA;&#xA;# Beskrivelse &#xA;&#xA;Benyttes i VIGO og de skoleadministrative systemene. Benyttes også i forbindelse med rapportering til SSB, Utdanningsdirektoratet, Lånekassen og Samordna opptak.&#xA;&#xA;# Referanser&#xA;&#xA;* UDir Registreringshåndbok: [regbok.udir.no/35004/3344/35042-1024179.html](http://regbok.udir.no/35004/3344/35042-1024179.html)&#xA;&#xA;# Eksempel &#xA;&#xA;* Byremo videregående skole har skolenummer 10022.&#xA;* Moelv videregående skole har skolenummer 4453.&#xA;"/>
-						<model ea_localid="69" ea_guid="{2F853AE5-7FBC-46df-AAB0-FF4FB6A001A5}"/>
-						<properties type="Identifikator" collection="false" duplicates="0" changeability="changeable"/>
-						<coords ordered="0"/>
-						<containment containment="Not Specified" position="0"/>
-						<stereotype/>
-						<bounds lower="1" upper="1"/>
-						<options/>
-						<style value="vigoNumber"/>
 						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
@@ -4124,6 +4124,21 @@
 				<xrefs/>
 				<extendedProperties tagged="0" package_name="Timeplan"/>
 				<attributes>
+					<attribute xmi:idref="EAID_6FE3AA4B_C97B_4f60_BFFF_646592ECFA27" name="varighet" scope="Public">
+						<initial/>
+						<documentation value="Når starter og slutter timen?"/>
+						<model ea_localid="99" ea_guid="{6FE3AA4B-C97B-4f60-BFFF-646592ECFA27}"/>
+						<properties type="Periode" derived="0" collection="false" duplicates="0" changeability="changeable"/>
+						<coords ordered="0"/>
+						<containment containment="Not Specified" position="0"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex/>
+						<tags/>
+						<xrefs value="$XREFPROP=$XID={5c6e5931-8702-fecb-6f64-3e8fa251b474}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={6FE3AA4B-C97B-4f60-BFFF-646592ECFA27}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+					</attribute>
 					<attribute xmi:idref="EAID_823284F3_5555_4f19_ABBD_4C23E8F7ED22" name="beskrivelse" scope="Public">
 						<initial/>
 						<documentation value="Beskrivelsen av den individuelle timen"/>
@@ -4138,21 +4153,6 @@
 						<styleex/>
 						<tags/>
 						<xrefs value="$XREFPROP=$XID={6f362c97-7fec-b7e7-79ac-424dc7801c91}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={823284F3-5555-4f19-ABBD-4C23E8F7ED22}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
-					</attribute>
-					<attribute xmi:idref="EAID_19CC3838_11AA_4c9b_891F_56003FC3CA71" name="systemId" scope="Public">
-						<initial/>
-						<documentation/>
-						<model ea_localid="98" ea_guid="{19CC3838-11AA-4c9b-891F-56003FC3CA71}"/>
-						<properties type="Identifikator" derived="0" collection="false" duplicates="0" changeability="changeable"/>
-						<coords ordered="0"/>
-						<containment containment="Not Specified" position="3"/>
-						<stereotype/>
-						<bounds lower="1" upper="1"/>
-						<options/>
-						<style/>
-						<styleex/>
-						<tags/>
-						<xrefs value="$XREFPROP=$XID={6f32d051-7037-76b5-fa09-882a6cec376b}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={19CC3838-11AA-4c9b-891F-56003FC3CA71}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 					<attribute xmi:idref="EAID_98B2F58B_0EB8_43f1_A29D_038ADCEB97C7" name="tittel" scope="Public">
 						<initial/>
@@ -4169,20 +4169,20 @@
 						<tags/>
 						<xrefs value="$XREFPROP=$XID={8e2ee1c5-2a2c-5e35-182a-3ce3ebd2d672}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={98B2F58B-0EB8-43f1-A29D-038ADCEB97C7}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
-					<attribute xmi:idref="EAID_6FE3AA4B_C97B_4f60_BFFF_646592ECFA27" name="varighet" scope="Public">
+					<attribute xmi:idref="EAID_19CC3838_11AA_4c9b_891F_56003FC3CA71" name="systemId" scope="Public">
 						<initial/>
-						<documentation value="Når starter og slutter timen?"/>
-						<model ea_localid="99" ea_guid="{6FE3AA4B-C97B-4f60-BFFF-646592ECFA27}"/>
-						<properties type="Periode" derived="0" collection="false" duplicates="0" changeability="changeable"/>
+						<documentation/>
+						<model ea_localid="98" ea_guid="{19CC3838-11AA-4c9b-891F-56003FC3CA71}"/>
+						<properties type="Identifikator" derived="0" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
-						<containment containment="Not Specified" position="0"/>
+						<containment containment="Not Specified" position="3"/>
 						<stereotype/>
 						<bounds lower="1" upper="1"/>
 						<options/>
 						<style/>
 						<styleex/>
 						<tags/>
-						<xrefs value="$XREFPROP=$XID={5c6e5931-8702-fecb-6f64-3e8fa251b474}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={6FE3AA4B-C97B-4f60-BFFF-646592ECFA27}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+						<xrefs value="$XREFPROP=$XID={6f32d051-7037-76b5-fa09-882a6cec376b}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={19CC3838-11AA-4c9b-891F-56003FC3CA71}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 				</attributes>
 				<links>
@@ -7202,8 +7202,8 @@
 		<primitivetypes>
 			<packagedElement xmi:type="uml:Package" xmi:id="EAPrimitiveTypesPackage" name="EA_PrimitiveTypes_Package" visibility="public">
 				<packagedElement xmi:type="uml:Package" xmi:id="EAJavaTypesPackage" name="EA_Java_Types_Package" visibility="public">
-					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAJava_string" name="string" visibility="public"/>
 					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAJava_date" name="date" visibility="public"/>
+					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAJava_string" name="string" visibility="public"/>
 					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAJava_dateTime" name="dateTime" visibility="public"/>
 					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAJava_boolean" name="boolean" visibility="public">
 						<generalization xmi:type="uml:Generalization" xmi:id="EAJava_boolean_General">
