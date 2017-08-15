@@ -1734,9 +1734,9 @@
 							<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000460_97A2_4647_BD29_4EC818A67CD0" value="1"/>
 						</ownedAttribute>
 						<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_4B548333_0628_4c1a_B895_E271AC7B6C37" name="standardkommentarVitnemålType" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+							<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#String"/>
 							<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000461_0628_4c1a_B895_E271AC7B6C37" value="1"/>
 							<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000462_0628_4c1a_B895_E271AC7B6C37" value="1"/>
-							<type xmi:idref="EAnone_anyURI"/>
 						</ownedAttribute>
 						<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_4545DBC9_B54B_44d5_9AD3_F9BA3030FFDD" name="utgått" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 							<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#String"/>
@@ -2111,9 +2111,9 @@
 					</packagedElement>
 					<packagedElement xmi:type="uml:Class" xmi:id="EAID_0C34DCC6_8153_49fd_B028_30F775DCEAB8" name="Læreplaner" visibility="public">
 						<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_60CEB8F5_D464_4f90_8136_8A4B5FF5C5C2" name="dokumentreferanse" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+							<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#String"/>
 							<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000579_D464_4f90_8136_8A4B5FF5C5C2" value="1"/>
 							<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000580_D464_4f90_8136_8A4B5FF5C5C2" value="1"/>
-							<type xmi:idref="EAnone_anyURI"/>
 						</ownedAttribute>
 						<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_18872969_F881_4aae_AE7F_93F4347EB3BB" name="formål" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 							<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#String"/>
@@ -3069,9 +3069,9 @@
 							<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000918_75E3_42a8_BA92_71F8A9446CB0" value="1"/>
 						</ownedAttribute>
 						<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_48C16E74_212D_46cc_91BC_5308A9F647D3" name="webadresse" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+							<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#String"/>
 							<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000919_212D_46cc_91BC_5308A9F647D3" value="1"/>
 							<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000920_212D_46cc_91BC_5308A9F647D3" value="1"/>
-							<type xmi:idref="EAnone_anyURI"/>
 						</ownedAttribute>
 						<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst653778_64CE_4975_B406_DF72BAF3028A" name="fylkesnummer" visibility="public" association="EAID_34653778_64CE_4975_B406_DF72BAF3028A" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 							<type xmi:idref="EAID_649824C6_76FA_43aa_BE00_42ADFC1F6F78"/>
@@ -8546,7 +8546,7 @@
 						<initial/>
 						<documentation value="Vigo: standardkommentar_vitnemaal_ty"/>
 						<model ea_localid="110" ea_guid="{4B548333-0628-4c1a-B895-E271AC7B6C37}"/>
-						<properties type="anyURI" derived="0" collection="false" duplicates="0" changeability="changeable"/>
+						<properties type="string" derived="0" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
 						<containment containment="Not Specified" position="12"/>
 						<stereotype/>
@@ -9655,7 +9655,7 @@
 						<initial/>
 						<documentation value="Lenke til læreplanene i dokumentform"/>
 						<model ea_localid="349" ea_guid="{60CEB8F5-D464-4f90-8136-8A4B5FF5C5C2}"/>
-						<properties type="anyURI" derived="0" collection="false" duplicates="0" changeability="changeable"/>
+						<properties type="string" derived="0" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
 						<containment containment="Not Specified" position="22"/>
 						<stereotype/>
@@ -12569,7 +12569,7 @@
 						<initial/>
 						<documentation value="Vigo: www"/>
 						<model ea_localid="334" ea_guid="{48C16E74-212D-46cc-91BC-5308A9F647D3}"/>
-						<properties type="anyURI" derived="0" collection="false" duplicates="0" changeability="changeable"/>
+						<properties type="string" derived="0" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
 						<containment containment="Not Specified" position="14"/>
 						<stereotype/>
@@ -17976,9 +17976,6 @@
 		</connectors>
 		<primitivetypes>
 			<packagedElement xmi:type="uml:Package" xmi:id="EAPrimitiveTypesPackage" name="EA_PrimitiveTypes_Package" visibility="public">
-				<packagedElement xmi:type="uml:Package" xmi:id="EAnoneTypesPackage" name="EA_none_Types_Package" visibility="public">
-					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAnone_anyURI" name="anyURI" visibility="public"/>
-				</packagedElement>
 				<packagedElement xmi:type="uml:Package" xmi:id="EAJavaTypesPackage" name="EA_Java_Types_Package" visibility="public">
 					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAJava_string" name="string" visibility="public"/>
 					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAJava_date" name="date" visibility="public"/>
