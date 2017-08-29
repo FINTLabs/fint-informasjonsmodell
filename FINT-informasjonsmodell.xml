@@ -138,7 +138,7 @@
 						<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dst663A64_21FD_48fb_B86A_1EDE0EA5CBE2" name="personalressurs" visibility="public" association="EAID_A0663A64_21FD_48fb_B86A_1EDE0EA5CBE2" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="composite">
 							<type xmi:idref="EAID_0F87A52C_7EE0_45e3_9DE2_AE537A34659D"/>
 							<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000017__21FD_48fb_B86A_1EDE0EA5CBE2" value="0"/>
-							<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000018__21FD_48fb_B86A_1EDE0EA5CBE2" value="-1"/>
+							<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000018__21FD_48fb_B86A_1EDE0EA5CBE2" value="1"/>
 						</ownedEnd>
 						<memberEnd xmi:idref="EAID_src663A64_21FD_48fb_B86A_1EDE0EA5CBE2"/>
 						<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src663A64_21FD_48fb_B86A_1EDE0EA5CBE2" name="person" visibility="public" association="EAID_A0663A64_21FD_48fb_B86A_1EDE0EA5CBE2" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
@@ -160,7 +160,7 @@
 						<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src8BC158_32A2_470b_AA56_E9BEB8EB16E2" name="elev" visibility="public" association="EAID_998BC158_32A2_470b_AA56_E9BEB8EB16E2" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="composite">
 							<type xmi:idref="EAID_CBFC8E03_81C3_467d_B0CC_4842D1B17F8A"/>
 							<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000021__32A2_470b_AA56_E9BEB8EB16E2" value="0"/>
-							<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000022__32A2_470b_AA56_E9BEB8EB16E2" value="-1"/>
+							<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000022__32A2_470b_AA56_E9BEB8EB16E2" value="1"/>
 						</ownedEnd>
 						<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dst8BC158_32A2_470b_AA56_E9BEB8EB16E2" name="person" visibility="public" association="EAID_998BC158_32A2_470b_AA56_E9BEB8EB16E2" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 							<type xmi:idref="EAID_3918321E_C706_4469_892B_CA90C03B4378"/>
@@ -1016,8 +1016,8 @@
 							<memberEnd xmi:idref="EAID_src0E6CE3_F10C_479f_A192_7B54053F3A11"/>
 							<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src0E6CE3_F10C_479f_A192_7B54053F3A11" name="basisgruppe" visibility="public" association="EAID_670E6CE3_F10C_479f_A192_7B54053F3A11" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_DB6CD84D_FDEF_46cf_B1FF_23DA43330088"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000253__F10C_479f_A192_7B54053F3A11" value="0"/>
-								<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000254__F10C_479f_A192_7B54053F3A11" value="-1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000261__F10C_479f_A192_7B54053F3A11" value="0"/>
+								<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000262__F10C_479f_A192_7B54053F3A11" value="-1"/>
 							</ownedEnd>
 						</packagedElement>
 						<packagedElement xmi:type="uml:Association" xmi:id="EAID_D14B82CA_9DCE_4dd5_B560_CDD2B1EEF247" visibility="public">
@@ -1107,41 +1107,38 @@
 							<memberEnd xmi:idref="EAID_src439702_0331_453a_8B16_B609CEB17050"/>
 							<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dst439702_0331_453a_8B16_B609CEB17050" name="programområde" visibility="public" association="EAID_EB439702_0331_453a_8B16_B609CEB17050" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_FB6DC657_8860_42ec_902E_B8B8C430625F"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000251__0331_453a_8B16_B609CEB17050" value="0"/>
-								<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000252__0331_453a_8B16_B609CEB17050" value="-1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000259__0331_453a_8B16_B609CEB17050" value="0"/>
+								<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000260__0331_453a_8B16_B609CEB17050" value="-1"/>
 							</ownedEnd>
-						</packagedElement>
-						<packagedElement xmi:type="uml:Class" xmi:id="EAID_5DD53E61_ACA7_4c2d_95F6_6D3549430331" name="Trinn" visibility="public">
-							<generalization xmi:type="uml:Generalization" xmi:id="EAID_08271F20_CECE_4b82_97C8_D946E58381A1" general="EAID_ED72F787_FEAE_4ded_A3C0_86531D9EBBEC"/>
 						</packagedElement>
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_EA8C6A72_5795_443a_84EC_15FEAD1B9D34" name="Undervisningsgruppe" visibility="public">
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_9B6FA897_21FA_486c_A005_8256C33B0125" name="kontaktinformasjon" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:idref="EAID_7C37FE86_403B_4a89_AC8F_6EAA9D7A7EF2"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000255_21FA_486c_A005_8256C33B0125" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000256_21FA_486c_A005_8256C33B0125" value="1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000251_21FA_486c_A005_8256C33B0125" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000252_21FA_486c_A005_8256C33B0125" value="1"/>
 							</ownedAttribute>
 							<generalization xmi:type="uml:Generalization" xmi:id="EAID_D0E8B613_1AC0_465e_9C24_649BE0DBCF31" general="EAID_ED72F787_FEAE_4ded_A3C0_86531D9EBBEC"/>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst99217B_49B9_4bf3_9652_155F004635E2" name="fag" visibility="public" association="EAID_E799217B_49B9_4bf3_9652_155F004635E2" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_F2E6050D_5E67_4dc5_9BB4_B43B9E99E43A"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000257__49B9_4bf3_9652_155F004635E2" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000258__49B9_4bf3_9652_155F004635E2" value="1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000253__49B9_4bf3_9652_155F004635E2" value="1"/>
+								<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000254__49B9_4bf3_9652_155F004635E2" value="-1"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_src3433DF_CCD2_47bd_8287_A0F8554716B5" name="time" visibility="public" association="EAID_7A3433DF_CCD2_47bd_8287_A0F8554716B5" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_C321C0B0_FC7D_477b_A64C_BF4B34E00924"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000259__CCD2_47bd_8287_A0F8554716B5" value="0"/>
-								<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000260__CCD2_47bd_8287_A0F8554716B5" value="-1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000255__CCD2_47bd_8287_A0F8554716B5" value="0"/>
+								<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000256__CCD2_47bd_8287_A0F8554716B5" value="-1"/>
 							</ownedAttribute>
 						</packagedElement>
 						<packagedElement xmi:type="uml:Association" xmi:id="EAID_7A3433DF_CCD2_47bd_8287_A0F8554716B5" visibility="public">
 							<memberEnd xmi:idref="EAID_dst3433DF_CCD2_47bd_8287_A0F8554716B5"/>
 							<memberEnd xmi:idref="EAID_src3433DF_CCD2_47bd_8287_A0F8554716B5"/>
 						</packagedElement>
-						<packagedElement xmi:type="uml:Class" xmi:id="EAID_E8F8A8A3_8C7B_4aad_A52C_B07B8857C7F0" name="Utdannigsprogram" visibility="public">
+						<packagedElement xmi:type="uml:Class" xmi:id="EAID_E8F8A8A3_8C7B_4aad_A52C_B07B8857C7F0" name="Utdanningsprogram" visibility="public">
 							<generalization xmi:type="uml:Generalization" xmi:id="EAID_B9B009F3_3BA2_4ad3_AC52_11C58B963F0A" general="EAID_ED72F787_FEAE_4ded_A3C0_86531D9EBBEC"/>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_src912179_F752_4db8_A257_CD3DF9123E8D" name="programområde" visibility="public" association="EAID_96912179_F752_4db8_A257_CD3DF9123E8D" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_FB6DC657_8860_42ec_902E_B8B8C430625F"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000261__F752_4db8_A257_CD3DF9123E8D" value="0"/>
-								<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000262__F752_4db8_A257_CD3DF9123E8D" value="-1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000257__F752_4db8_A257_CD3DF9123E8D" value="0"/>
+								<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000258__F752_4db8_A257_CD3DF9123E8D" value="-1"/>
 							</ownedAttribute>
 						</packagedElement>
 						<packagedElement xmi:type="uml:Association" xmi:id="EAID_227A20A3_3387_4e5a_A43E_C9E342811536" visibility="public">
@@ -1150,6 +1147,9 @@
 								<type xmi:idref="EAID_0F1201EE_0BE3_43fe_84F9_3911698D34C5"/>
 							</ownedEnd>
 							<memberEnd xmi:idref="EAID_src7A20A3_3387_4e5a_A43E_C9E342811536"/>
+						</packagedElement>
+						<packagedElement xmi:type="uml:Class" xmi:id="EAID_5DD53E61_ACA7_4c2d_95F6_6D3549430331" name="Årstrinn" visibility="public">
+							<generalization xmi:type="uml:Generalization" xmi:id="EAID_08271F20_CECE_4b82_97C8_D946E58381A1" general="EAID_ED72F787_FEAE_4ded_A3C0_86531D9EBBEC"/>
 						</packagedElement>
 					</packagedElement>
 					<packagedElement xmi:type="uml:Package" xmi:id="EAPK_D12B6567_B87C_42d5_A23F_33C49E63F034" name="Organisasjon" visibility="public">
@@ -3814,8 +3814,8 @@
 			</element>
 			<element xmi:idref="EAID_DB6CD84D_FDEF_46cf_B1FF_23DA43330088" xmi:type="uml:Class" name="Basisgruppe" scope="public">
 				<model package="EAPK_5FD613D7_24FE_428a_B4D3_8101CE1A96B7" tpos="0" ea_localid="98" ea_eleType="element"/>
-				<properties documentation="Elevgruppe som en kontaktlærer har ansvar for når det gjelder praktiske, administrative og sosialpedagogiske oppgaver.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Begrepet som har tildligere vært kjent som &quot;klasse&quot;.&#xA;&#xA;&quot;Vanlig&quot; gruppe i SATS (klassegruppe)&#xA;&#xA;Viser informasjon om:&#xA;* År på VGS person går i&#xA;* Programområdet&#xA;* A, B eller C klasse&#xA;&#xA;Synonym:&#xA;* Klasse&#xA;&#xA;Ingen øvre grense på antall elever" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:10:35" modified="2017-06-09 13:45:12" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<properties documentation="Elevgruppe som definert i Opplæringslova §8-2. &#xA;&#xA;# Beskrivelse&#xA;&#xA;I opplæringa skal elevane delast i klassar eller basisgrupper som skal vareta deira behov for sosialt tilhør. For delar av opplæringa kan elevane delast i andre grupper etter behov. Til vanleg skal organiseringa ikkje skje etter fagleg nivå, kjønn eller etnisk tilhør. Klassane, basisgruppene og gruppene må ikkje vere større enn det som er pedagogisk og tryggleiksmessig forsvarleg.&#xA;&#xA;Klassen eller basisgruppa skal ha ein eller fleire lærarar (kontaktlærarar) som har særleg ansvar for dei praktiske, administrative og sosialpedagogiske gjeremåla som gjeld klassen eller basisgruppa og dei elevane som er der, mellom anna kontakten med heimen.&#xA;&#xA;Begrepet som har tildligere vært kjent som &quot;klasse&quot;.&#xA;&#xA;&quot;Vanlig&quot; gruppe i SATS (klassegruppe)&#xA;&#xA;Viser informasjon om:&#xA;* År på VGS person går i&#xA;* Programområdet&#xA;* A, B eller C klasse&#xA;&#xA;Synonym:&#xA;* Klasse&#xA;&#xA;Øvre grense er beskrevet i Opplæringslova §8-3 eller i forskrift." isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:10:35" modified="2017-08-29 10:12:37" complexity="1" status="Proposed" keywords="hovedklasse"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -3876,8 +3876,8 @@
 			</element>
 			<element xmi:idref="EAID_325D3C9A_7698_41ca_8D30_5ECE299439F7" xmi:type="uml:Class" name="Kontaktlærergruppe" scope="public">
 				<model package="EAPK_5FD613D7_24FE_428a_B4D3_8101CE1A96B7" tpos="0" ea_localid="101" ea_eleType="element"/>
-				<properties documentation="Elevgruppe som en kontaktlærer har ansvar for når det gjelder praktiske, administrative og sosialpedagogiske oppgaver" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:11:20" modified="2017-08-23 09:31:36" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<properties documentation="Elevgruppe som en kontaktlærer har særleg ansvar for dei praktiske, administrative og sosialpedagogiske gjeremåla som gjeld klassen eller basisgruppa og dei elevane som er der, mellom anna kontakten med heimen, jf Opplæringslova §8-2." isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:11:20" modified="2017-08-29 10:12:22" complexity="1" status="Proposed" keywords="hovedklasse"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -3921,21 +3921,6 @@
 					<Association xmi:id="EAID_EB439702_0331_453a_8B16_B609CEB17050" start="EAID_5DD53E61_ACA7_4c2d_95F6_6D3549430331" end="EAID_FB6DC657_8860_42ec_902E_B8B8C430625F"/>
 				</links>
 			</element>
-			<element xmi:idref="EAID_5DD53E61_ACA7_4c2d_95F6_6D3549430331" xmi:type="uml:Class" name="Trinn" scope="public">
-				<model package="EAPK_5FD613D7_24FE_428a_B4D3_8101CE1A96B7" tpos="0" ea_localid="102" ea_eleType="element"/>
-				<properties documentation="Beskriver årstrinnet i videregående opplæring&#xA;&#xA;# Eksempler&#xA;&#xA;* Vg1&#xA;* Vg2&#xA;* Vg3&#xA;&#xA;# Synonym&#xA;&#xA;* Nivå (Rogaland)&#xA;* Klassetrinn&#xA;* Årstrinn" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:11:30" modified="2017-06-09 13:50:23" complexity="1" status="Proposed" keywords="hovedklasse"/>
-				<code product_name="Java" gentype="Java"/>
-				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-				<tags/>
-				<xrefs/>
-				<extendedProperties tagged="0" package_name="Gruppe"/>
-				<links>
-					<Generalization xmi:id="EAID_08271F20_CECE_4b82_97C8_D946E58381A1" start="EAID_5DD53E61_ACA7_4c2d_95F6_6D3549430331" end="EAID_ED72F787_FEAE_4ded_A3C0_86531D9EBBEC"/>
-					<Association xmi:id="EAID_EB439702_0331_453a_8B16_B609CEB17050" start="EAID_5DD53E61_ACA7_4c2d_95F6_6D3549430331" end="EAID_FB6DC657_8860_42ec_902E_B8B8C430625F"/>
-					<Association xmi:id="EAID_670E6CE3_F10C_479f_A192_7B54053F3A11" start="EAID_DB6CD84D_FDEF_46cf_B1FF_23DA43330088" end="EAID_5DD53E61_ACA7_4c2d_95F6_6D3549430331"/>
-				</links>
-			</element>
 			<element xmi:idref="EAID_EA8C6A72_5795_443a_84EC_15FEAD1B9D34" xmi:type="uml:Class" name="Undervisningsgruppe" scope="public">
 				<model package="EAPK_5FD613D7_24FE_428a_B4D3_8101CE1A96B7" tpos="0" ea_localid="100" ea_eleType="element"/>
 				<properties documentation="Gruppering av elever som lærer underviser i samme faget. &#xA;&#xA;# Beskrivelse&#xA;&#xA;Elever i forskjellige undervisningsgrupper kan ta samme faget.&#xA;Det kan være flere lærer i en undervisningsgruppe.&#xA;&#xA;Synonym:&#xA;* Faggruppe (SATS)" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
@@ -3968,10 +3953,10 @@
 					<Association xmi:id="EAID_7A3433DF_CCD2_47bd_8287_A0F8554716B5" start="EAID_C321C0B0_FC7D_477b_A64C_BF4B34E00924" end="EAID_EA8C6A72_5795_443a_84EC_15FEAD1B9D34"/>
 				</links>
 			</element>
-			<element xmi:idref="EAID_E8F8A8A3_8C7B_4aad_A52C_B07B8857C7F0" xmi:type="uml:Class" name="Utdannigsprogram" scope="public">
+			<element xmi:idref="EAID_E8F8A8A3_8C7B_4aad_A52C_B07B8857C7F0" xmi:type="uml:Class" name="Utdanningsprogram" scope="public">
 				<model package="EAPK_5FD613D7_24FE_428a_B4D3_8101CE1A96B7" tpos="0" ea_localid="103" ea_eleType="element"/>
 				<properties documentation="Utdanningsløpene i videregående skole som fører fram til studie- og/eller yrkeskompetanse/fagbrev&#xA;&#xA;Synonym: Utdanningsgruppe&#xA;&#xA;# Eksempler&#xA;&#xA;* Bygg- og anleggsteknikk&#xA;* Design og håndverk&#xA;* Elektrofag&#xA;* Helse- og oppvekstfag&#xA;* Idrettsfag&#xA;* Kunst, design og arkitektur&#xA;* Medier og kommunikasjon&#xA;* Musikk, dans og drama&#xA;* Naturbruk&#xA;* Påbygging&#xA;* Restaurant- og matfag&#xA;* Service og samferdsel&#xA;* Studiespesialisering&#xA;* Teknikk og ind. produksjon&#xA;&#xA;# Referanser&#xA;&#xA;*  Fag- og timefordeling og tilbudsstruktur for Kunnskapsløftet Udir-1-2016 : [https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Innhold-i-opplaringen/udir-01-2016/](https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Innhold-i-opplaringen/udir-01-2016/)&#xA;* UDir Registreringshåndbok: [regbok.udir.no/35004/3344/35042-1018606.html](http://regbok.udir.no/35004/3344/35042-1018606.html)" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:11:40" modified="2017-06-09 13:51:07" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:11:40" modified="2017-08-29 10:15:04" complexity="1" status="Proposed" keywords="hovedklasse"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -3981,6 +3966,21 @@
 					<Association xmi:id="EAID_227A20A3_3387_4e5a_A43E_C9E342811536" start="EAID_E8F8A8A3_8C7B_4aad_A52C_B07B8857C7F0" end="EAID_0F1201EE_0BE3_43fe_84F9_3911698D34C5"/>
 					<Generalization xmi:id="EAID_B9B009F3_3BA2_4ad3_AC52_11C58B963F0A" start="EAID_E8F8A8A3_8C7B_4aad_A52C_B07B8857C7F0" end="EAID_ED72F787_FEAE_4ded_A3C0_86531D9EBBEC"/>
 					<Association xmi:id="EAID_96912179_F752_4db8_A257_CD3DF9123E8D" start="EAID_FB6DC657_8860_42ec_902E_B8B8C430625F" end="EAID_E8F8A8A3_8C7B_4aad_A52C_B07B8857C7F0"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_5DD53E61_ACA7_4c2d_95F6_6D3549430331" xmi:type="uml:Class" name="Årstrinn" scope="public">
+				<model package="EAPK_5FD613D7_24FE_428a_B4D3_8101CE1A96B7" tpos="0" ea_localid="102" ea_eleType="element"/>
+				<properties documentation="Hvert år i grunnopplæringen (grunnskole og videregående skole) kalles et årstrinn.&#xA;&#xA;# Eksempler&#xA;&#xA;* Vg1&#xA;* Vg2&#xA;* Vg3&#xA;* Vg4&#xA;&#xA;# Synonym&#xA;&#xA;* Nivå (Rogaland)&#xA;* Klassetrinn&#xA;* Trinn&#xA;&#xA;# Referanser&#xA;&#xA;http://grepwiki.udir.no/index.php?title=Årstrinn&#xA;&#xA;http://psi.udir.no/ontologi/kl06/aarstrinn" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:11:30" modified="2017-08-29 10:14:34" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Gruppe"/>
+				<links>
+					<Generalization xmi:id="EAID_08271F20_CECE_4b82_97C8_D946E58381A1" start="EAID_5DD53E61_ACA7_4c2d_95F6_6D3549430331" end="EAID_ED72F787_FEAE_4ded_A3C0_86531D9EBBEC"/>
+					<Association xmi:id="EAID_EB439702_0331_453a_8B16_B609CEB17050" start="EAID_5DD53E61_ACA7_4c2d_95F6_6D3549430331" end="EAID_FB6DC657_8860_42ec_902E_B8B8C430625F"/>
+					<Association xmi:id="EAID_670E6CE3_F10C_479f_A192_7B54053F3A11" start="EAID_DB6CD84D_FDEF_46cf_B1FF_23DA43330088" end="EAID_5DD53E61_ACA7_4c2d_95F6_6D3549430331"/>
 				</links>
 			</element>
 			<element xmi:idref="EAPK_D12B6567_B87C_42d5_A23F_33C49E63F034" xmi:type="uml:Package" name="Organisasjon" scope="public">
@@ -4337,11 +4337,11 @@
 				<target xmi:idref="EAID_0F87A52C_7EE0_45e3_9DE2_AE537A34659D">
 					<model ea_localid="86" type="Class" name="Personalressurs"/>
 					<role name="personalressurs" visibility="Public" targetScope="instance"/>
-					<type multiplicity="0..*" aggregation="none" containment="Unspecified"/>
+					<type multiplicity="0..1" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
-					<documentation value="Personalressurser til person. Alle forhold som arbeidstaker."/>
+					<documentation value="Personalressurs til person. Forhold som arbeidstaker."/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -4351,7 +4351,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels lb="1" lt="+person" rb="0..*" rt="+personalressurs"/>
+				<labels lb="1" lt="+person" rb="0..1" rt="+personalressurs"/>
 				<extendedProperties virtualInheritance="0"/>
 				<style/>
 				<xrefs/>
@@ -4396,7 +4396,7 @@
 				<source xmi:idref="EAID_CBFC8E03_81C3_467d_B0CC_4842D1B17F8A">
 					<model ea_localid="96" type="Class" name="Elevressurs"/>
 					<role name="elev" visibility="Public" targetScope="instance"/>
-					<type multiplicity="0..*" aggregation="none" containment="Unspecified"/>
+					<type multiplicity="0..1" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
@@ -4421,7 +4421,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels lb="0..*" lt="+elev" rb="1" rt="+person"/>
+				<labels lb="0..1" lt="+elev" rb="1" rt="+person"/>
 				<extendedProperties/>
 				<style/>
 				<xrefs/>
@@ -6253,7 +6253,7 @@
 			</connector>
 			<connector xmi:idref="EAID_08271F20_CECE_4b82_97C8_D946E58381A1">
 				<source xmi:idref="EAID_5DD53E61_ACA7_4c2d_95F6_6D3549430331">
-					<model ea_localid="102" type="Class" name="Trinn"/>
+					<model ea_localid="102" type="Class" name="Årstrinn"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -6321,7 +6321,7 @@
 			</connector>
 			<connector xmi:idref="EAID_B9B009F3_3BA2_4ad3_AC52_11C58B963F0A">
 				<source xmi:idref="EAID_E8F8A8A3_8C7B_4aad_A52C_B07B8857C7F0">
-					<model ea_localid="103" type="Class" name="Utdannigsprogram"/>
+					<model ea_localid="103" type="Class" name="Utdanningsprogram"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -6776,7 +6776,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;"/>
-					<documentation value="Det aktuelle rommet hvor undervisningen foregår"/>
+					<documentation value="De aktuelle rommene hvor undervisningen foregår"/>
 					<xrefs/>
 					<tags/>
 				</source>
@@ -6816,7 +6816,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_5DD53E61_ACA7_4c2d_95F6_6D3549430331">
-					<model ea_localid="102" type="Class" name="Trinn"/>
+					<model ea_localid="102" type="Class" name="Årstrinn"/>
 					<role name="trinn" visibility="Public" targetScope="instance"/>
 					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -6951,18 +6951,18 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
-					<documentation value="Alle undervisningsgrupper i en gitt fag"/>
+					<documentation value="Alle undervisningsgrupper i et gitt fag"/>
 					<xrefs/>
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_F2E6050D_5E67_4dc5_9BB4_B43B9E99E43A">
 					<model ea_localid="105" type="Class" name="Fag"/>
 					<role name="fag" visibility="Public" targetScope="instance"/>
-					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
+					<type multiplicity="1..*" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="Faget som det undervises i i gruppen"/>
+					<documentation value="Fagene som det undervises i i gruppen"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -6972,7 +6972,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels lb="0..*" lt="+undervisningsgruppe" rb="1" rt="+fag"/>
+				<labels lb="0..*" lt="+undervisningsgruppe" rb="1..*" rt="+fag"/>
 				<extendedProperties virtualInheritance="0"/>
 				<style/>
 				<xrefs/>
@@ -6991,7 +6991,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_E8F8A8A3_8C7B_4aad_A52C_B07B8857C7F0">
-					<model ea_localid="103" type="Class" name="Utdannigsprogram"/>
+					<model ea_localid="103" type="Class" name="Utdanningsprogram"/>
 					<role name="utdanningsprogram" visibility="Public" targetScope="instance"/>
 					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -7015,7 +7015,7 @@
 			</connector>
 			<connector xmi:idref="EAID_EB439702_0331_453a_8B16_B609CEB17050">
 				<source xmi:idref="EAID_5DD53E61_ACA7_4c2d_95F6_6D3549430331">
-					<model ea_localid="102" type="Class" name="Trinn"/>
+					<model ea_localid="102" type="Class" name="Årstrinn"/>
 					<role name="trinn" visibility="Public" targetScope="instance"/>
 					<type multiplicity="0..*" aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -7056,7 +7056,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;"/>
-					<documentation/>
+					<documentation value="Timene hvor undervisningen til en undervisningsgruppe gjennomføres"/>
 					<xrefs/>
 					<tags/>
 				</source>
@@ -7067,7 +7067,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;"/>
-					<documentation/>
+					<documentation value="Undervisningsgruppene som undervises i en gitt time"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -7085,7 +7085,7 @@
 			</connector>
 			<connector xmi:idref="EAID_227A20A3_3387_4e5a_A43E_C9E342811536">
 				<source xmi:idref="EAID_E8F8A8A3_8C7B_4aad_A52C_B07B8857C7F0">
-					<model ea_localid="103" type="Class" name="Utdannigsprogram"/>
+					<model ea_localid="103" type="Class" name="Utdanningsprogram"/>
 					<role name="utdanningsprogram" visibility="Public" targetScope="instance"/>
 					<type multiplicity="0..*" aggregation="none" containment="Unspecified"/>
 					<constraints/>
