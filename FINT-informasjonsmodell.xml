@@ -1189,7 +1189,7 @@
 								<type xmi:idref="EAID_ED72F787_FEAE_4ded_A3C0_86531D9EBBEC"/>
 							</ownedEnd>
 						</packagedElement>
-						<packagedElement xmi:type="uml:Class" xmi:id="EAID_CB67A99D_4FAB_4fda_8E79_78CA2087B32A" name="Periodegruppe" visibility="public">
+						<packagedElement xmi:type="uml:Class" xmi:id="EAID_CB67A99D_4FAB_4fda_8E79_78CA2087B32A" name="Periodegruppe" visibility="public" isAbstract="true">
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_B021A1D4_8BBD_4262_A894_0C3DBE7376CA" name="beskrivelse" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000281_8BBD_4262_A894_0C3DBE7376CA" value="1"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000282_8BBD_4262_A894_0C3DBE7376CA" value="1"/>
@@ -4028,8 +4028,8 @@
 			</element>
 			<element xmi:idref="EAID_CB67A99D_4FAB_4fda_8E79_78CA2087B32A" xmi:type="uml:Class" name="Periodegruppe" scope="public">
 				<model package="EAPK_21D77180_D686_4c0e_A30D_8A358EB5BFF5" tpos="0" ea_localid="202" ea_eleType="element"/>
-				<properties documentation="En datatype for å tilfredstille behov for periodisering med beskrivelser &#xA;&#xA;# Eksempel&#xA;&#xA;* &quot;Høst 2018&quot;" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-26 14:54:55" modified="2017-09-06 10:07:00" complexity="1" status="Proposed"/>
+				<properties documentation="En datatype for å tilfredstille behov for periodisering med beskrivelser &#xA;&#xA;# Eksempel&#xA;&#xA;* &quot;Høst 2018&quot;" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-26 14:54:55" modified="2017-09-06 10:46:04" complexity="1" status="Proposed"/>
 				<code gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -4448,7 +4448,7 @@
 				<properties ea_type="Package" stereotype="import" direction="Source -&gt; Destination"/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels/>
+				<labels mb=" &#xA;«import»"/>
 				<extendedProperties conditional=" &#xA;«import»" virtualInheritance="0"/>
 				<style/>
 				<xrefs value="$XREFPROP=$XID={EDB93AEE-D3A4-4c1a-AD74-94BBB1B48335}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=import;GUID={16BC12DD-1EF7-4bef-800E-36503487A4D5};@ENDSTEREO;$DES;$CLT={6941A14E-D986-4742-93CF-BC6439EAE316}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
@@ -4481,7 +4481,7 @@
 				<properties ea_type="Package" stereotype="import" direction="Source -&gt; Destination"/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels/>
+				<labels mb=" &#xA;«import»"/>
 				<extendedProperties conditional=" &#xA;«import»" virtualInheritance="0"/>
 				<style/>
 				<xrefs value="$XREFPROP=$XID={12220F64-8B00-48b0-9447-773AC6703E18}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=import;GUID={4700C4EB-E13C-4e5b-AA11-D128808FD9F6};FQName=SOSI::import;@ENDSTEREO;$DES;$CLT={AAB041CC-A9BF-408c-B71C-0DB7D6E7EA41}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
