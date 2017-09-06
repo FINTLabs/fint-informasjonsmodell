@@ -336,6 +336,13 @@
 								<type xmi:idref="EAJava_dateTime"/>
 							</ownedAttribute>
 						</packagedElement>
+						<packagedElement xmi:type="uml:Association" xmi:id="EAID_F243C048_6E05_41b6_A02A_1264B48CD1AB" visibility="public">
+							<memberEnd xmi:idref="EAID_dst43C048_6E05_41b6_A02A_1264B48CD1AB"/>
+							<memberEnd xmi:idref="EAID_src43C048_6E05_41b6_A02A_1264B48CD1AB"/>
+							<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src43C048_6E05_41b6_A02A_1264B48CD1AB" visibility="public" association="EAID_F243C048_6E05_41b6_A02A_1264B48CD1AB" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+								<type xmi:idref="EAID_CB67A99D_4FAB_4fda_8E79_78CA2087B32A"/>
+							</ownedEnd>
+						</packagedElement>
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_0B22B619_E452_4b80_A336_288B213B3D8B" name="Personnavn" visibility="public">
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_9EC2D5B3_7BF4_49c8_A19B_ACE67FC137E8" name="etternavn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000071_7BF4_49c8_A19B_ACE67FC137E8" value="1"/>
@@ -1195,8 +1202,10 @@
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000282_8BBD_4262_A894_0C3DBE7376CA" value="1"/>
 								<type xmi:idref="EAJava_string"/>
 							</ownedAttribute>
-							<generalization xmi:type="uml:Generalization" xmi:id="EAID_A0642E96_1666_4501_BBFA_02DA5F7B8B34" general="EAID_0CA4A60C_0085_42a3_A764_09EEEBBB8B90"/>
 							<generalization xmi:type="uml:Generalization" xmi:id="EAID_C1F37EB2_70C8_480a_9591_36F73CB6A808" general="EAID_F9FEEF7D_7A1E_4f35_880E_B73534E7AF12"/>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst43C048_6E05_41b6_A02A_1264B48CD1AB" name="gyldighetsperiode" visibility="public" association="EAID_F243C048_6E05_41b6_A02A_1264B48CD1AB" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+								<type xmi:idref="EAID_0CA4A60C_0085_42a3_A764_09EEEBBB8B90"/>
+							</ownedAttribute>
 						</packagedElement>
 					</packagedElement>
 					<packagedElement xmi:type="uml:Package" xmi:id="EAPK_75736DCA_EB8D_407d_A980_7B79DA7047A4" name="Kodeverk" visibility="public">
@@ -2583,7 +2592,7 @@
 					</attribute>
 				</attributes>
 				<links>
-					<Generalization xmi:id="EAID_A0642E96_1666_4501_BBFA_02DA5F7B8B34" start="EAID_CB67A99D_4FAB_4fda_8E79_78CA2087B32A" end="EAID_0CA4A60C_0085_42a3_A764_09EEEBBB8B90"/>
+					<Association xmi:id="EAID_F243C048_6E05_41b6_A02A_1264B48CD1AB" start="EAID_CB67A99D_4FAB_4fda_8E79_78CA2087B32A" end="EAID_0CA4A60C_0085_42a3_A764_09EEEBBB8B90"/>
 				</links>
 			</element>
 			<element xmi:idref="EAID_0B22B619_E452_4b80_A336_288B213B3D8B" xmi:type="uml:Class" name="Personnavn" scope="public">
@@ -4053,8 +4062,8 @@
 					</attribute>
 				</attributes>
 				<links>
-					<Generalization xmi:id="EAID_A0642E96_1666_4501_BBFA_02DA5F7B8B34" start="EAID_CB67A99D_4FAB_4fda_8E79_78CA2087B32A" end="EAID_0CA4A60C_0085_42a3_A764_09EEEBBB8B90"/>
 					<Generalization xmi:id="EAID_C1F37EB2_70C8_480a_9591_36F73CB6A808" start="EAID_CB67A99D_4FAB_4fda_8E79_78CA2087B32A" end="EAID_F9FEEF7D_7A1E_4f35_880E_B73534E7AF12"/>
+					<Association xmi:id="EAID_F243C048_6E05_41b6_A02A_1264B48CD1AB" start="EAID_CB67A99D_4FAB_4fda_8E79_78CA2087B32A" end="EAID_0CA4A60C_0085_42a3_A764_09EEEBBB8B90"/>
 					<Generalization xmi:id="EAID_2BC59C35_A129_4895_86CD_A6ED2ED7A1A5" start="EAID_2972DA51_718F_42ce_8022_D06675D06A74" end="EAID_CB67A99D_4FAB_4fda_8E79_78CA2087B32A"/>
 					<Generalization xmi:id="EAID_83ADB3EE_EDA0_4a0d_BBBD_B51791F675A0" start="EAID_DB6CD84D_FDEF_46cf_B1FF_23DA43330088" end="EAID_CB67A99D_4FAB_4fda_8E79_78CA2087B32A"/>
 					<Generalization xmi:id="EAID_D0E8B613_1AC0_465e_9C24_649BE0DBCF31" start="EAID_EA8C6A72_5795_443a_84EC_15FEAD1B9D34" end="EAID_CB67A99D_4FAB_4fda_8E79_78CA2087B32A"/>
@@ -4448,7 +4457,7 @@
 				<properties ea_type="Package" stereotype="import" direction="Source -&gt; Destination"/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels mb=" &#xA;«import»"/>
+				<labels/>
 				<extendedProperties conditional=" &#xA;«import»" virtualInheritance="0"/>
 				<style/>
 				<xrefs value="$XREFPROP=$XID={EDB93AEE-D3A4-4c1a-AD74-94BBB1B48335}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=import;GUID={16BC12DD-1EF7-4bef-800E-36503487A4D5};@ENDSTEREO;$DES;$CLT={6941A14E-D986-4742-93CF-BC6439EAE316}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
@@ -4481,7 +4490,7 @@
 				<properties ea_type="Package" stereotype="import" direction="Source -&gt; Destination"/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels mb=" &#xA;«import»"/>
+				<labels/>
 				<extendedProperties conditional=" &#xA;«import»" virtualInheritance="0"/>
 				<style/>
 				<xrefs value="$XREFPROP=$XID={12220F64-8B00-48b0-9447-773AC6703E18}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=import;GUID={4700C4EB-E13C-4e5b-AA11-D128808FD9F6};FQName=SOSI::import;@ENDSTEREO;$DES;$CLT={AAB041CC-A9BF-408c-B71C-0DB7D6E7EA41}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
@@ -5305,36 +5314,37 @@
 				<xrefs/>
 				<tags/>
 			</connector>
-			<connector xmi:idref="EAID_A0642E96_1666_4501_BBFA_02DA5F7B8B34">
+			<connector xmi:idref="EAID_F243C048_6E05_41b6_A02A_1264B48CD1AB">
 				<source xmi:idref="EAID_CB67A99D_4FAB_4fda_8E79_78CA2087B32A">
 					<model ea_localid="202" type="Class" name="Periodegruppe"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
-					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
 					<documentation/>
 					<xrefs/>
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_0CA4A60C_0085_42a3_A764_09EEEBBB8B90">
 					<model ea_localid="71" type="Class" name="Periode"/>
-					<role visibility="Public" targetScope="instance"/>
+					<role name="gyldighetsperiode" visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
-					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
-					<documentation/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation value="Periode som gruppen er gyldig for."/>
 					<xrefs/>
 					<tags/>
 				</target>
-				<model ea_localid="159"/>
-				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<model ea_localid="163"/>
+				<properties ea_type="Association" direction="Source -&gt; Destination"/>
+				<modifiers isRoot="false" isLeaf="false"/>
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels/>
-				<extendedProperties virtualInheritance="0"/>
+				<labels rt="+gyldighetsperiode"/>
+				<extendedProperties/>
 				<style/>
 				<xrefs/>
 				<tags/>
