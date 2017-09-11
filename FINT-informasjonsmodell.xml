@@ -3771,8 +3771,8 @@
 			</element>
 			<element xmi:idref="EAID_EA8C6A72_5795_443a_84EC_15FEAD1B9D34" xmi:type="uml:Class" name="Undervisningsgruppe" scope="public">
 				<model package="EAPK_9A6C4FAC_AD5E_4bc6_99AB_89106CC73930" tpos="0" ea_localid="100" ea_eleType="element"/>
-				<properties documentation="Gruppering av elever som lærer underviser i samme faget. &#xA;&#xA;# Beskrivelse&#xA;&#xA;Elever i forskjellige undervisningsgrupper kan ta samme faget.&#xA;Det kan være flere lærer i en undervisningsgruppe.&#xA;&#xA;Synonym:&#xA;* Faggruppe (SATS)" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:11:09" modified="2017-09-05 09:51:57" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<properties documentation="Gruppering av elever som lærer underviser i samme faget. &#xA;&#xA;# Beskrivelse&#xA;&#xA;Elever i forskjellige undervisningsgrupper kan ta samme faget.&#xA;Flere fag kan undervises i samme undervisningsgruppe.&#xA;Det kan være flere lærere i en undervisningsgruppe.&#xA;&#xA;Synonym:&#xA;* Faggruppe (SATS)" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:11:09" modified="2017-09-11 16:02:30" complexity="1" status="Proposed" keywords="hovedklasse"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -3970,8 +3970,8 @@
 			</element>
 			<element xmi:idref="EAID_F9FEEF7D_7A1E_4f35_880E_B73534E7AF12" xmi:type="uml:Class" name="Gruppe" scope="public">
 				<model package="EAPK_21D77180_D686_4c0e_A30D_8A358EB5BFF5" tpos="0" ea_localid="95" ea_eleType="element"/>
-				<properties documentation="En generisk samling av elever og lærere&#xA;&#xA;# Beskrivelse &#xA;&#xA;Gruppe representeres som en spesialisering (se eksempler).&#xA;&#xA;# Eksempler&#xA;&#xA;* Basisgruppe (via Periodegruppe)&#xA;* Kontaktlærergruppe (via Periodegruppe)&#xA;* Årstrinn (via Kodegruppe)&#xA;* Undervisningsgruppe (via Periodegruppe)&#xA;* Fag (via Kodegruppe)" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:08:55" modified="2017-09-06 15:35:04" complexity="1" status="Proposed"/>
+				<properties documentation="En generisk samling av elever og lærere&#xA;&#xA;# Beskrivelse &#xA;&#xA;Gruppe representeres som en spesialisering (se eksempler).&#xA;&#xA;En gruppe kan ha en kode, og den kan ha en gyldighetsperiode.&#xA;&#xA;# Eksempler&#xA;&#xA;* Basisgruppe&#xA;* Kontaktlærergruppe&#xA;* Årstrinn&#xA;* Undervisningsgruppe&#xA;* Fag" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:08:55" modified="2017-09-11 15:56:51" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -4425,7 +4425,7 @@
 				<properties ea_type="Package" stereotype="import" direction="Source -&gt; Destination"/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels mb=" &#xA;«import»"/>
+				<labels/>
 				<extendedProperties conditional=" &#xA;«import»" virtualInheritance="0"/>
 				<style/>
 				<xrefs value="$XREFPROP=$XID={EDB93AEE-D3A4-4c1a-AD74-94BBB1B48335}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=import;GUID={16BC12DD-1EF7-4bef-800E-36503487A4D5};@ENDSTEREO;$DES;$CLT={6941A14E-D986-4742-93CF-BC6439EAE316}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
@@ -4458,7 +4458,7 @@
 				<properties ea_type="Package" stereotype="import" direction="Source -&gt; Destination"/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels mb=" &#xA;«import»"/>
+				<labels/>
 				<extendedProperties conditional=" &#xA;«import»" virtualInheritance="0"/>
 				<style/>
 				<xrefs value="$XREFPROP=$XID={12220F64-8B00-48b0-9447-773AC6703E18}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=import;GUID={4700C4EB-E13C-4e5b-AA11-D128808FD9F6};FQName=SOSI::import;@ENDSTEREO;$DES;$CLT={AAB041CC-A9BF-408c-B71C-0DB7D6E7EA41}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
@@ -5301,7 +5301,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="Periode som gruppen er gyldig for."/>
+					<documentation value="Periode som gruppen er gyldig for.&#xA;&#xA;Gruppen kan eksempelvis være gyldig for et kalenderår, et skoleår, en termin, eller for en gitt eksamensdato."/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -7006,7 +7006,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="Kode til denne gruppen (Grep / NVB eller Vigo kode)"/>
+					<documentation value="Kode for denne gruppen.&#xA;&#xA;Denne koden kan igjen være definert i Grep eller VIGO Kodeverk."/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -8025,9 +8025,9 @@
 			<diagram xmi:id="EAID_8A928F3A_B102_482b_8EB4_FDFAD79F7224">
 				<model package="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519" localID="18" owner="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519" tpos="0"/>
 				<properties name="Oversikt" type="Logical"/>
-				<project author="Asgeir Nilsen" version="1.0" created="2017-09-04 00:00:00" modified="2017-09-11 15:49:57"/>
+				<project author="Asgeir Nilsen" version="1.0" created="2017-09-04 00:00:00" modified="2017-09-11 16:01:52"/>
 				<style1 value="ShowPrivate=0;ShowProtected=0;ShowPublic=0;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=1;PPgs.cx=1;PPgs.cy=2;DocSize.cx=1146;DocSize.cy=803;ShowDetails=0;Orientation=L;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=1;HideProps=1;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=0;m_bElementClassifier=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=1;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=1;"/>
-				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=0;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=0;m_bElementClassifier=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=1;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=1;SuppressedCompartments=;Theme=:119;SaveTag=4D41542E;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=0;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=0;m_bElementClassifier=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=1;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=1;SuppressedCompartments=;Theme=:119;SaveTag=FF908652;"/>
 				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;cls=0;SwimlaneFont=lfh:-13,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
 				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
 				<extendedProperties/>
@@ -8054,7 +8054,7 @@
 					<element geometry="Left=698;Top=588;Right=1011;Bottom=996;" subject="EAID_E2B2497F_0C65_48d0_B8AF_87F52A1B6EFC" seqno="20" style=" DUID=A3E2C9BB;"/>
 					<element geometry="Left=603;Top=315;Right=681;Bottom=402;" subject="EAID_F9FEEF7D_7A1E_4f35_880E_B73534E7AF12" seqno="21" style="BCol=-1;BFol=-1;DUID=386BE075;LCol=-1;LWth=-1;NSL=0;black=0;bold=0;charset=0;fontsz=0;italic=0;pitch=0;ul=0;"/>
 					<element geometry="Left=346;Top=447;Right=485;Bottom=477;" subject="EAID_325D3C9A_7698_41ca_8D30_5ECE299439F7" seqno="22" style="BCol=-1;BFol=-1;DUID=BE559C22;LCol=-1;LWth=-1;NSL=0;black=0;bold=0;charset=0;fontsz=0;italic=0;pitch=0;ul=0;"/>
-					<element geometry="Left=727;Top=326;Right=876;Bottom=356;" subject="EAID_EA8C6A72_5795_443a_84EC_15FEAD1B9D34" seqno="23" style="BCol=-1;BFol=-1;DUID=B164F61E;LCol=-1;LWth=-1;NSL=0;black=0;bold=0;charset=0;fontsz=0;italic=0;pitch=0;ul=0;"/>
+					<element geometry="Left=727;Top=344;Right=876;Bottom=374;" subject="EAID_EA8C6A72_5795_443a_84EC_15FEAD1B9D34" seqno="23" style="BCol=-1;BFol=-1;DUID=B164F61E;LCol=-1;LWth=-1;NSL=0;black=0;bold=0;charset=0;fontsz=0;italic=0;pitch=0;ul=0;"/>
 					<element geometry="Left=146;Top=449;Right=250;Bottom=478;" subject="EAID_DB6CD84D_FDEF_46cf_B1FF_23DA43330088" seqno="24" style="BCol=-1;BFol=-1;DUID=78C4EE30;LCol=-1;LWth=-1;NSL=0;black=0;bold=0;charset=0;fontsz=0;italic=0;pitch=0;ul=0;"/>
 					<element geometry="Left=754;Top=407;Right=847;Bottom=440;" subject="EAID_C321C0B0_FC7D_477b_A64C_BF4B34E00924" seqno="25" style="BCol=-1;BFol=-1;DUID=F8DCC4F6;LCol=-1;LWth=-1;NSL=0;black=0;bold=0;charset=0;fontsz=0;italic=0;pitch=0;ul=0;"/>
 					<element geometry="Left=755;Top=488;Right=843;Bottom=522;" subject="EAID_0FA7B565_603D_4fab_9038_77956A08F66E" seqno="26" style="BCol=-1;BFol=-1;DUID=5FBD618D;LCol=-1;LWth=-1;NSL=0;black=0;bold=0;charset=0;fontsz=0;italic=0;pitch=0;ul=0;"/>
