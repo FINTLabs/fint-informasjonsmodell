@@ -3497,8 +3497,8 @@
 			</element>
 			<element xmi:idref="EAID_2972DA51_718F_42ce_8022_D06675D06A74" xmi:type="uml:Class" name="Eksamensgruppe" scope="public">
 				<model package="EAPK_E2B2497F_0C65_48d0_B8AF_87F52A1B6EFC" tpos="0" ea_localid="150" ea_eleType="element"/>
-				<properties documentation="Gruppering av elever som tar samme eksamen &#xA;&#xA;# Beskrivelse&#xA;&#xA;Underordnet til fag.&#xA;&#xA;Kan brukes for å:&#xA;* Vise forhold mellom eksamenresultat og sensor&#xA;* Vise gruppering av elever som tok eksamen sammen&#xA;&#xA;Det er også mulig å koble resultater av eksamener direkte på klasse `Fag`." isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-05-03 12:55:22" modified="2017-09-05 09:56:27" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<properties documentation="Gruppering av elever som tar samme eksamen &#xA;&#xA;# Beskrivelse&#xA;&#xA;Underordnet til fag.&#xA;&#xA;Kan brukes for å:&#xA;* Vise forhold mellom eksamenresultat og sensor&#xA;* Vise gruppering av elever som tok eksamen sammen&#xA;&#xA;Det er også mulig å koble resultater av eksamener direkte på klasse `Fag`.&#xA;&#xA;Eksamensgrupper har en kode som er sentralt definert av VIGO." isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-05-03 12:55:22" modified="2017-09-11 21:49:19" complexity="1" status="Proposed" keywords="hovedklasse"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -3771,8 +3771,8 @@
 			</element>
 			<element xmi:idref="EAID_EA8C6A72_5795_443a_84EC_15FEAD1B9D34" xmi:type="uml:Class" name="Undervisningsgruppe" scope="public">
 				<model package="EAPK_9A6C4FAC_AD5E_4bc6_99AB_89106CC73930" tpos="0" ea_localid="100" ea_eleType="element"/>
-				<properties documentation="Gruppering av elever som lærer underviser i samme faget. &#xA;&#xA;# Beskrivelse&#xA;&#xA;Elever i forskjellige undervisningsgrupper kan ta samme faget.&#xA;Flere fag kan undervises i samme undervisningsgruppe.&#xA;Det kan være flere lærere i en undervisningsgruppe.&#xA;&#xA;Synonym:&#xA;* Faggruppe (SATS)" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:11:09" modified="2017-09-11 16:02:30" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<properties documentation="Gruppering av elever som lærer underviser i samme faget. &#xA;&#xA;# Beskrivelse&#xA;&#xA;Elever i forskjellige undervisningsgrupper kan ta samme faget.&#xA;Flere fag kan undervises i samme undervisningsgruppe.&#xA;Det kan være flere lærere i en undervisningsgruppe.&#xA;&#xA;Undervisningsgrupper har vanligvis en kode, men denne er lokalt definert, og varierer fra skole til skole, og fra fylke til fylke.&#xA;&#xA;Synonym:&#xA;* Faggruppe (SATS)" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:11:09" modified="2017-09-11 21:48:38" complexity="1" status="Proposed" keywords="hovedklasse"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -3970,8 +3970,8 @@
 			</element>
 			<element xmi:idref="EAID_F9FEEF7D_7A1E_4f35_880E_B73534E7AF12" xmi:type="uml:Class" name="Gruppe" scope="public">
 				<model package="EAPK_21D77180_D686_4c0e_A30D_8A358EB5BFF5" tpos="0" ea_localid="95" ea_eleType="element"/>
-				<properties documentation="En generisk samling av elever og lærere&#xA;&#xA;# Beskrivelse &#xA;&#xA;Gruppe representeres som en spesialisering (se eksempler).&#xA;&#xA;En gruppe kan ha en kode, og den kan ha en gyldighetsperiode.&#xA;&#xA;# Eksempler&#xA;&#xA;* Basisgruppe&#xA;* Kontaktlærergruppe&#xA;* Årstrinn&#xA;* Undervisningsgruppe&#xA;* Fag" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:08:55" modified="2017-09-11 15:56:51" complexity="1" status="Proposed"/>
+				<properties documentation="En generisk samling av elever og lærere&#xA;&#xA;# Beskrivelse &#xA;&#xA;Gruppe representeres som en spesialisering (se eksempler).&#xA;&#xA;En gruppe kan ha en kode, og den kan ha en gyldighetsperiode. Hvorvidt den har kode eller gyldighetsperiode avhenger av hva slags konkret klasse som benyttes.&#xA;&#xA;| Klasse | Kode | Periode |&#xA;| ------- | ----- | ------ |&#xA;| Basisgruppe | | X |&#xA;| Kontaktlærergruppe | | X |&#xA;| Utdanningsprogram | X | |&#xA;| Programområde | X | |&#xA;| Fag | X | |&#xA;| Årstrinn | X | |&#xA;| Eksamensgruppe | X | X |&#xA;| Undervisningsgruppe | X | X |&#xA;&#xA;# Eksempler&#xA;&#xA;* Basisgruppe&#xA;* Kontaktlærergruppe&#xA;* Årstrinn&#xA;* Undervisningsgruppe&#xA;* Fag" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 12:08:55" modified="2017-09-11 21:52:09" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -4425,7 +4425,7 @@
 				<properties ea_type="Package" stereotype="import" direction="Source -&gt; Destination"/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels/>
+				<labels mb=" &#xA;«import»"/>
 				<extendedProperties conditional=" &#xA;«import»" virtualInheritance="0"/>
 				<style/>
 				<xrefs value="$XREFPROP=$XID={EDB93AEE-D3A4-4c1a-AD74-94BBB1B48335}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=import;GUID={16BC12DD-1EF7-4bef-800E-36503487A4D5};@ENDSTEREO;$DES;$CLT={6941A14E-D986-4742-93CF-BC6439EAE316}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
@@ -4458,7 +4458,7 @@
 				<properties ea_type="Package" stereotype="import" direction="Source -&gt; Destination"/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels/>
+				<labels mb=" &#xA;«import»"/>
 				<extendedProperties conditional=" &#xA;«import»" virtualInheritance="0"/>
 				<style/>
 				<xrefs value="$XREFPROP=$XID={12220F64-8B00-48b0-9447-773AC6703E18}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=import;GUID={4700C4EB-E13C-4e5b-AA11-D128808FD9F6};FQName=SOSI::import;@ENDSTEREO;$DES;$CLT={AAB041CC-A9BF-408c-B71C-0DB7D6E7EA41}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
