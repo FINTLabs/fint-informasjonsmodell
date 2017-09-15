@@ -1064,7 +1064,7 @@
 								<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000242__9DCE_4dd5_B560_CDD2B1EEF247" value="-1"/>
 							</ownedEnd>
 						</packagedElement>
-						<packagedElement xmi:type="uml:Class" xmi:id="EAID_2972DA51_718F_42ce_8022_D06675D06A74" name="Eksamengruppe" visibility="public">
+						<packagedElement xmi:type="uml:Class" xmi:id="EAID_2972DA51_718F_42ce_8022_D06675D06A74" name="Eksamensgruppe" visibility="public">
 							<generalization xmi:type="uml:Generalization" xmi:id="EAID_2BC59C35_A129_4895_86CD_A6ED2ED7A1A5" general="EAID_ED72F787_FEAE_4ded_A3C0_86531D9EBBEC"/>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst52965E_2588_4696_BDEF_8D098701689E" name="fag" visibility="public" association="EAID_F252965E_2588_4696_BDEF_8D098701689E" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_F2E6050D_5E67_4dc5_9BB4_B43B9E99E43A"/>
@@ -3801,7 +3801,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_1ACEE78F_D6BD_40fc_A667_2ABFF8E3D968" name="brukernavn" scope="Public">
 						<initial/>
-						<documentation value="Brukernavn til en person&#xA;&#xA;# Beskrivelse&#xA;&#xA;Skal inneholde brukernavn for pålogging, som finnes i katalogtjenesten (feks Active Directory). Brukes som en identifikator som består, når fødselsnummer og/eller andre identifikatorer endrer seg.&#xA;&#xA;# Format&#xA;&#xA;Brukernavn i det format en personalressurs trenger for å logge seg på systemer i organisasjonen.&#xA;"/>
+						<documentation value="Brukernavn til en person&#xA;&#xA;# Beskrivelse&#xA;&#xA;Skal inneholde brukernavn for pålogging, som finnes i katalogtjenesten (feks Active Directory). Brukes som en identifikator som består, når fødselsnummer og/eller andre identifikatorer endrer seg.&#xA;&#xA;# Format&#xA;&#xA;Brukernavn i det format en elevressurs trenger for å logge seg på systemer i organisasjonen.&#xA;"/>
 						<model ea_localid="65" ea_guid="{1ACEE78F-D6BD-40fc-A667-2ABFF8E3D968}"/>
 						<properties type="Identifikator" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -3956,10 +3956,10 @@
 					<Association xmi:id="EAID_D14B82CA_9DCE_4dd5_B560_CDD2B1EEF247" start="EAID_325D3C9A_7698_41ca_8D30_5ECE299439F7" end="EAID_DB6CD84D_FDEF_46cf_B1FF_23DA43330088"/>
 				</links>
 			</element>
-			<element xmi:idref="EAID_2972DA51_718F_42ce_8022_D06675D06A74" xmi:type="uml:Class" name="Eksamengruppe" scope="public">
+			<element xmi:idref="EAID_2972DA51_718F_42ce_8022_D06675D06A74" xmi:type="uml:Class" name="Eksamensgruppe" scope="public">
 				<model package="EAPK_5FD613D7_24FE_428a_B4D3_8101CE1A96B7" tpos="0" ea_localid="150" ea_eleType="element"/>
-				<properties documentation="Gruppering av elever som tar samme eksamen &#xA;&#xA;# Beskrivelse&#xA;&#xA;Underordnet til fag.&#xA;&#xA;Kan brukes for å:&#xA;* Vise forhold mellom eksamenresultat og sensor&#xA;* Vise gruppering av elever som tok eksamen sammen&#xA;&#xA;Det er også mulig å koble resultater av eksamener direkte på klasse `Fag`." isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-05-03 12:55:22" modified="2017-06-09 13:45:56" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<properties documentation="Gruppering av elever som tar samme eksamen &#xA;&#xA;# Beskrivelse&#xA;&#xA;Underordnet til fag.&#xA;&#xA;Kan brukes for å:&#xA;* Vise forhold mellom eksamensresultat og sensor&#xA;* Vise gruppering av elever som tok eksamen sammen&#xA;&#xA;Det er også mulig å koble resultater av eksamener direkte på klasse `Fag`." isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-05-03 12:55:22" modified="2017-09-15 09:30:19" complexity="1" status="Proposed" keywords="hovedklasse"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -4111,8 +4111,8 @@
 			</element>
 			<element xmi:idref="EAID_0F1201EE_0BE3_43fe_84F9_3911698D34C5" xmi:type="uml:Class" name="Skole" scope="public">
 				<model package="EAPK_D12B6567_B87C_42d5_A23F_33C49E63F034" tpos="0" ea_localid="112" ea_eleType="element"/>
-				<properties documentation="Videregående skole&#xA;&#xA;# Beskrivelse&#xA;&#xA;Inneholder informasjon om en skole." isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 13:23:43" modified="2017-05-24 09:48:24" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<properties documentation="Organisasjonsenhet som gjennomfører utdanning.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Typisk er dette en videregående skole, men det kan også være eksamenskontor eller andre skolerelevante enheter.&#xA;&#xA;Inneholder utdanningsspesifikk informasjon om en organisasjonsenhet.&#xA;&#xA;# Eksempel&#xA;&#xA;- Videregående skole&#xA;- SMI-skole&#xA;- Fagskole&#xA;- IB-skole&#xA;- Eksamenskontor&#xA;- Opplæringskontor&#xA;- Ressurssenter&#xA;- Fengselsundervisning&#xA;&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 13:23:43" modified="2017-09-15 10:09:00" complexity="1" status="Proposed" keywords="hovedklasse"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -6502,7 +6502,7 @@
 			</connector>
 			<connector xmi:idref="EAID_2BC59C35_A129_4895_86CD_A6ED2ED7A1A5">
 				<source xmi:idref="EAID_2972DA51_718F_42ce_8022_D06675D06A74">
-					<model ea_localid="150" type="Class" name="Eksamengruppe"/>
+					<model ea_localid="150" type="Class" name="Eksamensgruppe"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -7090,7 +7090,7 @@
 			</connector>
 			<connector xmi:idref="EAID_F252965E_2588_4696_BDEF_8D098701689E">
 				<source xmi:idref="EAID_2972DA51_718F_42ce_8022_D06675D06A74">
-					<model ea_localid="150" type="Class" name="Eksamengruppe"/>
+					<model ea_localid="150" type="Class" name="Eksamensgruppe"/>
 					<role name="eksamengruppe" visibility="Public" targetScope="instance"/>
 					<type multiplicity="0..*" aggregation="none" containment="Unspecified"/>
 					<constraints/>
