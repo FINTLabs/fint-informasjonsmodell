@@ -1,7 +1,7 @@
 <!-- MarkdownTOC -->
 
 - [master](#master)
-- [v1.1.0-rc1](#v110-rc1)
+- [v1.1.0](#v110)
 	- [Features](#features)
 	- [Bugfixes](#bugfixes)
 - [v1.0.1](#v101)
@@ -15,31 +15,33 @@
 
 # master
 
-* [X] Relation `Person - Personalressurs` changed from Agregation to Association
-* [X] Fixed class name from `Arbeidforholdstype` to `Arbeidsforholdstype`
-
-# v1.1.0-rc1
+# v1.1.0
 
 |      |              |
 |------|--------------|
-| Date | `23.06.2017` |
-| Tag  | `v1.1.0-rc1` |
+| Date | `27.09.2017` (tentative) |
+| Tag  | `v1.1.0` |
 
 ## Features
 
-* Added initial release of `Utdanning` (`Education`) model
+* Added initial release of `Utdanning` (Education) model
 * Changed name from `Fellesmodel` to `Felles` for common package
 * Expanded definition of `Person`
 * Added `Fylke` and `Kommmune` as common classes
-* Added `Tidsvarighet` (period of time) as a class
-* Added `pårørende` (related persons) to `Personalressurs` class
+* Moved `ISO` from `Basisklasser` to `Kodeverk` in `Felles`
+* Added `beskrivelse` (description) to `Periode`
+* In `Arbeidsforhold` changed `årslønn` to be an integer number expressing øre (1/100 Kroner)
+* In `Arbeidsforhold` changed `stillingsprosent` and `lønnsprosent`, and the new `tilstedeprosent` to an integer
+  expressing 1/100 %
 
 ## Bugfixes
 
 * Replaced fields related to complex types with associations
 * Rearranged and expanded diagrams (visible only in EAP file)
-* Mulitple fixes of markup in documentation
+* Multiple fixes of markup in documentation
 * Error correction and grammar revision
+* Relation `Person - Personalressurs` changed from Aggregation to Association
+* Fixed class name from `Arbeidforholdstype` to `Arbeidsforholdstype`
 
 
 # v1.0.1
