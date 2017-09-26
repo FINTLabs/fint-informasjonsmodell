@@ -10,17 +10,23 @@ Dokumentasjon av informasjonsmodellen blir automatisk publisert på [dokumentasj
 
 ## Arbeidsflyt
 
-### Første gang lastet ned
-
-1. Åpne Enterprise Architect og opprett et nytt prosjekt (for eksempel med navn `FINT-informasjonsmodeller.eap`) i samme mappe som `FINT-informasjonsmodell.xml`
-2. Installer utvidelsen *MetaKat* til Enterprise Architect.
-3. Legg inn KXMLProfil.
-
 ### Hvordan åpne og gjøre endringer
 
-1. Åpne FINT-informasjonsmodeller.eap i Sparx Enterprise Architect
-2. Importer FINT-informasjonsmodell.xml ved å gå til følgende meny: _PACKAGE_ -> _Import/Export_ -> _Import Package for XMI_ (**`Ctrl + Alt + I`**)
-3. Gjør ønskede endringer
-4. Eksporter prosjekt til FINT-informasjonsmodell.xml ved å gå til følgende meny: _PACKAGE_ -> _Import/Export_ -> _Export Package for XMI_ (**`Ctrl + Alt + E`**)
-5. Eksporter hver XSD med MetaKat.
+1. Åpne `FINT-informasjonsmodeller.eap` i Sparx Enterprise Architect
+1. Gjør ønskede endringer
+1. Pass på at Enterprise Architect er satt opp med `windows-1252` som tegnsett for eksport til XMI.
+1. Eksporter prosjekt til FINT-informasjonsmodell.xml ved å gå til følgende meny: _Model_ -> _Import/Export_ -> _Export Package for XMI_ (**`Ctrl + Alt + E`**)
 
+## Navnekonvensjoner
+
+- Klasser og attributter er i entall.
+- Uttrykk bestående av flere ord slås sammen med stor forbokstav i mellom ordene: _endelig karakter_ -> `endeligKarakter`. 
+- Klasser skal være meningsbærende begreper.
+- Dokumentasjon benyttes til å definere forståelsen av begrepet, og referere til dokumentasjon og kilde for definisjonen.
+- Begreper på assosiasjoner skal forståes i kontekst av navnet på de klassene de går i mellom.
+- Innenfor hvert domene er det tre faste underpakker:
+  1. `Basisklasser`
+  1. `Kodeverk`
+  1. `Komplekse datatyper`
+- De andre pakkene skal representere en semantisk gruppering innenfor domenet.
+- Alle klasser, attributter og relasjoner skal ha dokumentasjon som beskriver bruken og forståelsen.
