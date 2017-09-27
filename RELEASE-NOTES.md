@@ -1,7 +1,7 @@
 <!-- MarkdownTOC -->
 
-- [master](#master)
-- [v1.1.0-rc1](#v110-rc1)
+- [v2.0.0](#v200)
+	- [Breaking changes](#breaking-changes)
 	- [Features](#features)
 	- [Bugfixes](#bugfixes)
 - [v1.0.1](#v101)
@@ -13,32 +13,39 @@
 
 <!-- /MarkdownTOC -->
 
-# master
-
-* [X] Relation `Person - Personalressurs` changed from Agregation to Association
-* [X] Fixed class name from `Arbeidforholdstype` to `Arbeidsforholdstype`
-
-# v1.1.0-rc1
+# v2.0.0
 
 |      |              |
 |------|--------------|
-| Date | `23.06.2017` |
-| Tag  | `v1.1.0-rc1` |
+| Date | `27.09.2017` |
+| Tag  | `v2.0.0`     |
+
+## Breaking changes
+
+Since this version of the Information Model is the first to go live, we opted to do a number of breaking changes, as we had the window of opportunity. 
+
+* Changed name from `Fellesmodel` to `Felles` for common package
+* Moved `ISO` from `Basisklasser` to `Kodeverk` in `Felles`
+* In `Arbeidsforhold` changed `årslønn` to be an integer number expressing øre (1/100 Kroner)
+* In `Arbeidsforhold` changed `stillingsprosent` and `lønnsprosent`, and the new `tilstedeprosent` to an integer
+  expressing 1/100 %
+* Renamed `TimerPerUkeKode` to `Uketimetall`
+* Replaced `adresse` in `Adresse` with `adresselinje [0..*]`
+* Replaced fields related to complex types with associations
+* Relation `Person - Personalressurs` changed from Aggregation to Association
+* Fixed class name from `Arbeidforholdstype` to `Arbeidsforholdstype`
 
 ## Features
 
-* Added initial release of `Utdanning` (`Education`) model
-* Changed name from `Fellesmodel` to `Felles` for common package
+* Added initial release of `Utdanning` (Education) model
 * Expanded definition of `Person`
 * Added `Fylke` and `Kommmune` as common classes
-* Added `Tidsvarighet` (period of time) as a class
-* Added `pårørende` (related persons) to `Personalressurs` class
+* Added `beskrivelse` (description) to `Periode`
 
 ## Bugfixes
 
-* Replaced fields related to complex types with associations
 * Rearranged and expanded diagrams (visible only in EAP file)
-* Mulitple fixes of markup in documentation
+* Multiple fixes of markup in documentation
 * Error correction and grammar revision
 
 
