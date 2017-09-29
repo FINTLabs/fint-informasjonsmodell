@@ -1,17 +1,31 @@
-<!-- MarkdownTOC -->
+<!-- TOC -->
 
+- [v2.2.0-beta-1](#v220-beta-1)
+    - [Features](#features)
 - [v2.0.0](#v200)
-	- [Breaking changes](#breaking-changes)
-	- [Features](#features)
-	- [Bugfixes](#bugfixes)
+    - [Breaking changes](#breaking-changes)
+    - [Features](#features-1)
+    - [Bugfixes](#bugfixes)
 - [v1.0.1](#v101)
-	- [Features](#features-1)
-	- [Bugfixes](#bugfixes-1)
-	- [Known issues](#known-issues)
+    - [Features](#features-2)
+    - [Bugfixes](#bugfixes-1)
+    - [Known issues](#known-issues)
 - [v1.0.0](#v100)
-	- [Features](#features-2)
+    - [Features](#features-3)
 
-<!-- /MarkdownTOC -->
+<!-- /TOC -->
+
+# v2.2.0-beta-1
+
+|      |                  |
+|------|------------------|
+| Date | `29.09.2017`     |
+| Tag  | `v2.2.0-beta-1`  |
+
+## Features
+
+* Added support for code lists from Vigo.  This is a pure addition to the model, with no impact to the existing model.
+  References from the `Utdanning` model to Vigo code lists is represented as external references.
 
 # v2.0.0
 
