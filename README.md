@@ -8,6 +8,18 @@ Release notater finner her: [RELEASE-NOTES.md](RELEASE-NOTES.md)
 
 Dokumentasjon av informasjonsmodellen blir automatisk publisert på [dokumentasjon.felleskomponent.no](https://dokumentasjon.felleskomponent.no/)
 
+## Versjonsnummerering
+
+Prosjektet bruker [semantisk versjonering](//semver.org) for å spesifisere bakoverkompatibilitet.
+
+De tre posisjonene i versjonsnummeret brukes slik:
+
+1. Major. Denne økes med 1 når det introduseres endringer som bryter bakoverkompatibilitet. Modeller med forskjellig major versjon kan ikke utveksle data uten tap av informasjon.
+1. Minor. Denne økes med 1 når ny funksjonalitet legges til modellen.  Klienter som brukere en lavere minor versjon kan bruke informasjonen, men ikke nyttiggjøre seg de elementene som er lagt til.
+1. Patch. Denne økes med 10 når kompatible forbedringer eller forbedret dokumentasjon legges til modellen.  Klienter kan forvente å representere informasjonen likt, selv med forskjellige patch versjoner.  Patch økes med 10 for å gi rom for oppdateringer i kode basert på samme versjon av informasjonsmodellen.
+
+Klienter og generert Java og C#-kode skal i utgangspunktet versjoneres likt som informasjonsmodellen, men kan øke patch med 1 for endringer som kun gjelder internt.
+
 ## Arbeidsflyt
 
 ### Hvordan åpne og gjøre endringer
