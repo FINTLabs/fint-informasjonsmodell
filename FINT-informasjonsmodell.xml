@@ -512,6 +512,11 @@
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_src3EE6BA_86CF_4c62_95B2_3E3474DF64DD" name="skole" visibility="public" association="EAID_383EE6BA_86CF_4c62_95B2_3E3474DF64DD" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_0F1201EE_0BE3_43fe_84F9_3911698D34C5"/>
 							</ownedAttribute>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_srcEA363B_8A22_41ea_A119_A086ECA258C1" name="arbeidsforhold" visibility="public" association="EAID_D5EA363B_8A22_41ea_A119_A086ECA258C1" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+								<type xmi:idref="EAID_99474ABD_36AE_4dc7_9895_5BC9C901AC39"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000101__8A22_41ea_A119_A086ECA258C1" value="0"/>
+								<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000102__8A22_41ea_A119_A086ECA258C1" value="-1"/>
+							</ownedAttribute>
 						</packagedElement>
 						<packagedElement xmi:type="uml:Association" xmi:id="EAID_1FCA4CE6_1C0F_49a7_9E94_BC4ACDAF536A" visibility="public">
 							<memberEnd xmi:idref="EAID_dstCA4CE6_1C0F_49a7_9E94_BC4ACDAF536A"/>
@@ -536,11 +541,6 @@
 						<packagedElement xmi:type="uml:Association" xmi:id="EAID_D5EA363B_8A22_41ea_A119_A086ECA258C1" visibility="public">
 							<memberEnd xmi:idref="EAID_dstEA363B_8A22_41ea_A119_A086ECA258C1"/>
 							<memberEnd xmi:idref="EAID_srcEA363B_8A22_41ea_A119_A086ECA258C1"/>
-							<ownedEnd xmi:type="uml:Property" xmi:id="EAID_srcEA363B_8A22_41ea_A119_A086ECA258C1" visibility="public" association="EAID_D5EA363B_8A22_41ea_A119_A086ECA258C1" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
-								<type xmi:idref="EAID_99474ABD_36AE_4dc7_9895_5BC9C901AC39"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000101__8A22_41ea_A119_A086ECA258C1" value="0"/>
-								<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000102__8A22_41ea_A119_A086ECA258C1" value="-1"/>
-							</ownedEnd>
 						</packagedElement>
 					</packagedElement>
 					<packagedElement xmi:type="uml:Package" xmi:id="EAPK_6FF4218D_3F03_4f4e_A416_24CDE650B4F2" name="Personal" visibility="public">
@@ -2794,8 +2794,8 @@
 			</element>
 			<element xmi:idref="EAID_802C72C4_3FDD_4c20_853E_71B5F416EDA4" xmi:type="uml:Class" name="Art" scope="public">
 				<model package="EAPK_7B786AED_39CF_419d_B521_3DFFB68573CD" tpos="0" ea_localid="77" ea_eleType="element"/>
-				<properties documentation="Kodeverk som er en del av kontostrengen som beskriver hva slags inntekter og utgifter det gjelder. &#xA;&#xA;# Beskrivelse&#xA;&#xA;Alternativt navn: Konto&#xA;&#xA;Art er det første og såkalt styrende begrepet i kontostrengen. Angir om det er drift, investering eller balanse. &#xA;&#xA;# Eksempel&#xA;&#xA;[Oppland fylkeskommune kontoplan 2016 inneholder eksempel på Arter](http://www.oppland.no/Handlers/fh.ashx?MId1=1396&amp;amp;FilId=3291)&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-02-02 12:28:52" modified="2017-09-26 13:56:26" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<properties documentation="Kodeverk som er en del av kontostrengen som beskriver hva slags inntekter og utgifter det gjelder. &#xA;&#xA;# Beskrivelse&#xA;&#xA;Alternativt navn: Konto&#xA;&#xA;Art er det første og såkalt styrende begrepet i kontostrengen. Angir om det er drift, investering eller balanse. " isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-02-02 12:28:52" modified="2017-10-05 14:43:39" complexity="1" status="Proposed" keywords="hovedklasse"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -2807,8 +2807,8 @@
 			</element>
 			<element xmi:idref="EAID_24F6FACD_8532_4456_AFB8_9650063AC648" xmi:type="uml:Class" name="Funksjon" scope="public">
 				<model package="EAPK_7B786AED_39CF_419d_B521_3DFFB68573CD" tpos="0" ea_localid="78" ea_eleType="element"/>
-				<properties documentation="Del av kontostrenges som beskriver hva som produseres&#xA;&#xA;# Beskrivelse&#xA;&#xA;Funksjon viser fylkeskommunens aktivitet og tjenesteproduksjon.&#xA;&#xA;Alternativ navn: `Tjenste`" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-01-17 12:13:01" modified="2017-10-03 08:18:02" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<properties documentation="Del av kontostrenges som beskriver hva som produseres&#xA;&#xA;# Beskrivelse&#xA;&#xA;Funksjon viser fylkeskommunens aktivitet og tjenesteproduksjon.&#xA;&#xA;Alternativ navn: `Tjeneste`" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-01-17 12:13:01" modified="2017-10-05 14:43:51" complexity="1" status="Proposed" keywords="hovedklasse"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -4477,7 +4477,7 @@
 				<properties ea_type="Package" stereotype="import" direction="Source -&gt; Destination"/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels mb=" &#xA;«import»"/>
+				<labels/>
 				<extendedProperties conditional=" &#xA;«import»" virtualInheritance="0"/>
 				<style/>
 				<xrefs value="$XREFPROP=$XID={EDB93AEE-D3A4-4c1a-AD74-94BBB1B48335}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=import;GUID={16BC12DD-1EF7-4bef-800E-36503487A4D5};@ENDSTEREO;$DES;$CLT={6941A14E-D986-4742-93CF-BC6439EAE316}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
@@ -4510,7 +4510,7 @@
 				<properties ea_type="Package" stereotype="import" direction="Source -&gt; Destination"/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels mb=" &#xA;«import»"/>
+				<labels/>
 				<extendedProperties conditional=" &#xA;«import»" virtualInheritance="0"/>
 				<style/>
 				<xrefs value="$XREFPROP=$XID={12220F64-8B00-48b0-9447-773AC6703E18}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=import;GUID={4700C4EB-E13C-4e5b-AA11-D128808FD9F6};FQName=SOSI::import;@ENDSTEREO;$DES;$CLT={AAB041CC-A9BF-408c-B71C-0DB7D6E7EA41}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
@@ -5792,12 +5792,12 @@
 			<connector xmi:idref="EAID_D5EA363B_8A22_41ea_A119_A086ECA258C1">
 				<source xmi:idref="EAID_99474ABD_36AE_4dc7_9895_5BC9C901AC39">
 					<model ea_localid="87" type="Class" name="Arbeidsforhold"/>
-					<role visibility="Public" targetScope="instance"/>
+					<role name="arbeidsforhold" visibility="Public" targetScope="instance"/>
 					<type multiplicity="0..*" aggregation="none" containment="Unspecified"/>
 					<constraints/>
-					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
-					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
-					<documentation/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation value="Alle arbeidsforhold til et organisasjonselement."/>
 					<xrefs/>
 					<tags/>
 				</source>
@@ -5813,12 +5813,12 @@
 					<tags/>
 				</target>
 				<model ea_localid="2"/>
-				<properties ea_type="Association" direction="Source -&gt; Destination"/>
+				<properties ea_type="Association" direction="Bi-Directional"/>
 				<modifiers isRoot="false" isLeaf="false"/>
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels lb="0..*" rb="1" rt="+arbeidssted"/>
+				<labels lb="0..*" lt="+arbeidsforhold" rb="1" rt="+arbeidssted"/>
 				<extendedProperties/>
 				<style/>
 				<xrefs/>
