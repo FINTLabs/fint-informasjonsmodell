@@ -6,11 +6,11 @@ Release notater finner her: [RELEASE-NOTES.md](RELEASE-NOTES.md)
 
 ## Dokumentasjon
 
-Dokumentasjon av informasjonsmodellen blir automatisk publisert på [dokumentasjon.felleskomponent.no](https://dokumentasjon.felleskomponent.no/)
+Dokumentasjon av informasjonsmodellen blir automatisk publisert på [informasjonsmodell.felleskomponent.no](https://informasjonsmodell.felleskomponent.no/)
 
 ## Versjonsnummerering
 
-Prosjektet bruker [semantisk versjonering](//semver.org) for å spesifisere bakoverkompatibilitet.
+Prosjektet bruker [semantisk versjonering](http://semver.org/) for å spesifisere bakoverkompatibilitet.
 
 De tre posisjonene i versjonsnummeret brukes slik:
 
@@ -27,7 +27,7 @@ Klienter og generert Java og C#-kode skal i utgangspunktet versjoneres likt som 
 1. Åpne `FINT-informasjonsmodeller.eap` i Sparx Enterprise Architect
 1. Gjør ønskede endringer
 1. Pass på at Enterprise Architect er satt opp med `windows-1252` som tegnsett for eksport til XMI.
-1. Eksporter prosjekt til FINT-informasjonsmodell.xml ved å gå til følgende meny: _Model_ -> _Import/Export_ -> _Export Package for XMI_ (**`Ctrl + Alt + E`**)
+1. Eksporter prosjekt til FINT-informasjonsmodell.xml ved å gå til følgende meny: _Model_ -> _Import/Export_ -> _Export Package for XMI_ (**`Ctrl + Alt + E`**). Velg _Export Type_ `XMI 2.1`.
 
 ## Navnekonvensjoner
 
