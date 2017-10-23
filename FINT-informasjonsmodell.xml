@@ -548,6 +548,11 @@
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_src3EE6BA_86CF_4c62_95B2_3E3474DF64DD" name="skole" visibility="public" association="EAID_383EE6BA_86CF_4c62_95B2_3E3474DF64DD" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_0F1201EE_0BE3_43fe_84F9_3911698D34C5"/>
 							</ownedAttribute>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_srcEA363B_8A22_41ea_A119_A086ECA258C1" name="arbeidsforhold" visibility="public" association="EAID_D5EA363B_8A22_41ea_A119_A086ECA258C1" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+								<type xmi:idref="EAID_99474ABD_36AE_4dc7_9895_5BC9C901AC39"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000101__8A22_41ea_A119_A086ECA258C1" value="0"/>
+								<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000102__8A22_41ea_A119_A086ECA258C1" value="-1"/>
+							</ownedAttribute>
 						</packagedElement>
 						<packagedElement xmi:type="uml:Association" xmi:id="EAID_1FCA4CE6_1C0F_49a7_9E94_BC4ACDAF536A" visibility="public">
 							<memberEnd xmi:idref="EAID_dstCA4CE6_1C0F_49a7_9E94_BC4ACDAF536A"/>
@@ -577,16 +582,6 @@
 						<packagedElement xmi:type="uml:Association" xmi:id="EAID_D5EA363B_8A22_41ea_A119_A086ECA258C1" visibility="public">
 							<memberEnd xmi:idref="EAID_dstEA363B_8A22_41ea_A119_A086ECA258C1"/>
 							<memberEnd xmi:idref="EAID_srcEA363B_8A22_41ea_A119_A086ECA258C1"/>
-							<ownedEnd xmi:type="uml:Property" xmi:id="EAID_srcEA363B_8A22_41ea_A119_A086ECA258C1" visibility="public" association="EAID_D5EA363B_8A22_41ea_A119_A086ECA258C1" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
-								<type xmi:idref="EAID_99474ABD_36AE_4dc7_9895_5BC9C901AC39"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000101__8A22_41ea_A119_A086ECA258C1" value="0"/>
-								<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000102__8A22_41ea_A119_A086ECA258C1" value="-1"/>
-							</ownedEnd>
-							<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dstEA363B_8A22_41ea_A119_A086ECA258C1" name="arbeidssted" visibility="public" association="EAID_D5EA363B_8A22_41ea_A119_A086ECA258C1" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
-								<type xmi:idref="EAID_941E2DF3_55A0_4321_8D0A_347FC274EEB3"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000147__8A22_41ea_A119_A086ECA258C1" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000148__8A22_41ea_A119_A086ECA258C1" value="1"/>
-							</ownedEnd>
 						</packagedElement>
 					</packagedElement>
 					<packagedElement xmi:type="uml:Package" xmi:id="EAPK_6FF4218D_3F03_4f4e_A416_24CDE650B4F2" name="Personal" visibility="public">
@@ -676,6 +671,11 @@
 								<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#UnlimitedNatural"/>
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000137_7F18_4803_A036_8343E46EFDED" value="1"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000138_7F18_4803_A036_8343E46EFDED" value="1"/>
+							</ownedAttribute>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstEA363B_8A22_41ea_A119_A086ECA258C1" name="arbeidssted" visibility="public" association="EAID_D5EA363B_8A22_41ea_A119_A086ECA258C1" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+								<type xmi:idref="EAID_941E2DF3_55A0_4321_8D0A_347FC274EEB3"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000147__8A22_41ea_A119_A086ECA258C1" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000148__8A22_41ea_A119_A086ECA258C1" value="1"/>
 							</ownedAttribute>
 						</packagedElement>
 						<packagedElement xmi:type="uml:Association" xmi:id="EAID_28F39361_2799_46bb_BEE8_BA6DDD1B7581" visibility="public">
@@ -15379,12 +15379,12 @@
 			<connector xmi:idref="EAID_D5EA363B_8A22_41ea_A119_A086ECA258C1">
 				<source xmi:idref="EAID_99474ABD_36AE_4dc7_9895_5BC9C901AC39">
 					<model ea_localid="87" type="Class" name="Arbeidsforhold"/>
-					<role visibility="Public" targetScope="instance"/>
+					<role name="arbeidsforhold" visibility="Public" targetScope="instance"/>
 					<type multiplicity="0..*" aggregation="none" containment="Unspecified"/>
 					<constraints/>
-					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
-					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
-					<documentation/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation value="Alle arbeidsforhold til et organisasjonselement."/>
 					<xrefs/>
 					<tags/>
 				</source>
@@ -15394,18 +15394,18 @@
 					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
-					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
 					<documentation value="Tilhørighet til organisasjonsstruktur&#xA;&#xA;# Beskrivelse&#xA;&#xA;For eksempel koden til &quot;Avdeling for Helse og mijlø&quot;.&#xA;&#xA;Kommentar fra feltet organisasjonId:&#xA;Kode for relasjon til organisasjonstruktur. &#xA;&#xA;Tilsvarer Arbeidssted i HR-system, mens VFS kaller dette for Ansvar og beskriver det med: &quot;Type 2 = Ansvar, benyttes til å plassere den ansatte på riktig skole&quot;.&#xA;&#xA;For eksempel kode for &quot;Bjerke videregående skole&quot;.&#xA;&#xA;Arbeid stedskode som er bygget på en eller flere organisasjonsenheter&#xA;&#xA;I en bedrift er en avdeling en organisasjonsenhet som utgjør ansvarsområdet til en (avdelings)sjef. Avdelingssjefen kan for eksempel hete formann, salgssjef eller kontorsjef. (ref.Store norske leksikon)&#xA;&#xA;# Format&#xA;&#xA;&#xA;# Eksempler&#xA;&#xA;"/>
 					<xrefs/>
 					<tags/>
 				</target>
 				<model ea_localid="2"/>
-				<properties ea_type="Association" direction="Unspecified"/>
+				<properties ea_type="Association" direction="Bi-Directional"/>
 				<modifiers isRoot="false" isLeaf="false"/>
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels lb="0..*" rb="1" rt="+arbeidssted"/>
+				<labels lb="0..*" lt="+arbeidsforhold" rb="1" rt="+arbeidssted"/>
 				<extendedProperties/>
 				<style/>
 				<xrefs/>
