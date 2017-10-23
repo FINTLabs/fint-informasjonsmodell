@@ -1,21 +1,39 @@
 <!-- TOC -->
 
-- [v2.2.0-beta-2](#v220-beta-2)
+- [v2.4.0-alpha-1](#v240-alpha-1)
     - [Features](#features)
+    - [Known issues](#known-issues)
+- [v2.2.0-beta-2](#v220-beta-2)
+    - [Features](#features-1)
 - [v2.0.10](#v2010)
     - [Bugfixes](#bugfixes)
 - [v2.0.0](#v200)
     - [Breaking changes](#breaking-changes)
-    - [Features](#features-1)
+    - [Features](#features-2)
     - [Bugfixes](#bugfixes-1)
 - [v1.0.1](#v101)
-    - [Features](#features-2)
-    - [Bugfixes](#bugfixes-2)
-    - [Known issues](#known-issues)
-- [v1.0.0](#v100)
     - [Features](#features-3)
+    - [Bugfixes](#bugfixes-2)
+    - [Known issues](#known-issues-1)
+- [v1.0.0](#v100)
+    - [Features](#features-4)
 
 <!-- /TOC -->
+
+# v2.4.0-alpha-1
+
+|      |                  |
+|------|------------------|
+| Date | `23.10.2017`     |
+| Tag  | `v2.4.0-alpha-1` |
+
+## Features
+
+* Initial work-in-progress support for `Lønn` (Salary) and `Fullmakt` (Authorizations).
+
+## Known issues
+
+* The model has not been validated for issues due to Git merging, and might contain unexpected changes.
 
 # v2.2.0-beta-2
 
