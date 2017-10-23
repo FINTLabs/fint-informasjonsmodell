@@ -1,19 +1,34 @@
 <!-- TOC -->
 
+- [v2.2.0-beta-2](#v220-beta-2)
+    - [Features](#features)
 - [v2.0.10](#v2010)
     - [Bugfixes](#bugfixes)
 - [v2.0.0](#v200)
     - [Breaking changes](#breaking-changes)
-    - [Features](#features)
+    - [Features](#features-1)
     - [Bugfixes](#bugfixes-1)
 - [v1.0.1](#v101)
-    - [Features](#features-1)
+    - [Features](#features-2)
     - [Bugfixes](#bugfixes-2)
     - [Known issues](#known-issues)
 - [v1.0.0](#v100)
-    - [Features](#features-2)
+    - [Features](#features-3)
 
 <!-- /TOC -->
+
+# v2.2.0-beta-2
+
+|      |                  |
+|------|------------------|
+| Date | `23.10.2017`     |
+| Tag  | `v2.2.0-beta-2`  |
+
+## Features
+
+* Added support for code lists from Vigo.  This is a pure addition to the model, with no impact to the existing model.
+  References from the `Utdanning` model to Vigo code lists is represented as external references.
+
 
 # v2.0.10
 
@@ -27,6 +42,7 @@
 * Made association between `Organisasjonselement` and `Arbeidsforhold` bidirectional (fixes #38)
 * Fixed multiplicity from `Elevforhold` to `Elevkategori` (fixes #36)
 * Fixed documentation for `Art` and `Funksjon` (fixes #37)
+
 
 # v2.0.0
 
