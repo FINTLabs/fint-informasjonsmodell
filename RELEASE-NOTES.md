@@ -1,6 +1,6 @@
 <!-- TOC -->
 
-- [v2.2.0-beta-2](#v220-beta-2)
+- [v2.2.0](#v220)
     - [Features](#features)
 - [v2.0.10](#v2010)
     - [Bugfixes](#bugfixes)
@@ -17,17 +17,17 @@
 
 <!-- /TOC -->
 
-# v2.2.0-beta-2
+# v2.2.0
 
-|      |                  |
-|------|------------------|
-| Date | `23.10.2017`     |
-| Tag  | `v2.2.0-beta-2`  |
+|      |              |
+|------|--------------|
+| Date | `27.10.2017` |
+| Tag  | `v2.2.0`     |
 
 ## Features
 
 * Added support for code lists from Vigo.  This is a pure addition to the model, with no impact to the existing model.
-  References from the `Utdanning` model to Vigo code lists is represented as external references.
+* References from the `Utdanning` model to Vigo code lists is represented as external references.
 
 
 # v2.0.10
