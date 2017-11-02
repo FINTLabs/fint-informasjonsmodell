@@ -5,7 +5,7 @@
 		<packagedElement xmi:type="uml:Package" xmi:id="EAPK_7D84B04B_025D_46fa_B011_58B791723397" name="Model" visibility="public">
 			<packagedElement xmi:type="uml:Package" xmi:id="EAPK_CF051141_D9AF_4231_A3D9_5907E487A8DD" name="FINT" visibility="public">
 				<packagedElement xmi:type="uml:Package" xmi:id="EAPK_86ED02E9_37ED_4926_979E_40E8B312F740" name="Ressurser" visibility="public">
-					<packagedElement xmi:type="uml:Package" xmi:id="EAPK_DE7FDBA7_9A16_43b1_B8FE_7D6D94A7FAB1" name="Oslonokkelen" visibility="public">
+					<packagedElement xmi:type="uml:Package" xmi:id="EAPK_DE7FDBA7_9A16_43b1_B8FE_7D6D94A7FAB1" name="Låsstyring" visibility="public">
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_A042859F_5322_459b_A68B_F78968B1CBB5" name="AutorisertPerson" visibility="public">
 							<generalization xmi:type="uml:Generalization" xmi:id="EAID_53BE8207_C5F3_4582_82EB_99D8E4DB535A" general="EAID_3918321E_C706_4469_892B_CA90C03B4378"/>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst3B41BB_1B2B_465c_AFCB_FFB7F7564B85" name="rettighet" visibility="public" association="EAID_A43B41BB_1B2B_465c_AFCB_FFB7F7564B85" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
@@ -4568,10 +4568,10 @@
 				<times created="2017-11-02 13:42:54" modified="2017-11-02 13:45:24"/>
 				<flags iscontrolled="FALSE" isprotected="FALSE" usedtd="FALSE" logxml="FALSE"/>
 			</element>
-			<element xmi:idref="EAPK_DE7FDBA7_9A16_43b1_B8FE_7D6D94A7FAB1" xmi:type="uml:Package" name="Oslonokkelen" scope="public">
+			<element xmi:idref="EAPK_DE7FDBA7_9A16_43b1_B8FE_7D6D94A7FAB1" xmi:type="uml:Package" name="Låsstyring" scope="public">
 				<model package2="EAID_DE7FDBA7_9A16_43b1_B8FE_7D6D94A7FAB1" package="EAPK_86ED02E9_37ED_4926_979E_40E8B312F740" tpos="0" ea_localid="38" ea_eleType="package"/>
 				<properties isSpecification="false" sType="Package" nType="0" scope="public"/>
-				<project author="Asgeir Nilsen" version="1.0" phase="1.0" created="2017-11-02 10:34:09" modified="2017-11-02 13:45:32" complexity="1" status="Proposed"/>
+				<project author="Asgeir Nilsen" version="1.0" phase="1.0" created="2017-11-02 10:34:09" modified="2017-11-02 13:53:55" complexity="1" status="Proposed"/>
 				<code gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -4579,7 +4579,7 @@
 				<extendedProperties tagged="0" package_name="Ressurser"/>
 				<packageproperties version="1.0"/>
 				<paths/>
-				<times created="2017-11-02 10:34:09" modified="2017-11-02 13:24:40"/>
+				<times created="2017-11-02 10:34:09" modified="2017-11-02 13:53:55"/>
 				<flags iscontrolled="FALSE" isprotected="FALSE" usedtd="FALSE" logxml="FALSE"/>
 			</element>
 			<element xmi:idref="EAID_A042859F_5322_459b_A68B_F78968B1CBB5" xmi:type="uml:Class" name="AutorisertPerson" scope="public">
@@ -4590,7 +4590,7 @@
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
 				<xrefs value="$XREFPROP=$XID={8AFF07F0-4860-47a2-A8B1-6D7E6505FC83}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=hovedklasse;GUID={D08F65EF-7D48-4ae0-A557-0B0AB5BB20BC};@ENDSTEREO;$DES;$CLT={A042859F-5322-459b-A68B-F78968B1CBB5}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
-				<extendedProperties tagged="0" package_name="Oslonokkelen"/>
+				<extendedProperties tagged="0" package_name="Låsstyring"/>
 				<links>
 					<Generalization xmi:id="EAID_53BE8207_C5F3_4582_82EB_99D8E4DB535A" start="EAID_A042859F_5322_459b_A68B_F78968B1CBB5" end="EAID_3918321E_C706_4469_892B_CA90C03B4378"/>
 					<Association xmi:id="EAID_A43B41BB_1B2B_465c_AFCB_FFB7F7564B85" start="EAID_A042859F_5322_459b_A68B_F78968B1CBB5" end="EAID_F15A23B6_1FA6_4a3e_9DF3_473621D4DB3A"/>
@@ -4604,7 +4604,7 @@
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
 				<xrefs/>
-				<extendedProperties tagged="0" package_name="Oslonokkelen" ea_attsclassified="{000809AE-9194-4659-A60C-5A1F711FDAC9}"/>
+				<extendedProperties tagged="0" package_name="Låsstyring" ea_attsclassified="{000809AE-9194-4659-A60C-5A1F711FDAC9}"/>
 				<attributes>
 					<attribute xmi:idref="EAID_B383827F_F81A_4b85_B31A_DB922659C55A" name="breddegrad" scope="Public">
 						<initial/>
@@ -4646,7 +4646,7 @@
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
 				<xrefs value="$XREFPROP=$XID={B78A17C3-FDBA-4617-891F-F3EB48C7ADAD}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=hovedklasse;GUID={D08F65EF-7D48-4ae0-A557-0B0AB5BB20BC};@ENDSTEREO;$DES;$CLT={D5DDF9F3-6E7B-4f5d-83BD-197A5DEB8EEF}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
-				<extendedProperties tagged="0" package_name="Oslonokkelen"/>
+				<extendedProperties tagged="0" package_name="Låsstyring"/>
 				<attributes>
 					<attribute xmi:idref="EAID_0493CB47_2A2F_4379_8263_6E1E0606AB65" name="bygning" scope="Public">
 						<initial/>
@@ -4737,7 +4737,7 @@
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
 				<xrefs value="$XREFPROP=$XID={CD5819CF-51FE-4b0a-B164-2985B751BB0B}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=hovedklasse;GUID={D08F65EF-7D48-4ae0-A557-0B0AB5BB20BC};@ENDSTEREO;$DES;$CLT={F326ABA2-1EF6-4333-9628-DBF82F3BCEE4}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
-				<extendedProperties tagged="0" package_name="Oslonokkelen"/>
+				<extendedProperties tagged="0" package_name="Låsstyring"/>
 				<attributes>
 					<attribute xmi:idref="EAID_128C15B0_20A9_474d_9A5D_ECED2A0D6143" name="gyldighetsperiode" scope="Public">
 						<initial/>
@@ -4814,7 +4814,7 @@
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
 				<xrefs/>
-				<extendedProperties tagged="0" package_name="Oslonokkelen"/>
+				<extendedProperties tagged="0" package_name="Låsstyring"/>
 				<attributes>
 					<attribute xmi:idref="EAID_FA1CB06C_2A88_4bac_995B_7566F2AA1448" name="gyldighetsperiode" scope="Public">
 						<initial/>
@@ -4845,7 +4845,7 @@
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
 				<xrefs/>
-				<extendedProperties tagged="0" package_name="Oslonokkelen"/>
+				<extendedProperties tagged="0" package_name="Låsstyring"/>
 				<attributes>
 					<attribute xmi:idref="EAID_42501AD4_EB1D_4652_9D1F_4FD1A313E4E0" name="innloggingsnivå" scope="Public">
 						<initial/>
@@ -19480,10 +19480,10 @@
 		<diagrams>
 			<diagram xmi:id="EAID_25F25C3E_B40B_40e6_A8B7_44A642DB9741">
 				<model package="EAPK_DE7FDBA7_9A16_43b1_B8FE_7D6D94A7FAB1" localID="20" owner="EAPK_DE7FDBA7_9A16_43b1_B8FE_7D6D94A7FAB1"/>
-				<properties name="Oslonokkelen" type="Logical"/>
-				<project author="Asgeir Nilsen" version="1.0" created="2017-11-02 00:00:00" modified="2017-11-02 13:33:55"/>
+				<properties name="Låsstyring" type="Logical"/>
+				<project author="Asgeir Nilsen" version="1.0" created="2017-11-02 00:00:00" modified="2017-11-02 13:54:10"/>
 				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=827;DocSize.cy=1169;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
-				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=49B52BFB;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=3F232FFA;"/>
 				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;cls=0;SwimlaneFont=lfh:-13,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
 				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
 				<extendedProperties/>
