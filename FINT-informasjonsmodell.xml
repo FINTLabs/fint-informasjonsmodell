@@ -6378,8 +6378,8 @@
 			</element>
 			<element xmi:idref="EAID_1619BCFD_BAF4_4b6d_A2BB_6C60605AF1BC" xmi:type="uml:Class" name="Kontodimensjon" scope="public">
 				<model package="EAPK_7B786AED_39CF_419d_B521_3DFFB68573CD" tpos="0" ea_localid="205" ea_eleType="element"/>
-				<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
-				<project author="Asgeir Nilsen" version="1.0" phase="1.0" created="2017-10-20 14:47:00" modified="2017-10-20 14:56:05" complexity="1" status="Proposed"/>
+				<properties documentation="Abstrakt fellesbegrep som beskriver dimensjon i kontoplan.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Fellesbenevnelse for dimensjoner i en kontoplan." isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
+				<project author="Asgeir Nilsen" version="1.0" phase="1.0" created="2017-10-20 14:47:00" modified="2017-11-15 12:14:56" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -15768,7 +15768,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="Alle fullmakter knyttet til ansvaret."/>
+					<documentation value="Alle fullmakter knyttet til kontodimensjonen."/>
 					<xrefs/>
 					<tags/>
 				</source>
@@ -15779,7 +15779,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="Ansvar som Personalressurs har blitt delegert en fullmakt for."/>
+					<documentation value="Del av kontodimensjon som Personalressurs har blitt delegert en fullmakt for."/>
 					<xrefs/>
 					<tags/>
 				</target>
