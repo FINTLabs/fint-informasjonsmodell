@@ -1,21 +1,36 @@
 <!-- TOC -->
 
+- [v2.2.10](#v2210)
+    - [Bugfixes](#bugfixes)
 - [v2.2.0](#v220)
     - [Features](#features)
 - [v2.0.10](#v2010)
-    - [Bugfixes](#bugfixes)
+    - [Bugfixes](#bugfixes-1)
 - [v2.0.0](#v200)
     - [Breaking changes](#breaking-changes)
     - [Features](#features-1)
-    - [Bugfixes](#bugfixes-1)
+    - [Bugfixes](#bugfixes-2)
 - [v1.0.1](#v101)
     - [Features](#features-2)
-    - [Bugfixes](#bugfixes-2)
+    - [Bugfixes](#bugfixes-3)
     - [Known issues](#known-issues)
 - [v1.0.0](#v100)
     - [Features](#features-3)
 
 <!-- /TOC -->
+
+# v2.2.10
+
+|      |              |
+|------|--------------|
+| Date | `27.11.2017` |
+| Tag  | `v2.2.10`    |
+
+## Bugfixes
+
+* Added new optional attribute `passiv` to all classes in `Administrasjon` - `Kodeverk` by introducing an
+  abstract class `Kodeverk` with this attribute.  Fixes #44.
+
 
 # v2.2.0
 
