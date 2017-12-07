@@ -566,7 +566,7 @@
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_57FA0F15_75A8_421b_8FB2_AAE560E9F691" name="brukernavn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000111_75A8_421b_8FB2_AAE560E9F691" value="1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000111_75A8_421b_8FB2_AAE560E9F691" value="0"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000112_75A8_421b_8FB2_AAE560E9F691" value="1"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_10B43614_655F_45fe_BC3F_D8E3C07E158F" name="kontaktinformasjon" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
@@ -797,7 +797,7 @@
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_CBFC8E03_81C3_467d_B0CC_4842D1B17F8A" name="Elev" visibility="public">
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_1ACEE78F_D6BD_40fc_A667_2ABFF8E3D968" name="brukernavn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000177_D6BD_40fc_A667_2ABFF8E3D968" value="1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000177_D6BD_40fc_A667_2ABFF8E3D968" value="0"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000178_D6BD_40fc_A667_2ABFF8E3D968" value="1"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_7850C80E_8A2C_4b68_9C92_BCB624B7D6B0" name="elevnummer" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
@@ -6133,13 +6133,13 @@
 					</attribute>
 					<attribute xmi:idref="EAID_57FA0F15_75A8_421b_8FB2_AAE560E9F691" name="brukernavn" scope="Public">
 						<initial/>
-						<documentation value="Brukernavn til en person&#xA;&#xA;# Beskrivelse&#xA;&#xA;Skal inneholde brukernavn for pålogging, som finnes i katalogtjenesten (feks Active Directory). Brukes som en identifikator som består, når fødselsnummer og/eller andre identifikatorer endrer seg.&#xA;&#xA;# Format&#xA;&#xA;Brukernavn i det format en personalressurs trenger for å logge seg på systemer i organisasjonen.&#xA;&#xA;&#xA;"/>
+						<documentation value="Brukernavn til en person&#xA;&#xA;# Beskrivelse&#xA;&#xA;Skal inneholde brukernavn for pålogging, som finnes i katalogtjenesten (feks Active Directory). Brukes som en identifikator som består, når fødselsnummer og/eller andre identifikatorer endrer seg.&#xA;&#xA;# Format&#xA;&#xA;Brukernavn i det format en personalressurs trenger for å logge seg på systemer i organisasjonen.&#xA;&#xA;# NB!&#xA;&#xA;Fremtidig funksjon for dette feltet er under revisjon.&#xA;"/>
 						<model ea_localid="41" ea_guid="{57FA0F15-75A8-421b-8FB2-AAE560E9F691}"/>
 						<properties type="Identifikator" derived="0" precision="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
 						<containment containment="Not Specified" position="0"/>
 						<stereotype stereotype="writable"/>
-						<bounds lower="1" upper="1"/>
+						<bounds lower="0" upper="1"/>
 						<options/>
 						<style value="initials"/>
 						<styleex value="volatile=0;union=0;"/>
@@ -6526,13 +6526,13 @@
 				<attributes>
 					<attribute xmi:idref="EAID_1ACEE78F_D6BD_40fc_A667_2ABFF8E3D968" name="brukernavn" scope="Public">
 						<initial/>
-						<documentation value="Brukernavn til en person&#xA;&#xA;# Beskrivelse&#xA;&#xA;Skal inneholde brukernavn for pålogging, som finnes i katalogtjenesten (feks Active Directory). Brukes som en identifikator som består, når fødselsnummer og/eller andre identifikatorer endrer seg.&#xA;&#xA;# Format&#xA;&#xA;Brukernavn i det format en elev trenger for å logge seg på systemer i organisasjonen.&#xA;"/>
+						<documentation value="Brukernavn til en person&#xA;&#xA;# Beskrivelse&#xA;&#xA;Skal inneholde brukernavn for pålogging, som finnes i katalogtjenesten (feks Active Directory). Brukes som en identifikator som består, når fødselsnummer og/eller andre identifikatorer endrer seg.&#xA;&#xA;# Format&#xA;&#xA;Brukernavn i det format en elev trenger for å logge seg på systemer i organisasjonen.&#xA;&#xA;# NB!&#xA;&#xA;Fremtidig funksjon for dette feltet er under revisjon.&#xA;"/>
 						<model ea_localid="65" ea_guid="{1ACEE78F-D6BD-40fc-A667-2ABFF8E3D968}"/>
 						<properties type="Identifikator" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
 						<containment containment="Not Specified" position="3"/>
 						<stereotype/>
-						<bounds lower="1" upper="1"/>
+						<bounds lower="0" upper="1"/>
 						<options/>
 						<style value="username"/>
 						<styleex value="volatile=0;union=0;"/>

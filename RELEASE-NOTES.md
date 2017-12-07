@@ -1,23 +1,36 @@
 <!-- TOC -->
 
-- [v2.2.10](#v2210)
+- [v2.2.20](#v2220)
     - [Bugfixes](#bugfixes)
+- [v2.2.10](#v2210)
+    - [Bugfixes](#bugfixes-1)
 - [v2.2.0](#v220)
     - [Features](#features)
 - [v2.0.10](#v2010)
-    - [Bugfixes](#bugfixes-1)
+    - [Bugfixes](#bugfixes-2)
 - [v2.0.0](#v200)
     - [Breaking changes](#breaking-changes)
     - [Features](#features-1)
-    - [Bugfixes](#bugfixes-2)
+    - [Bugfixes](#bugfixes-3)
 - [v1.0.1](#v101)
     - [Features](#features-2)
-    - [Bugfixes](#bugfixes-3)
+    - [Bugfixes](#bugfixes-4)
     - [Known issues](#known-issues)
 - [v1.0.0](#v100)
     - [Features](#features-3)
 
 <!-- /TOC -->
+
+# v2.2.20
+
+|      |              |
+|------|--------------|
+| Date | `07.12.2017` |
+| Tag  | `v2.2.20`    |
+
+## Bugfixes
+
+* Made the attribute `brukernavn` optional on `Personalressurs` and `Elev`.
 
 # v2.2.10
 
