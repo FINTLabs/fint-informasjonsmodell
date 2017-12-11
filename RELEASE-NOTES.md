@@ -3,17 +3,21 @@
 - [v2.4.0-alpha-1](#v240-alpha-1)
     - [Features](#features)
     - [Known issues](#known-issues)
-- [v2.2.0-beta-2](#v220-beta-2)
+- [v2.2.20](#v2220)
+    - [Bugfixes](#bugfixes)
+- [v2.2.10](#v2210)
+    - [Bugfixes](#bugfixes-1)
+- [v2.2.0](#v220)
     - [Features](#features-1)
 - [v2.0.10](#v2010)
-    - [Bugfixes](#bugfixes)
+    - [Bugfixes](#bugfixes-2)
 - [v2.0.0](#v200)
     - [Breaking changes](#breaking-changes)
     - [Features](#features-2)
-    - [Bugfixes](#bugfixes-1)
+    - [Bugfixes](#bugfixes-3)
 - [v1.0.1](#v101)
     - [Features](#features-3)
-    - [Bugfixes](#bugfixes-2)
+    - [Bugfixes](#bugfixes-4)
     - [Known issues](#known-issues-1)
 - [v1.0.0](#v100)
     - [Features](#features-4)
@@ -35,17 +39,39 @@
 
 * The model has not been validated for issues due to Git merging, and might contain unexpected changes.
 
-# v2.2.0-beta-2
+# v2.2.20
 
-|      |                  |
-|------|------------------|
-| Date | `23.10.2017`     |
-| Tag  | `v2.2.0-beta-2`  |
+|      |              |
+|------|--------------|
+| Date | `07.12.2017` |
+| Tag  | `v2.2.20`    |
+
+## Bugfixes
+
+* Made the attribute `brukernavn` optional on `Personalressurs` and `Elev`.
+
+# v2.2.10
+
+|      |              |
+|------|--------------|
+| Date | `27.11.2017` |
+| Tag  | `v2.2.10`    |
+
+## Bugfixes
+
+* Added new optional attribute `passiv` to `Begrep`.  Fixes #44.
+
+# v2.2.0
+
+|      |              |
+|------|--------------|
+| Date | `27.10.2017` |
+| Tag  | `v2.2.0`     |
 
 ## Features
 
 * Added support for code lists from Vigo.  This is a pure addition to the model, with no impact to the existing model.
-  References from the `Utdanning` model to Vigo code lists is represented as external references.
+* References from the `Utdanning` model to Vigo code lists is represented as external references.
 
 
 # v2.0.10
