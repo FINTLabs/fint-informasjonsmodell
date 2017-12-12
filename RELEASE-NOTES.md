@@ -34,6 +34,7 @@
 ## Features
 
 * Initial work-in-progress support for `Lønn` (Salary) and `Fullmakt` (Authorizations).
+* Added `personalleder` and `personalansvar` relation between `Personalressurs` and `Arbeidsforhold`.
 
 ## Known issues
 
