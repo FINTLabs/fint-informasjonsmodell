@@ -7341,8 +7341,8 @@
 			</element>
 			<element xmi:idref="EAID_65A6E992_91F6_4e38_8F3C_FAA0E7EAFE71" xmi:type="uml:Class" name="Tillegg" scope="public">
 				<model package="EAPK_15EF49CA_4969_4139_8E04_19C8E09CEAAC" tpos="0" ea_localid="230" ea_eleType="element"/>
-				<properties documentation="Del av variabel lønnsmelding som beskriver grunnlaget for en lønnsberegning.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Faktisk lønn beregnes i HRM-systemet. I lønnsmeldingen skal grunnlaget for beregningen angis.&#xA;&#xA;Må brukes sammen med lønnsart for at HRM-systemet skal velge riktig sats og rapportere riktig på A-meldingen.&#xA;&#xA;# Eksempler:&#xA;&#xA;1. Vikartime for undervisningspersonell: Antall undervisningstimer delt på årsramme for faget.  Uttrykker en prosent av årslønn.&#xA;  - antall: prosent av årslønn&#xA;2. Timelønn&#xA;  - antall: antall timer&#xA; 3. Kjøregodtgjørelse&#xA;  - antall: antall kilometer&#xA;4. Kontantytelse for et møte&#xA;  - antall: beløp&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Asgeir Nilsen" version="1.0" phase="1.0" created="2017-10-23 00:00:00" modified="2018-01-03 13:14:19" complexity="1" status="Proposed"/>
+				<properties documentation="Del av variabel lønnsmelding som beskriver grunnlaget for en lønnsberegning.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Faktisk lønn beregnes i HRM-systemet. I lønnsmeldingen skal grunnlaget for beregningen angis.&#xA;&#xA;Må brukes sammen med lønnsart for at HRM-systemet skal foreta korrekt beregning og rapportere riktig på A-meldingen.&#xA;&#xA;# Eksempler:&#xA;&#xA;1. Vikartime for undervisningspersonell: &#xA;  - antall: antall timer * 1400 / årsramme&#xA;2. Timelønn&#xA;  - antall: antall timer&#xA;3. Kjøregodtgjørelse&#xA;  - antall: antall kilometer&#xA;4. Kontantytelse for et møte&#xA;  - antall: beløp&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Asgeir Nilsen" version="1.0" phase="1.0" created="2017-10-23 00:00:00" modified="2018-01-10 16:26:04" complexity="1" status="Proposed"/>
 				<code product_name="&lt;none&gt;" gentype="&lt;none&gt;"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -7351,7 +7351,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_17C922F0_5E3D_446d_ADE9_EAEDCD12E253" name="antall" scope="Public">
 						<initial/>
-						<documentation value="Mengde som beskrives av tillegget, i hundredeler.&#xA;&#xA;# Eksempel&#xA;&#xA;- Antall hundredels timer.&#xA;- Antall dekameter.&#xA;- Antall hundredels prosent.&#xA;- Antall øre"/>
+						<documentation value="Mengde som beskrives av tillegget, i hundredeler.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Enhet er spesifisert av lønnsart.&#xA;&#xA;# Eksempel&#xA;&#xA;- Antall hundredels timer.&#xA;- Antall dekameter (km/100).&#xA;- Antall øre"/>
 						<model ea_localid="182" ea_guid="{17C922F0-5E3D-446d-ADE9-EAEDCD12E253}"/>
 						<properties type="long" derived="0" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -7366,7 +7366,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_D9CEFE1E_642E_4e59_9E8C_DE65DD139056" name="beløp" scope="Public">
 						<initial/>
-						<documentation value="Beløp i øre som skal utbetales. Beregnes av HRM-systemet basert på antall og lønnsart."/>
+						<documentation value="Beløp i øre som skal utbetales. Beregnes av lønnssystemet basert på antall og lønnsart."/>
 						<model ea_localid="185" ea_guid="{D9CEFE1E-642E-4e59-9E8C-DE65DD139056}"/>
 						<properties type="long" derived="0" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -7381,7 +7381,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_F5EA2955_258E_4ee0_A50B_EA69C10570A1" name="beskrivelse" scope="Public">
 						<initial/>
-						<documentation value="Beskrivelse av tillegget."/>
+						<documentation value="Beskrivelse av tillegget, til føring på lønnsslipp.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Forklarende beskrivelse av tillegget, til bruk i behandling av lønnsmeldingen, og for anføring på lønnsslipp."/>
 						<model ea_localid="183" ea_guid="{F5EA2955-258E-4ee0-A50B-EA69C10570A1}"/>
 						<properties type="string" derived="0" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
