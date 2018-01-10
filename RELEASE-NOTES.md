@@ -1,6 +1,6 @@
 <!-- TOC -->
 
-- [v2.4.0-alpha-1](#v240-alpha-1)
+- [v2.4.0-rc-1](#v240-rc-1)
     - [Features](#features)
     - [Known issues](#known-issues)
 - [v2.2.20](#v2220)
@@ -24,21 +24,22 @@
 
 <!-- /TOC -->
 
-# v2.4.0-alpha-1
+# v2.4.0-rc-1
 
-|      |                  |
-|------|------------------|
-| Date | `23.10.2017`     |
-| Tag  | `v2.4.0-alpha-1` |
+|      |               |
+|------|---------------|
+| Date | `10.01.2018`  |
+| Tag  | `v2.4.0-rc-1` |
 
 ## Features
 
-* Initial work-in-progress support for `Lønn` (Salary) and `Fullmakt` (Authorizations).
+* Added support for `Lønn` (Salary) and `Fullmakt` (Authorizations).
+  * Variable pay has been reworked since `v2.4.0-alpha-1`
 * Added `personalleder` and `personalansvar` relation between `Personalressurs` and `Arbeidsforhold`.
 
 ## Known issues
 
-* The model has not been validated for issues due to Git merging, and might contain unexpected changes.
+* The model has not been fully validated.
 
 # v2.2.20
 
