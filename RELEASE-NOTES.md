@@ -35,7 +35,7 @@
 
 * Added support for `Lønn` (Salary) and `Fullmakt` (Authorizations).
   * Variable pay has been reworked since `v2.4.0-alpha-1`
-* Added `personalleder` and `personalansvar` relation between `Personalressurs` and `Arbeidsforhold`.
+* Added `personalleder` and `personalansvar` relations between `Personalressurs` and `Arbeidsforhold`.
 
 ## Known issues
 

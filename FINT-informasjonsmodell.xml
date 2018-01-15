@@ -993,7 +993,7 @@
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstC30234_8369_4a07_9419_CA31A88F4AB5" name="personalleder" visibility="public" association="EAID_1BC30234_8369_4a07_9419_CA31A88F4AB5" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_0F87A52C_7EE0_45e3_9DE2_AE537A34659D"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000219__8369_4a07_9419_CA31A88F4AB5" value="1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000219__8369_4a07_9419_CA31A88F4AB5" value="0"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000220__8369_4a07_9419_CA31A88F4AB5" value="1"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstA24386_B1CA_4669_A1F7_BB723E72F993" name="ansvar" visibility="public" association="EAID_AEA24386_B1CA_4669_A1F7_BB723E72F993" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
@@ -17496,7 +17496,7 @@
 				<target xmi:idref="EAID_0F87A52C_7EE0_45e3_9DE2_AE537A34659D">
 					<model ea_localid="86" type="Class" name="Personalressurs"/>
 					<role name="personalleder" visibility="Public" targetScope="instance"/>
-					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
+					<type multiplicity="0..1" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
@@ -17510,7 +17510,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels lb="0..*" lt="+personalansvar" rb="1" rt="+personalleder"/>
+				<labels lb="0..*" lt="+personalansvar" rb="0..1" rt="+personalleder"/>
 				<extendedProperties/>
 				<style/>
 				<xrefs/>
