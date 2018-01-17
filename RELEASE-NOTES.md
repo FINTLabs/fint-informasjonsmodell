@@ -1,28 +1,48 @@
 <!-- TOC -->
 
-- [v2.4.0-rc-1](#v240-rc-1)
+- [v2.4.0-rc-2](#v240-rc-2)
     - [Features](#features)
     - [Known issues](#known-issues)
+- [v2.4.0-rc-1](#v240-rc-1)
+    - [Features](#features-1)
+    - [Known issues](#known-issues-1)
 - [v2.2.20](#v2220)
     - [Bugfixes](#bugfixes)
 - [v2.2.10](#v2210)
     - [Bugfixes](#bugfixes-1)
 - [v2.2.0](#v220)
-    - [Features](#features-1)
+    - [Features](#features-2)
 - [v2.0.10](#v2010)
     - [Bugfixes](#bugfixes-2)
 - [v2.0.0](#v200)
     - [Breaking changes](#breaking-changes)
-    - [Features](#features-2)
+    - [Features](#features-3)
     - [Bugfixes](#bugfixes-3)
 - [v1.0.1](#v101)
-    - [Features](#features-3)
-    - [Bugfixes](#bugfixes-4)
-    - [Known issues](#known-issues-1)
-- [v1.0.0](#v100)
     - [Features](#features-4)
+    - [Bugfixes](#bugfixes-4)
+    - [Known issues](#known-issues-2)
+- [v1.0.0](#v100)
+    - [Features](#features-5)
 
 <!-- /TOC -->
+
+# v2.4.0-rc-2
+
+|      |               |
+|------|---------------|
+| Date | `17.01.2018`  |
+| Tag  | `v2.4.0-rc-2` |
+
+## Features
+
+* Added `grunnlag` on `Tillegg`.
+* Made relations between `Skole` and `Fag`, and `Skole` and `Utdanningsprogram`, bidirectional.
+* Added relation between `Skole` and `Utdanningsforhold`.
+
+## Known issues
+
+* The model has not been fully validated.
 
 # v2.4.0-rc-1
 
