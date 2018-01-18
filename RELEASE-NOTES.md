@@ -1,25 +1,41 @@
 <!-- TOC -->
 
+- [v2.4.0](#v240)
+    - [Features](#features)
 - [v2.2.20](#v2220)
     - [Bugfixes](#bugfixes)
 - [v2.2.10](#v2210)
     - [Bugfixes](#bugfixes-1)
 - [v2.2.0](#v220)
-    - [Features](#features)
+    - [Features](#features-1)
 - [v2.0.10](#v2010)
     - [Bugfixes](#bugfixes-2)
 - [v2.0.0](#v200)
     - [Breaking changes](#breaking-changes)
-    - [Features](#features-1)
+    - [Features](#features-2)
     - [Bugfixes](#bugfixes-3)
 - [v1.0.1](#v101)
-    - [Features](#features-2)
+    - [Features](#features-3)
     - [Bugfixes](#bugfixes-4)
     - [Known issues](#known-issues)
 - [v1.0.0](#v100)
-    - [Features](#features-3)
+    - [Features](#features-4)
 
 <!-- /TOC -->
+
+# v2.4.0
+
+|      |              |
+|------|--------------|
+| Date | `19.01.2018` |
+| Tag  | `v2.4.0`     |
+
+## Features
+
+* Added support for `Lønn` (Salary) and `Fullmakt` (Authorizations).
+* Added `personalleder` and `personalansvar` relations between `Personalressurs` and `Arbeidsforhold`.
+* Made relations between `Skole` and `Fag`, and `Skole` and `Utdanningsprogram`, bidirectional.
+* Added relation between `Skole` and `Utdanningsforhold`.
 
 # v2.2.20
 
@@ -41,9 +57,7 @@
 
 ## Bugfixes
 
-* Added new optional attribute `passiv` to all classes in `Administrasjon` - `Kodeverk` by introducing an
-  abstract class `Kodeverk` with this attribute.  Fixes #44.
-
+* Added new optional attribute `passiv` to `Begrep`.  Fixes #44.
 
 # v2.2.0
 
