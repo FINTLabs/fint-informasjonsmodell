@@ -36,6 +36,7 @@
 * Added `personalleder` and `personalansvar` relations between `Personalressurs` and `Arbeidsforhold`.
 * Made relations between `Skole` and `Fag`, and `Skole` and `Utdanningsprogram`, bidirectional.
 * Added relation between `Skole` and `Utdanningsforhold`.
+* Made relation `leder` from `Personalressurs` to `Organisasjonselement` `0..*`.
 
 # v2.2.20
 
