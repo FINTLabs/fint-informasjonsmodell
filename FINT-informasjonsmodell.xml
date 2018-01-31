@@ -6642,8 +6642,8 @@
 			</element>
 			<element xmi:idref="EAID_07DD27EC_744C_43eb_98B4_B137180BA3C1" xmi:type="uml:Class" name="Fastlønn" scope="public">
 				<model package="EAPK_6FF4218D_3F03_4f4e_A416_24CDE650B4F2" tpos="0" ea_localid="242" ea_eleType="element"/>
-				<properties documentation="Informasjon om fast lønnsbeskjeftigelse.&#xA;&#xA;Inneholder et antall beskjeftigelser av den ansattes lønnsprosent.&#xA;&#xA;Summen av prosentene på beskjeftigelsene skal være lønnsprosent for en fullt dekket stilling.&#xA;&#xA;Dersom beskjeftigelsene ikke fyller lønnsprosenten har arbeidsforholdet teknisk undertid. &#xA;&#xA;I motsatt fall har arbeidsforholdet overtid." isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Asgeir Nilsen" version="1.0" phase="1.0" created="2017-10-23 00:00:00" modified="2017-11-24 14:01:17" complexity="1" status="Proposed"/>
+				<properties documentation="Informasjon om fast lønnsbeskjeftigelse.&#xA;&#xA;Inneholder et antall beskjeftigelser av den ansattes lønnsprosent.&#xA;&#xA;Summen av prosentene på beskjeftigelsene skal være lønnsprosent for en fullt dekket stilling.&#xA;&#xA;Dersom beskjeftigelsene ikke fyller lønnsprosenten har arbeidsforholdet teknisk undertid. &#xA;&#xA;I motsatt fall har arbeidsforholdet overtid.&#xA;&#xA;Kan også inneholde et antall faste tilleggsbeløp." isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Asgeir Nilsen" version="1.0" phase="1.0" created="2017-10-23 00:00:00" modified="2018-01-31 17:05:01" complexity="1" status="Proposed"/>
 				<code gentype="&lt;none&gt;"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -7067,7 +7067,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_D1BFA2AA_7F84_4c12_AF8A_92F1BED88838" name="prosent" scope="Public">
 						<initial/>
-						<documentation value="Andel av lønnsprosent som beslaglegges av denne beskjeftigelsen. Dersom kun tilleggsbeløp skal angis, kan prosent være 0."/>
+						<documentation value="Andel av lønnsprosent som beslaglegges av denne beskjeftigelsen. "/>
 						<model ea_localid="187" ea_guid="{D1BFA2AA-7F84-4c12-AF8A-92F1BED88838}"/>
 						<properties type="long" derived="0" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -7076,7 +7076,7 @@
 						<bounds lower="1" upper="1"/>
 						<options/>
 						<style/>
-						<styleex/>
+						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs value="$XREFPROP=$XID={D1691DBD-19FE-4ac1-9B9B-F6BEE29CD0AE}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=writable;GUID={A5E1434C-002D-4000-AD41-4EDB07D5BEB2};@ENDSTEREO;$DES;$CLT={D1BFA2AA-7F84-4c12-AF8A-92F1BED88838}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={e733a8ec-d57d-bbe5-f2b7-117587b891ec}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={D1BFA2AA-7F84-4c12-AF8A-92F1BED88838}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
