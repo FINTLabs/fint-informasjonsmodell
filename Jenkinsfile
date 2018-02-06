@@ -11,9 +11,9 @@ pipeline {
                     VERSION = BRANCH_NAME[1..-1]
                 }
                 sh "echo Version is ${VERSION}"
-                build job: '/fint-devops-model-release', parameters: [
+                build job: '/fint-devops-model-release/master', parameters: [
                     string(name: 'MODEL_VERSION', value: "${VERSION}"),
-                    string(name:'VERSION', value: "${VERSION}")]
+                    string(name: 'VERSION', value: "${VERSION}")]
             }
         }
     }
