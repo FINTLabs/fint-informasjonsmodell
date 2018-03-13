@@ -1248,7 +1248,7 @@
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000301__26AF_409e_A3B1_46ED80F9178A" value="1"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000302__26AF_409e_A3B1_46ED80F9178A" value="1"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst975444_6970_4203_AC22_99B194ED4197" name="fortløpendeKarater" visibility="public" association="EAID_52975444_6970_4203_AC22_99B194ED4197" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst975444_6970_4203_AC22_99B194ED4197" name="fortløpendeVurdering" visibility="public" association="EAID_52975444_6970_4203_AC22_99B194ED4197" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_F57F57DA_5326_4e95_826E_D9F5061F8A96"/>
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000303__6970_4203_AC22_99B194ED4197" value="0"/>
 								<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000304__6970_4203_AC22_99B194ED4197" value="-1"/>
@@ -1258,7 +1258,7 @@
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000305__2D2B_47d1_9F63_2CBF5144EB1C" value="1"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000306__2D2B_47d1_9F63_2CBF5144EB1C" value="1"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstF49C6D_3731_4ed5_89A9_8D988FF127A6" name="endeligKarakter" visibility="public" association="EAID_9DF49C6D_3731_4ed5_89A9_8D988FF127A6" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstF49C6D_3731_4ed5_89A9_8D988FF127A6" name="endeligVurdering" visibility="public" association="EAID_9DF49C6D_3731_4ed5_89A9_8D988FF127A6" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_F57F57DA_5326_4e95_826E_D9F5061F8A96"/>
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000307__3731_4ed5_89A9_8D988FF127A6" value="0"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000308__3731_4ed5_89A9_8D988FF127A6" value="1"/>
@@ -17920,12 +17920,12 @@
 				</source>
 				<target xmi:idref="EAID_F57F57DA_5326_4e95_826E_D9F5061F8A96">
 					<model ea_localid="120" type="Class" name="Vurdering"/>
-					<role name="fortløpendeKarater" visibility="Public" targetScope="instance"/>
+					<role name="fortløpendeVurdering" visibility="Public" targetScope="instance"/>
 					<type multiplicity="0..*" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="Fortløpende karakterer som eleven har fått som resultat av deltakelse i en gruppe&#xA;&#xA;# Eksempler&#xA;&#xA;* Terminkarakter"/>
+					<documentation value="Fortløpende vurdering som eleven har fått som resultat av deltakelse i en gruppe&#xA;&#xA;# Eksempler&#xA;&#xA;- Terminkarakter&#xA;"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -17935,7 +17935,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels rb="0..*" rt="+fortløpendeKarater"/>
+				<labels rb="0..*" rt="+fortløpendeVurdering"/>
 				<extendedProperties/>
 				<style/>
 				<xrefs/>
@@ -17990,12 +17990,12 @@
 				</source>
 				<target xmi:idref="EAID_F57F57DA_5326_4e95_826E_D9F5061F8A96">
 					<model ea_localid="120" type="Class" name="Vurdering"/>
-					<role name="endeligKarakter" visibility="Public" targetScope="instance"/>
+					<role name="endeligVurdering" visibility="Public" targetScope="instance"/>
 					<type multiplicity="0..1" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="Det endelige karakteret som eleven har fått som resultat av deltakelse i en gruppe"/>
+					<documentation value="Den endelige vurderingen som eleven har fått som resultat av deltakelse i en gruppe "/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -18005,7 +18005,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels rb="0..1" rt="+endeligKarakter"/>
+				<labels rb="0..1" rt="+endeligVurdering"/>
 				<extendedProperties/>
 				<style/>
 				<xrefs/>
@@ -21701,21 +21701,21 @@
 			<diagram xmi:id="EAID_86B46986_6C1E_43e2_A127_A5406222071D">
 				<model package="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519" localID="15" owner="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519" tpos="4"/>
 				<properties name="Medlemskap" type="Logical"/>
-				<project author="Petr Vasilev" version="1.0" created="2017-05-11 00:00:00" modified="2017-09-25 13:15:37"/>
+				<project author="Petr Vasilev" version="1.0" created="2017-05-11 00:00:00" modified="2018-03-13 11:03:17"/>
 				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=827;DocSize.cy=1169;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;ShowFQN=1;"/>
-				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;ShowFQN=1;SuppressedCompartments=;Theme=:119;SaveTag=827DF94A;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;ShowFQN=1;SuppressedCompartments=;Theme=:119;SaveTag=044FF131;"/>
 				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;cls=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
 				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
 				<extendedProperties/>
 				<elements>
-					<element geometry="Left=421;Top=50;Right=578;Bottom=138;" subject="EAID_251BD438_32B1_413e_808E_2EDA923E17B8" seqno="1" style="DUID=3CE670C4;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
+					<element geometry="Left=421;Top=50;Right=578;Bottom=151;" subject="EAID_251BD438_32B1_413e_808E_2EDA923E17B8" seqno="1" style="DUID=3CE670C4;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="Left=657;Top=212;Right=747;Bottom=282;" subject="EAID_5E4721E0_E2A0_456b_9942_4355A40F460F" seqno="2" style="DUID=14542268;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="Left=657;Top=323;Right=747;Bottom=393;" subject="EAID_8F3122A4_0BE1_49ef_BC80_55216C32E236" seqno="3" style="DUID=8344C33A;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="Left=281;Top=618;Right=399;Bottom=688;" subject="EAID_77430B9D_9F45_4876_8CE1_3B8BB1FD0CB3" seqno="4" style="DUID=2111386C;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="Left=509;Top=617;Right=627;Bottom=705;" subject="EAID_F9FEEF7D_7A1E_4f35_880E_B73534E7AF12" seqno="5" style="DUID=08305CDB;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="Left=125;Top=426;Right=259;Bottom=514;" subject="EAID_38E35381_3A3E_45c2_9CCD_72E06C6D4FB0" seqno="6" style="DUID=97114B5A;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
-					<element geometry="Left=651;Top=434;Right=751;Bottom=504;" subject="EAID_F57F57DA_5326_4e95_826E_D9F5061F8A96" seqno="7" style="DUID=06096CB8;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
-					<element geometry="Left=396;Top=435;Right=514;Bottom=505;" subject="EAID_DB6D7D47_946C_4bb0_8E04_E7B51864C485" seqno="8" style="DUID=1D17C6D9;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
+					<element geometry="Left=646;Top=434;Right=751;Bottom=504;" subject="EAID_F57F57DA_5326_4e95_826E_D9F5061F8A96" seqno="7" style="DUID=06096CB8;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
+					<element geometry="Left=396;Top=435;Right=518;Bottom=505;" subject="EAID_DB6D7D47_946C_4bb0_8E04_E7B51864C485" seqno="8" style="DUID=1D17C6D9;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="Left=88;Top=182;Right=792;Bottom=732;" subject="EAID_24361EF2_3B4B_43d6_8A25_FAE3FBE6436E" seqno="9" style="DUID=A7FD6C44;shape=rounded;"/>
 					<element geometry="Left=112;Top=202;Right=768;Bottom=553;" subject="EAID_677B6D3F_8691_4881_A3CA_330C0B421698" seqno="10" style="DUID=A78107F7;shape=rounded;"/>
 					<element geometry="EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_55C32201_02D3_4671_89FB_44B49448C68E" style="Mode=3;EOID=3CE670C4;SOID=14542268;Color=-1;LWidth=0;Hidden=0;"/>
@@ -21723,8 +21723,8 @@
 					<element geometry="EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_500904B6_AD65_4dbd_9536_B5831F90425D" style="Mode=3;EOID=3CE670C4;SOID=8344C33A;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=CX=39:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=5:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_D89D11F9_E8AB_4bda_9AF1_FD92B5410633" style="Mode=3;EOID=8344C33A;SOID=06096CB8;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=-58;SY=0;EX=64;EY=0;EDGE=4;$LLB=CX=5:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=;LMT=;LMB=;LRT=CX=32:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_F01F30E0_30DF_4a23_8648_95C652456C98" style="Mode=3;EOID=97114B5A;SOID=1D17C6D9;Color=-1;LWidth=0;Hidden=0;"/>
-					<element geometry="SX=58;SY=-25;EX=-49;EY=-25;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=CX=80:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_52975444_6970_4203_AC22_99B194ED4197" style="Mode=3;EOID=06096CB8;SOID=1D17C6D9;Color=-1;LWidth=0;Hidden=0;"/>
-					<element geometry="EX=-49;EY=20;SX=58;SY=20;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=CX=68:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_9DF49C6D_3731_4ed5_89A9_8D988FF127A6" style="Mode=3;EOID=06096CB8;SOID=1D17C6D9;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=58;SY=-25;EX=-49;EY=-25;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=CX=90:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_52975444_6970_4203_AC22_99B194ED4197" style="Mode=3;EOID=06096CB8;SOID=1D17C6D9;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="EX=-49;EY=20;SX=58;SY=20;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=CX=73:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_9DF49C6D_3731_4ed5_89A9_8D988FF127A6" style="Mode=3;EOID=06096CB8;SOID=1D17C6D9;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="EDGE=3;$LLB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=57:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=33:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=5:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_80B2D3BE_2D2B_47d1_9F63_2CBF5144EB1C" style="Mode=3;EOID=08305CDB;SOID=1D17C6D9;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="EDGE=3;$LLB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=57:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=38:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=5:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_283FCEC3_26AF_409e_A3B1_46ED80F9178A" style="Mode=3;EOID=2111386C;SOID=1D17C6D9;Color=-1;LWidth=0;Hidden=0;"/>
 				</elements>

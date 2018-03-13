@@ -1,27 +1,51 @@
 <!-- TOC -->
 
-- [v2.4.0](#v240)
+- [v2.6.0](#v260)
     - [Features](#features)
-- [v2.2.20](#v2220)
     - [Bugfixes](#bugfixes)
-- [v2.2.10](#v2210)
-    - [Bugfixes](#bugfixes-1)
-- [v2.2.0](#v220)
+- [v2.4.0](#v240)
     - [Features](#features-1)
-- [v2.0.10](#v2010)
+- [v2.2.20](#v2220)
+    - [Bugfixes](#bugfixes-1)
+- [v2.2.10](#v2210)
     - [Bugfixes](#bugfixes-2)
+- [v2.2.0](#v220)
+    - [Features](#features-2)
+- [v2.0.10](#v2010)
+    - [Bugfixes](#bugfixes-3)
 - [v2.0.0](#v200)
     - [Breaking changes](#breaking-changes)
-    - [Features](#features-2)
-    - [Bugfixes](#bugfixes-3)
-- [v1.0.1](#v101)
     - [Features](#features-3)
     - [Bugfixes](#bugfixes-4)
+- [v1.0.1](#v101)
+    - [Features](#features-4)
+    - [Bugfixes](#bugfixes-5)
     - [Known issues](#known-issues)
 - [v1.0.0](#v100)
-    - [Features](#features-4)
+    - [Features](#features-5)
 
 <!-- /TOC -->
+
+# v2.6.0
+
+|      |              |
+|------|--------------|
+| Date | `13.03.2018` |
+| Tag  | `v2.6.0`     |
+
+## Features
+
+* Administrasjon
+  * Added support for `Fravær` (Absence)
+  * Added `Fasttillegg`
+  * Added `periode` to `Beskjeftigelse`, `Fasttillegg`, and `Variabelttillegg`
+
+## Bugfixes
+
+* Administrasjon
+  * Fixed relations and members for `Beskjeftigelse` and `Variabelttillegg`
+* Utdanning
+  * Fixed regressions on `Medlemskap`
 
 # v2.4.0
 
