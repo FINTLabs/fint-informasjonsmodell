@@ -1,30 +1,46 @@
 <!-- TOC -->
 
-- [v2.6.0](#v260)
+- [v2.6.10](#v2610)
     - [Features](#features)
+- [v2.6.0](#v260)
+    - [Features](#features-1)
     - [Bugfixes](#bugfixes)
 - [v2.4.0](#v240)
-    - [Features](#features-1)
+    - [Features](#features-2)
 - [v2.2.20](#v2220)
     - [Bugfixes](#bugfixes-1)
 - [v2.2.10](#v2210)
     - [Bugfixes](#bugfixes-2)
 - [v2.2.0](#v220)
-    - [Features](#features-2)
+    - [Features](#features-3)
 - [v2.0.10](#v2010)
     - [Bugfixes](#bugfixes-3)
 - [v2.0.0](#v200)
     - [Breaking changes](#breaking-changes)
-    - [Features](#features-3)
+    - [Features](#features-4)
     - [Bugfixes](#bugfixes-4)
 - [v1.0.1](#v101)
-    - [Features](#features-4)
+    - [Features](#features-5)
     - [Bugfixes](#bugfixes-5)
     - [Known issues](#known-issues)
 - [v1.0.0](#v100)
-    - [Features](#features-5)
+    - [Features](#features-6)
 
 <!-- /TOC -->
+
+# v2.6.10
+
+|      |              |
+|------|--------------|
+| Date | `13.03.2018` |
+| Tag  | `v2.6.10`    |
+
+## Features
+
+* Utdanning
+  * Added `Skoleressurs`
+* Administrasjon
+  * Added `kategori` to `Lønnsart`
 
 # v2.6.0
 
