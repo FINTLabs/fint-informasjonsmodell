@@ -1200,9 +1200,9 @@
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000289_8A2C_4b68_9C92_BCB624B7D6B0" value="1"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000290_8A2C_4b68_9C92_BCB624B7D6B0" value="1"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_7B43AA09_0CC6_464e_A852_F8C888285140" name="feideNavn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_7B43AA09_0CC6_464e_A852_F8C888285140" name="feidenavn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000291_0CC6_464e_A852_F8C888285140" value="1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000291_0CC6_464e_A852_F8C888285140" value="0"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000292_0CC6_464e_A852_F8C888285140" value="1"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_1A0A5C66_ECF8_46ac_848F_98FE024CAC75" name="kontaktinformasjon" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
@@ -1320,7 +1320,7 @@
 							</ownedEnd>
 						</packagedElement>
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_ADF8D060_7406_4d34_BD1D_D9D8CD09DCBF" name="Skoleressurs" visibility="public">
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_B03E414C_4DA2_4589_A5E4_7C43C7C9DD88" name="feideNavn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_B03E414C_4DA2_4589_A5E4_7C43C7C9DD88" name="feidenavn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000317_4DA2_4589_A5E4_7C43C7C9DD88" value="0"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000318_4DA2_4589_A5E4_7C43C7C9DD88" value="1"/>
@@ -7688,7 +7688,7 @@
 						<tags/>
 						<xrefs/>
 					</attribute>
-					<attribute xmi:idref="EAID_7B43AA09_0CC6_464e_A852_F8C888285140" name="feideNavn" scope="Public">
+					<attribute xmi:idref="EAID_7B43AA09_0CC6_464e_A852_F8C888285140" name="feidenavn" scope="Public">
 						<initial/>
 						<documentation value="Fullt Feide-navn&#xA;&#xA;# Beskrivelse&#xA;Dette er det samme som `eduPersonPrincipalName` i Feide skjemaet. Se [eduPersonPrincipalName](https://docs.feide.no/schema/info_go/go_attributter_ch02.html#edupersonprincipalname) for utdypende informasjon.&#xA;&#xA;# Eksempel&#xA;- oleolsen@haugaland.fylkeskommune.no"/>
 						<model ea_localid="489" ea_guid="{7B43AA09-0CC6-464e-A852-F8C888285140}"/>
@@ -7696,7 +7696,7 @@
 						<coords ordered="0"/>
 						<containment containment="Not Specified" position="4"/>
 						<stereotype stereotype="writable"/>
-						<bounds lower="1" upper="1"/>
+						<bounds lower="0" upper="1"/>
 						<options/>
 						<style value="feideName"/>
 						<styleex value="volatile=0;"/>
@@ -7812,7 +7812,7 @@
 				<xrefs value="$XREFPROP=$XID={2E0C8A38-EFBD-44cf-82EF-67545CAD589E}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=hovedklasse;GUID={D08F65EF-7D48-4ae0-A557-0B0AB5BB20BC};@ENDSTEREO;$DES;$CLT={ADF8D060-7406-4d34-BD1D-D9D8CD09DCBF}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 				<extendedProperties tagged="0" package_name="Elev"/>
 				<attributes>
-					<attribute xmi:idref="EAID_B03E414C_4DA2_4589_A5E4_7C43C7C9DD88" name="feideNavn" scope="Public">
+					<attribute xmi:idref="EAID_B03E414C_4DA2_4589_A5E4_7C43C7C9DD88" name="feidenavn" scope="Public">
 						<initial/>
 						<documentation value="Fullt Feide-navn&#xA;&#xA;# Beskrivelse&#xA;Dette er det samme som `eduPersonPrincipalName` i Feide skjemaet. Se [eduPersonPrincipalName](https://docs.feide.no/schema/info_go/go_attributter_ch02.html#edupersonprincipalname) for utdypende informasjon.&#xA;&#xA;# Eksempel&#xA;- oleolsen@haugaland.fylkeskommune.no&#xA;&#xA;"/>
 						<model ea_localid="486" ea_guid="{B03E414C-4DA2-4589-A5E4-7C43C7C9DD88}"/>
