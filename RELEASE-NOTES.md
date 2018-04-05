@@ -1,44 +1,44 @@
 <!-- TOC -->
 
-- [v2.6.10](#v2610)
+- [v2.7.0](#v270)
     - [Features](#features)
 - [v2.6.0](#v260)
-    - [Features](#features-1)
+    - [Features](#features)
     - [Bugfixes](#bugfixes)
 - [v2.4.0](#v240)
-    - [Features](#features-2)
+    - [Features](#features)
 - [v2.2.20](#v2220)
-    - [Bugfixes](#bugfixes-1)
+    - [Bugfixes](#bugfixes)
 - [v2.2.10](#v2210)
-    - [Bugfixes](#bugfixes-2)
+    - [Bugfixes](#bugfixes)
 - [v2.2.0](#v220)
-    - [Features](#features-3)
+    - [Features](#features)
 - [v2.0.10](#v2010)
-    - [Bugfixes](#bugfixes-3)
+    - [Bugfixes](#bugfixes)
 - [v2.0.0](#v200)
     - [Breaking changes](#breaking-changes)
-    - [Features](#features-4)
-    - [Bugfixes](#bugfixes-4)
+    - [Features](#features)
+    - [Bugfixes](#bugfixes)
 - [v1.0.1](#v101)
-    - [Features](#features-5)
-    - [Bugfixes](#bugfixes-5)
+    - [Features](#features)
+    - [Bugfixes](#bugfixes)
     - [Known issues](#known-issues)
 - [v1.0.0](#v100)
-    - [Features](#features-6)
+    - [Features](#features)
 
 <!-- /TOC -->
 
-# v2.6.10
+# v2.7.0
 
 |      |              |
 |------|--------------|
-| Date | `13.03.2018` |
-| Tag  | `v2.6.10`    |
+| Date | `05.04.2018` |
+| Tag  | `v2.7.0`    |
 
 ## Features
 
 * Utdanning
-  * Added `Skoleressurs`
+  * Added support for feidenavn for both students and faculty/staff
 * Administrasjon
   * Added `kategori` to `Lønnsart`
 
