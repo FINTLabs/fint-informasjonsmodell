@@ -1,44 +1,68 @@
 <!-- TOC -->
 
+- [v2.8.0](#v280)
+    - [Features](#features)
+    - [Bugfixes](#bugfixes)
 - [v2.7.0](#v270)
-    - [Features](#features)
+    - [Features](#features-1)
 - [v2.6.0](#v260)
-    - [Features](#features)
-    - [Bugfixes](#bugfixes)
+    - [Features](#features-2)
+    - [Bugfixes](#bugfixes-1)
 - [v2.4.0](#v240)
-    - [Features](#features)
+    - [Features](#features-3)
 - [v2.2.20](#v2220)
-    - [Bugfixes](#bugfixes)
+    - [Bugfixes](#bugfixes-2)
 - [v2.2.10](#v2210)
-    - [Bugfixes](#bugfixes)
+    - [Bugfixes](#bugfixes-3)
 - [v2.2.0](#v220)
-    - [Features](#features)
+    - [Features](#features-4)
 - [v2.0.10](#v2010)
-    - [Bugfixes](#bugfixes)
+    - [Bugfixes](#bugfixes-4)
 - [v2.0.0](#v200)
     - [Breaking changes](#breaking-changes)
-    - [Features](#features)
-    - [Bugfixes](#bugfixes)
+    - [Features](#features-5)
+    - [Bugfixes](#bugfixes-5)
 - [v1.0.1](#v101)
-    - [Features](#features)
-    - [Bugfixes](#bugfixes)
+    - [Features](#features-6)
+    - [Bugfixes](#bugfixes-6)
     - [Known issues](#known-issues)
 - [v1.0.0](#v100)
-    - [Features](#features)
+    - [Features](#features-7)
 
 <!-- /TOC -->
+
+# v2.8.0
+
+|      |              |
+|------|--------------|
+| Date | `15.05.2018` |
+| Tag  | `v2.8.0`     |
+
+## Features
+
+* Felles
+  * Added `Kontaktperson`
+* Administrasjon
+  * Added `ansiennitet` to `Personalressurs` 
+
+## Bugfixes
+
+* Felles
+  * Updated documentation for `fødselsdato` on `Person`
+* Administrasjon
+  * Fixed multiplicity of `kategori` on `Lønnsart`
 
 # v2.7.0
 
 |      |              |
 |------|--------------|
 | Date | `05.04.2018` |
-| Tag  | `v2.7.0`    |
+| Tag  | `v2.7.0`     |
 
 ## Features
 
 * Utdanning
-  * Added support for feidenavn for both students and faculty/staff
+  * Added support for `feidenavn` for both students (`Elev`) and faculty/staff (`Skoleressurs`)
 * Administrasjon
   * Added `kategori` to `Lønnsart`
 
