@@ -7015,7 +7015,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_7E332DEF_436E_498b_AEA5_6E6F35663F71" name="prosent" scope="Public">
 						<initial/>
-						<documentation value="Prosent fraværende, i hundredels prosent.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Andel av ansettelsesprosent den ansatte er fraværende.  Dersom fraværet er knyttet til flere arbeidsforhold, gjelder prosenten for summen av ansettelsesprosentene.&#xA;&#xA;# Eksempel&#xA;&#xA;- Helt sykemeldt fra 100% stilling:&#xA;  - 10000&#xA;- 50% permisjon fra 80% stilling:&#xA;  - 4000&#xA;- 80% gradert sykemelding fra to stillinger på 20% hver&#xA;  - 3200&#xA;"/>
+						<documentation value="Prosent fraværende, i hundredels prosent.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Grad av sykemelding for arbeidsforhold. &#xA;&#xA;# Eksempel&#xA;&#xA;- Helt sykemeldt:&#xA;  - 10000&#xA;- 50% permisjon:&#xA;  - 5000&#xA;"/>
 						<model ea_localid="476" ea_guid="{7E332DEF-436E-498b-AEA5-6E6F35663F71}"/>
 						<properties type="long" derived="0" collection="false" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -17631,7 +17631,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;"/>
-					<documentation value="Arbeidsforholdene fraværet gjelder for."/>
+					<documentation value="Arbeidsforholdet fraværet gjelder for.&#xA;&#xA;Flere arbeidsforhold kan kun angis dersom det gjelder samme personalressurs, og type fravær og prosent fravær er identiske."/>
 					<xrefs/>
 					<tags/>
 				</target>
