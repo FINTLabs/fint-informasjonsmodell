@@ -1211,7 +1211,7 @@
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_7850C80E_8A2C_4b68_9C92_BCB624B7D6B0" name="elevnummer" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000285_8A2C_4b68_9C92_BCB624B7D6B0" value="1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000285_8A2C_4b68_9C92_BCB624B7D6B0" value="0"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000286_8A2C_4b68_9C92_BCB624B7D6B0" value="1"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_7B43AA09_0CC6_464e_A852_F8C888285140" name="feidenavn" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
@@ -1226,7 +1226,7 @@
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_B88DD692_31B7_4782_819C_3802BEB62BCD" name="systemId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000291_31B7_4782_819C_3802BEB62BCD" value="0"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000291_31B7_4782_819C_3802BEB62BCD" value="1"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000292_31B7_4782_819C_3802BEB62BCD" value="1"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst8BC158_32A2_470b_AA56_E9BEB8EB16E2" name="person" visibility="public" association="EAID_998BC158_32A2_470b_AA56_E9BEB8EB16E2" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
@@ -4219,7 +4219,6 @@
 		<thecustomprofile:hovedklasse base_Class="EAID_CBFC8E03_81C3_467d_B0CC_4842D1B17F8A"/>
 		<thecustomprofile:writable base_Property="EAID_1ACEE78F_D6BD_40fc_A667_2ABFF8E3D968"/>
 		<thecustomprofile:writable base_Property="EAID_7B43AA09_0CC6_464e_A852_F8C888285140"/>
-		<thecustomprofile:writable base_Property="EAID_B88DD692_31B7_4782_819C_3802BEB62BCD"/>
 		<thecustomprofile:hovedklasse base_Class="EAID_A8A7DF7A_AA87_4bf3_B240_FC559F3057DF"/>
 		<thecustomprofile:hovedklasse base_Class="EAID_325D3C9A_7698_41ca_8D30_5ECE299439F7"/>
 		<thecustomprofile:hovedklasse base_Class="EAID_DB6D7D47_946C_4bb0_8E04_E7B51864C485"/>
@@ -6982,7 +6981,7 @@
 						<style/>
 						<styleex value="volatile=0;union=0;"/>
 						<tags/>
-						<xrefs value="$XREFPROP=$XID={e733a8ec-d57d-bbe5-f2b7-117587b891ec}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={D1BFA2AA-7F84-4c12-AF8A-92F1BED88838}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={D1691DBD-19FE-4ac1-9B9B-F6BEE29CD0AE}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=writable;GUID={A5E1434C-002D-4000-AD41-4EDB07D5BEB2};@ENDSTEREO;$DES;$CLT={D1BFA2AA-7F84-4c12-AF8A-92F1BED88838}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+						<xrefs value="$XREFPROP=$XID={D1691DBD-19FE-4ac1-9B9B-F6BEE29CD0AE}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=writable;GUID={A5E1434C-002D-4000-AD41-4EDB07D5BEB2};@ENDSTEREO;$DES;$CLT={D1BFA2AA-7F84-4c12-AF8A-92F1BED88838}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={e733a8ec-d57d-bbe5-f2b7-117587b891ec}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={D1BFA2AA-7F84-4c12-AF8A-92F1BED88838}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 				</attributes>
 				<links>
@@ -7044,7 +7043,7 @@
 						<style/>
 						<styleex/>
 						<tags/>
-						<xrefs value="$XREFPROP=$XID={EAC7415C-1729-4c74-B8CD-E809583B5B10}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={5C21485B-9655-4a87-A9E0-EBF7A0B4CE5D}$CLT;$ENDXREF;$XREFPROP=$XID={81E22EC4-91FE-4bae-BB98-3E92163B4728}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=writable;GUID={A5E1434C-002D-4000-AD41-4EDB07D5BEB2};@ENDSTEREO;$DES;$CLT={5C21485B-9655-4a87-A9E0-EBF7A0B4CE5D}$CLT;$ENDXREF;"/>
+						<xrefs value="$XREFPROP=$XID={81E22EC4-91FE-4bae-BB98-3E92163B4728}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=writable;GUID={A5E1434C-002D-4000-AD41-4EDB07D5BEB2};@ENDSTEREO;$DES;$CLT={5C21485B-9655-4a87-A9E0-EBF7A0B4CE5D}$CLT;$ENDXREF;$XREFPROP=$XID={EAC7415C-1729-4c74-B8CD-E809583B5B10}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={5C21485B-9655-4a87-A9E0-EBF7A0B4CE5D}$CLT;$ENDXREF;"/>
 					</attribute>
 					<attribute xmi:idref="EAID_7E332DEF_436E_498b_AEA5_6E6F35663F71" name="prosent" scope="Public">
 						<initial/>
@@ -7108,7 +7107,7 @@
 						<style/>
 						<styleex value="volatile=0;union=0;"/>
 						<tags/>
-						<xrefs value="$XREFPROP=$XID={E052D76D-22B3-4d7d-A479-BD0C0B6098D4}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=writable;GUID={A5E1434C-002D-4000-AD41-4EDB07D5BEB2};@ENDSTEREO;$DES;$CLT={891265CD-6972-4b26-8022-91939F7B93C4}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={c15a65ab-e899-45fc-cd5a-4ae4bbed1e0e}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={891265CD-6972-4b26-8022-91939F7B93C4}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+						<xrefs value="$XREFPROP=$XID={c15a65ab-e899-45fc-cd5a-4ae4bbed1e0e}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={891265CD-6972-4b26-8022-91939F7B93C4}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={E052D76D-22B3-4d7d-A479-BD0C0B6098D4}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=writable;GUID={A5E1434C-002D-4000-AD41-4EDB07D5BEB2};@ENDSTEREO;$DES;$CLT={891265CD-6972-4b26-8022-91939F7B93C4}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 					<attribute xmi:idref="EAID_BC1432D5_2116_4c6e_A27D_6E755C33C7F5" name="attestert" scope="Public">
 						<initial/>
@@ -7213,7 +7212,7 @@
 						<style/>
 						<styleex value="volatile=0;union=0;"/>
 						<tags/>
-						<xrefs value="$XREFPROP=$XID={67474362-287A-4927-9BEA-3A95A4ECB3D2}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=writable;GUID={A5E1434C-002D-4000-AD41-4EDB07D5BEB2};@ENDSTEREO;$DES;$CLT={CDF7BCA9-E842-4181-B035-7E2956E41D00}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={41ad9cd9-ab6e-c054-9ffa-0d2102a0d613}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={CDF7BCA9-E842-4181-B035-7E2956E41D00}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+						<xrefs value="$XREFPROP=$XID={41ad9cd9-ab6e-c054-9ffa-0d2102a0d613}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={CDF7BCA9-E842-4181-B035-7E2956E41D00}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={67474362-287A-4927-9BEA-3A95A4ECB3D2}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=writable;GUID={A5E1434C-002D-4000-AD41-4EDB07D5BEB2};@ENDSTEREO;$DES;$CLT={CDF7BCA9-E842-4181-B035-7E2956E41D00}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 				</attributes>
 				<links>
@@ -7249,7 +7248,7 @@
 						<style/>
 						<styleex/>
 						<tags/>
-						<xrefs value="$XREFPROP=$XID={d3d9b822-e031-6229-f1b7-5507837ebf86}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={17C922F0-5E3D-446d-ADE9-EAEDCD12E253}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={24EBCBAD-1F5C-4f79-B050-9A593F9A4B36}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=writable;GUID={A5E1434C-002D-4000-AD41-4EDB07D5BEB2};@ENDSTEREO;$DES;$CLT={17C922F0-5E3D-446d-ADE9-EAEDCD12E253}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+						<xrefs value="$XREFPROP=$XID={24EBCBAD-1F5C-4f79-B050-9A593F9A4B36}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=writable;GUID={A5E1434C-002D-4000-AD41-4EDB07D5BEB2};@ENDSTEREO;$DES;$CLT={17C922F0-5E3D-446d-ADE9-EAEDCD12E253}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={d3d9b822-e031-6229-f1b7-5507837ebf86}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={17C922F0-5E3D-446d-ADE9-EAEDCD12E253}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 					<attribute xmi:idref="EAID_D9CEFE1E_642E_4e59_9E8C_DE65DD139056" name="beløp" scope="Public">
 						<initial/>
@@ -7664,7 +7663,7 @@
 						<coords ordered="0"/>
 						<containment containment="Not Specified" position="2"/>
 						<stereotype/>
-						<bounds lower="1" upper="1"/>
+						<bounds lower="0" upper="1"/>
 						<options/>
 						<style value="studentId"/>
 						<styleex value="volatile=0;union=0;"/>
@@ -7709,12 +7708,12 @@
 						<coords ordered="0"/>
 						<containment containment="Not Specified" position="3"/>
 						<stereotype/>
-						<bounds lower="0" upper="1"/>
+						<bounds lower="1" upper="1"/>
 						<options/>
 						<style value="systemId"/>
 						<styleex value="volatile=0;union=0;"/>
 						<tags/>
-						<xrefs value="$XREFPROP=$XID={DA87372D-C5B8-4740-99D3-24DE283880E6}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=writable;GUID={A5E1434C-002D-4000-AD41-4EDB07D5BEB2};@ENDSTEREO;$DES;$CLT={B88DD692-31B7-4782-819C-3802BEB62BCD}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+						<xrefs/>
 					</attribute>
 				</attributes>
 				<links>
