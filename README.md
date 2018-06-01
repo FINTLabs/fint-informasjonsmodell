@@ -27,7 +27,16 @@ Klienter og generert Java og C#-kode skal i utgangspunktet versjoneres likt som 
 1. Åpne `FINT-informasjonsmodeller.eap` i Sparx Enterprise Architect
 1. Gjør ønskede endringer
 1. Pass på at Enterprise Architect er satt opp med `windows-1252` som tegnsett for eksport til XMI.
-1. Eksporter prosjekt til FINT-informasjonsmodell.xml ved å gå til følgende meny: _Model_ -> _Import/Export_ -> _Export Package for XMI_ (**`Ctrl + Alt + E`**). Velg _Export Type_ `XMI 2.1`.
+1. Eksporter prosjekt til `FINT-informasjonsmodell.xml` ved å gå til følgende meny: _Model_ -> _Import/Export_ -> _Export Package for XMI_ (**`Ctrl + Alt + E`**). Velg _Export Type_ `XMI 2.1`.
+
+### Sjekkliste for endringer i modellen
+
+  1. Dokumentasjon på felter og relasjoner
+  2. Multiplisitet: Nye obligatoriske felter og relasjoner er ikke bakoverkompatible
+  3. Relasjoner kan kun gå til hovedklasser.
+  4. Alle hovedklasser må ha minst én Identifikator.
+  5. Stereotype på hovedklasser og skrivbare felter.
+  6. Retning og multiplisitet på relasjoner.  Enveis eller toveis? 
 
 ## Navnekonvensjoner
 
