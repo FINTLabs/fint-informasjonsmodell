@@ -1,35 +1,71 @@
 <!-- TOC -->
 
-- [v2.8.0](#v280)
+- [v3.0.0](#v300)
+    - [Breaking changes](#breaking-changes)
     - [Features](#features)
     - [Bugfixes](#bugfixes)
-- [v2.7.0](#v270)
+- [v2.8.0](#v280)
     - [Features](#features-1)
-- [v2.6.0](#v260)
-    - [Features](#features-2)
     - [Bugfixes](#bugfixes-1)
-- [v2.4.0](#v240)
+- [v2.7.0](#v270)
+    - [Features](#features-2)
+- [v2.6.0](#v260)
     - [Features](#features-3)
-- [v2.2.20](#v2220)
     - [Bugfixes](#bugfixes-2)
-- [v2.2.10](#v2210)
-    - [Bugfixes](#bugfixes-3)
-- [v2.2.0](#v220)
+- [v2.4.0](#v240)
     - [Features](#features-4)
-- [v2.0.10](#v2010)
+- [v2.2.20](#v2220)
+    - [Bugfixes](#bugfixes-3)
+- [v2.2.10](#v2210)
     - [Bugfixes](#bugfixes-4)
-- [v2.0.0](#v200)
-    - [Breaking changes](#breaking-changes)
+- [v2.2.0](#v220)
     - [Features](#features-5)
+- [v2.0.10](#v2010)
     - [Bugfixes](#bugfixes-5)
-- [v1.0.1](#v101)
+- [v2.0.0](#v200)
+    - [Breaking changes](#breaking-changes-1)
     - [Features](#features-6)
     - [Bugfixes](#bugfixes-6)
+- [v1.0.1](#v101)
+    - [Features](#features-7)
+    - [Bugfixes](#bugfixes-7)
     - [Known issues](#known-issues)
 - [v1.0.0](#v100)
-    - [Features](#features-7)
+    - [Features](#features-8)
 
 <!-- /TOC -->
+
+# v3.0.0
+
+|      |              |
+|------|--------------|
+| Date | `07.06.2018` |
+| Tag  | `v3.0.0`     |
+
+## Breaking changes
+
+* Administrasjon
+  * `Fastlønn` and `Variabellønn` have been revised.  
+    * Instead of collections containing multiple transactions they have been remodeled to represent individual transactions.
+    * `Beskjeftigelse` is incorporated into `Fastlønn`
+    * `Variabelttillegg` is incorporated into `Variabellønn`
+    * The class `Fasttillegg` has been introduced to represent the `fasttillegg` attribute previously found on `Fastlønn`
+* Utdanning
+  * `Vurdering` has been moved to the package `Vurdering` and is now `hovedklasse` with `systemId`.
+  * `Elev` now has an optional `elevnummer` and mandatory `systemId`.
+
+## Features
+
+* Administrasjon
+  * `systemId` is now optional on `Fastlønn`, `Variabellønn` and `Fravær`, as these classes are used to create new information in the back end system.
+* Ressurser
+  * Added `Identitet` and `Rettighet` under `Tilgangsstyring` for identity and access management.
+
+## Bugfixes
+
+* Administrasjon
+  * Fixed multiplicity for `ansiennitet`.  The field is now optional.
+  * Fixed documentation for `Fravær`.
 
 # v2.8.0
 
