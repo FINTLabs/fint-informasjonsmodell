@@ -4292,8 +4292,9 @@
 		<thecustomprofile:writable base_Property="EAID_7B43AA09_0CC6_464e_A852_F8C888285140"/>
 		<thecustomprofile:hovedklasse base_Class="EAID_A8A7DF7A_AA87_4bf3_B240_FC559F3057DF"/>
 		<thecustomprofile:hovedklasse base_Class="EAID_325D3C9A_7698_41ca_8D30_5ECE299439F7"/>
-		<thecustomprofile:DEPRECATED base_Class="EAID_DB6D7D47_946C_4bb0_8E04_E7B51864C485" DEPRECATED="DEPRECATED"/>
+		<thecustomprofile:DEPRECATED base_Class="EAID_DB6D7D47_946C_4bb0_8E04_E7B51864C485" DEPRECATED="Medlemskap uttrykkes som relasjoner direkte mellom Undervisningsforhold og Gruppe."/>
 		<thecustomprofile:hovedklasse base_Class="EAID_DB6D7D47_946C_4bb0_8E04_E7B51864C485"/>
+		<thecustomprofile:DEPRECATED base_Property="EAID_9E7370A9_7D03_4300_8BF2_31B85C91F022" DEPRECATED="DEPRECATED"/>
 		<thecustomprofile:DEPRECATED base_Association="EAID_283FCEC3_26AF_409e_A3B1_46ED80F9178A" DEPRECATED="DEPRECATED"/>
 		<thecustomprofile:DEPRECATED base_Association="EAID_52975444_6970_4203_AC22_99B194ED4197" DEPRECATED="DEPRECATED"/>
 		<thecustomprofile:DEPRECATED base_Association="EAID_80B2D3BE_2D2B_47d1_9F63_2CBF5144EB1C" DEPRECATED="DEPRECATED"/>
@@ -7836,7 +7837,7 @@
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags>
-					<tag xmi:id="EAID_D46FE692_180B_481b_8A93_451F865E66F7" name="DEPRECATED" value="DEPRECATED" modelElement="EAID_DB6D7D47_946C_4bb0_8E04_E7B51864C485"/>
+					<tag xmi:id="EAID_D46FE692_180B_481b_8A93_451F865E66F7" name="DEPRECATED" value="Medlemskap uttrykkes som relasjoner direkte mellom Undervisningsforhold og Gruppe." modelElement="EAID_DB6D7D47_946C_4bb0_8E04_E7B51864C485"/>
 				</tags>
 				<xrefs value="$XREFPROP=$XID={a30fdd29-9ae7-38cc-805a-7d6c846c349e}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=hovedklasse;GUID={D08F65EF-7D48-4ae0-A557-0B0AB5BB20BC};@ENDSTEREO;$DES;$CLT={DB6D7D47-946C-4bb0-8E04-E7B51864C485}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 				<extendedProperties tagged="0" package_name="Elev"/>
@@ -7853,7 +7854,9 @@
 						<options/>
 						<style/>
 						<styleex value="volatile=0;union=0;"/>
-						<tags/>
+						<tags>
+							<tag xmi:id="EAID_3A40A935_4C23_4c1d_8A52_39BFE916EDAC" name="DEPRECATED" value="DEPRECATED"/>
+						</tags>
 						<xrefs/>
 					</attribute>
 				</attributes>
@@ -8389,8 +8392,8 @@
 			</element>
 			<element xmi:idref="EAID_F57F57DA_5326_4e95_826E_D9F5061F8A96" xmi:type="uml:Class" name="Vurdering" scope="public">
 				<model package="EAPK_E2B2497F_0C65_48d0_B8AF_87F52A1B6EFC" tpos="0" ea_localid="120" ea_eleType="element"/>
-				<properties documentation="Karakterer og andre vurderingsuttrykk for deltakelse av en elev i en gruppe. Dette kan innbære både endelig og foreløpende karakter. &#xA;&#xA;# Referanser&#xA;&#xA;* UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)&#xA;* Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)&#xA;* Forskrift til opplæringslova § 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#§3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#§3-4)" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 15:01:33" modified="2018-05-31 10:32:13" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<properties documentation="Karakterer og andre vurderingsuttrykk.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Vurdering gis for deltakelse av en elev i en gruppe. Dette kan innbære både endelig og foreløpende vurdering.&#xA;&#xA;Dersom vurderingen er resultat av deltakelse i en Gruppe skal denne angis som en relasjon.&#xA;&#xA;# Referanser&#xA;&#xA;* UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)&#xA;* Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)&#xA;* Forskrift til opplæringslova § 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#§3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#§3-4)" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-04 15:01:33" modified="2018-08-31 12:02:03" complexity="1" status="Proposed" keywords="hovedklasse"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -19485,7 +19488,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;"/>
-					<documentation/>
+					<documentation value="Type fravær."/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -19590,7 +19593,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="Undervisningsgruppe eller eksamensgruppe hvor vurderingen er foretatt i."/>
+					<documentation value="Undervisningsgruppe eller eksamensgruppe hvor vurderingen er foretatt.&#xA;&#xA;Dersom vurderingen gjelder orden eller atferd skal relasjon til Gruppe ikke angis."/>
 					<xrefs/>
 					<tags/>
 				</target>
