@@ -1,39 +1,77 @@
 <!-- TOC -->
 
-- [v3.0.0](#v300)
-    - [Breaking changes](#breaking-changes)
+- [v3.1.0](#v310)
+    - [Deprecated](#deprecated)
     - [Features](#features)
     - [Bugfixes](#bugfixes)
-- [v2.8.0](#v280)
+- [v3.0.0](#v300)
+    - [Breaking changes](#breaking-changes)
     - [Features](#features-1)
     - [Bugfixes](#bugfixes-1)
-- [v2.7.0](#v270)
+- [v2.8.0](#v280)
     - [Features](#features-2)
-- [v2.6.0](#v260)
-    - [Features](#features-3)
     - [Bugfixes](#bugfixes-2)
-- [v2.4.0](#v240)
+- [v2.7.0](#v270)
+    - [Features](#features-3)
+- [v2.6.0](#v260)
     - [Features](#features-4)
-- [v2.2.20](#v2220)
     - [Bugfixes](#bugfixes-3)
-- [v2.2.10](#v2210)
-    - [Bugfixes](#bugfixes-4)
-- [v2.2.0](#v220)
+- [v2.4.0](#v240)
     - [Features](#features-5)
-- [v2.0.10](#v2010)
+- [v2.2.20](#v2220)
+    - [Bugfixes](#bugfixes-4)
+- [v2.2.10](#v2210)
     - [Bugfixes](#bugfixes-5)
+- [v2.2.0](#v220)
+    - [Features](#features-6)
+- [v2.0.10](#v2010)
+    - [Bugfixes](#bugfixes-6)
 - [v2.0.0](#v200)
     - [Breaking changes](#breaking-changes-1)
-    - [Features](#features-6)
-    - [Bugfixes](#bugfixes-6)
-- [v1.0.1](#v101)
     - [Features](#features-7)
     - [Bugfixes](#bugfixes-7)
+- [v1.0.1](#v101)
+    - [Features](#features-8)
+    - [Bugfixes](#bugfixes-8)
     - [Known issues](#known-issues)
 - [v1.0.0](#v100)
-    - [Features](#features-8)
+    - [Features](#features-9)
 
 <!-- /TOC -->
+
+|      |              |
+|------|--------------|
+| Date | `18.09.2018` |
+| Tag  | `v3.1.0`     |
+
+# v3.1.0
+
+## Deprecated
+
+*Note:* Deprecated classes, attributes and relations will be removed in the next major release.
+
+* Utdanning
+  * The class `Medlemskap` has been deprecated.  
+    Group membership is instead represented as relations between `Elevforhold` or `Undervisningsforhold` and the 
+    various groups.
+
+## Features
+
+* Utdanning
+  * Relations are expressed between concrete classes instead of abstract classes.  This makes relations more explicit,
+    and simplifies the way these relations are consumed.
+  * Added relation from `Skole` to groups.
+  * Added relation between `Fag` and `Programområde`.
+  * Added bidirectional relation between `Elevforhold` and `Vurdering` and `Fravær`.
+    * A new attribute `endelig` on `Vurdering` indicates final assesments.
+  * Relations from `Vurdering` and `Fravær` to `Undervisningsgruppe` and `Eksamensgruppe` are used to indicate
+    absence and assessments in context of these groups.
+
+## Bugfixes
+
+* Utdanning
+  * Fixed multiplicity on relation to `Elevkategori` from `Elevforhold`.
+  * Documentation updates.
 
 # v3.0.0
 
