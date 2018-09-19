@@ -41,7 +41,7 @@
 
 |      |              |
 |------|--------------|
-| Date | `18.09.2018` |
+| Date | `20.09.2018` |
 | Tag  | `v3.1.0`     |
 
 # v3.1.0
@@ -63,7 +63,7 @@
   * Added relation from `Skole` to groups.
   * Added relation between `Fag` and `Programområde`.
   * Added bidirectional relation between `Elevforhold` and `Vurdering` and `Fravær`.
-    * A new attribute `endelig` on `Vurdering` indicates final assesments.
+    * A new attribute `endelig` on `Vurdering` indicates final assessments.
   * Relations from `Vurdering` and `Fravær` to `Undervisningsgruppe` and `Eksamensgruppe` are used to indicate
     absence and assessments in context of these groups.
 
