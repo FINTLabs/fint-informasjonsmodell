@@ -4445,12 +4445,17 @@
 		<thecustomprofile:writable base_Property="EAID_D35BA343_83D4_475a_AF24_BA187C991295"/>
 		<thecustomprofile:md_guid base_Class="EAID_88C124DF_F3E2_435a_BF1C_B4077CD6C1ED" md_guid="_18_4_13ab03b9_1472030486249_449620_4388"/>
 		<thecustomprofile:writable base_Property="EAID_2D043D4E_C01A_4c73_920B_339327DCCD09"/>
+		<thecustomprofile:hovedklasse base_Class="EAID_87CE36A4_9A73_4358_9B57_C708C02AC9B0"/>
+		<thecustomprofile:hovedklasse base_Class="EAID_714AAE78_08EC_46c0_BB7D_FF1D28E9E799"/>
 		<GML:DataType base_Class="EAID_5753C673_8AF7_4b23_A24C_4A52CA9E5772" isCollection="false" noPropertyType="false"/>
+		<thecustomprofile:hovedklasse base_Class="EAID_5753C673_8AF7_4b23_A24C_4A52CA9E5772"/>
 		<thecustomprofile:md_guid base_Class="EAID_5753C673_8AF7_4b23_A24C_4A52CA9E5772" md_guid="_18_4_13ab03b9_1472030798926_573582_4789"/>
 		<thecustomprofile:SOSI_datatype base_Class="EAID_563D7154_F6F1_489f_91E4_2450E84E3338" SOSI_datatype="T"/>
 		<thecustomprofile:codeList base_Class="EAID_563D7154_F6F1_489f_91E4_2450E84E3338" codeList="http://skjema.geonorge.no/legg_inn_riktig_url"/>
+		<thecustomprofile:hovedklasse base_Class="EAID_563D7154_F6F1_489f_91E4_2450E84E3338"/>
 		<thecustomprofile:SOSI_datatype base_Class="EAID_EAF1A9FD_25DD_4073_B011_E7939366EDA4" SOSI_datatype="T"/>
 		<thecustomprofile:codeList base_Class="EAID_EAF1A9FD_25DD_4073_B011_E7939366EDA4" codeList="http://skjema.geonorge.no/legg_inn_riktig_url"/>
+		<thecustomprofile:hovedklasse base_Class="EAID_EAF1A9FD_25DD_4073_B011_E7939366EDA4"/>
 		<thecustomprofile:md_guid base_Class="EAID_16909330_2704_4b6a_A79C_D85F82732282" md_guid="_18_4_13ab03b9_1472030486460_881186_4393"/>
 		<GML:DataType base_Class="EAID_7C37FE86_403B_4a89_AC8F_6EAA9D7A7EF2" isCollection="false" noPropertyType="false"/>
 		<thecustomprofile:md_guid base_Class="EAID_7C37FE86_403B_4a89_AC8F_6EAA9D7A7EF2" md_guid="_18_4_13ab03b9_1472030484220_192011_4334"/>
@@ -6337,12 +6342,12 @@
 			</element>
 			<element xmi:idref="EAID_87CE36A4_9A73_4358_9B57_C708C02AC9B0" xmi:type="uml:Class" name="Fylke" scope="public">
 				<model package="EAPK_A6FB82B8_E60E_47f1_8C48_6941E65D4D04" tpos="0" ea_localid="135" ea_eleType="element"/>
-				<properties documentation="Liste over Norges fylker&#xA;&#xA;# Referanser&#xA;&#xA;* &quot;SSB: Standard for fylkesinndeling&quot;:http://www.ssb.no/klass/#!/klassifikasjoner/104&#xA;* &quot;data.norge.no&quot;:&#xA;http://data.norge.no/data/statistisk-sentralbyr%C3%A5/fylkesinndeling" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-26 11:40:00" modified="2017-08-03 13:41:36" complexity="1" status="Proposed"/>
+				<properties documentation="Liste over Norges fylker&#xA;&#xA;# Referanser&#xA;&#xA;* &quot;SSB: Standard for fylkesinndeling&quot;:http://www.ssb.no/klass/#!/klassifikasjoner/104&#xA;* &quot;data.norge.no&quot;:&#xA;http://data.norge.no/data/statistisk-sentralbyr%C3%A5/fylkesinndeling" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-26 11:40:00" modified="2018-10-30 08:48:16" complexity="1" status="Proposed"/>
 				<code gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
-				<xrefs/>
+				<xrefs value="$XREFPROP=$XID={BBE7E916-485C-4965-B7A4-FF2EB4DC1E5D}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=hovedklasse;GUID={D08F65EF-7D48-4ae0-A557-0B0AB5BB20BC};@ENDSTEREO;$DES;$CLT={87CE36A4-9A73-4358-9B57-C708C02AC9B0}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 				<extendedProperties tagged="0" package_name="Kodeverk"/>
 				<links>
 					<Generalization xmi:id="EAID_B53BE6FD_F63B_47f1_A9C9_2DC278660B3F" start="EAID_87CE36A4_9A73_4358_9B57_C708C02AC9B0" end="EAID_251BD438_32B1_413e_808E_2EDA923E17B8"/>
@@ -6352,12 +6357,12 @@
 			</element>
 			<element xmi:idref="EAID_714AAE78_08EC_46c0_BB7D_FF1D28E9E799" xmi:type="uml:Class" name="Kommune" scope="public">
 				<model package="EAPK_A6FB82B8_E60E_47f1_8C48_6941E65D4D04" tpos="0" ea_localid="136" ea_eleType="element"/>
-				<properties documentation="Liste over Norges kommuner&#xA;&#xA;Kilde:&#xA;&#xA;* &quot;SSB. Kommuneinndeling 2017&quot;:http://www.ssb.no/klass/#!/klassifikasjoner/131&#xA;* &quot;data.norge.no om kommuneinndeling&quot;:http://data.norge.no/data/statistisk-sentralbyr%C3%A5/kommuneinndeling&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-26 11:40:06" modified="2017-08-03 13:41:38" complexity="1" status="Proposed"/>
+				<properties documentation="Liste over Norges kommuner&#xA;&#xA;Kilde:&#xA;&#xA;* &quot;SSB. Kommuneinndeling 2017&quot;:http://www.ssb.no/klass/#!/klassifikasjoner/131&#xA;* &quot;data.norge.no om kommuneinndeling&quot;:http://data.norge.no/data/statistisk-sentralbyr%C3%A5/kommuneinndeling&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Petr Vasilev" version="1.0" phase="1.0" created="2017-04-26 11:40:06" modified="2018-10-30 08:48:22" complexity="1" status="Proposed"/>
 				<code gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
-				<xrefs/>
+				<xrefs value="$XREFPROP=$XID={FD593E7D-95F4-446d-BBD7-481D611F1779}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=hovedklasse;GUID={D08F65EF-7D48-4ae0-A557-0B0AB5BB20BC};@ENDSTEREO;$DES;$CLT={714AAE78-08EC-46c0-BB7D-FF1D28E9E799}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 				<extendedProperties tagged="0" package_name="Kodeverk"/>
 				<links>
 					<Association xmi:id="EAID_BEA2A64C_1850_449c_BE3A_DB627E096E1F" start="EAID_714AAE78_08EC_46c0_BB7D_FF1D28E9E799" end="EAID_87CE36A4_9A73_4358_9B57_C708C02AC9B0"/>
@@ -6380,8 +6385,8 @@
 			</element>
 			<element xmi:idref="EAID_5753C673_8AF7_4b23_A24C_4A52CA9E5772" xmi:type="uml:Class" name="Kjønn" scope="public">
 				<model package="EAPK_024D708A_A775_467f_8320_556FD674F915" tpos="0" ea_localid="64" ea_eleType="element"/>
-				<properties documentation="Liste over verdier for kjønn basert på ISO/IEC 5218.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Liste over verdier for kjønn basert på ISO/IEC 5218.&#xA;&#xA;Når vi i daglig tale prater om kjønn presiserer vi sjelden hva vi mener. Avhengig av sammenheng kan vi mene enten biologisk, sosialt, mentalt eller juridisk kjønn. Kjønn kan med andre ord betraktes som et samlebegrep.&#xA;Kilde: llh.no  &#xA;&#xA;# Referanser&#xA;&#xA;* [FINT api for ISO5218](https://api.felleskomponent.no/felles/kodeverk/iso/5218)&#xA;&#xA;* [ISO/IEC 5218 standard](http://standards.iso.org/ittf/PubliclyAvailableStandards/c036266_ISO_IEC_5218_2004(E_F).zip)&#xA;* [Wiki artikkel](https://en.wikipedia.org/wiki/ISO/IEC_5218)&#xA;&#xA;# Eksempler&#xA;&#xA;    0 = uvisst (not known)&#xA;    1 = mann (male)&#xA;    2 = kvinne (female)&#xA;    9 = gjelder ikke (not applicable)&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Tor Kjetil" version="1.0" phase="1.0" created="2016-08-24 12:28:32" modified="2017-06-22 13:48:07" complexity="1" status="Proposed"/>
+				<properties documentation="Liste over verdier for kjønn basert på ISO/IEC 5218.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Liste over verdier for kjønn basert på ISO/IEC 5218.&#xA;&#xA;Når vi i daglig tale prater om kjønn presiserer vi sjelden hva vi mener. Avhengig av sammenheng kan vi mene enten biologisk, sosialt, mentalt eller juridisk kjønn. Kjønn kan med andre ord betraktes som et samlebegrep.&#xA;Kilde: llh.no  &#xA;&#xA;# Referanser&#xA;&#xA;* [FINT api for ISO5218](https://api.felleskomponent.no/felles/kodeverk/iso/5218)&#xA;&#xA;* [ISO/IEC 5218 standard](http://standards.iso.org/ittf/PubliclyAvailableStandards/c036266_ISO_IEC_5218_2004(E_F).zip)&#xA;* [Wiki artikkel](https://en.wikipedia.org/wiki/ISO/IEC_5218)&#xA;&#xA;# Eksempler&#xA;&#xA;    0 = uvisst (not known)&#xA;    1 = mann (male)&#xA;    2 = kvinne (female)&#xA;    9 = gjelder ikke (not applicable)&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Tor Kjetil" version="1.0" phase="1.0" created="2016-08-24 12:28:32" modified="2018-10-30 08:47:54" complexity="1" status="Proposed"/>
 				<code gentype="Java" genfile="C:\Users\ole.anders\Documents\Enterprise Architect\informasjonsmodell\GeneratedJava\Kjønn.java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags>
@@ -6389,7 +6394,7 @@
 					<tag xmi:id="EAID_52A4490E_F014_44f7_90B4_A2C7CF5B4CF6" name="md_guid" value="_18_4_13ab03b9_1472030798926_573582_4789" modelElement="EAID_5753C673_8AF7_4b23_A24C_4A52CA9E5772"/>
 					<tag xmi:id="EAID_F9638764_49E8_2849_A164_88C8E6C779E5" name="noPropertyType" value="false#NOTES#Values: true,false&#xA;Default: false&#xA;Description: Suppress creation of a named complex type ( property type ) that supports inline or byReference encoding&#xA;" modelElement="EAID_5753C673_8AF7_4b23_A24C_4A52CA9E5772"/>
 				</tags>
-				<xrefs value="$XREFPROP=$XID={AA3636F1-B38D-435e-8586-5102DD8B459D}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isActive@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={5753C673-8AF7-4b23-A24C-4A52CA9E5772}$CLT;$ENDXREF;"/>
+				<xrefs value="$XREFPROP=$XID={5BC90227-9777-4c80-91DD-C5E08723A080}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=hovedklasse;GUID={D08F65EF-7D48-4ae0-A557-0B0AB5BB20BC};@ENDSTEREO;$DES;$CLT={5753C673-8AF7-4b23-A24C-4A52CA9E5772}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={AA3636F1-B38D-435e-8586-5102DD8B459D}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isActive@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={5753C673-8AF7-4b23-A24C-4A52CA9E5772}$CLT;$ENDXREF;"/>
 				<extendedProperties tagged="0" package_name="ISO"/>
 				<links>
 					<Generalization xmi:id="EAID_7C2F3503_B71F_4664_A6EB_5C8CD5D00B85" start="EAID_5753C673_8AF7_4b23_A24C_4A52CA9E5772" end="EAID_251BD438_32B1_413e_808E_2EDA923E17B8"/>
@@ -6398,8 +6403,8 @@
 			</element>
 			<element xmi:idref="EAID_563D7154_F6F1_489f_91E4_2450E84E3338" xmi:type="uml:Class" name="Landkode" scope="public">
 				<model package="EAPK_024D708A_A775_467f_8320_556FD674F915" tpos="0" ea_localid="65" ea_eleType="element"/>
-				<properties documentation="Landskode i ISO 3166-1 alpha-2 format.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Landskode i ISO 3166-1 alpha-2 format.&#xA;&#xA;# Referanser&#xA;&#xA;* [FINT api for ISO 3166-1 alpha-2](https://api.felleskomponent.no/felles/kodeverk/iso/31661alpha2/)&#xA;* &quot;ISO standards page&quot;:http://www.iso.org/iso/country_codes.htm&#xA;* Søk i kodeliste: &quot;https://www.iso.org/obp/ui/#search&quot;:https://www.iso.org/obp/ui/#search&#xA;* &quot;XML data&quot;:http://www.iso.org/iso/home/standards/country_codes/country_names_and_code_elements_xml-temp.htm&#xA;* &quot;Wiki side&quot;:https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2&#xA;* &quot;SSB datasett&quot;:http://data.norge.no/data/statistisk-sentralbyr%C3%A5/land-og-landkoder" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Tor Kjetil" version="1.0" phase="1.0" created="2016-08-24 12:28:31" modified="2017-06-22 14:20:27" complexity="1" status="Proposed"/>
+				<properties documentation="Landskode i ISO 3166-1 alpha-2 format.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Landskode i ISO 3166-1 alpha-2 format.&#xA;&#xA;# Referanser&#xA;&#xA;* [FINT api for ISO 3166-1 alpha-2](https://api.felleskomponent.no/felles/kodeverk/iso/31661alpha2/)&#xA;* &quot;ISO standards page&quot;:http://www.iso.org/iso/country_codes.htm&#xA;* Søk i kodeliste: &quot;https://www.iso.org/obp/ui/#search&quot;:https://www.iso.org/obp/ui/#search&#xA;* &quot;XML data&quot;:http://www.iso.org/iso/home/standards/country_codes/country_names_and_code_elements_xml-temp.htm&#xA;* &quot;Wiki side&quot;:https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2&#xA;* &quot;SSB datasett&quot;:http://data.norge.no/data/statistisk-sentralbyr%C3%A5/land-og-landkoder" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Tor Kjetil" version="1.0" phase="1.0" created="2016-08-24 12:28:31" modified="2018-10-30 08:48:01" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags>
@@ -6408,7 +6413,7 @@
 					<tag xmi:id="EAID_784CDCCC_9509_9c95_86FF_A6BE85C2B004" name="SOSI_lengde" modelElement="EAID_563D7154_F6F1_489f_91E4_2450E84E3338"/>
 					<tag xmi:id="EAID_54BE1B90_A08D_58a0_849A_025B00491AF0" name="SOSI_navn" modelElement="EAID_563D7154_F6F1_489f_91E4_2450E84E3338"/>
 				</tags>
-				<xrefs/>
+				<xrefs value="$XREFPROP=$XID={77297DF2-6F5E-4741-B388-28A0DB29F73F}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=hovedklasse;GUID={D08F65EF-7D48-4ae0-A557-0B0AB5BB20BC};@ENDSTEREO;$DES;$CLT={563D7154-F6F1-489f-91E4-2450E84E3338}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 				<extendedProperties tagged="0" package_name="ISO"/>
 				<links>
 					<Generalization xmi:id="EAID_18AAC74C_5BEA_42a0_929B_60256C02C6C7" start="EAID_563D7154_F6F1_489f_91E4_2450E84E3338" end="EAID_251BD438_32B1_413e_808E_2EDA923E17B8"/>
@@ -6418,8 +6423,8 @@
 			</element>
 			<element xmi:idref="EAID_EAF1A9FD_25DD_4073_B011_E7939366EDA4" xmi:type="uml:Class" name="Språk" scope="public">
 				<model package="EAPK_024D708A_A775_467f_8320_556FD674F915" tpos="0" ea_localid="66" ea_eleType="element"/>
-				<properties documentation="Liste over verdier for språk  (2 bokstav)&#xA;&#xA;# Beskrivelse&#xA;&#xA;Liste over alle språk etter ISO 639-1 standard (2 bokstav)&#xA;&#xA;# Eksempler&#xA;&#xA;NO, NB, NN, DA, etc.&#xA;&#xA;# Referanse &#xA;&#xA;[FINT api for ISO 639-1 Alpha2](https://api.felleskomponent.no/felles/kodeverk/iso/6391alpha2)" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Tor Kjetil" version="1.0" phase="1.0" created="2016-08-24 12:50:42" modified="2017-06-22 13:48:07" complexity="1" status="Proposed"/>
+				<properties documentation="Liste over verdier for språk  (2 bokstav)&#xA;&#xA;# Beskrivelse&#xA;&#xA;Liste over alle språk etter ISO 639-1 standard (2 bokstav)&#xA;&#xA;# Eksempler&#xA;&#xA;NO, NB, NN, DA, etc.&#xA;&#xA;# Referanse &#xA;&#xA;[FINT api for ISO 639-1 Alpha2](https://api.felleskomponent.no/felles/kodeverk/iso/6391alpha2)" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Tor Kjetil" version="1.0" phase="1.0" created="2016-08-24 12:50:42" modified="2018-10-30 08:48:10" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags>
@@ -6428,7 +6433,7 @@
 					<tag xmi:id="EAID_784CDCCC_9509_9c95_B387_7BF410F44A6E" name="SOSI_lengde" modelElement="EAID_EAF1A9FD_25DD_4073_B011_E7939366EDA4"/>
 					<tag xmi:id="EAID_54BE1B90_A08D_58a0_932F_EB98FE7FA7BC" name="SOSI_navn" modelElement="EAID_EAF1A9FD_25DD_4073_B011_E7939366EDA4"/>
 				</tags>
-				<xrefs/>
+				<xrefs value="$XREFPROP=$XID={D53E0DA2-4E9B-47b6-A4C5-349708966EAD}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=hovedklasse;GUID={D08F65EF-7D48-4ae0-A557-0B0AB5BB20BC};@ENDSTEREO;$DES;$CLT={EAF1A9FD-25DD-4073-B011-E7939366EDA4}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 				<extendedProperties tagged="0" package_name="ISO"/>
 				<links>
 					<Generalization xmi:id="EAID_E733038E_5514_4bbf_90A7_EAF2AFC2A095" start="EAID_EAF1A9FD_25DD_4073_B011_E7939366EDA4" end="EAID_251BD438_32B1_413e_808E_2EDA923E17B8"/>
@@ -7427,7 +7432,7 @@
 						<style/>
 						<styleex value="volatile=0;union=0;"/>
 						<tags/>
-						<xrefs value="$XREFPROP=$XID={dbd9f7b8-7df7-ef3f-b883-53bbcdf5ce8e}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={F5EA2955-258E-4ee0-A50B-EA69C10570A1}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={762EE56C-C32A-41cc-B5CF-CB10E2F36455}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=writable;GUID={A5E1434C-002D-4000-AD41-4EDB07D5BEB2};@ENDSTEREO;$DES;$CLT={F5EA2955-258E-4ee0-A50B-EA69C10570A1}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+						<xrefs value="$XREFPROP=$XID={762EE56C-C32A-41cc-B5CF-CB10E2F36455}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=writable;GUID={A5E1434C-002D-4000-AD41-4EDB07D5BEB2};@ENDSTEREO;$DES;$CLT={F5EA2955-258E-4ee0-A50B-EA69C10570A1}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={dbd9f7b8-7df7-ef3f-b883-53bbcdf5ce8e}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={F5EA2955-258E-4ee0-A50B-EA69C10570A1}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 					<attribute xmi:idref="EAID_D72FDA69_0E98_400e_AEC4_C57D92F9CF55" name="kontert" scope="Public">
 						<initial/>
@@ -7487,7 +7492,7 @@
 						<style/>
 						<styleex value="volatile=0;union=0;"/>
 						<tags/>
-						<xrefs value="$XREFPROP=$XID={b9dfdd67-a521-af1f-bed5-526828ce004e}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={E4ECDC75-26EC-40c1-A29F-7415997E1A7B}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={1A3CD1A0-FFE4-4818-9A84-F1F96F43C58D}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=writable;GUID={A5E1434C-002D-4000-AD41-4EDB07D5BEB2};@ENDSTEREO;$DES;$CLT={E4ECDC75-26EC-40c1-A29F-7415997E1A7B}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+						<xrefs value="$XREFPROP=$XID={1A3CD1A0-FFE4-4818-9A84-F1F96F43C58D}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=writable;GUID={A5E1434C-002D-4000-AD41-4EDB07D5BEB2};@ENDSTEREO;$DES;$CLT={E4ECDC75-26EC-40c1-A29F-7415997E1A7B}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={b9dfdd67-a521-af1f-bed5-526828ce004e}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={E4ECDC75-26EC-40c1-A29F-7415997E1A7B}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 					<attribute xmi:idref="EAID_CDF7BCA9_E842_4181_B035_7E2956E41D00" name="systemId" scope="Public">
 						<initial/>
@@ -7502,7 +7507,7 @@
 						<style/>
 						<styleex value="volatile=0;union=0;"/>
 						<tags/>
-						<xrefs value="$XREFPROP=$XID={41ad9cd9-ab6e-c054-9ffa-0d2102a0d613}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={CDF7BCA9-E842-4181-B035-7E2956E41D00}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={67474362-287A-4927-9BEA-3A95A4ECB3D2}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=writable;GUID={A5E1434C-002D-4000-AD41-4EDB07D5BEB2};@ENDSTEREO;$DES;$CLT={CDF7BCA9-E842-4181-B035-7E2956E41D00}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+						<xrefs value="$XREFPROP=$XID={67474362-287A-4927-9BEA-3A95A4ECB3D2}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=writable;GUID={A5E1434C-002D-4000-AD41-4EDB07D5BEB2};@ENDSTEREO;$DES;$CLT={CDF7BCA9-E842-4181-B035-7E2956E41D00}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={41ad9cd9-ab6e-c054-9ffa-0d2102a0d613}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={CDF7BCA9-E842-4181-B035-7E2956E41D00}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 				</attributes>
 				<links>
@@ -7631,7 +7636,7 @@
 						<style value="initials"/>
 						<styleex value="volatile=0;union=0;"/>
 						<tags/>
-						<xrefs value="$XREFPROP=$XID={8B76F515-9459-4197-B71D-05A172D41FE5}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={57FA0F15-75A8-421b-8FB2-AAE560E9F691}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={265da488-bcb7-3c7f-859e-2fae27fb2116}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=writable;FQName=;@ENDSTEREO;$DES;$CLT={57FA0F15-75A8-421b-8FB2-AAE560E9F691}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+						<xrefs value="$XREFPROP=$XID={265da488-bcb7-3c7f-859e-2fae27fb2116}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=writable;FQName=;@ENDSTEREO;$DES;$CLT={57FA0F15-75A8-421b-8FB2-AAE560E9F691}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={8B76F515-9459-4197-B71D-05A172D41FE5}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={57FA0F15-75A8-421b-8FB2-AAE560E9F691}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 					<attribute xmi:idref="EAID_10B43614_655F_45fe_BC3F_D8E3C07E158F" name="kontaktinformasjon" scope="Public">
 						<initial/>
