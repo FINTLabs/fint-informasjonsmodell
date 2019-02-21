@@ -96,7 +96,7 @@
 						<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstB636C4_0E2B_4fbd_A6C9_91A1ECE38DB0" name="kontaktperson" visibility="public" association="EAID_60B636C4_0E2B_4fbd_A6C9_91A1ECE38DB0" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 							<type xmi:idref="EAID_3918321E_C706_4469_892B_CA90C03B4378"/>
 							<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000011__0E2B_4fbd_A6C9_91A1ECE38DB0" value="0"/>
-							<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000012__0E2B_4fbd_A6C9_91A1ECE38DB0" value="1"/>
+							<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000012__0E2B_4fbd_A6C9_91A1ECE38DB0" value="-1"/>
 						</ownedAttribute>
 						<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstC36202_778A_4572_994D_EB0D5433BDC3" name="person" visibility="public" association="EAID_A8C36202_778A_4572_994D_EB0D5433BDC3" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 							<type xmi:idref="EAID_3918321E_C706_4469_892B_CA90C03B4378"/>
@@ -6231,18 +6231,18 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="Kontaktperson er pårørende til disse personene."/>
+					<documentation value="Pårørende kontaktperson til person."/>
 					<xrefs/>
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_3918321E_C706_4469_892B_CA90C03B4378">
 					<model ea_localid="58" type="Class" name="Person"/>
 					<role name="kontaktperson" visibility="Public" targetScope="instance"/>
-					<type multiplicity="0..1" aggregation="none" containment="Unspecified"/>
+					<type multiplicity="0..*" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="Personen kontaktpersonen er pårørende for."/>
+					<documentation value="Personer kontaktpersonen er pårørende for."/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -6252,7 +6252,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels lb="0..*" lt="+pårørende" rb="0..1" rt="+kontaktperson"/>
+				<labels lb="0..*" lt="+pårørende" rb="0..*" rt="+kontaktperson"/>
 				<extendedProperties virtualInheritance="0"/>
 				<style/>
 				<xrefs/>
