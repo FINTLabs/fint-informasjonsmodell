@@ -45,11 +45,15 @@
 
 # v3.2.0
 
+|      |              |
+|------|--------------|
+| Date | `03.05.2019` (tentative) |
+
 For more details, see https://github.com/FINTLabs/fint-informasjonsmodell/milestone/9
 
 ## Deprecated
 
-*Note:* Deprecated classes, attributes and relations will be removed in the next major release.
+*Note:* Deprecated classes, attributes and relations might be removed in the next major release.
 
 * Felles
   * The relation `person` on `Kontaktperson` has been deprecated.  `Kontaktperson` now contains
