@@ -1,6 +1,6 @@
 # FINT-informasjonsmodell
 
-Innehold i informasjonsmodellen som benyttes i felleskomponentene som lages i FINT-prosjektet. Se [fintprosjektet.no](https://www.fintprosjektet.no) 
+Innhold i informasjonsmodellen som benyttes i felleskomponentene som lages i FINT-prosjektet. Se [fintprosjektet.no](https://www.fintprosjektet.no) 
 
 Release notater finner her: [RELEASE-NOTES.md](RELEASE-NOTES.md)
 
@@ -66,6 +66,8 @@ Dersom konflikten er vanskeligere vil LemonTree åpne et brukergrensesnitt for �
 
 ### Sjekkliste for endringer i modellen
 
+  1. Alt skal skje innenfor pakken `FINT`.
+  1. Pakker under `FINT` kun i to nivåer.
   1. Hovedklasse?  Legg til stereotypen `hovedklasse`.
   1. Dokumentasjon på felter og relasjoner
   1. Multiplisitet: Nye obligatoriske felter og relasjoner er ikke bakoverkompatible
@@ -88,6 +90,27 @@ Dersom konflikten er vanskeligere vil LemonTree åpne et brukergrensesnitt for �
    - `Komplekse datatyper`
  - De andre pakkene skal representere en semantisk gruppering innenfor domenet.
  - Alle klasser, attributter og relasjoner skal ha dokumentasjon som beskriver bruken og forståelsen.
+
+## Enterprise Architect
+
+Modellen er utviklet og vedlikeholdt med Enterprise Architect versjon 13.5.  Det er tilstrekkelig med
+lisens for Professional Edition.
+
+Vi benytter et svært begrenset sett av funksjonaliteten som finnes.  Følgende elementer benyttes:
+
+ - Class Diagram
+ - Class:
+   - Package
+   - Class
+ - Class Relationships:
+   - Generalize
+   - Associate
+ - Stereotype:
+   - `ApplicationSchema` på pakker
+   - `hovedklasse` på klasser
+   - `writable` på attributter
+ - Tags
+   - `DEPRECATED` på Class, Attribute eller Association
 
 ## Generering av modellkode
 
