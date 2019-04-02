@@ -1577,7 +1577,7 @@
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst7E1314_D709_41fb_865F_D25C908CBED7" name="skole" visibility="public" association="EAID_447E1314_D709_41fb_865F_D25C908CBED7" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_0F1201EE_0BE3_43fe_84F9_3911698D34C5"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000377__D709_41fb_865F_D25C908CBED7" value="1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000377__D709_41fb_865F_D25C908CBED7" value="0"/>
 								<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000378__D709_41fb_865F_D25C908CBED7" value="-1"/>
 							</ownedAttribute>
 						</packagedElement>
@@ -10205,7 +10205,7 @@
 				<target xmi:idref="EAID_0F1201EE_0BE3_43fe_84F9_3911698D34C5">
 					<model ea_localid="112" type="Class" name="Skole"/>
 					<role name="skole" visibility="Public" targetScope="instance"/>
-					<type multiplicity="1..*" aggregation="none" containment="Unspecified"/>
+					<type multiplicity="0..*" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
@@ -10219,7 +10219,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels lb="0..*" lt="+skoleressurs" rb="1..*" rt="+skole"/>
+				<labels lb="0..*" lt="+skoleressurs" rb="0..*" rt="+skole"/>
 				<extendedProperties/>
 				<style/>
 				<xrefs/>

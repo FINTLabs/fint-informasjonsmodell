@@ -31,12 +31,13 @@ Klienter og generert Java og C#-kode skal i utgangspunktet versjoneres likt som 
 
 ### Sjekkliste for endringer i modellen
 
-  1. Dokumentasjon på felter og relasjoner
-  2. Multiplisitet: Nye obligatoriske felter og relasjoner er ikke bakoverkompatible
-  3. Relasjoner kan kun gå til hovedklasser.
-  4. Alle hovedklasser må ha minst én Identifikator.
-  5. Stereotype på hovedklasser og skrivbare felter.
-  6. Retning og multiplisitet på relasjoner.  Enveis eller toveis? 
+  1. Dokumentasjon på felter og relasjoner.
+  1. Multiplisitet: Nye obligatoriske felter og relasjoner er ikke bakoverkompatible.
+  1. Relasjoner kan kun gå til hovedklasser, og ikke til abstrakte klasser.
+  1. Relasjoner kan kun gå fra hovedklasser eller komplekse datatyper, og ikke fra abstrakte klasser.
+  1. Alle hovedklasser må ha minst én Identifikator.
+  1. Stereotype på hovedklasser og skrivbare felter.
+  1. Retning og multiplisitet på relasjoner.  Enveis eller toveis? 
 
 ## Navnekonvensjoner
 
