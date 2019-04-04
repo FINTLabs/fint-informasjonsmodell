@@ -47,7 +47,8 @@
 
 |      |              |
 |------|--------------|
-| Date | `03.05.2019` (tentative) |
+| Date | `03.05.2019` |
+| Tag  | `v3.2.0`     |
 
 For more details, see https://github.com/FINTLabs/fint-informasjonsmodell/milestone/9
 
