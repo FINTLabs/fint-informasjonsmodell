@@ -1,4 +1,4 @@
-# FINT-informasjonsmodell
+﻿# FINT-informasjonsmodell
 
 Innhold i informasjonsmodellen som benyttes i felleskomponentene som lages i FINT-prosjektet. Se [fintprosjektet.no](https://www.fintprosjektet.no) 
 
@@ -69,9 +69,10 @@ Dersom konflikten er vanskeligere vil LemonTree åpne et brukergrensesnitt for �
   1. Alt skal skje innenfor pakken `FINT`.
   1. Pakker under `FINT` kun i to nivåer.
   1. Hovedklasse?  Legg til stereotypen `hovedklasse`.
-  1. Dokumentasjon på felter og relasjoner
-  1. Multiplisitet: Nye obligatoriske felter og relasjoner er ikke bakoverkompatible
-  1. Relasjoner kan kun gå til hovedklasser.
+  1. Dokumentasjon på felter og relasjoner.
+  1. Multiplisitet: Nye obligatoriske felter og relasjoner er ikke bakoverkompatible.
+  1. Relasjoner kan kun gå til hovedklasser, og ikke til abstrakte klasser.
+  1. Relasjoner kan kun gå fra hovedklasser eller komplekse datatyper, og ikke fra abstrakte klasser.
   1. Alle hovedklasser må ha minst én `Identifikator`.
   1. Retning og multiplisitet på relasjoner.  Enveis eller toveis? 
   1. Typer på attributter.  Enten en kompleks datatype fra modellen, eller en av disse: `long`, `int`, `date`, `dateTime`, `float`, `double`, `string`, `boolean`.
@@ -79,17 +80,17 @@ Dersom konflikten er vanskeligere vil LemonTree åpne et brukergrensesnitt for �
 
 ## Navnekonvensjoner
 
- - Klasser og attributter er i entall.
- - Uttrykk bestående av flere ord slås sammen med stor forbokstav i mellom ordene: _endelig karakter_ -> `endeligKarakter`. 
- - Klasser skal være meningsbærende begreper.
- - Dokumentasjon benyttes til å definere forståelsen av begrepet, og referere til dokumentasjon og  kilde for definisjonen.
- - Begreper på assosiasjoner skal forståes i kontekst av navnet på de klassene de går i mellom.
- - Innenfor hvert domene er det tre faste underpakker:
+- Klasser og attributter er i entall.
+- Uttrykk bestående av flere ord slås sammen med stor forbokstav i mellom ordene: _endelig karakter_ -> `endeligKarakter`. 
+- Klasser skal være meningsbærende begreper.
+- Dokumentasjon benyttes til å definere forståelsen av begrepet, og referere til dokumentasjon og kilde for definisjonen.
+- Begreper på assosiasjoner skal forståes i kontekst av navnet på de klassene de går i mellom.
+- Innenfor hvert domene er det tre faste underpakker:
    - `Basisklasser`
    - `Kodeverk`
    - `Komplekse datatyper`
- - De andre pakkene skal representere en semantisk gruppering innenfor domenet.
- - Alle klasser, attributter og relasjoner skal ha dokumentasjon som beskriver bruken og forståelsen.
+- De andre pakkene skal representere en semantisk gruppering innenfor domenet.
+- Alle klasser, attributter og relasjoner skal ha dokumentasjon som beskriver bruken og forståelsen.
 
 ## Enterprise Architect
 

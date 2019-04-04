@@ -1,50 +1,91 @@
-<!-- TOC -->
+<!-- MarkdownTOC autolink="true" -->
 
+- [v3.2.0](#v320)
+  - [Deprecated](#deprecated)
+  - [Features](#features)
 - [v3.1.0](#v310)
-    - [Deprecated](#deprecated)
-    - [Features](#features)
-    - [Bugfixes](#bugfixes)
+  - [Deprecated](#deprecated-1)
+  - [Features](#features-1)
+  - [Bugfixes](#bugfixes)
 - [v3.0.0](#v300)
-    - [Breaking changes](#breaking-changes)
-    - [Features](#features-1)
-    - [Bugfixes](#bugfixes-1)
+  - [Breaking changes](#breaking-changes)
+  - [Features](#features-2)
+  - [Bugfixes](#bugfixes-1)
 - [v2.8.0](#v280)
-    - [Features](#features-2)
-    - [Bugfixes](#bugfixes-2)
+  - [Features](#features-3)
+  - [Bugfixes](#bugfixes-2)
 - [v2.7.0](#v270)
-    - [Features](#features-3)
+  - [Features](#features-4)
 - [v2.6.0](#v260)
-    - [Features](#features-4)
-    - [Bugfixes](#bugfixes-3)
+  - [Features](#features-5)
+  - [Bugfixes](#bugfixes-3)
 - [v2.4.0](#v240)
-    - [Features](#features-5)
+  - [Features](#features-6)
 - [v2.2.20](#v2220)
-    - [Bugfixes](#bugfixes-4)
+  - [Bugfixes](#bugfixes-4)
 - [v2.2.10](#v2210)
-    - [Bugfixes](#bugfixes-5)
+  - [Bugfixes](#bugfixes-5)
 - [v2.2.0](#v220)
-    - [Features](#features-6)
+  - [Features](#features-7)
 - [v2.0.10](#v2010)
-    - [Bugfixes](#bugfixes-6)
+  - [Bugfixes](#bugfixes-6)
 - [v2.0.0](#v200)
-    - [Breaking changes](#breaking-changes-1)
-    - [Features](#features-7)
-    - [Bugfixes](#bugfixes-7)
+  - [Breaking changes](#breaking-changes-1)
+  - [Features](#features-8)
+  - [Bugfixes](#bugfixes-7)
 - [v1.0.1](#v101)
-    - [Features](#features-8)
-    - [Bugfixes](#bugfixes-8)
-    - [Known issues](#known-issues)
+  - [Features](#features-9)
+  - [Bugfixes](#bugfixes-8)
+  - [Known issues](#known-issues)
 - [v1.0.0](#v100)
-    - [Features](#features-9)
+  - [Features](#features-10)
 
-<!-- /TOC -->
+<!-- /MarkdownTOC -->
+
+
+# v3.2.0
+
+|      |              |
+|------|--------------|
+| Date | `03.05.2019` |
+| Tag  | `v3.2.0`     |
+
+For more details, see https://github.com/FINTLabs/fint-informasjonsmodell/milestone/9
+
+## Deprecated
+
+*Note:* Deprecated classes, attributes and relations might be removed in the next major release.
+
+* Felles
+  * The relation `person` on `Kontaktperson` has been deprecated.  `Kontaktperson` now contains
+    `navn` and `kontaktinformasjon` that should be used instead.
+  * The attribute `foreldreansvar` on `Kontaktperson` has been deprecated.  Parents and children
+    should be represented using the new relation `foreldre` and `foreldreansvar` from `Person` to
+    `Person`.
+
+## Features
+
+* Felles
+  * Added relation `foreldreansvar`..`foreldre` from `Person` to `Person`.  
+
+* Administrasjon
+  * Added relation from `Fraværstype` to `Lønnsart`
+  * Added relation from `Lønnsart` to `Art`
+  * Added relation from `Personalressurs` to `Art`
+
+* Utdanning
+  * Relation from `Skoleressurs` to `Skole` is now `0..*` for teachers associated with several
+    schools.
+  * Added relation from `Elevforhold` to `Programområde`.
+  * Vigo Kodeverk has been moved to a separate repository.  No changes in naming or packaging otherwise.
+  * On `Elev`, `kontaktinformasjon` is now marked as `writable` to account for updates via the API.
+
+# v3.1.0
 
 |      |              |
 |------|--------------|
 | Date | `24.09.2018` |
 | Tag  | `v3.1.0`     |
-
-# v3.1.0
 
 ## Deprecated
 
