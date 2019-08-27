@@ -32,7 +32,7 @@ Klienter og generert Java og C#-kode skal i utgangspunktet versjoneres likt som 
 1. Eksporter prosjekt til `FINT-informasjonsmodell.xml` ved å gå til følgende meny: _Model_ -> _Import/Export_ -> _Export Package for XMI_ (**`Ctrl + Alt + E`**). Velg _Export Type_ `XMI 2.1`.
 1. Commit og push prosjektet tilbake til GitHub.
 1. Sjekk branch på https://informasjonsmodell.felleskomponent.no
-1. Generer modellkode og se etter problemer: `docker run -itv $PWD:/src fint/fint-model generate --tag <mybranch>`
+1. Generer modellkode og se etter problemer: `docker run -itv $PWD:/src fint/fint-model --tag <mybranch> generate`
 1. Oppdater RELEASE_NOTES.md
 1. Åpne Pull Request i GitHub for å få endringene tilbake til master.
 1. Kommenter alle issues som er berørt av endringen.
