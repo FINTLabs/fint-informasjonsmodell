@@ -1,5 +1,8 @@
 <!-- MarkdownTOC autolink="true" -->
 
+- [v3.4.0](#v340)
+  - [Features](#features)
+  - [Bugfixes](#bugfixes)
 - [v3.3.0](#v330)
   - [Features](#features)
   - [Bugfixes](#bugfixes)
@@ -44,6 +47,28 @@
   - [Features](#features-11)
 
 <!-- /MarkdownTOC -->
+
+# v3.4.0
+
+|      |              |
+|------|--------------|
+| Date | `09.01.2020` |
+| Tag  | `v3.4.0`     |
+
+For more details, see https://github.com/FINTLabs/fint-informasjonsmodell/milestone/11
+
+## Features
+
+* Administrasjon
+  * Added `Aktivitet`, `Anlegg`, `Diverse`, `Kontrakt`, `Løpenummer`, `Objekt` and `Ramme` as `Kontodimensjon`
+
+## Bugfixes
+
+* Administrasjon
+  * Updated documentation on `Arbeidsforhold`
+
+* Felles
+  * Updated documentation on `Kontaktinformasjon`
 
 # v3.3.0
 
