@@ -4189,8 +4189,8 @@
 			</element>
 			<element xmi:idref="EAID_0CA4A60C_0085_42a3_A764_09EEEBBB8B90" xmi:type="uml:Class" name="Periode" scope="public">
 				<model package="EAPK_40CFF887_12C4_4ae7_B1CC_84B3C7D60265" tpos="0" ea_localid="71" ea_eleType="element"/>
-				<properties documentation="Tidsperiode (start- og sluttdato).&#xA;&#xA;# Beskrivelse&#xA;&#xA;Tidsperiode (start- og sluttdato).&#xA;Sluttdato må være senere eller lik startdato om den er definert.&#xA;&#xA;# Eksempel&#xA;&#xA;Et arbeidsforhold kan ha gyldighetsperiode:&#xA;* Fra 01.01.1999T00:00:00Z til ubestemt tid&#xA;* Fra 01.01.1999T00:00:00Z til 01.01.2005T00:00:00Z&#xA;" isSpecification="false" sType="Class" nType="0" alias="TimeSpan" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Tor Kjetil" version="1.0" phase="1.0" created="2016-08-24 12:28:31" modified="2020-04-29 18:12:49" complexity="1" status="Proposed"/>
+				<properties documentation="Tidsperiode (start- og sluttdato).&#xA;&#xA;# Beskrivelse&#xA;&#xA;Tidsperiode (start- og sluttdato).&#xA;Sluttdato må være senere eller lik startdato om den er definert.&#xA;&#xA;# Eksempel&#xA;&#xA;Et arbeidsforhold kan ha gyldighetsperiode:&#xA;* Fra 1999.01.01T00:00:00Z til ubestemt tid&#xA;* Fra 1999.01.01T00:00:00Z til 2005.01.01T00:00:00Z&#xA;" isSpecification="false" sType="Class" nType="0" alias="TimeSpan" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Tor Kjetil" version="1.0" phase="1.0" created="2016-08-24 12:28:31" modified="2020-04-30 09:40:18" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java" genfile="C:\Users\ole.anders\Documents\Enterprise Architect\informasjonsmodell\GeneratedJava\Periode.java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -4214,7 +4214,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_6A79C4DB_2C0D_4755_B413_D81E600ABDCE" name="slutt" scope="Public">
 						<initial/>
-						<documentation value="Til dato&#xA;&#xA;# Beskrivelse&#xA;&#xA;Sluttdato må være senere eller lik startdato om den er definert.&#xA;&#xA;# Format&#xA;&#xA;Det skal brukes UTC tid i [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601)&#xA;&#xA;Dersom klokkeslett ikke er definert, skal 00:00:00Z benyttes.&#xA;&#xA;YYYY-MM-DDThh:mm:ssZ&#xA;&#xA;# Eksempel&#xA;&#xA;01.01.1999T00:00:00Z&#xA;"/>
+						<documentation value="Til dato&#xA;&#xA;# Beskrivelse&#xA;&#xA;Sluttdato må være senere eller lik startdato om den er definert.&#xA;&#xA;# Format&#xA;&#xA;Det skal brukes UTC tid i [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601)&#xA;&#xA;Dersom klokkeslett ikke er definert, skal 00:00:00Z benyttes.&#xA;&#xA;YYYY-MM-DDThh:mm:ssZ&#xA;&#xA;# Eksempel&#xA;&#xA;1999.01.01T00:00:00Z&#xA;"/>
 						<model ea_localid="26" ea_guid="{6A79C4DB-2C0D-4755-B413-D81E600ABDCE}"/>
 						<properties type="dateTime" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -4229,7 +4229,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_0EC284F7_2DAA_4df8_B1D4_1A75B6FD1E22" name="start" scope="Public">
 						<initial/>
-						<documentation value="Fra dato&#xA;&#xA;# Beskrivelse&#xA;&#xA;Sluttdato må være senere eller lik startdato om den er definert.&#xA;&#xA;# Format&#xA;&#xA;Det skal brukes UTC tid i [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601)&#xA;&#xA;Dersom klokkeslett ikke er definert,skal 00:00:00Z benyttes.&#xA;&#xA;YYYY-MM-DDThh:mm:ssZ&#xA;&#xA;# Eksempel&#xA;&#xA;01.01.1999T00:00:00Z&#xA;"/>
+						<documentation value="Fra dato&#xA;&#xA;# Beskrivelse&#xA;&#xA;Sluttdato må være senere eller lik startdato om den er definert.&#xA;&#xA;# Format&#xA;&#xA;Det skal brukes UTC tid i [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601)&#xA;&#xA;Dersom klokkeslett ikke er definert,skal 00:00:00Z benyttes.&#xA;&#xA;YYYY-MM-DDThh:mm:ssZ&#xA;&#xA;# Eksempel&#xA;&#xA;1999.01.01T00:00:00Z&#xA;"/>
 						<model ea_localid="25" ea_guid="{0EC284F7-2DAA-4df8-B1D4-1A75B6FD1E22}"/>
 						<properties type="dateTime" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
