@@ -1,57 +1,88 @@
 <!-- MarkdownTOC autolink="true" -->
 
-- [v3.4.0](#v340)
+- [v3.5.0](#v350)
   - [Features](#features)
   - [Bugfixes](#bugfixes)
-- [v3.3.0](#v330)
+- [v3.4.0](#v340)
   - [Features](#features-1)
   - [Bugfixes](#bugfixes-1)
+- [v3.3.0](#v330)
+  - [Features](#features-2)
+  - [Bugfixes](#bugfixes-2)
 - [v3.2.0](#v320)
   - [Deprecated](#deprecated)
-  - [Features](#features-2)
+  - [Features](#features-3)
 - [v3.1.0](#v310)
   - [Deprecated](#deprecated-1)
-  - [Features](#features-3)
-  - [Bugfixes](#bugfixes-2)
-- [v3.0.0](#v300)
-  - [Breaking changes](#breaking-changes)
   - [Features](#features-4)
   - [Bugfixes](#bugfixes-3)
-- [v2.8.0](#v280)
+- [v3.0.0](#v300)
+  - [Breaking changes](#breaking-changes)
   - [Features](#features-5)
   - [Bugfixes](#bugfixes-4)
-- [v2.7.0](#v270)
+- [v2.8.0](#v280)
   - [Features](#features-6)
-- [v2.6.0](#v260)
-  - [Features](#features-7)
   - [Bugfixes](#bugfixes-5)
-- [v2.4.0](#v240)
+- [v2.7.0](#v270)
+  - [Features](#features-7)
+- [v2.6.0](#v260)
   - [Features](#features-8)
-- [v2.2.20](#v2220)
   - [Bugfixes](#bugfixes-6)
-- [v2.2.10](#v2210)
-  - [Bugfixes](#bugfixes-7)
-- [v2.2.0](#v220)
+- [v2.4.0](#v240)
   - [Features](#features-9)
-- [v2.0.10](#v2010)
+- [v2.2.20](#v2220)
+  - [Bugfixes](#bugfixes-7)
+- [v2.2.10](#v2210)
   - [Bugfixes](#bugfixes-8)
+- [v2.2.0](#v220)
+  - [Features](#features-10)
+- [v2.0.10](#v2010)
+  - [Bugfixes](#bugfixes-9)
 - [v2.0.0](#v200)
   - [Breaking changes](#breaking-changes-1)
-  - [Features](#features-10)
-  - [Bugfixes](#bugfixes-9)
-- [v1.0.1](#v101)
   - [Features](#features-11)
   - [Bugfixes](#bugfixes-10)
+- [v1.0.1](#v101)
+  - [Features](#features-12)
+  - [Bugfixes](#bugfixes-11)
   - [Known issues](#known-issues)
 - [v1.0.0](#v100)
-  - [Features](#features-12)
+  - [Features](#features-13)
 
 <!-- /MarkdownTOC -->
+
+# v3.5.0
+
+|      |              |
+| ---- | ------------ |
+| Date | `04.05.2020` |
+| Tag  | `v3.5.0`     |
+
+For more details, see https://github.com/FINTLabs/fint-informasjonsmodell/milestone/12
+
+## Features
+
+* Administrasjon
+  * Added `arbeidsforholdsperiode` to `Arbeidsforhold`
+* Utdanning
+  * Added abstract class `Gruppemedlemskap` as well as specific classes for `Undervisningsgruppemedlemskap`, 
+    `Basisgruppemedlemskap`, `Kontaktlærergruppemedlemskap`, `Eksamensgruppemedlemskap`, and `Programområdemedlemskap`.
+    These classes represent memberships for `Elevforhold` with added information on `gyldighetsperiode`. 
+  * Added `Skoleår` and `Termin`.  These are code lists for school years and school terms.  Added relations to these
+    from all relevant group types.
+  * Added `gyldighetsperiode` and `hovedskole` to `Elevforhold`.
+
+## Bugfixes
+
+* Felles
+  * Fixed documentation for `Kjønn` and `Periode`
+* Administrasjon
+  * Fixed multiplicity on `overordnet` reference for `Organisasjonselement`.
 
 # v3.4.0
 
 |      |              |
-|------|--------------|
+| ---- | ------------ |
 | Date | `09.01.2020` |
 | Tag  | `v3.4.0`     |
 
@@ -73,7 +104,7 @@ For more details, see https://github.com/FINTLabs/fint-informasjonsmodell/milest
 # v3.3.0
 
 |      |              |
-|------|--------------|
+| ---- | ------------ |
 | Date | `06.09.2019` |
 | Tag  | `v3.3.0`     |
 
@@ -92,7 +123,7 @@ For more details, see https://github.com/FINTLabs/fint-informasjonsmodell/milest
 # v3.2.0
 
 |      |              |
-|------|--------------|
+| ---- | ------------ |
 | Date | `03.05.2019` |
 | Tag  | `v3.2.0`     |
 
@@ -129,7 +160,7 @@ For more details, see https://github.com/FINTLabs/fint-informasjonsmodell/milest
 # v3.1.0
 
 |      |              |
-|------|--------------|
+| ---- | ------------ |
 | Date | `24.09.2018` |
 | Tag  | `v3.1.0`     |
 
@@ -163,7 +194,7 @@ For more details, see https://github.com/FINTLabs/fint-informasjonsmodell/milest
 # v3.0.0
 
 |      |              |
-|------|--------------|
+| ---- | ------------ |
 | Date | `07.06.2018` |
 | Tag  | `v3.0.0`     |
 
@@ -195,7 +226,7 @@ For more details, see https://github.com/FINTLabs/fint-informasjonsmodell/milest
 # v2.8.0
 
 |      |              |
-|------|--------------|
+| ---- | ------------ |
 | Date | `23.05.2018` |
 | Tag  | `v2.8.0`     |
 
@@ -216,7 +247,7 @@ For more details, see https://github.com/FINTLabs/fint-informasjonsmodell/milest
 # v2.7.0
 
 |      |              |
-|------|--------------|
+| ---- | ------------ |
 | Date | `05.04.2018` |
 | Tag  | `v2.7.0`     |
 
@@ -230,7 +261,7 @@ For more details, see https://github.com/FINTLabs/fint-informasjonsmodell/milest
 # v2.6.0
 
 |      |              |
-|------|--------------|
+| ---- | ------------ |
 | Date | `13.03.2018` |
 | Tag  | `v2.6.0`     |
 
@@ -251,7 +282,7 @@ For more details, see https://github.com/FINTLabs/fint-informasjonsmodell/milest
 # v2.4.0
 
 |      |              |
-|------|--------------|
+| ---- | ------------ |
 | Date | `06.02.2018` |
 | Tag  | `v2.4.0`     |
 
@@ -266,7 +297,7 @@ For more details, see https://github.com/FINTLabs/fint-informasjonsmodell/milest
 # v2.2.20
 
 |      |              |
-|------|--------------|
+| ---- | ------------ |
 | Date | `07.12.2017` |
 | Tag  | `v2.2.20`    |
 
@@ -277,7 +308,7 @@ For more details, see https://github.com/FINTLabs/fint-informasjonsmodell/milest
 # v2.2.10
 
 |      |              |
-|------|--------------|
+| ---- | ------------ |
 | Date | `27.11.2017` |
 | Tag  | `v2.2.10`    |
 
@@ -288,7 +319,7 @@ For more details, see https://github.com/FINTLabs/fint-informasjonsmodell/milest
 # v2.2.0
 
 |      |              |
-|------|--------------|
+| ---- | ------------ |
 | Date | `27.10.2017` |
 | Tag  | `v2.2.0`     |
 
@@ -301,7 +332,7 @@ For more details, see https://github.com/FINTLabs/fint-informasjonsmodell/milest
 # v2.0.10
 
 |      |              |
-|------|--------------|
+| ---- | ------------ |
 | Date | `05.10.2017` |
 | Tag  | `v2.0.10`    |
 
@@ -315,7 +346,7 @@ For more details, see https://github.com/FINTLabs/fint-informasjonsmodell/milest
 # v2.0.0
 
 |      |              |
-|------|--------------|
+| ---- | ------------ |
 | Date | `27.09.2017` |
 | Tag  | `v2.0.0`     |
 
@@ -351,7 +382,7 @@ Since this version of the Information Model is the first to go live, we opted to
 # v1.0.1
 
 |      |              |
-|------|--------------|
+| ---- | ------------ |
 | Date | `25.04.2017` |
 | Tag  | `v1.0.1`     |
 
@@ -375,7 +406,7 @@ Since this version of the Information Model is the first to go live, we opted to
 # v1.0.0
 
 |      |              |
-|------|--------------|
+| ---- | ------------ |
 | Date | `07.04.2017` |
 | Tag  | `v1.0.0`     |
 
