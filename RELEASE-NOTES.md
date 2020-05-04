@@ -78,6 +78,8 @@ For more details, see https://github.com/FINTLabs/fint-informasjonsmodell/milest
   * Fixed documentation for `Kjønn` and `Periode`
 * Administrasjon
   * Fixed multiplicity on `overordnet` reference for `Organisasjonselement`.
+* Utdanning
+  * Fixed documentation for `Gruppe`, `Grepreferanse` and `Vigoreferanse`
 
 # v3.4.0
 
