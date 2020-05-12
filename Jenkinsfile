@@ -14,9 +14,6 @@ pipeline {
                 build job: '/FINTLabs/fint-devops-model-release/master', parameters: [
                     string(name: 'MODEL_VERSION', value: "${VERSION}"),
                     string(name: 'VERSION', value: "${VERSION}")]
-                build job: '/FINTLabs/fint-devops-model-release/resource', parameters: [
-                    string(name: 'MODEL_VERSION', value: "${VERSION}"),
-                    string(name: 'VERSION', value: "${VERSION}")]
             }
         }
     }
