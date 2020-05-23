@@ -14,6 +14,10 @@ pipeline {
                 build job: '/FINTLabs/fint-devops-model-release/master', parameters: [
                     string(name: 'MODEL_VERSION', value: "${VERSION}"),
                     string(name: 'VERSION', value: "${VERSION}")]
+                build job: '/FINTLabs/job/fint-graphql/master', parameters: [
+                    string(name: 'MODEL_VERSION', value: "${VERSION}")]
+                build job: '/FINTLabs/job/fint-jsonschema/master', parameters: [
+                    string(name: 'MODEL_VERSION', value: "${VERSION}")]
             }
         }
     }
