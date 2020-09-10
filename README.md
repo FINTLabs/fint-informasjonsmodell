@@ -85,11 +85,8 @@ Dersom konflikten er vanskeligere vil LemonTree åpne et brukergrensesnitt for �
 - Klasser skal være meningsbærende begreper.
 - Dokumentasjon benyttes til å definere forståelsen av begrepet, og referere til dokumentasjon og kilde for definisjonen.
 - Begreper på assosiasjoner skal forståes i kontekst av navnet på de klassene de går i mellom.
-- Innenfor hvert domene er det tre faste underpakker:
-   - `Basisklasser`
-   - `Kodeverk`
-   - `Komplekse datatyper`
-- De andre pakkene skal representere en semantisk gruppering innenfor domenet.
+- Pakkene skal representere en semantisk gruppering innenfor domenet.
+- I pakken `Kodeverk` skal alle klasser arve `Begrep` og være `hovedklasse`. 
 - Alle klasser, attributter og relasjoner skal ha dokumentasjon som beskriver bruken og forståelsen.
 
 ## Enterprise Architect
