@@ -5117,7 +5117,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_765FCAFC_33FA_4a57_B561_1404C2D9D63F" name="gyldighetsperiode" scope="Public">
 						<initial/>
-						<documentation value="Periode hvor administrativ enhet er gyldig.&#xA;&#xA;# Referanser&#xA;&#xA;- opprettetDato, NOARK 5.5.0 metadata M600&#xA;- avlsuttetDato, NOARK 5.5.0 metadata M602&#xA;&#xA;"/>
+						<documentation value="Periode hvor administrativ enhet er gyldig.&#xA;"/>
 						<model ea_localid="850" ea_guid="{765FCAFC-33FA-4a57-B561-1404C2D9D63F}"/>
 						<properties type="Periode" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -5132,7 +5132,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_C6EE20CD_5342_42c0_BCAA_D7C0B4DECA00" name="navn" scope="Public">
 						<initial/>
-						<documentation value="Navn på administrativ enhet.&#xA;&#xA;# Referanser&#xA;&#xA;- administrativEnhetNavn, NOARK 5.5.0 metadata M583"/>
+						<documentation value="Navn på administrativ enhet.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M583&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 						<model ea_localid="851" ea_guid="{C6EE20CD-5342-42c0-BCAA-D7C0B4DECA00}"/>
 						<properties type="string" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -5147,7 +5147,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_85B74B53_3874_4eb2_BA54_DDC0E9F70339" name="systemId" scope="Public">
 						<initial/>
-						<documentation value="Unik intern system-id for administrativ enhet"/>
+						<documentation value="Unik intern systemidentifikasjon for administrativ enhet"/>
 						<model ea_localid="852" ea_guid="{85B74B53-3874-4eb2-BA54-DDC0E9F70339}"/>
 						<properties type="Identifikator" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -5246,7 +5246,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_E565441C_A798_4f35_B3A1_23612D37328B" name="systemId" scope="Public">
 						<initial/>
-						<documentation value="Unik intern system-id for arkivressurs"/>
+						<documentation value="Unik intern systemidentifikasjon for arkivressurs."/>
 						<model ea_localid="856" ea_guid="{E565441C-A798-4f35-B3A1-23612D37328B}"/>
 						<properties type="Identifikator" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -5288,7 +5288,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_38E919EB_2C87_4f15_B15E_57F3674802A1" name="systemId" scope="Public">
 						<initial/>
-						<documentation value="Unik intern system-id for autorisasjon."/>
+						<documentation value="Unik intern systemidentifikasjon for autorisasjon."/>
 						<model ea_localid="973" ea_guid="{38E919EB-2C87-4f15-B15E-57F3674802A1}"/>
 						<properties type="Identifikator" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -5534,7 +5534,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_CBC5F1C5_8469_4f44_A97C_1112446ABBAD" name="systemId" scope="Public">
 						<initial/>
-						<documentation value="Unik identifikator."/>
+						<documentation value="Unik intern systemidentifikasjon for dokumentfil."/>
 						<model ea_localid="870" ea_guid="{CBC5F1C5-8469-4f44-A97C-1112446ABBAD}"/>
 						<properties type="Identifikator" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -5543,7 +5543,7 @@
 						<bounds lower="1" upper="1"/>
 						<options/>
 						<style/>
-						<styleex value="volatile=0;"/>
+						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
 					</attribute>
@@ -5829,8 +5829,8 @@
 			</element>
 			<element xmi:idref="EAID_554670B7_F1C5_427a_B7E9_ECC9036E9EFE" xmi:type="uml:Class" name="Klasse" scope="public">
 				<model package="EAPK_86F07623_2BB9_4cc1_AC96_149463A0D0AA" tpos="0" ea_localid="439" ea_eleType="element"/>
-				<properties documentation="Byggeklosser i et klassifikasjonssystem. &#xA;&#xA;# Beskrivelse&#xA;&#xA;Et klassifikasjonssystem er bygd opp av klasser. &#xA;&#xA;Ved funksjonsbasert (emnebasert) klassifikasjon vil klassene vanligvis ingå i et hierarki, hvor tre eller fire nivåer er det vanlige. &#xA;&#xA;Ved objektbasert klassifikasjon med bare ett nivå, kan identifikasjon f.eks. være fødselsnummer eller gårds- og bruksnummer. &#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 standard - kap. 2.4&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Asgeir Nilsen" version="1.0" phase="1.0" created="2019-12-27 12:31:13" modified="2020-10-02 15:10:16" complexity="1" status="Proposed"/>
+				<properties documentation="Et klassifikasjonssystem er bygd opp av klasser. &#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 standard - kap. 2.4&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Asgeir Nilsen" version="1.0" phase="1.0" created="2019-12-27 12:31:13" modified="2020-10-06 09:52:37" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -5869,7 +5869,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_08CFB9F6_CD0D_443b_B988_BFDD437CDBF5" name="skjerming" scope="Public">
 						<initial/>
-						<documentation value="Skjerming av klasse."/>
+						<documentation value="Skjerming av klasse.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 standard - kap. 2.8.1&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 						<model ea_localid="889" ea_guid="{08CFB9F6-CD0D-443b-B988-BFDD437CDBF5}"/>
 						<properties type="Skjerming" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -6189,7 +6189,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_87C2BD3C_FF1C_4a5d_A87F_7571E324002C" name="klasse" scope="Public">
 						<initial/>
-						<documentation value="Klassifisering av mappe"/>
+						<documentation value="Klassifisering av mappe.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 standard - kap. 2.4&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;"/>
 						<model ea_localid="908" ea_guid="{87C2BD3C-FF1C-4a5d-A87F-7571E324002C}"/>
 						<properties type="Klasse" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -6864,7 +6864,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_4D09855D_F455_4db0_B427_23142574B752" name="systemId" scope="Public">
 						<initial/>
-						<documentation value="Unik intern system-id."/>
+						<documentation value="Unik intern systemidentifikasjon for tilgang."/>
 						<model ea_localid="946" ea_guid="{4D09855D-F455-4db0-B427-23142574B752}"/>
 						<properties type="Identifikator" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -12042,7 +12042,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;"/>
-					<documentation value="Status til dokumentet.&#xA;&#xA;# Beskrivelse&#xA;&#xA;M054"/>
+					<documentation value="Status til dokumentet.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M054&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -12111,7 +12111,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;"/>
-					<documentation value="Navn på type dokument.&#xA;&#xA;# Beskrivelse&#xA;&#xA;M083"/>
+					<documentation value="Navn på type dokument.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M083&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -12180,7 +12180,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;"/>
-					<documentation value="Navn på type journalpost.&#xA;&#xA;# Beskrivelse&#xA;Noark 5 metadatanr: M082&#xA;&#xA;Se [Metadatakatalogen](https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden/_/attachment/download/f52e37da-31ed-4bf0-9fbf-69f0357aa25c:025a30b602a65d74377b9e0c22a0f2fb8eab84df/Noark5v4%20vedl1%20Metadatakatalog.pdf)"/>
+					<documentation value="Navn på type journalpost.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M082&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -12249,7 +12249,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;"/>
-					<documentation value="Status til journalposten, dvs. om dokumentet er registrert, under behandling eller endelig arkivert.&#xA;&#xA;# Beskrivelse&#xA;Noark 5 metadatanr: M053&#xA;&#xA;Se [Metadatakatalogen](https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden/_/attachment/download/f52e37da-31ed-4bf0-9fbf-69f0357aa25c:025a30b602a65d74377b9e0c22a0f2fb8eab84df/Noark5v4%20vedl1%20Metadatakatalog.pdf)"/>
+					<documentation value="Status til journalposten, dvs. om dokumentet er registrert, under behandling eller endelig arkivert.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M053&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -12318,7 +12318,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="Type klassifikasjonssystem."/>
+					<documentation value="Type klassifikasjonssystem.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M086&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -12387,7 +12387,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;"/>
-					<documentation value="Type korrespondansepart&#xA;&#xA;# Beskrivelse&#xA;Noark 5 metadatanr: M087&#xA;&#xA;Se [Metadatakatalogen](https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden/_/attachment/download/f52e37da-31ed-4bf0-9fbf-69f0357aa25c:025a30b602a65d74377b9e0c22a0f2fb8eab84df/Noark5v4%20vedl1%20Metadatakatalog.pdf)&#xA;"/>
+					<documentation value="Type korrespondansepart&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M087&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -12456,7 +12456,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="Type merknad"/>
+					<documentation value="Type merknad.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M084&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -12525,7 +12525,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="AllowDuplicates=0;Derived=0;Owned=0;Union=0;Navigable=Navigable;"/>
-					<documentation value="Angivelse av rollen til parten.&#xA;&#xA;# Beskrivelse&#xA;&#xA;M303"/>
+					<documentation value="Angivelse av rollen til parten.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M303&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -12663,7 +12663,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;"/>
-					<documentation value="Registreres automatisk gjennom forskjellig saksbehandlings- funksjonalitet, eller overstyres manuelt.&#xA;&#xA;# Beskrivelse&#xA;Noark 5 metadatanr: M052&#xA;&#xA;Se [Metadatakatalogen](https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden/_/attachment/download/f52e37da-31ed-4bf0-9fbf-69f0357aa25c:025a30b602a65d74377b9e0c22a0f2fb8eab84df/Noark5v4%20vedl1%20Metadatakatalog.pdf)&#xA;"/>
+					<documentation value="Registreres automatisk gjennom forskjellig saksbehandlings- funksjonalitet, eller overstyres manuelt.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M052&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -12732,7 +12732,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="Skjermingshjemmel"/>
+					<documentation value="Skjermingshjemmel. &#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M501&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -12836,7 +12836,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="Tilgangsrestriksjon"/>
+					<documentation value="Tilgangsrestriksjon.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M500&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -12905,7 +12905,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;"/>
-					<documentation value="Angivelse av hvilken &quot;rolle&quot; dokumentet har i forhold til registreringen.&#xA;&#xA;# Beskrivelse&#xA;&#xA;M217"/>
+					<documentation value="Angivelse av hvilken &quot;rolle&quot; dokumentet har i forhold til registreringen.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M217&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -12974,7 +12974,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;"/>
-					<documentation value="Angivelse av hvilken variant et dokument forekommer i.&#xA;&#xA;# Beskrivelse&#xA;Noark 5 metadatanr: M700&#xA;&#xA;Se [Metadatakatalogen](https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden/_/attachment/download/f52e37da-31ed-4bf0-9fbf-69f0357aa25c:025a30b602a65d74377b9e0c22a0f2fb8eab84df/Noark5v4%20vedl1%20Metadatakatalog.pdf)"/>
+					<documentation value="Angivelse av hvilken variant et dokument forekommer.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M700&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -13320,7 +13320,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;"/>
-					<documentation value="Navn på enhet som har det arkivmessige ansvaret for kvalitetssikring av arkivdanningen, og eventuelt registrering (journalføring) og arkivering av fysiske dokumenter&#xA;&#xA;# Beskrivelse&#xA;Noark 5 metadatanr: M308&#xA;&#xA;Se [Metadatakatalogen](https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden/_/attachment/download/f52e37da-31ed-4bf0-9fbf-69f0357aa25c:025a30b602a65d74377b9e0c22a0f2fb8eab84df/Noark5v4%20vedl1%20Metadatakatalog.pdf)&#xA;"/>
+					<documentation value="Navn på enhet som har det arkivmessige ansvaret for kvalitetssikring av arkivdanningen, og eventuelt registrering (journalføring) og arkivering av fysiske dokumenter.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M308&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -13390,7 +13390,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;"/>
-					<documentation value="Navn på enhet som har det arkivmessige ansvaret for kvalitetssikring av arkivdanningen, og eventuelt registrering (journalføring) og arkivering av fysiske dokumenter.&#xA;&#xA;# Beskrivelse&#xA;Noark 5 metadatanr: M308&#xA;&#xA;Se [Metadatakatalogen](https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden/_/attachment/download/f52e37da-31ed-4bf0-9fbf-69f0357aa25c:025a30b602a65d74377b9e0c22a0f2fb8eab84df/Noark5v4%20vedl1%20Metadatakatalog.pdf)"/>
+					<documentation value="Navn på enhet som har det arkivmessige ansvaret for kvalitetssikring av arkivdanningen, og eventuelt registrering (journalføring) og arkivering av fysiske dokumenter.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M308&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -13425,7 +13425,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;"/>
-					<documentation value="Navn på avdeling, kontor eller annen administrativ enhet som har ansvaret for saksbehandlingen.&#xA;&#xA;# Beskrivelse&#xA;Noark 5 metadatanr: M305&#xA;&#xA;Se [Metadatakatalogen](https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden/_/attachment/download/f52e37da-31ed-4bf0-9fbf-69f0357aa25c:025a30b602a65d74377b9e0c22a0f2fb8eab84df/Noark5v4%20vedl1%20Metadatakatalog.pdf)"/>
+					<documentation value="Navn på avdeling, kontor eller annen administrativ enhet som har ansvaret for saksbehandlingen.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M305&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -13495,7 +13495,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;"/>
-					<documentation value="Navn på avdeling, kontor eller annen administrativ enhet som har ansvaret for saksbehandlingen.&#xA;&#xA;&#xA;# Beskrivelse&#xA;Noark 5 metadatanr: M305&#xA;&#xA;Se [Metadatakatalogen](https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden/_/attachment/download/f52e37da-31ed-4bf0-9fbf-69f0357aa25c:025a30b602a65d74377b9e0c22a0f2fb8eab84df/Noark5v4%20vedl1%20Metadatakatalog.pdf)&#xA;"/>
+					<documentation value="Navn på avdeling, kontor eller annen administrativ enhet som har ansvaret for saksbehandlingen.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M305&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -13740,7 +13740,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;"/>
-					<documentation value="Navn på person som er saksbehandler.&#xA;&#xA;# Beskrivelse&#xA;Noark 5 metadatanr: M307&#xA;&#xA;Se [Metadatakatalogen](https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden/_/attachment/download/f52e37da-31ed-4bf0-9fbf-69f0357aa25c:025a30b602a65d74377b9e0c22a0f2fb8eab84df/Noark5v4%20vedl1%20Metadatakatalog.pdf)&#xA;"/>
+					<documentation value="Navn på person som er saksbehandler.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M307&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -13775,7 +13775,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;"/>
-					<documentation value="Navn på person som avsluttet/lukket arkivenheten&#xA;&#xA;# Beskrivelse&#xA;Noark 5 metadatanr: M603&#xA;&#xA;Se [Metadatakatalogen](https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden/_/attachment/download/f52e37da-31ed-4bf0-9fbf-69f0357aa25c:025a30b602a65d74377b9e0c22a0f2fb8eab84df/Noark5v4%20vedl1%20Metadatakatalog.pdf)&#xA;"/>
+					<documentation value="Navn på person som avsluttet/lukket arkivenheten&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M603&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -13880,7 +13880,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;"/>
-					<documentation value="Navn på person som knyttet et dokument til en registrering.&#xA;&#xA;M621"/>
+					<documentation value="Navn på person som knyttet et dokument til en registrering.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M621&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -13915,7 +13915,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;"/>
-					<documentation value="Navn på person som opprettet/registrerte arkivenheten"/>
+					<documentation value="Navn på person som opprettet/registrerte arkivenheten.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M601&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -13950,7 +13950,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;"/>
-					<documentation value="Navn på person som er saksansvarlig.&#xA;&#xA;# Beskrivelse&#xA;Noark 5 metadatanr: M306&#xA;&#xA;Se [Metadatakatalogen](https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden/_/attachment/download/f52e37da-31ed-4bf0-9fbf-69f0357aa25c:025a30b602a65d74377b9e0c22a0f2fb8eab84df/Noark5v4%20vedl1%20Metadatakatalog.pdf)&#xA;"/>
+					<documentation value="Navn på person som er saksansvarlig.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M306&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -13985,7 +13985,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;"/>
-					<documentation value="Navn på person som opprettet/registrerte arkivenheten.&#xA;&#xA;# Beskrivelse&#xA;Noark 5 metadatanr: M601&#xA;&#xA;Se [Metadatakatalogen](https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden/_/attachment/download/f52e37da-31ed-4bf0-9fbf-69f0357aa25c:025a30b602a65d74377b9e0c22a0f2fb8eab84df/Noark5v4%20vedl1%20Metadatakatalog.pdf)&#xA;"/>
+					<documentation value="Navn på person som opprettet/registrerte arkivenheten.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M601&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -14020,7 +14020,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;"/>
-					<documentation value="Navn på person som opprettet/registrerte arkivenheten.&#xA;&#xA;# Beskrivelse&#xA;Noark 5 metadatanr: M601&#xA;&#xA;Se [Metadatakatalogen](https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden/_/attachment/download/f52e37da-31ed-4bf0-9fbf-69f0357aa25c:025a30b602a65d74377b9e0c22a0f2fb8eab84df/Noark5v4%20vedl1%20Metadatakatalog.pdf)"/>
+					<documentation value="Navn på person som opprettet/registrerte arkivenheten.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M601&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -14055,7 +14055,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="Person som har registrert merknaden.&#xA;&#xA;Metadatakatalog M612"/>
+					<documentation value="Person som har registrert merknaden.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M612&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -14090,7 +14090,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;"/>
-					<documentation value="Navn på person som opprettet/registrerte arkivenheten.&#xA;&#xA;# Beskrivelse&#xA;Noark 5 metadatanr: M601&#xA;&#xA;Se [Metadatakatalogen](https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden/_/attachment/download/f52e37da-31ed-4bf0-9fbf-69f0357aa25c:025a30b602a65d74377b9e0c22a0f2fb8eab84df/Noark5v4%20vedl1%20Metadatakatalog.pdf)&#xA;"/>
+					<documentation value="Navn på person som opprettet/registrerte arkivenheten.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M601&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -14125,7 +14125,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="Referanse til filen som inneholder det elektroniske dokumentet som dokumentobjektet beskriver."/>
+					<documentation value="Referanse til filen som inneholder det elektroniske dokumentet som dokumentobjektet beskriver.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M218&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -22088,9 +22088,9 @@
 			<diagram xmi:id="EAID_3D33970F_C8DF_4ccd_A5BD_811D8E57EADB">
 				<model package="EAPK_94285559_7FED_4453_BB2C_B66BD1636807" localID="60" owner="EAPK_94285559_7FED_4453_BB2C_B66BD1636807" tpos="0"/>
 				<properties name="Registrering" type="Logical" documentation="Referanse til filen som inneholder det elektroniske dokumentet som dokumentobjektet beskriver.&#xA;&#xA;Registreres automatisk når et dokument tilknyttes en registrering, når det arkiveres flere versjoner av et dokument, når det lages en egen variant av dokumentet og når dokumentet konverteres til nye formater&#xA;&#xA;Referansen skal være en &quot;sti&quot; (dvs. også inneholde katalogstrukturen) til filnavnet som gjør det mulig å identifisere riktig fil i et arkivuttrekk. Stien skal angis relativt i forhold til filen arkivstruktur.xml. &#xA;&#xA;# Referanse&#xA;&#xA;Noark 5.5 metadatakatalog, M218"/>
-				<project author="crossover" version="1.0" created="2018-09-17 13:26:41" modified="2020-08-20 13:24:49"/>
+				<project author="crossover" version="1.0" created="2018-09-17 13:26:41" modified="2020-10-06 10:27:38"/>
 				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=2;PPgs.cy=1;DocSize.cx=791;DocSize.cy=1134;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=257;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
-				<style2 value="SaveTag=E07BF269;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=41FB2ADC;"/>
 				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Carlito,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
 				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
 				<extendedProperties/>
@@ -22117,7 +22117,7 @@
 					<element geometry="Left=311;Top=793;Right=476;Bottom=956;" subject="EAID_8033C652_2F8B_48ec_A0E3_A5B861423354" seqno="20" style="DUID=F304D484;"/>
 					<element geometry="Left=623;Top=736;Right=965;Bottom=915;" subject="EAID_9E27D09D_B6DB_4744_BCAC_2CD2CC3F3AFC" seqno="21" style="DUID=94E99DC8;"/>
 					<element geometry="Left=729;Top=25;Right=945;Bottom=240;" subject="EAID_594B89AF_8D00_4aa1_897D_53BB6850D769" seqno="22" style="DUID=42B46C9C;"/>
-					<element geometry="Left=432;Top=31;Right=661;Bottom=266;" subject="EAID_9C5F3F92_29FD_42ec_A163_03F094EDBA1B" seqno="23" style="BCol=-1;BFol=-1;DUID=3F5ED2FC;LCol=-1;LWth=-1;NSL=0;black=0;bold=0;charset=0;fontsz=0;italic=0;pitch=0;ul=0;"/>
+					<element geometry="Left=432;Top=31;Right=661;Bottom=279;" subject="EAID_9C5F3F92_29FD_42ec_A163_03F094EDBA1B" seqno="23" style="BCol=-1;BFol=-1;DUID=3F5ED2FC;LCol=-1;LWth=-1;NSL=0;black=0;bold=0;charset=0;fontsz=0;italic=0;pitch=0;ul=0;"/>
 					<element geometry="SX=-148;SY=-1;EX=0;EY=0;EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=CX=53:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=5:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_4F313C1F_3AB8_4d55_80CF_FA1196AAA0BA" style="Mode=3;EOID=4EF50E38;SOID=94E99DC8;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=CX=90:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=5:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_AE7B6BEC_3B1A_41e2_ACB9_6FFB38D2E7B0" style="Mode=3;EOID=4EF50E38;SOID=10652B2A;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=CX=77:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=5:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_A418FA7A_6BA0_4e34_B041_8C403A49DFF1" style="Mode=3;EOID=6D5E9FEC;SOID=339DDEE7;Color=-1;LWidth=0;Hidden=0;"/>
@@ -22131,14 +22131,14 @@
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=CX=63:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=5:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_EEE0A532_798C_43f0_A199_FD6F711F3C8A" style="Mode=3;EOID=90C84CE7;SOID=10652B2A;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=170;SY=24;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=CX=66:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=5:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_2A4742AD_380F_4b60_B6BE_FA05A93CDBE9" style="Mode=3;EOID=8E6F28E4;SOID=94E99DC8;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=CX=80:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_AE99C91D_7368_45dc_BD76_46E6B138BC02" style="Mode=3;EOID=A9E033C7;SOID=3F5ED2FC;Color=-1;LWidth=0;Hidden=0;"/>
-					<element geometry="SX=-109;SY=-1;EX=0;EY=0;EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=CX=52:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=5:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_48ABAFD8_7C5A_4866_9C73_31A2AEFC4718" style="Mode=3;EOID=4EF50E38;SOID=94E99DC8;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=-109;SY=-1;EX=75;EY=-44;EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=CX=52:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=5:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_48ABAFD8_7C5A_4866_9C73_31A2AEFC4718" style="Mode=3;EOID=4EF50E38;SOID=94E99DC8;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=CX=67:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=5:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_AEA8256E_48A3_4843_836C_88BD61D37BB2" style="Mode=3;EOID=70DC02B2;SOID=42B46C9C;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=CX=56:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=5:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_1668FBCE_C869_4c20_A061_6D26B4F2BD07" style="Mode=3;EOID=CE94C954;SOID=42B46C9C;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_68C48A08_9280_4fa9_B99F_A4548443E3AC" style="Mode=3;EOID=3F5ED2FC;SOID=42B46C9C;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=CX=55:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_9607DE51_BDE4_4dce_914B_BF24B4F2E283" style="Mode=3;EOID=A9E033C7;SOID=42B46C9C;Color=-1;LWidth=0;Hidden=0;"/>
-					<element geometry="SX=0;SY=-39;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=CX=53:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=5:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_93D8D765_D47E_4e4c_BD71_B7ED6C6E1E33" style="Mode=3;EOID=4EF50E38;SOID=3F5ED2FC;Color=-1;LWidth=0;Hidden=0;"/>
-					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=5:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_7F086B10_7C41_4d87_9E91_40C66F8498A8" style="Mode=3;EOID=4EF50E38;SOID=3F5ED2FC;Color=-1;LWidth=0;Hidden=0;"/>
-					<element geometry="SX=19;SY=7;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=CX=63:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_00A03223_9305_4cbe_8EB2_3C523715E280" style="Mode=3;EOID=4EF50E38;SOID=3F5ED2FC;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=-39;EX=76;EY=43;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=CX=53:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=5:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_93D8D765_D47E_4e4c_BD71_B7ED6C6E1E33" style="Mode=3;EOID=4EF50E38;SOID=3F5ED2FC;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=-71;EY=43;EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=5:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_7F086B10_7C41_4d87_9E91_40C66F8498A8" style="Mode=3;EOID=4EF50E38;SOID=3F5ED2FC;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=19;SY=7;EX=20;EY=43;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=CX=63:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_00A03223_9305_4cbe_8EB2_3C523715E280" style="Mode=3;EOID=4EF50E38;SOID=3F5ED2FC;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=4;$LLB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=50:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=37:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_78264D37_FDA9_4c07_A2BB_75F3D2B8260F" style="Mode=3;EOID=56A06B20;SOID=3F5ED2FC;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=CX=70:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=5:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_7087A75E_C8A2_4561_B76E_380D71A5803E" style="Mode=3;EOID=20E0D074;SOID=94E99DC8;Color=-1;LWidth=0;Hidden=0;"/>
 				</elements>
