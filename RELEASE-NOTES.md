@@ -58,7 +58,7 @@
 
 |      |              |
 | ---- | ------------ |
-| Date | `06.10.2020` |
+| Date | `08.10.2020` |
 | Tag  | `v3.6.0`     |
 
 For more details, see https://github.com/FINTLabs/fint-informasjonsmodell/milestone/13
@@ -79,7 +79,7 @@ For more details, see https://github.com/FINTLabs/fint-informasjonsmodell/milest
   * Economy represents a new domain in the information model. The domain includes `Faktura` and `Kodeverk`. Needs that are covered are joint integration with economy systems, limited to invoices and product registers, and especially invoicing of pupils in upper secondary education.
 
 * Personvern
-  * Privacy represents a new domain in the informastion model. The domain includes `Samtykke` and `Kodeverk`. Needs that are covered are collection and exchange of consents, at the individual level, which expresses which personal data can be processed by which services and for what purpose.
+  * Privacy represents a new domain in the information model. The domain includes `Samtykke` and `Kodeverk`. Needs that are covered are collection and exchange of consents, at the individual level, which expresses which personal data can be processed by which services and for what purpose.
 
 * Utdanning
   * Added relation from `Skoleressurs` to `Person`. The relation should be a link to a person object in the administrative domain, as the authoritative source for information on employees. The relation must be hardcoded in the adapter, if not it will automatically create a link to a person object in the education domain.
