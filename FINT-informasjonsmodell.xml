@@ -888,7 +888,7 @@
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_87C2BD3C_FF1C_4a5d_A87F_7571E324002C" name="klasse" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:idref="EAID_554670B7_F1C5_427a_B7E9_ECC9036E9EFE"/>
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000199_FF1C_4a5d_A87F_7571E324002C" value="0"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000200_FF1C_4a5d_A87F_7571E324002C" value="1"/>
+								<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000200_FF1C_4a5d_A87F_7571E324002C" value="-1"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_ED27730F_0E2E_45ad_8A87_568B7AF9D998" name="mappeId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
@@ -6191,7 +6191,7 @@
 						<coords ordered="0" scale="0"/>
 						<containment containment="Not Specified" position="11"/>
 						<stereotype stereotype="writable"/>
-						<bounds lower="0" upper="1"/>
+						<bounds lower="0" upper="*"/>
 						<options/>
 						<style/>
 						<styleex value="volatile=0;union=0;"/>
