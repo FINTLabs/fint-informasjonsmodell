@@ -1,58 +1,75 @@
 <!-- MarkdownTOC autolink="true" -->
 
+- [v3.6.10](#v3610)
+  - [Bugfixes](#bugfixes)
 - [v3.6.0](#v360)
   - [Deprecated](#deprecated)
   - [Features](#features)
 - [v3.5.0](#v350)
   - [Features](#features-1)
-  - [Bugfixes](#bugfixes)
+  - [Bugfixes](#bugfixes-1)
 - [v3.4.0](#v340)
   - [Features](#features-2)
-  - [Bugfixes](#bugfixes-1)
+  - [Bugfixes](#bugfixes-2)
 - [v3.3.0](#v330)
   - [Features](#features-3)
-  - [Bugfixes](#bugfixes-2)
+  - [Bugfixes](#bugfixes-3)
 - [v3.2.0](#v320)
   - [Deprecated](#deprecated-1)
   - [Features](#features-4)
 - [v3.1.0](#v310)
   - [Deprecated](#deprecated-2)
   - [Features](#features-5)
-  - [Bugfixes](#bugfixes-3)
+  - [Bugfixes](#bugfixes-4)
 - [v3.0.0](#v300)
   - [Breaking changes](#breaking-changes)
   - [Features](#features-6)
-  - [Bugfixes](#bugfixes-4)
+  - [Bugfixes](#bugfixes-5)
 - [v2.8.0](#v280)
   - [Features](#features-7)
-  - [Bugfixes](#bugfixes-5)
+  - [Bugfixes](#bugfixes-6)
 - [v2.7.0](#v270)
   - [Features](#features-8)
 - [v2.6.0](#v260)
   - [Features](#features-9)
-  - [Bugfixes](#bugfixes-6)
+  - [Bugfixes](#bugfixes-7)
 - [v2.4.0](#v240)
   - [Features](#features-10)
 - [v2.2.20](#v2220)
-  - [Bugfixes](#bugfixes-7)
-- [v2.2.10](#v2210)
   - [Bugfixes](#bugfixes-8)
+- [v2.2.10](#v2210)
+  - [Bugfixes](#bugfixes-9)
 - [v2.2.0](#v220)
   - [Features](#features-11)
 - [v2.0.10](#v2010)
-  - [Bugfixes](#bugfixes-9)
+  - [Bugfixes](#bugfixes-10)
 - [v2.0.0](#v200)
   - [Breaking changes](#breaking-changes-1)
   - [Features](#features-12)
-  - [Bugfixes](#bugfixes-10)
+  - [Bugfixes](#bugfixes-11)
 - [v1.0.1](#v101)
   - [Features](#features-13)
-  - [Bugfixes](#bugfixes-11)
+  - [Bugfixes](#bugfixes-12)
   - [Known issues](#known-issues)
 - [v1.0.0](#v100)
   - [Features](#features-14)
 
 <!-- /MarkdownTOC -->
+
+# v3.6.10
+
+
+|      |              |
+| ---- | ------------ |
+| Date | `19.10.2020` |
+| Tag  | `v3.6.10`     |
+
+For more details, see https://github.com/FINTLabs/fint-informasjonsmodell/issues/197
+
+## Bugfixes
+
+* Arkiv
+  * Fixed mulitiplicity for `klasse` on `Mappe`, from 0..1 to 0..*.
 
 # v3.6.0
 
