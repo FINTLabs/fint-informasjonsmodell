@@ -12,7 +12,7 @@ pipeline {
                 }
                 sh "echo Version is ${VERSION}"
                 build job: '/FINTLabs/fint-devops-model-release/master', parameters: [
-                    string(name: 'MODEL_VERSION', value: "${VERSION}"),
+                    string(name: 'MODEL_VERSION', value: "${TAG_NAME}"),
                     string(name: 'VERSION', value: "${VERSION}")]
                 build job: '/FINTLabs/fint-jsonschema/master', parameters: [
                     string(name: 'MODEL_VERSION', value: "${VERSION}")]
