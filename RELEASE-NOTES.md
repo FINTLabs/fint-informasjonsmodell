@@ -78,7 +78,7 @@ For more details, see https://fintlabs.atlassian.net/jira/software/projects/INFM
   * Added domain `Samferdsel` and class `SøknadDrosjeløyve`.
   
 * Personvern
-  * Added relation `samtykke`to `Behandling`.
+  * Added relation `samtykke` to `Behandling`.
 
 * Felles
   * Added attribute `adresse` to `Matrikkelnummer`.
