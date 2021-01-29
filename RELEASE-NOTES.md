@@ -80,6 +80,9 @@ For more details, see https://fintlabs.atlassian.net/jira/software/projects/INFM
 * Personvern
   * Added relation `samtykke`to `Behandling`.
 
+* Felles
+  * Added attribute `adresse` to `Matrikkelnummer`.
+
 # v3.6.10
 
 
