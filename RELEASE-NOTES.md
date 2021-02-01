@@ -66,8 +66,6 @@
 | Date | `01.02.2021` |
 | Tag  | `v3.7.0`     |
 
-For more details, see https://fintlabs.atlassian.net/jira/software/projects/INFM/boards/3
-
 ## Features 
 
 * Administrasjon
