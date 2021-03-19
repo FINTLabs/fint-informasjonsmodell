@@ -78,6 +78,9 @@
   * The relation `myndighet` on `Fullmakt` is deprecated.
   * The relation `fulllmakt` on `Kontodimensjon` is deprecated.
 
+* Arkiv
+  * The attribute `format` on `Dokumentobjekt` is deprecated.
+
 ## Bugfixes
 
 * Arkiv
