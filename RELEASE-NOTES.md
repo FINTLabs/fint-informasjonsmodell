@@ -67,7 +67,7 @@
 
 |      |              |
 | ---- | ------------ |
-| Date | `22.03.2021` |
+| Date | `24.03.2021` |
 | Tag  | `v3.8.0`     |
 
 ## Deprecated
@@ -84,13 +84,17 @@
 ## Bugfixes
 
 * Arkiv
-  * Changed mulitiplicity for attribute `klasse` on `Registrering`, from 1 to 0..1.
+  * Changed multiplicity for attribute `klasse` on `Registrering`, from 1 to 0..1.
+
+* Utdanning
+  * Changed multiplicity for relation `utdanningsprogram` on `Programområde`, from 1 to 1..*.
   
 ## Features 
 
 * Administrasjon
   * Added relation `aktivitet`, `anlegg`, `ansvar`, `art`, `diverse`, `funksjon`, `kontrakt`, `løpenummer`, `objekt`, `prosjekt`, `ramme` and `organisasjonselement` to `Fullmakt`.
   * Added relation `aktivitet`, `anlegg`, `diverse`, `kontrakt`, `løpenummer`, `objekt`, `prosjekt`, `ramme` to `Arbeidsforhold`.
+
 * Arkiv
   * Added class `Format` as `Kodeverk`.
   * Added relation `format` to `Dokumentobjekt`. 
