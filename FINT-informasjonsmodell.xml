@@ -4051,8 +4051,8 @@
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_FB6DC657_8860_42ec_902E_B8B8C430625F" name="Programområde" visibility="public">
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst912179_F752_4db8_A257_CD3DF9123E8D" name="utdanningsprogram" visibility="public" association="EAID_96912179_F752_4db8_A257_CD3DF9123E8D" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_E8F8A8A3_8C7B_4aad_A52C_B07B8857C7F0"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000991__F752_4db8_A257_CD3DF9123E8D" value="0"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000992__F752_4db8_A257_CD3DF9123E8D" value="1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000991__F752_4db8_A257_CD3DF9123E8D" value="1"/>
+								<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000992__F752_4db8_A257_CD3DF9123E8D" value="-1"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst53069B_46CC_479e_B774_8C8D2B22C775" name="elevforhold" visibility="public" association="EAID_C453069B_46CC_479e_B774_8C8D2B22C775" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_A8A7DF7A_AA87_4bf3_B240_FC559F3057DF"/>
@@ -22067,7 +22067,7 @@
 				<target xmi:idref="EAID_E8F8A8A3_8C7B_4aad_A52C_B07B8857C7F0">
 					<model ea_localid="103" type="Class" name="Utdanningsprogram"/>
 					<role name="utdanningsprogram" visibility="Public" targetScope="instance"/>
-					<type multiplicity="0..1" aggregation="none" containment="Unspecified"/>
+					<type multiplicity="1..*" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
@@ -22081,7 +22081,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels lb="0..*" lt="+programområde" rb="0..1" rt="+utdanningsprogram"/>
+				<labels lb="0..*" lt="+programområde" rb="1..*" rt="+utdanningsprogram"/>
 				<extendedProperties/>
 				<style/>
 				<xrefs/>
