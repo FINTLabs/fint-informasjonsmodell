@@ -1,62 +1,103 @@
 <!-- MarkdownTOC autolink="true" -->
 
-- [v3.7.0](#v370)
-  - [Features](#features)
-- [v3.6.10](#v3610)
-  - [Bugfixes](#bugfixes)
-- [v3.6.0](#v360)
+- [v3.8.0](#v380)
   - [Deprecated](#deprecated)
+  - [Bugfixes](#bugfixes)
+  - [Features](#features)
+- [v3.7.0](#v370)
   - [Features](#features-1)
-- [v3.5.0](#v350)
-  - [Features](#features-2)
+- [v3.6.10](#v3610)
   - [Bugfixes](#bugfixes-1)
-- [v3.4.0](#v340)
+- [v3.6.0](#v360)
+  - [Deprecated](#deprecated-1)
+  - [Features](#features-2)
+- [v3.5.0](#v350)
   - [Features](#features-3)
   - [Bugfixes](#bugfixes-2)
-- [v3.3.0](#v330)
+- [v3.4.0](#v340)
   - [Features](#features-4)
   - [Bugfixes](#bugfixes-3)
-- [v3.2.0](#v320)
-  - [Deprecated](#deprecated-1)
+- [v3.3.0](#v330)
   - [Features](#features-5)
-- [v3.1.0](#v310)
+  - [Bugfixes](#bugfixes-4)
+- [v3.2.0](#v320)
   - [Deprecated](#deprecated-2)
   - [Features](#features-6)
-  - [Bugfixes](#bugfixes-4)
-- [v3.0.0](#v300)
-  - [Breaking changes](#breaking-changes)
+- [v3.1.0](#v310)
+  - [Deprecated](#deprecated-3)
   - [Features](#features-7)
   - [Bugfixes](#bugfixes-5)
-- [v2.8.0](#v280)
+- [v3.0.0](#v300)
+  - [Breaking changes](#breaking-changes)
   - [Features](#features-8)
   - [Bugfixes](#bugfixes-6)
-- [v2.7.0](#v270)
+- [v2.8.0](#v280)
   - [Features](#features-9)
-- [v2.6.0](#v260)
-  - [Features](#features-10)
   - [Bugfixes](#bugfixes-7)
-- [v2.4.0](#v240)
+- [v2.7.0](#v270)
+  - [Features](#features-10)
+- [v2.6.0](#v260)
   - [Features](#features-11)
-- [v2.2.20](#v2220)
   - [Bugfixes](#bugfixes-8)
-- [v2.2.10](#v2210)
-  - [Bugfixes](#bugfixes-9)
-- [v2.2.0](#v220)
+- [v2.4.0](#v240)
   - [Features](#features-12)
-- [v2.0.10](#v2010)
+- [v2.2.20](#v2220)
+  - [Bugfixes](#bugfixes-9)
+- [v2.2.10](#v2210)
   - [Bugfixes](#bugfixes-10)
+- [v2.2.0](#v220)
+  - [Features](#features-13)
+- [v2.0.10](#v2010)
+  - [Bugfixes](#bugfixes-11)
 - [v2.0.0](#v200)
   - [Breaking changes](#breaking-changes-1)
-  - [Features](#features-13)
-  - [Bugfixes](#bugfixes-11)
-- [v1.0.1](#v101)
   - [Features](#features-14)
   - [Bugfixes](#bugfixes-12)
+- [v1.0.1](#v101)
+  - [Features](#features-15)
+  - [Bugfixes](#bugfixes-13)
   - [Known issues](#known-issues)
 - [v1.0.0](#v100)
-  - [Features](#features-15)
+  - [Features](#features-16)
 
 <!-- /MarkdownTOC -->
+
+# v3.8.0
+
+
+|      |              |
+| ---- | ------------ |
+| Date | `24.03.2021` |
+| Tag  | `v3.8.0`     |
+
+## Deprecated
+
+*Note:* Deprecated classes, attributes and relations might be removed in the next major release.
+
+* Administrasjon
+  * The relation `myndighet` on `Fullmakt` is deprecated.
+  * The relation `fullmakt` on `Kontodimensjon` is deprecated.
+
+* Arkiv
+  * The attribute `format` on `Dokumentobjekt` is deprecated.
+
+## Bugfixes
+
+* Arkiv
+  * Changed multiplicity for attribute `klasse` on `Registrering`, from 1 to 0..1.
+
+* Utdanning
+  * Changed multiplicity for relation `utdanningsprogram` on `Programområde`, from 1 to 1..*.
+  
+## Features 
+
+* Administrasjon
+  * Added relation `aktivitet`, `anlegg`, `ansvar`, `art`, `diverse`, `funksjon`, `kontrakt`, `løpenummer`, `objekt`, `prosjekt`, `ramme` and `organisasjonselement` to `Fullmakt`.
+  * Added relation `aktivitet`, `anlegg`, `diverse`, `kontrakt`, `løpenummer`, `objekt`, `prosjekt`, `ramme` to `Arbeidsforhold`.
+
+* Arkiv
+  * Added class `Format` as `Kodeverk`.
+  * Added relation `format` to `Dokumentobjekt`. 
 
 # v3.7.0
 
