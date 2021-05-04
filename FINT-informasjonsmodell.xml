@@ -571,7 +571,7 @@
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000078_9433_46aa_8A9A_F808A65961D7" value="1"/>
 								<type xmi:idref="EAJava_string"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstFF12AE_CE4C_4ce3_A4B3_4DAAE6AA2DBB" name="referanseAvskrivesAvJournalpost" visibility="public" association="EAID_66FF12AE_CE4C_4ce3_A4B3_4DAAE6AA2DBB" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstFF12AE_CE4C_4ce3_A4B3_4DAAE6AA2DBB" name="referanseAvskrivesAv" visibility="public" association="EAID_66FF12AE_CE4C_4ce3_A4B3_4DAAE6AA2DBB" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_594B89AF_8D00_4aa1_897D_53BB6850D769"/>
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000079__CE4C_4ce3_A4B3_4DAAE6AA2DBB" value="0"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000080__CE4C_4ce3_A4B3_4DAAE6AA2DBB" value="1"/>
@@ -4682,6 +4682,7 @@
 		<thecustomprofile:writable base_Property="EAID_9F215071_503A_4e4a_893D_AF6EA4626DB0"/>
 		<thecustomprofile:writable base_Property="EAID_DB8E605E_2C76_42f7_A04B_868733B5646D"/>
 		<thecustomprofile:writable base_Property="EAID_7D64B6FC_BB3E_45d9_917C_3CE75505462F"/>
+		<thecustomprofile:writable base_Property="EAID_9D457522_EC2E_447d_BB8C_E049620CECFB"/>
 		<thecustomprofile:writable base_Property="EAID_DBDFC8A0_9396_4971_B55D_C4DF8D81EC52"/>
 		<thecustomprofile:writable base_Property="EAID_49E3C66E_438B_4a43_9A92_7B30CF0E037D"/>
 		<thecustomprofile:writable base_Property="EAID_E2A5FD60_FFDD_4b0b_9E83_299CB67DC532"/>
@@ -5739,7 +5740,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_640BD4E9_825C_4c83_962D_C47D8C02E410" name="avskrevetAv" scope="Public">
 						<initial/>
-						<documentation value="Metadata for avskrivning&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog, M618&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;"/>
+						<documentation value="Avskrevet av&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog, M618&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;"/>
 						<model ea_localid="982" ea_guid="{640BD4E9-825C-4c83-962D-C47D8C02E410}"/>
 						<properties type="string" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -5754,7 +5755,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_4C6A9D16_FBF8_4ba0_95B9_DA2538880B3B" name="avskrivningsdato" scope="Public">
 						<initial/>
-						<documentation value="Metadata for avskrivning&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog, M617&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
+						<documentation value="Avskrivningsdato&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog, M617&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 						<model ea_localid="981" ea_guid="{4C6A9D16-FBF8-4ba0-95B9-DA2538880B3B}"/>
 						<properties type="dateTime" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -5769,7 +5770,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_ED380977_9433_46aa_8A9A_F808A65961D7" name="avskrivningsmaate" scope="Public">
 						<initial/>
-						<documentation value="Metadata for avskrivning&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog, M619&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
+						<documentation value="Avskrivningsm&amp;#229;te&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog, M619&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 						<model ea_localid="983" ea_guid="{ED380977-9433-46aa-8A9A-F808A65961D7}"/>
 						<properties type="string" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -6168,18 +6169,18 @@
 					</attribute>
 					<attribute xmi:idref="EAID_9D457522_EC2E_447d_BB8C_E049620CECFB" name="avskrivning" scope="Public">
 						<initial/>
-						<documentation/>
+						<documentation value="Avskrivning av journalpost"/>
 						<model ea_localid="987" ea_guid="{9D457522-EC2E-447d-BB8C-E049620CECFB}"/>
 						<properties type="Avskrivning" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
 						<containment containment="Not Specified" position="10"/>
-						<stereotype/>
+						<stereotype stereotype="writable"/>
 						<bounds lower="0" upper="1"/>
 						<options/>
 						<style/>
 						<styleex value="volatile=0;"/>
 						<tags/>
-						<xrefs/>
+						<xrefs value="$XREFPROP=$XID={37C1B573-DE8C-4cf9-B7C5-677C951C45C5}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=writable;GUID={A5E1434C-002D-4000-AD41-4EDB07D5BEB2};@ENDSTEREO;$DES;$CLT={9D457522-EC2E-447d-BB8C-E049620CECFB}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 					<attribute xmi:idref="EAID_DBDFC8A0_9396_4971_B55D_C4DF8D81EC52" name="dokumentetsDato" scope="Public">
 						<initial/>
@@ -14830,7 +14831,7 @@
 				</source>
 				<target xmi:idref="EAID_594B89AF_8D00_4aa1_897D_53BB6850D769">
 					<model ea_localid="436" type="Class" name="Journalpost"/>
-					<role name="referanseAvskrivesAvJournalpost" visibility="Public" targetScope="instance"/>
+					<role name="referanseAvskrivesAv" visibility="Public" targetScope="instance"/>
 					<type multiplicity="0..1" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
@@ -14845,7 +14846,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels rb="0..1" rt="+referanseAvskrivesAvJournalpost"/>
+				<labels rb="0..1" rt="+referanseAvskrivesAv"/>
 				<extendedProperties/>
 				<style/>
 				<xrefs/>
