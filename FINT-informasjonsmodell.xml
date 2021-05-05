@@ -5728,9 +5728,10 @@
 			<element xmi:idref="EAID_42B77D1B_30A3_4d61_A4E6_0CC59816F780" xmi:type="uml:Class" name="Avskrivning" scope="public">
 				<model package="EAPK_86F07623_2BB9_4cc1_AC96_149463A0D0AA" tpos="0" ea_localid="486" ea_eleType="element"/>
 				<properties documentation="En Journalpost av typen ”inng&amp;#229;ende dokument” eller ”organinternt dokument for oppf&amp;#248;lging” st&amp;#229;r i restanse inntil de er markert som ferdigbehandlet, eller avskrives. Det f&amp;#248;lger av arkivforskriften &amp;#167; 10 at avskrivningsm&amp;#229;te skal fremg&amp;#229; av journalen.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 standard, kapittel 3.4 Avskrivning og saksoppf&amp;#248;lging  &#xA;&#xA;# Referanser &#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Nils-Odd Solberg" version="3.9" phase="1.0" created="2021-04-30 16:12:39" modified="2021-05-04 10:49:43" complexity="1" status="Proposed"/>
+				<project author="Nils-Odd Solberg" version="3.9" phase="1.0" created="2021-04-30 16:12:39" modified="2021-05-05 09:31:18" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java"/>
-				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;" object_style="MDoc=1;"/>
+				<modelDocument/>
 				<tags>
 					<tag xmi:id="EAID_00383011_B4FD_31b4_9C3C_F7A2DB738A88" name="cols" modelElement="EAID_42B77D1B_30A3_4d61_A4E6_0CC59816F780"/>
 					<tag xmi:id="EAID_00406B2B_F017_39f0_8E3B_B2F93E7FDE57" name="rows" modelElement="EAID_42B77D1B_30A3_4d61_A4E6_0CC59816F780"/>
@@ -5755,7 +5756,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_4C6A9D16_FBF8_4ba0_95B9_DA2538880B3B" name="avskrivningsdato" scope="Public">
 						<initial/>
-						<documentation value="Avskrivningsdato&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog, M617&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
+						<documentation value="Dato og klokkelsett for avskrivning&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog, M617&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 						<model ea_localid="981" ea_guid="{4C6A9D16-FBF8-4ba0-95B9-DA2538880B3B}"/>
 						<properties type="dateTime" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -5770,7 +5771,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_ED380977_9433_46aa_8A9A_F808A65961D7" name="avskrivningsmaate" scope="Public">
 						<initial/>
-						<documentation value="Avskrivningsm&amp;#229;te&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog, M619&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
+						<documentation value="Avskrivningsm&amp;#229;te&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog, M619&#xA;&#xA;# Eksempel&#xA;&#xA;&quot;verdier&quot;: {&#xA;      &quot;BU&quot;: &quot;Besvart med brev&quot;,&#xA;      &quot;BE&quot;: &quot;Besvart med e-post&quot;,&#xA;      &quot;TLF&quot;: &quot;Besvart p&amp;#229; telefon&quot;,&#xA;      &quot;TE&quot;: &quot;Tatt til etterretning&quot;,&#xA;      &quot;TO&quot;: &quot;Tatt til orientering&quot;&#xA;    }&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 						<model ea_localid="983" ea_guid="{ED380977-9433-46aa-8A9A-F808A65961D7}"/>
 						<properties type="string" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -14836,7 +14837,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="Metadata for avskrivning&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog, M215&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
+					<documentation value="Referanse til journalposten som avskrives&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog, M215&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -23574,9 +23575,9 @@
 			<diagram xmi:id="EAID_3D33970F_C8DF_4ccd_A5BD_811D8E57EADB">
 				<model package="EAPK_94285559_7FED_4453_BB2C_B66BD1636807" localID="60" owner="EAPK_94285559_7FED_4453_BB2C_B66BD1636807" tpos="0"/>
 				<properties name="Registrering" type="Logical" documentation="Referanse til filen som inneholder det elektroniske dokumentet som dokumentobjektet beskriver.&#xA;&#xA;Registreres automatisk når et dokument tilknyttes en registrering, når det arkiveres flere versjoner av et dokument, når det lages en egen variant av dokumentet og når dokumentet konverteres til nye formater&#xA;&#xA;Referansen skal være en &quot;sti&quot; (dvs. også inneholde katalogstrukturen) til filnavnet som gjør det mulig å identifisere riktig fil i et arkivuttrekk. Stien skal angis relativt i forhold til filen arkivstruktur.xml. &#xA;&#xA;# Referanse&#xA;&#xA;Noark 5.5 metadatakatalog, M218"/>
-				<project author="crossover" version="1.0" created="2018-09-17 13:26:41" modified="2021-05-04 16:38:11"/>
+				<project author="crossover" version="1.0" created="2018-09-17 13:26:41" modified="2021-05-05 09:33:24"/>
 				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=2;PPgs.cy=1;DocSize.cx=791;DocSize.cy=1134;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=257;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
-				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=B05BD147;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=B43F9813;"/>
 				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Carlito,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
 				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
 				<extendedProperties/>
