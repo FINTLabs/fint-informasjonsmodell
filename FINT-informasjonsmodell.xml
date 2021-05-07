@@ -4851,13 +4851,17 @@
 		<thecustomprofile:writable base_Property="EAID_9B2CF83D_7782_47f0_A1B5_9C6CC1BDB6D8"/>
 		<GML:ApplicationSchema base_Package="EAPK_167E2532_354E_4b23_ADFA_53CB20A16223"/>
 		<thecustomprofile:hovedklasse base_Class="EAID_DB6CD84D_FDEF_46cf_B1FF_23DA43330088"/>
+		<thecustomprofile:DEPRECATED base_Association="EAID_2C8785ED_E8A3_4a0e_82A0_913F079A6375" DEPRECATED="Relasjonen erstattes av Gruppemedlemskap i Basisgruppemedlemskap. "/>
 		<thecustomprofile:hovedklasse base_Class="EAID_8961C76A_394C_4f74_AFFA_31A17B6DB415"/>
 		<thecustomprofile:hovedklasse base_Class="EAID_CBFC8E03_81C3_467d_B0CC_4842D1B17F8A"/>
 		<thecustomprofile:writable base_Property="EAID_1ACEE78F_D6BD_40fc_A667_2ABFF8E3D968"/>
 		<thecustomprofile:writable base_Property="EAID_7B43AA09_0CC6_464e_A852_F8C888285140"/>
 		<thecustomprofile:writable base_Property="EAID_1A0A5C66_ECF8_46ac_848F_98FE024CAC75"/>
 		<thecustomprofile:hovedklasse base_Class="EAID_A8A7DF7A_AA87_4bf3_B240_FC559F3057DF"/>
-		<thecustomprofile:DEPRECATED base_Association="EAID_4793DBCB_9E4F_43ec_8B81_599E46034FB0" DEPRECATED="Det du skriver "/>
+		<thecustomprofile:DEPRECATED base_Association="EAID_4793DBCB_9E4F_43ec_8B81_599E46034FB0" DEPRECATED="Relasjonen erstattes av Gruppemedlemskap i Kontaktlærergruppemedlemskap."/>
+		<thecustomprofile:DEPRECATED base_Association="EAID_C453069B_46CC_479e_B774_8C8D2B22C775" DEPRECATED="Relasjonen erstattes av Gruppemedlemskap i Programområdemedlemskap."/>
+		<thecustomprofile:DEPRECATED base_Association="EAID_EE1E400F_4FE0_4e12_BBC3_DC7FFF51D388" DEPRECATED="Relasjonen erstattes av Gruppemedlemskap i Eksamensgruppemedlemskap."/>
+		<thecustomprofile:DEPRECATED base_Association="EAID_FDCC163F_23C5_4bef_BE60_CF091CFFDCEB" DEPRECATED="Relasjonen erstattes med Gruppemedlemskap i Undervisningsgruppemedlemskap."/>
 		<thecustomprofile:hovedklasse base_Class="EAID_325D3C9A_7698_41ca_8D30_5ECE299439F7"/>
 		<thecustomprofile:hovedklasse base_Class="EAID_EC100980_E6C1_4b1d_A48B_4504D1899FA5"/>
 		<thecustomprofile:hovedklasse base_Class="EAID_DB6D7D47_946C_4bb0_8E04_E7B51864C485"/>
@@ -20161,7 +20165,9 @@
 				<extendedProperties virtualInheritance="0"/>
 				<style/>
 				<xrefs/>
-				<tags/>
+				<tags>
+					<tag xmi:id="EAID_72C432AD_7B54_4ee5_AE3F_0CB0129F8D5A" name="DEPRECATED" value="Relasjonen erstattes av Gruppemedlemskap i Basisgruppemedlemskap. "/>
+				</tags>
 			</connector>
 			<connector xmi:idref="EAID_646D1A9F_C554_4b65_87B3_3E16C4C285DF">
 				<source xmi:idref="EAID_DB6CD84D_FDEF_46cf_B1FF_23DA43330088">
@@ -20719,7 +20725,7 @@
 				<style/>
 				<xrefs/>
 				<tags>
-					<tag xmi:id="EAID_023C08AA_9AEC_4499_BAEA_63C4A96B9308" name="DEPRECATED" value="Det du skriver "/>
+					<tag xmi:id="EAID_023C08AA_9AEC_4499_BAEA_63C4A96B9308" name="DEPRECATED" value="Relasjonen erstattes av Gruppemedlemskap i Kontaktlærergruppemedlemskap."/>
 				</tags>
 			</connector>
 			<connector xmi:idref="EAID_828B3030_37E9_40ed_80BB_4F1A51F95579">
@@ -20825,7 +20831,9 @@
 				<extendedProperties virtualInheritance="0"/>
 				<style/>
 				<xrefs/>
-				<tags/>
+				<tags>
+					<tag xmi:id="EAID_B4DE8464_7C50_4582_9049_9487CEA0F5E1" name="DEPRECATED" value="Relasjonen erstattes av Gruppemedlemskap i Programområdemedlemskap."/>
+				</tags>
 			</connector>
 			<connector xmi:idref="EAID_CDC9DB15_E09B_4aa9_8783_EAF84B3BF43E">
 				<source xmi:idref="EAID_38E35381_3A3E_45c2_9CCD_72E06C6D4FB0">
@@ -20930,7 +20938,9 @@
 				<extendedProperties virtualInheritance="0"/>
 				<style/>
 				<xrefs/>
-				<tags/>
+				<tags>
+					<tag xmi:id="EAID_2F716C69_2DED_4e18_B738_65887F60A2F8" name="DEPRECATED" value="Relasjonen erstattes av Gruppemedlemskap i Eksamensgruppemedlemskap."/>
+				</tags>
 			</connector>
 			<connector xmi:idref="EAID_FDCC163F_23C5_4bef_BE60_CF091CFFDCEB">
 				<source xmi:idref="EAID_EA8C6A72_5795_443a_84EC_15FEAD1B9D34">
@@ -20965,7 +20975,9 @@
 				<extendedProperties virtualInheritance="0"/>
 				<style/>
 				<xrefs/>
-				<tags/>
+				<tags>
+					<tag xmi:id="EAID_C7912165_0E35_42a7_A033_AF5D85A94B1F" name="DEPRECATED" value="Relasjonen erstattes med Gruppemedlemskap i Undervisningsgruppemedlemskap."/>
+				</tags>
 			</connector>
 			<connector xmi:idref="EAID_118E9CA5_3D9D_4f98_AA12_3085AF52EE18">
 				<source xmi:idref="EAID_325D3C9A_7698_41ca_8D30_5ECE299439F7">
