@@ -11599,8 +11599,8 @@
 			</element>
 			<element xmi:idref="EAID_18A1A8D5_BCB4_424b_B80A_DD704DE940F4" xmi:type="uml:Class" name="Persongruppe" scope="public">
 				<model package="EAPK_441CE9A5_961B_41f0_84C4_C961F6FF4351" tpos="0" ea_localid="489" ea_eleType="element"/>
-				<properties documentation="Grupping av personer som ikke handler om undervisning. Dette kan f.eks. v&amp;#230;re grupper av elever som skal faktureres." isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Kenneth F Goa" version="3.9.0" phase="1.0" created="2021-05-10 10:58:00" modified="2021-05-20 10:06:28" complexity="1" status="Proposed"/>
+				<properties documentation="Gruppe av personer som ikke handler om undervisning. Dette kan f.eks. v&amp;#230;re grupper av elever som skal faktureres." isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Kenneth F Goa" version="3.9.0" phase="1.0" created="2021-05-10 10:58:00" modified="2021-05-25 11:39:31" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -16180,7 +16180,7 @@
 				<properties ea_type="Package" stereotype="import" direction="Source -&gt; Destination"/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels/>
+				<labels mb=" &#xA;«import»"/>
 				<extendedProperties conditional=" &#xA;«import»" virtualInheritance="0"/>
 				<style/>
 				<xrefs value="$XREFPROP=$XID={EDB93AEE-D3A4-4c1a-AD74-94BBB1B48335}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=import;GUID={16BC12DD-1EF7-4bef-800E-36503487A4D5};@ENDSTEREO;$DES;$CLT={6941A14E-D986-4742-93CF-BC6439EAE316}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
@@ -16213,7 +16213,7 @@
 				<properties ea_type="Package" stereotype="import" direction="Source -&gt; Destination"/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels/>
+				<labels mb=" &#xA;«import»"/>
 				<extendedProperties conditional=" &#xA;«import»" virtualInheritance="0"/>
 				<style/>
 				<xrefs value="$XREFPROP=$XID={12220F64-8B00-48b0-9447-773AC6703E18}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=import;GUID={4700C4EB-E13C-4e5b-AA11-D128808FD9F6};FQName=SOSI::import;@ENDSTEREO;$DES;$CLT={AAB041CC-A9BF-408c-B71C-0DB7D6E7EA41}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
@@ -23382,7 +23382,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;"/>
-					<documentation value="Referanse til Grep-kode."/>
+					<documentation value="Referanse til Grep kodeverket."/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -23417,7 +23417,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="Referanse til VIGO kode."/>
+					<documentation value="Referanse til VIGO kodeverket."/>
 					<xrefs/>
 					<tags/>
 				</target>
