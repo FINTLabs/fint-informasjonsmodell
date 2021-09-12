@@ -5227,7 +5227,6 @@
 		<thecustomprofile:hovedklasse base_Class="EAID_6D5839CF_22C8_4dd8_B663_5F091B4434A6"/>
 		<thecustomprofile:hovedklasse base_Class="EAID_0F1201EE_0BE3_43fe_84F9_3911698D34C5"/>
 		<thecustomprofile:hovedklasse base_Class="EAID_E8F8A8A3_8C7B_4aad_A52C_B07B8857C7F0"/>
-		<thecustomprofile:hovedklasse base_Class="EAID_AA1B7478_3C6F_480c_8A23_DA73E2E6AAAD"/>
 		<thecustomprofile:hovedklasse base_Class="EAID_2972DA51_718F_42ce_8022_D06675D06A74"/>
 		<thecustomprofile:writable base_Property="EAID_A08E8ED1_D5DA_416b_92C2_E9B03D3977C4"/>
 		<thecustomprofile:hovedklasse base_Class="EAID_5701F6E0_5163_4de6_B190_6F6FBF1D132D"/>
@@ -11720,7 +11719,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_3623D6E4_63C7_4d34_B8B7_621ABC0780C6" name="hybelAdresse" scope="Public">
 						<initial/>
-						<documentation/>
+						<documentation value="Midlertidig bostedsadresse som ikke er folkeregisterregistrert."/>
 						<model ea_localid="1000" ea_guid="{3623D6E4-63C7-4d34-B8B7-621ABC0780C6}"/>
 						<properties type="Adresse" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -11810,7 +11809,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_7F6ABF8C_2CEB_44dd_BC48_894A74E382FB" name="voksen" scope="Public">
 						<initial/>
-						<documentation/>
+						<documentation value="Voksen i utdanningstilbud tilpasset voksne"/>
 						<model ea_localid="998" ea_guid="{7F6ABF8C-2CEB-44dd-BC48-894A74E382FB}"/>
 						<properties type="boolean" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -12482,12 +12481,12 @@
 			</element>
 			<element xmi:idref="EAID_AA1B7478_3C6F_480c_8A23_DA73E2E6AAAD" xmi:type="uml:Class" name="AnmerkningSum" scope="public">
 				<model package="EAPK_E2B2497F_0C65_48d0_B8AF_87F52A1B6EFC" tpos="0" ea_localid="499" ea_eleType="element"/>
-				<properties documentation="Antall anmerkninger for en elev for et elevforhold. &#xA;For kategoriene Orden og Atferd." isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="goa" version="1.0" phase="1.0" created="2021-08-25 13:01:29" modified="2021-08-25 14:29:19" complexity="1" status="Proposed" keywords="hovedklasse"/>
+				<properties documentation="Antall anmerkninger for en elev for et elevforhold. &#xA;For kategoriene Orden og Atferd." isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Goa" version="1.0" phase="1.0" created="2021-08-25 13:01:29" modified="2021-09-12 15:13:33" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
-				<xrefs value="$XREFPROP=$XID={BC4D12EA-F612-49c2-BCCE-91AB5EF1E61A}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=hovedklasse;GUID={D08F65EF-7D48-4ae0-A557-0B0AB5BB20BC};@ENDSTEREO;$DES;$CLT={AA1B7478-3C6F-480c-8A23-DA73E2E6AAAD}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<xrefs/>
 				<extendedProperties tagged="0" package_name="Vurdering"/>
 				<attributes>
 					<attribute xmi:idref="EAID_D70CA6E4_7178_4c56_89F4_951DA1B1D656" name="antallAtferd" scope="Public">
@@ -21542,7 +21541,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
-					<documentation/>
+					<documentation value="Årsaken til avbruddet"/>
 					<xrefs/>
 					<tags/>
 				</target>
