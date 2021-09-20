@@ -4149,7 +4149,7 @@
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_1F904B88_0650_4948_A071_904E76D37023" name="årstimer" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001009_0650_4948_A071_904E76D37023" value="0"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001010_0650_4948_A071_904E76D37023" value="1"/>
-								<type xmi:idref="EAJava_float"/>
+								<type xmi:idref="EAJava_int"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstCC2040_39A8_4a33_B910_1E9D203B83D6" name="programområde" visibility="public" association="EAID_52CC2040_39A8_4a33_B910_1E9D203B83D6" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_FB6DC657_8860_42ec_902E_B8B8C430625F"/>
@@ -12188,9 +12188,9 @@
 				<attributes>
 					<attribute xmi:idref="EAID_1F904B88_0650_4948_A071_904E76D37023" name="årstimer" scope="Public">
 						<initial/>
-						<documentation value="Antall timer eleven skal ha i l&amp;#248;pet av &amp;#229;ret."/>
+						<documentation value="Antall timer en elev skal ha i l&amp;#248;pet av &amp;#229;ret. Oppgitt i hundredeler."/>
 						<model ea_localid="1013" ea_guid="{1F904B88-0650-4948-A071-904E76D37023}"/>
-						<properties type="float" collection="false" static="0" duplicates="0" changeability="changeable"/>
+						<properties type="int" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
 						<containment containment="Not Specified" position="0"/>
 						<stereotype/>
