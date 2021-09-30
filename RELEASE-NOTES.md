@@ -1,72 +1,154 @@
 <!-- MarkdownTOC autolink="true" -->
 
-- [v3.9.0](#v390)
+- [v3.10.0](#v3100)
   - [Features](#features)
   - [Deprecated](#deprecated)
   - [Bugfixes](#bugfixes)
-- [v3.8.10](#v3810)
-  - [Bugfixes](#bugfixes-1)
-- [v3.8.0](#v380)
-  - [Deprecated](#deprecated-1)
-  - [Bugfixes](#bugfixes-2)
+- [v3.9.0](#v390)
   - [Features](#features-1)
-- [v3.7.0](#v370)
-  - [Features](#features-2)
-- [v3.6.10](#v3610)
-  - [Bugfixes](#bugfixes-3)
-- [v3.6.0](#v360)
+  - [Deprecated](#deprecated-1)
+  - [Bugfixes](#bugfixes-1)
+- [v3.8.10](#v3810)
+  - [Bugfixes](#bugfixes-2)
+- [v3.8.0](#v380)
   - [Deprecated](#deprecated-2)
+  - [Bugfixes](#bugfixes-3)
+  - [Features](#features-2)
+- [v3.7.0](#v370)
   - [Features](#features-3)
-- [v3.5.0](#v350)
-  - [Features](#features-4)
+- [v3.6.10](#v3610)
   - [Bugfixes](#bugfixes-4)
-- [v3.4.0](#v340)
+- [v3.6.0](#v360)
+  - [Deprecated](#deprecated-3)
+  - [Features](#features-4)
+- [v3.5.0](#v350)
   - [Features](#features-5)
   - [Bugfixes](#bugfixes-5)
-- [v3.3.0](#v330)
+- [v3.4.0](#v340)
   - [Features](#features-6)
   - [Bugfixes](#bugfixes-6)
-- [v3.2.0](#v320)
-  - [Deprecated](#deprecated-3)
+- [v3.3.0](#v330)
   - [Features](#features-7)
-- [v3.1.0](#v310)
+  - [Bugfixes](#bugfixes-7)
+- [v3.2.0](#v320)
   - [Deprecated](#deprecated-4)
   - [Features](#features-8)
-  - [Bugfixes](#bugfixes-7)
-- [v3.0.0](#v300)
-  - [Breaking changes](#breaking-changes)
+- [v3.1.0](#v310)
+  - [Deprecated](#deprecated-5)
   - [Features](#features-9)
   - [Bugfixes](#bugfixes-8)
-- [v2.8.0](#v280)
+- [v3.0.0](#v300)
+  - [Breaking changes](#breaking-changes)
   - [Features](#features-10)
   - [Bugfixes](#bugfixes-9)
-- [v2.7.0](#v270)
+- [v2.8.0](#v280)
   - [Features](#features-11)
-- [v2.6.0](#v260)
-  - [Features](#features-12)
   - [Bugfixes](#bugfixes-10)
-- [v2.4.0](#v240)
+- [v2.7.0](#v270)
+  - [Features](#features-12)
+- [v2.6.0](#v260)
   - [Features](#features-13)
-- [v2.2.20](#v2220)
   - [Bugfixes](#bugfixes-11)
-- [v2.2.10](#v2210)
-  - [Bugfixes](#bugfixes-12)
-- [v2.2.0](#v220)
+- [v2.4.0](#v240)
   - [Features](#features-14)
-- [v2.0.10](#v2010)
+- [v2.2.20](#v2220)
+  - [Bugfixes](#bugfixes-12)
+- [v2.2.10](#v2210)
   - [Bugfixes](#bugfixes-13)
+- [v2.2.0](#v220)
+  - [Features](#features-15)
+- [v2.0.10](#v2010)
+  - [Bugfixes](#bugfixes-14)
 - [v2.0.0](#v200)
   - [Breaking changes](#breaking-changes-1)
-  - [Features](#features-15)
-  - [Bugfixes](#bugfixes-14)
-- [v1.0.1](#v101)
   - [Features](#features-16)
   - [Bugfixes](#bugfixes-15)
+- [v1.0.1](#v101)
+  - [Features](#features-17)
+  - [Bugfixes](#bugfixes-16)
   - [Known issues](#known-issues)
 - [v1.0.0](#v100)
-  - [Features](#features-17)
+  - [Features](#features-18)
 
 <!-- /MarkdownTOC -->
+
+# v3.10.0
+
+
+|      |              |
+| ---- | ------------ |
+| Date | `30.09.2021` |
+| Tag  | `v3.10.0-rc-1` |
+
+Utdanning has been the main focus of this release. Only smaller changes have been done on other domains.
+
+## Features
+
+* Utdanning
+  * Added abstract class `Fagvurdering`.
+  * Added abstract class `Ordensvurdering`.
+  * Added class `Underveisfagvurdering`.
+  * Added class `Halvårsfagvurdering`.
+  * Added class `Sluttfagvurdering`.
+  * Added class `Underveisordensvurdering`.
+  * Added class `Halvårsordensvurdering`.
+  * Added class `Sluttordensvurdering`.
+  * Added relation `sluttordensvurdering` on `Elevforhold`.
+  * Added relation `underveisfagvurdering` on `Elevforhold`.
+  * Added relation `halvårsfagvurdering` on `Elevforhold`.
+  * Added relation `sluttfagvurdering` on `Elevforhold`.
+  * Added relation `halvårsordensvurdering` on `Elevforhold`.
+  * Added relation `underveisordensvurdering` on `Elevforhold`.
+
+  The changes above replace `Vurdering`
+
+  * Added class `Anmerkninger`.
+  * Added class `Elevtilrettelegging`.
+  * Added class `Fraværsoversikt`.
+  * Added complex datatype `Fagvurdering`.
+  * Added complex datatype `Fraværsprosent`.
+  * Added complex datatype `Ordensvurdering`.
+  * Added attribute `gjest` on `Elev`.
+  * Added attribute `hybeladresse` on `Elev`.
+  * Added relation `tilrettelegging` on `Fag`.
+  * Added relation `elevfravær` on `Fag`.
+  * Added relation `kommune` on `Person`.
+  * Added relation `registrertav` on `Fravær`.
+
+  * Added attribute `anmerkninger` on `Elevforhold`.
+  * Added attribute `avbruddsdato` on `Elevforhold`.
+  * Added relation `sidemål` on `Elevforhold`.
+  * Added relation `kroppsøving` on `Elevforhold`.
+  * Added relation `avbruddsårsak` on `Elevforhold`.
+  * Added relation `elevfravær` on `Elevforhold`.
+  * Added relation `tilrettelegging` on `Elevforhold`.
+
+  * Added class `Avbruddsårsak` (kodeverk).
+  * Added class `Fagmerknad` (kodeverk).
+  * Added class `Tilrettelegging` (kodeverk).
+
+* Felles
+  * Added relation `kommune` on `Person`.
+
+## Deprecated
+
+*Note:* Deprecated classes, attributes and relations might be removed in the next major release.
+
+* Utdanning
+  * The class `Vurdering` is deprecated.
+  * The attribute `dokumentert` on `Fravær` is deprecated.
+  * The relation `vurdering` on `Elevforhold` is deprecated.
+  * The relation `eksamensgruppe` on `Fravær` is deprecated.
+
+## Bugfixes
+
+* Utdanning
+  * Added description for attribute `persongruppemedlemskap` on `Elevforhold`.
+  * Clarified description for reference `Grepreferanse`.
+
+* Felles
+  * Clarified description for attribute `foreldreansvar` on `Person`.
+  * Clarified description for attribute `foreldre` on `Person`.
 
 # v3.9.0
 
