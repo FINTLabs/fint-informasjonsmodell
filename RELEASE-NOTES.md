@@ -127,8 +127,8 @@ Utdanning has been the main focus of this release. Only smaller changes have bee
   * Added class `Fagmerknad` (kodeverk).
   * Added class `Tilrettelegging` (kodeverk).
 
-  * Felles
-    * Added relation `kommune` on `Person`.
+* Felles
+  * Added relation `kommune` on `Person`.
 
 ## Deprecated
 
