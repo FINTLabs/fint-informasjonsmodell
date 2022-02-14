@@ -11108,7 +11108,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_D1BFA2AA_7F84_4c12_AF8A_92F1BED88838" name="prosent" scope="Public">
 						<initial/>
-						<documentation value="Andel av lønnsprosent som beslaglegges, i hundredels prosent."/>
+						<documentation value="Andel av lønnsprosent som beslaglegges.&#xA;&#xA;# Representasjon av prosent&#xA;&#xA;I informasjonsmodellen oppgis en prosentverdi som et heltall. Dette tallet er antall hundredels prosent.&#xA;&#xA;## Eksempel&#xA; &#xA;44 % vil ha verdien 4400.&#xA;58,73 % vil ha verdien 5873"/>
 						<model ea_localid="187" ea_guid="{D1BFA2AA-7F84-4c12-AF8A-92F1BED88838}"/>
 						<properties type="long" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -11217,7 +11217,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_7E332DEF_436E_498b_AEA5_6E6F35663F71" name="prosent" scope="Public">
 						<initial/>
-						<documentation value="Prosent fraværende, i hundredels prosent.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Grad av sykemelding for arbeidsforhold. &#xA;&#xA;# Eksempel&#xA;&#xA;- Helt sykemeldt:&#xA;  - 10000&#xA;- 50% permisjon:&#xA;  - 5000&#xA;"/>
+						<documentation value="Prosent fraværende&#xA;&#xA;# Beskrivelse&#xA;&#xA;Grad av sykemelding for arbeidsforhold. &#xA;&#xA;# Representasjon av prosent&#xA;&#xA;I informasjonsmodellen oppgis en prosentverdi som et heltall. Dette tallet er antall hundredels prosent.&#xA;&#xA;# Eksempel&#xA;&#xA;- Helt sykemeldt:&#xA;  - 10000&#xA;- 50% permisjon:&#xA;  - 5000&#xA;"/>
 						<model ea_localid="476" ea_guid="{7E332DEF-436E-498b-AEA5-6E6F35663F71}"/>
 						<properties type="long" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -11684,7 +11684,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_F7644D33_ABC0_4090_986A_5ED31FA097F2" name="lønnsprosent" scope="Public">
 						<initial/>
-						<documentation value="Prosent av årslønn den ansatte  skal ha utbetalt&#xA;&#xA;# Beskrivelse&#xA;&#xA;Det personalressursen skal ha utbetalt.&#xA;&#xA;# Format&#xA;&#xA;Angitt fra 0 til 10000 i hundredelsprosent.&#xA;&#xA;&#xA;&#xA;"/>
+						<documentation value="Prosent av årslønn den ansatte  skal ha utbetalt&#xA;&#xA;# Beskrivelse&#xA;&#xA;Det personalressursen skal ha utbetalt.&#xA;&#xA;# Format&#xA;&#xA;Angitt fra 0 til 10000 i hundredelsprosent.&#xA;&#xA;&#xA;# Eksempler&#xA;&#xA;* `1000` tilsvarer 10 %&#xA;* `1033` tilsvarer 10,33 %&#xA;* `8000` tilsvarer 80 %&#xA;* `10000` tilsvarer 100 %&#xA;"/>
 						<model ea_localid="54" ea_guid="{F7644D33-ABC0-4090-986A-5ED31FA097F2}"/>
 						<properties type="long" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -11744,7 +11744,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_C65DDCC2_0048_4f56_B587_D725BADEE5F1" name="tilstedeprosent" scope="Public">
 						<initial/>
-						<documentation value="Det personalressursen faktisk jobber&#xA;&#xA;# Beskrivelse&#xA;&#xA;I hvilken prosentstørrelse personalressursen er tilgjengelig for arbeidsgiver.&#xA;&#xA;# Format&#xA;&#xA;Angitt fra 0 til 10000 i hundredelsprosent.&#xA;"/>
+						<documentation value="Det personalressursen faktisk jobber&#xA;&#xA;# Beskrivelse&#xA;&#xA;I hvilken prosentstørrelse personalressursen er tilgjengelig for arbeidsgiver.&#xA;&#xA;# Format&#xA;&#xA;Angitt fra 0 til 10000 i hundredelsprosent.&#xA;&#xA;# Eksempler&#xA;&#xA;* `1000` tilsvarer 10 %&#xA;* `1033` tilsvarer 10,33 %&#xA;* `8000` tilsvarer 80 %&#xA;* `10000` tilsvarer 100 %"/>
 						<model ea_localid="103" ea_guid="{C65DDCC2-0048-4f56-B587-D725BADEE5F1}"/>
 						<properties type="long" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -11753,7 +11753,7 @@
 						<bounds lower="1" upper="1"/>
 						<options/>
 						<style/>
-						<styleex value="volatile=0;"/>
+						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
 					</attribute>
@@ -13027,7 +13027,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_CCDC22E8_B35E_4fbd_B668_0249AA9FA750" name="halvår" scope="Public">
 						<initial/>
-						<documentation value="Udokumentert fravær for første halvår."/>
+						<documentation value="Udokumentert fravær for første halvår.&#xA;&#xA;# Representasjon av prosent&#xA;&#xA;I informasjonsmodellen oppgis en prosentverdi som et heltall. Dette tallet er antall hundredels prosent.&#xA;&#xA;## Eksempel&#xA; &#xA;44 prosent ( 0,44 ) vil ha verdien 4400.&#xA;58,73 prosent vil ha verdien 5873"/>
 						<model ea_localid="1021" ea_guid="{CCDC22E8-B35E-4fbd-B668-0249AA9FA750}"/>
 						<properties type="Fraværsprosent" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -13042,7 +13042,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_63593FA4_85FF_4706_A3D3_A22291FE193E" name="skoleår" scope="Public">
 						<initial/>
-						<documentation value="Udokumentert fravær for hele skoleåret."/>
+						<documentation value="Udokumentert fravær for hele skoleåret.&#xA;&#xA;# Representasjon av prosent&#xA;&#xA;I informasjonsmodellen oppgis en prosentverdi som et heltall. Dette tallet er antall hundredels prosent.&#xA;&#xA;## Eksempel&#xA; &#xA;44 prosent ( 0,44 ) vil ha verdien 4400.&#xA;58,73 prosent vil ha verdien 5873"/>
 						<model ea_localid="1022" ea_guid="{63593FA4-85FF-4706-A3D3-A22291FE193E}"/>
 						<properties type="Fraværsprosent" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -13103,7 +13103,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_2F91A5D3_A818_4061_91A6_8A7508246295" name="prosent" scope="Public">
 						<initial/>
-						<documentation value="Udokumentert fravær i prosent. Oppgis i hundredeler."/>
+						<documentation value="Udokumentert fravær i prosent.&#xA;&#xA;# Representasjon av prosent&#xA;&#xA;I informasjonsmodellen oppgis en prosentverdi som et heltall. Dette tallet er antall hundredels prosent.&#xA;&#xA;## Eksempel&#xA; &#xA;44 prosent ( 0,44 ) vil ha verdien 4400.&#xA;58,73 prosent vil ha verdien 5873"/>
 						<model ea_localid="1020" ea_guid="{2F91A5D3-A818-4061-91A6-8A7508246295}"/>
 						<properties type="int" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
