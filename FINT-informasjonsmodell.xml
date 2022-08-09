@@ -3721,7 +3721,7 @@
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000907__AE25_41fb_8C62_E373CCEBB2E3" value="0"/>
 								<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000908__AE25_41fb_8C62_E373CCEBB2E3" value="-1"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst56DBA4_0F08_4ece_8036_F85C9882EC8F" name="elevfravær" visibility="public" association="EAID_B556DBA4_0F08_4ece_8036_F85C9882EC8F" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst56DBA4_0F08_4ece_8036_F85C9882EC8F" name="fraværsregistreringer" visibility="public" association="EAID_B556DBA4_0F08_4ece_8036_F85C9882EC8F" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_9315B96F_C895_40b0_8CFF_D04359FC9474"/>
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000909__0F08_4ece_8036_F85C9882EC8F" value="0"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000910__0F08_4ece_8036_F85C9882EC8F" value="1"/>
@@ -23770,7 +23770,7 @@
 				</source>
 				<target xmi:idref="EAID_9315B96F_C895_40b0_8CFF_D04359FC9474">
 					<model ea_localid="521" type="Class" name="Elevfravær"/>
-					<role name="elevfravær" visibility="Public" targetScope="instance"/>
+					<role name="fraværsregistreringer" visibility="Public" targetScope="instance"/>
 					<type multiplicity="0..1" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
@@ -23785,7 +23785,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels lb="1" lt="+elevforhold" rb="0..1" rt="+elevfravær"/>
+				<labels lb="1" lt="+elevforhold" rb="0..1" rt="+fraværsregistreringer"/>
 				<extendedProperties/>
 				<style/>
 				<xrefs/>
@@ -30208,9 +30208,9 @@
 			<diagram xmi:id="EAID_F69A9A6E_99E5_42a2_BC0A_023B14C162FD">
 				<model package="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519" localID="76" owner="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519"/>
 				<properties name="Fravær" type="Logical"/>
-				<project author="Kenneth F Goa" version="1.0" created="2022-03-21 12:45:44" modified="2022-03-24 14:18:40"/>
+				<project author="Kenneth F Goa" version="1.0" created="2022-03-21 12:45:44" modified="2022-08-09 14:01:40"/>
 				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=0;PPgs.cy=0;DocSize.cx=827;DocSize.cy=1075;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
-				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=94E8F2D5;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=D3F24CC3;"/>
 				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
 				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
 				<extendedProperties/>
@@ -30218,12 +30218,12 @@
 					<element geometry="Left=469;Top=675;Right=559;Bottom=745;" subject="EAID_115317F1_D74B_47a2_9C01_AC42D414F3E0" seqno="1" style="DUID=F863D9E8;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="Left=450;Top=384;Right=540;Bottom=454;" subject="EAID_EA8C6A72_5795_443a_84EC_15FEAD1B9D34" seqno="2" style="DUID=D921F17A;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="Left=423;Top=496;Right=568;Bottom=585;" subject="EAID_ADF8D060_7406_4d34_BD1D_D9D8CD09DCBF" seqno="3" style="DUID=B68C29D4;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
-					<element geometry="Left=477;Top=78;Right=646;Bottom=205;" subject="EAID_A8A7DF7A_AA87_4bf3_B240_FC559F3057DF" seqno="4" style="DUID=E1430B1B;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
+					<element geometry="Left=477;Top=78;Right=659;Bottom=205;" subject="EAID_A8A7DF7A_AA87_4bf3_B240_FC559F3057DF" seqno="4" style="DUID=E1430B1B;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="Left=824;Top=298;Right=954;Bottom=409;" subject="EAID_38E35381_3A3E_45c2_9CCD_72E06C6D4FB0" seqno="5" style="DUID=31C33880;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="Left=170;Top=415;Right=300;Bottom=503;" subject="EAID_E34EDF62_D991_4d78_AAC2_5D0ECB26082D" seqno="6" style="DUID=C4BFC22B;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
-					<element geometry="Left=182;Top=202;Right=343;Bottom=272;" subject="EAID_9315B96F_C895_40b0_8CFF_D04359FC9474" seqno="7" style="DUID=47C6F6AB;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
+					<element geometry="Left=182;Top=205;Right=343;Bottom=275;" subject="EAID_9315B96F_C895_40b0_8CFF_D04359FC9474" seqno="7" style="DUID=47C6F6AB;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="EDGE=1;$LLB=CX=17:CY=14:OX=9:OY=2:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=89:CY=14:OX=-10:OY=-17:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=51:CY=14:OX=-10:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_FDCC163F_23C5_4bef_BE60_CF091CFFDCEB" style="Mode=3;EOID=E1430B1B;SOID=D921F17A;Color=-1;LWidth=0;Hidden=0;"/>
-					<element geometry="SX=-1;SY=0;EX=-1;EY=0;EDGE=4;$LLB=CX=6:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=51:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=50:CY=14:OX=-12:OY=-14:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_B556DBA4_0F08_4ece_8036_F85C9882EC8F" style="Mode=3;EOID=47C6F6AB;SOID=E1430B1B;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=-1;SY=0;EX=-1;EY=0;EDGE=4;$LLB=CX=6:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=51:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=90:CY=14:OX=-12:OY=-14:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_B556DBA4_0F08_4ece_8036_F85C9882EC8F" style="Mode=3;EOID=47C6F6AB;SOID=E1430B1B;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=CX=52:CY=14:OX=1:OY=20:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=3:OY=10:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_E49980E6_8823_4641_BC50_B59516A9BFFF" style="Mode=3;EOID=B68C29D4;SOID=31C33880;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="EDGE=4;$LLB=CX=17:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=33:CY=14:OX=14:OY=-16:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=51:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=6:CY=14:OX=-11:OY=3:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_CDC9DB15_E09B_4aa9_8783_EAF84B3BF43E" style="Mode=3;EOID=E1430B1B;SOID=31C33880;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=CX=89:CY=14:OX=4:OY=-11:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_7A1D27C6_3238_4a47_BDD3_03700F58D01E" style="Mode=3;EOID=D921F17A;SOID=31C33880;Color=-1;LWidth=0;Hidden=0;"/>
