@@ -4850,7 +4850,7 @@
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001181__F08A_412a_AA7B_3AEAD8910943" value="0"/>
 								<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI001182__F08A_412a_AA7B_3AEAD8910943" value="-1"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_src59A2F0_9EBD_4a9b_A710_C14B9D145473" name="sensorliste" visibility="public" association="EAID_8F59A2F0_9EBD_4a9b_A710_C14B9D145473" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_src59A2F0_9EBD_4a9b_A710_C14B9D145473" name="sensor" visibility="public" association="EAID_8F59A2F0_9EBD_4a9b_A710_C14B9D145473" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_F10F8027_8A2E_4612_B3B4_1ABDA84E2883"/>
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001183__9EBD_4a9b_A710_C14B9D145473" value="0"/>
 								<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI001184__9EBD_4a9b_A710_C14B9D145473" value="-1"/>
@@ -5317,7 +5317,7 @@
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001298_7F6F_472a_A5ED_70AC33F22C07" value="1"/>
 								<type xmi:idref="EAJava_boolean"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_3BCAEED0_E47B_4ecc_8D31_433D2B4C490B" name="sensorNr" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_3BCAEED0_E47B_4ecc_8D31_433D2B4C490B" name="sensornummer" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001299_E47B_4ecc_8D31_433D2B4C490B" value="0"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001300_E47B_4ecc_8D31_433D2B4C490B" value="1"/>
 								<type xmi:idref="EAJava_int"/>
@@ -5327,7 +5327,7 @@
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001302_7AAA_41ce_83D3_EDA6FE5948B9" value="1"/>
 								<type xmi:idref="EAJava_Identifikator"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst0BA9A0_77F7_42ee_A1E1_7B7AED108460" name="skoleresurs" visibility="public" association="EAID_840BA9A0_77F7_42ee_A1E1_7B7AED108460" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst0BA9A0_77F7_42ee_A1E1_7B7AED108460" name="skoleressurs" visibility="public" association="EAID_840BA9A0_77F7_42ee_A1E1_7B7AED108460" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_ADF8D060_7406_4d34_BD1D_D9D8CD09DCBF"/>
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001303__77F7_42ee_A1E1_7B7AED108460" value="1"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001304__77F7_42ee_A1E1_7B7AED108460" value="1"/>
@@ -13953,8 +13953,8 @@
 			</element>
 			<element xmi:idref="EAID_F10F8027_8A2E_4612_B3B4_1ABDA84E2883" xmi:type="uml:Class" name="Sensor" scope="public">
 				<model package="EAPK_E2B2497F_0C65_48d0_B8AF_87F52A1B6EFC" tpos="0" ea_localid="523" ea_eleType="element"/>
-				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Kenneth F Goa" version="1.0" phase="1.0" created="2022-03-27 23:04:43" modified="2022-03-27 23:04:43" complexity="1" status="Proposed"/>
+				<properties documentation="Sensor for en eksamen." isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Kenneth F Goa" version="1.0" phase="1.0" created="2022-03-27 23:04:43" modified="2022-08-12 11:43:56" complexity="1" status="Proposed"/>
 				<code gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -13991,7 +13991,7 @@
 						<tags/>
 						<xrefs/>
 					</attribute>
-					<attribute xmi:idref="EAID_3BCAEED0_E47B_4ecc_8D31_433D2B4C490B" name="sensorNr" scope="Public">
+					<attribute xmi:idref="EAID_3BCAEED0_E47B_4ecc_8D31_433D2B4C490B" name="sensornummer" scope="Public">
 						<initial/>
 						<documentation value="Viser om det er sensor 1 eller sensor 2"/>
 						<model ea_localid="1045" ea_guid="{3BCAEED0-E47B-4ecc-8D31-433D2B4C490B}"/>
@@ -24985,7 +24985,7 @@
 				</source>
 				<target xmi:idref="EAID_ADF8D060_7406_4d34_BD1D_D9D8CD09DCBF">
 					<model ea_localid="256" type="Class" name="Skoleressurs"/>
-					<role name="skoleresurs" visibility="Public" targetScope="instance"/>
+					<role name="skoleressurs" visibility="Public" targetScope="instance"/>
 					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
@@ -25000,7 +25000,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels lb="0..*" lt="+sensor" rb="1" rt="+skoleresurs"/>
+				<labels lb="0..*" lt="+sensor" rb="1" rt="+skoleressurs"/>
 				<extendedProperties/>
 				<style/>
 				<xrefs/>
@@ -26556,7 +26556,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation/>
+					<documentation value="Viser hvilken form eksamen skal ha."/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -26714,7 +26714,7 @@
 			<connector xmi:idref="EAID_8F59A2F0_9EBD_4a9b_A710_C14B9D145473">
 				<source xmi:idref="EAID_F10F8027_8A2E_4612_B3B4_1ABDA84E2883">
 					<model ea_localid="523" type="Class" name="Sensor"/>
-					<role name="sensorliste" visibility="Public" targetScope="instance"/>
+					<role name="sensor" visibility="Public" targetScope="instance"/>
 					<type multiplicity="0..*" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
@@ -26740,7 +26740,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels lb="0..*" lt="+sensorliste" rb="1" rt="+eksamensgruppe"/>
+				<labels lb="0..*" lt="+sensor" rb="1" rt="+eksamensgruppe"/>
 				<extendedProperties/>
 				<style/>
 				<xrefs/>
