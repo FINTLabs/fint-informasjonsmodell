@@ -5162,38 +5162,38 @@
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001266__BEFB_4237_9856_DD5CDEFAC360" value="1"/>
 							</ownedAttribute>
 						</packagedElement>
-						<packagedElement xmi:type="uml:Class" xmi:id="EAID_845AF1C6_FDEC_4e7b_B5F3_FEEEFBC71753" name="KarakterHistorie" visibility="public">
+						<packagedElement xmi:type="uml:Class" xmi:id="EAID_845AF1C6_FDEC_4e7b_B5F3_FEEEFBC71753" name="Karakterhistorie" visibility="public">
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_A00D8378_566D_4feb_A35A_00115BEDD1EC" name="oppdatertDato" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001267_566D_4feb_A35A_00115BEDD1EC" value="1"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001268_566D_4feb_A35A_00115BEDD1EC" value="1"/>
 								<type xmi:idref="EAJava_dateTime"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_429BB55E_B7DF_4c24_9798_D7932903A156" name="systemId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001269_B7DF_4c24_9798_D7932903A156" value="1"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001270_B7DF_4c24_9798_D7932903A156" value="1"/>
-								<type xmi:idref="EAJava_Identificator"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst5140C0_53AA_47f2_884A_19E8B40213A6" name="oppdatertAv" visibility="public" association="EAID_275140C0_53AA_47f2_884A_19E8B40213A6" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_ADF8D060_7406_4d34_BD1D_D9D8CD09DCBF"/>
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001271__53AA_47f2_884A_19E8B40213A6" value="0"/>
 								<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI001272__53AA_47f2_884A_19E8B40213A6" value="-1"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstB18BE5_2F95_46ec_981A_17B0CBA2A957" name="gammelKarakter" visibility="public" association="EAID_2AB18BE5_2F95_46ec_981A_17B0CBA2A957" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstB18BE5_2F95_46ec_981A_17B0CBA2A957" name="opprinneligKarakterverdi" visibility="public" association="EAID_2AB18BE5_2F95_46ec_981A_17B0CBA2A957" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_8F3122A4_0BE1_49ef_BC80_55216C32E236"/>
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001273__2F95_46ec_981A_17B0CBA2A957" value="0"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001274__2F95_46ec_981A_17B0CBA2A957" value="1"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst2FFC91_3E4A_41cd_915A_9BDC5A5DA1C9" name="statusFra" visibility="public" association="EAID_532FFC91_3E4A_41cd_915A_9BDC5A5DA1C9" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst2FFC91_3E4A_41cd_915A_9BDC5A5DA1C9" name="karakterstatusFra" visibility="public" association="EAID_532FFC91_3E4A_41cd_915A_9BDC5A5DA1C9" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_EFAD7A9A_4BF0_4f11_ACB3_0A9DF98CA8F1"/>
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001275__3E4A_41cd_915A_9BDC5A5DA1C9" value="0"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001276__3E4A_41cd_915A_9BDC5A5DA1C9" value="1"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstB1F43E_5FBC_4e65_9EF6_048C8AE53EF7" name="nyKarakter" visibility="public" association="EAID_A2B1F43E_5FBC_4e65_9EF6_048C8AE53EF7" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstB1F43E_5FBC_4e65_9EF6_048C8AE53EF7" name="nyKarakterverdi" visibility="public" association="EAID_A2B1F43E_5FBC_4e65_9EF6_048C8AE53EF7" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_8F3122A4_0BE1_49ef_BC80_55216C32E236"/>
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001277__5FBC_4e65_9EF6_048C8AE53EF7" value="0"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001278__5FBC_4e65_9EF6_048C8AE53EF7" value="1"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstC99563_2D66_4c95_A6ED_94C18A204F89" name="statusTil" visibility="public" association="EAID_F9C99563_2D66_4c95_A6ED_94C18A204F89" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstC99563_2D66_4c95_A6ED_94C18A204F89" name="karakterstatusTil" visibility="public" association="EAID_F9C99563_2D66_4c95_A6ED_94C18A204F89" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_EFAD7A9A_4BF0_4f11_ACB3_0A9DF98CA8F1"/>
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001279__2D66_4c95_A6ED_94C18A204F89" value="0"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001280__2D66_4c95_A6ED_94C18A204F89" value="1"/>
@@ -13819,10 +13819,10 @@
 					<Association xmi:id="EAID_BB352D84_BEFB_4237_9856_DD5CDEFAC360" start="EAID_5F11AB0D_0212_468e_82DE_C86A8260DA26" end="EAID_A8A7DF7A_AA87_4bf3_B240_FC559F3057DF"/>
 				</links>
 			</element>
-			<element xmi:idref="EAID_845AF1C6_FDEC_4e7b_B5F3_FEEEFBC71753" xmi:type="uml:Class" name="KarakterHistorie" scope="public">
+			<element xmi:idref="EAID_845AF1C6_FDEC_4e7b_B5F3_FEEEFBC71753" xmi:type="uml:Class" name="Karakterhistorie" scope="public">
 				<model package="EAPK_E2B2497F_0C65_48d0_B8AF_87F52A1B6EFC" tpos="0" ea_localid="518" ea_eleType="element"/>
 				<properties documentation="Endringer på fastsatt karakter." isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Kenneth F Goa" version="1.0" phase="1.0" created="2022-03-04 14:43:37" modified="2022-03-07 09:36:15" complexity="1" status="Proposed"/>
+				<project author="Kenneth F Goa" version="1.0" phase="1.0" created="2022-03-04 14:43:37" modified="2022-08-14 23:09:53" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -13848,7 +13848,7 @@
 						<initial/>
 						<documentation/>
 						<model ea_localid="1035" ea_guid="{429BB55E-B7DF-4c24-9798-D7932903A156}"/>
-						<properties type="Identificator" collection="false" static="0" duplicates="0" changeability="changeable"/>
+						<properties type="Identifikator" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
 						<containment containment="Not Specified" position="0"/>
 						<stereotype/>
@@ -14388,8 +14388,8 @@
 			</element>
 			<element xmi:idref="EAID_92A6F1E2_4859_4377_90BF_4F1824315503" xmi:type="uml:Class" name="Eksamensform" scope="public">
 				<model package="EAPK_75736DCA_EB8D_407d_A980_7B79DA7047A4" tpos="0" ea_localid="519" ea_eleType="element"/>
-				<properties documentation="Viser hvilken form eksamen skal ha.&#xA;&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="goa" version="1.0" phase="1.0" created="2022-03-08 10:33:54" modified="2022-03-08 14:14:33" complexity="1" status="Proposed"/>
+				<properties documentation="Viser hvilken form eksamen skal ha.&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.vigo.no/vigokv/ekstype.action&#xA;&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="goa" version="1.0" phase="1.0" created="2022-03-08 10:33:54" modified="2022-08-14 23:02:14" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -24941,7 +24941,7 @@
 			</connector>
 			<connector xmi:idref="EAID_275140C0_53AA_47f2_884A_19E8B40213A6">
 				<source xmi:idref="EAID_845AF1C6_FDEC_4e7b_B5F3_FEEEFBC71753">
-					<model ea_localid="518" type="Class" name="KarakterHistorie"/>
+					<model ea_localid="518" type="Class" name="Karakterhistorie"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type multiplicity="0..1" aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -27168,7 +27168,7 @@
 			</connector>
 			<connector xmi:idref="EAID_2AB18BE5_2F95_46ec_981A_17B0CBA2A957">
 				<source xmi:idref="EAID_845AF1C6_FDEC_4e7b_B5F3_FEEEFBC71753">
-					<model ea_localid="518" type="Class" name="KarakterHistorie"/>
+					<model ea_localid="518" type="Class" name="Karakterhistorie"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -27180,12 +27180,12 @@
 				</source>
 				<target xmi:idref="EAID_8F3122A4_0BE1_49ef_BC80_55216C32E236">
 					<model ea_localid="159" type="Class" name="Karakterverdi"/>
-					<role name="gammelKarakter" visibility="Public" targetScope="instance"/>
+					<role name="opprinneligKarakterverdi" visibility="Public" targetScope="instance"/>
 					<type multiplicity="0..1" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="Den orginale karakterverdien."/>
+					<documentation value="Den opprinnelige karakterverdien."/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -27195,7 +27195,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels rb="0..1" rt="+gammelKarakter"/>
+				<labels rb="0..1" rt="+opprinneligKarakterverdi"/>
 				<extendedProperties/>
 				<style/>
 				<xrefs/>
@@ -27203,7 +27203,7 @@
 			</connector>
 			<connector xmi:idref="EAID_532FFC91_3E4A_41cd_915A_9BDC5A5DA1C9">
 				<source xmi:idref="EAID_845AF1C6_FDEC_4e7b_B5F3_FEEEFBC71753">
-					<model ea_localid="518" type="Class" name="KarakterHistorie"/>
+					<model ea_localid="518" type="Class" name="Karakterhistorie"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -27215,7 +27215,7 @@
 				</source>
 				<target xmi:idref="EAID_EFAD7A9A_4BF0_4f11_ACB3_0A9DF98CA8F1">
 					<model ea_localid="516" type="Class" name="Karakterstatus"/>
-					<role name="statusFra" visibility="Public" targetScope="instance"/>
+					<role name="karakterstatusFra" visibility="Public" targetScope="instance"/>
 					<type multiplicity="0..1" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
@@ -27230,7 +27230,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels rb="0..1" rt="+statusFra"/>
+				<labels rb="0..1" rt="+karakterstatusFra"/>
 				<extendedProperties/>
 				<style/>
 				<xrefs/>
@@ -27238,7 +27238,7 @@
 			</connector>
 			<connector xmi:idref="EAID_A2B1F43E_5FBC_4e65_9EF6_048C8AE53EF7">
 				<source xmi:idref="EAID_845AF1C6_FDEC_4e7b_B5F3_FEEEFBC71753">
-					<model ea_localid="518" type="Class" name="KarakterHistorie"/>
+					<model ea_localid="518" type="Class" name="Karakterhistorie"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -27250,7 +27250,7 @@
 				</source>
 				<target xmi:idref="EAID_8F3122A4_0BE1_49ef_BC80_55216C32E236">
 					<model ea_localid="159" type="Class" name="Karakterverdi"/>
-					<role name="nyKarakter" visibility="Public" targetScope="instance"/>
+					<role name="nyKarakterverdi" visibility="Public" targetScope="instance"/>
 					<type multiplicity="0..1" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
@@ -27265,7 +27265,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels rb="0..1" rt="+nyKarakter"/>
+				<labels rb="0..1" rt="+nyKarakterverdi"/>
 				<extendedProperties/>
 				<style/>
 				<xrefs/>
@@ -27273,7 +27273,7 @@
 			</connector>
 			<connector xmi:idref="EAID_F9C99563_2D66_4c95_A6ED_94C18A204F89">
 				<source xmi:idref="EAID_845AF1C6_FDEC_4e7b_B5F3_FEEEFBC71753">
-					<model ea_localid="518" type="Class" name="KarakterHistorie"/>
+					<model ea_localid="518" type="Class" name="Karakterhistorie"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -27285,7 +27285,7 @@
 				</source>
 				<target xmi:idref="EAID_EFAD7A9A_4BF0_4f11_ACB3_0A9DF98CA8F1">
 					<model ea_localid="516" type="Class" name="Karakterstatus"/>
-					<role name="statusTil" visibility="Public" targetScope="instance"/>
+					<role name="karakterstatusTil" visibility="Public" targetScope="instance"/>
 					<type multiplicity="0..1" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
@@ -27300,7 +27300,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels rb="0..1" rt="+statusTil"/>
+				<labels rb="0..1" rt="+karakterstatusTil"/>
 				<extendedProperties/>
 				<style/>
 				<xrefs/>
@@ -27319,7 +27319,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_845AF1C6_FDEC_4e7b_B5F3_FEEEFBC71753">
-					<model ea_localid="518" type="Class" name="KarakterHistorie"/>
+					<model ea_localid="518" type="Class" name="Karakterhistorie"/>
 					<role name="karakterHistorie" visibility="Public" targetScope="instance"/>
 					<type multiplicity="0..*" aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -27754,7 +27754,6 @@
 					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAJava_Identifikator" name="Identifikator" visibility="public"/>
 					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAJava_Periode" name="Periode" visibility="public"/>
 					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAJava_datetime" name="datetime" visibility="public"/>
-					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAJava_Identificator" name="Identificator" visibility="public"/>
 				</packagedElement>
 				<packagedElement xmi:type="uml:Package" xmi:id="EAnoneTypesPackage" name="EA_none_Types_Package" visibility="public">
 					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAnone_dateTime" name="dateTime" visibility="public"/>
