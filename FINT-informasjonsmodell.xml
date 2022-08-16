@@ -5335,7 +5335,7 @@
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001304__6261_449c_B351_51B139051B12" value="1"/>
 							</ownedAttribute>
 							<generalization xmi:type="uml:Generalization" xmi:id="EAID_BFEBD046_E2DB_4eab_BFE5_5B97365FEE65" general="EAID_C6682D47_34E8_4080_AB47_7924713E1887"/>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst01938B_D024_4c24_8EE3_8DECFAD86A50" name="karakterHistorie" visibility="public" association="EAID_D701938B_D024_4c24_8EE3_8DECFAD86A50" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst01938B_D024_4c24_8EE3_8DECFAD86A50" name="karakterhistorie" visibility="public" association="EAID_D701938B_D024_4c24_8EE3_8DECFAD86A50" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_845AF1C6_FDEC_4e7b_B5F3_FEEEFBC71753"/>
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001305__D024_4c24_8EE3_8DECFAD86A50" value="0"/>
 								<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI001306__D024_4c24_8EE3_8DECFAD86A50" value="-1"/>
@@ -14326,8 +14326,8 @@
 			</element>
 			<element xmi:idref="EAID_92A6F1E2_4859_4377_90BF_4F1824315503" xmi:type="uml:Class" name="Eksamensform" scope="public">
 				<model package="EAPK_75736DCA_EB8D_407d_A980_7B79DA7047A4" tpos="0" ea_localid="519" ea_eleType="element"/>
-				<properties documentation="Viser eksamensform.&#xA;&#xA;# Eksempler:&#xA;* Muntlig&#xA;* Skriftlig&#xA;* Praktisk&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.vigo.no/vigokv/ekstype.action&#xA;&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="goa" version="1.0" phase="1.0" created="2022-03-08 10:33:54" modified="2022-08-16 08:23:15" complexity="1" status="Proposed"/>
+				<properties documentation="Formen en eksamen har.&#xA;&#xA;# Eksempler:&#xA;* Muntlig&#xA;* Skriftlig&#xA;* Praktisk&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.vigo.no/vigokv/ekstype.action&#xA;&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="goa" version="1.0" phase="1.0" created="2022-03-08 10:33:54" modified="2022-08-16 11:42:21" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -27258,7 +27258,7 @@
 				</source>
 				<target xmi:idref="EAID_845AF1C6_FDEC_4e7b_B5F3_FEEEFBC71753">
 					<model ea_localid="518" type="Class" name="Karakterhistorie"/>
-					<role name="karakterHistorie" visibility="Public" targetScope="instance"/>
+					<role name="karakterhistorie" visibility="Public" targetScope="instance"/>
 					<type multiplicity="0..*" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
@@ -27273,7 +27273,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels rb="0..*" rt="+karakterHistorie"/>
+				<labels rb="0..*" rt="+karakterhistorie"/>
 				<extendedProperties/>
 				<style/>
 				<xrefs/>
