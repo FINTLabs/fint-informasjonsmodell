@@ -5103,22 +5103,22 @@
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001248_750E_4184_A636_B84013A14309" value="1"/>
 								<type xmi:idref="EAJava_boolean"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_E3ADBD6F_E79E_422f_AB9D_43FDD47F9A7D" name="gjelderPeriode" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001249_E79E_422f_AB9D_43FDD47F9A7D" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001250_E79E_422f_AB9D_43FDD47F9A7D" value="1"/>
-								<type xmi:idref="EAJava_Periode"/>
-							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_E4409FC6_2D41_4a55_93CC_EECC1D122BF1" name="kommentar" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001251_2D41_4a55_93CC_EECC1D122BF1" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001252_2D41_4a55_93CC_EECC1D122BF1" value="1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001249_2D41_4a55_93CC_EECC1D122BF1" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001250_2D41_4a55_93CC_EECC1D122BF1" value="1"/>
 								<type xmi:idref="EAJava_string"/>
+							</ownedAttribute>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_E3ADBD6F_E79E_422f_AB9D_43FDD47F9A7D" name="periode" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001251_E79E_422f_AB9D_43FDD47F9A7D" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001252_E79E_422f_AB9D_43FDD47F9A7D" value="1"/>
+								<type xmi:idref="EAJava_Periode"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst191196_A33B_469a_84DD_7A1AE0C4A6D9" name="fraværstype" visibility="public" association="EAID_B6191196_A33B_469a_84DD_7A1AE0C4A6D9" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_115317F1_D74B_47a2_9C01_AC42D414F3E0"/>
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001253__A33B_469a_84DD_7A1AE0C4A6D9" value="1"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001254__A33B_469a_84DD_7A1AE0C4A6D9" value="1"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst65BD93_768F_4c2c_BC9B_28E548A9AD4D" name="registrertav" visibility="public" association="EAID_D265BD93_768F_4c2c_BC9B_28E548A9AD4D" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst65BD93_768F_4c2c_BC9B_28E548A9AD4D" name="registrertAv" visibility="public" association="EAID_D265BD93_768F_4c2c_BC9B_28E548A9AD4D" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_ADF8D060_7406_4d34_BD1D_D9D8CD09DCBF"/>
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001255__768F_4c2c_BC9B_28E548A9AD4D" value="0"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001256__768F_4c2c_BC9B_28E548A9AD4D" value="1"/>
@@ -13707,13 +13707,13 @@
 						<tags/>
 						<xrefs/>
 					</attribute>
-					<attribute xmi:idref="EAID_E3ADBD6F_E79E_422f_AB9D_43FDD47F9A7D" name="gjelderPeriode" scope="Public">
+					<attribute xmi:idref="EAID_E4409FC6_2D41_4a55_93CC_EECC1D122BF1" name="kommentar" scope="Public">
 						<initial/>
-						<documentation value="Tidsperioden fraværet oppstod/gjelder for.&#xA;&#xA;Fravær skal registreres i dager eller timer (60-minutters enheter). Det er ikke tillatt å konvertere timer til dager.&#xA;"/>
-						<model ea_localid="1038" ea_guid="{E3ADBD6F-E79E-422f-AB9D-43FDD47F9A7D}"/>
-						<properties type="Periode" collection="false" static="0" duplicates="0" changeability="changeable"/>
+						<documentation value="Kommentar til fraværet, evt ekstrainformasjon"/>
+						<model ea_localid="1039" ea_guid="{E4409FC6-2D41-4a55-93CC-EECC1D122BF1}"/>
+						<properties type="string" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
-						<containment containment="Not Specified" position="1"/>
+						<containment containment="Not Specified" position="2"/>
 						<stereotype/>
 						<bounds lower="1" upper="1"/>
 						<options/>
@@ -13722,13 +13722,13 @@
 						<tags/>
 						<xrefs/>
 					</attribute>
-					<attribute xmi:idref="EAID_E4409FC6_2D41_4a55_93CC_EECC1D122BF1" name="kommentar" scope="Public">
+					<attribute xmi:idref="EAID_E3ADBD6F_E79E_422f_AB9D_43FDD47F9A7D" name="periode" scope="Public">
 						<initial/>
-						<documentation value="Kommentar til fraværet, evt ekstrainformasjon"/>
-						<model ea_localid="1039" ea_guid="{E4409FC6-2D41-4a55-93CC-EECC1D122BF1}"/>
-						<properties type="string" collection="false" static="0" duplicates="0" changeability="changeable"/>
+						<documentation value="Tidsperioden fraværet gjelder for.&#xA;&#xA;Fravær skal registreres i dager eller timer (60-minutters enheter). Det er ikke tillatt å konvertere timer til dager.&#xA;"/>
+						<model ea_localid="1038" ea_guid="{E3ADBD6F-E79E-422f-AB9D-43FDD47F9A7D}"/>
+						<properties type="Periode" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
-						<containment containment="Not Specified" position="2"/>
+						<containment containment="Not Specified" position="1"/>
 						<stereotype/>
 						<bounds lower="1" upper="1"/>
 						<options/>
@@ -23303,7 +23303,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="Skoleår for elevforhold"/>
+					<documentation value="Skoleåret elevforholdet gjelder for."/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -24961,7 +24961,7 @@
 				</source>
 				<target xmi:idref="EAID_ADF8D060_7406_4d34_BD1D_D9D8CD09DCBF">
 					<model ea_localid="256" type="Class" name="Skoleressurs"/>
-					<role name="registrertav" visibility="Public" targetScope="instance"/>
+					<role name="registrertAv" visibility="Public" targetScope="instance"/>
 					<type multiplicity="0..1" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
@@ -24976,7 +24976,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels rb="0..1" rt="+registrertav"/>
+				<labels rb="0..1" rt="+registrertAv"/>
 				<extendedProperties/>
 				<style/>
 				<xrefs/>
@@ -26847,7 +26847,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="Skoleåret vurderingen er fra."/>
+					<documentation value="Skoleåret vurderingen gjelder for."/>
 					<xrefs/>
 					<tags/>
 				</target>
