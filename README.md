@@ -1,16 +1,16 @@
 ﻿# FINT-informasjonsmodell
 
-Innhold i informasjonsmodellen som benyttes i felleskomponentene som lages av FINTLabs, seksjon Fellestjenester i Vigo IKS. Se [fintlabs.no](https://fintlabs.no/) og [vigoiks.no](https://vigoiks.no/).
+Innhold i Informasjonsmodellen som benyttes i felleskomponentene utarbeides og vedlikeholdes av FINTLabs, seksjon Fellestjenester i Vigo IKS. Se [fintlabs.no](https://fintlabs.no/) og [vigoiks.no](https://vigoiks.no/) for ytterlige informasjon.
 
-Release notater finner her: [RELEASE-NOTES.md](RELEASE-NOTES.md)
+Releasenotater finner her: [RELEASE-NOTES.md](RELEASE-NOTES.md)
 
 ## Dokumentasjon
 
-Dokumentasjon av informasjonsmodellen blir automatisk publisert på [informasjonsmodell.felleskomponent.no](https://informasjonsmodell.felleskomponent.no/)
+Dokumentasjon av Informasjonsmodellen blir automatisk publisert på [informasjonsmodell.felleskomponent.no](https://informasjonsmodell.felleskomponent.no/)
 
 ## Versjonsnummerering
 
-Prosjektet bruker [semantisk versjonering](http://semver.org/) for å spesifisere bakoverkompatibilitet.
+Det brukes [semantisk versjonering](http://semver.org/) for å spesifisere bakoverkompatibilitet.
 
 De tre posisjonene i versjonsnummeret brukes slik:
 
@@ -18,7 +18,7 @@ De tre posisjonene i versjonsnummeret brukes slik:
 1. _Minor_: Denne økes med 1 når ny funksjonalitet legges til modellen.  Klienter som brukere en lavere minor versjon kan bruke informasjonen, men ikke nyttiggjøre seg de elementene som er lagt til.
 1. _Patch_: Denne økes med 10 når kompatible forbedringer eller forbedret dokumentasjon legges til modellen.  Klienter kan forvente å representere informasjonen likt, selv med forskjellige patch versjoner.  Patch økes med 10 for å gi rom for oppdateringer i kode basert på samme versjon av informasjonsmodellen.
 
-Klienter og generert Java og C#-kode skal i utgangspunktet versjoneres likt som informasjonsmodellen, men kan øke patch med 1 for endringer som kun gjelder internt.
+Klienter og generert Java og C#-kode skal i utgangspunktet versjoneres likt som Informasjonsmodellen, men kan øke patch med 1 for endringer som kun gjelder internt.
 
 ## Arbeidsflyt
 
