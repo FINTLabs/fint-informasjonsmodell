@@ -1,16 +1,16 @@
 ﻿# FINT-informasjonsmodell
 
-Innhold i informasjonsmodellen som benyttes i felleskomponentene som lages i FINT-prosjektet. Se [fintprosjektet.no](https://www.fintprosjektet.no) 
+Innhold i Informasjonsmodellen som benyttes i felleskomponentene utarbeides og vedlikeholdes av FINTLabs, seksjon Fellestjenester i Vigo IKS. Se [fintlabs.no](https://fintlabs.no/) og [vigoiks.no](https://vigoiks.no/) for ytterlige informasjon.
 
-Release notater finner her: [RELEASE-NOTES.md](RELEASE-NOTES.md)
+Releasenotater finner her: [RELEASE-NOTES.md](RELEASE-NOTES.md)
 
 ## Dokumentasjon
 
-Dokumentasjon av informasjonsmodellen blir automatisk publisert på [informasjonsmodell.felleskomponent.no](https://informasjonsmodell.felleskomponent.no/)
+Dokumentasjon av Informasjonsmodellen blir automatisk publisert på [informasjonsmodell.felleskomponent.no](https://informasjonsmodell.felleskomponent.no/)
 
 ## Versjonsnummerering
 
-Prosjektet bruker [semantisk versjonering](http://semver.org/) for å spesifisere bakoverkompatibilitet.
+Det brukes [semantisk versjonering](http://semver.org/) for å spesifisere bakoverkompatibilitet.
 
 De tre posisjonene i versjonsnummeret brukes slik:
 
@@ -18,7 +18,7 @@ De tre posisjonene i versjonsnummeret brukes slik:
 1. _Minor_: Denne økes med 1 når ny funksjonalitet legges til modellen.  Klienter som brukere en lavere minor versjon kan bruke informasjonen, men ikke nyttiggjøre seg de elementene som er lagt til.
 1. _Patch_: Denne økes med 10 når kompatible forbedringer eller forbedret dokumentasjon legges til modellen.  Klienter kan forvente å representere informasjonen likt, selv med forskjellige patch versjoner.  Patch økes med 10 for å gi rom for oppdateringer i kode basert på samme versjon av informasjonsmodellen.
 
-Klienter og generert Java og C#-kode skal i utgangspunktet versjoneres likt som informasjonsmodellen, men kan øke patch med 1 for endringer som kun gjelder internt.
+Klienter og generert Java og C#-kode skal i utgangspunktet versjoneres likt som Informasjonsmodellen, men kan øke patch med 1 for endringer som kun gjelder internt.
 
 ## Arbeidsflyt
 
@@ -39,30 +39,10 @@ Klienter og generert Java og C#-kode skal i utgangspunktet versjoneres likt som 
 1. Se over Pull Request, be om tilbakemeldinger.
 1. Aksepter Pull Request og merge til `master`.
 1. Lukk alle issues som er berørt av endringen.
-1. Lag en ny prerelease med navn på formen `v0.0.0-rc-0`
-1. Kontroller den genererte modellen og modellkoden
-1. Lag en ny release med navn på formen `v0.0.0`
-
-### Merging og konflikter
-
-Vi benytter [LemonTree](https://www.lieberlieber.com/lemontree/en/) for merging.  Denne settes opp i Git på følgende måte:
-
-```
-merge.lemontree.name=lemontree merge driver
-merge.lemontree.driver='C:\Program Files\LieberLieber\LemonTree\LemonTree.exe' --merge=auto --base=%O --mine=%A --theirs=%B --out=%A
-merge.lemontree.recursive=binary
-merge.tool=lemontree
-mergetool.lemontree.cmd='C:/Program Files/LieberLieber/LemonTree/LemonTree.exe' --merge=auto --base="$BASE" --mine="$LOCAL" --theirs="$REMOTE" --out="$MERGED"
-diff.tool=lemontree
-difftool.lemontree.cmd='C:\Program Files\LieberLieber\LemonTree\LemonTree.exe' --diff --base=$LOCAL --mine=$LOCAL --theirs=$REMOTE
-```
-
-For "enkle" konflikter vil LemonTree kunne håndtere flettingen automatisk.  Merk at LemonTree vil 
-forsøke å håndtere `FINT-informasjonsmodell.xml`, men dette feiler.  Etter at 
-`FINT-informasjonsmodell.eap` er OK, åpne denne i Enterprise Architect og eksportert XMI på nytt
-i merge-commit.
-
-Dersom konflikten er vanskeligere vil LemonTree åpne et brukergrensesnitt for å håndtere konfliktene.
+3. Lag en ny prerelease med navn på formen `v0.0.0-rc-0`
+4. Kontroller den genererte modellen og modellkoden
+5. Lag en ny release med navn på formen `v0.0.0`
+6. Oppdater versjonsnummer og trigg GitHub Action i [fint-devops-model-release](https://github.com/FINTLabs/fint-devops-model-release) og [fint-jsonschema](https://github.com/FINTLabs/fint-jsonschema/)
 
 ### Sjekkliste for endringer i modellen
 
@@ -94,8 +74,7 @@ Dersom konflikten er vanskeligere vil LemonTree åpne et brukergrensesnitt for �
 
 ## Enterprise Architect
 
-Modellen er utviklet og vedlikeholdt med Enterprise Architect versjon 13.5.  Det er tilstrekkelig med
-lisens for Professional Edition.
+Modellen er utviklet og vedlikeholdt med Enterprise Architect versjon 15.2.  Det er tilstrekkelig med lisens for Professional Edition.
 
 Vi benytter et svært begrenset sett av funksjonaliteten som finnes.  Følgende elementer benyttes:
 
@@ -115,5 +94,4 @@ Vi benytter et svært begrenset sett av funksjonaliteten som finnes.  Følgende 
 
 ## Generering av modellkode
 
-Modellkode blir produsert automatisk for alle releaser (tags) på modellen.  Versjonsnummeret til den
-produserte modellkoden vil være det samme som versjonsnummeret for modellen.
+Modellkode blir produsert automatisk for alle releaser (tags) på modellen.  Versjonsnummeret til den produserte modellkoden vil være det samme som versjonsnummeret for modellen.

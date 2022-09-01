@@ -1,84 +1,149 @@
 <!-- MarkdownTOC autolink="true" -->
 
-- [v3.10.0](#v3100)
+- [v3.11.0](#v3110)
   - [Features](#features)
   - [Deprecated](#deprecated)
   - [Bugfixes](#bugfixes)
-- [v3.9.0](#v390)
+- [v3.10.0](#v3100)
   - [Features](#features-1)
   - [Deprecated](#deprecated-1)
   - [Bugfixes](#bugfixes-1)
-- [v3.8.10](#v3810)
-  - [Bugfixes](#bugfixes-2)
-- [v3.8.0](#v380)
-  - [Deprecated](#deprecated-2)
-  - [Bugfixes](#bugfixes-3)
+- [v3.9.0](#v390)
   - [Features](#features-2)
-- [v3.7.0](#v370)
-  - [Features](#features-3)
-- [v3.6.10](#v3610)
-  - [Bugfixes](#bugfixes-4)
-- [v3.6.0](#v360)
+  - [Deprecated](#deprecated-2)
+  - [Bugfixes](#bugfixes-2)
+- [v3.8.10](#v3810)
+  - [Bugfixes](#bugfixes-3)
+- [v3.8.0](#v380)
   - [Deprecated](#deprecated-3)
+  - [Bugfixes](#bugfixes-4)
+  - [Features](#features-3)
+- [v3.7.0](#v370)
   - [Features](#features-4)
-- [v3.5.0](#v350)
-  - [Features](#features-5)
+- [v3.6.10](#v3610)
   - [Bugfixes](#bugfixes-5)
-- [v3.4.0](#v340)
+- [v3.6.0](#v360)
+  - [Deprecated](#deprecated-4)
+  - [Features](#features-5)
+- [v3.5.0](#v350)
   - [Features](#features-6)
   - [Bugfixes](#bugfixes-6)
-- [v3.3.0](#v330)
+- [v3.4.0](#v340)
   - [Features](#features-7)
   - [Bugfixes](#bugfixes-7)
-- [v3.2.0](#v320)
-  - [Deprecated](#deprecated-4)
+- [v3.3.0](#v330)
   - [Features](#features-8)
-- [v3.1.0](#v310)
+  - [Bugfixes](#bugfixes-8)
+- [v3.2.0](#v320)
   - [Deprecated](#deprecated-5)
   - [Features](#features-9)
-  - [Bugfixes](#bugfixes-8)
-- [v3.0.0](#v300)
-  - [Breaking changes](#breaking-changes)
+- [v3.1.0](#v310)
+  - [Deprecated](#deprecated-6)
   - [Features](#features-10)
   - [Bugfixes](#bugfixes-9)
-- [v2.8.0](#v280)
+- [v3.0.0](#v300)
+  - [Breaking changes](#breaking-changes)
   - [Features](#features-11)
   - [Bugfixes](#bugfixes-10)
-- [v2.7.0](#v270)
+- [v2.8.0](#v280)
   - [Features](#features-12)
-- [v2.6.0](#v260)
-  - [Features](#features-13)
   - [Bugfixes](#bugfixes-11)
-- [v2.4.0](#v240)
+- [v2.7.0](#v270)
+  - [Features](#features-13)
+- [v2.6.0](#v260)
   - [Features](#features-14)
-- [v2.2.20](#v2220)
   - [Bugfixes](#bugfixes-12)
-- [v2.2.10](#v2210)
-  - [Bugfixes](#bugfixes-13)
-- [v2.2.0](#v220)
+- [v2.4.0](#v240)
   - [Features](#features-15)
-- [v2.0.10](#v2010)
+- [v2.2.20](#v2220)
+  - [Bugfixes](#bugfixes-13)
+- [v2.2.10](#v2210)
   - [Bugfixes](#bugfixes-14)
+- [v2.2.0](#v220)
+  - [Features](#features-16)
+- [v2.0.10](#v2010)
+  - [Bugfixes](#bugfixes-15)
 - [v2.0.0](#v200)
   - [Breaking changes](#breaking-changes-1)
-  - [Features](#features-16)
-  - [Bugfixes](#bugfixes-15)
-- [v1.0.1](#v101)
   - [Features](#features-17)
   - [Bugfixes](#bugfixes-16)
+- [v1.0.1](#v101)
+  - [Features](#features-18)
+  - [Bugfixes](#bugfixes-17)
   - [Known issues](#known-issues)
 - [v1.0.0](#v100)
-  - [Features](#features-18)
+  - [Features](#features-19)
 
 <!-- /MarkdownTOC -->
 
-# v3.10.0
-
+# v3.11.0
 
 |      |              |
 | ---- | ------------ |
-| Date | `30.09.2021` |
-| Tag  | `v3.10.0-rc-1` |
+| Date | `01.09.2022` |
+| Tag  | `v3.11.0-rc-1` |
+
+
+## Features
+
+* Utdanning
+  * Added class `Eksamensform`.
+  * Added class `Karakterhistorie`.
+  * Added class `Karakterstatus`.
+  * Added class `Elevfravær`.
+  * Added class `Faggruppemedlemskap`.
+  * Added class `Faggruppe`.
+  * Added class `Sensor`.
+  
+  * Added complex datatype `Fraværsregistrering`.
+  
+  * Added attribute `tospråkligFagopplæring` on `Elevforhold`.
+  * Changed attribute `karakter ` on `Fagvurdering`.
+
+  * Added relation `fraværsregistreringer` on `Elevforhold`.
+  * Added relation `faggruppemedlemskap` on `Elevforhold`.
+  * Added relation `skoleår` on `Elevforhold`.
+  * Added relation `faggruppe` on `Fag`.
+  * Added relation `nus` on `Eksamensgruppemedlemskap`.
+  * Added relation `sensor` on `Eksamensgruppe`.
+  * Added relation `eksamensform` on `Eksamensgruppe`.
+  * Added relation `sensor` on `Skoleressurs`.
+  * Added relation `karakterhistorie` on `Sluttfagvurdering`.
+
+  
+* Administrasjon
+  * Added class `Formål`.
+
+  * Added relation `formål` on `Kontostreng`.
+  * Added relation `formål` on `Arbeidsforhold`.
+  * Added relation `formål` on `Fullmakt`.
+
+* Arkiv
+  * Added class `Saksmappetype`
+
+  * Added attribute `skjerming` on `Korrespondansepart`.
+
+  * Added relation `saksmappetype` on `Saksmappe`.
+
+## Deprecated
+
+Note: Deprecated classes, attributes and relations might be removed in the next major release.
+
+* Utdanning
+  * The relation `fravær` on `Elevforhold` is deprecated.
+
+## Bugfixes
+
+* Administrasjon
+  * The deprecated relation `myndighet` in `Fullmakt` changed multiplisity from 1..* to 0..*
+
+
+# v3.10.0
+
+|      |              |
+| ---- | ------------ |
+| Date | `09.12.2021` |
+| Tag  | `v3.10.0` |
 
 Utdanning has been the main focus of this release. Only smaller changes have been done on other domains.
 
