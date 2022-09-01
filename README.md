@@ -39,9 +39,10 @@ Klienter og generert Java og C#-kode skal i utgangspunktet versjoneres likt som 
 1. Se over Pull Request, be om tilbakemeldinger.
 1. Aksepter Pull Request og merge til `master`.
 1. Lukk alle issues som er berørt av endringen.
-1. Lag en ny prerelease med navn på formen `v0.0.0-rc-0`
-1. Kontroller den genererte modellen og modellkoden
-1. Lag en ny release med navn på formen `v0.0.0`
+3. Lag en ny prerelease med navn på formen `v0.0.0-rc-0`
+4. Kontroller den genererte modellen og modellkoden
+5. Lag en ny release med navn på formen `v0.0.0`
+6. Oppdater versjonsnummer og trigg GitHub Action i [fint-devops-model-release](https://github.com/FINTLabs/fint-devops-model-release) og [fint-jsonschema](https://github.com/FINTLabs/fint-jsonschema/)
 
 ### Sjekkliste for endringer i modellen
 
