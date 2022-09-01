@@ -1,6 +1,6 @@
 ﻿# FINT-informasjonsmodell
 
-Innhold i informasjonsmodellen som benyttes i felleskomponentene som lages i FINT-prosjektet. Se [fintprosjektet.no](https://www.fintprosjektet.no) 
+Innhold i informasjonsmodellen som benyttes i felleskomponentene som lages av FINTLabs, seksjon Fellestjenester i Vigo IKS. Se [fintlabs.no](https://fintlabs.no/) og [vigoiks.no](https://vigoiks.no/).
 
 Release notater finner her: [RELEASE-NOTES.md](RELEASE-NOTES.md)
 
@@ -43,27 +43,6 @@ Klienter og generert Java og C#-kode skal i utgangspunktet versjoneres likt som 
 1. Kontroller den genererte modellen og modellkoden
 1. Lag en ny release med navn på formen `v0.0.0`
 
-### Merging og konflikter
-
-Vi benytter [LemonTree](https://www.lieberlieber.com/lemontree/en/) for merging.  Denne settes opp i Git på følgende måte:
-
-```
-merge.lemontree.name=lemontree merge driver
-merge.lemontree.driver='C:\Program Files\LieberLieber\LemonTree\LemonTree.exe' --merge=auto --base=%O --mine=%A --theirs=%B --out=%A
-merge.lemontree.recursive=binary
-merge.tool=lemontree
-mergetool.lemontree.cmd='C:/Program Files/LieberLieber/LemonTree/LemonTree.exe' --merge=auto --base="$BASE" --mine="$LOCAL" --theirs="$REMOTE" --out="$MERGED"
-diff.tool=lemontree
-difftool.lemontree.cmd='C:\Program Files\LieberLieber\LemonTree\LemonTree.exe' --diff --base=$LOCAL --mine=$LOCAL --theirs=$REMOTE
-```
-
-For "enkle" konflikter vil LemonTree kunne håndtere flettingen automatisk.  Merk at LemonTree vil 
-forsøke å håndtere `FINT-informasjonsmodell.xml`, men dette feiler.  Etter at 
-`FINT-informasjonsmodell.eap` er OK, åpne denne i Enterprise Architect og eksportert XMI på nytt
-i merge-commit.
-
-Dersom konflikten er vanskeligere vil LemonTree åpne et brukergrensesnitt for å håndtere konfliktene.
-
 ### Sjekkliste for endringer i modellen
 
   1. Alt skal skje innenfor pakken `FINT`.
@@ -94,8 +73,7 @@ Dersom konflikten er vanskeligere vil LemonTree åpne et brukergrensesnitt for �
 
 ## Enterprise Architect
 
-Modellen er utviklet og vedlikeholdt med Enterprise Architect versjon 13.5.  Det er tilstrekkelig med
-lisens for Professional Edition.
+Modellen er utviklet og vedlikeholdt med Enterprise Architect versjon 15.2.  Det er tilstrekkelig med lisens for Professional Edition.
 
 Vi benytter et svært begrenset sett av funksjonaliteten som finnes.  Følgende elementer benyttes:
 
@@ -115,5 +93,4 @@ Vi benytter et svært begrenset sett av funksjonaliteten som finnes.  Følgende 
 
 ## Generering av modellkode
 
-Modellkode blir produsert automatisk for alle releaser (tags) på modellen.  Versjonsnummeret til den
-produserte modellkoden vil være det samme som versjonsnummeret for modellen.
+Modellkode blir produsert automatisk for alle releaser (tags) på modellen.  Versjonsnummeret til den produserte modellkoden vil være det samme som versjonsnummeret for modellen.
