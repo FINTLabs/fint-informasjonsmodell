@@ -1,5 +1,7 @@
 <!-- MarkdownTOC autolink="true" -->
 
+- [v3.11.10](#v31110)
+  - [Bugfix](#bugfix)
 - [v3.11.0](#v3110)
   - [Features](#features)
   - [Deprecated](#deprecated)
@@ -75,6 +77,20 @@
   - [Features](#features-19)
 
 <!-- /MarkdownTOC -->
+
+# v3.11.10
+
+|      |              |
+| ---- | ------------ |
+| Date | `11.10.2022` |
+| Tag  | `v3.11.10` |
+
+
+## Bugfix
+
+* Utdanning
+  * Faggruppe now inherit Gruppe
+
 
 # v3.11.0
 
