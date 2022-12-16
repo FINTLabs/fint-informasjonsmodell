@@ -6037,6 +6037,8 @@
 		<thecustomprofile:writable base_Property="EAID_D35BA343_83D4_475a_AF24_BA187C991295"/>
 		<thecustomprofile:md_guid base_Class="EAID_88C124DF_F3E2_435a_BF1C_B4077CD6C1ED" md_guid="_18_4_13ab03b9_1472030486249_449620_4388"/>
 		<thecustomprofile:writable base_Property="EAID_2D043D4E_C01A_4c73_920B_339327DCCD09"/>
+		<thecustomprofile:writable base_Property="EAID_7C54F39B_FDF0_41b8_A19C_94A5BE97B122"/>
+		<thecustomprofile:writable base_Property="EAID_39AC64FD_69F2_425e_8201_4CD04519E2C3"/>
 		<thecustomprofile:hovedklasse base_Class="EAID_87CE36A4_9A73_4358_9B57_C708C02AC9B0"/>
 		<thecustomprofile:hovedklasse base_Class="EAID_714AAE78_08EC_46c0_BB7D_FF1D28E9E799"/>
 		<thecustomprofile:hovedklasse base_Class="EAID_0A5887EC_7E5F_4725_A7B9_DA1F1DB4110A"/>
@@ -11051,13 +11053,13 @@
 						<properties type="string" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
 						<containment position="1"/>
-						<stereotype/>
+						<stereotype stereotype="writable"/>
 						<bounds lower="0" upper="1"/>
 						<options/>
 						<style value="organizationName"/>
 						<styleex value="IsLiteral=0;volatile=0;union=0;"/>
 						<tags/>
-						<xrefs/>
+						<xrefs value="$XREFPROP=$XID={3E9072FB-3182-4e45-B76E-7427F9916742}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=writable;GUID={A5E1434C-002D-4000-AD41-4EDB07D5BEB2};@ENDSTEREO;$DES;$CLT={7C54F39B-FDF0-41b8-A19C-94A5BE97B122}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 					<attribute xmi:idref="EAID_39AC64FD_69F2_425e_8201_4CD04519E2C3" name="organisasjonsnummer" scope="Public">
 						<initial/>
@@ -11066,13 +11068,13 @@
 						<properties type="Identifikator" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
 						<containment position="0"/>
-						<stereotype/>
+						<stereotype stereotype="writable"/>
 						<bounds lower="0" upper="1"/>
 						<options/>
 						<style value="organizationNumber"/>
 						<styleex value="IsLiteral=0;volatile=0;union=0;"/>
 						<tags/>
-						<xrefs/>
+						<xrefs value="$XREFPROP=$XID={E9E14FF1-02AD-4a1f-BEDE-E8C8C4BC37D6}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=writable;GUID={A5E1434C-002D-4000-AD41-4EDB07D5BEB2};@ENDSTEREO;$DES;$CLT={39AC64FD-69F2-425e-8201-4CD04519E2C3}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 				</attributes>
 				<links>
@@ -29241,9 +29243,9 @@
 			<diagram xmi:id="EAID_15B1524C_C6FA_40b0_85A0_32041164121E">
 				<model package="EAPK_CF34BE57_9DE0_4810_93C3_09AEDC94931C" localID="2" owner="EAPK_CF34BE57_9DE0_4810_93C3_09AEDC94931C" tpos="4"/>
 				<properties name="Kodeverk" type="Logical"/>
-				<project author="Petr Vasilev" version="1.0" created="2017-01-17 00:00:00" modified="2022-12-14 14:50:40"/>
+				<project author="Petr Vasilev" version="1.0" created="2017-01-17 00:00:00" modified="2022-12-14 14:55:29"/>
 				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=2;PPgs.cy=2;DocSize.cx=827;DocSize.cy=1169;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;ShowFQN=1;"/>
-				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;ShowFQN=1;SuppressedCompartments=;Theme=:119;SaveTag=4271B210;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;ShowFQN=1;SuppressedCompartments=;Theme=:119;SaveTag=07C5E060;"/>
 				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;tcol=15852766;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
 				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
 				<extendedProperties/>
@@ -29411,9 +29413,9 @@
 			<diagram xmi:id="EAID_4A2BDC2D_430B_47c3_B6BC_359A55353B60">
 				<model package="EAPK_2D4E95E8_AB29_44d3_A514_E851E663F059" localID="83" owner="EAPK_2D4E95E8_AB29_44d3_A514_E851E663F059"/>
 				<properties name="Felles" type="Logical"/>
-				<project author="goa" version="1.0" created="2022-12-12 13:27:15" modified="2022-12-14 14:50:40"/>
+				<project author="goa" version="1.0" created="2022-12-12 13:27:15" modified="2022-12-14 14:55:29"/>
 				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=0;PPgs.cy=0;DocSize.cx=827;DocSize.cy=1075;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
-				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=2FA5808C;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=BF9D450C;"/>
 				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
 				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
 				<extendedProperties/>
@@ -29469,9 +29471,9 @@
 			<diagram xmi:id="EAID_8E2B6FF9_082A_4d6a_8005_252498EBB8DD">
 				<model package="EAPK_57DD5C18_3526_4b0e_BAA6_390E58183968" localID="82" owner="EAPK_57DD5C18_3526_4b0e_BAA6_390E58183968"/>
 				<properties name="Regnskap" type="Logical"/>
-				<project author="goa" version="1.0" created="2022-12-06 13:54:19" modified="2022-12-14 14:50:40"/>
+				<project author="goa" version="1.0" created="2022-12-06 13:54:19" modified="2022-12-14 14:55:29"/>
 				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=0;PPgs.cy=0;DocSize.cx=827;DocSize.cy=1075;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
-				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=B53E8633;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=3E77FD76;"/>
 				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
 				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
 				<extendedProperties/>
