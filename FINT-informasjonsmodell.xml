@@ -1684,12 +1684,12 @@
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_2E783E1B_A08D_4c80_8C68_4A853A6695E7" name="oppdatertdato" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000459_A08D_4c80_8C68_4A853A6695E7" value="0"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000460_A08D_4c80_8C68_4A853A6695E7" value="1"/>
-								<type xmi:idref="EAJava_date"/>
+								<type xmi:idref="EAJava_datetime"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_A163B502_CF1C_41ea_9142_86ED34A65EA0" name="transaksjonsdato" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000461_CF1C_41ea_9142_86ED34A65EA0" value="0"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000462_CF1C_41ea_9142_86ED34A65EA0" value="1"/>
-								<type xmi:idref="EAJava_date"/>
+								<type xmi:idref="EAJava_datetime"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_54CBE679_AC8A_4b13_AA77_2D266EF0845D" name="transaksjonsId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
@@ -9555,7 +9555,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_91081541_0461_4588_900A_91C61F448BFC" name="debet" scope="Public">
 						<initial/>
-						<documentation value="Viser om posteringen er debet eller kredit.&#xA;&#xA;True: debet&#xA;False: kredit"/>
+						<documentation value="Viser om posteringen er debet eller kredit.&#xA;&#xA;True: debet&#xA;&#xA;False: kredit"/>
 						<model ea_localid="1086" ea_guid="{91081541-0461-4588-900A-91C61F448BFC}"/>
 						<properties type="boolean" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -9677,7 +9677,7 @@
 						<initial/>
 						<documentation value="Tidspunkt for siste endring i transaksjonen"/>
 						<model ea_localid="1085" ea_guid="{2E783E1B-A08D-4c80-8C68-4A853A6695E7}"/>
-						<properties type="date" collection="false" static="0" duplicates="0" changeability="changeable"/>
+						<properties type="datetime" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
 						<containment containment="Not Specified" position="6"/>
 						<stereotype stereotype="writable"/>
@@ -9692,7 +9692,7 @@
 						<initial/>
 						<documentation value="Tidspunkt for registrering av transaksjonen"/>
 						<model ea_localid="1084" ea_guid="{A163B502-CF1C-41ea-9142-86ED34A65EA0}"/>
-						<properties type="date" collection="false" static="0" duplicates="0" changeability="changeable"/>
+						<properties type="datetime" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
 						<containment containment="Not Specified" position="5"/>
 						<stereotype stereotype="writable"/>
@@ -29008,9 +29008,9 @@
 							<general href="http://schema.omg.org/spec/UML/2.1/uml.xml#UnlimitedNatural"/>
 						</generalization>
 					</packagedElement>
+					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAJava_datetime" name="datetime" visibility="public"/>
 					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAJava_Identifikator" name="Identifikator" visibility="public"/>
 					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAJava_Periode" name="Periode" visibility="public"/>
-					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAJava_datetime" name="datetime" visibility="public"/>
 				</packagedElement>
 				<packagedElement xmi:type="uml:Package" xmi:id="EAnoneTypesPackage" name="EA_none_Types_Package" visibility="public">
 					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAnone_dateTime" name="dateTime" visibility="public"/>
