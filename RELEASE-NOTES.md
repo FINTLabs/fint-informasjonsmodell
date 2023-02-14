@@ -1,19 +1,21 @@
 <!-- MarkdownTOC autolink="true" -->
 
-- [v3.12.0](#v3120)
+- [v3.13.0](#v3130)
   - [Features](#features)
+- [v3.12.0](#v3120)
+  - [Features](#features-1)
 - [v3.11.10](#v31110)
   - [Bugfix](#bugfix)
 - [v3.11.0](#v3110)
-  - [Features](#features-1)
+  - [Features](#features-2)
   - [Deprecated](#deprecated)
   - [Bugfixes](#bugfixes)
 - [v3.10.0](#v3100)
-  - [Features](#features-2)
+  - [Features](#features-3)
   - [Deprecated](#deprecated-1)
   - [Bugfixes](#bugfixes-1)
 - [v3.9.0](#v390)
-  - [Features](#features-3)
+  - [Features](#features-4)
   - [Deprecated](#deprecated-2)
   - [Bugfixes](#bugfixes-2)
 - [v3.8.10](#v3810)
@@ -21,64 +23,85 @@
 - [v3.8.0](#v380)
   - [Deprecated](#deprecated-3)
   - [Bugfixes](#bugfixes-4)
-  - [Features](#features-4)
-- [v3.7.0](#v370)
   - [Features](#features-5)
+- [v3.7.0](#v370)
+  - [Features](#features-6)
 - [v3.6.10](#v3610)
   - [Bugfixes](#bugfixes-5)
 - [v3.6.0](#v360)
   - [Deprecated](#deprecated-4)
-  - [Features](#features-6)
-- [v3.5.0](#v350)
   - [Features](#features-7)
+- [v3.5.0](#v350)
+  - [Features](#features-8)
   - [Bugfixes](#bugfixes-6)
 - [v3.4.0](#v340)
-  - [Features](#features-8)
+  - [Features](#features-9)
   - [Bugfixes](#bugfixes-7)
 - [v3.3.0](#v330)
-  - [Features](#features-9)
+  - [Features](#features-10)
   - [Bugfixes](#bugfixes-8)
 - [v3.2.0](#v320)
   - [Deprecated](#deprecated-5)
-  - [Features](#features-10)
+  - [Features](#features-11)
 - [v3.1.0](#v310)
   - [Deprecated](#deprecated-6)
-  - [Features](#features-11)
+  - [Features](#features-12)
   - [Bugfixes](#bugfixes-9)
 - [v3.0.0](#v300)
   - [Breaking changes](#breaking-changes)
-  - [Features](#features-12)
+  - [Features](#features-13)
   - [Bugfixes](#bugfixes-10)
 - [v2.8.0](#v280)
-  - [Features](#features-13)
+  - [Features](#features-14)
   - [Bugfixes](#bugfixes-11)
 - [v2.7.0](#v270)
-  - [Features](#features-14)
-- [v2.6.0](#v260)
   - [Features](#features-15)
+- [v2.6.0](#v260)
+  - [Features](#features-16)
   - [Bugfixes](#bugfixes-12)
 - [v2.4.0](#v240)
-  - [Features](#features-16)
+  - [Features](#features-17)
 - [v2.2.20](#v2220)
   - [Bugfixes](#bugfixes-13)
 - [v2.2.10](#v2210)
   - [Bugfixes](#bugfixes-14)
 - [v2.2.0](#v220)
-  - [Features](#features-17)
+  - [Features](#features-18)
 - [v2.0.10](#v2010)
   - [Bugfixes](#bugfixes-15)
 - [v2.0.0](#v200)
   - [Breaking changes](#breaking-changes-1)
-  - [Features](#features-18)
+  - [Features](#features-19)
   - [Bugfixes](#bugfixes-16)
 - [v1.0.1](#v101)
-  - [Features](#features-19)
+  - [Features](#features-20)
   - [Bugfixes](#bugfixes-17)
   - [Known issues](#known-issues)
 - [v1.0.0](#v100)
-  - [Features](#features-20)
+  - [Features](#features-21)
 
 <!-- /MarkdownTOC -->
+
+# v3.13.0
+
+|      |              |
+| ---- | ------------ |
+| Date | `14.02.2023` |
+| Tag  | `v3.13.0`    |
+
+## Features
+
+* Økonomi
+    * Added class `Postering`.
+    * Added class `Transaksjon`.
+    * Added class `Leverandør`.
+    * Added class `Leverandørgruppe`.
+    * Added class `Valuta`
+    * Added complex datatype `Bilag`.
+
+* Felles
+    * Added class `Virksomhet`.
+
 
 # v3.12.0
 
