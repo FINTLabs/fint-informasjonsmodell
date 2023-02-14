@@ -33,7 +33,7 @@ Klienter og generert Java og C#-kode skal i utgangspunktet versjoneres likt som 
 1. Commit og push prosjektet tilbake til GitHub.
 1. Sjekk branch på https://informasjonsmodell.felleskomponent.no
 1. Generer modellkode og se etter problemer: `docker run -itv $PWD:/src fint/fint-model --tag <mybranch> generate`
-1. Oppdater RELEASE_NOTES.md - husk at Table of Contents må oppdateres med en plugin som håndterer MarkdownTOC.
+1. Oppdater RELEASE_NOTES.md - husk at Table of Contents må oppdateres med en plugin som håndterer Markdown TOC (For Visual Studio Code: [Markdown All In One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)).
 1. Åpne Pull Request i GitHub for å få endringene tilbake til master.
 1. Kommenter alle issues som er berørt av endringen.
 1. Se over Pull Request, be om tilbakemeldinger.
