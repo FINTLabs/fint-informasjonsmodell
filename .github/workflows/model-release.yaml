@@ -1,0 +1,16 @@
+name: Java/C# - CI/CD
+on:
+  workflow_dispatch:
+
+env:
+  REGISTRY_NAME: fintlabsacr
+  MODEL_VERSION: 3.13.0
+  VERSION: v3.13.0
+
+jobs:
+  generate-model:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate model
+        run: |
+          docker run -i -v ${GITHUB_WORKSPACE}:/src fint/fint-model:2.4.1 --tag ${{env.VERSION}} generate --lang ALL --resource
