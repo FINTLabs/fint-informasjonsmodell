@@ -42,7 +42,11 @@ Klienter og generert Java og C#-kode skal i utgangspunktet versjoneres likt som 
 3. Lag en ny prerelease med navn på formen `v0.0.0-rc-0`
 4. Kontroller den genererte modellen og modellkoden
 5. Lag en ny release med navn på formen `v0.0.0`
-6. Oppdater versjonsnummer og trigg GitHub Action i [fint-devops-model-release](https://github.com/FINTLabs/fint-devops-model-release), [fint-jsonschema](https://github.com/FINTLabs/fint-jsonschema/) og [fint-graphql](https://github.com/FINTLabs/fint-graphql/)
+6. Oppdater versjonsnummer og trigg GitHub Action i 
+    1. [fint-devops-model-release](https://github.com/FINTLabs/fint-devops-model-release)
+    1. [fint-jsonschema](https://github.com/FINTLabs/fint-jsonschema/)
+    1. [fint-graphql](https://github.com/FINTLabs/fint-graphql/)
+    1. [fint-release-utils](https://github.com/FINTLabs/fint-release-utils): *Genererer consumere fra modellen*
 
 ### Sjekkliste for endringer i modellen
 
