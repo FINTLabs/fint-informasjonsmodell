@@ -10993,8 +10993,8 @@
 			</element>
 			<element xmi:idref="EAID_0D4727CD_DE3E_4d76_8B6F_6B86804023EC" xmi:type="uml:Class" name="Virksomhet" scope="public">
 				<model package="EAPK_3D763EF0_3066_4aa9_97D7_67827101CC20" tpos="0" ea_localid="536" ea_eleType="element"/>
-				<properties documentation="En bedrift eller organisasjon." isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="goa" version="1.0" phase="1.0" created="2022-12-06 13:41:19" modified="2023-04-17 10:27:56" complexity="1" status="Proposed"/>
+				<properties documentation="En juridisk organisasjon som produserer varer eller tjenester." isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="goa" version="1.0" phase="1.0" created="2022-12-06 13:41:19" modified="2023-04-19 13:29:44" complexity="1" status="Proposed"/>
 				<code gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -13353,7 +13353,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_BEAE397D_AAEF_4751_B681_C86C9A28C6F5" name="kontraktstype" scope="Public">
 						<initial/>
-						<documentation value="Kontraktstype som lærling."/>
+						<documentation value="Kontraktstype for lærling."/>
 						<model ea_localid="1092" ea_guid="{BEAE397D-AAEF-4751-B681-C86C9A28C6F5}"/>
 						<properties type="string" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -15621,7 +15621,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_8455BC30_7E1D_4fb4_81BD_FA64C25A7A4F" name="beskrivelse" scope="Public">
 						<initial/>
-						<documentation/>
+						<documentation value="Beskrivelse av statusen."/>
 						<model ea_localid="1088" ea_guid="{8455BC30-7E1D-4fb4-81BD-FA64C25A7A4F}"/>
 						<properties type="string" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -15630,13 +15630,13 @@
 						<bounds lower="0" upper="1"/>
 						<options/>
 						<style/>
-						<styleex value="volatile=0;"/>
+						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
 					</attribute>
 					<attribute xmi:idref="EAID_CBDB52FA_079B_4f50_AF31_A37D3EC38893" name="type" scope="Public">
 						<initial/>
-						<documentation/>
+						<documentation value="Viser type status.&#xA;&#xA;# Verdier:&#xA;&#xA;* O = OT&#xA;* V = VIGO"/>
 						<model ea_localid="1089" ea_guid="{CBDB52FA-079B-4f50-AF31-A37D3EC38893}"/>
 						<properties type="string" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -15645,7 +15645,7 @@
 						<bounds lower="1" upper="1"/>
 						<options/>
 						<style/>
-						<styleex value="volatile=0;"/>
+						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
 					</attribute>
@@ -19643,7 +19643,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="Person som er lærling."/>
+					<documentation value="Person som er OT-ungdom."/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -24344,7 +24344,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="OT-ungdom et programområdemedlemskap tilhører."/>
+					<documentation value="OT-ungdom et programområdemedlemskap tilhører i inneværende skoleår."/>
 					<xrefs/>
 					<tags/>
 				</source>
@@ -24355,7 +24355,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="Programområdemedlemskapene til en OT-ungdom."/>
+					<documentation value="Programområdemedlemskapene til en OT-ungdom i inneværende skoleår."/>
 					<xrefs/>
 					<tags/>
 				</target>
