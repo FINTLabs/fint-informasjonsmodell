@@ -7,7 +7,6 @@ on:
 env:
   REGISTRY_NAME: fintlabsacr
   MODEL_VERSION: 3.13.10
-  VERSION: v3.13.10
 
 jobs:
   generate-model:
@@ -16,5 +15,9 @@ jobs:
 
     - run: |
         echo "Version: ${{ github.event.release.tag_name }}"
-        echo "MODEL_VERSION: $MODEL_VERSION"
-        echo "VERSION: $VERSION"
+        echo "VERSION=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
+        echo "MODEL_VERSION=$(echo ${{ github.event.release.tag_name }} | sed "s/^v//")" >> $GITHUB_ENV
+
+    - run: |
+        echo "VERSION: $VERSION (med v)"
+        echo "MODEL_VERSION: $MODEL_VERSION (uten v)"
