@@ -1,0 +1,23 @@
+name: CI/CD
+  
+on:
+  release:
+    types: [published]
+
+env:
+  REGISTRY_NAME: fintlabsacr
+  MODEL_VERSION: 3.13.10
+  VERSION: v3.13.10
+
+jobs:
+  generate-model:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: Parse version from tag
+      id: version
+      uses: release-kit/semver@v1
+
+    - run: |
+        echo "Versjon: ${{ steps.version.outputs.full }}"
+    
