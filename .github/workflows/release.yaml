@@ -13,14 +13,8 @@ jobs:
   generate-model:
     runs-on: ubuntu-latest
     steps:
-    
-    - name: Parse version from tag
-      id: version
-      uses: release-kit/semver@v1
 
     - run: |
-        echo "Versjon: $SEMVER"
+        echo "Version: ${{ github.event.release.tag_name }}"
         echo "MODEL_VERSION: $MODEL_VERSION"
         echo "VERSION: $VERSION"
-      env:
-          SEMVER: ${{ steps.version.outputs.full }}
