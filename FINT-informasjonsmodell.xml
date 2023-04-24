@@ -15621,7 +15621,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_8455BC30_7E1D_4fb4_81BD_FA64C25A7A4F" name="beskrivelse" scope="Public">
 						<initial/>
-						<documentation value="Beskrivelse av statusen."/>
+						<documentation value="Beskrivelse av OT-statusen."/>
 						<model ea_localid="1088" ea_guid="{8455BC30-7E1D-4fb4-81BD-FA64C25A7A4F}"/>
 						<properties type="string" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -15636,7 +15636,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_CBDB52FA_079B_4f50_AF31_A37D3EC38893" name="type" scope="Public">
 						<initial/>
-						<documentation value="Viser type status.&#xA;&#xA;# Verdier:&#xA;&#xA;* O = OT&#xA;* V = VIGO"/>
+						<documentation value="Viser type OT-status.&#xA;&#xA;# Verdier:&#xA;&#xA;* O = OT&#xA;* V = VIGO"/>
 						<model ea_localid="1089" ea_guid="{CBDB52FA-079B-4f50-AF31-A37D3EC38893}"/>
 						<properties type="string" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -21006,7 +21006,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="Kommunen til OT-enheten."/>
+					<documentation value="Kommunen hvor OT-enheten er lokalisert."/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -31758,9 +31758,9 @@
 			<diagram xmi:id="EAID_D494A783_BBFA_4e0a_9FEA_D761A6BF8B36">
 				<model package="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519" localID="84" owner="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519"/>
 				<properties name="LærlingOT" type="Logical"/>
-				<project author="goa" version="1.0" created="2023-04-13 12:04:45" modified="2023-04-17 10:29:30"/>
+				<project author="goa" version="1.0" created="2023-04-13 12:04:45" modified="2023-04-24 10:15:38"/>
 				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=0;PPgs.cy=0;DocSize.cx=827;DocSize.cy=1075;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
-				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=7B5A3FBE;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=3E131C34;"/>
 				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
 				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
 				<extendedProperties/>
@@ -31786,7 +31786,7 @@
 					<element geometry="SX=4;SY=0;EX=-18;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=CX=29:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=381:-330$530:-330$;" subject="EAID_65A8E70A_27A9_4937_81D8_16577685947D" style="Mode=3;EOID=E87C1A42;SOID=6661B590;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
 					<element geometry="SX=-50;SY=0;EX=22;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=CX=30:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=327:-330$290:-330$;" subject="EAID_0C16A8AA_C2CA_4346_AD1F_861203C9A90E" style="Mode=3;EOID=E0A15EBA;SOID=6661B590;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
 					<element geometry="EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_D407F810_B352_4fe6_969C_1C9FC7DE712E" style="Mode=3;EOID=0EE9742C;SOID=8C2438C0;Color=-1;LWidth=0;Hidden=0;"/>
-					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=CX=47:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=6:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_4978831A_E2DD_4d20_9A20_C64A093B95A6" style="Mode=3;EOID=8C2438C0;SOID=E87C1A42;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=-1;SY=-5;EX=-1;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=CX=47:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=6:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_4978831A_E2DD_4d20_9A20_C64A093B95A6" style="Mode=3;EOID=8C2438C0;SOID=E87C1A42;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_10A50E55_40BD_4c31_9E36_97A3C373BA18" style="Mode=3;EOID=0EE9742C;SOID=E87C1A42;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_3DB1135E_D8E2_4a86_804C_8CD7D71A82D0" style="Mode=3;EOID=0EE9742C;SOID=E0A15EBA;Color=-1;LWidth=0;Hidden=0;"/>
 				</elements>
