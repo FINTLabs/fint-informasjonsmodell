@@ -41,13 +41,19 @@ Klienter og generert Java og C#-kode skal i utgangspunktet versjoneres likt som 
 1. Lukk alle issues som er berørt av endringen.
 3. Lag en ny prerelease med navn på formen `v0.0.0-rc-0`
 4. Kontroller den genererte modellen og modellkoden
-5. Lag en ny release med navn på formen `v0.0.0`
-6. Oppdater versjonsnummer og trigg GitHub Action i 
-    * [fint-devops-model-release](https://github.com/FINTLabs/fint-devops-model-release)
-    * [fint-jsonschema](https://github.com/FINTLabs/fint-jsonschema/)
-    * [fint-graphql](https://github.com/FINTLabs/fint-graphql/)
-1. Generer consumere fra modellen: [fint-release-utils](https://github.com/FINTLabs/fint-release-utils)
-    * ([fint-consumer-skeleton](https://github.com/FINTLabs/fint-consumer-skeleton) inneholder mal for consumere)
+5. Lag en ny release med navn på formen `v0.0.0`. 
+5. Pull request for Java- og C#-modeller blir publisert automatisk. 
+
+### Dersom du skal oppdatere jsonschema og GraphQL:
+
+Oppdater versjonsnummer og trigg GitHub Action i 
+  * [fint-jsonschema](https://github.com/FINTLabs/fint-jsonschema/)
+  * [fint-graphql](https://github.com/FINTLabs/fint-graphql/)
+
+### Dersom du skal generer nye konsumere:    
+  
+Generer consumere fra modellen: [fint-release-utils](https://github.com/FINTLabs/fint-release-utils)
+  * ([fint-consumer-skeleton](https://github.com/FINTLabs/fint-consumer-skeleton) inneholder mal for consumere)
 
 ### Sjekkliste for endringer i modellen
 
