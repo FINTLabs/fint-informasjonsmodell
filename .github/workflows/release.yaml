@@ -50,7 +50,7 @@ jobs:
       - name: Git checkout fint-informastion-model-java
         uses: actions/checkout@v3
         with:
-          repository: 'FINTmodels/fint-information-model-java'
+          repository: 'FINTLabs/fint-information-model-java'
           token: ${{secrets.GITHUBACTION_TOKEN}}
 
       - name: Preparing the new release
@@ -139,8 +139,8 @@ jobs:
           git config --global user.email ${{github.actor}}@users.noreply.github.com
           git config --global user.name ${{github.actor}}
           git commit -m 'Version ${{env.VERSION}}'
-#          git push https://github.com/FINTmodels/fint-information-model-java.git release-${{env.VERSION}}
-#          gh pr create --repo "FINTmodels/fint-information-model-java" --base master --head  release-${{env.VERSION}} --title "New realease ready for review: ${{env.VERSION}}" --body "Please consider if this is ready for the public crowd! If so, push the green button."
+          git push https://github.com/FINTLabs/fint-information-model-java.git release-${{env.VERSION}}
+          gh pr create --repo "FINTLabs/fint-information-model-java" --base master --head  release-${{env.VERSION}} --title "New realease ready for review: ${{env.VERSION}}" --body "Please consider if this is ready for the public crowd! If so, push the green button."
         env:
           GH_TOKEN: ${{secrets.GITHUBACTION_TOKEN}}
   
@@ -163,7 +163,7 @@ jobs:
       - name: Git checkout FINT.Information.Model
         uses: actions/checkout@v3
         with:
-          repository: 'FINTmodels/FINT.Information.Model'
+          repository: 'FINTLabs/FINT.Information.Model'
           token: ${{secrets.GITHUBACTION_TOKEN}}
 
       - name: Preparing the new release
@@ -274,7 +274,7 @@ jobs:
           git config --global user.email ${{github.actor}}@users.noreply.github.com
           git config --global user.name ${{github.actor}}
           git commit -m 'Version ${{env.VERSION}}'
-#          git push https://github.com/FINTmodels/FINT.Information.Model.git release-${{env.VERSION}}
-#          gh pr create --repo "FINTmodels/FINT.Information.Model" --base master --head  release-${{env.VERSION}} --title "New realease ready for review: ${{env.VERSION}}" --body "Please consider if this is ready for the public crowd! If so, push the green button."
+          git push https://github.com/FINTLabs/FINT.Information.Model.git release-${{env.VERSION}}
+          gh pr create --repo "FINTLabs/FINT.Information.Model" --base master --head  release-${{env.VERSION}} --title "New realease ready for review: ${{env.VERSION}}" --body "Please consider if this is ready for the public crowd! If so, push the green button."
         env:
           GH_TOKEN: ${{secrets.GITHUBACTION_TOKEN}}
