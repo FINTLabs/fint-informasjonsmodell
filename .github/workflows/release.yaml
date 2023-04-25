@@ -140,7 +140,7 @@ jobs:
           git config --global user.name ${{github.actor}}
           git commit -m 'Version ${{env.VERSION}}'
           git push https://github.com/FINTLabs/fint-information-model-java.git release-${{env.VERSION}}
-          gh pr create --repo "FINTLabs/fint-information-model-java" --base master --head  release-${{env.VERSION}} --title "New realease ready for review: ${{env.VERSION}}" --body "Please consider if this is ready for the public crowd! If so, push the green button." --reviewer nilsodd,oleanders,GoSoft-dev
+          gh pr create --repo "FINTLabs/fint-information-model-java" --base master --head  release-${{env.VERSION}} --title "New release ready for review: ${{env.VERSION}}" --body "Please consider if this is ready for the public crowd! If so, push the green button." --reviewer nilsodd,oleanders,GoSoft-dev
         env:
           GH_TOKEN: ${{secrets.GITHUBACTION_TOKEN}}
   
@@ -275,6 +275,6 @@ jobs:
           git config --global user.name ${{github.actor}}
           git commit -m 'Version ${{env.VERSION}}'
           git push https://github.com/FINTLabs/FINT.Information.Model.git release-${{env.VERSION}}
-          gh pr create --repo "FINTLabs/FINT.Information.Model" --base master --head  release-${{env.VERSION}} --title "New realease ready for review: ${{env.VERSION}}" --body "Please consider if this is ready for the public crowd! If so, push the green button." --reviewer nilsodd,oleanders,GoSoft-dev
+          gh pr create --repo "FINTLabs/FINT.Information.Model" --base master --head  release-${{env.VERSION}} --title "New release ready for review: ${{env.VERSION}}" --body "Please consider if this is ready for the public crowd! If so, push the green button." --reviewer nilsodd,oleanders,GoSoft-dev
         env:
           GH_TOKEN: ${{secrets.GITHUBACTION_TOKEN}}
