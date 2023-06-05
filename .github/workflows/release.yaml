@@ -17,7 +17,7 @@ jobs:
     
       - name: Generate model
         run: |
-          docker run -i -v ${GITHUB_WORKSPACE}:/src fint/fint-model:2.4.1 --tag ${{env.VERSION}} generate --lang ALL --resource
+          docker run -i -v ${GITHUB_WORKSPACE}:/src ghcr.io/fintlabs/fint-model:2.5.0 --tag ${{env.VERSION}} generate --lang ALL --resource
 
       - name: Upload Java model artifacts
         uses: actions/upload-artifact@v3
