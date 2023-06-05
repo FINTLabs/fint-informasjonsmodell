@@ -19,8 +19,10 @@ jobs:
         id: get-version
         run: |
           if [ "${{ github.event_name }}" == 'workflow_dispatch' && "${{ github.event.inputs.version }}" != '' ]; then
+            echo Version from workflow_dispatch: ${{ github.event.inputs.version }}
             echo "version=${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT;
           else
+            echo Version from published release: ${{ github.event.release.tag_name }}
             echo "version=${{ github.event.release.tag_name }}" >> $GITHUB_OUTPUT;
           fi
           
@@ -44,6 +46,7 @@ jobs:
       version: ${{ steps.get-version.outputs.version }}
 
   java-model:
+    if: ${{ false }}  # disable for now
     needs: generate-model
     runs-on: ubuntu-latest
     steps:
@@ -156,6 +159,7 @@ jobs:
           GH_TOKEN: ${{secrets.GITHUBACTION_TOKEN}}
   
   cs-model:
+    if: ${{ false }}  # disable for now
     needs: generate-model
     runs-on: ubuntu-latest
     steps:
