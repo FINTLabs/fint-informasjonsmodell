@@ -3,21 +3,30 @@ name: CI/CD
 on:
   release:
     types: [published]
-
-env:
-  REGISTRY_NAME: fintlabsacr
+    
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version av modellen (for eksempel v3.14.10)'
+        required: true
 
 jobs:
   generate-model:
     runs-on: ubuntu-latest
     steps:
       
-      - name: Set version
-        run: echo "VERSION=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
-    
+      - name: Get version
+        id: get-version
+        run: |
+          if [ ${{ github.event_name }} == 'workflow_dispatch' && ${{ github.event.inputs.version }} != '' ]; then
+            echo "version=${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT;
+          else
+            echo "version=${{ github.event.release.tag_name }}" >> $GITHUB_OUTPUT;
+          fi
+          
       - name: Generate model
         run: |
-          docker run -i -v ${GITHUB_WORKSPACE}:/src ghcr.io/fintlabs/fint-model:2.5.0 --tag ${{env.VERSION}} generate --lang ALL --resource
+          docker run -i -v ${GITHUB_WORKSPACE}:/src ghcr.io/fintlabs/fint-model:2.5.0 --tag ${{ steps.get-version.outputs.version }} generate --lang ALL --resource
 
       - name: Upload Java model artifacts
         uses: actions/upload-artifact@v3
@@ -30,16 +39,18 @@ jobs:
         with:
           name: cs
           path: cs
+    
+    outputs: 
+      version: ${{ steps.get-version.outputs.version }}
 
   java-model:
     needs: generate-model
     runs-on: ubuntu-latest
     steps:
     
-      - name: Set version 
+      - name: Set version witout prefix
         run: |
-          echo "VERSION=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
-          echo "MODEL_VERSION=$(echo ${{ github.event.release.tag_name }} | sed "s/^v//")" >> $GITHUB_ENV
+          echo "MODEL_VERSION=$(echo ${{ needs.generate-model.outputs.version }} | sed "s/^v//")" >> $GITHUB_ENV
     
       - name: Download java model
         uses: actions/download-artifact@v3
@@ -56,7 +67,7 @@ jobs:
       - name: Preparing the new release
         run: |
           git clean -fdx
-          git checkout -b release-${{env.VERSION}}
+          git checkout -b release-${{ needs.generate-model.outputs.version }}
     
       - name: fint-felles-model-java
         run: |
@@ -132,15 +143,15 @@ jobs:
 
       - name: Soon to be finished - pull request on it's way!
         run: |
-          echo -e "# FINT Java Model\\n\\nVersion ${{env.VERSION}}\\n\\nGenerated $(date +'%Y-%m-%dT%H:%M:%S')" > README.md
+          echo -e "# FINT Java Model\\n\\nVersion ${{ needs.generate-model.outputs.version }}\\n\\nGenerated $(date +'%Y-%m-%dT%H:%M:%S')" > README.md
           git add README.md 
           echo version=${{env.MODEL_VERSION}} > gradle.properties
           git add gradle.properties
           git config --global user.email ${{github.actor}}@users.noreply.github.com
           git config --global user.name ${{github.actor}}
-          git commit -m 'Version ${{env.VERSION}}'
-          git push https://github.com/FINTLabs/fint-information-model-java.git release-${{env.VERSION}}
-          gh pr create --repo "FINTLabs/fint-information-model-java" --base master --head  release-${{env.VERSION}} --title "New release ready for review: ${{env.VERSION}}" --body "Please consider if this is ready for the public crowd! If so, push the green button." --reviewer nilsodd,oleanders,GoSoft-dev
+          git commit -m 'Version ${{ needs.generate-model.outputs.version }}'
+#          git push https://github.com/FINTLabs/fint-information-model-java.git release-${{ needs.generate-model.outputs.version }}
+#          gh pr create --repo "FINTLabs/fint-information-model-java" --base master --head  release-${{ needs.generate-model.outputs.version }} --title "New release ready for review: ${{ needs.generate-model.outputs.version }}" --body "Please consider if this is ready for the public crowd! If so, push the green button." --reviewer nilsodd,oleanders,GoSoft-dev
         env:
           GH_TOKEN: ${{secrets.GITHUBACTION_TOKEN}}
   
@@ -148,11 +159,6 @@ jobs:
     needs: generate-model
     runs-on: ubuntu-latest
     steps:
-    
-      - name: Set version 
-        run: |
-          echo "VERSION=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
-          echo "MODEL_VERSION=$(echo ${{ github.event.release.tag_name }} | sed "s/^v//")" >> $GITHUB_ENV
     
       - name: Download cs model
         uses: actions/download-artifact@v3
@@ -169,7 +175,7 @@ jobs:
       - name: Preparing the new release
         run: |
           git clean -fdx
-          git checkout -b release-${{env.VERSION}}
+          git checkout -b release-${{ needs.generate-model.outputs.version }}
 
       - name: FINT.Model.Felles
         run: |
@@ -269,12 +275,12 @@ jobs:
 
       - name: Soon to be finished - pull request on it's way!
         run: |
-          echo -e "# FINT C# Model\\n\\nVersion ${{env.VERSION}}\\n\\nGenerated $(date +'%Y-%m-%dT%H:%M:%S')" > README.md
+          echo -e "# FINT C# Model\\n\\nVersion ${{ needs.generate-model.outputs.version }}\\n\\nGenerated $(date +'%Y-%m-%dT%H:%M:%S')" > README.md
           git add README.md 
           git config --global user.email ${{github.actor}}@users.noreply.github.com
           git config --global user.name ${{github.actor}}
-          git commit -m 'Version ${{env.VERSION}}'
-          git push https://github.com/FINTLabs/FINT.Information.Model.git release-${{env.VERSION}}
-          gh pr create --repo "FINTLabs/FINT.Information.Model" --base master --head  release-${{env.VERSION}} --title "New release ready for review: ${{env.VERSION}}" --body "Please consider if this is ready for the public crowd! If so, push the green button." --reviewer nilsodd,oleanders,GoSoft-dev
+          git commit -m 'Version ${{ needs.generate-model.outputs.version }}'
+#          git push https://github.com/FINTLabs/FINT.Information.Model.git release-${{ needs.generate-model.outputs.version }}
+#          gh pr create --repo "FINTLabs/FINT.Information.Model" --base master --head  release-${{ needs.generate-model.outputs.version }} --title "New release ready for review: ${{ needs.generate-model.outputs.version }}" --body "Please consider if this is ready for the public crowd! If so, push the green button." --reviewer nilsodd,oleanders,GoSoft-dev
         env:
           GH_TOKEN: ${{secrets.GITHUBACTION_TOKEN}}
