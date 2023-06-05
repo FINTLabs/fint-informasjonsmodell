@@ -18,7 +18,7 @@ jobs:
       - name: Get version
         id: get-version
         run: |
-          if [ "${{ github.event_name }}" == 'workflow_dispatch' && "${{ github.event.inputs.version }}" != '' ]; then
+          if [[ "${{ github.event_name }}" == 'workflow_dispatch' && "${{ github.event.inputs.version }}" != '' ]]; then
             echo Version from workflow_dispatch: ${{ github.event.inputs.version }}
             echo "version=${{ github.event.inputs.version }}" >> "$GITHUB_OUTPUT"
           else
