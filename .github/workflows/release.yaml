@@ -46,7 +46,6 @@ jobs:
       version: ${{ steps.get-version.outputs.version }}
 
   java-model:
-    if: ${{ false }}  # disable for now
     needs: generate-model
     runs-on: ubuntu-latest
     steps:
@@ -153,13 +152,12 @@ jobs:
           git config --global user.email ${{github.actor}}@users.noreply.github.com
           git config --global user.name ${{github.actor}}
           git commit -m 'Version ${{ needs.generate-model.outputs.version }}'
-#          git push https://github.com/FINTLabs/fint-information-model-java.git release-${{ needs.generate-model.outputs.version }}
-#          gh pr create --repo "FINTLabs/fint-information-model-java" --base master --head  release-${{ needs.generate-model.outputs.version }} --title "New release ready for review: ${{ needs.generate-model.outputs.version }}" --body "Please consider if this is ready for the public crowd! If so, push the green button." --reviewer nilsodd,oleanders,GoSoft-dev
+          git push https://github.com/FINTLabs/fint-information-model-java.git release-${{ needs.generate-model.outputs.version }}
+          gh pr create --repo "FINTLabs/fint-information-model-java" --base master --head  release-${{ needs.generate-model.outputs.version }} --title "New release ready for review: ${{ needs.generate-model.outputs.version }}" --body "Please consider if this is ready for the public crowd! If so, push the green button." --reviewer nilsodd,oleanders,GoSoft-dev
         env:
           GH_TOKEN: ${{secrets.GITHUBACTION_TOKEN}}
   
   cs-model:
-    if: ${{ false }}  # disable for now
     needs: generate-model
     runs-on: ubuntu-latest
     steps:
@@ -284,7 +282,7 @@ jobs:
           git config --global user.email ${{github.actor}}@users.noreply.github.com
           git config --global user.name ${{github.actor}}
           git commit -m 'Version ${{ needs.generate-model.outputs.version }}'
-#          git push https://github.com/FINTLabs/FINT.Information.Model.git release-${{ needs.generate-model.outputs.version }}
-#          gh pr create --repo "FINTLabs/FINT.Information.Model" --base master --head  release-${{ needs.generate-model.outputs.version }} --title "New release ready for review: ${{ needs.generate-model.outputs.version }}" --body "Please consider if this is ready for the public crowd! If so, push the green button." --reviewer nilsodd,oleanders,GoSoft-dev
+          git push https://github.com/FINTLabs/FINT.Information.Model.git release-${{ needs.generate-model.outputs.version }}
+          gh pr create --repo "FINTLabs/FINT.Information.Model" --base master --head  release-${{ needs.generate-model.outputs.version }} --title "New release ready for review: ${{ needs.generate-model.outputs.version }}" --body "Please consider if this is ready for the public crowd! If so, push the green button." --reviewer nilsodd,oleanders,GoSoft-dev
         env:
           GH_TOKEN: ${{secrets.GITHUBACTION_TOKEN}}
