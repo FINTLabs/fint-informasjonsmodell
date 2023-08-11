@@ -9050,7 +9050,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_1F006D89_AF67_4ea8_82A8_D7A1FF8FDD79" name="dato" scope="Public">
 						<initial/>
-						<documentation value="Dato for utstedelse av faktura."/>
+						<documentation value="Dato for utstedelse av faktura.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 ? `1990-03-29T12:00:00Z`&#xA;&#xA;29. juni 1990 ? `1990-03-29T12:00:00Z`"/>
 						<model ea_localid="533" ea_guid="{1F006D89-AF67-4ea8-82A8-D7A1FF8FDD79}"/>
 						<properties type="date" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -9095,7 +9095,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_7837965E_E029_440e_89BB_A7F70A3D8130" name="forfallsdato" scope="Public">
 						<initial/>
-						<documentation value="Frist for betaling"/>
+						<documentation value="Frist for betaling&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 ? `1990-03-29T12:00:00Z`&#xA;&#xA;29. juni 1990 ? `1990-03-29T12:00:00Z`"/>
 						<model ea_localid="536" ea_guid="{7837965E-E029-440e-89BB-A7F70A3D8130}"/>
 						<properties type="date" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -9200,7 +9200,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_5080AFED_C3C8_4afe_98A2_14F5CC92109D" name="leveringsdato" scope="Public">
 						<initial/>
-						<documentation value="Dato varer eller tjenester ble levert."/>
+						<documentation value="Dato varer eller tjenester ble levert.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 ? `1990-03-29T12:00:00Z`&#xA;&#xA;29. juni 1990 ? `1990-03-29T12:00:00Z`"/>
 						<model ea_localid="542" ea_guid="{5080AFED-C3C8-4afe-98A2-14F5CC92109D}"/>
 						<properties type="date" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -9533,7 +9533,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_B3DCC3E8_9813_4af3_A80A_08CCF0D99F6B" name="bilagsdato" scope="Public">
 						<initial/>
-						<documentation value="Dato bilaget er registrert."/>
+						<documentation value="Dato bilaget er registrert.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 ? `1990-03-29T12:00:00Z`&#xA;&#xA;29. juni 1990 ? `1990-03-29T12:00:00Z`"/>
 						<model ea_localid="1075" ea_guid="{B3DCC3E8-9813-4af3-A80A-08CCF0D99F6B}"/>
 						<properties type="date" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -9863,7 +9863,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_4B68D704_73CF_453f_8F37_7E7DEFE6DBAB" name="forfallsdato" scope="Public">
 						<initial/>
-						<documentation value="Dato transaksjonen forfaller."/>
+						<documentation value="Dato transaksjonen forfaller.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 ? `1990-03-29T12:00:00Z`&#xA;&#xA;29. juni 1990 ? `1990-03-29T12:00:00Z`"/>
 						<model ea_localid="1078" ea_guid="{4B68D704-73CF-453f-8F37-7E7DEFE6DBAB}"/>
 						<properties type="date" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -9878,7 +9878,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_2E783E1B_A08D_4c80_8C68_4A853A6695E7" name="oppdateringstidspunkt" scope="Public">
 						<initial/>
-						<documentation value="Tidspunkt for siste endring i transaksjonen."/>
+						<documentation value="Tidspunkt for siste endring i transaksjonen.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 klokken 13:30 (UTC +1) ? `1990-03-29T12:30:00Z`&#xA;&#xA;29. juni 1990 klokken 13:30 (UTC +2 sommertid) ? `1990-06-29T11:30:00Z`"/>
 						<model ea_localid="1085" ea_guid="{2E783E1B-A08D-4c80-8C68-4A853A6695E7}"/>
 						<properties type="datetime" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -9908,7 +9908,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_A163B502_CF1C_41ea_9142_86ED34A65EA0" name="transaksjonstidspunkt" scope="Public">
 						<initial/>
-						<documentation value="Tidspunkt for registrering av transaksjonen."/>
+						<documentation value="Tidspunkt for registrering av transaksjonen.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 klokken 13:30 (UTC +1) ? `1990-03-29T12:30:00Z`&#xA;&#xA;29. juni 1990 klokken 13:30 (UTC +2 sommertid) ? `1990-06-29T11:30:00Z`"/>
 						<model ea_localid="1084" ea_guid="{A163B502-CF1C-41ea-9142-86ED34A65EA0}"/>
 						<properties type="datetime" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -13973,8 +13973,8 @@
 			</element>
 			<element xmi:idref="EAID_86AD341D_7F52_4b06_A68C_260CFEC834D7" xmi:type="uml:Class" name="Persongruppemedlemskap" scope="public">
 				<model package="EAPK_441CE9A5_961B_41f0_84C4_C961F6FF4351" tpos="0" ea_localid="491" ea_eleType="element"/>
-				<properties documentation="Medlemskap i persongruppe.&#xA;&#xA;#Beskrivelse&#xA;&#xA;Gruppemedlemskap som knytter sammen personer.&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Kenneth F Goa" version="3.9.0" phase="1.0" created="2021-05-10 12:44:03" modified="2021-05-20 10:06:33" complexity="1" status="Proposed"/>
+				<properties documentation="Medlemskap i persongruppe.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Gruppemedlemskap som knytter sammen personer.&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Kenneth F Goa" version="3.9.0" phase="1.0" created="2021-05-10 12:44:03" modified="2023-08-11 12:26:41" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
