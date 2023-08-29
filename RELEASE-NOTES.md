@@ -1,89 +1,121 @@
 <!-- MarkdownTOC autolink="true" -->
 
-- [v3.14.0](#v3140)
+- [v3.15.0](#v3150)
   - [Features](#features)
   - [Bugfixes](#bugfixes)
-- [v3.13.0](#v3130)
+- [v3.14.0](#v3140)
   - [Features](#features-1)
-- [v3.12.0](#v3120)
+  - [Bugfixes](#bugfixes-1)
+- [v3.13.0](#v3130)
   - [Features](#features-2)
+- [v3.12.0](#v3120)
+  - [Features](#features-3)
 - [v3.11.10](#v31110)
   - [Bugfix](#bugfix)
 - [v3.11.0](#v3110)
-  - [Features](#features-3)
-  - [Deprecated](#deprecated)
-  - [Bugfixes](#bugfixes-1)
-- [v3.10.0](#v3100)
   - [Features](#features-4)
-  - [Deprecated](#deprecated-1)
+  - [Deprecated](#deprecated)
   - [Bugfixes](#bugfixes-2)
-- [v3.9.0](#v390)
+- [v3.10.0](#v3100)
   - [Features](#features-5)
-  - [Deprecated](#deprecated-2)
+  - [Deprecated](#deprecated-1)
   - [Bugfixes](#bugfixes-3)
-- [v3.8.10](#v3810)
+- [v3.9.0](#v390)
+  - [Features](#features-6)
+  - [Deprecated](#deprecated-2)
   - [Bugfixes](#bugfixes-4)
+- [v3.8.10](#v3810)
+  - [Bugfixes](#bugfixes-5)
 - [v3.8.0](#v380)
   - [Deprecated](#deprecated-3)
-  - [Bugfixes](#bugfixes-5)
-  - [Features](#features-6)
-- [v3.7.0](#v370)
-  - [Features](#features-7)
-- [v3.6.10](#v3610)
   - [Bugfixes](#bugfixes-6)
+  - [Features](#features-7)
+- [v3.7.0](#v370)
+  - [Features](#features-8)
+- [v3.6.10](#v3610)
+  - [Bugfixes](#bugfixes-7)
 - [v3.6.0](#v360)
   - [Deprecated](#deprecated-4)
-  - [Features](#features-8)
-- [v3.5.0](#v350)
   - [Features](#features-9)
-  - [Bugfixes](#bugfixes-7)
-- [v3.4.0](#v340)
+- [v3.5.0](#v350)
   - [Features](#features-10)
   - [Bugfixes](#bugfixes-8)
-- [v3.3.0](#v330)
+- [v3.4.0](#v340)
   - [Features](#features-11)
   - [Bugfixes](#bugfixes-9)
+- [v3.3.0](#v330)
+  - [Features](#features-12)
+  - [Bugfixes](#bugfixes-10)
 - [v3.2.0](#v320)
   - [Deprecated](#deprecated-5)
-  - [Features](#features-12)
+  - [Features](#features-13)
 - [v3.1.0](#v310)
   - [Deprecated](#deprecated-6)
-  - [Features](#features-13)
-  - [Bugfixes](#bugfixes-10)
-- [v3.0.0](#v300)
-  - [Breaking changes](#breaking-changes)
   - [Features](#features-14)
   - [Bugfixes](#bugfixes-11)
-- [v2.8.0](#v280)
+- [v3.0.0](#v300)
+  - [Breaking changes](#breaking-changes)
   - [Features](#features-15)
   - [Bugfixes](#bugfixes-12)
-- [v2.7.0](#v270)
+- [v2.8.0](#v280)
   - [Features](#features-16)
-- [v2.6.0](#v260)
-  - [Features](#features-17)
   - [Bugfixes](#bugfixes-13)
-- [v2.4.0](#v240)
+- [v2.7.0](#v270)
+  - [Features](#features-17)
+- [v2.6.0](#v260)
   - [Features](#features-18)
-- [v2.2.20](#v2220)
   - [Bugfixes](#bugfixes-14)
-- [v2.2.10](#v2210)
-  - [Bugfixes](#bugfixes-15)
-- [v2.2.0](#v220)
+- [v2.4.0](#v240)
   - [Features](#features-19)
-- [v2.0.10](#v2010)
+- [v2.2.20](#v2220)
+  - [Bugfixes](#bugfixes-15)
+- [v2.2.10](#v2210)
   - [Bugfixes](#bugfixes-16)
+- [v2.2.0](#v220)
+  - [Features](#features-20)
+- [v2.0.10](#v2010)
+  - [Bugfixes](#bugfixes-17)
 - [v2.0.0](#v200)
   - [Breaking changes](#breaking-changes-1)
-  - [Features](#features-20)
-  - [Bugfixes](#bugfixes-17)
-- [v1.0.1](#v101)
   - [Features](#features-21)
   - [Bugfixes](#bugfixes-18)
+- [v1.0.1](#v101)
+  - [Features](#features-22)
+  - [Bugfixes](#bugfixes-19)
   - [Known issues](#known-issues)
 - [v1.0.0](#v100)
-  - [Features](#features-22)
+  - [Features](#features-23)
 
 <!-- /MarkdownTOC -->
+
+# v3.15.0
+
+|      |              |
+| ---- | ------------ |
+| Date | `29.08.2023` |
+| Tag  | `v3.15.0`    |
+
+## Features
+
+* Administrasjon
+  * Added class `Prosjektart`.
+  * Added relation `prosjektart` on `Prosjekt`.
+  * Added relation `prosjektart` on `Kontostreng`.
+
+* Personvern
+  * Added attribute `slettet` on `Tjeneste`.
+  * Added attribute `slettet` on `Behandling`.
+
+## Bugfixes
+
+* Utdanning
+  * Removed relation `undervisningsgruppe` on `Fagvurdering`.
+  * Changed name on class `OTUngdom` to `OtUngdom`.
+  * Changed name on class `OTStatus` to `OtStatus`.
+  * Changed name on class `OTEnhet` to `OtEnhet`.
+
+Improved and clarified the descriptions and provided guidelines for using date and datetime fields.
+
 
 # v3.14.0
 
