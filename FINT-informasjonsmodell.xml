@@ -7302,7 +7302,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_4C6A9D16_FBF8_4ba0_95B9_DA2538880B3B" name="avskrivningsdato" scope="Public">
 						<initial/>
-						<documentation value="Dato og klokkelsett for avskrivning&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog, M617&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 klokken 13:30 (UTC +1) -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;29. juni 1990 klokken 13:30 (UTC +2 sommertid) -&amp;gt; `1990-06-29T11:30:00Z`"/>
+						<documentation value="Dato og klokkelsett for avskrivning&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog, M617&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990 klokken 13:30 (UTC +1)` -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;* `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&amp;gt; `1990-06-29T11:30:00Z`"/>
 						<model ea_localid="981" ea_guid="{4C6A9D16-FBF8-4ba0-95B9-DA2538880B3B}"/>
 						<properties type="dateTime" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -7404,7 +7404,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_29E97B93_9777_4b60_A84C_C46755DF6D8B" name="opprettetDato" scope="Public">
 						<initial/>
-						<documentation value="Dato og klokkeslett når arkivenheten ble opprettet/registrert.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M600&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 klokken 13:30 (UTC +1) -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;29. juni 1990 klokken 13:30 (UTC +2 sommertid) -&amp;gt; `1990-06-29T11:30:00Z`"/>
+						<documentation value="Dato og klokkeslett når arkivenheten ble opprettet/registrert.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M600&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990 klokken 13:30 (UTC +1)` -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;* `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&amp;gt; `1990-06-29T11:30:00Z`"/>
 						<model ea_localid="861" ea_guid="{29E97B93-9777-4b60-A84C-C46755DF6D8B}"/>
 						<properties type="dateTime" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -7464,7 +7464,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_BD833268_777F_4cf2_BFEC_6CF39C554633" name="tilknyttetDato" scope="Public">
 						<initial/>
-						<documentation value="Datoen et dokument ble knyttet til en registrering.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M620&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;29. juni 1990 -&amp;gt; `1990-06-29T12:00:00Z`"/>
+						<documentation value="Datoen et dokument ble knyttet til en registrering.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M620&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990` -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;* `29. juni 1990` -&amp;gt; `1990-06-29T12:00:00Z`"/>
 						<model ea_localid="865" ea_guid="{BD833268-777F-4cf2-BFEC-6CF39C554633}"/>
 						<properties type="dateTime" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -7728,7 +7728,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_DBDFC8A0_9396_4971_B55D_C4DF8D81EC52" name="dokumentetsDato" scope="Public">
 						<initial/>
-						<documentation value="Dato som er påført selve dokumentet.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M103&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;29. juni 1990 -&amp;gt; `1990-06-29T12:00:00Z`"/>
+						<documentation value="Dato som er påført selve dokumentet.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M103&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990` -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;* `29. juni 1990` -&amp;gt; `1990-06-29T12:00:00Z`"/>
 						<model ea_localid="878" ea_guid="{DBDFC8A0-9396-4971-B55D-C4DF8D81EC52}"/>
 						<properties type="dateTime" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -7743,7 +7743,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_49E3C66E_438B_4a43_9A92_7B30CF0E037D" name="forfallsDato" scope="Public">
 						<initial/>
-						<documentation value="Dato som angir fristen for når et inngående dokument må være besvart.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M109&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990` -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;* 29\. juni 1990 -&amp;gt; `1990-06-29T12:00:00Z`"/>
+						<documentation value="Dato som angir fristen for når et inngående dokument må være besvart.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M109&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990` -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;* `29. juni 1990` -&amp;gt; `1990-06-29T12:00:00Z`"/>
 						<model ea_localid="879" ea_guid="{49E3C66E-438B-4a43-9A92-7B30CF0E037D}"/>
 						<properties type="dateTime" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -7773,7 +7773,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_21DF1344_3E99_464a_B424_DD6E2C368069" name="journalDato" scope="Public">
 						<initial/>
-						<documentation value="Datoen journalposten er opprettet/arkivert.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M101&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;29. juni 1990 -&amp;gt; `1990-06-29T12:00:00Z`"/>
+						<documentation value="Datoen journalposten er opprettet/arkivert.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M101&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990` -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;* `29. juni 1990` -&amp;gt; `1990-06-29T12:00:00Z`"/>
 						<model ea_localid="881" ea_guid="{21DF1344-3E99-464a-B424-DD6E2C368069}"/>
 						<properties type="dateTime" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -7818,7 +7818,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_E2A5FD60_FFDD_4b0b_9E83_299CB67DC532" name="mottattDato" scope="Public">
 						<initial/>
-						<documentation value="Dato et eksternt dokument ble mottatt.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M104&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;29. juni 1990 -&amp;gt; `1990-06-29T12:00:00Z`"/>
+						<documentation value="Dato et eksternt dokument ble mottatt.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M104&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990` -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;* `29. juni 1990` -&amp;gt; `1990-06-29T12:00:00Z`"/>
 						<model ea_localid="884" ea_guid="{E2A5FD60-FFDD-4b0b-9E83-299CB67DC532}"/>
 						<properties type="dateTime" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -7833,7 +7833,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_D1540240_8849_4bbb_AB49_50E0AD1B33E7" name="offentlighetsvurdertDato" scope="Public">
 						<initial/>
-						<documentation value="Datoen da offentlighetsvurdering ble foretatt.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M110&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;29. juni 1990 -&amp;gt; `1990-06-29T12:00:00Z`"/>
+						<documentation value="Datoen da offentlighetsvurdering ble foretatt.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M110&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990` -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;* `29. juni 1990` -&amp;gt; `1990-06-29T12:00:00Z`"/>
 						<model ea_localid="885" ea_guid="{D1540240-8849-4bbb-AB49-50E0AD1B33E7}"/>
 						<properties type="dateTime" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -7848,7 +7848,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_7CE3A8EF_B5EB_4e7d_8A11_B1C878D7E770" name="sendtDato" scope="Public">
 						<initial/>
-						<documentation value="Dato et internt produsert dokument ble sendt/ekspedert.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M105&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;29. juni 1990 -&amp;gt; `1990-06-29T12:00:00Z`"/>
+						<documentation value="Dato et internt produsert dokument ble sendt/ekspedert.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M105&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990` -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;* `29. juni 1990` -&amp;gt; `1990-06-29T12:00:00Z`"/>
 						<model ea_localid="886" ea_guid="{7CE3A8EF-B5EB-4e7d-8A11-B1C878D7E770}"/>
 						<properties type="dateTime" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -7971,7 +7971,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_538B4F53_7FBF_45ec_98F3_A37448E9E640" name="avsluttetDato" scope="Public">
 						<initial/>
-						<documentation value="Dato og klokkeslett når arkivenheten ble avsluttet/lukket.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M602&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 klokken 13:30 (UTC +1) -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;29. juni 1990 klokken 13:30 (UTC +2 sommertid) -&amp;gt; `1990-06-29T11:30:00Z`"/>
+						<documentation value="Dato og klokkeslett når arkivenheten ble avsluttet/lukket.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M602&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990 klokken 13:30 (UTC +1)` -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;* `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&amp;gt; `1990-06-29T11:30:00Z`"/>
 						<model ea_localid="892" ea_guid="{538B4F53-7FBF-45ec-98F3-A37448E9E640}"/>
 						<properties type="dateTime" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -8031,7 +8031,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_76CD4D3C_412D_4d49_A597_56CC3C0686EB" name="opprettetDato" scope="Public">
 						<initial/>
-						<documentation value="Dato og klokkeslett når arkivenheten ble opprettet/registrert.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M600&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 klokken 13:30 (UTC +1) -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;29. juni 1990 klokken 13:30 (UTC +2 sommertid) -&amp;gt; `1990-06-29T11:30:00Z`"/>
+						<documentation value="Dato og klokkeslett når arkivenheten ble opprettet/registrert.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M600&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990 klokken 13:30 (UTC +1)` -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;* `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&amp;gt; `1990-06-29T11:30:00Z`"/>
 						<model ea_localid="897" ea_guid="{76CD4D3C-412D-4d49-A597-56CC3C0686EB}"/>
 						<properties type="dateTime" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -8216,7 +8216,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_0F7998E9_3BE9_4801_AD4F_1E2BF9BF2C9E" name="avsluttetDato" scope="Public">
 						<initial/>
-						<documentation value="Dato og klokkeslett når arkivenheten ble avsluttet/lukket&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M602&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 klokken 13:30 (UTC +1) -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;29. juni 1990 klokken 13:30 (UTC +2 sommertid) -&amp;gt; `1990-06-29T11:30:00Z`"/>
+						<documentation value="Dato og klokkeslett når arkivenheten ble avsluttet/lukket&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M602&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990 klokken 13:30 (UTC +1)` -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;* `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&amp;gt; `1990-06-29T11:30:00Z`"/>
 						<model ea_localid="906" ea_guid="{0F7998E9-3BE9-4801-AD4F-1E2BF9BF2C9E}"/>
 						<properties type="dateTime" derived="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -8321,7 +8321,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_4702B99B_943E_4e65_9CF8_37C2985758C5" name="opprettetDato" scope="Public">
 						<initial/>
-						<documentation value="Dato og klokkeslett når arkivenheten ble opprettet/registrert&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M600&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 klokken 13:30 (UTC +1) -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;29. juni 1990 klokken 13:30 (UTC +2 sommertid) -&amp;gt; `1990-06-29T11:30:00Z`"/>
+						<documentation value="Dato og klokkeslett når arkivenheten ble opprettet/registrert&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M600&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990 klokken 13:30 (UTC +1)` -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;* `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&amp;gt; `1990-06-29T11:30:00Z`"/>
 						<model ea_localid="913" ea_guid="{4702B99B-943E-4e65-9CF8-37C2985758C5}"/>
 						<properties type="dateTime" derived="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -8414,7 +8414,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_869BDB2A_32E3_4476_B24E_D341D7400FA4" name="merknadsdato" scope="Public">
 						<initial/>
-						<documentation value="Dato og klokkeslett når merknaden ble registrert&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M611&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 klokken 13:30 (UTC +1) -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;29. juni 1990 klokken 13:30 (UTC +2 sommertid) -&amp;gt; `1990-06-29T11:30:00Z`"/>
+						<documentation value="Dato og klokkeslett når merknaden ble registrert&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M611&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990 klokken 13:30 (UTC +1)` -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;* `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&amp;gt; `1990-06-29T11:30:00Z`"/>
 						<model ea_localid="918" ea_guid="{869BDB2A-32E3-4476-B24E-D341D7400FA4}"/>
 						<properties type="dateTime" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -8535,7 +8535,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_0FABCCBC_E40B_40d2_9148_F88D11779F14" name="arkivertDato" scope="Public">
 						<initial/>
-						<documentation value="Dato og klokkeslett når alle dokumentene som er tilknyttet registreringen ble arkivert&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M604&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 klokken 13:30 (UTC +1) -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;29. juni 1990 klokken 13:30 (UTC +2 sommertid) -&amp;gt; `1990-06-29T11:30:00Z`"/>
+						<documentation value="Dato og klokkeslett når alle dokumentene som er tilknyttet registreringen ble arkivert&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M604&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990 klokken 13:30 (UTC +1)` -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;* `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&amp;gt; `1990-06-29T11:30:00Z`"/>
 						<model ea_localid="925" ea_guid="{0FABCCBC-E40B-40d2-9148-F88D11779F14}"/>
 						<properties type="dateTime" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -8670,7 +8670,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_4F926C1F_9261_41ec_9958_07DED167ECF1" name="opprettetDato" scope="Public">
 						<initial/>
-						<documentation value="Dato og klokkeslett når arkivenheten ble opprettet/registrert.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M600&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 klokken 13:30 (UTC +1) -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;29. juni 1990 klokken 13:30 (UTC +2 sommertid) -&amp;gt; `1990-06-29T11:30:00Z`"/>
+						<documentation value="Dato og klokkeslett når arkivenheten ble opprettet/registrert.&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M600&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990 klokken 13:30 (UTC +1)` -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;* `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&amp;gt; `1990-06-29T11:30:00Z`"/>
 						<model ea_localid="934" ea_guid="{4F926C1F-9261-41ec-9958-07DED167ECF1}"/>
 						<properties type="dateTime" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -8838,7 +8838,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_ECCE00B1_755A_47c2_90AE_5012FA5DB7EC" name="saksdato" scope="Public">
 						<initial/>
-						<documentation value="Datoen saken er opprettet&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M100&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;29. juni 1990 -&amp;gt; `1990-06-29T12:00:00Z`"/>
+						<documentation value="Datoen saken er opprettet&#xA;&#xA;# Beskrivelse&#xA;&#xA;* Noark 5 versjon 5.0 metadatakatalog - nr. M100&#xA;&#xA;# Referanser&#xA;&#xA;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990` -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;* `29. juni 1990` -&amp;gt; `1990-06-29T12:00:00Z`"/>
 						<model ea_localid="943" ea_guid="{ECCE00B1-755A-47c2-90AE-5012FA5DB7EC}"/>
 						<properties type="dateTime" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -9050,7 +9050,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_1F006D89_AF67_4ea8_82A8_D7A1FF8FDD79" name="dato" scope="Public">
 						<initial/>
-						<documentation value="Dato for utstedelse av faktura.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;29. juni 1990 -&amp;gt; `1990-06-29T12:00:00Z`"/>
+						<documentation value="Dato for utstedelse av faktura.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990` -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;* `29. juni 1990` -&amp;gt; `1990-06-29T12:00:00Z`"/>
 						<model ea_localid="533" ea_guid="{1F006D89-AF67-4ea8-82A8-D7A1FF8FDD79}"/>
 						<properties type="date" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -9095,7 +9095,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_7837965E_E029_440e_89BB_A7F70A3D8130" name="forfallsdato" scope="Public">
 						<initial/>
-						<documentation value="Frist for betaling&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;29. juni 1990 -&amp;gt; `1990-06-29T12:00:00Z`"/>
+						<documentation value="Frist for betaling&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990` -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;* `29. juni 1990` -&amp;gt; `1990-06-29T12:00:00Z`"/>
 						<model ea_localid="536" ea_guid="{7837965E-E029-440e-89BB-A7F70A3D8130}"/>
 						<properties type="date" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -9200,7 +9200,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_5080AFED_C3C8_4afe_98A2_14F5CC92109D" name="leveringsdato" scope="Public">
 						<initial/>
-						<documentation value="Dato varer eller tjenester ble levert.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;29. juni 1990 -&amp;gt; `1990-06-29T12:00:00Z`"/>
+						<documentation value="Dato varer eller tjenester ble levert.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990` -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;* `29. juni 1990` -&amp;gt; `1990-06-29T12:00:00Z`"/>
 						<model ea_localid="542" ea_guid="{5080AFED-C3C8-4afe-98A2-14F5CC92109D}"/>
 						<properties type="date" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -9533,7 +9533,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_B3DCC3E8_9813_4af3_A80A_08CCF0D99F6B" name="bilagsdato" scope="Public">
 						<initial/>
-						<documentation value="Dato bilaget er registrert.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;29. juni 1990 -&amp;gt; `1990-06-29T12:00:00Z`"/>
+						<documentation value="Dato bilaget er registrert.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990` -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;* `29. juni 1990` -&amp;gt; `1990-06-29T12:00:00Z`"/>
 						<model ea_localid="1075" ea_guid="{B3DCC3E8-9813-4af3-A80A-08CCF0D99F6B}"/>
 						<properties type="date" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -9863,7 +9863,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_4B68D704_73CF_453f_8F37_7E7DEFE6DBAB" name="forfallsdato" scope="Public">
 						<initial/>
-						<documentation value="Dato transaksjonen forfaller.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;29. juni 1990 -&amp;gt; `1990-06-29T12:00:00Z`"/>
+						<documentation value="Dato transaksjonen forfaller.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990` -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;* `29. juni 1990` -&amp;gt; `1990-06-29T12:00:00Z`"/>
 						<model ea_localid="1078" ea_guid="{4B68D704-73CF-453f-8F37-7E7DEFE6DBAB}"/>
 						<properties type="date" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -9878,7 +9878,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_2E783E1B_A08D_4c80_8C68_4A853A6695E7" name="oppdateringstidspunkt" scope="Public">
 						<initial/>
-						<documentation value="Tidspunkt for siste endring i transaksjonen.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 klokken 13:30 (UTC +1) -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;29. juni 1990 klokken 13:30 (UTC +2 sommertid) -&amp;gt; `1990-06-29T11:30:00Z`"/>
+						<documentation value="Tidspunkt for siste endring i transaksjonen.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990 klokken 13:30 (UTC +1)` -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;* `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&amp;gt; `1990-06-29T11:30:00Z`"/>
 						<model ea_localid="1085" ea_guid="{2E783E1B-A08D-4c80-8C68-4A853A6695E7}"/>
 						<properties type="datetime" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -9908,7 +9908,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_A163B502_CF1C_41ea_9142_86ED34A65EA0" name="transaksjonstidspunkt" scope="Public">
 						<initial/>
-						<documentation value="Tidspunkt for registrering av transaksjonen.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 klokken 13:30 (UTC +1) -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;29. juni 1990 klokken 13:30 (UTC +2 sommertid) -&amp;gt; `1990-06-29T11:30:00Z`"/>
+						<documentation value="Tidspunkt for registrering av transaksjonen.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990 klokken 13:30 (UTC +1)` -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;* `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&amp;gt; `1990-06-29T11:30:00Z`"/>
 						<model ea_localid="1084" ea_guid="{A163B502-CF1C-41ea-9142-86ED34A65EA0}"/>
 						<properties type="datetime" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -10047,7 +10047,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_13122DB4_9B1C_4f3a_BC47_171E1129EF6A" name="slettet" scope="Public">
 						<initial/>
-						<documentation value="Tidspunkt behandlingen er slettet.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 klokken 13:30 (UTC +1) -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;29. juni 1990 klokken 13:30 (UTC +2 sommertid) -&amp;gt; `1990-06-29T11:30:00Z`"/>
+						<documentation value="Tidspunkt behandlingen er slettet.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990 klokken 13:30 (UTC +1)` -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;* `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&amp;gt; `1990-06-29T11:30:00Z`"/>
 						<model ea_localid="1094" ea_guid="{13122DB4-9B1C-4f3a-BC47-171E1129EF6A}"/>
 						<properties type="dateTime" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -10110,7 +10110,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_6EA5E56A_D0FB_4049_A2B2_929608463922" name="opprettet" scope="Public">
 						<initial/>
-						<documentation value="Dato når samtykke ble opprettet.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 klokken 13:30 (UTC +1) -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;29. juni 1990 klokken 13:30 (UTC +2 sommertid) -&amp;gt; `1990-06-29T11:30:00Z`"/>
+						<documentation value="Dato når samtykke ble opprettet.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990 klokken 13:30 (UTC +1)` -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;* `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&amp;gt; `1990-06-29T11:30:00Z`"/>
 						<model ea_localid="560" ea_guid="{6EA5E56A-D0FB-4049-A2B2-929608463922}"/>
 						<properties type="dateTime" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -10172,7 +10172,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_CD63D637_FC5E_4f89_8508_5F9A4F9E9AC0" name="slettet" scope="Public">
 						<initial/>
-						<documentation value="Tidspunkt tjenesten er slettet.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 klokken 13:30 (UTC +1) -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;29. juni 1990 klokken 13:30 (UTC +2 sommertid) -&amp;gt; `1990-06-29T11:30:00Z`"/>
+						<documentation value="Tidspunkt tjenesten er slettet.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990 klokken 13:30 (UTC +1)` -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;* `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&amp;gt; `1990-06-29T11:30:00Z`"/>
 						<model ea_localid="1095" ea_guid="{CD63D637-FC5E-4f89-8508-5F9A4F9E9AC0}"/>
 						<properties type="dateTime" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -11008,7 +11008,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_4BA49EEA_FFF3_428b_8B6D_E9639A4ACFE7" name="fødselsdato" scope="Public">
 						<initial/>
-						<documentation value="Dato for fødsel&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;29. juni 1990 -&amp;gt; `1990-06-29T12:00:00Z`"/>
+						<documentation value="Dato for fødsel&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990` -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;* `29. juni 1990` -&amp;gt; `1990-06-29T12:00:00Z`"/>
 						<model ea_localid="4" ea_guid="{4BA49EEA-FFF3-428b-8B6D-E9639A4ACFE7}"/>
 						<properties type="date" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -11876,7 +11876,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_6A79C4DB_2C0D_4755_B413_D81E600ABDCE" name="slutt" scope="Public">
 						<initial/>
-						<documentation value="Til dato&#xA;&#xA;# Beskrivelse&#xA;&#xA;Sluttdato må være senere eller lik startdato om den er definert.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;29. juni 1990 -&amp;gt; `1990-06-29T12:00:00Z`&#xA;"/>
+						<documentation value="Til dato&#xA;&#xA;# Beskrivelse&#xA;&#xA;Sluttdato må være senere eller lik startdato om den er definert.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990` -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;* `29. juni 1990` -&amp;gt; `1990-06-29T12:00:00Z`&#xA;"/>
 						<model ea_localid="26" ea_guid="{6A79C4DB-2C0D-4755-B413-D81E600ABDCE}"/>
 						<properties type="dateTime" derived="0" precision="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
@@ -12756,7 +12756,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_78FB44E4_E2FD_43e2_BA79_15B721D8462D" name="godkjent" scope="Public">
 						<initial/>
-						<documentation value="Tidsstempel som angir når fravær ble godkjent.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 klokken 13:30 (UTC +1) -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;29. juni 1990 klokken 13:30 (UTC +2 sommertid) -&amp;gt; `1990-06-29T11:30:00Z`"/>
+						<documentation value="Tidsstempel som angir når fravær ble godkjent.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990 klokken 13:30 (UTC +1)` -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;* `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&amp;gt; `1990-06-29T11:30:00Z`"/>
 						<model ea_localid="977" ea_guid="{78FB44E4-E2FD-43e2-BA79-15B721D8462D}"/>
 						<properties type="dateTime" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -12851,7 +12851,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_891265CD_6972_4b26_8022_91939F7B93C4" name="anvist" scope="Public">
 						<initial/>
-						<documentation value="Tidsstempel som angir når lønn ble anvist.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 klokken 13:30 (UTC +1) -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;29. juni 1990 klokken 13:30 (UTC +2 sommertid) -&amp;gt; `1990-06-29T11:30:00Z`"/>
+						<documentation value="Tidsstempel som angir når lønn ble anvist.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990 klokken 13:30 (UTC +1)` -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;* `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&amp;gt; `1990-06-29T11:30:00Z`"/>
 						<model ea_localid="197" ea_guid="{891265CD-6972-4b26-8022-91939F7B93C4}"/>
 						<properties type="dateTime" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -12866,7 +12866,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_BC1432D5_2116_4c6e_A27D_6E755C33C7F5" name="attestert" scope="Public">
 						<initial/>
-						<documentation value="Tidsstempel som angir når lønn ble attestert.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 klokken 13:30 (UTC +1) -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;29. juni 1990 klokken 13:30 (UTC +2 sommertid) -&amp;gt; `1990-06-29T11:30:00Z`"/>
+						<documentation value="Tidsstempel som angir når lønn ble attestert.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990 klokken 13:30 (UTC +1)` -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;* `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&amp;gt; `1990-06-29T11:30:00Z`"/>
 						<model ea_localid="201" ea_guid="{BC1432D5-2116-4c6e-A27D-6E755C33C7F5}"/>
 						<properties type="dateTime" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -12911,7 +12911,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_D72FDA69_0E98_400e_AEC4_C57D92F9CF55" name="kontert" scope="Public">
 						<initial/>
-						<documentation value="Tidsstempel som angir når lønn ble kontert.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 klokken 13:30 (UTC +1) -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;29. juni 1990 klokken 13:30 (UTC +2 sommertid) -&amp;gt; `1990-06-29T11:30:00Z`"/>
+						<documentation value="Tidsstempel som angir når lønn ble kontert.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990 klokken 13:30 (UTC +1)` -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;* `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&amp;gt; `1990-06-29T11:30:00Z`"/>
 						<model ea_localid="457" ea_guid="{D72FDA69-0E98-400e-AEC4-C57D92F9CF55}"/>
 						<properties type="dateTime" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -13086,7 +13086,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_ADFAE03A_4BA5_4dad_88DC_1135404327FB" name="ansiennitet" scope="Public">
 						<initial/>
-						<documentation value="Ansiennitet for personalressurs hos arbeidsgiver.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Ansiennitet er normalt den ansattes tiltredelsesdato hos arbeidsgiver, men tariffavtalene fastsetter tilleggsregler blant annet for godskriving av tidligere offentlig og privat tjeneste.&#xA;&#xA;# Referanser&#xA;&#xA;- KS Hovedtariffavtalen &amp;#167; 12&#xA;- Statens personalhåndbok 2018, kapittel 7.3.4&#xA;- https://snl.no/ansiennitet&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;29. juni 1990 -&amp;gt; `1990-06-29T12:00:00Z`"/>
+						<documentation value="Ansiennitet for personalressurs hos arbeidsgiver.&#xA;&#xA;# Beskrivelse&#xA;&#xA;Ansiennitet er normalt den ansattes tiltredelsesdato hos arbeidsgiver, men tariffavtalene fastsetter tilleggsregler blant annet for godskriving av tidligere offentlig og privat tjeneste.&#xA;&#xA;# Referanser&#xA;&#xA;- KS Hovedtariffavtalen &amp;#167; 12&#xA;- Statens personalhåndbok 2018, kapittel 7.3.4&#xA;- https://snl.no/ansiennitet&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990` -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;* `29. juni 1990` -&amp;gt; `1990-06-29T12:00:00Z`"/>
 						<model ea_localid="492" ea_guid="{ADFAE03A-4BA5-4dad-88DC-1135404327FB}"/>
 						<properties type="date" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -13752,7 +13752,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_6F41C8A4_FA8E_4d5d_A2C0_64CB9E979D3B" name="avbruddsdato" scope="Public">
 						<initial/>
-						<documentation value="Dato da elevforholdet ble avbrutt&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;29. juni 1990 -&amp;gt; `1990-06-29T12:00:00Z`"/>
+						<documentation value="Dato da elevforholdet ble avbrutt&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990` -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;* `29. juni 1990` -&amp;gt; `1990-06-29T12:00:00Z`"/>
 						<model ea_localid="1032" ea_guid="{6F41C8A4-FA8E-4d5d-A2C0-64CB9E979D3B}"/>
 						<properties type="date" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -14577,7 +14577,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_A08E8ED1_D5DA_416b_92C2_E9B03D3977C4" name="eksamensdato" scope="Public">
 						<initial/>
-						<documentation value="Dato og klokkeslett for eksamen&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 klokken 13:30 (UTC +1) -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;29. juni 1990 klokken 13:30 (UTC +2 sommertid) -&amp;gt; `1990-06-29T11:30:00Z`"/>
+						<documentation value="Dato og klokkeslett for eksamen&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990 klokken 13:30 (UTC +1)` -&amp;gt; `1990-03-29T12:30:00Z`&#xA;&#xA;* `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&amp;gt; `1990-06-29T11:30:00Z`"/>
 						<model ea_localid="988" ea_guid="{A08E8ED1-D5DA-416b-92C2-E9B03D3977C4}"/>
 						<properties type="dateTime" derived="0" collection="false" length="0" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -14710,7 +14710,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_B6F1B741_5F0E_4807_8C0C_3339A0D8257A" name="vurderingsdato" scope="Public">
 						<initial/>
-						<documentation value="Datoen vurderingen er foretatt.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;29. juni 1990 -&amp;gt; `1990-06-29T12:00:00Z`"/>
+						<documentation value="Datoen vurderingen er foretatt.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990` -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;* `29. juni 1990` -&amp;gt; `1990-06-29T12:00:00Z`"/>
 						<model ea_localid="1029" ea_guid="{B6F1B741-5F0E-4807-8C0C-3339A0D8257A}"/>
 						<properties type="datetime" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -15054,7 +15054,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_A00D8378_566D_4feb_A35A_00115BEDD1EC" name="endretDato" scope="Public">
 						<initial/>
-						<documentation value="Dato for endring av karakter.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;29. juni 1990 -&amp;gt; `1990-06-29T12:00:00Z`"/>
+						<documentation value="Dato for endring av karakter.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990` -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;* `29. juni 1990` -&amp;gt; `1990-06-29T12:00:00Z`"/>
 						<model ea_localid="1036" ea_guid="{A00D8378-566D-4feb-A35A-00115BEDD1EC}"/>
 						<properties type="dateTime" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -15154,7 +15154,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_26AFDE23_CD20_4fc1_AB15_E5066DAF4E90" name="vurderingsdato" scope="Public">
 						<initial/>
-						<documentation value="Datoen vurderingen er foretatt.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;29. mars 1990 -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;29. juni 1990 -&amp;gt; `1990-03-29T12:00:00Z`"/>
+						<documentation value="Datoen vurderingen er foretatt.&#xA;&#xA;# Format&#xA;&#xA;ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`&#xA;&#xA;Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).&#xA;&#xA;## Referanser&#xA;&#xA;* ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601&#xA;&#xA;## Eksempler&#xA;&#xA;* `29. mars 1990` -&amp;gt; `1990-03-29T12:00:00Z`&#xA;&#xA;* `29. juni 1990` -&amp;gt; `1990-03-29T12:00:00Z`"/>
 						<model ea_localid="1030" ea_guid="{26AFDE23-CD20-4fc1-AB15-E5066DAF4E90}"/>
 						<properties type="datetime" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
