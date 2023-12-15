@@ -1,27 +1,29 @@
 <!-- MarkdownTOC autolink="true" -->
 
-- [v3.15.0](#v3150)
+- [v3.16.0](#v3160)
   - [Features](#features)
+- [v3.15.0](#v3150)
+  - [Features](#features-1)
   - [Bugfixes](#bugfixes)
 - [v3.14.0](#v3140)
-  - [Features](#features-1)
+  - [Features](#features-2)
   - [Bugfixes](#bugfixes-1)
 - [v3.13.0](#v3130)
-  - [Features](#features-2)
-- [v3.12.0](#v3120)
   - [Features](#features-3)
+- [v3.12.0](#v3120)
+  - [Features](#features-4)
 - [v3.11.10](#v31110)
   - [Bugfix](#bugfix)
 - [v3.11.0](#v3110)
-  - [Features](#features-4)
+  - [Features](#features-5)
   - [Deprecated](#deprecated)
   - [Bugfixes](#bugfixes-2)
 - [v3.10.0](#v3100)
-  - [Features](#features-5)
+  - [Features](#features-6)
   - [Deprecated](#deprecated-1)
   - [Bugfixes](#bugfixes-3)
 - [v3.9.0](#v390)
-  - [Features](#features-6)
+  - [Features](#features-7)
   - [Deprecated](#deprecated-2)
   - [Bugfixes](#bugfixes-4)
 - [v3.8.10](#v3810)
@@ -29,64 +31,101 @@
 - [v3.8.0](#v380)
   - [Deprecated](#deprecated-3)
   - [Bugfixes](#bugfixes-6)
-  - [Features](#features-7)
-- [v3.7.0](#v370)
   - [Features](#features-8)
+- [v3.7.0](#v370)
+  - [Features](#features-9)
 - [v3.6.10](#v3610)
   - [Bugfixes](#bugfixes-7)
 - [v3.6.0](#v360)
   - [Deprecated](#deprecated-4)
-  - [Features](#features-9)
-- [v3.5.0](#v350)
   - [Features](#features-10)
+- [v3.5.0](#v350)
+  - [Features](#features-11)
   - [Bugfixes](#bugfixes-8)
 - [v3.4.0](#v340)
-  - [Features](#features-11)
+  - [Features](#features-12)
   - [Bugfixes](#bugfixes-9)
 - [v3.3.0](#v330)
-  - [Features](#features-12)
+  - [Features](#features-13)
   - [Bugfixes](#bugfixes-10)
 - [v3.2.0](#v320)
   - [Deprecated](#deprecated-5)
-  - [Features](#features-13)
+  - [Features](#features-14)
 - [v3.1.0](#v310)
   - [Deprecated](#deprecated-6)
-  - [Features](#features-14)
+  - [Features](#features-15)
   - [Bugfixes](#bugfixes-11)
 - [v3.0.0](#v300)
   - [Breaking changes](#breaking-changes)
-  - [Features](#features-15)
+  - [Features](#features-16)
   - [Bugfixes](#bugfixes-12)
 - [v2.8.0](#v280)
-  - [Features](#features-16)
+  - [Features](#features-17)
   - [Bugfixes](#bugfixes-13)
 - [v2.7.0](#v270)
-  - [Features](#features-17)
-- [v2.6.0](#v260)
   - [Features](#features-18)
+- [v2.6.0](#v260)
+  - [Features](#features-19)
   - [Bugfixes](#bugfixes-14)
 - [v2.4.0](#v240)
-  - [Features](#features-19)
+  - [Features](#features-20)
 - [v2.2.20](#v2220)
   - [Bugfixes](#bugfixes-15)
 - [v2.2.10](#v2210)
   - [Bugfixes](#bugfixes-16)
 - [v2.2.0](#v220)
-  - [Features](#features-20)
+  - [Features](#features-21)
 - [v2.0.10](#v2010)
   - [Bugfixes](#bugfixes-17)
 - [v2.0.0](#v200)
   - [Breaking changes](#breaking-changes-1)
-  - [Features](#features-21)
+  - [Features](#features-22)
   - [Bugfixes](#bugfixes-18)
 - [v1.0.1](#v101)
-  - [Features](#features-22)
+  - [Features](#features-23)
   - [Bugfixes](#bugfixes-19)
   - [Known issues](#known-issues)
 - [v1.0.0](#v100)
-  - [Features](#features-23)
+  - [Features](#features-24)
 
 <!-- /MarkdownTOC -->
+
+# v3.16.0
+
+|      |              |
+| ---- | ------------ |
+| Date | `15.12.2023` |
+| Tag  | `v3.16.0`    |
+
+## Features
+
+* Utdanning
+	* Added class `Fagstatus`.
+	* Added class `Eksamen`.
+	
+	* Changed class `Fraværsregistrering` from `Kompleks datatype` to `Hovedklasse`.
+	
+	* Added attribute `delegert` on `Eksamensgruppemedlemskap`.
+	* Added attribute `kandidatnummer` on `Eksamensgruppemedlemskap`.
+	* Added attribute `systemId` on `Elevfravær`.
+	* Changed attribute `kommentar` on `Elevfravær`.
+	* Removed attribute `fravær` from `Elevfravær`.
+	
+	* Added relation `fagmerknad` on `Faggruppemedlemskap`.
+	* Added relation `fagstatus` on `Faggruppemedlemskap`.
+	* Added relation `eksamen` on `Rom`.
+	* Added relation `eksamen` on `Eksamensgruppe`.
+	* Added relation `foretrukketSkole` on `Eksamensgruppemedlemskap`.
+	* Added relation `delegertTil` on `Eksamensgruppemedlemskap`.
+	* Added relation `foretrukketSensor` on `Eksamensgruppemedlemskap`.
+	* Added relation `skole` on `Faggruppe`.
+	* Added relation `skoleår` on `Faggruppe`.
+	* Added relation `faggruppe` on `Skole`.
+	* Added relation `fraværsregistrering` on `Elevfravær`.
+	* Added relation `elevfravær` on `Fraværsregistrering`.
+
+Improved, bugfixed and clarified a few descriptions in documentation.
+
 
 # v3.15.0
 
