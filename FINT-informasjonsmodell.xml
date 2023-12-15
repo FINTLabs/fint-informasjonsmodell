@@ -1774,7 +1774,6 @@
 								<type xmi:idref="EAJava_dateTime"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_ABA1B674_8AFB_4eb5_931A_88918EDC050C" name="systemId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000479_8AFB_4eb5_931A_88918EDC050C" value="1"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000480_8AFB_4eb5_931A_88918EDC050C" value="1"/>
 							</ownedAttribute>
@@ -1809,9 +1808,9 @@
 						</packagedElement>
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_F02C9150_A7CA_4e19_9825_F33708DB3BFC" name="Samtykke" visibility="public">
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_183671DE_A5AD_495b_89BA_49E93F08A515" name="gyldighetsperiode" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<type xmi:idref="EAID_0CA4A60C_0085_42a3_A764_09EEEBBB8B90"/>
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000489_A5AD_495b_89BA_49E93F08A515" value="1"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000490_A5AD_495b_89BA_49E93F08A515" value="1"/>
-								<type xmi:idref="EAJava_Periode"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_6EA5E56A_D0FB_4049_A2B2_929608463922" name="opprettet" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000491_D0FB_4049_A2B2_929608463922" value="1"/>
@@ -10232,7 +10231,7 @@
 						<initial/>
 						<documentation value="Intern identifikator som brukes i kildesystemet."/>
 						<model ea_localid="558" ea_guid="{ABA1B674-8AFB-4eb5-931A-88918EDC050C}"/>
-						<properties type="Identifikator" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
+						<properties derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
 						<containment containment="Not Specified" position="0"/>
 						<stereotype/>
@@ -30555,7 +30554,6 @@
 						</generalization>
 					</packagedElement>
 					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAJava_datetime" name="datetime" visibility="public"/>
-					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAJava_Periode" name="Periode" visibility="public"/>
 				</packagedElement>
 				<packagedElement xmi:type="uml:Package" xmi:id="EAnoneTypesPackage" name="EA_none_Types_Package" visibility="public">
 					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAnone_dateTime" name="dateTime" visibility="public"/>
