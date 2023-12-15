@@ -1907,7 +1907,6 @@
 					<packagedElement xmi:type="uml:Package" xmi:id="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519" name="Utdanning" visibility="public">
 						<ownedComment xmi:type="uml:Comment" xmi:id="EAID_CE8C9146_D06F_472c_9DD2_54C7256FDA64" body="Gruppetype er basert på PIFU FK IMS felt &quot;grouptype&quot; 3.4"/>
 						<ownedComment xmi:type="uml:Comment" xmi:id="EAID_47F497A3_4F30_4be0_B574_4A5D2ABF5D96" body="Det er ingen forskjellige datatyper for elevressurs, lærerressurs og foresattressurs i PIFU-FK IMS.&#xA;Måter å skille mellom lærer og elev:&#xA;* Verdi av &quot;pifu_status/type&quot; felt P2.15.5.1. Elev har verdi &quot;pupilStatus&quot; der.&#xA;* Verdi av pifu_hasContactPerson/type felt P2.15.8.1. Den kan enter være satt til &quot;nextOfKin&quot;, derfor person er lærer. Om verdi er &quot;guardian&quot; person er en elev."/>
-						<packagedElement xmi:type="uml:Class" xmi:id="EAID_86090ADF_C6F0_483f_8650_443CA68F058E" name="Class1" visibility="public"/>
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_01C70BD2_9BF5_4785_BC1A_706EA51C4BDC" name="Gruppering etter utdanning" visibility="public"/>
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_05314A6A_98C5_410d_9404_36EE9E6DE099" name="Gruppe" visibility="public"/>
 						<packagedElement xmi:type="uml:Class" xmi:id="EAID_0E1F2F54_E838_416c_9E87_65BCAB82EB7B" name="Gruppe" visibility="public"/>
@@ -10658,16 +10657,6 @@
 				<paths/>
 				<times created="2017-04-05 13:59:51" modified="2017-04-05 13:59:51"/>
 				<flags iscontrolled="FALSE" isprotected="FALSE" usedtd="FALSE" logxml="FALSE"/>
-			</element>
-			<element xmi:idref="EAID_86090ADF_C6F0_483f_8650_443CA68F058E" xmi:type="uml:Class" name="Class1" scope="public">
-				<model package="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519" tpos="0" ea_localid="552" ea_eleType="element"/>
-				<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="goa" version="1.0" phase="1.0" created="2023-11-28 15:23:06" modified="2023-11-28 15:23:06" complexity="1" status="Proposed"/>
-				<code gentype="Java"/>
-				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-				<tags/>
-				<xrefs/>
-				<extendedProperties tagged="0" package_name="Utdanning"/>
 			</element>
 			<element xmi:idref="EAID_01C70BD2_9BF5_4785_BC1A_706EA51C4BDC" xmi:type="uml:Boundary" name="Gruppering etter utdanning" scope="public">
 				<model package="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519" tpos="0" ea_localid="152" ea_eleType="element"/>
@@ -32690,9 +32679,9 @@
 			<diagram xmi:id="EAID_A30AF6BC_98A5_4663_AE6C_85F85F5EC6D8">
 				<model package="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519" localID="80" owner="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519"/>
 				<properties name="Eksamen" type="Logical"/>
-				<project author="Kenneth F Goa" version="1.0" created="2022-03-28 22:30:56" modified="2023-11-29 15:42:21"/>
+				<project author="Kenneth F Goa" version="1.0" created="2022-03-28 22:30:56" modified="2023-12-15 10:12:33"/>
 				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=0;PPgs.cy=0;DocSize.cx=827;DocSize.cy=1075;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
-				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=90CF67E6;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=5DF5CF50;"/>
 				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
 				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
 				<extendedProperties/>
@@ -32719,7 +32708,7 @@
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=CX=20:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_AD7D946A_39C2_4bba_AF96_3B3680816F41" style="Mode=3;EOID=3DC43128;SOID=0A982BB5;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="EDGE=2;SX=2;SY=-36;EX=2;EY=-30;$LLB=CX=17:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=127:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=51:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=6:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_828B3030_37E9_40ed_80BB_4F1A51F95579" style="Mode=3;EOID=301E8A7A;SOID=0A982BB5;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="EDGE=1;$LLB=CX=17:CY=14:OX=13:OY=-5:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=86:CY=14:OX=0:OY=-45:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=75:CY=14:OX=-1:OY=10:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=6:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_248EAB25_B76A_4b76_ABA4_61D941EE8823" style="Mode=3;EOID=3C7B0078;SOID=0A982BB5;Color=-1;LWidth=0;Hidden=0;"/>
-					<element geometry="SX=33;SY=0;EX=0;EY=-19;EDGE=1;$LLB=CX=17:CY=14:OX=-50:OY=-1:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=75:CY=14:OX=-14:OY=-18:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=65:CY=14:OX=-4:OY=-19:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=-37:OY=-29:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=406:-110$;" subject="EAID_B5305953_A31B_486f_A44D_2134B5C163A1" style="Mode=3;EOID=43756102;SOID=3C7B0078;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+					<element geometry="SX=33;SY=0;EX=0;EY=-19;EDGE=1;$LLB=CX=17:CY=14:OX=-50:OY=-1:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=75:CY=14:OX=-14:OY=-18:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=43:CY=14:OX=-4:OY=-19:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=-37:OY=-29:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=406:-110$;" subject="EAID_B5305953_A31B_486f_A44D_2134B5C163A1" style="Mode=3;EOID=43756102;SOID=3C7B0078;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
 					<element geometry="EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=CX=66:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=-8:OY=6:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_1DD7DDF6_412B_40c8_ADED_BA5A4D2C57AE" style="Mode=3;EOID=C52CD694;SOID=3C7B0078;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_EE1E400F_4FE0_4e12_BBC3_DC7FFF51D388" style="Mode=3;EOID=301E8A7A;SOID=3C7B0078;Color=-1;LWidth=0;Hidden=1;"/>
 					<element geometry="EX=-36;EY=0;SX=0;SY=-53;EDGE=2;$LLB=CX=17:CY=14:OX=19:OY=-1:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=75:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=27:CY=14:OX=-9:OY=-1:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=6:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=527:-278$;" subject="EAID_077DA4B5_99A1_444c_B742_8F2B3EAB8AC4" style="Mode=3;EOID=C150C7C0;SOID=3C7B0078;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
