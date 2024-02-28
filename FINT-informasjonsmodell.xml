@@ -6519,6 +6519,7 @@
 		<thecustomprofile:hovedklasse base_Class="EAID_A7760341_ECCF_4105_8525_19C38F243F46"/>
 		<thecustomprofile:hovedklasse base_Class="EAID_DB6CD84D_FDEF_46cf_B1FF_23DA43330088"/>
 		<thecustomprofile:DEPRECATED base_Association="EAID_2C8785ED_E8A3_4a0e_82A0_913F079A6375" DEPRECATED="Relasjonen erstattes av Gruppemedlemskap i Basisgruppemedlemskap. "/>
+		<thecustomprofile:DEPRECATED base_Association="EAID_9ACEA38F_5B0E_4ca6_8952_0EA3A7727D0B" DEPRECATED="Erstattet av relasjon mellom Elevforhold / Undervisningsforhold og grupper."/>
 		<thecustomprofile:hovedklasse base_Class="EAID_8961C76A_394C_4f74_AFFA_31A17B6DB415"/>
 		<thecustomprofile:hovedklasse base_Class="EAID_CBFC8E03_81C3_467d_B0CC_4842D1B17F8A"/>
 		<thecustomprofile:writable base_Property="EAID_1ACEE78F_D6BD_40fc_A667_2ABFF8E3D968"/>
@@ -6545,6 +6546,7 @@
 		<thecustomprofile:DEPRECATED base_Association="EAID_80B2D3BE_2D2B_47d1_9F63_2CBF5144EB1C" DEPRECATED="Erstattet av relasjon mellom Elevforhold / Undervisningsforhold og grupper."/>
 		<thecustomprofile:DEPRECATED base_Association="EAID_9DF49C6D_3731_4ed5_89A9_8D988FF127A6" DEPRECATED="Erstattet av relesjon mellom Elevforhold og Vurdering"/>
 		<thecustomprofile:DEPRECATED base_Association="EAID_F01F30E0_30DF_4a23_8648_95C652456C98" DEPRECATED="Erstattet av relasjon mellom Elevforhold og Fravær"/>
+		<thecustomprofile:DEPRECATED base_Association="EAID_FE3D544A_9C14_4ea6_B888_AEE0855E3C3E" DEPRECATED="Erstattet av relasjon mellom Undervisningsforhold og Elevforhold og grupper."/>
 		<thecustomprofile:hovedklasse base_Class="EAID_18A1A8D5_BCB4_424b_B80A_DD704DE940F4"/>
 		<thecustomprofile:hovedklasse base_Class="EAID_86AD341D_7F52_4b06_A68C_260CFEC834D7"/>
 		<thecustomprofile:hovedklasse base_Class="EAID_ADF8D060_7406_4d34_BD1D_D9D8CD09DCBF"/>
@@ -25343,7 +25345,9 @@
 				<extendedProperties virtualInheritance="0"/>
 				<style/>
 				<xrefs/>
-				<tags/>
+				<tags>
+					<tag xmi:id="EAID_CC762A49_982B_484f_AB80_2470A68C9485" name="DEPRECATED" value="Erstattet av relasjon mellom Elevforhold / Undervisningsforhold og grupper."/>
+				</tags>
 			</connector>
 			<connector xmi:idref="EAID_9BC7E853_E880_4c18_8300_8622EEF186CA">
 				<source xmi:idref="EAID_8961C76A_394C_4f74_AFFA_31A17B6DB415">
@@ -27115,7 +27119,9 @@
 				<extendedProperties virtualInheritance="0"/>
 				<style/>
 				<xrefs/>
-				<tags/>
+				<tags>
+					<tag xmi:id="EAID_B8F45FDD_C110_46c4_BE4F_749D172527A8" name="DEPRECATED" value="Erstattet av relasjon mellom Undervisningsforhold og Elevforhold og grupper."/>
+				</tags>
 			</connector>
 			<connector xmi:idref="EAID_4E3B57E9_8373_4a4f_8346_A86E62BFE5EF">
 				<source xmi:idref="EAID_18A1A8D5_BCB4_424b_B80A_DD704DE940F4">
@@ -32277,9 +32283,9 @@
 			<diagram xmi:id="EAID_86B46986_6C1E_43e2_A127_A5406222071D">
 				<model package="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519" localID="15" owner="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519" tpos="4"/>
 				<properties name="Medlemskap" type="Logical"/>
-				<project author="Petr Vasilev" version="1.0" created="2017-05-11 00:00:00" modified="2024-02-28 14:09:14"/>
+				<project author="Petr Vasilev" version="1.0" created="2017-05-11 00:00:00" modified="2024-02-28 14:14:12"/>
 				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=827;DocSize.cy=1169;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;ShowFQN=1;"/>
-				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;ShowFQN=1;SuppressedCompartments=;Theme=:119;SaveTag=0B5016BA;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;ShowFQN=1;SuppressedCompartments=;Theme=:119;SaveTag=1A0318F2;"/>
 				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
 				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
 				<extendedProperties/>
@@ -32298,7 +32304,7 @@
 					<element geometry="Left=88;Top=182;Right=792;Bottom=885;" subject="EAID_24361EF2_3B4B_43d6_8A25_FAE3FBE6436E" seqno="12" style="DUID=A7FD6C44;shape=rounded;"/>
 					<element geometry="Left=112;Top=202;Right=768;Bottom=553;" subject="EAID_677B6D3F_8691_4881_A3CA_330C0B421698" seqno="13" style="DUID=A78107F7;shape=rounded;"/>
 					<element geometry="EDGE=3;$LLB=CX=17:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=33:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=51:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=6:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_CDC9DB15_E09B_4aa9_8783_EAF84B3BF43E" style="Mode=3;EOID=77CCE9C2;SOID=97114B5A;Color=-1;LWidth=0;Hidden=0;"/>
-					<element geometry="EDGE=3;SX=54;SY=-35;$LLB=CX=17:CY=14:OX=11:OY=26:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=58:CY=14:OX=0:OY=26:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=34:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=6:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_80B2D3BE_2D2B_47d1_9F63_2CBF5144EB1C" style="Mode=3;EOID=08305CDB;SOID=1D17C6D9;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="EDGE=3;SX=55;SY=-35;EX=1;EY=0;$LLB=CX=17:CY=14:OX=11:OY=26:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=58:CY=14:OX=0:OY=26:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=34:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=6:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_80B2D3BE_2D2B_47d1_9F63_2CBF5144EB1C" style="Mode=3;EOID=08305CDB;SOID=1D17C6D9;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="EX=-49;EY=20;SX=58;SY=20;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=CX=74:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_9DF49C6D_3731_4ed5_89A9_8D988FF127A6" style="Mode=3;EOID=06096CB8;SOID=1D17C6D9;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=58;SY=-25;EX=-49;EY=-25;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=CX=91:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_52975444_6970_4203_AC22_99B194ED4197" style="Mode=3;EOID=06096CB8;SOID=1D17C6D9;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=-58;SY=0;EX=64;EY=0;EDGE=4;$LLB=CX=6:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=;LMT=;LMB=;LRT=CX=33:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_F01F30E0_30DF_4a23_8648_95C652456C98" style="Mode=3;EOID=97114B5A;SOID=1D17C6D9;Color=-1;LWidth=0;Hidden=0;"/>
