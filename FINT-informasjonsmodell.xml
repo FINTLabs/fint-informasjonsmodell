@@ -4860,15 +4860,15 @@
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001180_A460_4648_ADB3_88A6359B6DFC" value="1"/>
 								<type xmi:idref="EAJava_long"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_4B53490C_E8D3_4d07_B2F9_10692FA37DA7" name="id" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001181_E8D3_4d07_B2F9_10692FA37DA7" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001182_E8D3_4d07_B2F9_10692FA37DA7" value="1"/>
-							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_B2673037_924E_4e73_93A6_B693C475410B" name="sendt" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001183_924E_4e73_93A6_B693C475410B" value="1"/>
-								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001184_924E_4e73_93A6_B693C475410B" value="1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001181_924E_4e73_93A6_B693C475410B" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001182_924E_4e73_93A6_B693C475410B" value="1"/>
 								<type xmi:idref="EAJava_date"/>
+							</ownedAttribute>
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_4B53490C_E8D3_4d07_B2F9_10692FA37DA7" name="systemId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001183_E8D3_4d07_B2F9_10692FA37DA7" value="1"/>
+								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001184_E8D3_4d07_B2F9_10692FA37DA7" value="1"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_198E3B73_3AE5_4b6b_B19C_DE09F42CCBE2" name="tekst" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001185_3AE5_4b6b_B19C_DE09F42CCBE2" value="1"/>
@@ -13948,8 +13948,8 @@
 			</element>
 			<element xmi:idref="EAID_E1074C80_204E_4f83_8F4B_01B889F680AE" xmi:type="uml:Class" name="AvlagtPrøve" scope="public">
 				<model package="EAPK_FA71E013_027E_4e13_AE7A_9D1CB1F4BA13" tpos="0" ea_localid="565" ea_eleType="element"/>
-				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="goa" version="1.0" phase="1.0" created="2024-04-04 13:37:51" modified="2024-04-04 13:37:51" complexity="1" status="Proposed"/>
+				<properties documentation="Informasjon om en avlagt prøve for en person i et fag." isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="goa" version="1.0" phase="1.0" created="2024-04-04 13:37:51" modified="2024-04-16 15:35:39" complexity="1" status="Proposed"/>
 				<code gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -14400,8 +14400,8 @@
 			</element>
 			<element xmi:idref="EAID_D7A535FD_E7CE_4280_8A74_22665563C5C1" xmi:type="uml:Class" name="Elevtilrettelegging" scope="public">
 				<model package="EAPK_441CE9A5_961B_41f0_84C4_C961F6FF4351" tpos="0" ea_localid="505" ea_eleType="element"/>
-				<properties documentation="Tilrettelegging en elev har på eksamen.&#xA;&#xA;Det skal her oppgis enten fag eller eksamensform.&#xA;&#xA;# Referanse&#xA;&#xA;[Registrere tilretteleggingstype for eksamen] (https://inschool.zendesk.com/hc/no/articles/360031198011-5a-02-Registrere-tilretteleggingstype-for-eksamen)&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="goa" version="1.0" phase="1.0" created="2021-09-17 15:40:52" modified="2024-04-02 14:33:27" complexity="1" status="Proposed"/>
+				<properties documentation="Tilrettelegging en elev har på eksamen.&#xA;&#xA;Det skal her oppgis enten fag eller eksamensform.&#xA;&#xA;# Referanse&#xA;&#xA;[Registrere tilretteleggingstype for eksamen](https://inschool.zendesk.com/hc/no/articles/360031198011-5a-02-Registrere-tilretteleggingstype-for-eksamen)&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="goa" version="1.0" phase="1.0" created="2021-09-17 15:40:52" modified="2024-04-16 14:41:03" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -14658,13 +14658,13 @@
 						<tags/>
 						<xrefs/>
 					</attribute>
-					<attribute xmi:idref="EAID_4B53490C_E8D3_4d07_B2F9_10692FA37DA7" name="id" scope="Public">
+					<attribute xmi:idref="EAID_B2673037_924E_4e73_93A6_B693C475410B" name="sendt" scope="Public">
 						<initial/>
-						<documentation value="Unik identifikator for varselet."/>
-						<model ea_localid="1105" ea_guid="{4B53490C-E8D3-4d07-B2F9-10692FA37DA7}"/>
-						<properties type="Identifikator" collection="false" static="0" duplicates="0" changeability="changeable"/>
+						<documentation value="Dato da varselet ble sendt."/>
+						<model ea_localid="1106" ea_guid="{B2673037-924E-4e73-93A6-B693C475410B}"/>
+						<properties type="date" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
-						<containment containment="Not Specified" position="0"/>
+						<containment containment="Not Specified" position="1"/>
 						<stereotype/>
 						<bounds lower="1" upper="1"/>
 						<options/>
@@ -14673,13 +14673,13 @@
 						<tags/>
 						<xrefs/>
 					</attribute>
-					<attribute xmi:idref="EAID_B2673037_924E_4e73_93A6_B693C475410B" name="sendt" scope="Public">
+					<attribute xmi:idref="EAID_4B53490C_E8D3_4d07_B2F9_10692FA37DA7" name="systemId" scope="Public">
 						<initial/>
-						<documentation value="Dato da varselet ble sendt."/>
-						<model ea_localid="1106" ea_guid="{B2673037-924E-4e73-93A6-B693C475410B}"/>
-						<properties type="date" collection="false" static="0" duplicates="0" changeability="changeable"/>
+						<documentation value="Unik identifikator for varselet."/>
+						<model ea_localid="1105" ea_guid="{4B53490C-E8D3-4d07-B2F9-10692FA37DA7}"/>
+						<properties type="Identifikator" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
-						<containment containment="Not Specified" position="1"/>
+						<containment containment="Not Specified" position="0"/>
 						<stereotype/>
 						<bounds lower="1" upper="1"/>
 						<options/>
@@ -15420,7 +15420,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_3588DBB0_C8AC_4526_8440_F285E15C1499" name="systemId" scope="Public">
 						<initial/>
-						<documentation/>
+						<documentation value="Systemidentifikator i fagsystemet."/>
 						<model ea_localid="1103" ea_guid="{3588DBB0-C8AC-4526-8440-F285E15C1499}"/>
 						<properties type="Identifikator" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -15429,7 +15429,7 @@
 						<bounds lower="1" upper="1"/>
 						<options/>
 						<style/>
-						<styleex value="volatile=0;"/>
+						<styleex value="volatile=0;union=0;"/>
 						<tags/>
 						<xrefs/>
 					</attribute>
@@ -16397,8 +16397,8 @@
 			</element>
 			<element xmi:idref="EAID_299F0DF7_7A4C_4c9a_9FF1_F68C2FF302DC" xmi:type="uml:Class" name="Betalingsstatus" scope="public">
 				<model package="EAPK_75736DCA_EB8D_407d_A980_7B79DA7047A4" tpos="0" ea_localid="560" ea_eleType="element"/>
-				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="goa" version="1.0" phase="1.0" created="2024-04-03 13:25:51" modified="2024-04-03 13:25:51" complexity="1" status="Proposed"/>
+				<properties documentation="Statuser for betaling av eksamen for privatister." isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="goa" version="1.0" phase="1.0" created="2024-04-03 13:25:51" modified="2024-04-16 15:32:08" complexity="1" status="Proposed"/>
 				<code gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -16744,8 +16744,8 @@
 			</element>
 			<element xmi:idref="EAID_F99E792B_44EC_43bf_ADC2_CFC62CC90362" xmi:type="uml:Class" name="Vitnemålsmerknad" scope="public">
 				<model package="EAPK_75736DCA_EB8D_407d_A980_7B79DA7047A4" tpos="0" ea_localid="557" ea_eleType="element"/>
-				<properties documentation="En vitnemålsmerknad har en eller flere av følgende funksjoner:&#xA;&#xA;* gir opplysninger som gjelder opplæringen generelt eller som gjelder hele vitnemålet/kompetansebeviset&#xA;&#xA;* henviser til vedlegg som gir slike opplysninger&#xA;&#xA;* utdyper en fagmerknad&#xA;&#xA;Det kan bare føres vitnemålsmerknader som er gitt av Utdanningsdirektoratet.&#xA;&#xA;# Referanser&#xA;[UDIR : Merknader til vitnemål og kompetansebevis] (https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/3-merknader-til-vitnemal-og-kompetansebevis/)&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="goa" version="1.0" phase="1.0" created="2024-04-02 10:54:36" modified="2024-04-02 14:34:56" complexity="1" status="Proposed"/>
+				<properties documentation="En vitnemålsmerknad har en eller flere av følgende funksjoner:&#xA;&#xA;* gir opplysninger som gjelder opplæringen generelt eller som gjelder hele vitnemålet/kompetansebeviset&#xA;&#xA;* henviser til vedlegg som gir slike opplysninger&#xA;&#xA;* utdyper en fagmerknad&#xA;&#xA;Det kan bare føres vitnemålsmerknader som er gitt av Utdanningsdirektoratet.&#xA;&#xA;# Referanser&#xA;[UDIR : Merknader til vitnemål og kompetansebevis](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/3-merknader-til-vitnemal-og-kompetansebevis/)&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="goa" version="1.0" phase="1.0" created="2024-04-02 10:54:36" modified="2024-04-16 14:33:49" complexity="1" status="Proposed"/>
 				<code gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -34067,9 +34067,9 @@
 			<diagram xmi:id="EAID_E4BC5C89_2A33_40bf_B6DD_E3C221B605E6">
 				<model package="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519" localID="75" owner="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519"/>
 				<properties name="Tilrettelegging" type="Logical"/>
-				<project author="Kenneth F Goa" version="1.0" created="2021-09-19 13:34:42" modified="2024-04-11 14:52:09"/>
+				<project author="Kenneth F Goa" version="1.0" created="2021-09-19 13:34:42" modified="2024-04-16 14:51:12"/>
 				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=0;PPgs.cy=0;DocSize.cx=827;DocSize.cy=1075;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
-				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=F7D70765;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=0E8BFA87;"/>
 				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
 				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
 				<extendedProperties/>
@@ -34202,9 +34202,9 @@
 			<diagram xmi:id="EAID_A30AF6BC_98A5_4663_AE6C_85F85F5EC6D8">
 				<model package="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519" localID="80" owner="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519"/>
 				<properties name="Eksamen" type="Logical" documentation="Statuser for betaling av eksamen for privatister."/>
-				<project author="Kenneth F Goa" version="1.0" created="2022-03-28 22:30:56" modified="2024-04-11 14:52:08"/>
+				<project author="Kenneth F Goa" version="1.0" created="2022-03-28 22:30:56" modified="2024-04-16 14:51:12"/>
 				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=0;PPgs.cy=0;DocSize.cx=827;DocSize.cy=1075;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
-				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=EF8988E9;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=5911AC41;"/>
 				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
 				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
 				<extendedProperties/>
@@ -34327,9 +34327,9 @@
 			<diagram xmi:id="EAID_702BA4B5_E400_4cfc_9F0F_D53738AF39E1">
 				<model package="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519" localID="87" owner="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519"/>
 				<properties name="Elevforhold" type="Logical"/>
-				<project author="goa" version="1.0" created="2024-03-19 12:38:25" modified="2024-04-11 14:52:08"/>
+				<project author="goa" version="1.0" created="2024-03-19 12:38:25" modified="2024-04-16 14:51:12"/>
 				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=0;PPgs.cy=0;DocSize.cx=827;DocSize.cy=1075;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
-				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=4C53D175;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=118C1FBD;"/>
 				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
 				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
 				<extendedProperties/>
@@ -34378,9 +34378,9 @@
 			<diagram xmi:id="EAID_EED089A6_65B8_4f9c_98FC_9DE21E7A01A5">
 				<model package="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519" localID="88" owner="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519"/>
 				<properties name="Varsel" type="Logical"/>
-				<project author="goa" version="1.0" created="2024-04-02 15:45:21" modified="2024-04-11 14:52:09"/>
+				<project author="goa" version="1.0" created="2024-04-02 15:45:21" modified="2024-04-16 14:51:12"/>
 				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=0;PPgs.cy=0;DocSize.cx=827;DocSize.cy=1075;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
-				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=EC1A93B1;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=7611C11C;"/>
 				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
 				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
 				<extendedProperties/>
@@ -34402,16 +34402,16 @@
 			<diagram xmi:id="EAID_4FF0E657_873A_4552_A2DB_3B6156730B7D">
 				<model package="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519" localID="89" owner="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519"/>
 				<properties name="AvlagtPrøve" type="Logical"/>
-				<project author="goa" version="1.0" created="2024-04-03 14:14:32" modified="2024-04-11 14:52:08"/>
+				<project author="goa" version="1.0" created="2024-04-03 14:14:32" modified="2024-04-16 15:55:02"/>
 				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=0;PPgs.cy=0;DocSize.cx=827;DocSize.cy=1075;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
-				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=C70428F0;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=176D850B;"/>
 				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
 				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
 				<extendedProperties/>
 				<elements>
 					<element geometry="Left=163;Top=332;Right=471;Bottom=404;" subject="EAID_E1074C80_204E_4f83_8F4B_01B889F680AE" seqno="1" style="DUID=203602A2;"/>
 					<element geometry="Left=869;Top=512;Right=1184;Bottom=582;" subject="EAID_2F0C46A4_F6BF_44b6_BAF7_4562491E0CD2" seqno="2" style="DUID=3A327E91;"/>
-					<element geometry="Left=869;Top=394;Right=1184;Bottom=464;" subject="EAID_436D0129_964E_4f9d_9D65_99E615E5478F" seqno="3" style="DUID=0A21FB39;"/>
+					<element geometry="Left=870;Top=394;Right=1185;Bottom=464;" subject="EAID_436D0129_964E_4f9d_9D65_99E615E5478F" seqno="3" style="DUID=0A21FB39;"/>
 					<element geometry="Left=872;Top=291;Right=1183;Bottom=361;" subject="EAID_02DFB4EB_4A95_4a6e_B3C0_6624588B4FF4" seqno="4" style="DUID=9703FAE7;"/>
 					<element geometry="Left=871;Top=186;Right=1182;Bottom=256;" subject="EAID_55B9E043_ABF2_44fe_A55F_DB7CBC7B8C8F" seqno="5" style="DUID=3B88A24C;"/>
 					<element geometry="Left=1345;Top=332;Right=1656;Bottom=433;" subject="EAID_251BD438_32B1_413e_808E_2EDA923E17B8" seqno="6" style="DUID=9B2DAE44;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
