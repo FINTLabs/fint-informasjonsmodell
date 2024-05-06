@@ -4245,7 +4245,7 @@
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001067__46CC_479e_B774_8C8D2B22C775" value="0"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001068__46CC_479e_B774_8C8D2B22C775" value="1"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_srcB841D4_CF90_48c9_A7E4_C9E37D188BD0" name="vurdering" visibility="public" association="EAID_C8B841D4_CF90_48c9_A7E4_C9E37D188BD0" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_srcB841D4_CF90_48c9_A7E4_C9E37D188BD0" name="elevvurdering" visibility="public" association="EAID_C8B841D4_CF90_48c9_A7E4_C9E37D188BD0" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_0AFDEAD9_2112_48b8_ADCE_89EA8247576E"/>
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001069__CF90_48c9_A7E4_C9E37D188BD0" value="0"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001070__CF90_48c9_A7E4_C9E37D188BD0" value="1"/>
@@ -27362,7 +27362,7 @@
 			<connector xmi:idref="EAID_C8B841D4_CF90_48c9_A7E4_C9E37D188BD0">
 				<source xmi:idref="EAID_0AFDEAD9_2112_48b8_ADCE_89EA8247576E">
 					<model ea_localid="555" type="Class" name="Elevvurdering"/>
-					<role name="vurdering" visibility="Public" targetScope="instance"/>
+					<role name="elevvurdering" visibility="Public" targetScope="instance"/>
 					<type multiplicity="0..1" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
@@ -27388,7 +27388,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels lb="0..1" lt="+vurdering" rb="1" rt="+elevforhold"/>
+				<labels lb="0..1" lt="+elevvurdering" rb="1" rt="+elevforhold"/>
 				<extendedProperties virtualInheritance="0"/>
 				<style/>
 				<xrefs/>
