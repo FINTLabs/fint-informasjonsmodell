@@ -3776,7 +3776,7 @@
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_2B809C00_F598_4a46_8F26_229DB6CB6E10" name="prøvedato" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000933_F598_4a46_8F26_229DB6CB6E10" value="0"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000934_F598_4a46_8F26_229DB6CB6E10" value="1"/>
-								<type xmi:idref="EAJava_Date"/>
+								<type xmi:idref="EAJava_date"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_CD68B176_CC13_4e07_9821_F68BFC6D13AE" name="systemId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 								<type xmi:idref="EAID_16909330_2704_4b6a_A79C_D85F82732282"/>
@@ -5733,7 +5733,7 @@
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001395__4E8A_45d2_B7D6_475570155FAF" value="0"/>
 								<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI001396__4E8A_45d2_B7D6_475570155FAF" value="-1"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstF7A9DF_3508_4e76_863B_96277BD3F7A1" name="underveisordenvurdering" visibility="public" association="EAID_13F7A9DF_3508_4e76_863B_96277BD3F7A1" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstF7A9DF_3508_4e76_863B_96277BD3F7A1" name="underveisordensvurdering" visibility="public" association="EAID_13F7A9DF_3508_4e76_863B_96277BD3F7A1" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_5A832B02_B3B7_4bdc_A05C_990BD20E7932"/>
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001397__3508_4e76_863B_96277BD3F7A1" value="0"/>
 								<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI001398__3508_4e76_863B_96277BD3F7A1" value="-1"/>
@@ -13959,7 +13959,7 @@
 						<initial/>
 						<documentation value="Dato for avlagt prøve i perioden. "/>
 						<model ea_localid="1110" ea_guid="{2B809C00-F598-4a46-8F26-229DB6CB6E10}"/>
-						<properties type="Date" collection="false" static="0" duplicates="0" changeability="changeable"/>
+						<properties type="date" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
 						<containment containment="Not Specified" position="1"/>
 						<stereotype/>
@@ -14635,8 +14635,8 @@
 			</element>
 			<element xmi:idref="EAID_4E285241_E2CA_4c62_869E_7136E5503C09" xmi:type="uml:Class" name="Varsel" scope="public">
 				<model package="EAPK_441CE9A5_961B_41f0_84C4_C961F6FF4351" tpos="0" ea_localid="558" ea_eleType="element"/>
-				<properties documentation="Varsel sendt til en elev." isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="goa" version="1.0" phase="1.0" created="2024-04-02 15:54:24" modified="2024-04-11 14:26:59" complexity="1" status="Proposed"/>
+				<properties documentation="Varsel sendt til en elev.&#xA;&#xA;# Referanse&#xA;&#xA;* [VIS - Opprette og sende varsel ](https://inschool.zendesk.com/hc/no/articles/360030859132-4b-21-Opprette-og-sende-varsel)&#xA;* [Forskrift til opplæringslova - &amp;#167; 3-8. Varsling](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_5-1#%C2%A73-8)" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="goa" version="1.0" phase="1.0" created="2024-04-02 15:54:24" modified="2024-05-06 10:01:30" complexity="1" status="Proposed"/>
 				<code gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -14645,7 +14645,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_99A4C61F_A460_4648_ADB3_88A6359B6DFC" name="fraværsprosent" scope="Public">
 						<initial/>
-						<documentation value="Fraværsprosenten i varselbrev for fravær."/>
+						<documentation value="Fraværsprosenten i varselbrev for fravær.&#xA;&#xA;# Representasjon av prosent&#xA;&#xA;I informasjonsmodellen oppgis en prosentverdi som et heltall. Dette tallet er antall hundredels prosent.&#xA;&#xA;## Eksempel&#xA;&#xA;* 44 prosent vil ha verdien 4400.&#xA;* 58,73 prosent vil ha verdien 5873"/>
 						<model ea_localid="1107" ea_guid="{99A4C61F-A460-4648-ADB3-88A6359B6DFC}"/>
 						<properties type="long" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -16715,8 +16715,8 @@
 			</element>
 			<element xmi:idref="EAID_29EC46F8_250D_4ab2_B814_FA09A4E1D97D" xmi:type="uml:Class" name="Varseltype" scope="public">
 				<model package="EAPK_75736DCA_EB8D_407d_A980_7B79DA7047A4" tpos="0" ea_localid="559" ea_eleType="element"/>
-				<properties documentation="Viser hvilken type et varsel er.&#xA;&#xA;VIS oppererer i dag med fire typer varselbrev:&#xA;&#xA;* Fravær&#xA;&#xA;* Orden&#xA;&#xA;* Atferd&#xA;&#xA;* Manglende vurderingsgrunnlag i fag&#xA;&#xA;#Referanse&#xA;&#xA;[VIS - Opprette og sende varsel ](https://inschool.zendesk.com/hc/no/articles/360030859132-4b-21-Opprette-og-sende-varsel)&#xA;[Forskrift til opplæringslova - &amp;#167; 3-8. Varsling](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_5-1#%C2%A73-8)&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="goa" version="1.0" phase="1.0" created="2024-04-02 15:56:37" modified="2024-04-03 12:56:34" complexity="1" status="Proposed"/>
+				<properties documentation="Viser hvilken type et varsel er.&#xA;&#xA;# Eksempel&#xA;&#xA;* Fravær&#xA;&#xA;* Orden&#xA;&#xA;* Atferd&#xA;&#xA;* Manglende vurderingsgrunnlag i fag&#xA;&#xA;# Referanse&#xA;&#xA;* [VIS - Opprette og sende varsel ](https://inschool.zendesk.com/hc/no/articles/360030859132-4b-21-Opprette-og-sende-varsel)&#xA;* [Forskrift til opplæringslova - &amp;#167; 3-8. Varsling](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_5-1#%C2%A73-8)&#xA;" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="goa" version="1.0" phase="1.0" created="2024-04-02 15:56:37" modified="2024-05-06 10:03:18" complexity="1" status="Proposed"/>
 				<code gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -28896,7 +28896,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="Hvilken faggruppe varselet gjelder."/>
+					<documentation value="Elevens faggruppe varselet gjelder.&#xA;"/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -31019,7 +31019,7 @@
 				</source>
 				<target xmi:idref="EAID_5A832B02_B3B7_4bdc_A05C_990BD20E7932">
 					<model ea_localid="508" type="Class" name="Underveisordensvurdering"/>
-					<role name="underveisordenvurdering" visibility="Public" targetScope="instance"/>
+					<role name="underveisordensvurdering" visibility="Public" targetScope="instance"/>
 					<type multiplicity="0..*" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
@@ -31034,7 +31034,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels lb="1" lt="+vurdering" rb="0..*" rt="+underveisordenvurdering"/>
+				<labels lb="1" lt="+vurdering" rb="0..*" rt="+underveisordensvurdering"/>
 				<extendedProperties virtualInheritance="0"/>
 				<style/>
 				<xrefs/>
@@ -32077,7 +32077,6 @@
 						</generalization>
 					</packagedElement>
 					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAJava_datetime" name="datetime" visibility="public"/>
-					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAJava_Date" name="Date" visibility="public"/>
 				</packagedElement>
 				<packagedElement xmi:type="uml:Package" xmi:id="EAnoneTypesPackage" name="EA_none_Types_Package" visibility="public">
 					<packagedElement xmi:type="uml:PrimitiveType" xmi:id="EAnone_dateTime" name="dateTime" visibility="public"/>
@@ -34327,9 +34326,9 @@
 			<diagram xmi:id="EAID_702BA4B5_E400_4cfc_9F0F_D53738AF39E1">
 				<model package="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519" localID="87" owner="EAPK_72079749_80A0_46cd_B6DE_DCA2D93A4519"/>
 				<properties name="Elevforhold" type="Logical"/>
-				<project author="goa" version="1.0" created="2024-03-19 12:38:25" modified="2024-04-16 14:51:12"/>
+				<project author="goa" version="1.0" created="2024-03-19 12:38:25" modified="2024-05-06 10:07:39"/>
 				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=0;PPgs.cy=0;DocSize.cx=827;DocSize.cy=1075;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
-				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=118C1FBD;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=63AE3391;"/>
 				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
 				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
 				<extendedProperties/>
@@ -34364,7 +34363,7 @@
 					<element geometry="SX=0;SY=0;EDGE=4;$LLB=CX=17:CY=14:OX=-10:OY=5:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=96:CY=14:OX=-11:OY=-9:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=51:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=6:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_48370DA3_9AB8_45bf_8FA0_C31A97448242" style="Mode=3;EOID=D31FE2F6;SOID=A80DF5F9;Color=-1;LWidth=0;TREE=OR;Hidden=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_0FF8A288_4C36_408e_9C5D_A1CF2D9EA46E" style="Mode=3;EOID=C9591ADC;SOID=A20B1D2D;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=-1;SY=-8;EX=-24;EY=-141;EDGE=4;$LLB=CX=17:CY=14:OX=-3:OY=5:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=74:CY=14:OX=-14:OY=-6:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=51:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=6:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_780E6F18_CC4B_42dc_BE6A_A80D1D248D46" style="Mode=3;EOID=D31FE2F6;SOID=D8EA2DB4;Color=-1;LWidth=0;TREE=OR;Hidden=0;"/>
-					<element geometry="SX=0;SY=197;EX=0;EY=-1;EDGE=4;$LLB=CX=6:CY=14:OX=-13:OY=10:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LLT=CX=44:CY=14:OX=-16:OY=-6:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=106:CY=14:OX=9:OY=-21:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=13:OY=5:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_13F7A9DF_3508_4e76_863B_96277BD3F7A1" style="Mode=3;EOID=C3F60A35;SOID=D2F74BC4;Color=-1;LWidth=0;TREE=OR;Hidden=0;"/>
+					<element geometry="SX=0;SY=197;EX=0;EY=-1;EDGE=4;$LLB=CX=6:CY=14:OX=-13:OY=10:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LLT=CX=44:CY=14:OX=-16:OY=-6:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=110:CY=14:OX=9:OY=-21:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=13:OY=5:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_13F7A9DF_3508_4e76_863B_96277BD3F7A1" style="Mode=3;EOID=C3F60A35;SOID=D2F74BC4;Color=-1;LWidth=0;TREE=OR;Hidden=0;"/>
 					<element geometry="EDGE=4;SX=3;SY=117;EX=3;EY=-3;$LLB=CX=6:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=44:CY=14:OX=-10:OY=-1:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=100:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_7CDF3172_3930_44bf_8EBE_B181C9F4A1D2" style="Mode=3;EOID=5882A7AE;SOID=D2F74BC4;Color=-1;LWidth=0;TREE=OR;Hidden=0;"/>
 					<element geometry="EX=113;EY=0;SX=-61;SY=0;EDGE=1;$LLB=CX=17:CY=14:OX=12:OY=-6:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=44:CY=14:OX=-13:OY=-11:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=51:CY=14:OX=-5:OY=-13:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=6:CY=14:OX=10:OY=-7:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=2131:-263$1332:-263$;" subject="EAID_C8B841D4_CF90_48c9_A7E4_C9E37D188BD0" style="Mode=3;EOID=D31FE2F6;SOID=D2F74BC4;Color=-1;LWidth=0;TREE=OR;Hidden=0;"/>
 					<element geometry="SX=0;SY=44;EX=0;EY=0;EDGE=4;$LLB=CX=6:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=44:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=88:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_F2F7644E_7DB9_48db_8D9C_46EDC7812E72" style="Mode=3;EOID=67E7276B;SOID=D2F74BC4;Color=-1;LWidth=0;TREE=OR;Hidden=0;"/>
