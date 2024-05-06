@@ -31,13 +31,13 @@ jobs:
           docker run -i -v ${GITHUB_WORKSPACE}:/src ghcr.io/fintlabs/fint-model:2.7.0-rc-1 --tag ${{ steps.get-version.outputs.version }} generate --lang ALL --resource
 
       - name: Upload Java model artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: java
           path: java
 
       - name: Upload CS model artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: cs
           path: cs
@@ -55,7 +55,7 @@ jobs:
           echo "MODEL_VERSION=$(echo ${{ needs.generate-model.outputs.version }} | sed "s/^v//")" >> $GITHUB_ENV
     
       - name: Download java model
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: java
           path: ../java
@@ -156,6 +156,10 @@ jobs:
           gh pr create --repo "FINTLabs/fint-information-model-java" --base master --head  release-${{ needs.generate-model.outputs.version }} --title "New release ready for review: ${{ needs.generate-model.outputs.version }}" --body "Please consider if this is ready for the public crowd! If so, push the green button." --reviewer nilsodd,oleanders,GoSoft-dev
         env:
           GH_TOKEN: ${{secrets.GITHUBACTION_TOKEN}}
+
+      - name: Add Java-model url to summary 
+        run: |
+          echo "[fint-information-model-java](https://github.com/FINTLabs/fint-information-model-java/pulls)" >> $GITHUB_STEP_SUMMARY
   
   cs-model:
     needs: generate-model
@@ -163,7 +167,7 @@ jobs:
     steps:
     
       - name: Download cs model
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: cs
           path: ../cs
@@ -286,3 +290,7 @@ jobs:
           gh pr create --repo "FINTLabs/FINT.Information.Model" --base master --head  release-${{ needs.generate-model.outputs.version }} --title "New release ready for review: ${{ needs.generate-model.outputs.version }}" --body "Please consider if this is ready for the public crowd! If so, push the green button." --reviewer nilsodd,oleanders,GoSoft-dev
         env:
           GH_TOKEN: ${{secrets.GITHUBACTION_TOKEN}}
+
+      - name: Add CS-model url to summary 
+        run: |
+          echo "[FINT.Information.Model](https://github.com/FINTLabs/FINT.Information.Model/pulls)" >> $GITHUB_STEP_SUMMARY

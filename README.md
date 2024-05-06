@@ -63,7 +63,6 @@ Generer consumere fra modellen: [fint-release-utils](https://github.com/FINTLabs
   1. Dokumentasjon på felter og relasjoner.
   1. Multiplisitet: Nye obligatoriske felter og relasjoner er ikke bakoverkompatible.
   1. Relasjoner kan kun gå til hovedklasser, og ikke til abstrakte klasser.
-  1. Relasjoner kan kun gå fra hovedklasser eller komplekse datatyper, og ikke fra abstrakte klasser.
   1. Alle hovedklasser må ha minst én `Identifikator`.
   1. Retning og multiplisitet på relasjoner.  Enveis eller toveis? 
   1. Typer på attributter.  Enten en kompleks datatype fra modellen, eller en av disse: `long`, `int`, `date`, `dateTime`, `float`, `double`, `string`, `boolean`.
