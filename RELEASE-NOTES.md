@@ -2,6 +2,13 @@
 
 - [v3.17.0](#v3170)
   - [Features](#features)
+    - [Skille ut Elevvurdering fra Elevforhold](#skille-ut-elevvurdering-fra-elevforhold)
+      - [Utgår](#utgår)
+    - [Vitnemålsmerknad](#vitnemålsmerknad)
+    - [Tilrettelegging på eksamen](#tilrettelegging-på-eksamen)
+    - [Varselbrev](#varselbrev)
+    - [Betalingsstatus for privatisteksamen](#betalingsstatus-for-privatisteksamen)
+    - [Dokumentasjon av faglærte](#dokumentasjon-av-faglærte)
 - [v3.16.0](#v3160)
   - [Features](#features-1)
 - [v3.15.0](#v3150)
@@ -96,47 +103,61 @@
 
 |      |              |
 | ---- | ------------ |
-| Date | `06.05.2024` |
+| Date | `07.05.2024` |
 | Tag  | `v3.17.0`    |
 
 ## Features
 
-* Utdanning
-	* Added class `Elevvurdering`.
-	* Added class `Vitnemålsmerknad`.
-	* Added class `Varsel`.
-	* Added class `Varseltype`.
-	* Added class `Betalingsstatus`.
-	* Added class `AvlagtPrøve`.
-	* Added class `Prøvestatus`.
-	* Added class `Fullførtkode`.
-	* Added class `Bevistype`.
-	* Added class `Brevtype`.
+### Skille ut Elevvurdering fra Elevforhold
+
+* Added class `Elevvurdering`.
+* Added relation `elevvurdering` on `Elevforhold`.
+* Added relation `elevvurdering` on `Underveisordensvurdering`.
+* Added relation `elevvurdering` on `Halvårsordensvurdering`.
+* Added relation `elevvurdering` on `Sluttordensvurdering`.
+* Added relation `elevvurdering` on `Underveisfagvurdering`.
+* Added relation `elevvurdering` on `Halvårsfagvurdering`.
+* Added relation `elevvurdering` on `Sluttfagvurdering`.
+
+#### Utgår
+
+* Deprecated relation `underveisordensvurdering` on `Elevforhold`.
+* Deprecated relation `halvårsordensvurdering` on `Elevforhold`.
+* Deprecated relation `sluttordensvurdering` on `Elevforhold`.
+* Deprecated relation `underveisfagvurdering` on `Elevforhold`.
+* Deprecated relation `halvårsfagvurdering` on `Elevforhold`.
+* Deprecated relation `sluttfagvurdering` on `Elevforhold`.
+* Deprecated relation `elevforhold` on `Underveisordensvurdering`.
+* Deprecated relation `elevforhold` on `Halvårsordensvurdering`.
+* Deprecated relation `elevforhold` on `Sluttordensvurdering`.
+* Deprecated relation `elevforhold` on `Underveisfagvurdering`.
+* Deprecated relation `elevforhold` on `Halvårsfagvurdering`.
+* Deprecated relation `elevforhold` on `Sluttfagvurdering`.
+
+### Vitnemålsmerknad
+
+* Added class `Vitnemålsmerknad`.
+* Added relation `vitnemålsmerknad` on `Elevvurdering`.
+
+### Tilrettelegging på eksamen
+* Added relation `eksamensform` on `Elevtilrettelegging`.
+
+### Varselbrev
+* Added class `Varsel`.
+* Added class `Varseltype`.
+* Added relation `varsel` on `Faggruppemedlemskap`.
+
+### Betalingsstatus for privatisteksamen
+* Added class `Betalingsstatus`.
+* Added relation `betalingsstatus` on `Eksamensgruppemedlemskap`.
 	
-	* Added relation `elevvurdering` on `Elevforhold`.
-	* Added relation `vurdering` on `Underveisordensvurdering`.
-	* Added relation `vurdering` on `Halvårsordensvurdering`.
-	* Added relation `vurdering` on `Sluttordensvurdering`.
-	* Added relation `vurdering` on `Underveisfagvurdering`.
-	* Added relation `vurdering` on `Halvårsfagvurdering`.
-	* Added relation `vurdering` on `Sluttfagvurdering`.
-	* Added relation `eksamensform` on `Elevtilrettelegging`.
-	* Added relation `varsel` on `Faggruppemedlemskap`.
-	* Added relation `betalingsstatus` on `Eksamensgruppemedlemskap`.
-	* Added relation `avlagtprøvei` on `Lærling`.
-	
-	* Removed relation `underveisordensvurdering` on `Elevforhold`.
-	* Removed relation `halvårsordensvurdering` on `Elevforhold`.
-	* Removed relation `sluttordensvurdering` on `Elevforhold`.
-	* Removed relation `underveisfagvurdering` on `Elevforhold`.
-	* Removed relation `halvårsfagvurdering` on `Elevforhold`.
-	* Removed relation `sluttfagvurdering` on `Elevforhold`.
-	* Removed relation `elevforhold` on `Underveisordensvurdering`.
-	* Removed relation `elevforhold` on `Halvårsordensvurdering`.
-	* Removed relation `elevforhold` on `Sluttordensvurdering`.
-	* Removed relation `elevforhold` on `Underveisfagvurdering`.
-	* Removed relation `elevforhold` on `Halvårsfagvurdering`.
-	* Removed relation `elevforhold` on `Sluttfagvurdering`.
+### Dokumentasjon av faglærte
+* Added class `AvlagtPrøve`.
+* Added class `Prøvestatus`.
+* Added class `Fullførtkode`.
+* Added class `Bevistype`.
+* Added class `Brevtype`.
+* Added relation `avlagtprøvei` on `Lærling`.
 
 Improved and clarified a few descriptions in documentation.
 
