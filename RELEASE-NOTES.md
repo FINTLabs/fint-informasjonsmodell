@@ -113,7 +113,7 @@
 	* Added class `Bevistype`.
 	* Added class `Brevtype`.
 	
-	* Added relation `vurdering` on `Elevforhold`.
+	* Added relation `elevvurdering` on `Elevforhold`.
 	* Added relation `vurdering` on `Underveisordensvurdering`.
 	* Added relation `vurdering` on `Halvårsordensvurdering`.
 	* Added relation `vurdering` on `Sluttordensvurdering`.
