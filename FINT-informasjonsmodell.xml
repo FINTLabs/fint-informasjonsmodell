@@ -17054,7 +17054,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_ECC7B299_6C38_4e33_B42C_C4CC8BE350AE" name="gyldighetsperiode" scope="Public">
 						<initial/>
-						<documentation value="Start og slutt dato for gyldigheten til applikasjonen."/>
+						<documentation value="Start- og sluttdato for gyldighetsperioden til applikasjonen."/>
 						<model ea_localid="1113" ea_guid="{ECC7B299-6C38-4e33-B42C-C4CC8BE350AE}"/>
 						<properties type="Periode" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -17146,7 +17146,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_16AB63B1_80BA_4f81_8934_161B502EE3A3" name="gyldighetsperiode" scope="Public">
 						<initial/>
-						<documentation value="Start og slutt dato for gyldigheten til ressursen."/>
+						<documentation value="Start- og sluttdato for gyldighetsperioden til ressursen."/>
 						<model ea_localid="1117" ea_guid="{16AB63B1-80BA-4f81-8934-161B502EE3A3}"/>
 						<properties type="Periode" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -17176,7 +17176,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_DA691F4B_3A85_4cdc_86CB_4DF5CBFBFB5B" name="lisensantall" scope="Public">
 						<initial/>
-						<documentation value="	&#xA;Totalt antall lisenser&#xA;&#xA;Brukes kun når ressursene er lisenser."/>
+						<documentation value="Totalt antall lisenser&#xA;&#xA;Brukes kun når ressursene er lisenser."/>
 						<model ea_localid="1119" ea_guid="{DA691F4B-3A85-4cdc-86CB-4DF5CBFBFB5B}"/>
 						<properties type="long" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -17241,7 +17241,7 @@
 				<attributes>
 					<attribute xmi:idref="EAID_FC8579C4_93BE_4aef_93B2_066ACAE8E2C4" name="gyldighetsperiode" scope="Public">
 						<initial/>
-						<documentation value="Start og slutt dato for gyldigheten til ressurstilgjengeligheten."/>
+						<documentation value="Gyldighetsperioden til applikasjonsressurstilgjengeligheten."/>
 						<model ea_localid="1123" ea_guid="{FC8579C4-93BE-4aef-93B2-066ACAE8E2C4}"/>
 						<properties type="Periode" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -17256,7 +17256,7 @@
 					</attribute>
 					<attribute xmi:idref="EAID_7BE4222E_F88C_4ed6_A041_93020786232E" name="lisensantall" scope="Public">
 						<initial/>
-						<documentation value="Totalt antall lisenser tilgjengelig for brukere tilhørende en ressurskonsumenten."/>
+						<documentation value="Totalt antall lisenser tilgjengelig for brukere tilhørende en konsument."/>
 						<model ea_localid="1124" ea_guid="{7BE4222E-F88C-4ed6-A041-93020786232E}"/>
 						<properties type="long" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
@@ -17334,8 +17334,8 @@
 			</element>
 			<element xmi:idref="EAID_7FD589C6_673E_4667_B082_D7433750FB69" xmi:type="uml:Class" name="Håndhevingstype" scope="public">
 				<model package="EAPK_C44DA9D0_BFDE_490d_85A4_0CD77299019E" tpos="0" ea_localid="572" ea_eleType="element"/>
-				<properties documentation="Angir hvordan ulike lisensmodeller skal håndheves av systemer for forvaltning av applikasjonen.&#xA;&#xA;Eksempel:&#xA;&#xA;* Hardstop (ikke lov å tildele flere lisenser enn det kildesystemet angir)&#xA;* Ubegrenset (ingen begrensing på antall lisenser som kan tildeles)&#xA;* Overallokering tillatt (kan tildeles lisenser utover maks antall. Ikke nødvendigvis ubegrenset)" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="goa" version="1.0" phase="1.0" created="2024-05-28 14:03:34" modified="2024-05-29 13:16:06" complexity="1" status="Proposed"/>
+				<properties documentation="Hvordan ulike lisensmodeller kan håndheves av systemer for forvaltning av applikasjonen.&#xA;&#xA;Eksempel:&#xA;&#xA;* Hardstop (ikke lov å tildele flere lisenser enn det kildesystemet angir)&#xA;* Ubegrenset (ingen begrensing på antall lisenser som kan tildeles)&#xA;* Overallokering tillatt (kan tildeles lisenser utover maks antall. Ikke nødvendigvis ubegrenset)" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="goa" version="1.0" phase="1.0" created="2024-05-28 14:03:34" modified="2024-05-30 14:12:37" complexity="1" status="Proposed"/>
 				<code gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -17362,8 +17362,8 @@
 			</element>
 			<element xmi:idref="EAID_8F09F3A1_4CE7_4e69_BF8E_BE1884D60ED1" xmi:type="uml:Class" name="Plattform" scope="public">
 				<model package="EAPK_C44DA9D0_BFDE_490d_85A4_0CD77299019E" tpos="0" ea_localid="574" ea_eleType="element"/>
-				<properties documentation="Operativsystemplattform som kjøres på den digitale enheten.&#xA;&#xA;Eksempel:&#xA;&#xA;* Windows&#xA;* MAC OS&#xA;* Linux&#xA;* IOS&#xA;* Android" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="goa" version="1.0" phase="1.0" created="2024-05-28 14:04:27" modified="2024-05-28 14:19:17" complexity="1" status="Proposed"/>
+				<properties documentation="Plattformen tjenesten kan leveres på.&#xA;&#xA;Eksempel:&#xA;&#xA;* Windows&#xA;* MAC OS&#xA;* Linux&#xA;* IOS&#xA;* Android" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="hovedklasse" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="goa" version="1.0" phase="1.0" created="2024-05-28 14:04:27" modified="2024-05-30 14:18:53" complexity="1" status="Proposed"/>
 				<code gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
@@ -32906,7 +32906,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="Ulike ressurs (lisenser) som er knyttet til denne applikasjonen. Dette kan være flere da ulike organisasjonesenheter kan ha kjøpt inn lisenser separat. Evt at samme applikasjon har flere lisensmodeller."/>
+					<documentation value="Ulike ressurser (lisenser) som er knyttet til denne applikasjonen. Dette kan være flere da ulike organisasjonesenheter kan ha kjøpt inn lisenser separat. Evt at samme applikasjon har flere lisensmodeller."/>
 					<xrefs/>
 					<tags/>
 				</target>
@@ -33771,9 +33771,9 @@
 			<diagram xmi:id="EAID_E906F354_52BE_404f_B8B5_3144A1F1DDEB">
 				<model package="EAPK_11045B36_8A02_484d_B2A6_89500B5051C9" localID="91" owner="EAPK_11045B36_8A02_484d_B2A6_89500B5051C9"/>
 				<properties name="Eiendeler" type="Logical"/>
-				<project author="goa" version="1.0" created="2024-05-29 11:35:45" modified="2024-05-30 10:09:59"/>
+				<project author="goa" version="1.0" created="2024-05-29 11:35:45" modified="2024-05-30 14:21:49"/>
 				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=0;PPgs.cy=0;DocSize.cx=827;DocSize.cy=1075;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
-				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=7ADAC53D;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=CD899EF7;"/>
 				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
 				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
 				<extendedProperties/>
@@ -33781,20 +33781,20 @@
 					<element geometry="Left=23;Top=455;Right=291;Bottom=595;" subject="EAID_941E2DF3_55A0_4321_8D0A_347FC274EEB3" seqno="1" style="DUID=008FB22D;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="Left=480;Top=248;Right=810;Bottom=346;" subject="EAID_9BD793CF_41FB_4ae2_BBEC_B8A020F32C13" seqno="2" style="DUID=F4C8FEFC;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="Left=480;Top=456;Right=810;Bottom=593;" subject="EAID_75037CE4_A4CE_4583_802D_06D7E3174714" seqno="3" style="DUID=B55A4E36;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
-					<element geometry="Left=480;Top=669;Right=810;Bottom=767;" subject="EAID_9162F9E5_168D_488b_943E_1500AEF7B0B9" seqno="4" style="DUID=45C660E2;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
+					<element geometry="Left=480;Top=668;Right=810;Bottom=766;" subject="EAID_9162F9E5_168D_488b_943E_1500AEF7B0B9" seqno="4" style="DUID=45C660E2;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="Left=1118;Top=721;Right=1277;Bottom=791;" subject="EAID_8F09F3A1_4CE7_4e69_BF8E_BE1884D60ED1" seqno="5" style="DUID=2D6A5E88;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="Left=1119;Top=238;Right=1278;Bottom=308;" subject="EAID_30731592_8024_4ccc_BE1B_3AB1C3D4F45E" seqno="6" style="DUID=100D14E4;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="Left=1118;Top=472;Right=1277;Bottom=542;" subject="EAID_7FD589C6_673E_4667_B082_D7433750FB69" seqno="7" style="DUID=C39414A3;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="Left=1120;Top=348;Right=1277;Bottom=418;" subject="EAID_72E02C78_818A_4fdf_A5BD_291495878FF6" seqno="8" style="DUID=80729FF8;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="Left=1122;Top=598;Right=1279;Bottom=668;" subject="EAID_C075D420_0FA2_4292_A050_776437CB3120" seqno="9" style="DUID=E9D7451E;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=CX=6:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=21:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_DFCB5CC4_A7B5_4d8c_8DD3_E7706CCB4406" style="Mode=3;EOID=B55A4E36;SOID=008FB22D;Color=-1;LWidth=0;TREE=OR;Hidden=0;"/>
-					<element geometry="SX=60;SY=0;EX=0;EY=0;EDGE=1;$LLB=CX=6:CY=14:OX=9:OY=-4:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=79:CY=14:OX=-14:OY=-8:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=217:-297$;" subject="EAID_7F3B4177_914C_4717_8D63_A4ABCE5EF25C" style="Mode=3;EOID=F4C8FEFC;SOID=008FB22D;Color=-1;LWidth=0;TREE=OR;Hidden=0;"/>
+					<element geometry="SX=60;SY=0;EX=0;EY=0;EDGE=1;$LLB=CX=6:CY=14:OX=9:OY=-4:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=51:CY=14:OX=-14:OY=-8:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=217:-297$;" subject="EAID_7F3B4177_914C_4717_8D63_A4ABCE5EF25C" style="Mode=3;EOID=F4C8FEFC;SOID=008FB22D;Color=-1;LWidth=0;TREE=OR;Hidden=0;"/>
 					<element geometry="SCTR=1;SCME=1;SX=0;SY=0;EX=0;EY=0;EDGE=1;SCTR.LEFT=224;SCTR.TOP=-456;SCTR.RIGHT=239;SCTR.BOTTOM=-425;$LLB=;LLT=CX=73:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=57:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=;IRHS=;ILHS=;Path=239:-455$239:-425$224:-425$224:-455$;" subject="EAID_ED5E2697_555A_4b6b_BB23_AC7E4FBDF388" style="Mode=3;EOID=008FB22D;SOID=008FB22D;Color=-1;LWidth=0;Hidden=1;"/>
 					<element geometry="SX=0;SY=51;EX=0;EY=-4;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=CX=55:CY=14:OX=-20:OY=-8:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=-11:OY=9:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=944:-473$944:-277$;" subject="EAID_A2E51E0D_F169_4ebc_B1E5_7096E99E0424" style="Mode=3;EOID=100D14E4;SOID=B55A4E36;Color=-1;LWidth=0;TREE=OR;Hidden=0;"/>
-					<element geometry="SX=0;SY=32;EX=0;EY=-6;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=CX=104:CY=14:OX=-24:OY=-8:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=-5:OY=5:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=977:-492$977:-389$;" subject="EAID_1D335660_5B9B_4209_81EA_4E2696AA343A" style="Mode=3;EOID=80729FF8;SOID=B55A4E36;Color=-1;LWidth=0;TREE=OR;Hidden=0;"/>
+					<element geometry="SX=0;SY=32;EX=0;EY=-6;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=CX=50:CY=14:OX=-24:OY=-8:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=-5:OY=5:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=977:-492$977:-389$;" subject="EAID_1D335660_5B9B_4209_81EA_4E2696AA343A" style="Mode=3;EOID=80729FF8;SOID=B55A4E36;Color=-1;LWidth=0;TREE=OR;Hidden=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=CX=75:CY=14:OX=-9:OY=-5:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=-9:OY=9:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_8311E072_AEE8_41c7_9253_FE5C437B5535" style="Mode=3;EOID=C39414A3;SOID=B55A4E36;Color=-1;LWidth=0;TREE=OR;Hidden=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=CX=6:CY=14:OX=13:OY=-1:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=34:CY=14:OX=-16:OY=-4:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=90:CY=14:OX=-18:OY=3:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_EC707F1A_4D1C_4196_B21E_A70522E7DE41" style="Mode=3;EOID=F4C8FEFC;SOID=B55A4E36;Color=-1;LWidth=0;TREE=OR;Hidden=0;"/>
-					<element geometry="SX=0;SY=-10;EX=0;EY=-11;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=CX=88:CY=14:OX=-22:OY=-8:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=-6:OY=10:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=969:-728$969:-644$;" subject="EAID_E8C087FA_0807_43d7_8C64_FB1162E03D16" style="Mode=3;EOID=E9D7451E;SOID=45C660E2;Color=-1;LWidth=0;TREE=OR;Hidden=0;"/>
+					<element geometry="SX=0;SY=-10;EX=0;EY=-11;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=CX=88:CY=14:OX=-22:OY=-8:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=-6:OY=10:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=969:-727$969:-644$;" subject="EAID_E8C087FA_0807_43d7_8C64_FB1162E03D16" style="Mode=3;EOID=E9D7451E;SOID=45C660E2;Color=-1;LWidth=0;TREE=OR;Hidden=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=CX=43:CY=14:OX=-18:OY=-6:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=-11:OY=11:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_6DC1BE8A_6A55_4bd0_8D02_8E702A3713F3" style="Mode=3;EOID=2D6A5E88;SOID=45C660E2;Color=-1;LWidth=0;TREE=OR;Hidden=0;"/>
 					<element geometry="SX=1;SY=0;EX=1;EY=0;EDGE=1;$LLB=CX=6:CY=14:OX=13:OY=-2:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=51:CY=14:OX=-17:OY=-1:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=34:CY=14:OX=-15:OY=5:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=17:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_9F8C4440_7405_4799_BD6F_D55826659744" style="Mode=3;EOID=B55A4E36;SOID=45C660E2;Color=-1;LWidth=0;TREE=OR;Hidden=0;"/>
 				</elements>
