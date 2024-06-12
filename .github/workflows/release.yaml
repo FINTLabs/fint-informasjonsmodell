@@ -143,18 +143,18 @@ jobs:
           mv ../java/resource/personvern fint-personvern-resource-model-java/src/main/java/no/fint/model/resource/
           git add fint-personvern-resource-model-java/src/main/java/no/fint/model/resource/
 
-      - name: fint-ressurser-model-java
+      - name: fint-ressurs-model-java
         run: |
-          rm -rf fint-ressurser-model-java/src/main/java/no/fint/model/ressurser
-          mv ../java/ressurser fint-ressurser-model-java/src/main/java/no/fint/model/
-          git add fint-ressurser-model-java/src/main/java/no/fint/model/
+          rm -rf fint-ressurs-model-java/src/main/java/no/fint/model/ressurs
+          mv ../java/ressurs fint-ressurs-model-java/src/main/java/no/fint/model/
+          git add fint-ressurs-model-java/src/main/java/no/fint/model/
 
-      - name: fint-ressurser-resource-model-java
+      - name: fint-ressurs-resource-model-java
         run: |
-          rm -rf fint-ressurser-resource-model-java/src/main/java/no/fint/model/resource/ressurser
-          mv ../java/resource/ressurser fint-ressurser-resource-model-java/src/main/java/no/fint/model/resource/
-          git add fint-ressurser-resource-model-java/src/main/java/no/fint/model/resource/
-
+          rm -rf fint-ressurs-resource-model-java/src/main/java/no/fint/model/resource/ressurs
+          mv ../java/resource/ressurs fint-ressurs-resource-model-java/src/main/java/no/fint/model/resource/
+          git add fint-ressurs-resource-model-java/src/main/java/no/fint/model/resource/
+  
       - name: Soon to be finished - pull request on it's way!
         run: |
           echo -e "# FINT Java Model\\n\\nVersion ${{ needs.generate-model.outputs.version }}\\n\\nGenerated $(date +'%Y-%m-%dT%H:%M:%S')" > README.md
@@ -291,21 +291,22 @@ jobs:
           mv FINT.Model.Resource.Personvern.csproj FINT.Model.Resource.Personvern/
           git add FINT.Model.Resource.Personvern/
 
-      - name: FINT.Model.Ressurser
+
+      - name: FINT.Model.Ressurs
         run: |
-          mv FINT.Model.Ressurser/FINT.Model.Ressurser.csproj .
-          rm -rf FINT.Model.Ressurser
-          mv ../cs/FINT.Model.Ressurser .
-          mv FINT.Model.Ressurser.csproj FINT.Model.Ressurser/
-          git add FINT.Model.Ressurser/
-    
-      - name: FINT.Model.Resource.Ressurser
+          mv FINT.Model.Ressurs/FINT.Model.Ressurs.csproj .
+          rm -rf FINT.Model.Ressurs
+          mv ../cs/FINT.Model.Ressurs .
+          mv FINT.Model.Ressurs.csproj FINT.Model.Ressurs/
+          git add FINT.Model.Ressurs/
+
+      - name: FINT.Model.Resource.Ressurs
         run: |
-          mv FINT.Model.Resource.Ressurser/FINT.Model.Resource.Ressurser.csproj .
-          rm -rf FINT.Model.Resource.Ressurser
-          mv ../cs/resource/FINT.Model.Ressurser FINT.Model.Resource.Ressurser
-          mv FINT.Model.Resource.Ressurser.csproj FINT.Model.Resource.Ressurser/
-          git add FINT.Model.Resource.Ressurser/
+          mv FINT.Model.Resource.Ressurs/FINT.Model.Resource.Ressurs.csproj .
+          rm -rf FINT.Model.Resource.Ressurs
+          mv ../cs/resource/FINT.Model.Ressurs FINT.Model.Resource.Ressurs
+          mv FINT.Model.Resource.Ressurs.csproj FINT.Model.Resource.Ressurs/
+          git add FINT.Model.Resource.Ressurs/
 
       - name: Soon to be finished - pull request on it's way!
         run: |
