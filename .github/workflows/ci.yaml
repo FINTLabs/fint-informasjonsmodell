@@ -10,13 +10,8 @@ jobs:
       - name: Get version
         id: get-version
         run: |
-          if [[ "${{ github.event_name }}" == 'workflow_dispatch' && "${{ github.event.inputs.version }}" != '' ]]; then
-            echo Version from workflow_dispatch: ${{ github.event.inputs.version }}
-            echo "version=${{ github.event.inputs.version }}" >> "$GITHUB_OUTPUT"
-          else
-            echo Version from published release: ${{ github.event.release.tag_name }}
-            echo "version=${{ github.event.release.tag_name }}" >> "$GITHUB_OUTPUT"
-          fi
+            echo Version from published release: v3.18.0-draft
+            echo "version=${GITHUB_REF##*/}" >> "$GITHUB_OUTPUT"
           
       - name: Generate model
         run: |
@@ -42,10 +37,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     
-      - name: Set version witout prefix
-        run: |
-          echo "MODEL_VERSION=$(echo ${{ needs.generate-model.outputs.version }} | sed "s/^v//")" >> $GITHUB_ENV
-    
       - name: Download java model
         uses: actions/download-artifact@v4
         with:
@@ -61,7 +52,7 @@ jobs:
       - name: Preparing the new release
         run: |
           git clean -fdx
-          git checkout -b release-${{ needs.generate-model.outputs.version }}
+          git checkout -b release-temp
     
       - name: fint-felles-model-java
         run: |
@@ -169,7 +160,7 @@ jobs:
       - name: Preparing the new release
         run: |
           git clean -fdx
-          git checkout -b release-${{ needs.generate-model.outputs.version }}
+          git checkout -b release-temp
 
       - name: FINT.Model.Felles
         run: |
