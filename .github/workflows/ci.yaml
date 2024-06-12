@@ -274,18 +274,16 @@ jobs:
 
       - name: FINT.Model.Ressurser
         run: |
-          mv FINT.Model.Ressurser/FINT.Model.Ressurser.csproj .
           rm -rf FINT.Model.Ressurser
-          mv ../cs/FINT.Model.Ressurser .
-          mv FINT.Model.Ressurser.csproj FINT.Model.Ressurser/
+          rm *.cs
+          mv ../cs/FINT.Model.Ressurser FINT.Model.Ressurser
           git add FINT.Model.Ressurser/
   
       - name: FINT.Model.Resource.Ressurser
         run: |
-          mv FINT.Model.Resource.Ressurser/FINT.Model.Resource.Ressurser.csproj .
-          rm -rf FINT.Model.Resource.Ressurser
+          rm -rf FINT.Model.Resource.Ressurser/*/
+          rm *.cs
           mv ../cs/resource/FINT.Model.Ressurser FINT.Model.Resource.Ressurser
-          mv FINT.Model.Resource.Ressurser.csproj FINT.Model.Resource.Ressurser/
           git add FINT.Model.Resource.Ressurser/
 
       - name: Setup .NET SDK
