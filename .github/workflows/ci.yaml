@@ -1,0 +1,278 @@
+name: CI/CD
+  
+on: push
+
+jobs:
+  generate-model:
+    runs-on: ubuntu-latest
+    steps:
+      
+      - name: Get version
+        id: get-version
+        run: |
+          if [[ "${{ github.event_name }}" == 'workflow_dispatch' && "${{ github.event.inputs.version }}" != '' ]]; then
+            echo Version from workflow_dispatch: ${{ github.event.inputs.version }}
+            echo "version=${{ github.event.inputs.version }}" >> "$GITHUB_OUTPUT"
+          else
+            echo Version from published release: ${{ github.event.release.tag_name }}
+            echo "version=${{ github.event.release.tag_name }}" >> "$GITHUB_OUTPUT"
+          fi
+          
+      - name: Generate model
+        run: |
+          docker run -i -v ${GITHUB_WORKSPACE}:/src ghcr.io/fintlabs/fint-model:2.8.0 --tag ${{ steps.get-version.outputs.version }} generate --lang ALL --resource
+
+      - name: Upload Java model artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: java
+          path: java
+
+      - name: Upload CS model artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: cs
+          path: cs
+    
+    outputs: 
+      version: ${{ steps.get-version.outputs.version }}
+
+  java-model:
+    needs: generate-model
+    runs-on: ubuntu-latest
+    steps:
+    
+      - name: Set version witout prefix
+        run: |
+          echo "MODEL_VERSION=$(echo ${{ needs.generate-model.outputs.version }} | sed "s/^v//")" >> $GITHUB_ENV
+    
+      - name: Download java model
+        uses: actions/download-artifact@v4
+        with:
+          name: java
+          path: ../java
+
+      - name: Git checkout fint-informastion-model-java
+        uses: actions/checkout@v4
+        with:
+          repository: 'FINTLabs/fint-information-model-java'
+          token: ${{secrets.GITHUBACTION_TOKEN}}
+
+      - name: Preparing the new release
+        run: |
+          git clean -fdx
+          git checkout -b release-${{ needs.generate-model.outputs.version }}
+    
+      - name: fint-felles-model-java
+        run: |
+          rm -rf fint-felles-model-java/src/main/java/no/fint/model/felles
+          mv ../java/felles fint-felles-model-java/src/main/java/no/fint/model/
+          git add fint-felles-model-java/src/main/java/no/fint/model/
+
+      - name: fint-felles-resource-model-java
+        run: |
+          rm -rf fint-felles-resource-model-java/src/main/java/no/fint/model/resource/felles
+          mv ../java/resource/felles fint-felles-resource-model-java/src/main/java/no/fint/model/resource/
+          git add fint-felles-resource-model-java/src/main/java/no/fint/model/resource/
+
+      - name: fint-administrasjon-model-java
+        run: |
+          rm -rf fint-administrasjon-model-java/src/main/java/no/fint/model/administrasjon
+          mv ../java/administrasjon fint-administrasjon-model-java/src/main/java/no/fint/model/
+          git add fint-administrasjon-model-java/src/main/java/no/fint/model/
+
+      - name: fint-administrasjon-resource-model-java
+        run: |
+          rm -rf fint-administrasjon-resource-model-java/src/main/java/no/fint/model/resource/administrasjon
+          mv ../java/resource/administrasjon fint-administrasjon-resource-model-java/src/main/java/no/fint/model/resource/
+          git add fint-administrasjon-resource-model-java/src/main/java/no/fint/model/resource/
+
+      - name: fint-utdanning-model-java
+        run: |
+          rm -rf fint-utdanning-model-java/src/main/java/no/fint/model/utdanning
+          mv ../java/utdanning fint-utdanning-model-java/src/main/java/no/fint/model/
+          git add fint-utdanning-model-java/src/main/java/no/fint/model/
+
+      - name: fint-utdanning-resource-model-java
+        run: |
+          rm -rf fint-utdanning-resource-model-java/src/main/java/no/fint/model/resource/utdanning
+          mv ../java/resource/utdanning fint-utdanning-resource-model-java/src/main/java/no/fint/model/resource/
+          git add fint-utdanning-resource-model-java/src/main/java/no/fint/model/resource/
+
+      - name: fint-arkiv-model-java
+        run: |
+          rm -rf fint-arkiv-model-java/src/main/java/no/fint/model/arkiv
+          mv ../java/arkiv fint-arkiv-model-java/src/main/java/no/fint/model/
+          git add fint-arkiv-model-java/src/main/java/no/fint/model/
+
+      - name: fint-arkiv-resource-model-java
+        run: |
+          rm -rf fint-arkiv-resource-model-java/src/main/java/no/fint/model/resource/arkiv
+          mv ../java/resource/arkiv fint-arkiv-resource-model-java/src/main/java/no/fint/model/resource/
+          git add fint-arkiv-resource-model-java/src/main/java/no/fint/model/resource/
+
+      - name: fint-okonomi-model-java
+        run: |
+          rm -rf fint-okonomi-model-java/src/main/java/no/fint/model/okonomi
+          mv ../java/okonomi fint-okonomi-model-java/src/main/java/no/fint/model/
+          git add fint-okonomi-model-java/src/main/java/no/fint/model/
+
+      - name: fint-okonomi-resource-model-java
+        run: |
+          rm -rf fint-okonomi-resource-model-java/src/main/java/no/fint/model/resource/okonomi
+          mv ../java/resource/okonomi fint-okonomi-resource-model-java/src/main/java/no/fint/model/resource/
+          git add fint-okonomi-resource-model-java/src/main/java/no/fint/model/resource/
+
+      - name: fint-personvern-model-java
+        run: |
+          rm -rf fint-personvern-model-java/src/main/java/no/fint/model/personvern
+          mv ../java/personvern fint-personvern-model-java/src/main/java/no/fint/model/
+          git add fint-personvern-model-java/src/main/java/no/fint/model/
+
+      - name: fint-personvern-resource-model-java
+        run: |
+          rm -rf fint-personvern-resource-model-java/src/main/java/no/fint/model/resource/personvern
+          mv ../java/resource/personvern fint-personvern-resource-model-java/src/main/java/no/fint/model/resource/
+          git add fint-personvern-resource-model-java/src/main/java/no/fint/model/resource/
+
+      - name: Setup Java 8
+        uses: actions/setup-java@v4
+        with:
+          distribution: adopt
+          java-version: 8
+
+      - uses: gradle/wrapper-validation-action@v3
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: Build with Gradle
+        run: ./gradlew build
+  
+  cs-model:
+    needs: generate-model
+    runs-on: ubuntu-latest
+    steps:
+    
+      - name: Download cs model
+        uses: actions/download-artifact@v4
+        with:
+          name: cs
+          path: ../cs
+
+      - name: Git checkout FINT.Information.Model
+        uses: actions/checkout@v4
+        with:
+          repository: 'FINTLabs/FINT.Information.Model'
+          token: ${{secrets.GITHUBACTION_TOKEN}}
+
+      - name: Preparing the new release
+        run: |
+          git clean -fdx
+          git checkout -b release-${{ needs.generate-model.outputs.version }}
+
+      - name: FINT.Model.Felles
+        run: |
+          mv FINT.Model.Felles/FINT.Model.Felles.csproj .
+          rm -rf FINT.Model.Felles
+          mv ../cs/FINT.Model.Felles .
+          mv FINT.Model.Felles.csproj FINT.Model.Felles/
+          git add FINT.Model.Felles/
+
+      - name: FINT.Model.Resource.Felles
+        run: |
+          mv FINT.Model.Resource.Felles/FINT.Model.Resource.Felles.csproj .
+          rm -rf FINT.Model.Resource.Felles
+          mv ../cs/resource/FINT.Model.Felles FINT.Model.Resource.Felles
+          mv FINT.Model.Resource.Felles.csproj FINT.Model.Resource.Felles/
+          git add FINT.Model.Resource.Felles/
+
+      - name: FINT.Model.Administrasjon
+        run: |
+          mv FINT.Model.Administrasjon/FINT.Model.Administrasjon.csproj .
+          rm -rf FINT.Model.Administrasjon
+          mv ../cs/FINT.Model.Administrasjon .
+          mv FINT.Model.Administrasjon.csproj FINT.Model.Administrasjon/
+          git add FINT.Model.Administrasjon/
+
+      - name: FINT.Model.Resource.Administrasjon
+        run: |
+          mv FINT.Model.Resource.Administrasjon/FINT.Model.Resource.Administrasjon.csproj .
+          rm -rf FINT.Model.Resource.Administrasjon
+          mv ../cs/resource/FINT.Model.Administrasjon FINT.Model.Resource.Administrasjon
+          mv FINT.Model.Resource.Administrasjon.csproj FINT.Model.Resource.Administrasjon/
+          git add FINT.Model.Resource.Administrasjon/
+
+      - name: FINT.Model.Utdanning
+        run: |
+          mv FINT.Model.Utdanning/FINT.Model.Utdanning.csproj .
+          rm -rf FINT.Model.Utdanning
+          mv ../cs/FINT.Model.Utdanning .
+          mv FINT.Model.Utdanning.csproj FINT.Model.Utdanning/
+          git add FINT.Model.Utdanning/
+
+      - name: FINT.Model.Resource.Utdanning
+        run: |
+          mv FINT.Model.Resource.Utdanning/FINT.Model.Resource.Utdanning.csproj .
+          rm -rf FINT.Model.Resource.Utdanning
+          mv ../cs/resource/FINT.Model.Utdanning FINT.Model.Resource.Utdanning
+          mv FINT.Model.Resource.Utdanning.csproj FINT.Model.Resource.Utdanning/
+          git add FINT.Model.Resource.Utdanning/
+
+      - name: FINT.Model.Arkiv
+        run: |
+          mv FINT.Model.Arkiv/FINT.Model.Arkiv.csproj .
+          rm -rf FINT.Model.Arkiv
+          mv ../cs/FINT.Model.Arkiv .
+          mv FINT.Model.Arkiv.csproj FINT.Model.Arkiv/
+          git add FINT.Model.Arkiv/
+
+      - name: FINT.Model.Resource.Arkiv
+        run: |
+          mv FINT.Model.Resource.Arkiv/FINT.Model.Resource.Arkiv.csproj .
+          rm -rf FINT.Model.Resource.Arkiv
+          mv ../cs/resource/FINT.Model.Arkiv FINT.Model.Resource.Arkiv
+          mv FINT.Model.Resource.Arkiv.csproj FINT.Model.Resource.Arkiv/
+          git add FINT.Model.Resource.Arkiv/
+
+      - name: FINT.Model.Okonomi
+        run: |
+          mv FINT.Model.Okonomi/FINT.Model.Okonomi.csproj .
+          rm -rf FINT.Model.Okonomi
+          mv ../cs/FINT.Model.Okonomi .
+          mv FINT.Model.Okonomi.csproj FINT.Model.Okonomi/
+          git add FINT.Model.Okonomi/
+
+      - name: FINT.Model.Resource.Okonomi
+        run: |
+          mv FINT.Model.Resource.Okonomi/FINT.Model.Resource.Okonomi.csproj .
+          rm -rf FINT.Model.Resource.Okonomi
+          mv ../cs/resource/FINT.Model.Okonomi FINT.Model.Resource.Okonomi
+          mv FINT.Model.Resource.Okonomi.csproj FINT.Model.Resource.Okonomi/
+          git add FINT.Model.Resource.Okonomi/
+
+      - name: FINT.Model.Personvern
+        run: |
+          mv FINT.Model.Personvern/FINT.Model.Personvern.csproj .
+          rm -rf FINT.Model.Personvern
+          mv ../cs/FINT.Model.Personvern .
+          mv FINT.Model.Personvern.csproj FINT.Model.Personvern/
+          git add FINT.Model.Personvern/
+
+      - name: FINT.Model.Resource.Personvern
+        run: |
+          mv FINT.Model.Resource.Personvern/FINT.Model.Resource.Personvern.csproj .
+          rm -rf FINT.Model.Resource.Personvern
+          mv ../cs/resource/FINT.Model.Personvern FINT.Model.Resource.Personvern
+          mv FINT.Model.Resource.Personvern.csproj FINT.Model.Resource.Personvern/
+          git add FINT.Model.Resource.Personvern/
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '6.0.x'
+
+      - name: .NET build
+        run: |
+          dotnet msbuild -t:restore,build,VSTest -p:Configuration=Debug FINT.Information.Model.sln
+  
