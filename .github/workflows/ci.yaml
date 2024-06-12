@@ -126,6 +126,18 @@ jobs:
           mv ../java/resource/personvern fint-personvern-resource-model-java/src/main/java/no/fint/model/resource/
           git add fint-personvern-resource-model-java/src/main/java/no/fint/model/resource/
 
+      - name: fint-ressurser-model-java
+        run: |
+          rm -rf fint-ressurser-model-java/src/main/java/no/fint/model/ressurser
+          mv ../java/ressurser fint-ressurser-model-java/src/main/java/no/fint/model/
+          git add fint-ressurser-model-java/src/main/java/no/fint/model/
+
+      - name: fint-ressurser-resource-model-java
+        run: |
+          rm -rf fint-ressurser-resource-model-java/src/main/java/no/fint/model/resource/ressurser
+          mv ../java/resource/ressurser fint-ressurser-resource-model-java/src/main/java/no/fint/model/resource/
+          git add fint-ressurser-resource-model-java/src/main/java/no/fint/model/resource/
+
       - name: Setup Java 8
         uses: actions/setup-java@v4
         with:
@@ -257,6 +269,22 @@ jobs:
           mv ../cs/resource/FINT.Model.Personvern FINT.Model.Resource.Personvern
           mv FINT.Model.Resource.Personvern.csproj FINT.Model.Resource.Personvern/
           git add FINT.Model.Resource.Personvern/
+
+      - name: FINT.Model.Ressurser
+        run: |
+          mv FINT.Model.Ressurser/FINT.Model.Ressurser.csproj .
+          rm -rf FINT.Model.Ressurser
+          mv ../cs/FINT.Model.Ressurser .
+          mv FINT.Model.Ressurser.csproj FINT.Model.Ressurser/
+          git add FINT.Model.Ressurser/
+  
+      - name: FINT.Model.Resource.Ressurser
+        run: |
+          mv FINT.Model.Resource.Ressurser/FINT.Model.Resource.Ressurser.csproj .
+          rm -rf FINT.Model.Resource.Ressurser
+          mv ../cs/resource/FINT.Model.Ressurser FINT.Model.Resource.Ressurser
+          mv FINT.Model.Resource.Ressurser.csproj FINT.Model.Resource.Ressurser/
+          git add FINT.Model.Resource.Ressurser/
 
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v3
