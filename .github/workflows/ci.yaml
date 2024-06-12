@@ -136,7 +136,7 @@ jobs:
       - name: fint-ressurser-resource-model-java
         run: |
           rm -rf fint-ressurser-resource-model-java/src/main/java/no/fint/model/resource/ressurser
-          mkdir -p fint-ressurser-model-java/src/main/java/no/fint/model/
+          mkdir -p fint-ressurser-resource-model-java/src/main/java/no/fint/model/resource/
           mv ../java/resource/ressurser fint-ressurser-resource-model-java/src/main/java/no/fint/model/resource/
           git add fint-ressurser-resource-model-java/src/main/java/no/fint/model/resource/
 
