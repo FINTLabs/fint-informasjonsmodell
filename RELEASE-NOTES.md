@@ -102,6 +102,36 @@
 
 <!-- /MarkdownTOC -->
 
+# v3.19.0
+
+|      |              |
+| ---- |--------------|
+| Date | `21.01.2025` |
+| Tag  | `v3.19.0`    |
+
+## Features
+
+### Arkiv: Innføring av fødselsnummer og organisasjonsnummer på Part
+
+* Added attribute `fødselsnummer` on `Part`.
+* Added attribute `organisasjonsnummer` on `Part`.
+
+### Arkiv: Innføring av Tilgangsgruppe
+
+* Added class `Tilgangsgruppe`.
+* Added relation `tilgangsgruppe` on `Sak`.
+* Added relation `tilgangsgruppe` on `Journalpost`.
+
+### Utdanning: Eksamensvurdering
+
+* Added class `Eksamensvurdering`.
+* Added relation `eksamensvurdering` on `Elevvurdering`.
+
+#### Utgår
+
+* Deprecated relation `eksamensgruppe` on `Sluttfagvurdering`.
+
+
 
 # v3.18.0
  
