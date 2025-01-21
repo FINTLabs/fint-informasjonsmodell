@@ -119,8 +119,8 @@
 ### Arkiv: Innføring av Tilgangsgruppe
 
 * Added class `Tilgangsgruppe`.
-* Added relation `tilgangsgruppe` on `Sak`.
-* Added relation `tilgangsgruppe` on `Journalpost`.
+* Added relation `tilgangsgruppe` on `Saksmappe`.
+* Added relation `tilgangsgruppe` on `Registrering`.
 
 ### Utdanning: Eksamensvurdering
 
