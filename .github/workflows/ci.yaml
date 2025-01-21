@@ -10,12 +10,12 @@ jobs:
       - name: Get version
         id: get-version
         run: |
-            echo Version from published release: v3.18.0-draft
+            echo "Version from published release: ${GITHUB_REF##*/}"
             echo "version=${GITHUB_REF##*/}" >> "$GITHUB_OUTPUT"
           
       - name: Generate model
         run: |
-          docker run -i -v ${GITHUB_WORKSPACE}:/src ghcr.io/fintlabs/fint-model:2.10.0-rc-5 --tag ${{ steps.get-version.outputs.version }} generate --lang ALL --resource
+          docker run -i -v ${GITHUB_WORKSPACE}:/src ghcr.io/fintlabs/fint-model:2.10.0 --tag ${{ steps.get-version.outputs.version }} generate --lang ALL --resource
 
       - name: Upload Java model artifacts
         uses: actions/upload-artifact@v4
