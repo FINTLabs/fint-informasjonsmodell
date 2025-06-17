@@ -108,6 +108,25 @@
 
 <!-- /MarkdownTOC -->
 
+# v3.20.0
+
+|      |                 |
+| ---- |-----------------|
+| Date | `17.06.2025`    |
+| Tag  | `v3.20.0-draft` |
+
+## Features
+
+### Utdanning: Oppmøtetid til Eksamen
+
+* Added attribute `oppmøtetidspunkt` on `Eksamen`.
+
+### Administrasjon: Organisasjonstype
+
+* Added class `Organisasjonstype`.
+* Added relation `organisasjonstype` on `Organisasjonselement`.
+
+
 # v3.19.0
 
 |      |              |
