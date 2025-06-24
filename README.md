@@ -1,6 +1,6 @@
 ﻿# FINT-informasjonsmodell
 
-Innhold i Informasjonsmodellen som benyttes i felleskomponentene utarbeides og vedlikeholdes av FINTLabs, seksjon Fellestjenester i Vigo IKS. Se [fintlabs.no](https://fintlabs.no/) og [vigoiks.no](https://vigoiks.no/) for ytterlige informasjon.
+Innhold i Informasjonsmodellen som benyttes i felleskomponentene utarbeides og vedlikeholdes av [Novari IKS](https://novari.no). Se også [fintlabs.no](https://fintlabs.no/) for ytterlige informasjon.
 
 Releasenotater finner her: [RELEASE-NOTES.md](RELEASE-NOTES.md)
 
