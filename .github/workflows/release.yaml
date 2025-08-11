@@ -55,7 +55,7 @@ jobs:
           echo "MODEL_VERSION=$(echo ${{ needs.generate-model.outputs.version }} | sed "s/^v//")" >> $GITHUB_ENV
     
       - name: Download java model
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: java
           path: ../java
@@ -181,7 +181,7 @@ jobs:
     steps:
     
       - name: Download cs model
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: cs
           path: ../cs
