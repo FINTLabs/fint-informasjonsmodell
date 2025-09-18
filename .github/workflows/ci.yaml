@@ -149,7 +149,7 @@ jobs:
         run: |
           echo "Before sed:"
           cat gradle.properties
-          sed -i '' "s/^version=.*/version=${{env.MODEL_VERSION}}/" gradle.properties
+          sed "s/^version=.*/version=${{env.MODEL_VERSION}}/" gradle.properties > temp && mv temp gradle.properties
           echo "After sed:"
           cat gradle.properties
         shell: bash
