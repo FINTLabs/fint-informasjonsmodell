@@ -147,9 +147,10 @@ jobs:
 
       - name: change version
         run: |
-          ls -la
+          echo "Before sed:"
           cat gradle.properties
-          sed -e "s/^version=.*/version=${{env.MODEL_VERSION}}/" gradle.properties > gradle.properties
+          cat gradle.properties | sed -E "s/^version=.*/version=${{env.MODEL_VERSION}}/" > gradle.properties
+          echo "After sed:"
           cat gradle.properties
         shell: bash
 
