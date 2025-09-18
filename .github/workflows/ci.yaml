@@ -141,19 +141,6 @@ jobs:
           mv ../java/resource/ressurs fint-ressurs-resource-model-java/src/main/java/no/novari/fint/model/resource/
           git add fint-ressurs-resource-model-java/src/main/java/no/novari/fint/model/resource/
 
-      - name: Set version witout prefix
-        run: |
-          echo "MODEL_VERSION=$(echo ${{ needs.generate-model.outputs.version }} | sed "s/^v//")" >> $GITHUB_ENV
-
-      - name: change version
-        run: |
-          echo "Before sed:"
-          cat gradle.properties
-          sed "s/^version=.*/version=${{env.MODEL_VERSION}}/" gradle.properties > temp && mv temp gradle.properties
-          echo "After sed:"
-          cat gradle.properties
-        shell: bash
-
       - name: Setup Java 21
         uses: actions/setup-java@v5
         with:
