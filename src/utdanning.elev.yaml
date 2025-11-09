@@ -1,0 +1,768 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/utdanning/elev
+name: utdanning.elev
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+  - administrasjon.personal
+  - felles
+  - utdanning.basisklasser
+  - utdanning.kodeverk
+  - utdanning.timeplan
+  - utdanning.utdanningsprogram
+  - utdanning.vurdering
+
+classes:
+
+  Basisgruppe:
+    description: |
+      Elevgruppe som definert i Opplæringslova §8-2. 
+      
+      # Beskrivelse
+      
+      I opplæringa skal elevane delast i klassar eller basisgrupper som skal vareta deira behov for sosialt tilhør. For delar av opplæringa kan elevane delast i andre grupper etter behov. Til vanleg skal organiseringa ikkje skje etter fagleg nivå, kjønn eller etnisk tilhør. Klassane, basisgruppene og gruppene må ikkje vere større enn det som er pedagogisk og tryggleiksmessig forsvarleg.
+      
+      Klassen eller basisgruppa skal ha ein eller fleire lærarar (kontaktlærarar) som har særleg ansvar for dei praktiske, administrative og sosialpedagogiske gjeremåla som gjeld klassen eller basisgruppa og dei elevane som er der, mellom anna kontakten med heimen.
+      
+      Begrepet som har tildligere vært kjent som "klasse".
+      
+      "Vanlig" gruppe i SATS (klassegruppe)
+      
+      Viser informasjon om:
+      * År på VGS person går i
+      * Programområdet
+      * A, B eller C klasse
+      
+      Synonym:
+      * Klasse
+      
+      Øvre grense er beskrevet i Opplæringslova §8-3 eller i forskrift.
+    is_a: Gruppe
+    attributes:
+      skoleår:
+        range: Skoleår
+        description: |
+          Skoleår for basisgruppe
+      elevforhold:
+        range: Elevforhold
+        description: |
+          Alle elevforhold i basisgruppen
+        multivalued: true
+      termin:
+        range: Termin
+        description: |
+          Terminer for basisgruppe
+        multivalued: true
+      trinn:
+        range: Årstrinn
+        description: |
+          Det overordnet trinnet som gruppen hører inn i
+        required: true
+      skole:
+        range: Skole
+        description: |
+          Skolen en basisgruppe tilhører.
+        required: true
+      undervisningsforhold:
+        range: Undervisningsforhold
+        description: |
+          Alle lærere tilknyttet basisgruppen.
+        multivalued: true
+      gruppemedlemskap:
+        range: Basisgruppemedlemskap
+        description: |
+          Gruppemedlemskapene til en basisgruppe.
+        multivalued: true
+      kontaktlærergruppe:
+        range: Kontaktlærergruppe
+        description: |
+          Grupper med en kontaktlærer og elever som ligger under en gitt basisgruppe
+        multivalued: true
+
+  Basisgruppemedlemskap:
+    description: |
+      Medlemskap i basisgrupper.
+      
+      # Beskrivelse
+      
+      Gruppemedlemskap som knytter sammen elevforhold og basisgrupper.
+    is_a: Gruppemedlemskap
+    attributes:
+      basisgruppe:
+        range: Basisgruppe
+        description: |
+          Basisgruppen et gruppemedlemskap tilhører.
+        required: true
+      elevforhold:
+        range: Elevforhold
+        description: |
+          Elevforhold et basisgruppemedlemskap tilhører.
+        required: true
+
+  Elev:
+    description: |
+      Informasjon om en person som mottar undervisning.
+      
+      # Beskrivelse 
+      
+      Beskriver informasjon relatert til undervisning for en Person.
+      
+      Tilsvarende finnes for ansatte: __Personalressurs__.
+    attributes:
+      brukernavn:
+        range: Identifikator
+        description: |
+          Brukernavn til en elev
+          
+          # Beskrivelse
+          
+          Skal inneholde brukernavn for pålogging, som finnes i katalogtjenesten (feks Active Directory). Brukes som en identifikator som består, når fødselsnummer og/eller andre identifikatorer endrer seg.
+          
+          # Format
+          
+          Brukernavn i det format en elev trenger for å logge seg på systemer i organisasjonen.
+          
+          # NB!
+          
+          Fremtidig funksjon for dette feltet er under revisjon.
+      elevnummer:
+        range: Identifikator
+        description: |
+          Et unikt nummer som identifiserer en elev
+      feidenavn:
+        range: Identifikator
+        description: |
+          Fullt Feide-navn
+          
+          # Beskrivelse
+          Dette er det samme som `eduPersonPrincipalName` i Feide skjemaet. Se [eduPersonPrincipalName](https://docs.feide.no/schema/info_go/go_attributter_ch02.html#edupersonprincipalname) for utdypende informasjon.
+          
+          # Eksempel
+          - oleolsen@haugaland.fylkeskommune.no
+      gjest:
+        range: string
+        description: |
+          Viser om eleven er gjesteelev.
+      hybeladresse:
+        range: Adresse
+        description: |
+          Hybeladresse som ikke er folkeregistrert.
+      kontaktinformasjon:
+        range: Kontaktinformasjon
+        description: |
+          Skolespesifikk kontaktinformasjon til en elev
+          
+          # Beskrivelse
+          
+          Den fortrukne måten å komme i kontakt med en elev på skolen.
+      systemId:
+        range: Identifikator
+        description: |
+          Systemidentifikator til en elev.
+          
+          # Beskrivelse 
+          
+          Dette kan være identifikator som eksisterer i SAS/SIS (IPOS/OID).
+        required: true
+      person:
+        range: Person
+        description: |
+          Privatperson som er knyttet til en elev.
+          
+          Relasjonen skal gå til et personobjekt i utdanningsdomenet.
+        required: true
+      elevforhold:
+        range: Elevforhold
+        description: |
+          Elevforholdene til en elev
+        multivalued: true
+
+  Elevforhold:
+    description: |
+      Elevens forskjellige utdanningsforhold
+      
+      # Beskrivelse
+      
+      En Elev kan ha flere Elevforhold.
+      
+      # Eksempel
+      
+      En elev kan være i elevforhold med status privatist og deltid samtidig. Eller en elev kan ha flere elevforhold på flere forskjellige skoler.
+    is_a: Utdanningsforhold
+    attributes:
+      anmerkninger:
+        range: Anmerkninger
+        description: |
+          Anmerkningene i elevforholdet.
+        multivalued: true
+      avbruddsdato:
+        range: string
+        description: |
+          Dato da elevforholdet ble avbrutt
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990` -&gt; `1990-03-29T12:00:00Z`
+          
+          * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
+      gyldighetsperiode:
+        range: Periode
+        description: |
+          Gyldig periode for et gitt elevforhold.
+          
+          # Beskrivelse
+          
+          Periode en elev er (eller har vært) i et elevforhold. Inneholder en startdato. Kan inneholde en sluttdato.
+      hovedskole:
+        range: string
+        description: |
+          Angir om elevforhold er tilknyttet hovedskole.
+          
+          # Beskrivelse
+          
+          En elev kan ha flere elevforhold, men kun ett elevforhold skal være tilknyttet en hovedskole.
+      tospråkligFagopplæring:
+        range: string
+        description: |
+          Viser om eleven har rett på tospråklig fagopplæring (opplæring i fag på to språk).
+          
+          # Referanser
+          
+          * UDir Registreringshåndbok:
+          https://regbok.udir.no/felt/?B11_S%C3%A6rskilt%20spr%C3%A5koppl%C3%A6ring%20for%20elever%20fra%20spr%C3%A5klige%20minoriteter.&amp;Id=1014318
+          * Lovdata: https://lovdata.no/lov/1998-07-17-61/&#167;3-12
+      sidemål:
+        range: Fagmerknad
+        description: |
+          Hvilke typer fritak eleven har i sidemål.
+        multivalued: true
+      kategori:
+        range: Elevkategori
+        description: |
+          Kategori på et elevforhold
+      kroppsøving:
+        range: Fagmerknad
+        description: |
+          Viser hvilken type fritak eleven har i kroppsøving
+      skole:
+        range: Skole
+        description: |
+          Skole elevforhold er knyttet til.
+        required: true
+      avbruddsårsak:
+        range: Avbruddsårsak
+        description: |
+          Årsak til avbrudd av elevforholdet.
+        multivalued: true
+      fraværsregistreringer:
+        range: Elevfravær
+        description: |
+          Liste av fraværsregistreringer.
+      elev:
+        range: Elev
+        description: |
+          Elev som elevforholdet gjelder for
+        required: true
+      faggruppemedlemskap:
+        range: Faggruppemedlemskap
+        description: |
+          Faggruppemedlemskapene til et elevforhold.
+        multivalued: true
+      skoleår:
+        range: Skoleår
+        description: |
+          Skoleåret elevforholdet gjelder for.
+      undervisningsgruppemedlemskap:
+        range: Undervisningsgruppemedlemskap
+        description: |
+          Undervisningsmedlemskapene til et elevforhold.
+        multivalued: true
+      basisgruppe:
+        range: Basisgruppe
+        description: |
+          Alle basisgrupper elevforholdet er medlem av
+        multivalued: true
+      vurdering:
+        range: Vurdering
+        description: |
+          Alle vurderinger i et elevforhold
+        multivalued: true
+      sluttordensvurdering:
+        range: Sluttordensvurdering
+        description: |
+          Sluttvurdering av orden og atferd for eleven
+        multivalued: true
+      kontaktlærergruppe:
+        range: Kontaktlærergruppe
+        description: |
+          Alle kontaktlærergrupper elevforhold er medlem av
+        multivalued: true
+      underveisfagvurdering:
+        range: Underveisfagvurdering
+        description: |
+          Underveisvurdering i fag for eleven
+        multivalued: true
+      halvårsfagvurdering:
+        range: Halvårsfagvurdering
+        description: |
+          Halvårsvurdering i fag for eleven
+        multivalued: true
+      sluttfagvurdering:
+        range: Sluttfagvurdering
+        description: |
+          Sluttvurdering i fag for eleven
+        multivalued: true
+      persongruppemedlemskap:
+        range: Persongruppemedlemskap
+        description: |
+          Persongruppemedlemskapene til et elevforhold.
+        multivalued: true
+      eksamensgruppemedlemskap:
+        range: Eksamensgruppemedlemskap
+        description: |
+          Eksamensgruppemedlemskapene til et elevforhold
+        multivalued: true
+      kontaktlærergruppemedlemskap:
+        range: Kontaktlærergruppemedlemskap
+        description: |
+          Kontaktlærergruppemedlemskapene til et elevforhold.
+        multivalued: true
+      elevfravær:
+        range: Fraværsoversikt
+        description: |
+          Fraværsoversikt for elevforholdet
+        multivalued: true
+      tilrettelegging:
+        range: Elevtilrettelegging
+        description: |
+          Tilrettelegginger for eleven.
+        multivalued: true
+      halvårsordensvurdering:
+        range: Halvårsordensvurdering
+        description: |
+          Halvårsvurdering av orden og atferd for eleven.
+        multivalued: true
+      programområde:
+        range: Programområde
+        description: |
+          Programområde elevforhold tilhører
+      elevvurdering:
+        range: Elevvurdering
+        description: |
+          Vurderingsinformasjon for en elev.
+      fravær:
+        range: Fravær
+        description: |
+          Alle fravær registrert på elevforhold.
+        multivalued: true
+      programområdemedlemskap:
+        range: Programområdemedlemskap
+        description: |
+          Programområdemedlemskapene til et elevforhold.
+        multivalued: true
+      underveisordensvurdering:
+        range: Underveisordensvurdering
+        description: |
+          Underveisvurdering av orden og atferd for eleven.
+        multivalued: true
+      eksamensgruppe:
+        range: Eksamensgruppe
+        description: |
+          Alle eksamensgruppene elevforhold er medlem av
+        multivalued: true
+      basisgruppemedlemskap:
+        range: Basisgruppemedlemskap
+        description: |
+          Basisgruppemedlemskapene til et elevforhold.
+        multivalued: true
+      undervisningsgruppe:
+        range: Undervisningsgruppe
+        description: |
+          Alle undervisningsgruppene elevforhold er medlem av
+        multivalued: true
+
+  Elevtilrettelegging:
+    description: |
+      Tilrettelegging en elev har på eksamen.
+      
+      Det skal her oppgis enten fag eller eksamensform.
+      
+      # Referanse
+      
+      [Registrere tilretteleggingstype for eksamen](https://inschool.zendesk.com/hc/no/articles/360031198011-5a-02-Registrere-tilretteleggingstype-for-eksamen)
+    attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Intern identifikator som brukes i kildesystemet
+        required: true
+      fag:
+        range: Fag
+        description: |
+          Faget tilretteleggingen gjelder for.
+      tilrettelegging:
+        range: Tilrettelegging
+        description: |
+          Angir hvilken tilrettelegging som skal gis.
+        required: true
+      elev:
+        range: Elevforhold
+        description: |
+          Eleven det skal tilrettelegges for.
+        required: true
+      eksamensform:
+        range: Eksamensform
+        description: |
+          Eksamensformen tilretteleggingen gjelder for.
+
+  Kontaktlærergruppe:
+    description: |
+      Elevgruppe som ein kontaktlærer har særleg ansvar for.
+      
+      # Beskrivelse
+      
+      Kontaktlæreren har i denne gruppa særleg ansvar for dei praktiske, administrative og sosialpedagogiske gjeremåla som gjeld klassen eller basisgruppa og dei elevane som er der, mellom anna kontakten med heimen, jf Opplæringslova §8-2.
+    is_a: Gruppe
+    attributes:
+      termin:
+        range: Termin
+        description: |
+          Terminer for kontaktlærergruppe
+        multivalued: true
+      elevforhold:
+        range: Elevforhold
+        description: |
+          Alle elevforhold i kontaktlærergruppen
+        multivalued: true
+      skole:
+        range: Skole
+        description: |
+          Skolen kontaktlærergruppen tilhører.
+        required: true
+      skoleår:
+        range: Skoleår
+        description: |
+          Skoleår for kontaktlærergruppe
+      basisgruppe:
+        range: Basisgruppe
+        description: |
+          De overordnede basisgruppene
+        multivalued: true
+        required: true
+      undervisningsforhold:
+        range: Undervisningsforhold
+        description: |
+          Alle kontaktlærere i gruppen.
+        multivalued: true
+      gruppemedlemskap:
+        range: Kontaktlærergruppemedlemskap
+        description: |
+          Gruppemedlemskapene til en kontaktlærergruppe.
+        multivalued: true
+
+  Kontaktlærergruppemedlemskap:
+    description: |
+      Medlemskap i kontaktlærergrupper.
+      
+      # Beskrivelse
+      
+      Gruppemedlemskap som knytter sammen elevforhold og kontaktlærergrupper.
+    is_a: Gruppemedlemskap
+    attributes:
+      elevforhold:
+        range: Elevforhold
+        description: |
+          Elevforhold et kontaktlærergruppemedlemskap tilhører.
+        required: true
+      kontaktlærergruppe:
+        range: Kontaktlærergruppe
+        description: |
+          Kontaktlærergruppen et gruppemedlemskap tilhører.
+        required: true
+
+  Medlemskap:
+    description: |
+      Måte å definere at en gitt elev eller lærer deltar i en gruppe. Informasjonen om fravær og elevens karakterer er definert ved hjelp av dette objektet.
+      
+      # Eksempler
+      
+      * Elevers medlemskap i Undervisningsgrupper
+      * Lærerens medlemskap i Kontaktgruppe
+      * Viser Elevens fravær fra en gitt undervisningsgruppe
+    attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Systemidentifikator i fagsystem
+          
+          # Beskrivelse 
+          
+          Dette kan være identifikator som eksisterer i SAS (SATS, Extens).
+        required: true
+      medlem:
+        range: Utdanningsforhold
+        description: |
+          Alle deltakere i medlemskapet. Det er viktig å notere at det er både elevene og lærere som inngår i medlemskap i grupper.
+        required: true
+      fortløpendeVurdering:
+        range: Vurdering
+        description: |
+          Fortløpende vurdering som eleven har fått som resultat av deltakelse i en gruppe
+          
+          # Eksempler
+          
+          - Terminkarakter
+        multivalued: true
+      gruppe:
+        range: Gruppe
+        description: |
+          Gruppen som omtales i medlemskapet
+        required: true
+      endeligVurdering:
+        range: Vurdering
+        description: |
+          Den endelige vurderingen som eleven har fått som resultat av deltakelse i en gruppe
+      fravær:
+        range: Fravær
+        description: |
+          Fraværet til både lærer og elev som har vært registrert innen en gitt gruppe.
+        multivalued: true
+
+  Persongruppe:
+    description: |
+      Gruppe av personer som ikke handler om undervisning. Dette kan f.eks. være grupper av elever som skal faktureres.
+    is_a: Gruppe
+    attributes:
+      persongruppemedlemskap:
+        range: Persongruppemedlemskap
+        description: |
+          Hvilke persongruppemedlemsskap som er knyttet til gruppen.
+        multivalued: true
+      termin:
+        range: Termin
+        description: |
+          Hvilke termineer gruppen gjelder for.
+        multivalued: true
+      undervisningsforhold:
+        range: Undervisningsforhold
+        description: |
+          Hvilke undervisningsforhold som er knyttet til gruppen
+        multivalued: true
+      elev:
+        range: Elev
+        description: |
+          Hvilke elever som er knyttet til gruppen.
+        multivalued: true
+      skole:
+        range: Skole
+        description: |
+          Hvilke skoler som er knyttet til gruppen.
+        multivalued: true
+      skoleressurs:
+        range: Skoleressurs
+        description: |
+          Hvilke skoleresurser som er knyttet til gruppen
+        multivalued: true
+      skoleår:
+        range: Skoleår
+        description: |
+          Hvilke skoleår gruppen gjelder for.
+        multivalued: true
+
+  Persongruppemedlemskap:
+    description: |
+      Medlemskap i persongruppe.
+      
+      # Beskrivelse
+      
+      Gruppemedlemskap som knytter sammen personer.
+    is_a: Gruppemedlemskap
+    attributes:
+      elevforhold:
+        range: Elevforhold
+        description: |
+          Hvilket elevforhold som er medlem i gruppen.
+      persongruppe:
+        range: Persongruppe
+        description: |
+          Hvilken gruppe det er medlemskap for.
+        required: true
+
+  Skoleressurs:
+    description: |
+      Ansatte på en skole.
+      
+      # Beskrivelse
+      
+      Kan være undervisningspersonell eller andre administrativt ansatte.
+    attributes:
+      feidenavn:
+        range: Identifikator
+        description: |
+          Fullt Feide-navn
+          
+          # Beskrivelse
+          Dette er det samme som `eduPersonPrincipalName` i Feide skjemaet. Se [eduPersonPrincipalName](https://docs.feide.no/schema/info_go/go_attributter_ch02.html#edupersonprincipalname) for utdypende informasjon.
+          
+          # Eksempel
+          - oleolsen@haugaland.fylkeskommune.no
+      systemId:
+        range: Identifikator
+        description: |
+          Kildesystemets interne identifikator for skoleressurs.
+        required: true
+      undervisningsforhold:
+        range: Undervisningsforhold
+        description: |
+          Undervisningsforhold for skoleressurs.
+        multivalued: true
+      personalressurs:
+        range: Personalressurs
+        description: |
+          Relasjon til informasjon om ansettelsesforhold.
+        required: true
+      skole:
+        range: Skole
+        description: |
+          Tilknyttede skoler.
+        multivalued: true
+      person:
+        range: Person
+        description: |
+          Privatperson som er knyttet til en skoleressurs.
+          
+          Relasjonen skal gå til et personobjekt i administrasjonsdomenet.
+      sensor:
+        range: Sensor
+        description: |
+          Sensoroppdrag.
+        multivalued: true
+
+  Undervisningsforhold:
+    description: |
+      Undervisningsforhold til alle med en pedagogisk funksjon
+      
+      # Beskrivelse 
+      
+      Alle med en pedagogisk funksjon på skolen kan ha et undervisningsforhold.
+      
+      # Eksempel
+      
+      Dette kan for eksempel være lærerens undervisningsforhold til skolen. Underviser en lærer på to skoler, vil det være naturlig å ha to undervisningsforhold.
+    is_a: Utdanningsforhold
+    attributes:
+      hovedskole:
+        range: string
+        description: |
+          Angir om undervisningsforholdforhold er tilknyttet hovedskole.
+          
+          # Beskrivelse
+          
+          En skoleresurs kan ha flere undervisningsforhold, men kun ett undervisningsforhold skal være tilknyttet en hovedskole.
+      basisgruppe:
+        range: Basisgruppe
+        description: |
+          Alle basisgrupper tilknyttet læreren.
+        multivalued: true
+      arbeidsforhold:
+        range: Arbeidsforhold
+        description: |
+          Relasjon til en tilsvarende objekt i Adminstrasjons domenet
+        required: true
+      kontaktlærergruppe:
+        range: Kontaktlærergruppe
+        description: |
+          Alle grupper læreren er kontaktlærer for.
+        multivalued: true
+      undervisningsgruppe:
+        range: Undervisningsgruppe
+        description: |
+          Alle undervisningsgrupper læreren deltar i.
+        multivalued: true
+      eksamensgruppe:
+        range: Eksamensgruppe
+        description: |
+          Alle eksamensgruppene tilknyttet læreren.
+        multivalued: true
+      time:
+        range: Time
+        description: |
+          Timer hvor lærer underviser
+        multivalued: true
+      skole:
+        range: Skole
+        description: |
+          Skole som undervisningsforhold er tilknyttet.
+        required: true
+      skoleressurs:
+        range: Skoleressurs
+        description: |
+          Skoleressurs for undervisningsforhold.
+        required: true
+
+  Varsel:
+    description: |
+      Varsel sendt til en elev.
+      
+      # Referanse
+      
+      * [VIS - Opprette og sende varsel ](https://inschool.zendesk.com/hc/no/articles/360030859132-4b-21-Opprette-og-sende-varsel)
+      * [Forskrift til opplæringslova - &#167; 3-8. Varsling](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_5-1#%C2%A73-8)
+    attributes:
+      fraværsprosent:
+        range: string
+        description: |
+          Fraværsprosenten i varselbrev for fravær.
+          
+          # Representasjon av prosent
+          
+          I informasjonsmodellen oppgis en prosentverdi som et heltall. Dette tallet er antall hundredels prosent.
+          
+          ## Eksempel
+          
+          * 44 prosent vil ha verdien 4400.
+          * 58,73 prosent vil ha verdien 5873
+        required: true
+      sendt:
+        range: string
+        description: |
+          Dato da varselet ble sendt.
+        required: true
+      systemId:
+        range: Identifikator
+        description: |
+          Unik identifikator for varselet.
+        required: true
+      tekst:
+        range: string
+        description: |
+          Varselets tekstinnhold.
+        required: true
+      karakteransvarlig:
+        range: Undervisningsforhold
+        description: |
+          Læreren i faggruppen. Hovedfaglærer hvis der er flere.
+      utsteder:
+        range: Skoleressurs
+        description: |
+          Den som utsteder brevet.
+      type:
+        range: Varseltype
+        description: |
+          Type varsel.
+      faggruppemedlemskap:
+        range: Faggruppemedlemskap
+        description: |
+          Elevens faggruppe varselet gjelder.
+        required: true

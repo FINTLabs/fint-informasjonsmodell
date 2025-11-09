@@ -1,0 +1,153 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/ressurs/datautstyr
+name: ressurs.datautstyr
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+  - administrasjon.organisasjon
+  - administrasjon.personal
+  - ressurs.kodeverk
+  - utdanning.elev
+
+classes:
+
+  DigitalEnhet:
+    description: |
+      Beskriver ulike digitale enheter slik som feks pc, nettbrett, mobil.
+    attributes:
+      dataobjektId:
+        range: Identifikator
+        description: |
+          DataobjektId er enhetens Id i datakatalogen enheten er tilknyttet, for eksempel ObjectId i Azure AD.
+      flerbrukerenhet:
+        range: string
+        description: |
+          Hvorvidt enheten er enbruker- eller flerbrukerenhet:
+          
+          Feltet har verdien:
+          
+          * true - Enheten benyttes av flere brukere (utlåns-pc-er, nettbrett i klassesett, pc-er i datasaler)
+          
+          * false - Enheten benyttes kun av en bruker (en elev/ansatts pc, mobiltefon, nettbrett)
+      navn:
+        range: string
+        description: |
+          Navnet slik det fremkommer i fagsystemet/datakatalogen.
+      privateid:
+        range: string
+        description: |
+          Angir om enheten er eid av organisasjonen eller av privatperson.
+          
+          Feltet har verdiene:
+          
+          * false -  Enheten er eid av organisasjonen
+          
+          * true - Enheten er eid av privatperson
+      serienummer:
+        range: string
+        description: |
+          Serienummer er unikt nummer fra enhetsprodusenten. Ikke nødvendigvis unikt på tvers av produsenter.
+        required: true
+      systemId:
+        range: Identifikator
+        description: |
+          Enhetens id i fagsystemet.
+        required: true
+      status:
+        range: Status
+        description: |
+          Status på enheten i fagsystemet.
+      produsent:
+        range: Produsent
+        description: |
+          Navn på produsent av enheten.
+      enhetstype:
+        range: Enhetstype
+        description: |
+          Type digital enhet: Mobiltelefon, datamaskin, nettbrett.
+        required: true
+      elev:
+        range: Elev
+        description: |
+          Angir hvilken elev som benytter enheten.
+      administrator:
+        range: Organisasjonselement
+        description: |
+          Angir hvilken organisasjonsenhet som administrerer enheten.
+        required: true
+      eier:
+        range: Organisasjonselement
+        description: |
+          Angir hvilken organisasjonsenhet som eier enheten hvis ikke privateid.
+      plattform:
+        range: Plattform
+        description: |
+          Operativsystemplattform: Windows, MAC OS, Linux, IOS, Android.
+        required: true
+      personalressurs:
+        range: Personalressurs
+        description: |
+          Angir hvilken ansatt som benytter enheten.
+      enhetsgruppemedlemskap:
+        range: Enhetsgruppemedlemskap
+        description: |
+          Angir hvilke enhetsgrupperinger enheten er medlem av.
+        multivalued: true
+
+  Enhetsgruppe:
+    description: |
+      Angir en gruppering av ensartede digitale enheter. Feks klassesett med iPader eller datalab med ekstra kraftige maskiner.
+    attributes:
+      navn:
+        range: string
+        description: |
+          Navnet slik det fremkommer i fagsystemet.
+        required: true
+      systemId:
+        range: Identifikator
+        description: |
+          Id i fagsystemet.
+        required: true
+      plattform:
+        range: Plattform
+        description: |
+          Operativsystemplattform: Windows, MAC OS, Linux, IOS, Android.
+        required: true
+      enhetstype:
+        range: Enhetstype
+        description: |
+          Type digital enhet: Mobiltelefon, datamaskin, nettbrett.
+        required: true
+      organisasjonsenhet:
+        range: Organisasjonselement
+        description: |
+          Angir hvilken organisasjonsenhet som grupperingen er tilknyttet.
+        required: true
+      enhetsgruppemedlemskap:
+        range: Enhetsgruppemedlemskap
+        description: |
+          Angir hvilke digitale enheter som er med i denne enhetsgruppen.
+        multivalued: true
+
+  Enhetsgruppemedlemskap:
+    description: |
+      Medlemskap i enhetsgrupper.
+      
+      Gruppemedlemskap som knytter sammen Digitalenhet og Enhetsgrupper.
+    attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Unik identifikator for enhetsgruppemedlemskapet.
+        required: true
+      digitalEnhet:
+        range: DigitalEnhet
+        description: |
+          Den digitale enheten et enhetsgruppemedlemskap tilhører.
+        required: true
+      enhetsgruppe:
+        range: Enhetsgruppe
+        description: |
+          Enhetsgruppen et enhetsgruppemedlemskap tilhører.
+        required: true

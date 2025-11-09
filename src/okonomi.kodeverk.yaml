@@ -1,0 +1,77 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/okonomi/kodeverk
+name: okonomi.kodeverk
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+  - administrasjon.komplekse-datatyper
+  - okonomi.faktura
+
+classes:
+
+  Merverdiavgift:
+    description: |
+      Kodeverk for merverdiavgifter.
+    is_a: Begrep
+    attributes:
+      sats:
+        range: string
+        description: |
+          Sats for merverdiavgift..
+          
+          # Beskrivelse
+          
+          Tidels prosentpoeng.
+          
+          # Eksempel
+          
+          - 25%: 250
+          - 7,5%: 75
+          - 1%: 10
+          - 0,1%: 1
+        required: true
+
+  Vare:
+    description: |
+      Vare eller tjeneste som kan leveres og faktureres.
+      
+      # Beskrivelse
+      
+      Varer leveres i en mengde beskrevet i en enhet, til en nettopris per enhet.  Til hver vare er det tilknyttet en kode som angir sats for merverdiavgift.
+      
+      Konteringen som varen har i økonomisystemet kan også angis.
+    is_a: Begrep
+    attributes:
+      enhet:
+        range: string
+        description: |
+          Navn på mengdeenhet varen leveres i.
+          
+          # Eksempel
+          
+          - Stykk
+          - Pall
+          - Pakke
+          - Kilogram
+          - Meter
+        required: true
+      kontering:
+        range: Kontostreng
+        description: |
+          Varens kontering i økonomisystemet.
+      pris:
+        range: string
+        description: |
+          Varens pris per enhet i vareregisteret, i øre.
+        required: true
+      fakturautsteder:
+        range: Fakturautsteder
+        description: |
+          Fakturautsteder for varen.
+        required: true
+      merverdiavgift:
+        range: Merverdiavgift
+        description: |
+          Varens avgiftsklasse- og sats.
+        required: true

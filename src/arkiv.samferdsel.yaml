@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/arkiv/samferdsel
+name: arkiv.samferdsel
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+  - arkiv.noark
+
+classes:
+
+  SøknadDrosjeløyve:
+    description: |
+      Sak om søknad om løyve (tillatelse til å) kjøre drosje.
+      
+      # Beskrivelse
+      
+       Et drosjeløyve er en tillatelse til å transportere mennesker i personbil mot betaling.
+    is_a: Saksmappe
+    attributes:
+      organisasjonsnavn:
+        range: string
+        description: |
+          Organisasjonsnavn til foretak som har søkt om drosjeløyve.
+        required: true
+      organisasjonsnummer:
+        range: string
+        description: |
+          Organisasjonsnummer til foretak som har søkt om drosjeløyve.
+        required: true

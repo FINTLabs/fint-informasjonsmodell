@@ -1,0 +1,182 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/administrasjon/organisasjon
+name: administrasjon.organisasjon
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+  - administrasjon.kodeverk
+  - administrasjon.personal
+  - utdanning.utdanningsprogram
+
+classes:
+
+  Arbeidslokasjon:
+    description: |
+      Fysisk lokasjon hvor en ansatt har sitt arbeidssted.
+    is_a: Enhet
+    attributes:
+      lokasjonskode:
+        range: Identifikator
+        description: |
+          Kode som identifiserer en arbeidslokasjon.
+        required: true
+      lokasjonsnavn:
+        range: string
+        description: |
+          Navn som beskriver en arbeidslokasjon.
+      arbeidsforhold:
+        range: Arbeidsforhold
+        description: |
+          Arbeidsforhold tilknyttet en arbeidslokasjon.
+        multivalued: true
+
+  Organisasjonselement:
+    description: |
+      Et element i organisasjonsstrukturen
+      
+      # Beskrivelse
+      
+      Innslagspunkt i organisasjonsstrukturen. Organisasjonselement er en avdeling/seksjon/enhet, som inneholder relasjon til leder. 
+      
+      Flere organisasjonselement bygger hierarki med relasjon til orverordnet organisasjonselement, som former organisasjonsstrukturen.
+      
+      # Eksempler
+      
+      |     OrgKode     | OrgId |             Beskrivelse              | overordenetId |
+      |-----------------|---------|--------------------------------------|-----------------|
+      | F12             |      25 | OPPL Opplæringsavdelingen            |               0 |
+      | F12.10          |      28 | OPPL Videregående opplæring          |              25 |
+      | F12.10.44       |      39 | ASKI Askim vgs                       |              28 |
+      | F12.10.44.50.15 |      52 | ASKI Internasjonalisering og eksamen |              39 |
+      | F12.10.44.50.15 |      55 | ASKI FG Idrett                       |              52 |
+      | F12.10.44.10    |      70 | ASKI Personal- og renholdsstab       |              39 |
+    is_a: Enhet
+    attributes:
+      gyldighetsperiode:
+        range: Periode
+        description: |
+          Tidsperiode for når organisasjonselementer er gjeldene
+      kortnavn:
+        range: string
+        description: |
+          Forkortet navn som beskriver organisasjonselementet. 
+          
+          # Beskrivelse
+          Akronym navnet til organisasjonselementet.
+          
+          # Format
+          Tekst
+          
+          # Eksempler
+          
+          * ASKI (Askim videregående skole)
+          * IT (IT-seksjonen)
+          * FRS (Fylkesrådmannens stab)
+      navn:
+        range: string
+        description: |
+          Navnet til organisasjonsselemetet.
+          
+          # Beskrivelse
+          
+          
+          # Format
+          Tekst
+          
+          # Eksempler
+          
+          For eksempel:
+          * IT-seksjonen.
+          * Faggruppe lønn
+          * Askim Videregående skole
+          * Avdeling for helse og sosial
+      organisasjonsId:
+        range: Identifikator
+        description: |
+          Unikt internnummer som er unikt for organisasjonselement
+          
+          # Beskrivelse
+          
+          Dette kan være et nummer som ikke er synlig i fagsystem.
+        required: true
+      organisasjonsKode:
+        range: Identifikator
+        description: |
+          Beskrivende kode
+          
+          # Beskrivelse
+          Beskrivende kode, som ofte beskriver hvor man er i hierarkiet (for eksempel 35 er overordnet til 356).
+          
+          Verdien må være unik innenfor en gitt gyldighetsperiode.
+          
+          # Eksempel
+          
+          ## Eksempel fra Østfold fylkeskommune
+          
+          * F12
+          * F12.10
+          * F12.10.44
+          * F12.10.44.50
+          * F12.10.44.50.15
+          
+          ## Eksempel fra Vest-Agder fylkeskommune
+          
+          * 3 Fylkesrådmann
+          * 32 Utdanningsavdeling
+          * 3211 Seksjon for plan og utvikling
+          * 3212 Seksjon for inntak og gjennomføring
+          * 3213 Seksjon for fagopplæring
+          * 3215 SMI skolen
+          * 321501 SMI skolen, andre avdelinger
+          * 321502 Ungdomsskoleavdelingen - grunnskoleopplæring
+          * 321503 Ungdomsavdelingen - VGO
+        required: true
+      leder:
+        range: Personalressurs
+        description: |
+          Ansvarlig leder for organisasjonselementet
+          
+          # Beskrivelse
+          Normalt vil dette være leder som har personal- og økonomi-ansvar for dette organisasjonselementet.
+          
+          # Format
+          Relasjon til en bestemt leder (Personalressurs).
+          
+          # Eksempler
+      ansvar:
+        range: Ansvar
+        description: |
+          Ansvar i kontoplanen som organisasjonselement er knyttet til.
+        multivalued: true
+      organisasjonstype:
+        range: Organisasjonstype
+        description: |
+          Hvilken type organisasjonselement dette er.
+      overordnet:
+        range: Organisasjonselement
+        description: |
+          Referanse til organisasjonselement på nivået over gjeldende organisasjonselement.
+          
+          # Beskrivelse
+          Alle overordnede (forelder) organisasjonselement.
+          
+          På øverste nivå, vil overordnet peke til seg selv.
+          
+          # Format
+          Referanse til seg selv.
+          
+          # Eksempler
+          
+          * *Faggruppe for digitalisering og systemforvaltning* refererer til overordnet organisasjonselement, som er *IT-seksjonen*.
+          * *Avdeling for helse og sosial* kan referere til organisasjonselemenetet til skolen, som kan være *Byremo videregående skole*
+        required: true
+      skole:
+        range: Skole
+        description: |
+          Referanse til Utdannings domenet
+      arbeidsforhold:
+        range: Arbeidsforhold
+        description: |
+          Alle arbeidsforhold til et organisasjonselement.
+        multivalued: true

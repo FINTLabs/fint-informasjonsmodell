@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/arkiv/personal
+name: arkiv.personal
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+  - administrasjon.organisasjon
+  - administrasjon.personal
+  - arkiv.noark
+  - felles
+
+classes:
+
+  Personalmappe:
+    description: |
+      Saksmappe med opplysninger om den enkelte arbeidstakers arbeidsforhold.
+      
+      # Beskrivelse
+      
+      Opplysninger i en personalmappe kan være personalia, arbeidskontrakt og annen korrespondanse som berører arbeidsforholdet.
+    is_a: Saksmappe
+    attributes:
+      navn:
+        range: Personnavn
+        description: |
+          Navn på arbeidstaker personalmappe gjelder for.
+        required: true
+      person:
+        range: Person
+        description: |
+          Person som personalmappe gjelder for.
+        required: true
+      leder:
+        range: Personalressurs
+        description: |
+          Personalressurs som er arbeidstakers leder.
+        required: true
+      arbeidssted:
+        range: Organisasjonselement
+        description: |
+          Organisasjonselement som er arbeidstakers arbeidssted.
+        required: true
+      personalressurs:
+        range: Personalressurs
+        description: |
+          Personalressurs som personalmappe gjelder for.
+        required: true

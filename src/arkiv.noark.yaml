@@ -1,0 +1,2180 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/arkiv/noark
+name: arkiv.noark
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+  - administrasjon.organisasjon
+  - administrasjon.personal
+  - arkiv.kodeverk
+
+classes:
+
+  AdministrativEnhet:
+    description: |
+      Navn på avdeling, kontor eller annen administrativ enhet som har ansvaret for saksbehandlingen.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 standard - kap. 4.2
+      * Noark 5 versjon 5.0 metadatakatalog - nr. M086
+      
+      # Referanser
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    attributes:
+      gyldighetsperiode:
+        range: Periode
+        description: |
+          Periode hvor administrativ enhet er gyldig.
+      navn:
+        range: string
+        description: |
+          Navn på administrativ enhet.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M583
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+      systemId:
+        range: Identifikator
+        description: |
+          Unik intern systemidentifikasjon for administrativ enhet
+        required: true
+      organisasjonselement:
+        range: Organisasjonselement
+        description: |
+          Organisasjonselement administrativ enhet er knyttet til.
+
+  Arkivdel:
+    description: |
+      En vilkårlig definert del av et arkiv. Et arkiv skal kunne deles opp i arkivdeler for å gruppere arkivet etter overordnede kriterier. 
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 standard - kap. 2.3
+      
+      # Referanser 
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Globalt unik identifikasjon av arkivenheten (UID).
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M001
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+      tittel:
+        range: string
+        description: |
+          Tittel eller navn på arkivdel
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M020
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+      klassifikasjonssystem:
+        range: Klassifikasjonssystem
+        description: |
+          Klassifikasjonssystemer benyttet i arkivdel.
+        multivalued: true
+      registrering:
+        range: Registrering
+        description: |
+          Registreringer som tilhører arkivdel.
+        multivalued: true
+      mappe:
+        range: Mappe
+        description: |
+          Mapper som tilhører arkivdel.
+        multivalued: true
+
+  Arkivressurs:
+    description: |
+      Ansatt med rolle og rettigheter innen arkiv.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 standard - kap. 4.3
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    attributes:
+      kildesystemId:
+        range: Identifikator
+        description: |
+          Kildesystemets identifikator av Arkivressurs.
+      systemId:
+        range: Identifikator
+        description: |
+          Unik intern systemidentifikasjon for arkivressurs.
+      personalressurs:
+        range: Personalressurs
+        description: |
+          Informasjon om ansettelsesforhold.
+        required: true
+      autorisasjon:
+        range: Autorisasjon
+        description: |
+          Autorisasjoner for tilgangsrestriksjoner gitt til arkivressurs.
+        multivalued: true
+      tilgang:
+        range: Tilgang
+        description: |
+          Tilganger gitt til arkivressurs.
+        multivalued: true
+
+  Autorisasjon:
+    description: |
+      Siling av hva en individuell pålogget bruker faktisk får lov til å gjøre i løsningen.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 standard - kap. 4.5 
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Unik intern systemidentifikasjon for autorisasjon.
+        required: true
+      tilgangsrestriksjon:
+        range: Tilgangsrestriksjon
+        description: |
+          Tilgangsrestriksjoner autorisasjon er gitt for
+        multivalued: true
+        required: true
+      administrativenhet:
+        range: AdministrativEnhet
+        description: |
+          Administrative enheter autorisasjon er gyldig for
+        multivalued: true
+      arkivressurs:
+        range: Arkivressurs
+        description: |
+          Arkivressurser som har fått autorisasjon
+        multivalued: true
+
+  Avskrivning:
+    description: |
+      En Journalpost av typen ”inngående dokument” eller ”organinternt dokument for oppfølging” står i restanse inntil de er markert som ferdigbehandlet, eller avskrives. Det følger av arkivforskriften &#167; 10 at avskrivningsmåte skal fremgå av journalen.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 standard, kapittel 3.4 Avskrivning og saksoppfølging  
+      
+      # Referanser 
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    attributes:
+      avskrevetAv:
+        range: string
+        description: |
+          Avskrevet av
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog, M618
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+      avskrivningsdato:
+        range: string
+        description: |
+          Dato og klokkelsett for avskrivning
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog, M617
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990 klokken 13:30 (UTC +1)` -&gt; `1990-03-29T12:30:00Z`
+          
+          * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
+        required: true
+      avskrivningsmate:
+        range: string
+        description: |
+          Hvordan journalposten avskrives
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog, M619
+          
+          # Eksempel
+          
+          | Verdi (avskrivningsmåte) | Beskrivelse |
+          | ------- | ---------------- |
+          | BU | Besvart med brev |
+          | BE | Besvart med e-post |
+          | TLF | Besvart på telefon |
+          | TE | Tatt til etterretning |
+          | TO | Tatt til orientering |
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+
+  Dokumentbeskrivelse:
+    description: |
+      Den vanligste bruken av <i>dokumentbeskrivelse </i>er for å skille mellom hoveddokument og vedlegg, hvor hoveddokumentet og hvert av vedleggene utgjør hvert sitt enkeltdokument.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 standard - kap. 2.7 
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    attributes:
+      beskrivelse:
+        range: string
+        description: |
+          Tekstlig beskrivelse av arkivenheten.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M021
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      dokumentnummer:
+        range: string
+        description: |
+          Identifikasjon av dokumentene innenfor en registrering.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M007
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      dokumentobjekt:
+        range: Dokumentobjekt
+        description: |
+          Dokumentobjekt tilhørende dokumentbeskrivelsen.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 standard - kap. 2.7
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        multivalued: true
+      forfatter:
+        range: string
+        description: |
+          Navn på person (eller eventuelt organisasjon) som har forfattet eller skapt dokumentet.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M024
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        multivalued: true
+      opprettetDato:
+        range: string
+        description: |
+          Dato og klokkeslett når arkivenheten ble opprettet/registrert.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M600
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990 klokken 13:30 (UTC +1)` -&gt; `1990-03-29T12:30:00Z`
+          
+          * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
+      part:
+        range: Part
+        description: |
+          Parter til dokument.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 standard - kap. 2.8.5
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        multivalued: true
+      referanseArkivdel:
+        range: string
+        description: |
+          Referanse til arkivdelen som denne arkivenheten er tilknyttet.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M208
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        multivalued: true
+      skjerming:
+        range: Skjerming
+        description: |
+          Skjerming av dokument.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 standard - kap. 2.8.1
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      tilknyttetDato:
+        range: string
+        description: |
+          Datoen et dokument ble knyttet til en registrering.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M620
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990` -&gt; `1990-03-29T12:00:00Z`
+          
+          * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
+      tittel:
+        range: string
+        description: |
+          Tittel eller navn på arkivenheten.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M020
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+      dokumentType:
+        range: DokumentType
+        description: |
+          Navn på type dokument.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M083
+          
+          I Noark ble begrepet Dokumentkategori endret til Dokumenttype i versjon 4.
+          Begrepet Dokumentkategori brukes i Elements og P360.
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden#!#block-body-2
+        required: true
+      tilknyttetAv:
+        range: Arkivressurs
+        description: |
+          Navn på person som knyttet et dokument til en registrering.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M621
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+      opprettetAv:
+        range: Arkivressurs
+        description: |
+          Navn på person som opprettet/registrerte arkivenheten.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M601
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+      dokumentstatus:
+        range: DokumentStatus
+        description: |
+          Status til dokumentet.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M054
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+      tilknyttetRegistreringSom:
+        range: TilknyttetRegistreringSom
+        description: |
+          Angivelse av hvilken rolle dokumentet har i forhold til registreringen.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M217
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        multivalued: true
+        required: true
+
+  Dokumentfil:
+    description: |
+      Dokumentfila inneholder selve dokumentet. Dersom dokumentet er arkivert i flere versjoner, må vi ha et dokumentobjekt og en dokumentfil for hver versjon.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 standard - kap. 2.7 
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    attributes:
+      data:
+        range: string
+        description: |
+          Dokumentfilens data, kodet som Base64.
+        required: true
+      filnavn:
+        range: string
+        description: |
+          Dokumentfilens navn.
+      format:
+        range: string
+        description: |
+          Format på dokumentfil, som IANA Media Type.
+          
+          Se https://www.iana.org/assignments/media-types/media-types.xhtml for en oversikt over lovlige verdier.
+        required: true
+      systemId:
+        range: Identifikator
+        description: |
+          Unik intern systemidentifikasjon for dokumentfil.
+        required: true
+
+  Dokumentobjekt:
+    description: |
+      Dokumentobjekt skal referere til &#233;n og kun en dokumentfil. Dokumentfila inneholder selve dokumentet.
+    attributes:
+      filstorrelse:
+        range: string
+        description: |
+          Størrelsen på fila i antall bytes oppgitt med desimaltall.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M707
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      format:
+        range: string
+        description: |
+          Dokumentets format.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M701
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      formatDetaljer:
+        range: string
+        description: |
+          Nærmere spesifikasjon av dokuments format, f.eks. informasjon om komprimering.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M702
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      sjekksum:
+        range: string
+        description: |
+          En verdi som beregnes ut fra innholdet i dokumentet, og som dermed gir integritetssikring til dokumentets innhold.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M705
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      sjekksumAlgoritme:
+        range: string
+        description: |
+          Algoritmen som er brukt for å beregne sjekksummen.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M706
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      versjonsnummer:
+        range: string
+        description: |
+          Identifikasjon av versjoner innenfor ett og samme dokument.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M005
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      referanseDokumentfil:
+        range: Dokumentfil
+        description: |
+          Referanse til filen som inneholder det elektroniske dokumentet som dokumentobjektet beskriver.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M218
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      variantFormat:
+        range: Variantformat
+        description: |
+          Angivelse av hvilken variant et dokument forekommer.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M700
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+      opprettetAv:
+        range: Arkivressurs
+        description: |
+          Navn på person som opprettet/registrerte arkivenheten.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M601
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+      filformat:
+        range: Format
+        description: |
+          Dokumentets format.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M701
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+
+  Journalpost:
+    description: |
+      En journalpost representer en "innføring i journalen". Journalen er en kronologisk fortegnelse over inn- og utgående dokumenter (dvs. korrespondansedokumenter) brukt i saksbehandlingen, og eventuelt også interne dokumenter.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 standard - kap. 2.6 
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    is_a: Registrering
+    attributes:
+      antallVedlegg:
+        range: string
+        description: |
+          Antall fysiske vedlegg til et fysisk hoveddokument.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M304
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      avskrivning:
+        range: Avskrivning
+        description: |
+          Avskrivning av journalpost
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 standard, kapittel 3.4 Avskrivning og saksoppfølging  
+          
+          # Referanser 
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      dokumentetsDato:
+        range: string
+        description: |
+          Dato som er påført selve dokumentet.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M103
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990` -&gt; `1990-03-29T12:00:00Z`
+          
+          * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
+      forfallsDato:
+        range: string
+        description: |
+          Dato som angir fristen for når et inngående dokument må være besvart.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M109
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990` -&gt; `1990-03-29T12:00:00Z`
+          
+          * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
+      journalAr:
+        range: string
+        description: |
+          Viser året journalposten ble opprettet.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M013
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      journalDato:
+        range: string
+        description: |
+          Datoen journalposten er opprettet/arkivert.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M101
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990` -&gt; `1990-03-29T12:00:00Z`
+          
+          * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
+      journalPostnummer:
+        range: string
+        description: |
+          Inngår i M004 journalpostID. Viser rekkefølgen journalpostene ble opprettet innenfor saksmappen, f.eks. 2011/3869-8 (dokument nr. 8 i sak 2011/3869).
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M015
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      journalSekvensnummer:
+        range: string
+        description: |
+          Viser rekkefølgen når journalposten ble opprettet under året.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M014
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      mottattDato:
+        range: string
+        description: |
+          Dato et eksternt dokument ble mottatt.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M104
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990` -&gt; `1990-03-29T12:00:00Z`
+          
+          * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
+      offentlighetsvurdertDato:
+        range: string
+        description: |
+          Datoen da offentlighetsvurdering ble foretatt.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M110
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990` -&gt; `1990-03-29T12:00:00Z`
+          
+          * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
+      sendtDato:
+        range: string
+        description: |
+          Dato et internt produsert dokument ble sendt/ekspedert.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M105
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990` -&gt; `1990-03-29T12:00:00Z`
+          
+          * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
+      journalstatus:
+        range: JournalStatus
+        description: |
+          Status til journalposten, dvs. om dokumentet er registrert, under behandling eller endelig arkivert.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M053
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+      journalenhet:
+        range: AdministrativEnhet
+        description: |
+          Navn på enhet som har det arkivmessige ansvaret for kvalitetssikring av arkivdanningen, og eventuelt registrering (journalføring) og arkivering av fysiske dokumenter.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M308
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      journalposttype:
+        range: JournalpostType
+        description: |
+          Navn på type journalpost.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M082
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+
+  Klasse:
+    description: |
+      Et klassifikasjonssystem er bygd opp av klasser. 
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 standard - kap. 2.4
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    attributes:
+      klasseId:
+        range: string
+        description: |
+          Entydig identifikasjon av klassen innenfor klassifikasjonssystemet.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M002
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+      rekkefølge:
+        range: string
+        description: |
+          Rekkefølge for klassifiseringer
+          
+          # Beskrivelse
+          
+          Angir i hvilken rekkefølge klassifiseringene skal brukes til å sortere / ordne lister m.m.
+      skjerming:
+        range: Skjerming
+        description: |
+          Skjerming av klasse.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 standard - kap. 2.8.1
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      tittel:
+        range: string
+        description: |
+          Tittel eller navn på arkivenheten
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M020
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+      klassifikasjonssystem:
+        range: Klassifikasjonssystem
+        description: |
+          Klassifikasjonssystem klassen tilhører
+        required: true
+
+  Klassifikasjonssystem:
+    description: |
+      Beskriver den overordnede strukturen for mappene i en eller flere arkivdeler.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 standard - kap. 2.4 
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    attributes:
+      avsluttetAv:
+        range: string
+        description: |
+          Navn på person som avsluttet/lukket arkivenheten.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M603
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      avsluttetDato:
+        range: string
+        description: |
+          Dato og klokkeslett når arkivenheten ble avsluttet/lukket.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M602
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990 klokken 13:30 (UTC +1)` -&gt; `1990-03-29T12:30:00Z`
+          
+          * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
+      beskrivelse:
+        range: string
+        description: |
+          Tekstlig beskrivelse av arkivenheten.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M021
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      klasse:
+        range: Klasse
+        description: |
+          Klasser tilhørende klassifikasjonssystemet.
+        multivalued: true
+        required: true
+      opprettetAv:
+        range: string
+        description: |
+          Navn på person som opprettet/registrerte arkivenheten.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M601
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+      opprettetDato:
+        range: string
+        description: |
+          Dato og klokkeslett når arkivenheten ble opprettet/registrert.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M600
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990 klokken 13:30 (UTC +1)` -&gt; `1990-03-29T12:30:00Z`
+          
+          * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
+        required: true
+      systemId:
+        range: Identifikator
+        description: |
+          Globalt unik identifikasjon av arkivenheten (UID).
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M001
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+      tittel:
+        range: string
+        description: |
+          Tittel eller navn på arkivenheten.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M020
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+      klassifikasjonstype:
+        range: Klassifikasjonstype
+        description: |
+          Type klassifikasjonssystem.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M086
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      arkivdel:
+        range: Arkivdel
+        description: |
+          Arkivdeler klassifikasjonssystemet benyttes i.
+        multivalued: true
+        required: true
+
+  Korrespondansepart:
+    description: |
+      Virksomhet eller person som arkivskaper mottar eller sender arkivdokumenter til.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 standard - kap. 2.6 
+      
+      # Referanser 
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    attributes:
+      adresse:
+        range: Adresse
+        description: |
+          Adressen til korrespondanseparten.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M406, M407, M408 og M409
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      fødselsnummer:
+        range: string
+        description: |
+          Fødselsnummer til Korrespondansepart.
+          
+          Kun gyldig hvis Korrespondansepart er privatperson.
+      kontaktinformasjon:
+        range: Kontaktinformasjon
+        description: |
+          Kontaktinformasjon til korrespondansepart.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M410 og M411
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      kontaktperson:
+        range: string
+        description: |
+          Kontaktperson hos en organisasjon som er avsender eller mottaker, eller sakspart
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M412
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      korrespondansepartNavn:
+        range: string
+        description: |
+          Navn på person eller organisasjon som er avsender eller mottaker av dokumentet
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M400
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      organisasjonsnummer:
+        range: string
+        description: |
+          Organisasjonsnummer til Korrespondansepart.
+          
+          Kun gyldig hvis Korrespondansepart er en organisasjon.
+      skjerming:
+        range: Skjerming
+        description: |
+          Skjerming av korrespodansepart.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 standard - kap. 2.8.1
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      korrespondanseparttype:
+        range: KorrespondansepartType
+        description: |
+          Type korrespondansepart
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M087
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+
+  Mappe:
+    description: |
+      En mappe grupperer dokumenter som på en eller annen måte hører sammen.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 standard - kap. 2.5 
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    abstract: true
+    attributes:
+      avsluttetDato:
+        range: string
+        description: |
+          Dato og klokkeslett når arkivenheten ble avsluttet/lukket
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M602
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990 klokken 13:30 (UTC +1)` -&gt; `1990-03-29T12:30:00Z`
+          
+          * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
+      beskrivelse:
+        range: string
+        description: |
+          Tekstlig beskrivelse av arkivenheten
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M021
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      klasse:
+        range: Klasse
+        description: |
+          Klassifisering av mappe.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 standard - kap. 2.4
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        multivalued: true
+      mappeId:
+        range: Identifikator
+        description: |
+          Entydig identifikasjon av mappen innenfor det arkivet mappen tilhører. 
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M003
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      merknad:
+        range: Merknad
+        description: |
+          Merknader knyttet til mappe.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 standard - kap. 2.8.4
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        multivalued: true
+      noekkelord:
+        range: string
+        description: |
+          Nøkkeord eller stikkord som beskriver innholdet i enheten
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M022
+          * Noark 5 versjon 5.0 standard - kap. 2.8.2
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        multivalued: true
+      offentligTittel:
+        range: string
+        description: |
+          Offentlig tittel på arkivenheten, ord som skal skjermes er fjernet fra innholdet i tittelen (erstattet med ******)
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M025
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      opprettetDato:
+        range: string
+        description: |
+          Dato og klokkeslett når arkivenheten ble opprettet/registrert
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M600
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990 klokken 13:30 (UTC +1)` -&gt; `1990-03-29T12:30:00Z`
+          
+          * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
+      part:
+        range: Part
+        description: |
+          Parter til mappe.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 standard - kap. 2.8.5
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        multivalued: true
+      skjerming:
+        range: Skjerming
+        description: |
+          Skjerming av mappe.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 standard - kap. 2.8.1
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      systemId:
+        range: Identifikator
+        description: |
+          Globalt unik identifikasjon av arkivenheten (UID).
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M001
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      tittel:
+        range: string
+        description: |
+          Tittel eller navn på arkivenheten
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M020
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      avsluttetAv:
+        range: Arkivressurs
+        description: |
+          Navn på person som avsluttet/lukket arkivenheten
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M603
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      opprettetAv:
+        range: Arkivressurs
+        description: |
+          Navn på person som opprettet/registrerte arkivenheten.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M601
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+      arkivdel:
+        range: Arkivdel
+        description: |
+          Arkivdel som mappe tilhører.
+
+  Merknad:
+    description: |
+      Merknader knyttet til mappe, registrering eller dokumentbeskrivelse.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 standard - kap. 2.8.4 
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    attributes:
+      merknadsdato:
+        range: string
+        description: |
+          Dato og klokkeslett når merknaden ble registrert
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M611
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990 klokken 13:30 (UTC +1)` -&gt; `1990-03-29T12:30:00Z`
+          
+          * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
+        required: true
+      merknadstekst:
+        range: string
+        description: |
+          Merknad fra saksbehandler, leder eller arkivpersonale
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M310
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+      merknadRegistrertAv:
+        range: Arkivressurs
+        description: |
+          Person som har registrert merknaden.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M612
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+      merknadstype:
+        range: Merknadstype
+        description: |
+          Type merknad.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M084
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+
+  Part:
+    description: |
+      Part til Mappe, Registrering eller Dokumentbeskrivelse.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 standard - kap. 2.8.5
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    attributes:
+      adresse:
+        range: Adresse
+        description: |
+          Adressen til saksparten.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M406, M407, M408 og M409
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      fødselsnummer:
+        range: string
+        description: |
+          Fødselsnummer til part. Kun gyldig hvis Part er en Privatperson.
+      kontaktinformasjon:
+        range: Kontaktinformasjon
+        description: |
+          Kontaktinformasjonen til saksparten.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M410 og M411
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      kontaktperson:
+        range: string
+        description: |
+          Kontaktperson hos en organisasjon som er avsender eller mottaker, eller sakspart.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M412
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      organisasjonsnummer:
+        range: string
+        description: |
+          Organisasjonsnummer til Part. Kun gyldig hvis Part er en organisasjon.
+      partNavn:
+        range: string
+        description: |
+          Navn på virksomhet eller person som er part.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M302
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+      partRolle:
+        range: PartRolle
+        description: |
+          Angivelse av rollen til parten.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M303
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+
+  Registrering:
+    description: |
+      En registrering utgjør arkivets primære byggeklosser.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 standard - kap. 2.6 
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    abstract: true
+    attributes:
+      arkivertDato:
+        range: string
+        description: |
+          Dato og klokkeslett når alle dokumentene som er tilknyttet registreringen ble arkivert
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M604
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990 klokken 13:30 (UTC +1)` -&gt; `1990-03-29T12:30:00Z`
+          
+          * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
+      beskrivelse:
+        range: string
+        description: |
+          Tekstlig beskrivelse av arkivenheten
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M201
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      dokumentbeskrivelse:
+        range: Dokumentbeskrivelse
+        description: |
+          Dokumentbeskrivelsene til en registrering.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 standard - kap. 2.7
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        multivalued: true
+      forfatter:
+        range: string
+        description: |
+          Navn på person (eller eventuelt organisasjon) som har forfattet eller skapt dokumentet.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M024
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        multivalued: true
+      klasse:
+        range: Klasse
+        description: |
+          Klassifisering av registrering.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 standard - kap. 2.4
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      korrespondansepart:
+        range: Korrespondansepart
+        description: |
+          Mottaker eller sender av arkivdokumenter.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 standard - kap. 2.6
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        multivalued: true
+      merknad:
+        range: Merknad
+        description: |
+          Merknader til registrering.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 standard- kap. 2.8.4
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        multivalued: true
+      nokkelord:
+        range: string
+        description: |
+          Nøkkeord eller stikkord som beskriver innholdet i enheten.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M022
+          * Noark 5 versjon 5.0 standard - kap. 2.8.2
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        multivalued: true
+      offentligTittel:
+        range: string
+        description: |
+          Offentlig tittel på arkivenheten, ord som skal skjermes er fjernet fra innholdet i tittelen (erstattet med ******)
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M025
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      opprettetDato:
+        range: string
+        description: |
+          Dato og klokkeslett når arkivenheten ble opprettet/registrert.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M600
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990 klokken 13:30 (UTC +1)` -&gt; `1990-03-29T12:30:00Z`
+          
+          * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
+      part:
+        range: Part
+        description: |
+          Parter til registrering.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 standard - kap. 2.8.5
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        multivalued: true
+      referanseArkivDel:
+        range: string
+        description: |
+          Referanse til arkivdelen som denne arkivenheten er tilknyttet
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M208
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        multivalued: true
+      registreringsId:
+        range: string
+        description: |
+          Inngår i M004 journalpostID. Viser rekkefølgen journalpostene ble opprettet innenfor saksmappen, f.eks. 2011/3869-8 (dokument nr. 8 i sak 2011/3869).
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M004
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      skjerming:
+        range: Skjerming
+        description: |
+          Skjerming av registrering.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 standard - kap. 2.8.1
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      tittel:
+        range: string
+        description: |
+          Tittel eller navn på arkivenheten.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M020
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+      saksbehandler:
+        range: Arkivressurs
+        description: |
+          Navn på person som er saksbehandler.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M307
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      tilgangsgruppe:
+        range: Tilgangsgruppe
+        description: |
+          Angir hvilken tilgangsgruppe som har tilgang til Registreringen
+      arkivdel:
+        range: Arkivdel
+        description: |
+          Arkivdel som registrering tilhører.
+      arkivertAv:
+        range: Arkivressurs
+        description: |
+          Navn på person som opprettet/registrerte arkivenheten.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M601
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+      opprettetAv:
+        range: Arkivressurs
+        description: |
+          Navn på person som opprettet/registrerte arkivenheten.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M601
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+      administrativEnhet:
+        range: AdministrativEnhet
+        description: |
+          Navn på avdeling, kontor eller annen administrativ enhet som har ansvaret for saksbehandlingen.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M305
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+
+  Sak:
+    description: |
+      Generisk sak.
+    is_a: Saksmappe
+
+  Saksmappe:
+    description: |
+      Spesialisering av Mappe som tilsvarer en ”sak” i Noark.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 standard - kap. 2.5 
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    abstract: true
+    is_a: Mappe
+    attributes:
+      arkivnotat:
+        range: Registrering
+        description: |
+          Arkivnotater knyttet til saksmappe.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 standard - kap. 2.6
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        multivalued: true
+      journalpost:
+        range: Journalpost
+        description: |
+          Journalposter knyttet til saksmappe.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 standard - kap. 2.6
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        multivalued: true
+      saksaar:
+        range: string
+        description: |
+          Inngår i M003 mappeID. Viser året saksmappen ble opprettet.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M011
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      saksdato:
+        range: string
+        description: |
+          Datoen saken er opprettet
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M100
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990` -&gt; `1990-03-29T12:00:00Z`
+          
+          * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
+      sakssekvensnummer:
+        range: string
+        description: |
+          Inngår i M003 mappeID. Viser rekkefølgen når saksmappen ble opprettet innenfor året.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M012
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      utlaantDato:
+        range: string
+        description: |
+          Dato når en fysisk saksmappe eller journalpost ble utlånt
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M106
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          29. mars 1990 -&gt; `1990-03-29T12:00:00Z`
+          
+          29. juni 1990 -&gt; `1990-06-29T12:00:00Z`
+      journalenhet:
+        range: AdministrativEnhet
+        description: |
+          Navn på enhet som har det arkivmessige ansvaret for kvalitetssikring av arkivdanningen, og eventuelt registrering (journalføring) og arkivering av fysiske dokumenter.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M308
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      saksstatus:
+        range: Saksstatus
+        description: |
+          Registreres automatisk gjennom forskjellig saksbehandlings- funksjonalitet, eller overstyres manuelt.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M052
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+      saksansvarlig:
+        range: Arkivressurs
+        description: |
+          Navn på person som er saksansvarlig.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M306
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+      saksmappetype:
+        range: Saksmappetype
+        description: |
+          Type saksmappe.
+      administrativEnhet:
+        range: AdministrativEnhet
+        description: |
+          Navn på avdeling, kontor eller annen administrativ enhet som har ansvaret for saksbehandlingen.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M305
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+      tilgangsgruppe:
+        range: Tilgangsgruppe
+        description: |
+          Angir hvilken tilgangsgruppe som har tilgang til saksmappen.
+
+  Skjerming:
+    description: |
+      Skjerming benyttes til å skjerme registrerte opplysninger eller enkeltdokumenter. Skjermingen trer i kraft når en tilgangskode påføres den enkelte mappe, registrering eller det enkelte dokument.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 standard - kap. 2.8.1 
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    attributes:
+      skjermingshjemmel:
+        range: Skjermingshjemmel
+        description: |
+          Skjermingshjemmel. 
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M501
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+      tilgangsrestriksjon:
+        range: Tilgangsrestriksjon
+        description: |
+          Tilgangsrestriksjon.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M500
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+
+  Tilgang:
+    description: |
+      Styring av hvem som har tilgang til hvilke opplysninger. 
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 standard - kap. 4 
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Unik intern systemidentifikasjon for tilgang.
+        required: true
+      tittel:
+        range: string
+        description: |
+          Tittel eller navn på tilgangen.
+        required: true
+      rolle:
+        range: Rolle
+        description: |
+          Rolle tilknyttet tilgangen.
+        required: true
+      arkivressurs:
+        range: Arkivressurs
+        description: |
+          Arkivressurser som er tildelt tilgangen.
+        multivalued: true
+      administrativEnhet:
+        range: AdministrativEnhet
+        description: |
+          Administrativ enhet tilknyttet tilgangen.
+      arkivdel:
+        range: Arkivdel
+        description: |
+          Arkivdel tilknyttet tilgangen.

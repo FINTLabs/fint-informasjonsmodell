@@ -1,0 +1,397 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/administrasjon/kodeverk
+name: administrasjon.kodeverk
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+  - administrasjon.fullmakt
+  - administrasjon.organisasjon
+
+classes:
+
+  Aktivitet:
+    description: |
+      Aktivitet er en del av kontostrengen og er en detaljering av funksjon.
+    is_a: Kontodimensjon
+
+  Anlegg:
+    description: |
+      Anlegg er en del av kontostrengen og er et objekt som skal aktiveres eller avskrives.
+    is_a: Kontodimensjon
+
+  Ansvar:
+    description: |
+      Kodeverk som er en del av kontostrengen som beskriver hvem som har ansvaret for en utgift eller en inntekt
+      
+      # Beskrivelse
+      
+      Ansvar viser hvordan ansvaret i organisasjonen er bygd opp i samsvar med fylkeskommunens anvisningsmyndighet.
+      
+      Alternative navn: `Kostsenter`, `Koststed`.
+    is_a: Kontodimensjon
+    attributes:
+      overordnet:
+        range: Ansvar
+        description: |
+          Overordnet ansvar
+      organisasjonselement:
+        range: Organisasjonselement
+        description: |
+          Organisasjonselement ansvar er knyttet til.
+        multivalued: true
+      underordnet:
+        range: Ansvar
+        description: |
+          Alle underansvar
+        multivalued: true
+
+  Arbeidsforholdstype:
+    description: |
+      Viser hvilket behov hos arbeidsgiver som dekkes av arbeidsforholdet
+      
+      # Beskrivelse
+      
+      Viser hvilket behov hos arbeidsgiver som dekkes av arbeidsforholdet
+      
+      Alternative navn:
+      * Stillingstype
+      * Stillingskategori
+      * Ansattforholdkode
+      
+      # Eksempel
+      
+      Kode | Beskrivelse
+      ---|---
+      A   |     Fast
+      B    |    Timelønnet
+      C   |     Lærlinger
+      D   |     Folkevalgt/politiker
+      E    |    Midlertidig
+      ...   | ...
+      Z    |    Annet
+    is_a: Begrep
+    attributes:
+      forelder:
+        range: Arbeidsforholdstype
+        description: |
+          For å bygge hierarki av Arbeidsforholdstype
+
+  Art:
+    description: |
+      Kodeverk som er en del av kontostrengen som beskriver hva slags inntekter og utgifter det gjelder. 
+      
+      # Beskrivelse
+      
+      Alternativt navn: Konto
+      
+      Art er det første og såkalt styrende begrepet i kontostrengen. Angir om det er drift, investering eller balanse.
+    is_a: Kontodimensjon
+
+  Diverse:
+    description: |
+      Diverser er en del av kontostrengen og benyttes som et supplement til de spesifikasjoner som framkommer i de øvrige dimensjonene.
+    is_a: Kontodimensjon
+
+  Formål:
+    description: |
+      Kodeverk som detaljerer inntekter og utgifter ved drift
+    is_a: Kontodimensjon
+
+  Fraværsgrunn:
+    description: |
+      Grunn til fravær.
+      
+      # Eksempel
+      
+      - Arbeidsrelatert
+      - Ikke arbeidsrelatert
+      - Svangerskap
+    is_a: Begrep
+
+  Fraværstype:
+    description: |
+      Type fravær.
+      
+      # Beskrivelse
+      
+      Inneholder informasjon om hva slags type fravær det er som registreres, eksempelvis ferie, permisjon eller sykdom.
+      
+      Typen fravær brukes av HRM-systemet til å bestemme om fraværet har lønnskonsekvens, hvilken lønnsart som i så fall skal brukes, og om den er knyttet til en permisjon.
+      
+      # Eksempel
+      
+      - Egenmelding
+      - Syk med legemelding
+      - Barn og/ eller barnepassers sykdom
+      - Ferie med lønn
+      - Velferdspermisjon med lønn
+      - Utdanningspermisjon med lønn
+      - Utdanningspermisjon uten lønn
+      - Foreldrepermisjon 100%
+      - Foreldrepermisjon 80 %
+      - Avspasering
+      - Møter
+      - Kurs
+    is_a: Begrep
+    attributes:
+      overføres:
+        range: boolean
+        description: |
+          Angir om fravær av denne typen skal overføres til HR.
+          
+          # Beskrivelse
+          
+          Enkelte typer fravær indikerer fravær fra ordinære arbeidsoppgaver som utløser behov for vikar, men ikke fravær fra arbeidsforholdet.
+          
+          Disse skal ikke registreres i HR-systemet, men må likevel registreres i systemer som håndterer vikarer.
+          
+          Dersom feltet mangler, skal dette tolkes som at typen skal overføres.
+          
+          # Eksempel
+          
+          - Kurs
+          - Møter
+      lønnsart:
+        range: Lønnsart
+        description: |
+          Lønnsart fraværstypen føres på.
+
+  Funksjon:
+    description: |
+      Del av kontostrengen som beskriver hva som produseres
+      
+      # Beskrivelse
+      
+      Funksjon viser fylkeskommunens aktivitet og tjenesteproduksjon.
+      
+      Alternativ navn: `Tjeneste`
+    is_a: Kontodimensjon
+    attributes:
+      overordnet:
+        range: Funksjon
+        description: |
+          Overordnet funksjon.
+      underordnet:
+        range: Funksjon
+        description: |
+          De underordnede funksjonene.
+        multivalued: true
+
+  Kontodimensjon:
+    description: |
+      Abstrakt fellesbegrep som beskriver dimensjon i kontoplan.
+      
+      # Beskrivelse
+      
+      Fellesbenevnelse for dimensjoner i en kontoplan.
+    abstract: true
+    is_a: Begrep
+    attributes:
+      fullmakt:
+        range: Fullmakt
+        description: |
+          Alle fullmakter knyttet til kontodimensjonen.
+        multivalued: true
+
+  Kontrakt:
+    description: |
+      Kontrakt transaksjonen er knyttet til.
+    is_a: Kontodimensjon
+
+  Lønnsart:
+    description: |
+      Type ytelse.
+      
+      # Beskrivelse
+      
+      Lønnsart brukes av HRM-systemer for å indikere hvordan en ytelse skal behandles.
+      
+      Den inneholder også knytning til hvordan ytelsen skal rapporteres på A-meldingen.
+      
+      Tidligere hadde lønnsart knytning til LTO-kode og LT-kode.
+      
+      # Referanser
+      
+      * Rapportering av ytelser på A-meldingen: http://veiledning-amelding.smartlearn.no/Veiledn_Generell/index.html#!Documents/rapporteringavkontantytelser.htm
+      * Altinn: Innholdet i A-meldingen: https://www.altinn.no/no/a-ordningen/om-a-meldingen/Innholdet-i-a-meldingen/
+    is_a: Begrep
+    attributes:
+      kategori:
+        range: string
+        description: |
+          Kategori lønnsart
+          
+          # Beskrivelse
+          
+          Enkelte lønnsarter kan kun benyttes i sammenheng med enten fast eller variabel lønn.
+          
+          Kategori er et felt som indikerer denne begrensningen.
+          
+          # Eksempel
+          
+          - F: Kun fast lønn
+          - V: Kun variabel lønn
+      art:
+        range: Art
+        description: |
+          Art som lønnsart er tilknyttet.
+
+  Løpenummer:
+    description: |
+      Løpenummer i en nummerserie.
+    is_a: Kontodimensjon
+
+  Objekt:
+    description: |
+      Et bygg, en vei eller en bestemt mottaker av en tjeneste eller et tilskudd m.m.
+    is_a: Kontodimensjon
+
+  Organisasjonstype:
+    description: |
+      Typen til et organisasjonselement.
+      
+      # Eksempler
+      
+      * Virksomhet
+      * Klinikk
+      * Seksjon
+      * Avdeling
+      * Team
+      * Divisjon
+      * Stab
+      * Skolegruppe
+    is_a: Begrep
+
+  Personalressurskategori:
+    description: |
+      Ansattform til et arbeidsforhold
+      
+      # Beskrivelse
+      
+      Alternativ navn:
+      * Ansatt (er ikke datatype, men kodeverk)
+      * Ansattkategori
+      * Ansattformer"
+      
+      # Eksempel
+      
+      ## Eksempel fra Visma HR - Kategori:
+      
+      Kode | Beskrivelse
+      ---|---
+      F | Fast
+      M | Midlertidig
+      O | Oppdragstaker
+      P | Politiker
+      S | Sluttet
+      
+      ## Eksempel fra Agresso - Ressurstype:
+      
+      Kode  | Beskrivelse
+      ---|---
+      1 | Ansatt - kommunal
+      10 | Lærling/Ung arb.taker
+      2 | Ansatt - undervisning
+      3 | Honorar/godtgjørelse
+      4 | Sluttet
+      5 | Nyansatt
+      6 | Ikke ansatt - kun bruker
+      7 | Politikere
+      8|  Selvstendig næringsdrivende
+    is_a: Begrep
+
+  Prosjekt:
+    description: |
+      Del av kontostrengen som peker på løpende prosjekter.
+    is_a: Kontodimensjon
+    attributes:
+      prosjektart:
+        range: Prosjektart
+        description: |
+          Deloppgave eller delprosjekt som hører til prosjektet.
+        multivalued: true
+
+  Prosjektart:
+    description: |
+      Prosjektart er et element i enten en prosjektnedbrytningsstruktur eller en arbeidsnedbrytningsstruktur.
+      
+      # Prosjektnedbrytningsstruktur (PNS)
+      
+      Engelsk: Project Breakdown Structure (PBS)
+      
+      Det fokuseres på delprodukter:
+      
+      * Delprodukt
+      * Delprosjekt
+      
+      # Arbeidsnedbrytningsstruktur
+      
+      Engelsk: Work Breakdown Structure (WBS)
+      
+      Det fokuseres på arbeidsoppgaver:
+      
+      * Arbeidspakke
+      * Oppgave
+      * Deloppgave
+      
+      # Lenker
+      
+      * [En enkel oppskrift på en arbeidsnedbrytningsstruktur ](https://www.prosjektbloggen.no/en-enkel-oppskrift-pa-en-arbeidsnedbrytningsstruktur)
+      * [Prosjektnedbrytningsstruktur(PNS/WBS)](http://ledelsesspire.blogspot.com/2013/10/prosjektnedbrytningsstruktur-pnswbs.html)
+    is_a: Kontodimensjon
+    attributes:
+      underordnet:
+        range: Prosjektart
+        description: |
+          Prosjektarter i nivået under i strukturen.
+        multivalued: true
+      prosjekt:
+        range: Prosjekt
+        description: |
+          Prosjektet som er øverste nivå i en nedbrytningsstruktur.
+      overordnet:
+        range: Prosjektart
+        description: |
+          Prosjektart i nivået over i strukturen.
+
+  Ramme:
+    description: |
+      Ramme er en del av kontostrengen og viser hvilken budsjettramme som skal bære kostnadene.
+    is_a: Kontodimensjon
+
+  Stillingskode:
+    description: |
+      Et felles kodeverk for stillinger
+      
+      # Beskrivelse
+      
+      I det fylkeskommunale lønnssystemet har alle stillinger en stillingskode og en stillingsbetegnelse (for eksempel 7026 for bibliotekar eller 7076 for hjelpepleier). Stillingskoden kan angi noe om stillingens innhold og lønnsnivå.
+    is_a: Begrep
+    attributes:
+      forelder:
+        range: Stillingskode
+        description: |
+          For å bygge hierarki av Stillingskoder
+
+  Uketimetall:
+    description: |
+      Timer per uke i 100 % stilling
+      
+      # Beskrivelse
+      
+      # Eksempel
+      
+      ## Eksempel fra Agresso - Arbeidsplan:  
+      
+      Kode   |     Beskrivelse
+      ---|---
+      33,6   |     33,6 timers uke
+      34,0    |    34,0 timers uke
+      34,5     |   34,5 timers uke
+      35,0     |   35,0 timers uke
+      35,5     |   35,5 timers uke
+      36,0     |   36,0 timers uke
+      37,5     |   37,5 timers uke
+      ...    | ...
+    is_a: Begrep

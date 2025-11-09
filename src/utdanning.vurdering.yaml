@@ -1,0 +1,976 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/utdanning/vurdering
+name: utdanning.vurdering
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+  - administrasjon.kodeverk
+  - felles.kodeverk
+  - utdanning.basisklasser
+  - utdanning.elev
+  - utdanning.kodeverk
+  - utdanning.timeplan
+  - utdanning.utdanningsprogram
+
+classes:
+
+  Anmerkninger:
+    description: |
+      Aanmerkninger for en elev for et elevforhold.
+    attributes:
+      atferd:
+        range: string
+        description: |
+          Antall anmerkninger for atferd for eleven
+        required: true
+      orden:
+        range: string
+        description: |
+          Antall anmerkninger for orden for eleven
+        required: true
+      systemId:
+        range: Identifikator
+        description: |
+          Intern identifikator som brukes i kildesystemet.
+        required: true
+      skoleår:
+        range: Skoleår
+        description: |
+          Hvilket skoleår anmerkningene gjelder.
+
+  Eksamensgruppe:
+    description: |
+      Gruppering av elever som tar samme eksamen 
+      
+      # Beskrivelse
+      
+      Underordnet til fag.
+      
+      Kan brukes for å:
+      * Vise forhold mellom eksamensresultat og sensor
+      * Vise gruppering av elever som tok eksamen sammen
+      
+      Det er også mulig å koble resultater av eksamener direkte på klasse `Fag`.
+      
+      Eksamensgrupper har en kode som er sentralt definert av VIGO.
+    is_a: Gruppe
+    attributes:
+      eksamensdato:
+        range: string
+        description: |
+          Dato og klokkeslett for eksamen
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990 klokken 13:30 (UTC +1)` -&gt; `1990-03-29T12:30:00Z`
+          
+          * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
+      skole:
+        range: Skole
+        description: |
+          Skolen eksamensgruppen tilhører.
+        required: true
+      termin:
+        range: Termin
+        description: |
+          Termin for eksamensgruppe
+        required: true
+      eksamensform:
+        range: Eksamensform
+        description: |
+          Eksamensform for eksamensgruppe.
+      skoleår:
+        range: Skoleår
+        description: |
+          Skoleår for eksamensgruppe
+      eksamen:
+        range: Eksamen
+        description: |
+          Eksamenen som skal avholdes.
+      elevforhold:
+        range: Elevforhold
+        description: |
+          Alle elevforhold i eksamensgruppen
+        multivalued: true
+      fag:
+        range: Fag
+        description: |
+          Det faget som eksamen har vært i
+        required: true
+      gruppemedlemskap:
+        range: Eksamensgruppemedlemskap
+        description: |
+          Gruppemedlemskapene til en eksamensgruppe.
+        multivalued: true
+      undervisningsforhold:
+        range: Undervisningsforhold
+        description: |
+          Alle lærerne tilknyttet eksamensgruppen.
+        multivalued: true
+      sensor:
+        range: Sensor
+        description: |
+          Sensorer for eksamensgruppe.
+        multivalued: true
+
+  Eksamensgruppemedlemskap:
+    description: |
+      Medlemskap i eksamensgrupper.
+      
+      # Beskrivelse
+      
+      Gruppemedlemskap som knytter sammen elevforhold og eksamensgrupper.
+    is_a: Gruppemedlemskap
+    attributes:
+      delegert:
+        range: string
+        description: |
+          Viser om det er en delegert kandidat.
+      kandidatnummer:
+        range: string
+        description: |
+          PAS kandidatnummer.
+      eksamensgruppe:
+        range: Eksamensgruppe
+        description: |
+          Eksamensgruppen et gruppemedlemskap tilhører.
+        required: true
+      foretrukketSkole:
+        range: Skole
+        description: |
+          Skole hvor kandidaten foretrekker å ha eksamen.
+      elevforhold:
+        range: Elevforhold
+        description: |
+          Elevforhold et eksamensgruppemedlemskap tilhører.
+        required: true
+      nus:
+        range: Karakterstatus
+        description: |
+          Viser om dette er ny (N), utsatt (U) eller særskilt (S) eksamen (NUS-eksamen )
+          
+          Andre koder skal ikke brukes i denne sammenheng.
+          
+          # Referanser
+          
+          https://www.udir.no/eksamen-og-prover/eksamen/ny-utsatt-og-sarskilt-eksamen-nus-eksamen-/
+      betalingsstatus:
+        range: Betalingsstatus
+        description: |
+          Status for betaling av eksamen for privatister.
+      delegertTil:
+        range: Fylke
+        description: |
+          Fylke en eksamenskandidat er deligert/overført til.
+      foretrukketSensor:
+        range: Sensor
+        description: |
+          Ønsket sensor 1 hos en ekstern kurstilbyder knyttet til eksamensoppmeldingen til en privatistkandidat fra den eksterne kurstilbyderen.
+
+  Eksamensvurdering:
+    description: |
+      Eksamensvurdering gis etter deltakelse på eksamen.
+    is_a: Fagvurdering
+    attributes:
+      karakterhistorie:
+        range: Karakterhistorie
+        description: |
+          Viser tidligere karakterer hvis karakter er endret.
+      eksamensgruppe:
+        range: Eksamensgruppe
+        description: |
+          Eksamensgruppe vurderingen er foretatt i.
+        required: true
+      elevvurdering:
+        range: Elevvurdering
+        description: |
+          Vurderingsinformasjon for en elev.
+        required: true
+
+  Elevfravær:
+    description: |
+      Manglende tilstedeværelse i opplæringen.
+      
+      # Beskrivelse
+      
+      Fravær føres med relasjon til den undervisningen eleven har vært fraværende fra.
+      
+      # Fraværsgrense 
+      
+      * Elever i videregående skole skal møte opp og delta aktivt i opplæringen. 
+      * Fravær skal registreres, og det foreligger grenser på hvor mye fravær som tillates før rett til å få halvårsvurdering med karakter eller standpunktkarakter i et fag bortfaller. 
+      * Eleven må legge fram relevant dokumentasjon for å få fravær unntatt fra fraværsgrensen.
+      * Fraværsgrensen gjelder timefravær i enkeltfag, ikke elevenes totale fravær.
+      * Eleven skal få et varsel om han eller hun står i fare for å ikke få karakter på grunn av fravær.
+      
+      # Fravær eksamen
+      Det føres ikke lenger fravær på eksamen. Dette vil bli satt som karakter. Pga dette utgår relasjonen til eksamensgruppe. Ved en senere hovedoppdatering av Informasjonsmodellen vil multiplisitet for relasjonen  undervisningsgruppe bli satt til 1.
+      
+      # Referanser
+      
+      * UDir Registreringshåndbok: http://regbok.udir.no/35004/3344/35042-1018643.html
+      * Forskrift til opplæringslova &#167; 3-3, siste ledd: https://lovdata.no/forskrift/2006-06-23-724/&#167;3-3
+      * Forskrift til opplæringslova &#167; 3-47: https://lovdata.no/forskrift/2006-06-23-724/&#167;3-47
+      * UDir. Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet, pkt 8: https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/8-fravar/
+      * SNL. Fravær: https://snl.no/fravær
+      * Rundskriv Udir-3-2016: https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Vitnemal/fravarsgrense---udir-3-2016/
+      * UDir. Fravær i videregående skole: https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Vitnemal/fravar-i-videregaende-skole/
+    attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Kildesystemets unike identifikator
+        required: true
+      fraværsregistrering:
+        range: Fraværsregistrering
+        description: |
+          Liste av fraværsregistreringer.
+        multivalued: true
+      elevforhold:
+        range: Elevforhold
+        description: |
+          Elevforholdet fraværet er registrert på.
+        required: true
+
+  Elevvurdering:
+    description: |
+      Vurderingsinformasjon for en elev.
+    attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Systemidentifikator i fagsystemet.
+        required: true
+      sluttfagvurdering:
+        range: Sluttfagvurdering
+        description: |
+          Sluttvurdering i fag for eleven.
+        multivalued: true
+      underveisordensvurdering:
+        range: Underveisordensvurdering
+        description: |
+          Underveisvurdering av orden og atferd for eleven.
+        multivalued: true
+      vitnemålsmerknad:
+        range: Vitnemålsmerknad
+        description: |
+          Elevens vitnemålsmerknader.
+        multivalued: true
+      underveisfagvurdering:
+        range: Underveisfagvurdering
+        description: |
+          Underveisvurdering i fag for eleven.
+        multivalued: true
+      halvårsordensvurdering:
+        range: Halvårsordensvurdering
+        description: |
+          Halvårsvurdering av orden og atferd for eleven.
+        multivalued: true
+      elevforhold:
+        range: Elevforhold
+        description: |
+          Elevforholdet til eleven vurderingsinformasjonen gjelder.
+        required: true
+      halvårsfagvurdering:
+        range: Halvårsfagvurdering
+        description: |
+          Halvårsvurdering i fag for eleven.
+        multivalued: true
+      sluttordensvurdering:
+        range: Sluttordensvurdering
+        description: |
+          Sluttvurdering av orden og atferd for eleven.
+        multivalued: true
+      eksamensvurdering:
+        range: Eksamensvurdering
+        description: |
+          Eksamensvurdering i fag for eleven.
+        multivalued: true
+
+  Fagvurdering:
+    description: |
+      Karakterer og andre vurderingsuttrykk.
+      
+      # Beskrivelse
+      
+      Vurdering i fag skal ha relasjon til det faget det er foretatt vurdering i.
+      
+      # Referanser
+      
+      * UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)
+      * Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)
+      * Forskrift til opplæringslova &#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4)
+    abstract: true
+    attributes:
+      kommentar:
+        range: string
+        description: |
+          Kommentar til vurderingen
+        required: true
+      systemId:
+        range: Identifikator
+        description: |
+          Systemidentifikator i fagsystem
+        required: true
+      vurderingsdato:
+        range: string
+        description: |
+          Datoen vurderingen er foretatt.
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990` -&gt; `1990-03-29T12:00:00Z`
+          
+          * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
+        required: true
+      skoleår:
+        range: Skoleår
+        description: |
+          Skoleåret vurderingen gjelder for.
+      undervisningsgruppe:
+        range: Undervisningsgruppe
+        description: |
+          Undervisningsgruppe vurderingen er foretatt i.
+      karakter:
+        range: Karakterverdi
+        description: |
+          Det aktuelle karakteren som er tildelt
+      fag:
+        range: Fag
+        description: |
+          Faget det er foretatt vurdering i.
+        required: true
+
+  Fravær:
+    description: |
+      Manglende tilstedeværelse i opplæringen.
+      
+      # Beskrivelse
+      
+      Fravær føres med relasjon til den undervisningen eleven har vært fraværende fra.  Det må derfor være en relasjon til en Undervisningsgruppe.
+      
+      # Fraværsgrense 
+      
+      * Elever i videregående skole skal møte opp og delta aktivt i opplæringen. 
+      * Fravær skal registreres, og det foreligger grenser på hvor mye fravær som tillates før rett til å få halvårsvurdering med karakter eller standpunktkarakter i et fag bortfaller. 
+      * Eleven må legge fram relevant dokumentasjon for å få fravær unntatt fra fraværsgrensen.
+      * Fraværsgrensen gjelder timefravær i enkeltfag, ikke elevenes totale fravær.
+      * Eleven skal få et varsel om han eller hun står i fare for å ikke få karakter på grunn av fravær.
+      
+      # Fravær eksamen
+      Det føres ikke lenger fravær på eksamen. Dette vil bli satt som karakter. Pga dette utgår relasjonen til eksamensgruppe. Ved en senere hovedoppdatering av Informasjonsmodellen vil multiplisitet for relasjonen  undervisningsgruppe bli satt til 1.
+      
+      # Referanser
+      
+      * UDir Registreringshåndbok: http://regbok.udir.no/35004/3344/35042-1018643.html
+      * Forskrift til opplæringslova &#167; 3-3, siste ledd: https://lovdata.no/forskrift/2006-06-23-724/&#167;3-3
+      * Forskrift til opplæringslova &#167; 3-47: https://lovdata.no/forskrift/2006-06-23-724/&#167;3-47
+      * UDir. Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet, pkt 8: https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/8-fravar/
+      * SNL. Fravær: https://snl.no/fravær
+      * Rundskriv Udir-3-2016: https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Vitnemal/fravarsgrense---udir-3-2016/
+      * UDir. Fravær i videregående skole: https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Vitnemal/fravar-i-videregaende-skole/
+    attributes:
+      dokumentert:
+        range: string
+        description: |
+          Angir om fraværet er dokumentert eller ikke (ja/nei).
+          
+          Hva slags fravær som betraktes som dokumentert følger av [Rundskriv Udir 3-2016](https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Vitnemal/fravarsgrense---udir-3-2016/).
+        required: true
+      føresPåVitnemål:
+        range: string
+        description: |
+          Angir om fraværet skal føres på vitnemål / kompetansebevis.
+          
+          Føring på vitnemål bestemmes av [forskrift til opplæringslova § 3-47](http://www.lovdata.no/for/sf/kd/xd-20060623-0724.html#3-47) og skriv fra Utdanningsdirektoratet om [Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet, pkt 8](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/8-fravar/).
+        required: true
+      gjelderPeriode:
+        range: Periode
+        description: |
+          Tidsperioden fraværet oppstod/gjelder for.
+          
+          Fravær skal registreres i dager eller timer (60-minutters enheter). Det er ikke tillatt å konvertere timer til dager.
+        required: true
+      kommentar:
+        range: string
+        description: |
+          Kommentar til fraværet, evt ekstrainformasjon
+        required: true
+      systemId:
+        range: Identifikator
+        description: |
+          Kildesystemets unike identifikator for fravær.
+        required: true
+      undervisningsgruppe:
+        range: Undervisningsgruppe
+        description: |
+          Undervisningsgruppe det er registrert fravær fra.
+      eksamensgruppe:
+        range: Eksamensgruppe
+        description: |
+          Eksamensgruppe det er registrert fravær fra.
+      elevforhold:
+        range: Elevforhold
+        description: |
+          Elevforhold det er registrert fravær på.
+        required: true
+      registrertav:
+        range: Skoleressurs
+        description: |
+          Den som har registrert fraværet.
+      fraværstype:
+        range: Fraværstype
+        description: |
+          Type fravær.
+        required: true
+
+  Fraværsoversikt:
+    description: |
+      Aggregert fraværsoversikt for en elev i ett fag.
+    attributes:
+      halvår:
+        range: Fraværsprosent
+        description: |
+          Udokumentert fravær for første halvår.
+          
+          # Representasjon av prosent
+          
+          I informasjonsmodellen oppgis en prosentverdi som et heltall. Dette tallet er antall hundredels prosent.
+          
+          ## Eksempel
+          
+          * 44 prosent vil ha verdien 4400.
+          * 58,73 prosent vil ha verdien 5873
+        required: true
+      skoleår:
+        range: Fraværsprosent
+        description: |
+          Udokumentert fravær for hele skoleåret.
+          
+          # Representasjon av prosent
+          
+          I informasjonsmodellen oppgis en prosentverdi som et heltall. Dette tallet er antall hundredels prosent.
+          
+          ## Eksempel
+          
+          * 44 prosent vil ha verdien 4400.
+          * 58,73 prosent vil ha verdien 5873
+        required: true
+      systemId:
+        range: Identifikator
+        description: |
+          System-id fra kildesystemet
+        required: true
+      elevforhold:
+        range: Elevforhold
+        description: |
+          Elevforholdet fraværsoversikten gjelder for.
+        required: true
+      fag:
+        range: Fag
+        description: |
+          Faget fraværet er knyttet til
+        required: true
+
+  Fraværsprosent:
+    description: |
+      Fraværsdata for en periode.
+    attributes:
+      fraværstimer:
+        range: string
+        description: |
+          Antall timer udokumentert fravær. Oppgis i hundredeler.
+        required: true
+      prosent:
+        range: string
+        description: |
+          Udokumentert fravær i prosent.
+          
+          # Representasjon av prosent
+          
+          I informasjonsmodellen oppgis en prosentverdi som et heltall. Dette tallet er antall hundredels prosent.
+          
+          ## Eksempel
+          
+          * 44 prosent vil ha verdien 4400.
+          * 58,73 prosent vil ha verdien 5873
+        required: true
+      undervisningstimer:
+        range: string
+        description: |
+          Antall timer planlagt undervisning. Oppgis i hundredeler.
+        required: true
+
+  Fraværsregistrering:
+    description: |
+      Manglende tilstedeværelse i opplæringen.
+    attributes:
+      føresPåVitnemål:
+        range: string
+        description: |
+          Angir om fraværet skal føres på vitnemål / kompetansebevis.
+          
+          Føring på vitnemål bestemmes av [forskrift til opplæringslova &#167; 3-47](http://www.lovdata.no/for/sf/kd/xd-20060623-0724.html#3-47) og skriv fra Utdanningsdirektoratet om [Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet, pkt 8](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/8-fravar/).
+        required: true
+      kommentar:
+        range: string
+        description: |
+          Kommentar til fraværet, evt ekstrainformasjon
+      periode:
+        range: Periode
+        description: |
+          Tidsperioden fraværet gjelder for.
+          
+          Fravær skal registreres i dager eller timer (60-minutters enheter). Det er ikke tillatt å konvertere timer til dager.
+        required: true
+      systemId:
+        range: Identifikator
+        description: |
+          Kildesystemets unike identifikator.
+        required: true
+      faggruppe:
+        range: Faggruppe
+        description: |
+          Faggruppen det er registrert fravær fra.
+      fraværstype:
+        range: Fraværstype
+        description: |
+          Type fravær.
+        required: true
+      registrertAv:
+        range: Skoleressurs
+        description: |
+          Skoleressursen som har registrert fraværet.
+      undervisningsgruppe:
+        range: Undervisningsgruppe
+        description: |
+          Undervisningsgruppen det er registrert fravær fra.
+        required: true
+      elevfravær:
+        range: Elevfravær
+        description: |
+          Samling av fraværsregistreringer for en elev.
+        required: true
+
+  Halvårsfagvurdering:
+    description: |
+      Karakterer og andre vurderingsuttrykk.
+      
+      # Beskrivelse
+      
+      Halvårsvurdering gis for deltakelse av en elev i en gruppe.
+      
+      Vurdering i fag skal ha relasjon til den `Undervisningsgruppe` som vurderingen er foretatt i. Det er også mulig å sette relasjon direkte til angjeldende fag.
+      
+      # Referanser
+      
+      * UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)
+      * Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)
+      * Forskrift til opplæringslova &#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4)
+    is_a: Fagvurdering
+    attributes:
+      elevforhold:
+        range: Elevforhold
+        description: |
+          Elevforholdet vurderingen gjelder.
+        required: true
+      elevvurdering:
+        range: Elevvurdering
+        description: |
+          Vurderingsinformasjon for en elev.
+        required: true
+
+  Halvårsordensvurdering:
+    description: |
+      Halvårsvurdering av orden og atferd..
+      
+      # Beskrivelse
+      
+      Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et elevforhold.
+      
+      # Referanser
+      
+      * UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)
+      * Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)
+      * Forskrift til opplæringslova &#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4)
+    is_a: Ordensvurdering
+    attributes:
+      elevforhold:
+        range: Elevforhold
+        description: |
+          Elevforholdet vurderingen gjelder.
+        required: true
+      elevvurdering:
+        range: Elevvurdering
+        description: |
+          Vurderingsinformasjon for en elev.
+        required: true
+
+  Karakterhistorie:
+    description: |
+      Endringer på fastsatt karakter.
+    attributes:
+      endretDato:
+        range: string
+        description: |
+          Dato for endring av karakter.
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990` -&gt; `1990-03-29T12:00:00Z`
+          
+          * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
+        required: true
+      systemId:
+        range: Identifikator
+        description: |
+          Intern identifikator som brukes i kildesystemet.
+        required: true
+      oppdatertAv:
+        range: Skoleressurs
+        description: |
+          Skoleresursen som har endret karakteren.
+      opprinneligKarakterverdi:
+        range: Karakterverdi
+        description: |
+          Den opprinnelige karakterverdien.
+      opprinneligKarakterstatus:
+        range: Karakterstatus
+        description: |
+          Opprinnelig karakterstatus.
+      karakterverdi:
+        range: Karakterverdi
+        description: |
+          Den gjeldende karakterverdien.
+      karakterstatus:
+        range: Karakterstatus
+        description: |
+          Den gjeldende karakterstatusen.
+
+  Karakterverdi:
+    description: |
+      Karakterer, målestokk for vurdering av elevers faglige standpunkt, prøve- eller eksamensprestasjoner
+      
+      # Beskrivelse
+      
+      De enkelte karakterer, som til sammen danner en karakterskala, blir betegnet med tall eller andre symboler.
+      
+      Den relaterte skalaen må refereres fra selve verdi.
+      
+      # Eksempel
+      
+      * 6 - Seks
+      * IM - Ikke møtt
+      * GK - Godkjent
+      * R - Realkompetanse
+      
+      # Referanse
+      
+      * Vigo Kodeverkdatabase. Karakter: [vigo.no/vigokv/karakter.action](https://www.vigo.no/vigokv/karakter.action)
+      * SNL. karakterer: [snl.no/karakterer](https://snl.no/karakterer)
+    is_a: Begrep
+    attributes:
+      skala:
+        range: Karakterskala
+        description: |
+          Skala som karakter er definert i
+          
+          # Eksempel
+          
+          * 5 er definer på Tall skala
+        required: true
+
+  Ordensvurdering:
+    description: |
+      Vurdering av orden og atferd..
+      
+      # Beskrivelse
+      
+      Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et elevforhold.
+      
+      # Referanser
+      
+      * UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)
+      * Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)
+      * Forskrift til opplæringslova &#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4)
+    abstract: true
+    attributes:
+      kommentar:
+        range: string
+        description: |
+          Kommentar til vurderingen
+        required: true
+      systemId:
+        range: Identifikator
+        description: |
+          Systemidentifikator i fagsystem
+        required: true
+      vurderingsdato:
+        range: string
+        description: |
+          Datoen vurderingen er foretatt.
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990` -&gt; `1990-03-29T12:00:00Z`
+          
+          * `29. juni 1990` -&gt; `1990-03-29T12:00:00Z`
+        required: true
+      atferd:
+        range: Karakterverdi
+        description: |
+          Det aktuelle karakteren som er tildelt i atferd
+        required: true
+      skoleår:
+        range: Skoleår
+        description: |
+          Skoleåret vurderingen gjelder for.
+      orden:
+        range: Karakterverdi
+        description: |
+          Det aktuelle karakteren som er tildelt i orden
+        required: true
+
+  Sensor:
+    description: |
+      Skoleressurs som sensurerer eksamensbesvarelser.
+    attributes:
+      aktiv:
+        range: string
+        description: |
+          Viser om dette er en aktiv sensor for eksamensgruppen.
+        required: true
+      sensornummer:
+        range: string
+        description: |
+          Viser om det er sensor 1 eller sensor 2
+      systemId:
+        range: Identifikator
+        description: |
+          Intern identifikator som brukes i kildesystemet.
+        required: true
+      skoleressurs:
+        range: Skoleressurs
+        description: |
+          Skoleressurs som er sensor.
+        required: true
+      eksamensgruppe:
+        range: Eksamensgruppe
+        description: |
+          Eksamensgruppe sensoren tilhører.
+        required: true
+
+  Sluttfagvurdering:
+    description: |
+      Karakterer og andre vurderingsuttrykk.
+      
+      # Beskrivelse
+      
+      Sluttvurdering (Standpunktkarakter) gis for deltakelse av en elev i en gruppe.
+      
+      Vurderingen skal ha en relasjon til det angjeldende faget.
+      
+      # Referanser
+      
+      * UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)
+      * Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)
+      * Forskrift til opplæringslova &#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4)
+    is_a: Fagvurdering
+    attributes:
+      elevforhold:
+        range: Elevforhold
+        description: |
+          Elevforholdet vurderingen gjelder.
+        required: true
+      eksamensgruppe:
+        range: Eksamensgruppe
+        description: |
+          Eksamensgruppe vurderingen er foretatt i.
+      karakterhistorie:
+        range: Karakterhistorie
+        description: |
+          Viser tidligere karakter hvis karakter er endret.
+        multivalued: true
+      elevvurdering:
+        range: Elevvurdering
+        description: |
+          Vurderingsinformasjon for en elev.
+        required: true
+
+  Sluttordensvurdering:
+    description: |
+      Sluttvurdering av orden og atferd..
+      
+      # Beskrivelse
+      
+      Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et elevforhold.
+      
+      # Referanser
+      
+      * UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)
+      * Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)
+      * Forskrift til opplæringslova &#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4)
+    is_a: Ordensvurdering
+    attributes:
+      elevforhold:
+        range: Elevforhold
+        description: |
+          Elevforholdet vurderingen gjelder.
+        required: true
+      elevvurdering:
+        range: Elevvurdering
+        description: |
+          Vurderingsinformasjon for en elev.
+        required: true
+
+  Underveisfagvurdering:
+    description: |
+      Karakterer og andre vurderingsuttrykk.
+      
+      # Beskrivelse
+      
+      Underveisvurdering gis for deltakelse av en elev i en gruppe.
+      
+      Vurdering i fag skal ha relasjon til den `Undervisningsgruppe` som vurderingen er foretatt i. Det er også mulig å sette relasjon direkte til angjeldende fag.
+      
+      # Referanser
+      
+      * UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)
+      * Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)
+      * Forskrift til opplæringslova &#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4)
+    is_a: Fagvurdering
+    attributes:
+      elevforhold:
+        range: Elevforhold
+        description: |
+          Elevforholdet vurderingen gjelder.
+        required: true
+      elevvurdering:
+        range: Elevvurdering
+        description: |
+          Vurderingsinformasjon for en elev.
+        required: true
+
+  Underveisordensvurdering:
+    description: |
+      Underveisvurdering av orden og atferd..
+      
+      # Beskrivelse
+      
+      Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et elevforhold.
+      
+      # Referanser
+      
+      * UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)
+      * Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)
+      * Forskrift til opplæringslova &#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4)
+    is_a: Ordensvurdering
+    attributes:
+      elevforhold:
+        range: Elevforhold
+        description: |
+          Elevforholdet vurderingen gjelder.
+        required: true
+      elevvurdering:
+        range: Elevvurdering
+        description: |
+          Vurderingsinformasjon for en elev.
+        required: true
+
+  Vurdering:
+    description: |
+      Karakterer og andre vurderingsuttrykk.
+      
+      # Beskrivelse
+      
+      Vurdering gis for deltakelse av en elev i en gruppe. Dette kan være Halvårsvurdering, Standpunktkarakter, underveisvurdering eller annet. 
+      
+      Vurdering i fag skal ha relasjon til den `Undervisningsgruppe` eller `Eksamensgruppe` som vurderingen er foretatt i. Det er også mulig å sette relasjon direkte til angjeldende fag.
+      
+      Vurderinger av orden og andre frittstående vurderinger gjøres uten relasjon til noen gruppe.
+      
+      # Referanser
+      
+      * UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)
+      * Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)
+      * Forskrift til opplæringslova &#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4)
+    attributes:
+      endelig:
+        range: string
+        description: |
+          Angir om vurderingen er endelig.
+          
+          # Beskrivelse
+          
+          Vurderinger som ikke er endelige, regnes som underveisvurderinger.
+        required: true
+      kommentar:
+        range: string
+        description: |
+          Kommentar til vurderingen.
+        required: true
+      systemId:
+        range: Identifikator
+        description: |
+          Kildesystemets unike identifikator for vurdering.
+        required: true
+      eksamensgruppe:
+        range: Eksamensgruppe
+        description: |
+          Eksamensgruppe vurderingen er foretatt i.
+      fag:
+        range: Fag
+        description: |
+          Hvilket fag vurderingen gjelder
+      elevforhold:
+        range: Elevforhold
+        description: |
+          Elevforhold som er vurdert.
+      undervisningsgruppe:
+        range: Undervisningsgruppe
+        description: |
+          Undervisningsgruppe vurderingen er foretatt i.
+      karakter:
+        range: Karakterverdi
+        description: |
+          Det aktuelle karakteren som er tildelt
+        required: true

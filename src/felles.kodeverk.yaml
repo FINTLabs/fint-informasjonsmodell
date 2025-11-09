@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/felles/kodeverk
+name: felles.kodeverk
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+
+classes:
+
+  Fylke:
+    description: |
+      Liste over Norges fylker
+      
+      # Referanser
+      
+      * "SSB: Standard for fylkesinndeling":http://www.ssb.no/klass/#!/klassifikasjoner/104
+      * "data.norge.no":
+      http://data.norge.no/data/statistisk-sentralbyr%C3%A5/fylkesinndeling
+    is_a: Begrep
+    attributes:
+      kommune:
+        range: Kommune
+        description: |
+          Alle kommuner som inngår i fylke
+        multivalued: true
+
+  Kommune:
+    description: |
+      Liste over Norges kommuner
+      
+      Kilde:
+      
+      * "SSB. Kommuneinndeling 2017":http://www.ssb.no/klass/#!/klassifikasjoner/131
+      * "data.norge.no om kommuneinndeling":http://data.norge.no/data/statistisk-sentralbyr%C3%A5/kommuneinndeling
+    is_a: Begrep
+    attributes:
+      fylke:
+        range: Fylke
+        description: |
+          Fylke som kommune hører i
+        required: true
+
+  Valuta:
+    description: |
+      Valutakodene for offisielle valutaer.
+      
+      # Referanse
+      I henhold til [ISO 4217](https://no.wikipedia.org/wiki/ISO_4217)
+    attributes:
+      bokstavkode:
+        range: Identifikator
+        description: |
+          Bokstavkode for aktuell valuta.
+        required: true
+      navn:
+        range: string
+        description: |
+          Navn på valuta.
+        required: true
+      nummerkode:
+        range: Identifikator
+        description: |
+          Nummerkode for aktuell valuta.
+        required: true

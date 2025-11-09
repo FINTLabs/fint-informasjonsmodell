@@ -1,0 +1,928 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/administrasjon/personal
+name: administrasjon.personal
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+  - administrasjon.fullmakt
+  - administrasjon.kodeverk
+  - administrasjon.komplekse-datatyper
+  - administrasjon.organisasjon
+  - felles
+  - utdanning.elev
+
+classes:
+
+  Arbeidsforhold:
+    description: |
+      Arbeidsforhold er et avtaleforhold mellom personalressurs og arbeidsgiver
+      
+      # Beskrivelse
+      
+      Arbeidsforhold defineres som et avtaleforhold hvor den ene part (arbeidstakeren / personalressurs) forplikter seg til å utføre arbeid for den annen part (arbeidsgiveren / organisasjonselement). Arbeidsforholdet kan også utføres av en person fra vikarbyrå, eller et firma gjennom en kontrakt/avtale.
+      
+      # Eksempler
+      
+      * Ansatt som rådgiver i fast stilling
+      * Vikariat for en annen person som er i permisjon fra sitt arbeidsforhold
+    attributes:
+      ansettelsesprosent:
+        range: integer
+        description: |
+          Den prosenten personalressursen eier, i henholdt til arbeidsavtalen
+          
+          # Format
+          Angitt fra 0 til 10000 i hundredelsprosent.
+          
+          # Eksempler
+          
+          * `1000` tilsvarer 10 %
+          * `1033` tilsvarer 10,33 %
+          * `8000` tilsvarer 80 %
+          * `10000` tilsvarer 100 %
+          * For tilkallingsvikar kan denne være `0`
+        required: true
+      arbeidsforholdsperiode:
+        range: Periode
+        description: |
+          Periode for en gitt stilling.
+          
+          # Beskrivelse
+          
+          Representerer reell start- og sluttdato for stilling, selv om stillingen er representert som flere arbeidsforhold.
+          
+          Prinsippet for anvendelse av gyldighetsperiode og arbeidsforholdsperiode er som følger:
+          
+          * HRM eksporterer arbeidsforholdene for hvert stillingsnummer som en tidslinje hvor gyldighetsperioder ikke er overlappende.
+          
+          * For en gitt transaksjonsdato (f.eks. dagens dato):  Finn de instansene av Arbeidsforhold-objektet (versjon av arbeidsforhold) hvor transaksjonsdatoen faller innenfor gyldighetsperioden, dvs: gyldighetsperiode.start &lt;= transaksjonsdato &lt;= gyldighetsperiode.slutt
+          
+          * Kontroller transaksjonsdato mot arbeidsforholdsperiode:  For at en gitt instans av Arbeidsforhold skal regnes som aktiv for timeplanlegging og registrering av lønn og fravær må arbeidsforholdsperiode.start &lt;= transaksjonsdato &lt;= arbeidsforholdsperiode.slutt
+      årslønn:
+        range: integer
+        description: |
+          Årslønn/grunnlønn i 100 % stilling.
+          
+          # Beskrivelse
+          Lønn i 100% stilling. Inneholder ikke definerte tillegg. Angis i øre.
+          
+          # Eksempel
+          
+          * `40000000` tilsvarer 400 000
+        required: true
+      gyldighetsperiode:
+        range: Periode
+        description: |
+          Gyldig periode for et gitt arbeidsforhold
+          
+          # Beskrivelse 
+          
+          Periode en personalressurs har vært (eller er) ansatt i et bestemt arbeidsforhold. Inneholder en dato for start, og kan inneholde slutt-dato.
+          
+          Endringer i samme stilling kan representeres som flere arbeidsforhold med samme stillingsnummer og ulike gyldighetsperioder.
+          
+          Prinsippet for anvendelse av gyldighetsperiode og arbeidsforholdsperiode er som følger:
+          
+          * HRM eksporterer arbeidsforholdene for hvert stillingsnummer som en tidslinje hvor gyldighetsperioder ikke er overlappende.
+          
+          * For en gitt transaksjonsdato (f.eks. dagens dato):  Finn de instansene av Arbeidsforhold-objektet (versjon av arbeidsforhold) hvor transaksjonsdatoen faller innenfor gyldighetsperioden, dvs: gyldighetsperiode.start &lt;= transaksjonsdato &lt;= gyldighetsperiode.slutt
+          
+          * Kontroller transaksjonsdato mot arbeidsforholdsperiode:  For at en gitt instans av Arbeidsforhold skal regnes som aktiv for timeplanlegging og registrering av lønn og fravær må arbeidsforholdsperiode.start &lt;= transaksjonsdato &lt;= arbeidsforholdsperiode.slutt
+        required: true
+      hovedstilling:
+        range: boolean
+        description: |
+          Angir hvilket arbeidsforhold som er hovedarbeidsforhold.
+          
+          # Beskrivelse
+          
+          Primærstillingen personalressursen er knyttet til, og som er grunnlaget for det juridiske arbeidsforholdet.
+          
+          En personalressurs kan ha flere arbeidsforhold, men kun en av disse kan være hovedstillingen.
+          
+          # Format
+          
+          true/false
+        required: true
+      lønnsprosent:
+        range: integer
+        description: |
+          Prosent av årslønn den ansatte  skal ha utbetalt
+          
+          # Beskrivelse
+          
+          Det personalressursen skal ha utbetalt.
+          
+          # Format
+          
+          Angitt fra 0 til 10000 i hundredelsprosent.
+          
+          
+          # Eksempler
+          
+          * `1000` tilsvarer 10 %
+          * `1033` tilsvarer 10,33 %
+          * `8000` tilsvarer 80 %
+          * `10000` tilsvarer 100 %
+        required: true
+      stillingsnummer:
+        range: string
+        description: |
+          Løpenummer for stilling
+          
+          # Beskrivelse
+          
+          Løpenummer for stillinger som arbeidstaker har eller har hatt i organisasjonen.  Arbeidsforhold representerer tidslinjen til en stilling, alle arbeidsforhold med samme stillingsnummer representerer samme stilling. Gyldighetsperiodene til arbeidsforhold med samme stillingsnummer kan ikke overlappe.
+          
+          # Format
+          
+          Id-verdi til en stilling.
+          
+          # Eksempler
+          
+          For en personalressurs med tre arbeidsforhold, kan det være: 1 2 3
+        required: true
+      stillingstittel:
+        range: string
+        description: |
+          Arbeidstakers stillingstittel i gjeldende stilling.
+          
+          # Beskrivelse
+          
+          Brukes i noen tilfeller som fritekst tittel slik at ansatte kan overstyre hva som skal vises på offentlige websider og intranett.
+          
+          Dette er ikke det samme som Stillingsbenevnelse som er titelen/tekstverdien til stillingskoden.
+          
+          # Format
+          
+          Tekst
+          
+          # Eksempler
+          
+          * "IT-sjef" (mens stillingsbenevnelse kan være "SEKSJONSLEDER"
+          * "Rådgiver, IT" (mens stillingsbenevnelse kan være "Rådgiver 1"
+      systemId:
+        range: Identifikator
+        description: |
+          Unik identifikator innenfor alle arbeidsforhold
+          
+          # Beskrivelse
+          
+          Unik identifikator innenfor alle arbeidsforhold til alle ansatte.
+        required: true
+      tilstedeprosent:
+        range: integer
+        description: |
+          Det personalressursen faktisk jobber
+          
+          # Beskrivelse
+          
+          I hvilken prosentstørrelse personalressursen er tilgjengelig for arbeidsgiver.
+          
+          # Format
+          
+          Angitt fra 0 til 10000 i hundredelsprosent.
+          
+          # Eksempler
+          
+          * `1000` tilsvarer 10 %
+          * `1033` tilsvarer 10,33 %
+          * `8000` tilsvarer 80 %
+          * `10000` tilsvarer 100 %
+        required: true
+      timerPerUke:
+        range: Uketimetall
+        description: |
+          Timer pr uke i 100% stilling
+          
+          # Beskrivelse
+          
+          Ulike type stillinger kan ha ulikt timetall for en 100% stilling
+          
+          # Format
+          
+          
+          # Eksempler
+      arbeidsforholdstype:
+        range: Arbeidsforholdstype
+        description: |
+          Beskrivende kode som kategoriserer hva slags funksjon stillingen grupperes til
+          
+          # Beskrivelse
+          
+          Beskrivende kode som kategoriserer hva slags funksjon stillingen grupperes til.
+          
+          Ansattkode eller stillingskategori som den også kalles.
+          
+          # Eksempler
+          
+          Se eksempel i Arbeidsforholdstype-kodeverk
+      personalleder:
+        range: Personalressurs
+        description: |
+          Personalleder til et arbeidsforhold.
+          
+          # Beskrivelse
+          
+          Indikerer personalleder til et arbeidsforhold.
+      arbeidslokasjon:
+        range: Arbeidslokasjon
+        description: |
+          Fysisk lokasjon hvor den ansatte har sitt arbeidssted.
+      formål:
+        range: Formål
+        description: |
+          Formål viser aktivitet og tjenesteproduksjon
+      aktivitet:
+        range: Aktivitet
+        description: |
+          Aktivitet arbeidsforhold er tilknyttet.
+      prosjekt:
+        range: Prosjekt
+        description: |
+          Prosjekt arbeidsforhold tilknyttet.
+      anlegg:
+        range: Anlegg
+        description: |
+          Anlegg arbeidsforhold er tilknyttet.
+      ansvar:
+        range: Ansvar
+        description: |
+          Relasjon til begrepet ansvar
+          
+          # Beskrivelse
+          
+          Beskriver hvilket ansvar arbeidsforholdet vanligvis knyttes til. 
+          
+          Synonymer:  kostsenter, kostnadsbærer.
+          
+          Se kodeverk [Ansvar](/docs/kodeverk_ansvar).
+      funksjon:
+        range: Funksjon
+        description: |
+          Arbeidsforholdets relasjon til funksjon. 
+          
+          # Beskrivelse
+          
+          Beskriver hvilken funksjon arbeidsforholdet vanligvis knyttes til.
+          
+          Synonymer:  Tjeneste
+          
+          Se kodeverk [Funksjon](/docs/kodeverk_funksjon). 
+          
+          
+          # Eksempler
+          
+          R1 Visma 2 kostra funksjoner:
+          
+          For eksempel koden til "Studiespesialisering" eller "PEDAGOGISK LEDELSE OG PEDAGOGISKE FELLESUTGIFTER".
+      objekt:
+        range: Objekt
+        description: |
+          Objekt arbeidsforhold er tilknyttet.
+      arbeidssted:
+        range: Organisasjonselement
+        description: |
+          Tilhørighet til organisasjonsstruktur
+          
+          # Beskrivelse
+          
+          For eksempel koden til "Avdeling for Helse og mijlø".
+          
+          Kommentar fra feltet organisasjonId:
+          Kode for relasjon til organisasjonstruktur. 
+          
+          Tilsvarer Arbeidssted i HR-system, mens VFS kaller dette for Ansvar og beskriver det med: "Type 2 = Ansvar, benyttes til å plassere den ansatte på riktig skole".
+          
+          For eksempel kode for "Bjerke videregående skole".
+          
+          Arbeid stedskode som er bygget på en eller flere organisasjonsenheter
+          
+          I en bedrift er en avdeling en organisasjonsenhet som utgjør ansvarsområdet til en (avdelings)sjef. Avdelingssjefen kan for eksempel hete formann, salgssjef eller kontorsjef. (ref.Store norske leksikon)
+          
+          # Format
+          
+          
+          # Eksempler
+        required: true
+      diverse:
+        range: Diverse
+        description: |
+          Diverse arbeidsforhold er tilknyttet.
+      kontrakt:
+        range: Kontrakt
+        description: |
+          Kontrakt arbeidsforhold er tilknyttet.
+      løpenummer:
+        range: Løpenummer
+        description: |
+          Løpenummer arbeidsforhold er tilknyttet.
+      art:
+        range: Art
+        description: |
+          Art arbeidsforhold er tilknyttet.
+      ramme:
+        range: Ramme
+        description: |
+          Ramme arbeidsforhold er tilknyttet.
+      stillingskode:
+        range: Stillingskode
+        description: |
+          En fire- eller sekssifret stillingskode. Firesiffret kodeliste fra KS. Kan være utvidet i tillegg med to siffer. De to siste er egentilpasset.
+          
+          # Beskrivelse
+          
+          Se kodeverk Stillingskode.
+      fasttillegg:
+        range: Fasttillegg
+        description: |
+          Alle faste tillegg for arbeidsforhold.
+        multivalued: true
+      fravær:
+        range: Fravær
+        description: |
+          Alle fravær knyttet til arbeidsforhold.
+        multivalued: true
+      undervisningsforhold:
+        range: Undervisningsforhold
+        description: |
+          Relasjon til en tilsvarende objekt i Utdannings domenet
+      variabellønn:
+        range: Variabellønn
+        description: |
+          All variabel lønn for arbeidsforhold.
+        multivalued: true
+      lønn:
+        range: Lønn
+        description: |
+          Alle lønnsutbetalinger for et arbeidsforhold
+        multivalued: true
+      fastlønn:
+        range: Fastlønn
+        description: |
+          All fastlønn for arbeidsforhold.
+        multivalued: true
+      personalressurs:
+        range: Personalressurs
+        description: |
+          Pesonalressurs til et arbeidsforhold
+        required: true
+
+  Fastlønn:
+    description: |
+      Informasjon om fast lønnsbeskjeftigelse.
+      
+      Inneholder beskjeftigelse av den ansattes lønnsprosent.
+      
+      Summen av prosentene på beskjeftigelsene skal være lønnsprosent for en fullt dekket stilling.
+      
+      Dersom beskjeftigelsene ikke fyller lønnsprosenten har arbeidsforholdet teknisk undertid. 
+      
+      I motsatt fall har arbeidsforholdet overtid.
+      
+      # Lovlige endringer
+      
+      ## Opprettelse av ny fastlønn
+      
+      - `periode` angir periode som beskjeftigelsen skal gjelde for.  
+      - Periode uten `slutt` betyr at beskjeftigelsen gjelder inntil videre.
+      
+      ## Endring av eksisterende fastlønn
+      
+      - Kun endring av `slutt` på `periode` er lovlig.
+      
+      ## Sletting av eksisterende fastlønn
+      
+      - Ikke tillatt.
+    is_a: Lønn
+    attributes:
+      prosent:
+        range: integer
+        description: |
+          Andel av lønnsprosent som beslaglegges.
+          
+          # Representasjon av prosent
+          
+          I informasjonsmodellen oppgis en prosentverdi som et heltall. Dette tallet er antall hundredels prosent.
+          
+          ## Eksempel
+          
+          * 44 prosent vil ha verdien 4400.
+          * 58,73 prosent vil ha verdien 5873
+        required: true
+      lønnsart:
+        range: Lønnsart
+        description: |
+          Lønnsart for fastlønn.
+      arbeidsforhold:
+        range: Arbeidsforhold
+        description: |
+          Arbeidsforhold fastlønn gjelder for.
+        required: true
+
+  Fasttillegg:
+    description: |
+      Faste tillegg til utbetaling.
+      
+      # Lovlige endringer
+      
+      ## Opprettelse av nytt fasttillegg
+      
+      - `periode` angir periode som tillegget skal gjelde for.  
+      - Periode uten `slutt` betyr at tillegget gjelder inntil videre.
+      
+      ## Endring av eksisterende fasttillegg
+      
+      - Kun endring av `slutt` på `periode` er lovlig.
+      - Setting av `slutt` indikerer når tillegget ikke lenger skal utbetales
+      
+      ## Sletting av eksisterende fasttillegg
+      
+      - Ikke tillatt.
+    is_a: Lønn
+    attributes:
+      beløp:
+        range: string
+        description: |
+          Beløp, i øre.
+        required: true
+      arbeidsforhold:
+        range: Arbeidsforhold
+        description: |
+          Arbeidsforhold fasttillegget gjelder for.
+        required: true
+      lønnsart:
+        range: Lønnsart
+        description: |
+          Lønnsart for tillegget.
+        required: true
+
+  Fravær:
+    description: |
+      Fravær fra et arbeidsforhold.
+      
+      # Beskrivelse
+      
+      Representerer fravær fra et gitt arbeidsforhold. Fraværet har en type og en varighet, og kan være helt eller delvis.
+    attributes:
+      godkjent:
+        range: string
+        description: |
+          Tidsstempel som angir når fravær ble godkjent.
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990 klokken 13:30 (UTC +1)` -&gt; `1990-03-29T12:30:00Z`
+          
+          * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
+      kildesystemId:
+        range: Identifikator
+        description: |
+          Kildesystemets unike identifikator for fravær.
+      periode:
+        range: Periode
+        description: |
+          Periode for fraværet.
+          
+          Forskjellige fraværstyper kan ha begrensninger i forhold til om perioden må være et antall timer eller et antall dager.
+          
+          Perioden angir både tidspunkt for fraværet og varighet av fraværet.
+        required: true
+      prosent:
+        range: integer
+        description: |
+          Prosent fraværende
+          
+          # Beskrivelse
+          
+          Grad av sykemelding for arbeidsforhold. 
+          
+          # Representasjon av prosent
+          
+          I informasjonsmodellen oppgis en prosentverdi som et heltall. Dette tallet er antall hundredels prosent.
+          
+          # Eksempel
+          
+          - Helt sykemeldt:
+            - 10000
+          - 50% permisjon:
+            - 5000
+        required: true
+      systemId:
+        range: Identifikator
+        description: |
+          Unik identifikator i personalsystemet for fraværet.
+      fraværstype:
+        range: Fraværstype
+        description: |
+          Type fravær.
+        required: true
+      fraværsgrunn:
+        range: Fraværsgrunn
+        description: |
+          Grunn til fraværet.
+      arbeidsforhold:
+        range: Arbeidsforhold
+        description: |
+          Arbeidsforholdet fraværet gjelder for.
+          
+          Flere arbeidsforhold kan kun angis dersom det gjelder samme personalressurs, og type fravær og prosent fravær er identiske.
+        multivalued: true
+        required: true
+      fortsettelse:
+        range: Fravær
+        description: |
+          Fortsettende fravær.
+      godkjenner:
+        range: Personalressurs
+        description: |
+          Personalressurs som har godkjent fraværsmeldingen.
+      fortsetter:
+        range: Fravær
+        description: |
+          Fraværet som dette fraværet er fortsettende for.
+
+  Lønn:
+    description: |
+      Informasjon om lønn for et arbeidsforhold.
+      
+      # Beskrivelse
+      
+      Lønn inneholder informasjon om lønn som skal utbetales for et arbeidsforhold.  Lønn er enten Fastlønn, Fasttillegg  eller Variabellønn.
+      
+      Lønn blir kontert, attestert og anvist av personalressurser som har fullmakter til dette.
+      
+      Lønn utbetales til et arbeidsforhold, for en gitt periode.
+    abstract: true
+    attributes:
+      anvist:
+        range: string
+        description: |
+          Tidsstempel som angir når lønn ble anvist.
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990 klokken 13:30 (UTC +1)` -&gt; `1990-03-29T12:30:00Z`
+          
+          * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
+      attestert:
+        range: string
+        description: |
+          Tidsstempel som angir når lønn ble attestert.
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990 klokken 13:30 (UTC +1)` -&gt; `1990-03-29T12:30:00Z`
+          
+          * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
+      beskrivelse:
+        range: string
+        description: |
+          Beskrivelse av lønn, til føring på lønnsslipp.
+          
+          # Beskrivelse
+          
+          Forklarende beskrivelse, til bruk i behandling, rapportering og for anføring på lønnsslipp.
+          
+          # Eksempel
+          
+          - Fag- og gruppekode en lærer underviser i. 
+          - Reisestrekning for kilometergodtgjørelse
+          - Beskrivelse av tillegg.
+        required: true
+      kildesystemId:
+        range: Identifikator
+        description: |
+          Kildesystemets unike identifikator for lønn.
+          
+          # Beskrivelse
+          
+          Forsystem som oppretter lønnstransaksjon kan angi en unik identifikator for transaksjonen.  Denne identifikatoren kan brukes av lønnssystemet for å oppdage duplikate transaksjoner.
+      kontert:
+        range: string
+        description: |
+          Tidsstempel som angir når lønn ble kontert.
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990 klokken 13:30 (UTC +1)` -&gt; `1990-03-29T12:30:00Z`
+          
+          * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
+      kontostreng:
+        range: Kontostreng
+        description: |
+          Kontering av lønn.
+        required: true
+      opptjent:
+        range: Periode
+        description: |
+          Periode hvor lønn ble opptjent.
+          
+          # Beskrivelse
+          
+          For etterbetaling av lønn kan opptjeningsperiode være forskjellig fra utbetalingsperiode.
+      periode:
+        range: Periode
+        description: |
+          Periode som lønn utbetales.
+          
+          # Eksempel
+          
+          - 01.08.2017 - 31.07.2018 (fastlønn for et skoleår)
+          - 01.08.2017 - 31.08.2017 (for variabellønn)
+          - 01.08.2017 og inntil videre (for øvrige faste ansatte)
+          - 13.09.2017 - 15.09.2017 (for en vikar eller en sensor)
+        required: true
+      systemId:
+        range: Identifikator
+        description: |
+          Lønnssystemets unike identifikator for lønn.
+      anviser:
+        range: Personalressurs
+        description: |
+          Personalressurs som har anvist lønnsmeldingen etter fullmakt.
+      konterer:
+        range: Personalressurs
+        description: |
+          Personalressurs som har kontert lønnsmeldingen etter fullmakt.
+      attestant:
+        range: Personalressurs
+        description: |
+          Personalressurs som har attestert lønnsmeldingen etter fullmakt.
+
+  Personalressurs:
+    description: |
+      Arbeidstaker eller oppdragstaker i organisasjonen
+      
+      # Beskrivelse
+      
+      Personalressurs er personer som leverer tjenester i form av å være ansatt. Personalressursen kan også være en person fra vikarbyrå, eller et firma som bekler et arbeidsforhold gjennom en kontrakt/avtale. Registrert i HR-systemet.
+      
+      # Eksempler
+      
+      * *ordinære* ansatte i faste og midlertidige stillinger
+      * oppdragstakere: 
+        * politikere
+        * ressurser med timelønn
+        * sensorer
+        * eksamensvakt
+        * hospitant
+      
+      Inneholder i utgangspunktet ikke *leverandørrepresenanter* (ekstern vikar, foredragsholdere, konsulenter).
+    attributes:
+      ansattnummer:
+        range: Identifikator
+        description: |
+          Den unike identifIkatoren til en ansatt i ansatt-/ressursregistret i HR-systemet
+          
+          # Beskrivelse
+          
+          Identifiserer en personalressurs unikt. En personalressurs vil kun være registert med ett ansattnummer.
+        required: true
+      ansettelsesperiode:
+        range: Periode
+        description: |
+          Perioden personalressursen er i et forhold til fylkeskommunen
+          
+          # Beskrivelse
+          
+          * Startdato: Datoen for når personalressursen første gang begynte i fylkeskommunene.
+          * Sluttdato: Dato for når personalressursen sitt forhold til fylkeskommunen opphører.
+        required: true
+      ansiennitet:
+        range: string
+        description: |
+          Ansiennitet for personalressurs hos arbeidsgiver.
+          
+          # Beskrivelse
+          
+          Ansiennitet er normalt den ansattes tiltredelsesdato hos arbeidsgiver, men tariffavtalene fastsetter tilleggsregler blant annet for godskriving av tidligere offentlig og privat tjeneste.
+          
+          # Referanser
+          
+          - KS Hovedtariffavtalen &#167; 12
+          - Statens personalhåndbok 2018, kapittel 7.3.4
+          - https://snl.no/ansiennitet
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990` -&gt; `1990-03-29T12:00:00Z`
+          
+          * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
+      brukernavn:
+        range: Identifikator
+        description: |
+          Brukernavn til en ansatt
+          
+          # Beskrivelse
+          
+          Skal inneholde brukernavn for pålogging, som finnes i katalogtjenesten (feks Active Directory). Brukes som en identifikator som består, når fødselsnummer og/eller andre identifikatorer endrer seg.
+          
+          # Format
+          
+          Brukernavn i det format en personalressurs trenger for å logge seg på systemer i organisasjonen.
+      jobbtittel:
+        range: string
+        description: |
+          Navn som beskriver en jobb eller stilling.
+          
+          # Beskrivelse
+          
+          Jobbtitler er mer spesifikke siden de reflekterer nivået på jobben, samt ansvaret i jobben.
+      kontaktinformasjon:
+        range: Kontaktinformasjon
+        description: |
+          Arbeidsrelatert kontaktinformasjon til en personalressurs
+          
+          # Beskrivelse
+          
+          Den fortrukne måten å komme i kontakt med en personalressurs.
+      systemId:
+        range: Identifikator
+        description: |
+          Unik intern system-id for personalressurs
+          
+          # Beskrivelse
+          
+          Systemspesifikk id, som normalt ikke er synlig i fagsystemet.
+      personalressurskategori:
+        range: Personalressurskategori
+        description: |
+          Angir hvilken kategori personalressurs
+          
+          # Beskrivelse
+          
+          Hvilken kategori/ansattform personalressursen innehar.
+          
+          # Format
+          
+          # Eksempel
+          
+          Kan for eksempel velges blant følgende: `Fast`, `Midlertidig`, `Oppdragstaker`, `Politiker`, `Sluttet`
+          
+          Se kodeverk Personalressurskategori for utvidet eksempel.
+        required: true
+      arbeidsforhold:
+        range: Arbeidsforhold
+        description: |
+          Arbeidsforhold til en personalressurs
+        multivalued: true
+      personalansvar:
+        range: Arbeidsforhold
+        description: |
+          Arbeidsforhold som Personalressurs har personalansvar for.
+          
+          # Beskrivelse
+          
+          Personalansvar
+        multivalued: true
+      leder:
+        range: Organisasjonselement
+        description: |
+          Ansvarlig leder for organisasjonselementet
+          
+          # Beskrivelse
+          Normalt vil dette være leder som har personal- og økonomi-ansvar for dette organisasjonselementet.
+          
+          # Format
+          Relasjon til en bestemt leder (Personalressurs).
+          
+          # Eksempler
+        multivalued: true
+      skoleressurs:
+        range: Skoleressurs
+        description: |
+          Relasjon til informasjon om undervisningsforhold.
+      stedfortreder:
+        range: Fullmakt
+        description: |
+          Personalressurs som er stedfortreder for den fullmektige.
+          
+          # Beskrivelse
+          
+          Gjeldende stedfortreder innenfor angitt gyldighetsperiode til fullmakten.
+          
+          Dersom det finnes flere stedfortredere må kildesystemet velge den stedfortreder som er den primære. Stedfortreder må være tilgjengelig i perioden som fullmakten er gyldig.
+        multivalued: true
+      fullmakt:
+        range: Fullmakt
+        description: |
+          Fullmakter som Personalressursen har blitt gitt.
+        multivalued: true
+      person:
+        range: Person
+        description: |
+          Person som er en personalressurs
+        required: true
+
+  Variabellønn:
+    description: |
+      Informasjon om variabel lønn.
+      
+      # Beskrivelse
+      
+      Variabel lønn består av ett eller flere tillegg, hver knyttet til en lønnsart.  Lønnsart bestemmer eventuelle faste satser for tillegget, samt grunnlag for skatt- og pensjonstrekk, og hvordan det rapporteres på A-meldingen.
+      
+      Selve beregningen av variabel lønn gjøres av HRM, og formålet er å overføre tilstrekkelig informasjon til at HRM kan foreta beregningen.
+      
+      Må brukes sammen med lønnsart for at HRM-systemet skal foreta korrekt beregning og rapportere riktig på A-meldingen.
+      
+      # Eksempler:
+      
+      1. Vikartime for undervisningspersonell: 
+        - antall: antall timer * 1400 / årsramme
+      2. Timelønn
+        - antall: antall timer
+      3. Kjøregodtgjørelse
+        - antall: antall kilometer
+      4. Kontantytelse for et møte
+        - antall: beløp
+      
+      # Lovlige endringer
+      
+      ## Opprettelse av ny variabelllønn
+      
+      - `periode` angir periode hvor variabellønn skal utbetales.  
+      - `opptjent` må benyttes dersom lønn ble opptjent i en annen utbetalingsperiode.
+      
+      ## Endring av eksisterende variabellønn
+      
+      - Ikke tillatt.
+      
+      ## Sletting av eksisterende variabellønn
+      
+      - Ikke tillatt.
+    is_a: Lønn
+    attributes:
+      antall:
+        range: integer
+        description: |
+          Mengde som beskrives av tillegget, i hundredeler.
+          
+          # Beskrivelse
+          
+          Enhet er spesifisert av lønnsart.
+          
+          # Eksempel
+          
+          - Antall hundredels timer.
+          - Antall dekameter (km/100).
+          - Antall øre
+        required: true
+      beløp:
+        range: integer
+        description: |
+          Beløp i øre som skal utbetales. Beregnes av lønnssystemet basert på antall og lønnsart.
+      lønnsart:
+        range: Lønnsart
+        description: |
+          Lønnsart for variabel lønn.
+        required: true
+      arbeidsforhold:
+        range: Arbeidsforhold
+        description: |
+          Arbeidsforhold variabellønn gjelder for.
+        required: true

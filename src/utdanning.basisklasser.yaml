@@ -1,0 +1,140 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/utdanning/basisklasser
+name: utdanning.basisklasser
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+  - utdanning.kodeverk
+
+classes:
+
+  Gruppe:
+    description: |
+      En generisk samling av elever og lærere
+      
+      # Beskrivelse 
+      
+      Gruppe representeres som en spesialisering (se tabell nedenfor).
+      
+      Grupper knyttes til Utdanningsforhold via Gruppemedlemskap eller direkte relasjoner.
+      
+      En gruppe kan ha referanser til kodeverk fra Grep og VIGO. En gruppe kan ha perioder som angir når den er gyldig eller aktiv. Hvorvidt en gruppe har referanser og perioder avhenger av hvilken konkret klasse som benyttes.
+      
+      | Klasse | Kode | Periode |
+      | ------- | ----- | ------ |
+      | Basisgruppe | | X |
+      | Kontaktlærergruppe | | X |
+      | Utdanningsprogram | X | |
+      | Programområde | X | |
+      | Fag | X | |
+      | Årstrinn | X | |
+      | Eksamensgruppe | | X |
+      | Undervisningsgruppe | | X |
+    abstract: true
+    attributes:
+      beskrivelse:
+        range: string
+        description: |
+          Utfyllende informasjon om gruppen
+        required: true
+      navn:
+        range: string
+        description: |
+          Navn på gruppe
+        required: true
+      periode:
+        range: Periode
+        description: |
+          Perioder som gruppen er gyldig eller relevant for.
+          
+          # Beskrivelse
+          
+          Kan brukes for å angi at en gruppe gjelder for et skoleår, en termin eller en eksamensperiode.
+          
+          Flere perioder kan knyttes til en gruppe. Dette kan eksempelvis benyttes for å representere komprimerte eller utvidete utdanningsløp.
+        multivalued: true
+      systemId:
+        range: Identifikator
+        description: |
+          Unik intern system-id for gruppe
+          
+          # Beskrivelse
+          
+          Systemspesifikk id, som normalt ikke er synlig i fagsystemet.
+        required: true
+      grepreferanse:
+        range: Grepreferanse
+        description: |
+          Referanse til Grep kodeverket.
+      vigoreferanse:
+        range: Vigoreferanse
+        description: |
+          Referanse til VIGO kodeverket.
+      medlemskap:
+        range: Medlemskap
+        description: |
+          Alle medlemene (medlemskapsforholdene) i en gruppe
+        multivalued: true
+
+  Gruppemedlemskap:
+    description: |
+      Deltagelse i en gruppe
+      
+      # Beskrivelse
+      
+      Knytter sammen et elevforhold og en gruppe (basisgruppe, kontaktlærergruppe, undervisningsgruppe, eksamensgruppe eller programområde). Gjør det mulig å uttrykke gyldighetsperiode for et medlemskap.
+    abstract: true
+    attributes:
+      gyldighetsperiode:
+        range: Periode
+        description: |
+          Gyldig periode for et gitt gruppemedlemskap.
+          
+          # Beskrivelse
+          
+          Periode en elev (elevforhold) er (eller har vært) i et gruppemedlemskap. Inneholder en startdato. Kan inneholde en sluttdato.
+      systemId:
+        range: Identifikator
+        description: |
+          Unik identifikator for gruppemedlemskap
+          
+          # Beskrivelse
+          
+          Systemspesifikk id, som normalt ikke er synlig i fagsystemet.
+        required: true
+
+  Utdanningsforhold:
+    description: |
+      Et felles begrep for rollene til mennesker (elever, lærere, sensorer osv) som deltar i undervisning
+      
+      # Beskrivelse 
+      
+      Abstrakt klasse som inneholder relasjoner og informasjon som brukes som elevforhold eller undervisningsforhold.
+      
+      # Eksempel
+      
+      * Lærer
+      * Elev
+      * Sensor
+    abstract: true
+    attributes:
+      beskrivelse:
+        range: string
+        description: |
+          Beskrivende tekst om personens forhold
+        required: true
+      systemId:
+        range: Identifikator
+        description: |
+          Systemidentifikator i fagsystem
+          
+          # Beskrivelse 
+          
+          Dette kan være identifikator som eksisterer i skoleadministrativt system.
+        required: true
+      medlemskap:
+        range: Medlemskap
+        description: |
+          Alle gruppene som elev eller lærer er medlem av.
+        multivalued: true
