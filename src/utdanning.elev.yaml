@@ -48,6 +48,7 @@ classes:
         range: Elevforhold
         description: |
           Alle elevforhold i basisgruppen
+        deprecated: "Relasjonen erstattes av Gruppemedlemskap i Basisgruppemedlemskap."
         multivalued: true
       termin:
         range: Termin
@@ -246,6 +247,7 @@ classes:
         range: Fagmerknad
         description: |
           Hvilke typer fritak eleven har i sidemål.
+        deprecated: "Bruk relasjon fra Faggruppemedlemskap."
         multivalued: true
       kategori:
         range: Elevkategori
@@ -255,6 +257,7 @@ classes:
         range: Fagmerknad
         description: |
           Viser hvilken type fritak eleven har i kroppsøving
+        deprecated: "Bruk relasjon fra Faggruppemedlemskap."
       skole:
         range: Skole
         description: |
@@ -292,36 +295,43 @@ classes:
         range: Basisgruppe
         description: |
           Alle basisgrupper elevforholdet er medlem av
+        deprecated: "Relasjonen erstattes av Gruppemedlemskap i Basisgruppemedlemskap."
         multivalued: true
       vurdering:
         range: Vurdering
         description: |
           Alle vurderinger i et elevforhold
+        deprecated: "Bruk Elevvurdering"
         multivalued: true
       sluttordensvurdering:
         range: Sluttordensvurdering
         description: |
           Sluttvurdering av orden og atferd for eleven
+        deprecated: "Bruk Elevvurdering.sluttordensvurdering."
         multivalued: true
       kontaktlærergruppe:
         range: Kontaktlærergruppe
         description: |
           Alle kontaktlærergrupper elevforhold er medlem av
+        deprecated: "Relasjonen erstattes av Elevforhold i Kontaktlærergruppemedlemskap."
         multivalued: true
       underveisfagvurdering:
         range: Underveisfagvurdering
         description: |
           Underveisvurdering i fag for eleven
+        deprecated: "Bruk Elevvurdering.underveisfagvurdering."
         multivalued: true
       halvårsfagvurdering:
         range: Halvårsfagvurdering
         description: |
           Halvårsvurdering i fag for eleven
+        deprecated: "Bruk Elevvurdering.halvårsfagvurdering."
         multivalued: true
       sluttfagvurdering:
         range: Sluttfagvurdering
         description: |
           Sluttvurdering i fag for eleven
+        deprecated: "Bruk Elevvurdering.sluttfagvurdering."
         multivalued: true
       persongruppemedlemskap:
         range: Persongruppemedlemskap
@@ -352,11 +362,13 @@ classes:
         range: Halvårsordensvurdering
         description: |
           Halvårsvurdering av orden og atferd for eleven.
+        deprecated: "Bruk Elevvurdering.halvårsordensvurdering."
         multivalued: true
       programområde:
         range: Programområde
         description: |
           Programområde elevforhold tilhører
+        deprecated: "Relasjonen erstattes av Elevforhold i Programområdemedlemskap."
       elevvurdering:
         range: Elevvurdering
         description: |
@@ -365,6 +377,7 @@ classes:
         range: Fravær
         description: |
           Alle fravær registrert på elevforhold.
+        deprecated: "Bruk Elevfravær"
         multivalued: true
       programområdemedlemskap:
         range: Programområdemedlemskap
@@ -375,11 +388,13 @@ classes:
         range: Underveisordensvurdering
         description: |
           Underveisvurdering av orden og atferd for eleven.
+        deprecated: "Bruk Elevvurdering.underveisordensvurdering."
         multivalued: true
       eksamensgruppe:
         range: Eksamensgruppe
         description: |
           Alle eksamensgruppene elevforhold er medlem av
+        deprecated: "Relasjonen erstattes av Gruppemedlemskap i Eksamensgruppemedlemskap."
         multivalued: true
       basisgruppemedlemskap:
         range: Basisgruppemedlemskap
@@ -390,6 +405,7 @@ classes:
         range: Undervisningsgruppe
         description: |
           Alle undervisningsgruppene elevforhold er medlem av
+        deprecated: "Relasjonen erstattes med Gruppemedlemskap i Undervisningsgruppemedlemskap."
         multivalued: true
 
   Elevtilrettelegging:
@@ -444,6 +460,7 @@ classes:
         range: Elevforhold
         description: |
           Alle elevforhold i kontaktlærergruppen
+        deprecated: "Relasjonen erstattes av Elevforhold i Kontaktlærergruppemedlemskap."
         multivalued: true
       skole:
         range: Skole
@@ -500,6 +517,7 @@ classes:
       * Elevers medlemskap i Undervisningsgrupper
       * Lærerens medlemskap i Kontaktgruppe
       * Viser Elevens fravær fra en gitt undervisningsgruppe
+    deprecated: "Medlemskap uttrykkes som relasjoner direkte mellom Undervisningsforhold og Gruppe."
     attributes:
       systemId:
         range: Identifikator
@@ -509,11 +527,13 @@ classes:
           # Beskrivelse 
           
           Dette kan være identifikator som eksisterer i SAS (SATS, Extens).
+        deprecated: "DEPRECATED"
         required: true
       medlem:
         range: Utdanningsforhold
         description: |
           Alle deltakere i medlemskapet. Det er viktig å notere at det er både elevene og lærere som inngår i medlemskap i grupper.
+        deprecated: "Erstattet av relasjon mellom Undervisningsforhold og Elevforhold og grupper."
         required: true
       fortløpendeVurdering:
         range: Vurdering
@@ -523,20 +543,24 @@ classes:
           # Eksempler
           
           - Terminkarakter
+        deprecated: "Erstattet av relasjon mellom Elevforhold og Vurdering"
         multivalued: true
       gruppe:
         range: Gruppe
         description: |
           Gruppen som omtales i medlemskapet
+        deprecated: "Erstattet av relasjon mellom Elevforhold / Undervisningsforhold og grupper."
         required: true
       endeligVurdering:
         range: Vurdering
         description: |
           Den endelige vurderingen som eleven har fått som resultat av deltakelse i en gruppe
+        deprecated: "Erstattet av relesjon mellom Elevforhold og Vurdering"
       fravær:
         range: Fravær
         description: |
           Fraværet til både lærer og elev som har vært registrert innen en gitt gruppe.
+        deprecated: "Erstattet av relasjon mellom Elevforhold og Fravær"
         multivalued: true
 
   Persongruppe:

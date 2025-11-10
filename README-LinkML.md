@@ -58,13 +58,57 @@
 
 ### Klasser
 
-TODO: Eksempler på:
+#### hovedklasse
 
-* hovedklasse
-* abstrakt
-* kompleks datatype
+Alle klasser som har en Identifikator er hovedklasser.
+
+```yaml
+Person:
+  is_a: Aktør
+  attributes:
+    fødselsnummer:
+      range: Identifikator
+      required: true
+    navn:
+      range: Personnavn
+      required: true
+    ...
+```
+
+#### abstrakt
+
+Klasser som er merket med abstract: true` er abstrakte klasser.
+
+```yaml
+Aktør:
+    abstract: true
+    attributes:
+      kontaktinformasjon:
+        range: Kontaktinformasjon
+      ...
+```
+
+#### kompleks datatype
+
+Klasser som ikke er merket som abstrakt og ikke har noen identifikator er komplekse datatyper.
+
+```yaml
+Adresse:
+  attributes:
+    adresselinje:
+      range: Adresselinje
+      multivalued: true
+      inlined_as_list: true
+    ...
+```
 
 ## Utvikling
+
+### Kom i gang
+
+```bash
+brew install uv
+```
 
 ### Generer LinkML-modell fra Enterprise Architect sin XMI
 
@@ -149,3 +193,5 @@ linkml-lint --validate src
 ### Andre verktøy
 
 Kan dette brukes til noe? https://github.com/cimug-org/CIMTool?tab=readme-ov-file
+
+og https://docs.astral.sh/uv/ til python

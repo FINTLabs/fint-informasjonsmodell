@@ -100,6 +100,7 @@ classes:
         range: Elevforhold
         description: |
           Alle elevforhold i eksamensgruppen
+        deprecated: "Relasjonen erstattes av Gruppemedlemskap i Eksamensgruppemedlemskap."
         multivalued: true
       fag:
         range: Fag
@@ -350,6 +351,7 @@ classes:
         range: Undervisningsgruppe
         description: |
           Undervisningsgruppe vurderingen er foretatt i.
+        deprecated: "Informasjonen er ikke lenger tilgjengelig."
       karakter:
         range: Karakterverdi
         description: |
@@ -388,6 +390,7 @@ classes:
       * SNL. Fravær: https://snl.no/fravær
       * Rundskriv Udir-3-2016: https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Vitnemal/fravarsgrense---udir-3-2016/
       * UDir. Fravær i videregående skole: https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Vitnemal/fravar-i-videregaende-skole/
+    deprecated: "Bruk Elevfravær"
     attributes:
       dokumentert:
         range: string
@@ -395,6 +398,7 @@ classes:
           Angir om fraværet er dokumentert eller ikke (ja/nei).
           
           Hva slags fravær som betraktes som dokumentert følger av [Rundskriv Udir 3-2016](https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Vitnemal/fravarsgrense---udir-3-2016/).
+        deprecated: "Bruk Fraværstype"
         required: true
       føresPåVitnemål:
         range: string
@@ -428,10 +432,12 @@ classes:
         range: Eksamensgruppe
         description: |
           Eksamensgruppe det er registrert fravær fra.
+        deprecated: "Fravær ved eksamen settes som vurdering/karakter"
       elevforhold:
         range: Elevforhold
         description: |
           Elevforhold det er registrert fravær på.
+        deprecated: "Bruk Elevfravær"
         required: true
       registrertav:
         range: Skoleressurs
@@ -592,6 +598,7 @@ classes:
         range: Elevforhold
         description: |
           Elevforholdet vurderingen gjelder.
+        deprecated: "Bruk Elevvurdering.halvårsfagvurdering."
         required: true
       elevvurdering:
         range: Elevvurdering
@@ -618,6 +625,7 @@ classes:
         range: Elevforhold
         description: |
           Elevforholdet vurderingen gjelder.
+        deprecated: "Bruk Elevvurdering.halvårsordensvurdering."
         required: true
       elevvurdering:
         range: Elevvurdering
@@ -820,11 +828,13 @@ classes:
         range: Elevforhold
         description: |
           Elevforholdet vurderingen gjelder.
+        deprecated: "Bruk Elevvurdering.sluttfagvurdering."
         required: true
       eksamensgruppe:
         range: Eksamensgruppe
         description: |
           Eksamensgruppe vurderingen er foretatt i.
+        deprecated: "Bruk Eksamensvurdering"
       karakterhistorie:
         range: Karakterhistorie
         description: |
@@ -855,6 +865,7 @@ classes:
         range: Elevforhold
         description: |
           Elevforholdet vurderingen gjelder.
+        deprecated: "Bruk Elevvurdering.sluttordensvurdering."
         required: true
       elevvurdering:
         range: Elevvurdering
@@ -883,6 +894,7 @@ classes:
         range: Elevforhold
         description: |
           Elevforholdet vurderingen gjelder.
+        deprecated: "Bruk Elevvurdering.underveisfagvurdering."
         required: true
       elevvurdering:
         range: Elevvurdering
@@ -909,6 +921,7 @@ classes:
         range: Elevforhold
         description: |
           Elevforholdet vurderingen gjelder.
+        deprecated: "Bruk Elevvurdering.underveisordensvurdering."
         required: true
       elevvurdering:
         range: Elevvurdering
@@ -933,6 +946,7 @@ classes:
       * UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)
       * Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)
       * Forskrift til opplæringslova &#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4)
+    deprecated: "Bruk Fagvurdering og Ordensvurdering."
     attributes:
       endelig:
         range: string
@@ -965,6 +979,7 @@ classes:
         range: Elevforhold
         description: |
           Elevforhold som er vurdert.
+        deprecated: "Bruk Elevvurdering"
       undervisningsgruppe:
         range: Undervisningsgruppe
         description: |

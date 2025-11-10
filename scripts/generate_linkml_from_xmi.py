@@ -28,8 +28,6 @@ HEADER = "# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.js
 
 
 def slugify(s: str) -> str:
-    # Preserve Scandinavian letters in a predictable way
-    # æ -> a, ø -> o, å -> a (and uppercase variants)
     trans = str.maketrans({
         'æ': 'a', 'Æ': 'A',
         'ø': 'o',  'Ø': 'O',
@@ -106,12 +104,14 @@ def sanitize_text(text: str) -> str:
 
 
 def build_doc_indexes(root: ET.Element):
-    """Build maps for documentation texts using EA extension blocks and connectors.
-    Returns (class_docs, attribute_docs, assoc_docs) mapping identifiers to doc strings.
-    """
+    """Build maps for documentation and deprecation texts using EA extension blocks and connectors."""
     class_docs = {}
     attr_docs = {}
     assoc_docs = {}
+    class_deprecated = {}
+    attr_deprecated = {}
+    assoc_deprecated = {}
+    assoc_role_deprecated = {}
     # EA stores extra info in non-namespaced blocks <element>, <attributes>/<attribute>
     for el in root.findall('.//element'):
         xmi_type = el.get(f'{{{XMI_NS}}}type')
@@ -122,23 +122,51 @@ def build_doc_indexes(root: ET.Element):
                 doc = props.get('documentation')
                 if doc:
                     class_docs[xmi_idref] = sanitize_text(doc.strip())
+        tag_block = el.find('tags')
+        if tag_block is not None and xmi_idref:
+            for tag in tag_block.findall('tag'):
+                if (tag.get('name') or '').upper() == 'DEPRECATED':
+                    text = extract_tag_text(tag)
+                    if text:
+                        class_deprecated[xmi_idref] = text
+                        break
         # attributes for this element
         atts_block = el.find('attributes')
         if atts_block is not None:
             for att in atts_block.findall('attribute'):
-                aid = att.get(f'{{{XMI_NS}}}idref')
-                if not aid:
+                attr_ids = [att.get(f'{{{XMI_NS}}}id'), att.get(f'{{{XMI_NS}}}idref')]
+                attr_ids = [aid for aid in attr_ids if aid]
+                if not attr_ids:
                     continue
                 adoc_el = att.find('documentation')
                 if adoc_el is not None:
                     val = adoc_el.get('value')
                     if val:
-                        attr_docs[aid] = sanitize_text(val.strip())
+                        cleaned = sanitize_text(val.strip())
+                        for aid in attr_ids:
+                            attr_docs[aid] = cleaned
+                tag_block = att.find('tags')
+                if tag_block is not None:
+                    for tag in tag_block.findall('tag'):
+                        if (tag.get('name') or '').upper() == 'DEPRECATED':
+                            text = extract_tag_text(tag)
+                            if text:
+                                for aid in attr_ids:
+                                    attr_deprecated[aid] = text
+                                break
     # EA connector blocks frequently contain documentation for association ends (slots)
     for conn in root.findall('.//connector'):
         assoc_id = conn.get(f'{{{XMI_NS}}}idref') or conn.get('xmi:idref')
         if not assoc_id:
             continue
+        tag_block = conn.find('tags')
+        if tag_block is not None:
+            for tag in tag_block.findall('tag'):
+                if (tag.get('name') or '').upper() == 'DEPRECATED':
+                    text = extract_tag_text(tag)
+                    if text:
+                        assoc_deprecated[assoc_id] = text
+                        break
         for node_name in ('source', 'target'):
             node = conn.find(node_name)
             if node is None:
@@ -150,12 +178,27 @@ def build_doc_indexes(root: ET.Element):
             if not role_name:
                 continue
             doc_el = node.find('documentation')
-            if doc_el is None:
-                continue
-            val = doc_el.get('value')
-            if val:
-                assoc_docs[(assoc_id, role_name)] = sanitize_text(val.strip())
-    return class_docs, attr_docs, assoc_docs
+            if doc_el is not None:
+                val = doc_el.get('value')
+                if val:
+                    assoc_docs[(assoc_id, role_name)] = sanitize_text(val.strip())
+            tag_block = node.find('tags')
+            if tag_block is not None:
+                for tag in tag_block.findall('tag'):
+                    if (tag.get('name') or '').upper() == 'DEPRECATED':
+                        text = extract_tag_text(tag)
+                        if text:
+                            assoc_role_deprecated[(assoc_id, role_name)] = text
+                            break
+    return (
+        class_docs,
+        attr_docs,
+        assoc_docs,
+        class_deprecated,
+        attr_deprecated,
+        assoc_deprecated,
+        assoc_role_deprecated,
+    )
 
 
 def get_class_doc(cls_el: ET.Element, class_docs: dict):
@@ -177,6 +220,32 @@ def append_description(lines: list, indent_spaces: int, text: str):
     lines.append(f'{indent}description: |')
     for ln in text.splitlines():
         lines.append(f'{indent}  {ln}')
+
+
+def append_deprecated(lines: list, indent_spaces: int, text: str):
+    if not text:
+        return
+    indent = ' ' * indent_spaces
+    stripped = text.strip()
+    if '\n' in stripped:
+        lines.append(f'{indent}deprecated: |')
+        for ln in stripped.splitlines():
+            lines.append(f'{indent}  {ln}')
+    else:
+        escaped = stripped.replace('\\', '\\\\').replace('"', '\\"')
+        lines.append(f'{indent}deprecated: "{escaped}"')
+
+
+def extract_tag_text(tag_el: ET.Element):
+    if tag_el is None:
+        return None
+    for key in ('value', 'notes', 'memo'):
+        val = tag_el.get(key)
+        if val:
+            cleaned = sanitize_text(val.strip())
+            if cleaned:
+                return cleaned
+    return None
 
 
 def find_fint_package(model_root: ET.Element) -> ET.Element:
@@ -219,7 +288,15 @@ def map_primitive(href: str) -> str:
     return PRIMITIVE_MAP.get(t, 'string')
 
 
-def parse_attributes(cls_el: ET.Element, class_index, attr_docs=None, assoc_docs=None):
+def parse_attributes(
+    cls_el: ET.Element,
+    class_index,
+    attr_docs=None,
+    assoc_docs=None,
+    attr_deprecated=None,
+    assoc_deprecated=None,
+    assoc_role_deprecated=None,
+):
     attrs = []
     # owned attributes
     for a in cls_el.findall('ownedAttribute'):
@@ -282,11 +359,18 @@ def parse_attributes(cls_el: ET.Element, class_index, attr_docs=None, assoc_docs
             if xmi_idref and xmi_idref in class_index:
                 rng = class_index[xmi_idref]['el'].get('name') or 'string'
 
+        attr_ids = []
+        for key in (f'{{{XMI_NS}}}id', f'{{{XMI_NS}}}idref'):
+            val = a.get(key)
+            if val:
+                attr_ids.append(val)
+
         desc = None
-        if attr_docs is not None:
-            aid = a.get(f'{{{XMI_NS}}}id') or a.get(f'{{{XMI_NS}}}idref')
-            if aid and aid in attr_docs:
-                desc = attr_docs[aid]
+        if attr_docs:
+            for aid in attr_ids:
+                if aid in attr_docs:
+                    desc = attr_docs[aid]
+                    break
         if not desc and assoc_docs is not None:
             assoc_id = a.get('association')
             if assoc_id:
@@ -294,7 +378,27 @@ def parse_attributes(cls_el: ET.Element, class_index, attr_docs=None, assoc_docs
                 if doc:
                     desc = doc
 
-        attrs.append({'name': name, 'range': rng, 'required': required, 'multivalued': multivalued, 'description': desc})
+        deprecated = None
+        if attr_deprecated:
+            for aid in attr_ids:
+                if aid in attr_deprecated:
+                    deprecated = attr_deprecated[aid]
+                    break
+        assoc_id = a.get('association')
+        if not deprecated and assoc_id:
+            if assoc_role_deprecated and (assoc_id, name) in assoc_role_deprecated:
+                deprecated = assoc_role_deprecated[(assoc_id, name)]
+            elif assoc_deprecated and assoc_id in assoc_deprecated:
+                deprecated = assoc_deprecated[assoc_id]
+
+        attrs.append({
+            'name': name,
+            'range': rng,
+            'required': required,
+            'multivalued': multivalued,
+            'description': desc,
+            'deprecated': deprecated,
+        })
     return attrs
 
 
@@ -321,7 +425,20 @@ def collect_dependencies(attrs, class_index, self_package):
     return deps
 
 
-def emit_yaml_for_package(pkg_path, classes_for_pkg, class_index, outdir, overwrite=False, class_docs=None, attr_docs=None, assoc_docs=None):
+def emit_yaml_for_package(
+    pkg_path,
+    classes_for_pkg,
+    class_index,
+    outdir,
+    overwrite=False,
+    class_docs=None,
+    attr_docs=None,
+    assoc_docs=None,
+    class_deprecated=None,
+    attr_deprecated=None,
+    assoc_deprecated=None,
+    assoc_role_deprecated=None,
+):
     if not classes_for_pkg:
         return None
     name = dotted_name(pkg_path)
@@ -343,7 +460,15 @@ def emit_yaml_for_package(pkg_path, classes_for_pkg, class_index, outdir, overwr
     deps = set()
     self_pkg_full = ('FINT',) + tuple(pkg_path)
     for cls_el in cls_elements:
-        ainfo = parse_attributes(cls_el, class_index, attr_docs=attr_docs, assoc_docs=assoc_docs)
+        ainfo = parse_attributes(
+            cls_el,
+            class_index,
+            attr_docs=attr_docs,
+            assoc_docs=assoc_docs,
+            attr_deprecated=attr_deprecated,
+            assoc_deprecated=assoc_deprecated,
+            assoc_role_deprecated=assoc_role_deprecated,
+        )
         deps |= collect_dependencies(ainfo, class_index, self_pkg_full)
         # also include superclass package deps
         gen = cls_el.find('generalization')
@@ -395,12 +520,24 @@ def emit_yaml_for_package(pkg_path, classes_for_pkg, class_index, outdir, overwr
             cdesc = get_class_doc(cls_el, class_docs)
             if cdesc:
                 append_description(lines, 4, cdesc)
+        if class_deprecated:
+            cid = cls_el.get(f'{{{XMI_NS}}}id')
+            if cid and cid in class_deprecated:
+                append_deprecated(lines, 4, class_deprecated[cid])
         if (cls_el.get('isAbstract') or '').lower() == 'true':
             lines.append('    abstract: true')
         isa = parse_is_a(cls_el, class_index)
         if isa:
             lines.append(f'    is_a: {isa}')
-        attrs = parse_attributes(cls_el, class_index, attr_docs=attr_docs, assoc_docs=assoc_docs)
+        attrs = parse_attributes(
+            cls_el,
+            class_index,
+            attr_docs=attr_docs,
+            assoc_docs=assoc_docs,
+            attr_deprecated=attr_deprecated,
+            assoc_deprecated=assoc_deprecated,
+            assoc_role_deprecated=assoc_role_deprecated,
+        )
         if attrs:
             lines.append('    attributes:')
             for a in attrs:
@@ -408,6 +545,8 @@ def emit_yaml_for_package(pkg_path, classes_for_pkg, class_index, outdir, overwr
                 lines.append(f'        range: {a["range"]}')
                 if a.get('description'):
                     append_description(lines, 8, a['description'])
+                if a.get('deprecated'):
+                    append_deprecated(lines, 8, a['deprecated'])
                 if a['multivalued']:
                     lines.append('        multivalued: true')
                 if a['required']:
@@ -429,7 +568,15 @@ def main():
     args = ap.parse_args()
 
     root = read_xml(args.xmi)
-    class_docs, attr_docs, assoc_docs = build_doc_indexes(root)
+    (
+        class_docs,
+        attr_docs,
+        assoc_docs,
+        class_deprecated,
+        attr_deprecated,
+        assoc_deprecated,
+        assoc_role_deprecated,
+    ) = build_doc_indexes(root)
     model = root.find('.//uml:Model', NS)
     if model is None:
         print('ERROR: Could not find uml:Model in XMI', file=sys.stderr)
@@ -467,6 +614,10 @@ def main():
             class_docs=class_docs,
             attr_docs=attr_docs,
             assoc_docs=assoc_docs,
+            class_deprecated=class_deprecated,
+            attr_deprecated=attr_deprecated,
+            assoc_deprecated=assoc_deprecated,
+            assoc_role_deprecated=assoc_role_deprecated,
         )
         if out:
             generated.append(out)

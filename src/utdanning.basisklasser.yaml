@@ -53,6 +53,7 @@ classes:
           Kan brukes for å angi at en gruppe gjelder for et skoleår, en termin eller en eksamensperiode.
           
           Flere perioder kan knyttes til en gruppe. Dette kan eksempelvis benyttes for å representere komprimerte eller utvidete utdanningsløp.
+        deprecated: "Erstattes av eksplisitte tilknytninger til termin(er) og skoleår."
         multivalued: true
       systemId:
         range: Identifikator
@@ -75,6 +76,7 @@ classes:
         range: Medlemskap
         description: |
           Alle medlemene (medlemskapsforholdene) i en gruppe
+        deprecated: "Erstattet av relasjon mellom Elevforhold / Undervisningsforhold og grupper."
         multivalued: true
 
   Gruppemedlemskap:
@@ -137,4 +139,5 @@ classes:
         range: Medlemskap
         description: |
           Alle gruppene som elev eller lærer er medlem av.
+        deprecated: "Erstattet av relasjon mellom Undervisningsforhold og Elevforhold og grupper."
         multivalued: true

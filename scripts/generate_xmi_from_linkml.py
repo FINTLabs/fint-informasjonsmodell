@@ -54,6 +54,7 @@ class Slot:
     required: bool = False
     multivalued: bool = False
     description: Optional[str] = None
+    deprecated: Optional[str] = None
 
 
 @dataclass
@@ -65,12 +66,32 @@ class SchemaClass:
     is_a: Optional[str]
     attributes: List[Slot] = field(default_factory=list)
     stereotypes: List[str] = field(default_factory=list)
+    deprecated: Optional[str] = None
 
 
 def sanitize_attribute_text(text: Optional[str]) -> Optional[str]:
     if text is None:
         return None
     return text.replace('\r\n', '\n').replace('\r', '\n')
+
+
+def normalize_metadata_text(value: Optional[str]) -> Optional[str]:
+    if value is None:
+        return None
+    text = sanitize_attribute_text(str(value))
+    if text is None:
+        return None
+    stripped = text.strip()
+    return stripped or None
+
+
+def append_deprecated_tag(parent: ET.Element, text: Optional[str]) -> None:
+    if not text:
+        return
+    ET.SubElement(parent, "tag", {
+        "name": "DEPRECATED",
+        "value": text,
+    })
 
 
 def find_yaml_files(src_dir: Path) -> Iterable[Path]:
@@ -111,6 +132,7 @@ def collect_classes(src_dir: Path) -> Tuple[List[SchemaClass], Dict[str, List[Sc
                     required=bool(slot_info.get("required")),
                     multivalued=bool(slot_info.get("multivalued")),
                     description=slot_info.get("description"),
+                    deprecated=normalize_metadata_text(slot_info.get("deprecated")),
                 )
                 attributes.append(slot)
             stereos = class_info.get("stereotypes") or class_info.get("stereotype")
@@ -129,6 +151,7 @@ def collect_classes(src_dir: Path) -> Tuple[List[SchemaClass], Dict[str, List[Sc
                 is_a=class_info.get("is_a"),
                 attributes=attributes,
                 stereotypes=stereotype_list or ["hovedklasse"],
+                deprecated=normalize_metadata_text(class_info.get("deprecated")),
             )
             classes.append(schema_class)
             name_index[class_name].append(schema_class)
@@ -336,7 +359,8 @@ def build_xmi(classes: List[SchemaClass], name_index: Dict[str, List[SchemaClass
                 "name": schema_class.name,
                 "scope": "public",
             })
-            ET.SubElement(class_ext, "tags")
+            class_tags = ET.SubElement(class_ext, "tags")
+            append_deprecated_tag(class_tags, schema_class.deprecated)
             class_props = {}
             if doc_text:
                 class_props["documentation"] = doc_text
@@ -401,7 +425,8 @@ def build_xmi(classes: List[SchemaClass], name_index: Dict[str, List[SchemaClass
                     f"{{{XMI_NS}}}idref": attr_id,
                     "name": slot.name,
                 })
-                ET.SubElement(attr_ext, "tags")
+                attr_tags = ET.SubElement(attr_ext, "tags")
+                append_deprecated_tag(attr_tags, slot.deprecated)
 
     indent(root)
     return ET.ElementTree(root)

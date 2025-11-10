@@ -13268,7 +13268,9 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
         <properties documentation="Kontaktperson til en person.&#10;&#10;# Beskrivelse&#10;&#10;Kontaktperson er personer som kan kontaktes dersom det er behov for det.&#10;&#10;Kontaktperson kalles også pårørende.&#10;" stereotype="hovedklasse" />
         <attributes>
           <attribute xmi:idref="EAID_PRP_ac8bbd596064b0870f" name="foreldreansvar">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Feltet utgår.  Benytt relasjon `foreldreansvar` på Person." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_7a1829fcf8816c22b7" name="kontaktinformasjon">
             <tags />
@@ -13286,7 +13288,9 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_e5eb4d42de212e67fb" name="person">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Relasjon fra Kontaktperson til Person utgår, og skal ikke fylles ut." />
+              </tags>
             </attribute>
           </attributes>
         </element>
@@ -13389,7 +13393,9 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_5414cdc530c1a79b9a" name="myndighet">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Relasjonen til fullmakt ble fjernet i v3.8.0" />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_cb6042c9202c0d874e" name="ramme">
             <tags />
@@ -13542,7 +13548,9 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
         <properties documentation="Abstrakt fellesbegrep som beskriver dimensjon i kontoplan.&#10;&#10;# Beskrivelse&#10;&#10;Fellesbenevnelse for dimensjoner i en kontoplan.&#10;" stereotype="hovedklasse" />
         <attributes>
           <attribute xmi:idref="EAID_PRP_6643be1b439cc0439f" name="fullmakt">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Relasjonen til fullmakt ble fjernet i v3.8.0" />
+              </tags>
             </attribute>
           </attributes>
         </element>
@@ -13835,7 +13843,9 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_2ea8b49e3a350dea3c" name="lønn">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Bruk relasjonene fastlønn, fasttillegg, variabellønn" />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_b7c0897e3f23794ca9" name="fastlønn">
             <tags />
@@ -14343,7 +14353,9 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_6199c93ba6743fc843" name="format">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Erstattes av relasjon til kodeverk Format." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_7bbcb367d70957088b" name="formatDetaljer">
             <tags />
@@ -15622,7 +15634,9 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_451f64a30129f07684" name="periode">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Erstattes av eksplisitte tilknytninger til termin(er) og skoleår." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_68fca34b52d9165eaf" name="systemId">
             <tags />
@@ -15634,7 +15648,9 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_d154bcce901bd9bb56" name="medlemskap">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Erstattet av relasjon mellom Elevforhold / Undervisningsforhold og grupper." />
+              </tags>
             </attribute>
           </attributes>
         </element>
@@ -15661,7 +15677,9 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_c513ff85d383e8260c" name="medlemskap">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Erstattet av relasjon mellom Undervisningsforhold og Elevforhold og grupper." />
+              </tags>
             </attribute>
           </attributes>
         </element>
@@ -15676,7 +15694,9 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_89e78a8ca2a596ee13" name="elevforhold">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Relasjonen erstattes av Gruppemedlemskap i Basisgruppemedlemskap." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_73d2942de56b90d549" name="termin">
             <tags />
@@ -15763,13 +15783,17 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_e7c222a05474f107c4" name="sidemål">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Bruk relasjon fra Faggruppemedlemskap." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_064c0ef36d8b57ee55" name="kategori">
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_7e26ba7b92c847dc04" name="kroppsøving">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Bruk relasjon fra Faggruppemedlemskap." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_c7369ae022a2f78fee" name="skole">
             <tags />
@@ -15793,25 +15817,39 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_9e2671ba84e1829b0a" name="basisgruppe">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Relasjonen erstattes av Gruppemedlemskap i Basisgruppemedlemskap." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_f25fb931d8a0b4651e" name="vurdering">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Bruk Elevvurdering" />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_4ac6f5f56bdbc6340c" name="sluttordensvurdering">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Bruk Elevvurdering.sluttordensvurdering." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_8d86fed0300a7c3d48" name="kontaktlærergruppe">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Relasjonen erstattes av Elevforhold i Kontaktlærergruppemedlemskap." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_45165f4ba50a352aa1" name="underveisfagvurdering">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Bruk Elevvurdering.underveisfagvurdering." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_29454559f79790b98b" name="halvårsfagvurdering">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Bruk Elevvurdering.halvårsfagvurdering." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_97000ccda4bb2df891" name="sluttfagvurdering">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Bruk Elevvurdering.sluttfagvurdering." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_2f5e1dd0f9617388d9" name="persongruppemedlemskap">
             <tags />
@@ -15829,31 +15867,43 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_49c9dd18223800a318" name="halvårsordensvurdering">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Bruk Elevvurdering.halvårsordensvurdering." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_e9f90bb0f84766fd1d" name="programområde">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Relasjonen erstattes av Elevforhold i Programområdemedlemskap." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_c0829b60271e7b8ead" name="elevvurdering">
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_884a6e96c961971426" name="fravær">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Bruk Elevfravær" />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_a99dc6ac5e76eb4a98" name="programområdemedlemskap">
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_2348bfee3f542ab6cc" name="underveisordensvurdering">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Bruk Elevvurdering.underveisordensvurdering." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_fc3d5f433194457371" name="eksamensgruppe">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Relasjonen erstattes av Gruppemedlemskap i Eksamensgruppemedlemskap." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_5a57e0906de5670f46" name="basisgruppemedlemskap">
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_c6072d50f5a3a902ea" name="undervisningsgruppe">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Relasjonen erstattes med Gruppemedlemskap i Undervisningsgruppemedlemskap." />
+              </tags>
             </attribute>
           </attributes>
         </element>
@@ -15886,7 +15936,9 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_be3c9472fd4d1478d8" name="elevforhold">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Relasjonen erstattes av Elevforhold i Kontaktlærergruppemedlemskap." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_a745db24a39fdb30bf" name="skole">
             <tags />
@@ -15918,26 +15970,40 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
           </attributes>
         </element>
       <element xmi:idref="EAID_CLS_923314dcb9bf6b4540" xmi:type="uml:Class" name="Medlemskap" scope="public">
-        <tags />
+        <tags>
+          <tag name="DEPRECATED" value="Medlemskap uttrykkes som relasjoner direkte mellom Undervisningsforhold og Gruppe." />
+          </tags>
         <properties documentation="Måte å definere at en gitt elev eller lærer deltar i en gruppe. Informasjonen om fravær og elevens karakterer er definert ved hjelp av dette objektet.&#10;&#10;# Eksempler&#10;&#10;* Elevers medlemskap i Undervisningsgrupper&#10;* Lærerens medlemskap i Kontaktgruppe&#10;* Viser Elevens fravær fra en gitt undervisningsgruppe&#10;" stereotype="hovedklasse" />
         <attributes>
           <attribute xmi:idref="EAID_PRP_17eadbad799ba177f2" name="systemId">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="DEPRECATED" />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_993dfa346dbc36a8ad" name="medlem">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Erstattet av relasjon mellom Undervisningsforhold og Elevforhold og grupper." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_0269d06b713cbd7d6e" name="fortløpendeVurdering">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Erstattet av relasjon mellom Elevforhold og Vurdering" />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_2e30deb33b9d9cf34a" name="gruppe">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Erstattet av relasjon mellom Elevforhold / Undervisningsforhold og grupper." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_91b26d4b901be7bfcc" name="endeligVurdering">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Erstattet av relesjon mellom Elevforhold og Vurdering" />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_4320b92c76464e1ecb" name="fravær">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Erstattet av relasjon mellom Elevforhold og Fravær" />
+              </tags>
             </attribute>
           </attributes>
         </element>
@@ -16439,7 +16505,9 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_929a9951ff9671f7a7" name="elevforhold">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Relasjonen erstattes med Gruppemedlemskap i Undervisningsgruppemedlemskap." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_e08e0e9966d70cb45f" name="undervisningsforhold">
             <tags />
@@ -16475,7 +16543,9 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_d746754aadf44806f5" name="elevforhold">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Relasjonen erstattes av Elevforhold i Programområdemedlemskap." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_c3b488e76b5b29dbe9" name="fag">
             <tags />
@@ -16628,7 +16698,9 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_c65ceb67b4daa46549" name="elevforhold">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Relasjonen erstattes av Gruppemedlemskap i Eksamensgruppemedlemskap." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_d1d21e3f1a07afc3dd" name="fag">
             <tags />
@@ -16760,7 +16832,9 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_44f17b5274f9d42de6" name="undervisningsgruppe">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Informasjonen er ikke lenger tilgjengelig." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_26466364f93dd5e55f" name="karakter">
             <tags />
@@ -16771,11 +16845,15 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
           </attributes>
         </element>
       <element xmi:idref="EAID_CLS_ebac31792d99fa6926" xmi:type="uml:Class" name="Fravær" scope="public">
-        <tags />
+        <tags>
+          <tag name="DEPRECATED" value="Bruk Elevfravær" />
+          </tags>
         <properties documentation="Manglende tilstedeværelse i opplæringen.&#10;&#10;# Beskrivelse&#10;&#10;Fravær føres med relasjon til den undervisningen eleven har vært fraværende fra.  Det må derfor være en relasjon til en Undervisningsgruppe.&#10;&#10;# Fraværsgrense &#10;&#10;* Elever i videregående skole skal møte opp og delta aktivt i opplæringen. &#10;* Fravær skal registreres, og det foreligger grenser på hvor mye fravær som tillates før rett til å få halvårsvurdering med karakter eller standpunktkarakter i et fag bortfaller. &#10;* Eleven må legge fram relevant dokumentasjon for å få fravær unntatt fra fraværsgrensen.&#10;* Fraværsgrensen gjelder timefravær i enkeltfag, ikke elevenes totale fravær.&#10;* Eleven skal få et varsel om han eller hun står i fare for å ikke få karakter på grunn av fravær.&#10;&#10;# Fravær eksamen&#10;Det føres ikke lenger fravær på eksamen. Dette vil bli satt som karakter. Pga dette utgår relasjonen til eksamensgruppe. Ved en senere hovedoppdatering av Informasjonsmodellen vil multiplisitet for relasjonen  undervisningsgruppe bli satt til 1.&#10;&#10;# Referanser&#10;&#10;* UDir Registreringshåndbok: http://regbok.udir.no/35004/3344/35042-1018643.html&#10;* Forskrift til opplæringslova &amp;#167; 3-3, siste ledd: https://lovdata.no/forskrift/2006-06-23-724/&amp;#167;3-3&#10;* Forskrift til opplæringslova &amp;#167; 3-47: https://lovdata.no/forskrift/2006-06-23-724/&amp;#167;3-47&#10;* UDir. Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet, pkt 8: https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/8-fravar/&#10;* SNL. Fravær: https://snl.no/fravær&#10;* Rundskriv Udir-3-2016: https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Vitnemal/fravarsgrense---udir-3-2016/&#10;* UDir. Fravær i videregående skole: https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Vitnemal/fravar-i-videregaende-skole/&#10;" stereotype="hovedklasse" />
         <attributes>
           <attribute xmi:idref="EAID_PRP_b9cc888d5a92f14f48" name="dokumentert">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Bruk Fraværstype" />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_6705818bc66182b1a5" name="føresPåVitnemål">
             <tags />
@@ -16793,10 +16871,14 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_a6384da98f575dd300" name="eksamensgruppe">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Fravær ved eksamen settes som vurdering/karakter" />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_7274c3dc40022b14ca" name="elevforhold">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Bruk Elevfravær" />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_ad1d4e1fb8e136740c" name="registrertav">
             <tags />
@@ -16880,7 +16962,9 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
         <properties documentation="Karakterer og andre vurderingsuttrykk.&#10;&#10;# Beskrivelse&#10;&#10;Halvårsvurdering gis for deltakelse av en elev i en gruppe.&#10;&#10;Vurdering i fag skal ha relasjon til den `Undervisningsgruppe` som vurderingen er foretatt i. Det er også mulig å sette relasjon direkte til angjeldende fag.&#10;&#10;# Referanser&#10;&#10;* UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)&#10;* Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)&#10;* Forskrift til opplæringslova &amp;#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4)&#10;" stereotype="hovedklasse" />
         <attributes>
           <attribute xmi:idref="EAID_PRP_d2b6a69161af8ea438" name="elevforhold">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Bruk Elevvurdering.halvårsfagvurdering." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_a7143a9f2c6903198a" name="elevvurdering">
             <tags />
@@ -16892,7 +16976,9 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
         <properties documentation="Halvårsvurdering av orden og atferd..&#10;&#10;# Beskrivelse&#10;&#10;Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et elevforhold.&#10;&#10;# Referanser&#10;&#10;* UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)&#10;* Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)&#10;* Forskrift til opplæringslova &amp;#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4)&#10;" stereotype="hovedklasse" />
         <attributes>
           <attribute xmi:idref="EAID_PRP_fa12bef9e9d2a9f987" name="elevforhold">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Bruk Elevvurdering.halvårsordensvurdering." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_b3497802b3da9c175d" name="elevvurdering">
             <tags />
@@ -16985,10 +17071,14 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
         <properties documentation="Karakterer og andre vurderingsuttrykk.&#10;&#10;# Beskrivelse&#10;&#10;Sluttvurdering (Standpunktkarakter) gis for deltakelse av en elev i en gruppe.&#10;&#10;Vurderingen skal ha en relasjon til det angjeldende faget.&#10;&#10;# Referanser&#10;&#10;* UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)&#10;* Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)&#10;* Forskrift til opplæringslova &amp;#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4)&#10;" stereotype="hovedklasse" />
         <attributes>
           <attribute xmi:idref="EAID_PRP_36455e7e629e5ddc9e" name="elevforhold">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Bruk Elevvurdering.sluttfagvurdering." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_f688dba609ae1e7caf" name="eksamensgruppe">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Bruk Eksamensvurdering" />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_f981a62d6137f9d824" name="karakterhistorie">
             <tags />
@@ -17003,7 +17093,9 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
         <properties documentation="Sluttvurdering av orden og atferd..&#10;&#10;# Beskrivelse&#10;&#10;Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et elevforhold.&#10;&#10;# Referanser&#10;&#10;* UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)&#10;* Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)&#10;* Forskrift til opplæringslova &amp;#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4)&#10;" stereotype="hovedklasse" />
         <attributes>
           <attribute xmi:idref="EAID_PRP_2ffd160d41cf12a72a" name="elevforhold">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Bruk Elevvurdering.sluttordensvurdering." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_175708fc26b0b95b46" name="elevvurdering">
             <tags />
@@ -17015,7 +17107,9 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
         <properties documentation="Karakterer og andre vurderingsuttrykk.&#10;&#10;# Beskrivelse&#10;&#10;Underveisvurdering gis for deltakelse av en elev i en gruppe.&#10;&#10;Vurdering i fag skal ha relasjon til den `Undervisningsgruppe` som vurderingen er foretatt i. Det er også mulig å sette relasjon direkte til angjeldende fag.&#10;&#10;# Referanser&#10;&#10;* UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)&#10;* Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)&#10;* Forskrift til opplæringslova &amp;#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4)&#10;" stereotype="hovedklasse" />
         <attributes>
           <attribute xmi:idref="EAID_PRP_ee7b0b29930a982ba8" name="elevforhold">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Bruk Elevvurdering.underveisfagvurdering." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_6e5a4875cb3a3141ac" name="elevvurdering">
             <tags />
@@ -17027,7 +17121,9 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
         <properties documentation="Underveisvurdering av orden og atferd..&#10;&#10;# Beskrivelse&#10;&#10;Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et elevforhold.&#10;&#10;# Referanser&#10;&#10;* UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)&#10;* Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)&#10;* Forskrift til opplæringslova &amp;#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4)&#10;" stereotype="hovedklasse" />
         <attributes>
           <attribute xmi:idref="EAID_PRP_22bd8a1fb5e8b806ef" name="elevforhold">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Bruk Elevvurdering.underveisordensvurdering." />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_0ef78c04076fca41ab" name="elevvurdering">
             <tags />
@@ -17035,7 +17131,9 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
           </attributes>
         </element>
       <element xmi:idref="EAID_CLS_83824b46425e766c13" xmi:type="uml:Class" name="Vurdering" scope="public">
-        <tags />
+        <tags>
+          <tag name="DEPRECATED" value="Bruk Fagvurdering og Ordensvurdering." />
+          </tags>
         <properties documentation="Karakterer og andre vurderingsuttrykk.&#10;&#10;# Beskrivelse&#10;&#10;Vurdering gis for deltakelse av en elev i en gruppe. Dette kan være Halvårsvurdering, Standpunktkarakter, underveisvurdering eller annet. &#10;&#10;Vurdering i fag skal ha relasjon til den `Undervisningsgruppe` eller `Eksamensgruppe` som vurderingen er foretatt i. Det er også mulig å sette relasjon direkte til angjeldende fag.&#10;&#10;Vurderinger av orden og andre frittstående vurderinger gjøres uten relasjon til noen gruppe.&#10;&#10;# Referanser&#10;&#10;* UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)&#10;* Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)&#10;* Forskrift til opplæringslova &amp;#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4)&#10;" stereotype="hovedklasse" />
         <attributes>
           <attribute xmi:idref="EAID_PRP_3c75f2068e2129c592" name="endelig">
@@ -17054,7 +17152,9 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_1b113beedba23ffc00" name="elevforhold">
-            <tags />
+            <tags>
+              <tag name="DEPRECATED" value="Bruk Elevvurdering" />
+              </tags>
             </attribute>
           <attribute xmi:idref="EAID_PRP_160eaa7a1069d0d328" name="undervisningsgruppe">
             <tags />
