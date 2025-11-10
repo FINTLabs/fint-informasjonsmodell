@@ -1,0 +1,74 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/administrasjon/komplekse-datatyper
+name: administrasjon.komplekse-datatyper
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+  - administrasjon.kodeverk
+
+classes:
+
+  Kontostreng:
+    description: |
+      Sammensetning av kontodimensjoner for bokføring
+      
+      # Beskrivelse
+      
+      Henvisninger til koder i alle kontodimensjoner for kontering av en kostnad eller inntekt.
+    attributes:
+      funksjon:
+        range: Funksjon
+        description: |
+          Det som blir produsert eller tjenesten som blir levert.
+        required: true
+      ramme:
+        range: Ramme
+        description: |
+          Budsjettramme som skal bære kostnadene.
+      løpenummer:
+        range: Løpenummer
+        description: |
+          Løpenummer i en nummerserie.
+      kontrakt:
+        range: Kontrakt
+        description: |
+          Kontostrengens kontraktsegment.
+      prosjekt:
+        range: Prosjekt
+        description: |
+          Kontostrengens prosjektsegment.
+      diverse:
+        range: Diverse
+        description: |
+          Spesifikasjon som ikke fremkommer i øvrige dimensjoner.
+      anlegg:
+        range: Anlegg
+        description: |
+          Objekt som skal aktiveres eller avskrives.
+      art:
+        range: Art
+        description: |
+          Typen inntekt eller utgift.
+        required: true
+      prosjektart:
+        range: Prosjektart
+        description: |
+          Deloppgave eller delprosjekt.
+      objekt:
+        range: Objekt
+        description: |
+          Objekt som skal aktiveres eller avskrives.
+      ansvar:
+        range: Ansvar
+        description: |
+          Ansvarlig for en utgift eller inntekt.
+        required: true
+      aktivitet:
+        range: Aktivitet
+        description: |
+          Detaljering av funksjon.
+      formål:
+        range: Formål
+        description: |
+          Formål viser aktivitet og tjenesteproduksjon

@@ -1,0 +1,102 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/ressurs/kodeverk
+name: ressurs.kodeverk
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+
+classes:
+
+  Applikasjonskategori:
+    description: |
+      Kategorier av applikasjoner.
+      
+      Eksempel:
+      
+      * Pedagogisk programvare
+      * Kontorstøtte
+      * Fagsystemer
+    is_a: Begrep
+
+  Brukertype:
+    description: |
+      De ulike brukertypene som kan benytte lisensen.
+      
+      Eksempler:
+      
+      * ELEV
+      * ANSATTSKOLE
+      * ANSATTADMINISTRASJON
+      * EKSTERN
+    is_a: Begrep
+
+  Enhetstype:
+    description: |
+      Kategori som den digitale enheten hører til.
+      
+      Eksempler:
+      
+      * mobiltelefon
+      * datamaskin
+      * nettbrett
+    is_a: Begrep
+
+  Håndhevingstype:
+    description: |
+      Hvordan ulike lisensmodeller kan håndheves av systemer for forvaltning av applikasjonen.
+      
+      Eksempel:
+      
+      * Hardstopp (ikke lov å tildele flere lisenser enn det kildesystemet angir)
+      * Ubegrenset (ingen begrensing på antall lisenser som kan tildeles)
+      * Overallokering tillatt (kan tildeles lisenser utover maks antall. Ikke nødvendigvis ubegrenset)
+    is_a: Begrep
+
+  Lisensmodell:
+    description: |
+      Lisensmodeller som kan knyttes til en lisens.
+      
+      Eksempel:
+      
+      * site
+      * user
+      * device
+    is_a: Begrep
+
+  Plattform:
+    description: |
+      Plattformen tjenesten kan leveres på.
+      
+      Eksempel:
+      
+      * Windows
+      * MAC OS
+      * Linux
+      * IOS
+      * Android
+    is_a: Begrep
+
+  Produsent:
+    description: |
+      Navn på produsenten av den  digitale enheten.
+      
+      Eksempler:
+      
+      * HP
+      * Lenovo
+      * Apple
+      * Samsung
+    is_a: Begrep
+
+  Status:
+    description: |
+      Status på den digitale enheten i fagsystemet (feks ett asset management system):
+      
+      Eksempler:
+      
+      * i bruk
+      * på lager
+      * defekt
+      * utgått
+    is_a: Begrep

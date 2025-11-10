@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/personvern/kodeverk
+name: personvern.kodeverk
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+
+classes:
+
+  Behandlingsgrunnlag:
+    description: |
+      Rettslig grunnlag for behandling av personopplysninger.
+      
+      # Beskrivelse
+      
+      All behandling av personopplysninger må ha et rettslig grunnlag for å være lov. Det må finnes et behandlingsgrunnlag for behandling av hver enkelt personopplysning til hvert enkelt formål.
+      
+      Virksomheten har også plikt til å informere den enkelte om hvilket grunnlag  personopplysningene deres behandles på. 
+      
+      # Eksempler
+      
+      * Samtykke
+      * Nødvendig for å oppfylle en avtale
+      * Nødvendig for å oppfylle en rettslig plikt
+      * Nødvendig for å beskytte vitale interesser
+      * Nødvendig for å utføre en oppgave i offentlig interesse eller utøve offentlig myndighet
+      * Nødvendig for å ivareta legitime interesser - interesseavveiing
+    is_a: Begrep
+
+  Personopplysning:
+    description: |
+      Opplysninger og vurderinger som kan knyttes til enkeltpersoner.
+      
+      # Beskrivelse
+      
+      Typiske personopplysninger er navn, adresse, telefonnummer, e-post og fødselsnummer. Et bilde regnes som en personopplysning dersom personer kan gjenkjennes. 
+      
+      # Referanser
+      
+      Personvernforordningen artikkel 4
+    is_a: Begrep

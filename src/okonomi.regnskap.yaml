@@ -1,0 +1,229 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/okonomi/regnskap
+name: okonomi.regnskap
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+  - administrasjon.komplekse-datatyper
+  - administrasjon.personal
+  - felles.kodeverk
+
+classes:
+
+  Bilag:
+    description: |
+      Dokumentasjon til en transaksjon.
+    attributes:
+      bilagsdato:
+        range: string
+        description: |
+          Dato bilaget er registrert.
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990` -&gt; `1990-03-29T12:00:00Z`
+          
+          * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
+        required: true
+      bilagsnummer:
+        range: string
+        description: |
+          Nummer på bilaget.
+      data:
+        range: string
+        description: |
+          Bilagets fil, kodet som Base64.
+      filnavn:
+        range: string
+        description: |
+          Navn på bilagets fil.
+      referanse:
+        range: string
+        description: |
+          Ekstern referanse, for eksempel fakturanummer.
+      url:
+        range: string
+        description: |
+          URL til eksternt dokument.
+
+  Leverandør:
+    description: |
+      Person eller virksomhet som leverer produkter eller tjenester.
+    attributes:
+      kontonummer:
+        range: string
+        description: |
+          Kontonummer til leverandøren.
+      leverandørnummer:
+        range: Identifikator
+        description: |
+          Nummer som identifiserer en leverandør.
+      systemId:
+        range: Identifikator
+        description: |
+          Intern identifikator i økonomisystemet.
+        required: true
+
+  Leverandørgruppe:
+    description: |
+      Gruppering av leverandører.
+    attributes:
+      navn:
+        range: string
+        description: |
+          Navn på leverandørgruppen.
+        required: true
+      systemId:
+        range: Identifikator
+        description: |
+          Intern unik identifikator i økonomisystemet.
+        required: true
+
+  Postering:
+    description: |
+      Føring på en konto i regnskapet.
+    attributes:
+      beløp:
+        range: string
+        description: |
+          Posteringens beløp med to desimaler.
+          
+          # Eksempel
+          123,45 NOK tilsvarer verdien 12345.
+        required: true
+      debet:
+        range: string
+        description: |
+          Angir om posteringen er debet eller kredit.
+          
+          True: debet
+          
+          False: kredit
+        required: true
+      kontering:
+        range: Kontostreng
+        description: |
+          Kontodimmensjoner for posteringen.
+        required: true
+      posteringsId:
+        range: Identifikator
+        description: |
+          Intern unik identifikator i økonomisystemet.
+        required: true
+      transaksjon:
+        range: Transaksjon
+        description: |
+          Transaksjonen posteringen tilhører.
+
+  Transaksjon:
+    description: |
+      Overføring av penger til eller fra eksterne parter.
+    attributes:
+      beløp:
+        range: string
+        description: |
+          Transaksjonens beløp med to desimaler.
+          
+          # Eksempel
+          123,45 NOK tilsvarer verdien 12345.
+        required: true
+      beskrivelse:
+        range: string
+        description: |
+          Beskrivelse av transaksjonen.
+      bilag:
+        range: Bilag
+        description: |
+          Bilag til transaksjonen.
+        multivalued: true
+      forfallsdato:
+        range: string
+        description: |
+          Dato transaksjonen forfaller.
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990` -&gt; `1990-03-29T12:00:00Z`
+          
+          * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
+        required: true
+      oppdateringstidspunkt:
+        range: string
+        description: |
+          Tidspunkt for siste endring i transaksjonen.
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990 klokken 13:30 (UTC +1)` -&gt; `1990-03-29T12:30:00Z`
+          
+          * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
+      transaksjonsId:
+        range: Identifikator
+        description: |
+          Intern unik identifikator i økonomisystemet.
+      transaksjonstidspunkt:
+        range: string
+        description: |
+          Tidspunkt for registrering av transaksjonen.
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990 klokken 13:30 (UTC +1)` -&gt; `1990-03-29T12:30:00Z`
+          
+          * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
+      ansvarlig:
+        range: Personalressurs
+        description: |
+          Ansatt som er ansvarlig for å godkjenne transaksjonen.
+      leverandør:
+        range: Leverandør
+        description: |
+          Leverandør knyttet  til transaksjonen.
+      valuta:
+        range: Valuta
+        description: |
+          Valuta for oppgitt beløp.
+        required: true
+      postering:
+        range: Postering
+        description: |
+          Posteringer tilhørende transaksjonen.
+        multivalued: true
+        required: true

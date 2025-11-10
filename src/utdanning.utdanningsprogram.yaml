@@ -1,0 +1,319 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/utdanning/utdanningsprogram
+name: utdanning.utdanningsprogram
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+  - administrasjon.organisasjon
+  - utdanning.basisklasser
+  - utdanning.elev
+  - utdanning.kodeverk
+  - utdanning.timeplan
+  - utdanning.vurdering
+
+classes:
+
+  Programområde:
+    description: |
+      Programområde er et kurs i den videregående skolen. Et programområde strekker seg vanligvis over ett eller flere år og er gjerne en spesialisert retning eller område for fordypning innen utdanningsprogrammet.
+      
+      # Beskrivelse
+      
+      Innenfor utdanningsprogrammet studiespesialisering, er eksempler på programområder realfag, språk, samfunnsfag og økonomi og formgivingsfag.
+      
+      Innenfor utdanningsprogrammet naturbruk, finnes det for eksempel i andre klasse (Vg2) programområdene akvakultur, anleggsgartner og driftsoperatør idrettsanlegg, fiske og fangst, heste- og hovslagerfag, landbruk og gartneri, reindrift og skogbruk.
+      
+      Programområdekoder som slutter på  `----` angir at det er standardversjon av programområdet, og ikke en fylkeskommunal variant.
+      
+      # Eksempler
+      
+      * Anleggsmaskinførerf,PB
+      * Asfaltfaget,PB
+      * Banemontørfaget,PB
+      * Betongfaget,PB
+      * Bioenergi (D)
+      * Byggdrifterfaget,PB
+      * FDV-utdanning, 1 år (D)
+      * Feierfaget,PB
+      * Matrosfaget,PB
+      * Modellbyggerfaget,PB
+      * Motormannfaget,PB
+      * Motormekanikerfaget,PB
+      * Motorsykkelfaget,PB
+      
+      # Referanser
+      
+      * UDir Registreringshåndbok: [regbok.udir.no/35004/3344/35042-1014307.html](http://regbok.udir.no/35004/3344/35042-1014307.html)
+      * Wikipedia: https://no.wikipedia.org/wiki/Programområde
+      * Grepwiki: http://grepwiki.udir.no/index.php?title=Programområde
+    is_a: Gruppe
+    attributes:
+      utdanningsprogram:
+        range: Utdanningsprogram
+        description: |
+          Alle overordnede utdanningsprogram.
+        multivalued: true
+        required: true
+      elevforhold:
+        range: Elevforhold
+        description: |
+          Alle elevforhold på programområde
+        deprecated: "Relasjonen erstattes av Elevforhold i Programområdemedlemskap."
+        multivalued: true
+      fag:
+        range: Fag
+        description: |
+          Alle fag som er relatert til et gitt programområde
+        multivalued: true
+      gruppemedlemskap:
+        range: Programområdemedlemskap
+        description: |
+          Gruppemedlemskapene til et programområde.
+        multivalued: true
+      trinn:
+        range: Årstrinn
+        description: |
+          Alle trinn som finnes på dette programområdet
+        multivalued: true
+
+  Programområdemedlemskap:
+    description: |
+      Medlemskap i programområder.
+      
+      # Beskrivelse
+      
+      Gruppemedlemskap som knytter sammen elevforhold og programområder.
+    is_a: Gruppemedlemskap
+    attributes:
+      programområde:
+        range: Programområde
+        description: |
+          Programområde et gruppemedlemskap tilhører.
+        required: true
+      elevforhold:
+        range: Elevforhold
+        description: |
+          Elevforhold et programområdemedlemskap tilhører.
+        required: true
+
+  Skole:
+    description: |
+      Organisasjonsenhet som gjennomfører utdanning.
+      
+      # Beskrivelse
+      
+      Typisk er dette en videregående skole, men det kan også være eksamenskontor eller andre skolerelevante enheter.
+      
+      Inneholder utdanningsspesifikk informasjon om en organisasjonsenhet.
+      
+      # Eksempel
+      
+      - Videregående skole
+      - SMI-skole
+      - Fagskole
+      - IB-skole
+      - Eksamenskontor
+      - Opplæringskontor
+      - Ressurssenter
+      - Fengselsundervisning
+    is_a: Enhet
+    attributes:
+      domenenavn:
+        range: string
+        description: |
+          Domenenavn om det er tilgjengelig
+      juridiskNavn:
+        range: string
+        description: |
+          Det juridiske navnenet til skolen eller skoleeier slik det fremstår i Enhetsregisteret.
+      navn:
+        range: string
+        description: |
+          Navnet på utdanningsorganisasjonen
+          
+          # Beksrivelse 
+          
+          Navn på skole eller skoleeier
+          
+          # Eksempel
+          
+          * Drammen videregående skole (som Skole)
+          * Moelv videregående skole (som Skole)
+          * Telemark fylkeskommune (som Skoleeier)
+        required: true
+      skolenummer:
+        range: Identifikator
+        description: |
+          Vigo sitt skolenummer 
+          
+          # Beskrivelse 
+          
+          Benyttes i VIGO og de skoleadministrative systemene. Benyttes også i forbindelse med rapportering til SSB, Utdanningsdirektoratet, Lånekassen og Samordna opptak.
+          
+          # Referanser
+          
+          * UDir Registreringshåndbok: [regbok.udir.no/35004/3344/35042-1024179.html](http://regbok.udir.no/35004/3344/35042-1024179.html)
+          
+          # Eksempel 
+          
+          * Byremo videregående skole har skolenummer 10022.
+          * Moelv videregående skole har skolenummer 4453.
+        required: true
+      systemId:
+        range: Identifikator
+        description: |
+          Unik intern system-id for utdanningsorganisasjonen
+          
+          # Beskrivelse
+          
+          Systemspesifikk id, som normalt ikke er synlig i fagsystemet.
+        required: true
+      skoleeierType:
+        range: Skoleeiertype
+        description: |
+          Er denne skolen eid av kommunen, fylke, private aktører eller noe annet.
+          Kilde er Vigo Kodeverkdatabase.
+          
+          # Eksempler
+          
+          * Fylke
+          * Stat
+          * Kommune
+          * Privat 
+          
+          # Referanser
+          
+          * Vigo Kodeverkdatabase: [vigo.no/vigokv/skole.action](https://www.vigo.no/vigokv/skole.action)
+      organisasjon:
+        range: Organisasjonselement
+        description: |
+          Referanse til Adminsitrasjons domenet
+      vigoreferanse:
+        range: Vigoreferanse
+        description: |
+          Ekstern referanse til skoleinformasjon i Vigo kodeverksdatabase.
+      fag:
+        range: Fag
+        description: |
+          Fagene som skolen tilbyr
+        multivalued: true
+      eksamensgruppe:
+        range: Eksamensgruppe
+        description: |
+          Alle eksamensgruppene ved en skole.
+        multivalued: true
+      faggruppe:
+        range: Faggruppe
+        description: |
+          Skolens faggrupper.
+        multivalued: true
+      utdanningsprogram:
+        range: Utdanningsprogram
+        description: |
+          Utdanningsprogram som inngår på en skole
+        multivalued: true
+      skoleressurs:
+        range: Skoleressurs
+        description: |
+          Alle ansatte ved skolen
+        multivalued: true
+      kontaktlærergruppe:
+        range: Kontaktlærergruppe
+        description: |
+          Alle kontaktlærergruppene ved skolen.
+        multivalued: true
+      elevforhold:
+        range: Elevforhold
+        description: |
+          Alle elevforhold ved skole.
+        multivalued: true
+      undervisningsgruppe:
+        range: Undervisningsgruppe
+        description: |
+          Alle undervisningsgruppene ved en skole.
+        multivalued: true
+      basisgruppe:
+        range: Basisgruppe
+        description: |
+          Alle basisgrupper ved en skole.
+        multivalued: true
+      undervisningsforhold:
+        range: Undervisningsforhold
+        description: |
+          Alle undervisningsforhold (lærere) tilknyttet en skole.
+        multivalued: true
+
+  Utdanningsprogram:
+    description: |
+      Utdanningsløpene i videregående skole som fører fram til studie- og/eller yrkeskompetanse/fagbrev
+      
+      Synonym: Utdanningsgruppe
+      
+      # Eksempler
+      
+      * Bygg- og anleggsteknikk
+      * Design og håndverk
+      * Elektrofag
+      * Helse- og oppvekstfag
+      * Idrettsfag
+      * Kunst, design og arkitektur
+      * Medier og kommunikasjon
+      * Musikk, dans og drama
+      * Naturbruk
+      * Restaurant- og matfag
+      * Service og samferdsel
+      * Studiespesialisering
+      * Teknikk og ind. produksjon
+      
+      # Referanser
+      
+      *  Fag- og timefordeling og tilbudsstruktur for Kunnskapsløftet Udir-1-2017 : https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Innhold-i-opplaringen/udir-01-2017/
+      * UDir Registreringshåndbok: http://regbok.udir.no/35004/3344/35042-1018606.html
+      * Grepwiki: http://grepwiki.udir.no/index.php?title=Utdanningsprogram
+    is_a: Gruppe
+    attributes:
+      skole:
+        range: Skole
+        description: |
+          Alle skoler som tilbyr utdanningsprogrammet
+        multivalued: true
+      programområde:
+        range: Programområde
+        description: |
+          Alle underliggende programområder.
+        multivalued: true
+
+  Årstrinn:
+    description: |
+      Hvert år i grunnopplæringen (grunnskole og videregående skole) kalles et årstrinn.
+      
+      # Eksempler
+      
+      * Vg1
+      * Vg2
+      * Vg3
+      * Vg4
+      
+      # Synonym
+      
+      * Nivå (Rogaland)
+      * Klassetrinn
+      * Trinn
+      
+      # Referanser
+      
+      * http://grepwiki.udir.no/index.php?title=Årstrinn
+      * http://psi.udir.no/ontologi/kl06/aarstrinn
+    is_a: Gruppe
+    attributes:
+      programområde:
+        range: Programområde
+        description: |
+          Alle programområder som er relevante for trinnet
+        multivalued: true
+      basisgruppe:
+        range: Basisgruppe
+        description: |
+          Basisgruppene som hører hjemme på dette trinnet
+        multivalued: true

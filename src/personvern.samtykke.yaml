@@ -1,0 +1,174 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/personvern/samtykke
+name: personvern.samtykke
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+  - administrasjon.organisasjon
+  - felles
+  - personvern.kodeverk
+
+classes:
+
+  Behandling:
+    description: |
+      All bruk av personopplysninger
+      
+      # Beskrivelse
+      
+      All bruk av personopplysninger, slik som innsamling, registrering, sammenstilling, lagring og utlevering, eller en kombinasjon av slike bruksmåter.
+      
+      Personopplysninger skal bare brukes for spesifikke, uttrykkelige, angitte og legitime formål. Virksomheten har plikt til å gi den enkelte informasjon om formålet med behandling av personopplysning samt behandlingsgrunnlaget.
+    attributes:
+      aktiv:
+        range: string
+        description: |
+          Status på behandling.
+        required: true
+      formål:
+        range: string
+        description: |
+          Begrunnelse for behandling av personopplysning.
+          
+          # Beskrivelse
+          
+          Personopplysninger skal bare brukes for spesifikke, uttrykkelige, angitte og legitime formål. Virksomheten har plikt til å gi den enkelte informasjon om formålet med behandling av personopplysninger på en forståelig måte.
+        required: true
+      slettet:
+        range: string
+        description: |
+          Tidspunkt behandlingen er slettet.
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990 klokken 13:30 (UTC +1)` -&gt; `1990-03-29T12:30:00Z`
+          
+          * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
+      systemId:
+        range: Identifikator
+        description: |
+          Intern identifikator som brukes i kildesystemet.
+        required: true
+      behandlingsgrunnlag:
+        range: Behandlingsgrunnlag
+        description: |
+          Rettslig grunnlag for behandling av personopplysning
+        required: true
+      personopplysning:
+        range: Personopplysning
+        description: |
+          Opplysning eller vurdering som kan knyttes til en enkeltperson.
+        required: true
+      samtykke:
+        range: Samtykke
+        description: |
+          Samtykker tilknyttet en behandling.
+        multivalued: true
+      tjeneste:
+        range: Tjeneste
+        description: |
+          Tjeneste som behandling tilhører
+        required: true
+
+  Samtykke:
+    description: |
+      Tillatelse til behandling av personopplysning.
+      
+      # Beskrivelse
+      
+      En virksomhet kan behandle personopplysninger dersom den har innhentet gyldig samtykke fra personen eller personene det gjelder.
+    attributes:
+      gyldighetsperiode:
+        range: Periode
+        description: |
+          Tidsrom som samtykke er gyldig.
+        required: true
+      opprettet:
+        range: string
+        description: |
+          Dato når samtykke ble opprettet.
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990 klokken 13:30 (UTC +1)` -&gt; `1990-03-29T12:30:00Z`
+          
+          * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
+        required: true
+      systemId:
+        range: Identifikator
+        description: |
+          Intern identifikator som brukes i kildesystemet.
+        required: true
+      person:
+        range: Person
+        description: |
+          Person som har gitt samtykke.
+        required: true
+      organisasjonselement:
+        range: Organisasjonselement
+        description: |
+          Organisasjon tilknyttet samtykke
+      behandling:
+        range: Behandling
+        description: |
+          Behandling som omfattes av samtykke.
+        required: true
+
+  Tjeneste:
+    description: |
+      Tjeneste eller system som behandler personopplysninger. 
+      
+      # Beskrivelse
+      
+      Tjeneste eller system som behandler personopplysninger må ha et behandlingsgrunnlag og formål for behandling av hver enkelt personopplysning.
+    attributes:
+      navn:
+        range: string
+        description: |
+          Tittel på tjeneste.
+        required: true
+      slettet:
+        range: string
+        description: |
+          Tidspunkt tjenesten er slettet.
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990 klokken 13:30 (UTC +1)` -&gt; `1990-03-29T12:30:00Z`
+          
+          * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
+      systemId:
+        range: Identifikator
+        description: |
+          Intern identifikator som brukes i kildesystemet.
+        required: true
+      behandling:
+        range: Behandling
+        description: |
+          Alle behandlinger til en tjeneste
+        multivalued: true
