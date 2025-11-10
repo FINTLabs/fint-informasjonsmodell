@@ -6,6 +6,7 @@ imports:
   - felles.basisklasser
   - felles.komplekse-datatyper
   - administrasjon.organisasjon
+  - arkiv.noark
   - utdanning.basisklasser
   - utdanning.elev
   - utdanning.kodeverk
@@ -49,17 +50,20 @@ classes:
       * Grepwiki: http://grepwiki.udir.no/index.php?title=Programområde
     is_a: Gruppe
     attributes:
+      grepreferanse:
+        range: Grepreferanse
+        description: |
+          Referanse til GREP kodeverket.
       utdanningsprogram:
         range: Utdanningsprogram
         description: |
           Alle overordnede utdanningsprogram.
         multivalued: true
         required: true
-      elevforhold:
-        range: Elevforhold
+      vigoreferanse:
+        range: Vigoreferanse
         description: |
-          Alle elevforhold på programområde
-        multivalued: true
+          Referanse til VIGO kodeverket.
       fag:
         range: Fag
         description: |
@@ -232,10 +236,10 @@ classes:
         description: |
           Alle undervisningsgruppene ved en skole.
         multivalued: true
-      basisgruppe:
-        range: Basisgruppe
+      klasse:
+        range: Klasse
         description: |
-          Alle basisgrupper ved en skole.
+          Alle klasser ved en skole.
         multivalued: true
       undervisningsforhold:
         range: Undervisningsforhold
@@ -277,6 +281,14 @@ classes:
         description: |
           Alle skoler som tilbyr utdanningsprogrammet
         multivalued: true
+      grepreferanse:
+        range: Grepreferanse
+        description: |
+          Referanse til GREP kodeverket.
+      vigoreferanse:
+        range: Vigoreferanse
+        description: |
+          Referanse til VIGO kodeverket.
       programområde:
         range: Programområde
         description: |
@@ -306,13 +318,21 @@ classes:
       * http://psi.udir.no/ontologi/kl06/aarstrinn
     is_a: Gruppe
     attributes:
+      vigoreferanse:
+        range: Vigoreferanse
+        description: |
+          Referanse til VIGO kodeverket.
+      grepreferanse:
+        range: Grepreferanse
+        description: |
+          Referanse til GREP kodeverket.
       programområde:
         range: Programområde
         description: |
           Alle programområder som er relevante for trinnet
         multivalued: true
-      basisgruppe:
-        range: Basisgruppe
+      klasse:
+        range: Klasse
         description: |
-          Basisgruppene som hører hjemme på dette trinnet
+          Klassene som hører hjemme på dette trinnet
         multivalued: true

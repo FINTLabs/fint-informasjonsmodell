@@ -132,6 +132,10 @@ classes:
           * 321502 Ungdomsskoleavdelingen - grunnskoleopplæring
           * 321503 Ungdomsavdelingen - VGO
         required: true
+      organisasjonstype:
+        range: Organisasjonstype
+        description: |
+          Hvilken type organisasjonselement dette er.
       leder:
         range: Personalressurs
         description: |
@@ -149,10 +153,6 @@ classes:
         description: |
           Ansvar i kontoplanen som organisasjonselement er knyttet til.
         multivalued: true
-      organisasjonstype:
-        range: Organisasjonstype
-        description: |
-          Hvilken type organisasjonselement dette er.
       overordnet:
         range: Organisasjonselement
         description: |

@@ -93,16 +93,6 @@ classes:
         description: |
           Klassifikasjonssystemer benyttet i arkivdel.
         multivalued: true
-      registrering:
-        range: Registrering
-        description: |
-          Registreringer som tilhører arkivdel.
-        multivalued: true
-      mappe:
-        range: Mappe
-        description: |
-          Mapper som tilhører arkivdel.
-        multivalued: true
 
   Arkivressurs:
     description: |
@@ -534,18 +524,6 @@ classes:
           # Beskrivelse
           
           * Noark 5 versjon 5.0 metadatakatalog - nr. M707
-          
-          # Referanser
-          
-          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
-      format:
-        range: string
-        description: |
-          Dokumentets format.
-          
-          # Beskrivelse
-          
-          * Noark 5 versjon 5.0 metadatakatalog - nr. M701
           
           # Referanser
           
@@ -1459,10 +1437,6 @@ classes:
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
         required: true
-      arkivdel:
-        range: Arkivdel
-        description: |
-          Arkivdel som mappe tilhører.
 
   Merknad:
     description: |
@@ -1871,10 +1845,6 @@ classes:
         range: Tilgangsgruppe
         description: |
           Angir hvilken tilgangsgruppe som har tilgang til Registreringen
-      arkivdel:
-        range: Arkivdel
-        description: |
-          Arkivdel som registrering tilhører.
       arkivertAv:
         range: Arkivressurs
         description: |
@@ -1933,19 +1903,6 @@ classes:
     abstract: true
     is_a: Mappe
     attributes:
-      arkivnotat:
-        range: Registrering
-        description: |
-          Arkivnotater knyttet til saksmappe.
-          
-          # Beskrivelse
-          
-          * Noark 5 versjon 5.0 standard - kap. 2.6
-          
-          # Referanser
-          
-          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
-        multivalued: true
       journalpost:
         range: Journalpost
         description: |

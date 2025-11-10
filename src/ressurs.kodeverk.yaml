@@ -31,17 +31,6 @@ classes:
       * EKSTERN
     is_a: Begrep
 
-  Enhetstype:
-    description: |
-      Kategori som den digitale enheten hører til.
-      
-      Eksempler:
-      
-      * mobiltelefon
-      * datamaskin
-      * nettbrett
-    is_a: Begrep
-
   Håndhevingstype:
     description: |
       Hvordan ulike lisensmodeller kan håndheves av systemer for forvaltning av applikasjonen.
@@ -75,28 +64,4 @@ classes:
       * Linux
       * IOS
       * Android
-    is_a: Begrep
-
-  Produsent:
-    description: |
-      Navn på produsenten av den  digitale enheten.
-      
-      Eksempler:
-      
-      * HP
-      * Lenovo
-      * Apple
-      * Samsung
-    is_a: Begrep
-
-  Status:
-    description: |
-      Status på den digitale enheten i fagsystemet (feks ett asset management system):
-      
-      Eksempler:
-      
-      * i bruk
-      * på lager
-      * defekt
-      * utgått
     is_a: Begrep
