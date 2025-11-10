@@ -43,15 +43,6 @@ Rektor ved Eidsvoll VGS har anvisningsfullmakt for ansvar 241.
 </body>
                   </ownedComment>
                 </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_5414cdc530c1a79b9a" name="myndighet" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_40c8297da8aab63249" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_40c8297da8aab63249" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_40c8297da8aab63249">
-                  <body>Del av kontodimensjon som Personalressurs har blitt delegert en fullmakt for.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
               <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_cb6042c9202c0d874e" name="ramme" visibility="public">
                 <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_547191ea1d7882a7f1" value="0" />
@@ -477,15 +468,6 @@ Alternativ navn: `Tjeneste`
 Fellesbenevnelse for dimensjoner i en kontoplan.
 </body>
                 </ownedComment>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_6643be1b439cc0439f" name="fullmakt" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_ae17ea8ceb33eed2c3" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_ae17ea8ceb33eed2c3" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_ae17ea8ceb33eed2c3">
-                  <body>Alle fullmakter knyttet til kontodimensjonen.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
               </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_97acd9c5e2c4898e8b" name="Kontrakt">
               <properties documentation="Kontrakt transaksjonen er knyttet til.&#10;" stereotype="hovedklasse" />
@@ -558,20 +540,20 @@ Kategori er et felt som indikerer denne begrensningen.
                 </ownedComment>
               </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_1f265be5e72241d582" name="Organisasjonstype">
-              <properties documentation="Typen til et organisasjonselement.&#10;&#10;# Eksempler&#10;&#10;* Virksomhet&#10;* Klinikk&#10;* Seksjon&#10;* Avdeling&#10;* Team&#10;* Divisjon&#10;* Stab&#10;* Skolegruppe&#10;" stereotype="hovedklasse" />
+              <properties documentation="Typen til et organisasjonselement.&#10;&#10;# Eksempler&#10;&#10;- Virksomhet&#10;- Klinikk&#10;- Seksjon&#10;- Avdeling&#10;- Team&#10;- Divisjon&#10;- Stab&#10;- Skolegruppe&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_fd7ac3bb5129aea2cb">
                 <body>Typen til et organisasjonselement.
 
 # Eksempler
 
-* Virksomhet
-* Klinikk
-* Seksjon
-* Avdeling
-* Team
-* Divisjon
-* Stab
-* Skolegruppe
+- Virksomhet
+- Klinikk
+- Seksjon
+- Avdeling
+- Team
+- Divisjon
+- Stab
+- Skolegruppe
 </body>
                 </ownedComment>
               </packagedElement>
@@ -1031,6 +1013,15 @@ Verdien må være unik innenfor en gitt gyldighetsperiode.
 </body>
                   </ownedComment>
                 </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_71ead83a066aaed310" name="organisasjonstype" visibility="public">
+                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_eba8b7fd93be9675cb" value="0" />
+                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_eba8b7fd93be9675cb" value="1" />
+                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_eba8b7fd93be9675cb">
+                  <body>Hvilken type organisasjonselement dette er.
+</body>
+                  </ownedComment>
+                </ownedAttribute>
               <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_0739a6ded5022e2f3e" name="leder" visibility="public">
                 <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_0ab5a78d5ad2386d75" value="0" />
@@ -1054,15 +1045,6 @@ Relasjon til en bestemt leder (Personalressurs).
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_0d37f371a33b9d0ec3" value="*" />
                 <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_0d37f371a33b9d0ec3">
                   <body>Ansvar i kontoplanen som organisasjonselement er knyttet til.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_71ead83a066aaed310" name="organisasjonstype" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_eba8b7fd93be9675cb" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_eba8b7fd93be9675cb" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_eba8b7fd93be9675cb">
-                  <body>Hvilken type organisasjonselement dette er.
 </body>
                   </ownedComment>
                 </ownedAttribute>
@@ -1595,15 +1577,6 @@ Se kodeverk Stillingskode.
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_6004e2e9773b331ea0" value="*" />
                 <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_6004e2e9773b331ea0">
                   <body>All variabel lønn for arbeidsforhold.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_2ea8b49e3a350dea3c" name="lønn" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_227907accdb45fdaf3" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_227907accdb45fdaf3" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_227907accdb45fdaf3">
-                  <body>Alle lønnsutbetalinger for et arbeidsforhold
 </body>
                   </ownedComment>
                 </ownedAttribute>
@@ -2935,24 +2908,6 @@ Eksempler kan være ‘Utskifting av vannledning’, ‘Etablering av landbruksvei’ og 
 </body>
                   </ownedComment>
                 </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_3ea17e69815517d422" name="registrering" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_2f9d3ebd732eefc37f" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_2f9d3ebd732eefc37f" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_2f9d3ebd732eefc37f">
-                  <body>Registreringer som tilhører arkivdel.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_16021ed2197e74865f" name="mappe" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_1b86a726eaf260ef3b" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_1b86a726eaf260ef3b" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_1b86a726eaf260ef3b">
-                  <body>Mapper som tilhører arkivdel.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
               </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_0c3df74298539a0472" name="Arkivressurs">
               <properties documentation="Ansatt med rolle og rettigheter innen arkiv.&#10;&#10;# Beskrivelse&#10;&#10;* Noark 5 versjon 5.0 standard - kap. 4.3&#10;&#10;# Referanser&#10;&#10;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#10;" stereotype="hovedklasse" />
@@ -3528,23 +3483,6 @@ Se https://www.iana.org/assignments/media-types/media-types.xhtml for en oversik
 # Beskrivelse
 
 * Noark 5 versjon 5.0 metadatakatalog - nr. M707
-
-# Referanser
-
-* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_6199c93ba6743fc843" name="format" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_b9e2d86f34f28fd94e" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_b9e2d86f34f28fd94e" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_b9e2d86f34f28fd94e">
-                  <body>Dokumentets format.
-
-# Beskrivelse
-
-* Noark 5 versjon 5.0 metadatakatalog - nr. M701
 
 # Referanser
 
@@ -4743,15 +4681,6 @@ ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
 </body>
                   </ownedComment>
                 </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_59b2dcf76137024572" name="arkivdel" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_3fdaf5311eaa6d398f" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_3fdaf5311eaa6d398f" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_3fdaf5311eaa6d398f">
-                  <body>Arkivdel som mappe tilhører.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
               </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_581e2209c6211b8d2d" name="Merknad">
               <properties documentation="Merknader knyttet til mappe, registrering eller dokumentbeskrivelse.&#10;&#10;# Beskrivelse&#10;&#10;* Noark 5 versjon 5.0 standard - kap. 2.8.4 &#10;&#10;# Referanser&#10;&#10;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#10;" stereotype="hovedklasse" />
@@ -5292,15 +5221,6 @@ ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
 </body>
                   </ownedComment>
                 </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_d0dd243b50e245ffad" name="arkivdel" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_ed4595cb10b41e3eda" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_ed4595cb10b41e3eda" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_ed4595cb10b41e3eda">
-                  <body>Arkivdel som registrering tilhører.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
               <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_d4b2ddd7d3f88287ba" name="arkivertAv" visibility="public">
                 <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_61b0b1e707b53a29e6" value="1" />
@@ -5374,23 +5294,6 @@ ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
 * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
 </body>
                 </ownedComment>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_455b3b66fe59f4f874" name="arkivnotat" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_fb2e8f4361ad80dbe6" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_fb2e8f4361ad80dbe6" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_fb2e8f4361ad80dbe6">
-                  <body>Arkivnotater knyttet til saksmappe.
-
-# Beskrivelse
-
-* Noark 5 versjon 5.0 standard - kap. 2.6
-
-# Referanser
-
-* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
-</body>
-                  </ownedComment>
-                </ownedAttribute>
               <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_9bd3a1977be8f19d20" name="journalpost" visibility="public">
                 <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_27f6e8ed82cc47f8ef" value="0" />
@@ -5817,15 +5720,6 @@ Kontaktperson er personer som kan kontaktes dersom det er behov for det.
 Kontaktperson kalles også pårørende.
 </body>
               </ownedComment>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_ac8bbd596064b0870f" name="foreldreansvar" visibility="public">
-              <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_a88a037c09ef0029b8" value="0" />
-              <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_a88a037c09ef0029b8" value="1" />
-              <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_a88a037c09ef0029b8">
-                <body>Angir om kontaktpersonen har foreldreansvar for personen vedkommende er pårørende for.
-</body>
-                </ownedComment>
-              </ownedAttribute>
             <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_7a1829fcf8816c22b7" name="kontaktinformasjon" visibility="public">
               <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_69817d2ceeb52e0ba2" value="0" />
@@ -5876,15 +5770,6 @@ Kontaktperson kalles også pårørende.
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_735d6acffb1fd824e3" value="*" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_735d6acffb1fd824e3">
                 <body>Personer kontaktpersonen er pårørende for.
-</body>
-                </ownedComment>
-              </ownedAttribute>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_e5eb4d42de212e67fb" name="person" visibility="public">
-              <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_23272431c01153acbc" value="0" />
-              <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_23272431c01153acbc" value="1" />
-              <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_23272431c01153acbc">
-                <body>Person som er kontaktperson.
 </body>
                 </ownedComment>
               </ownedAttribute>
@@ -8159,259 +8044,6 @@ ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
             </packagedElement>
           </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_a79bb65b39f7246e3f" name="ressurs">
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_7edb421a6636ba1291" name="datautstyr">
-            <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_c1d876328a29930a25" name="DigitalEnhet">
-              <properties documentation="Beskriver ulike digitale enheter slik som feks pc, nettbrett, mobil.&#10;" stereotype="hovedklasse" />
-              <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_e14dcee5db346ed612">
-                <body>Beskriver ulike digitale enheter slik som feks pc, nettbrett, mobil.
-</body>
-                </ownedComment>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_084724d4446b6dd20b" name="dataobjektId" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_e69bd23b9459fa5f69" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_e69bd23b9459fa5f69" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_e69bd23b9459fa5f69">
-                  <body>DataobjektId er enhetens Id i datakatalogen enheten er tilknyttet, for eksempel ObjectId i Azure AD.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_1165f0fceda56f2c69" name="flerbrukerenhet" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_f23fd67cac85b55c91" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_f23fd67cac85b55c91" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_f23fd67cac85b55c91">
-                  <body>Hvorvidt enheten er enbruker- eller flerbrukerenhet:
-
-Feltet har verdien:
-
-* true - Enheten benyttes av flere brukere (utlåns-pc-er, nettbrett i klassesett, pc-er i datasaler)
-
-* false - Enheten benyttes kun av en bruker (en elev/ansatts pc, mobiltefon, nettbrett)
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_1a128e716fedc233e7" name="navn" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_af8c71d92896cde157" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_af8c71d92896cde157" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_af8c71d92896cde157">
-                  <body>Navnet slik det fremkommer i fagsystemet/datakatalogen.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_41ec156bae78d79f40" name="privateid" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_a1d4ab4cc7eb07f4c9" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_a1d4ab4cc7eb07f4c9" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_a1d4ab4cc7eb07f4c9">
-                  <body>Angir om enheten er eid av organisasjonen eller av privatperson.
-
-Feltet har verdiene:
-
-* false -  Enheten er eid av organisasjonen
-
-* true - Enheten er eid av privatperson
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_c0437a6517ed85e157" name="serienummer" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_9987d88690db1cf4da" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_9987d88690db1cf4da" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_9987d88690db1cf4da">
-                  <body>Serienummer er unikt nummer fra enhetsprodusenten. Ikke nødvendigvis unikt på tvers av produsenter.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_284e412d2d96406274" name="systemId" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_a6b90d866026328c58" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_a6b90d866026328c58" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_a6b90d866026328c58">
-                  <body>Enhetens id i fagsystemet.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_36e6a4943881bdbcb7" name="status" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_8ceb7748d3243ca408" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_8ceb7748d3243ca408" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_8ceb7748d3243ca408">
-                  <body>Status på enheten i fagsystemet.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_bef108042a9d9ac848" name="produsent" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_8647d3ec734ebcdb49" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_8647d3ec734ebcdb49" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_8647d3ec734ebcdb49">
-                  <body>Navn på produsent av enheten.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_3c370864ebe3a6d9dc" name="enhetstype" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_7a68f8bc9d3218049c" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_7a68f8bc9d3218049c" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_7a68f8bc9d3218049c">
-                  <body>Type digital enhet: Mobiltelefon, datamaskin, nettbrett.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_beb6916aed0d30e7e5" name="elev" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_d0f8ffc782db306106" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_d0f8ffc782db306106" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_d0f8ffc782db306106">
-                  <body>Angir hvilken elev som benytter enheten.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_d15fa16f9188ed150e" name="administrator" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_c1badb5cca816d8153" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_c1badb5cca816d8153" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_c1badb5cca816d8153">
-                  <body>Angir hvilken organisasjonsenhet som administrerer enheten.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_ebd4dcf486f175cdc4" name="eier" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_751dc2416b302c696c" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_751dc2416b302c696c" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_751dc2416b302c696c">
-                  <body>Angir hvilken organisasjonsenhet som eier enheten hvis ikke privateid.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_59045f3ff993af80a9" name="plattform" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_b9045efa4283b53128" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_b9045efa4283b53128" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_b9045efa4283b53128">
-                  <body>Operativsystemplattform: Windows, MAC OS, Linux, IOS, Android.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_cff9136eb4de3e4223" name="personalressurs" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_7e434ba7302d50b11a" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_7e434ba7302d50b11a" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_7e434ba7302d50b11a">
-                  <body>Angir hvilken ansatt som benytter enheten.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_c7c41d704e8e6bca4a" name="enhetsgruppemedlemskap" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_689083730397c07137" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_689083730397c07137" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_689083730397c07137">
-                  <body>Angir hvilke enhetsgrupperinger enheten er medlem av.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              </packagedElement>
-            <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_85fd8f3415c0fe0b42" name="Enhetsgruppe">
-              <properties documentation="Angir en gruppering av ensartede digitale enheter. Feks klassesett med iPader eller datalab med ekstra kraftige maskiner.&#10;" stereotype="hovedklasse" />
-              <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_b45955ddb9f7f07b02">
-                <body>Angir en gruppering av ensartede digitale enheter. Feks klassesett med iPader eller datalab med ekstra kraftige maskiner.
-</body>
-                </ownedComment>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_3fd89cf27f312c635c" name="navn" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_f87b46981057654309" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_f87b46981057654309" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_f87b46981057654309">
-                  <body>Navnet slik det fremkommer i fagsystemet.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_3ae427a89ce064d642" name="systemId" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_b57e225ea24aec165f" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_b57e225ea24aec165f" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_b57e225ea24aec165f">
-                  <body>Id i fagsystemet.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_e8dc7a142108224b0c" name="plattform" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_2d1ccada8b868f41d2" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_2d1ccada8b868f41d2" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_2d1ccada8b868f41d2">
-                  <body>Operativsystemplattform: Windows, MAC OS, Linux, IOS, Android.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_3b2a9cc6b597bba1a6" name="enhetstype" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_ac40cb2cb7595d601d" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_ac40cb2cb7595d601d" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_ac40cb2cb7595d601d">
-                  <body>Type digital enhet: Mobiltelefon, datamaskin, nettbrett.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_9ab7f48a6115991642" name="organisasjonsenhet" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_18f2a1325fc58920e2" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_18f2a1325fc58920e2" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_18f2a1325fc58920e2">
-                  <body>Angir hvilken organisasjonsenhet som grupperingen er tilknyttet.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_25b3c95a45da1da7f3" name="enhetsgruppemedlemskap" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_390bc7a1d4365b9dab" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_390bc7a1d4365b9dab" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_390bc7a1d4365b9dab">
-                  <body>Angir hvilke digitale enheter som er med i denne enhetsgruppen.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              </packagedElement>
-            <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_53006277f1535f9ae9" name="Enhetsgruppemedlemskap">
-              <properties documentation="Medlemskap i enhetsgrupper.&#10;&#10;Gruppemedlemskap som knytter sammen Digitalenhet og Enhetsgrupper.&#10;" stereotype="hovedklasse" />
-              <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_f6b563a56c1f1b4764">
-                <body>Medlemskap i enhetsgrupper.
-
-Gruppemedlemskap som knytter sammen Digitalenhet og Enhetsgrupper.
-</body>
-                </ownedComment>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_8eb2617742239a1233" name="systemId" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_c363f6de26c8e3c8da" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_c363f6de26c8e3c8da" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_c363f6de26c8e3c8da">
-                  <body>Unik identifikator for enhetsgruppemedlemskapet.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_65fbbdbe5d6ec70185" name="digitalEnhet" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_db0eb91d8d7a763811" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_db0eb91d8d7a763811" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_db0eb91d8d7a763811">
-                  <body>Den digitale enheten et enhetsgruppemedlemskap tilhører.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_01e33c33a44249c0eb" name="enhetsgruppe" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_5a0cade21c56b45fa5" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_5a0cade21c56b45fa5" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_5a0cade21c56b45fa5">
-                  <body>Enhetsgruppen et enhetsgruppemedlemskap tilhører.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              </packagedElement>
-            </packagedElement>
           <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_c48245093616af666d" name="eiendel">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_c51850746191a0b2ab" name="Applikasjon">
               <properties documentation="En applikasjon med tilhørende ressurser. &#10;&#10;En ressurs kan være en lisens eller en rolle som tilganger inne i en applikasjon. Applikasjonen kan være en desktopapplikasjon eller en skybasert tjeneste. Brukere kan da få tilgang til denne applikasjonen hvis vedkommende har fått tildelt en ressurs knyttet til applikasjonen.&#10;" stereotype="hovedklasse" />
@@ -8697,19 +8329,6 @@ Eksempler:
 </body>
                 </ownedComment>
               </packagedElement>
-            <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_9fc9ed03404204e554" name="Enhetstype">
-              <properties documentation="Kategori som den digitale enheten hører til.&#10;&#10;Eksempler:&#10;&#10;* mobiltelefon&#10;* datamaskin&#10;* nettbrett&#10;" stereotype="hovedklasse" />
-              <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_da9fbbf53746ec2192">
-                <body>Kategori som den digitale enheten hører til.
-
-Eksempler:
-
-* mobiltelefon
-* datamaskin
-* nettbrett
-</body>
-                </ownedComment>
-              </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_7d9641c41e900d56d3" name="Håndhevingstype">
               <properties documentation="Hvordan ulike lisensmodeller kan håndheves av systemer for forvaltning av applikasjonen.&#10;&#10;Eksempel:&#10;&#10;* Hardstopp (ikke lov å tildele flere lisenser enn det kildesystemet angir)&#10;* Ubegrenset (ingen begrensing på antall lisenser som kan tildeles)&#10;* Overallokering tillatt (kan tildeles lisenser utover maks antall. Ikke nødvendigvis ubegrenset)&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_a4d435a1d4c0d3ffa6">
@@ -8748,34 +8367,6 @@ Eksempel:
 * Linux
 * IOS
 * Android
-</body>
-                </ownedComment>
-              </packagedElement>
-            <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_62ae3d650ea9c83562" name="Produsent">
-              <properties documentation="Navn på produsenten av den  digitale enheten.&#10;&#10;Eksempler:&#10;&#10;* HP&#10;* Lenovo&#10;* Apple&#10;* Samsung&#10;" stereotype="hovedklasse" />
-              <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_d6696f363a9e0b9b45">
-                <body>Navn på produsenten av den  digitale enheten.
-
-Eksempler:
-
-* HP
-* Lenovo
-* Apple
-* Samsung
-</body>
-                </ownedComment>
-              </packagedElement>
-            <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_f93d6f6a3c37517153" name="Status">
-              <properties documentation="Status på den digitale enheten i fagsystemet (feks ett asset management system):&#10;&#10;Eksempler:&#10;&#10;* i bruk&#10;* på lager&#10;* defekt&#10;* utgått&#10;" stereotype="hovedklasse" />
-              <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_3935407cb7e9db0d72">
-                <body>Status på den digitale enheten i fagsystemet (feks ett asset management system):
-
-Eksempler:
-
-* i bruk
-* på lager
-* defekt
-* utgått
 </body>
                 </ownedComment>
               </packagedElement>
@@ -8889,21 +8480,6 @@ En gruppe kan ha referanser til kodeverk fra Grep og VIGO. En gruppe kan ha peri
 </body>
                   </ownedComment>
                 </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_451f64a30129f07684" name="periode" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_9118e3203ae7ed0945" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_9118e3203ae7ed0945" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_9118e3203ae7ed0945">
-                  <body>Perioder som gruppen er gyldig eller relevant for.
-
-# Beskrivelse
-
-Kan brukes for å angi at en gruppe gjelder for et skoleår, en termin eller en eksamensperiode.
-
-Flere perioder kan knyttes til en gruppe. Dette kan eksempelvis benyttes for å representere komprimerte eller utvidete utdanningsløp.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
               <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_68fca34b52d9165eaf" name="systemId" visibility="public">
                 <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_d5ac5a6253a522f6c5" value="1" />
@@ -8914,33 +8490,6 @@ Flere perioder kan knyttes til en gruppe. Dette kan eksempelvis benyttes for å r
 # Beskrivelse
 
 Systemspesifikk id, som normalt ikke er synlig i fagsystemet.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_c9848b25a06192b0c5" name="grepreferanse" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_d1f4389d97e6fba8be" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_d1f4389d97e6fba8be" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_d1f4389d97e6fba8be">
-                  <body>Referanse til Grep kodeverket.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_c3138de8b5011c7d53" name="vigoreferanse" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_a44b5e434e3173a815" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_a44b5e434e3173a815" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_a44b5e434e3173a815">
-                  <body>Referanse til VIGO kodeverket.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_d154bcce901bd9bb56" name="medlemskap" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_e8494de2f67e395c24" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_e8494de2f67e395c24" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_e8494de2f67e395c24">
-                  <body>Alle medlemene (medlemskapsforholdene) i en gruppe
 </body>
                   </ownedComment>
                 </ownedAttribute>
@@ -9020,146 +8569,9 @@ Dette kan være identifikator som eksisterer i skoleadministrativt system.
 </body>
                   </ownedComment>
                 </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_c513ff85d383e8260c" name="medlemskap" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_7265323fb699502b3f" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_7265323fb699502b3f" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_7265323fb699502b3f">
-                  <body>Alle gruppene som elev eller lærer er medlem av.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
               </packagedElement>
             </packagedElement>
           <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_c5ee21afe2335d549a" name="elev">
-            <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_67991f31becd86403f" name="Basisgruppe">
-              <properties documentation="Elevgruppe som definert i Opplæringslova §8-2. &#10;&#10;# Beskrivelse&#10;&#10;I opplæringa skal elevane delast i klassar eller basisgrupper som skal vareta deira behov for sosialt tilhør. For delar av opplæringa kan elevane delast i andre grupper etter behov. Til vanleg skal organiseringa ikkje skje etter fagleg nivå, kjønn eller etnisk tilhør. Klassane, basisgruppene og gruppene må ikkje vere større enn det som er pedagogisk og tryggleiksmessig forsvarleg.&#10;&#10;Klassen eller basisgruppa skal ha ein eller fleire lærarar (kontaktlærarar) som har særleg ansvar for dei praktiske, administrative og sosialpedagogiske gjeremåla som gjeld klassen eller basisgruppa og dei elevane som er der, mellom anna kontakten med heimen.&#10;&#10;Begrepet som har tildligere vært kjent som &quot;klasse&quot;.&#10;&#10;&quot;Vanlig&quot; gruppe i SATS (klassegruppe)&#10;&#10;Viser informasjon om:&#10;* År på VGS person går i&#10;* Programområdet&#10;* A, B eller C klasse&#10;&#10;Synonym:&#10;* Klasse&#10;&#10;Øvre grense er beskrevet i Opplæringslova §8-3 eller i forskrift.&#10;" stereotype="hovedklasse" />
-              <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_b807672350191f4c4a">
-                <body>Elevgruppe som definert i Opplæringslova §8-2. 
-
-# Beskrivelse
-
-I opplæringa skal elevane delast i klassar eller basisgrupper som skal vareta deira behov for sosialt tilhør. For delar av opplæringa kan elevane delast i andre grupper etter behov. Til vanleg skal organiseringa ikkje skje etter fagleg nivå, kjønn eller etnisk tilhør. Klassane, basisgruppene og gruppene må ikkje vere større enn det som er pedagogisk og tryggleiksmessig forsvarleg.
-
-Klassen eller basisgruppa skal ha ein eller fleire lærarar (kontaktlærarar) som har særleg ansvar for dei praktiske, administrative og sosialpedagogiske gjeremåla som gjeld klassen eller basisgruppa og dei elevane som er der, mellom anna kontakten med heimen.
-
-Begrepet som har tildligere vært kjent som "klasse".
-
-"Vanlig" gruppe i SATS (klassegruppe)
-
-Viser informasjon om:
-* År på VGS person går i
-* Programområdet
-* A, B eller C klasse
-
-Synonym:
-* Klasse
-
-Øvre grense er beskrevet i Opplæringslova §8-3 eller i forskrift.
-</body>
-                </ownedComment>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_e35e6beee7d339fed8" name="skoleår" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_4c149d5f110795ef36" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_4c149d5f110795ef36" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_4c149d5f110795ef36">
-                  <body>Skoleår for basisgruppe
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_89e78a8ca2a596ee13" name="elevforhold" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_96a65184267ed7d65b" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_96a65184267ed7d65b" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_96a65184267ed7d65b">
-                  <body>Alle elevforhold i basisgruppen
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_73d2942de56b90d549" name="termin" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_8489f697dba35c3ad7" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_8489f697dba35c3ad7" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_8489f697dba35c3ad7">
-                  <body>Terminer for basisgruppe
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_28492f2ee5581b8275" name="trinn" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_10a61bb352b2a9c0d5" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_10a61bb352b2a9c0d5" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_10a61bb352b2a9c0d5">
-                  <body>Det overordnet trinnet som gruppen hører inn i
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_62b43dbe265c4f0c54" name="skole" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_3f40958ae0d6fe4bc2" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_3f40958ae0d6fe4bc2" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_3f40958ae0d6fe4bc2">
-                  <body>Skolen en basisgruppe tilhører.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_978693e7d3edd98944" name="undervisningsforhold" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_9842ed50285034ed8c" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_9842ed50285034ed8c" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_9842ed50285034ed8c">
-                  <body>Alle lærere tilknyttet basisgruppen.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_b562bd47508aa878b2" name="gruppemedlemskap" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_43b79b6e48ab125c01" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_43b79b6e48ab125c01" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_43b79b6e48ab125c01">
-                  <body>Gruppemedlemskapene til en basisgruppe.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_e6322d5df3a27d024f" name="kontaktlærergruppe" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_d9cb59b427158ce9ee" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_d9cb59b427158ce9ee" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_d9cb59b427158ce9ee">
-                  <body>Grupper med en kontaktlærer og elever som ligger under en gitt basisgruppe
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              </packagedElement>
-            <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_ecdc9a880c641e072d" name="Basisgruppemedlemskap">
-              <properties documentation="Medlemskap i basisgrupper.&#10;&#10;# Beskrivelse&#10;&#10;Gruppemedlemskap som knytter sammen elevforhold og basisgrupper.&#10;" stereotype="hovedklasse" />
-              <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_71801bcb780bace76f">
-                <body>Medlemskap i basisgrupper.
-
-# Beskrivelse
-
-Gruppemedlemskap som knytter sammen elevforhold og basisgrupper.
-</body>
-                </ownedComment>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_ae379a71b03c294a9f" name="basisgruppe" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_6dc70a81a5cfa2f8bd" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_6dc70a81a5cfa2f8bd" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_6dc70a81a5cfa2f8bd">
-                  <body>Basisgruppen et gruppemedlemskap tilhører.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_a65accae4c99c9c86c" name="elevforhold" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_a972794aab8c028332" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_a972794aab8c028332" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_a972794aab8c028332">
-                  <body>Elevforhold et basisgruppemedlemskap tilhører.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_389b7cf67bad56a453" name="Elev">
               <properties documentation="Informasjon om en person som mottar undervisning.&#10;&#10;# Beskrivelse &#10;&#10;Beskriver informasjon relatert til undervisning for en Person.&#10;&#10;Tilsvarende finnes for ansatte: __Personalressurs__.&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_c40f516f7800094492">
@@ -9371,30 +8783,12 @@ https://regbok.udir.no/felt/?B11_S%C3%A6rskilt%20spr%C3%A5koppl%C3%A6ring%20for%
 </body>
                   </ownedComment>
                 </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_e7c222a05474f107c4" name="sidemål" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_916b3d4f599fe1f40b" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_916b3d4f599fe1f40b" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_916b3d4f599fe1f40b">
-                  <body>Hvilke typer fritak eleven har i sidemål.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
               <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_064c0ef36d8b57ee55" name="kategori" visibility="public">
                 <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_af3571d2292b39f881" value="0" />
                 <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_af3571d2292b39f881" value="1" />
                 <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_af3571d2292b39f881">
                   <body>Kategori på et elevforhold
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_7e26ba7b92c847dc04" name="kroppsøving" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_83120dc75866abf3c0" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_83120dc75866abf3c0" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_83120dc75866abf3c0">
-                  <body>Viser hvilken type fritak eleven har i kroppsøving
 </body>
                   </ownedComment>
                 </ownedAttribute>
@@ -9461,69 +8855,6 @@ https://regbok.udir.no/felt/?B11_S%C3%A6rskilt%20spr%C3%A5koppl%C3%A6ring%20for%
 </body>
                   </ownedComment>
                 </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_9e2671ba84e1829b0a" name="basisgruppe" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_4fd51aab9a93a06964" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_4fd51aab9a93a06964" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_4fd51aab9a93a06964">
-                  <body>Alle basisgrupper elevforholdet er medlem av
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_f25fb931d8a0b4651e" name="vurdering" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_fc2a3cb30e9bbb00b2" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_fc2a3cb30e9bbb00b2" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_fc2a3cb30e9bbb00b2">
-                  <body>Alle vurderinger i et elevforhold
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_4ac6f5f56bdbc6340c" name="sluttordensvurdering" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_e92da29e4687fb7e56" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_e92da29e4687fb7e56" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_e92da29e4687fb7e56">
-                  <body>Sluttvurdering av orden og atferd for eleven
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_8d86fed0300a7c3d48" name="kontaktlærergruppe" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_a33bb8d1e9743cd3a8" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_a33bb8d1e9743cd3a8" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_a33bb8d1e9743cd3a8">
-                  <body>Alle kontaktlærergrupper elevforhold er medlem av
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_45165f4ba50a352aa1" name="underveisfagvurdering" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_3238134c97b9829267" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_3238134c97b9829267" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_3238134c97b9829267">
-                  <body>Underveisvurdering i fag for eleven
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_29454559f79790b98b" name="halvårsfagvurdering" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_556b674b62e4f2f444" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_556b674b62e4f2f444" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_556b674b62e4f2f444">
-                  <body>Halvårsvurdering i fag for eleven
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_97000ccda4bb2df891" name="sluttfagvurdering" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_36527c6be8583e5d41" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_36527c6be8583e5d41" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_36527c6be8583e5d41">
-                  <body>Sluttvurdering i fag for eleven
-</body>
-                  </ownedComment>
-                </ownedAttribute>
               <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_2f5e1dd0f9617388d9" name="persongruppemedlemskap" visibility="public">
                 <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_bceef627b140751c8b" value="0" />
@@ -9569,39 +8900,12 @@ https://regbok.udir.no/felt/?B11_S%C3%A6rskilt%20spr%C3%A5koppl%C3%A6ring%20for%
 </body>
                   </ownedComment>
                 </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_49c9dd18223800a318" name="halvårsordensvurdering" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_53a6cd8e0392f89ce9" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_53a6cd8e0392f89ce9" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_53a6cd8e0392f89ce9">
-                  <body>Halvårsvurdering av orden og atferd for eleven.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_e9f90bb0f84766fd1d" name="programområde" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_ac3711ebaa50acee43" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_ac3711ebaa50acee43" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_ac3711ebaa50acee43">
-                  <body>Programområde elevforhold tilhører
-</body>
-                  </ownedComment>
-                </ownedAttribute>
               <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_c0829b60271e7b8ead" name="elevvurdering" visibility="public">
                 <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_a4927436a52cb49a5a" value="0" />
                 <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_a4927436a52cb49a5a" value="1" />
                 <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_a4927436a52cb49a5a">
                   <body>Vurderingsinformasjon for en elev.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_884a6e96c961971426" name="fravær" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_d96931d3ed2cc82840" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_d96931d3ed2cc82840" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_d96931d3ed2cc82840">
-                  <body>Alle fravær registrert på elevforhold.
 </body>
                   </ownedComment>
                 </ownedAttribute>
@@ -9614,39 +8918,12 @@ https://regbok.udir.no/felt/?B11_S%C3%A6rskilt%20spr%C3%A5koppl%C3%A6ring%20for%
 </body>
                   </ownedComment>
                 </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_2348bfee3f542ab6cc" name="underveisordensvurdering" visibility="public">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_6739915c3e3255bac6" name="klassemedlemskap" visibility="public">
                 <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_18d1fbe3aa19137681" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_18d1fbe3aa19137681" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_18d1fbe3aa19137681">
-                  <body>Underveisvurdering av orden og atferd for eleven.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_fc3d5f433194457371" name="eksamensgruppe" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_3e4a86f197e67a2dfc" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_3e4a86f197e67a2dfc" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_3e4a86f197e67a2dfc">
-                  <body>Alle eksamensgruppene elevforhold er medlem av
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_5a57e0906de5670f46" name="basisgruppemedlemskap" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_dbbb1c4a4fad598810" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_dbbb1c4a4fad598810" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_dbbb1c4a4fad598810">
-                  <body>Basisgruppemedlemskapene til et elevforhold.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_c6072d50f5a3a902ea" name="undervisningsgruppe" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_06fc6be4869e6b90b9" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_06fc6be4869e6b90b9" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_06fc6be4869e6b90b9">
-                  <body>Alle undervisningsgruppene elevforhold er medlem av
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_5a5890756fbcaf1234" value="0" />
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_5a5890756fbcaf1234" value="*" />
+                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_5a5890756fbcaf1234">
+                  <body>Klassemedlemskapene til et elevforhold.
 </body>
                   </ownedComment>
                 </ownedAttribute>
@@ -9709,6 +8986,125 @@ Det skal her oppgis enten fag eller eksamensform.
                   </ownedComment>
                 </ownedAttribute>
               </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_a9ab455ab2f60a172a" name="Klasse">
+              <properties documentation="Elevgruppe som definert i Opplæringslova &amp;#167;8-2. &#10;&#10;# Beskrivelse&#10;&#10;I opplæringa skal elevane delast i klassar eller basisgrupper som skal vareta deira behov for sosialt tilhør. For delar av opplæringa kan elevane delast i andre grupper etter behov. Til vanleg skal organiseringa ikkje skje etter fagleg nivå, kjønn eller etnisk tilhør. Klassane, basisgruppene og gruppene må ikkje vere større enn det som er pedagogisk og tryggleiksmessig forsvarleg.&#10;&#10;Klassen eller basisgruppa skal ha ein eller fleire lærarar (kontaktlærarar) som har særleg ansvar for dei praktiske, administrative og sosialpedagogiske gjeremåla som gjeld klassen eller basisgruppa og dei elevane som er der, mellom anna kontakten med heimen.&#10;&#10;Begrepet som har tildligere vært kjent som &quot;klasse&quot;.&#10;&#10;&quot;Vanlig&quot; gruppe i SATS (klassegruppe)&#10;&#10;Viser informasjon om:&#10;* År på VGS person går i&#10;* Programområdet&#10;* A, B eller C klasse&#10;&#10;Synonym:&#10;* Klasse&#10;&#10;Øvre grense er beskrevet i Opplæringslova &amp;#167;8-3 eller i forskrift.&#10;" stereotype="hovedklasse" />
+              <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_d68435e906e3f61515">
+                <body>Elevgruppe som definert i Opplæringslova &amp;#167;8-2. 
+
+# Beskrivelse
+
+I opplæringa skal elevane delast i klassar eller basisgrupper som skal vareta deira behov for sosialt tilhør. For delar av opplæringa kan elevane delast i andre grupper etter behov. Til vanleg skal organiseringa ikkje skje etter fagleg nivå, kjønn eller etnisk tilhør. Klassane, basisgruppene og gruppene må ikkje vere større enn det som er pedagogisk og tryggleiksmessig forsvarleg.
+
+Klassen eller basisgruppa skal ha ein eller fleire lærarar (kontaktlærarar) som har særleg ansvar for dei praktiske, administrative og sosialpedagogiske gjeremåla som gjeld klassen eller basisgruppa og dei elevane som er der, mellom anna kontakten med heimen.
+
+Begrepet som har tildligere vært kjent som "klasse".
+
+"Vanlig" gruppe i SATS (klassegruppe)
+
+Viser informasjon om:
+* År på VGS person går i
+* Programområdet
+* A, B eller C klasse
+
+Synonym:
+* Klasse
+
+Øvre grense er beskrevet i Opplæringslova &amp;#167;8-3 eller i forskrift.
+</body>
+                </ownedComment>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_0cf9e2e1969783ebef" name="skoleår" visibility="public">
+                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_0491e8ab3376a3a522" value="0" />
+                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_0491e8ab3376a3a522" value="1" />
+                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_0491e8ab3376a3a522">
+                  <body>Skoleår for basisgruppe
+</body>
+                  </ownedComment>
+                </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_bd3549a593eefeaa46" name="termin" visibility="public">
+                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_218fe28234183abecd" value="0" />
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_218fe28234183abecd" value="*" />
+                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_218fe28234183abecd">
+                  <body>Terminer for basisgruppe
+</body>
+                  </ownedComment>
+                </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_3a82837bd7dbc5c4bb" name="trinn" visibility="public">
+                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_20c40571f678f7f817" value="1" />
+                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_20c40571f678f7f817" value="1" />
+                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_20c40571f678f7f817">
+                  <body>Det overordnet trinnet som gruppen hører inn i
+</body>
+                  </ownedComment>
+                </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_40f0015c8838636231" name="skole" visibility="public">
+                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_faf4160f8d53bb16ff" value="1" />
+                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_faf4160f8d53bb16ff" value="1" />
+                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_faf4160f8d53bb16ff">
+                  <body>Skolen en basisgruppe tilhører.
+</body>
+                  </ownedComment>
+                </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_0f53cfeab1b3476c8f" name="undervisningsforhold" visibility="public">
+                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_322580a65c38f5698c" value="0" />
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_322580a65c38f5698c" value="*" />
+                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_322580a65c38f5698c">
+                  <body>Alle lærere tilknyttet basisgruppen.
+</body>
+                  </ownedComment>
+                </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_e9602ad6685efe9eb4" name="klassemedlemskap" visibility="public">
+                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_ec9949fc5767433712" value="0" />
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_ec9949fc5767433712" value="*" />
+                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_ec9949fc5767433712">
+                  <body>Gruppemedlemskapene til en basisgruppe.
+</body>
+                  </ownedComment>
+                </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_c08ff7f984c65a2fd1" name="kontaktlærergruppe" visibility="public">
+                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_e2c5f1244368d770a4" value="0" />
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_e2c5f1244368d770a4" value="*" />
+                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_e2c5f1244368d770a4">
+                  <body>Grupper med en kontaktlærer og elever som ligger under en gitt basisgruppe
+</body>
+                  </ownedComment>
+                </ownedAttribute>
+              </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_bc18f199919735718f" name="Klassemedlemskap">
+              <properties documentation="Medlemskap i basisgrupper.&#10;&#10;# Beskrivelse&#10;&#10;Gruppemedlemskap som knytter sammen elevforhold og basisgrupper.&#10;" stereotype="hovedklasse" />
+              <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_fd7a74dee439daaa30">
+                <body>Medlemskap i basisgrupper.
+
+# Beskrivelse
+
+Gruppemedlemskap som knytter sammen elevforhold og basisgrupper.
+</body>
+                </ownedComment>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_a062731b78f80f8942" name="klasse" visibility="public">
+                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_fc66523ea97bc0c2c3" value="1" />
+                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_fc66523ea97bc0c2c3" value="1" />
+                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_fc66523ea97bc0c2c3">
+                  <body>Klassen et klassemedlemskap tilhører.
+</body>
+                  </ownedComment>
+                </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_91fc857a1f8d562e5b" name="elevforhold" visibility="public">
+                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_7d5ae2727a4a6a92b5" value="1" />
+                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_7d5ae2727a4a6a92b5" value="1" />
+                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_7d5ae2727a4a6a92b5">
+                  <body>Elevforhold et basisgruppemedlemskap tilhører.
+</body>
+                  </ownedComment>
+                </ownedAttribute>
+              </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_11abbdc19270478625" name="Kontaktlærergruppe">
               <properties documentation="Elevgruppe som ein kontaktlærer har særleg ansvar for.&#10;&#10;# Beskrivelse&#10;&#10;Kontaktlæreren har i denne gruppa særleg ansvar for dei praktiske, administrative og sosialpedagogiske gjeremåla som gjeld klassen eller basisgruppa og dei elevane som er der, mellom anna kontakten med heimen, jf Opplæringslova §8-2.&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_2876ab3f7ad9d58184">
@@ -9725,15 +9121,6 @@ Kontaktlæreren har i denne gruppa særleg ansvar for dei praktiske, administrativ
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_9f9969008217fa590e" value="*" />
                 <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_9f9969008217fa590e">
                   <body>Terminer for kontaktlærergruppe
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_be3c9472fd4d1478d8" name="elevforhold" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_92acfbda9304cdca6b" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_92acfbda9304cdca6b" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_92acfbda9304cdca6b">
-                  <body>Alle elevforhold i kontaktlærergruppen
 </body>
                   </ownedComment>
                 </ownedAttribute>
@@ -9755,12 +9142,12 @@ Kontaktlæreren har i denne gruppa særleg ansvar for dei praktiske, administrativ
 </body>
                   </ownedComment>
                 </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_3ada2cbe4da70befdb" name="basisgruppe" visibility="public">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_a216aeb83e40cc1a5b" name="klasse" visibility="public">
                 <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_61d6a1e7d533f0e413" value="1" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_61d6a1e7d533f0e413" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_61d6a1e7d533f0e413">
-                  <body>De overordnede basisgruppene
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_e23ada7ad5b5c01e62" value="1" />
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_e23ada7ad5b5c01e62" value="*" />
+                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_e23ada7ad5b5c01e62">
+                  <body>De overordnede klassene
 </body>
                   </ownedComment>
                 </ownedAttribute>
@@ -9808,81 +9195,6 @@ Gruppemedlemskap som knytter sammen elevforhold og kontaktlærergrupper.
                 <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_cf73e5a6c029406f95" value="1" />
                 <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_cf73e5a6c029406f95">
                   <body>Kontaktlærergruppen et gruppemedlemskap tilhører.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              </packagedElement>
-            <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_923314dcb9bf6b4540" name="Medlemskap">
-              <properties documentation="Måte å definere at en gitt elev eller lærer deltar i en gruppe. Informasjonen om fravær og elevens karakterer er definert ved hjelp av dette objektet.&#10;&#10;# Eksempler&#10;&#10;* Elevers medlemskap i Undervisningsgrupper&#10;* Lærerens medlemskap i Kontaktgruppe&#10;* Viser Elevens fravær fra en gitt undervisningsgruppe&#10;" stereotype="hovedklasse" />
-              <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_f3c216395f6b451c32">
-                <body>Måte å definere at en gitt elev eller lærer deltar i en gruppe. Informasjonen om fravær og elevens karakterer er definert ved hjelp av dette objektet.
-
-# Eksempler
-
-* Elevers medlemskap i Undervisningsgrupper
-* Lærerens medlemskap i Kontaktgruppe
-* Viser Elevens fravær fra en gitt undervisningsgruppe
-</body>
-                </ownedComment>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_17eadbad799ba177f2" name="systemId" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_f25a292ca0c4abf3fd" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_f25a292ca0c4abf3fd" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_f25a292ca0c4abf3fd">
-                  <body>Systemidentifikator i fagsystem
-
-# Beskrivelse 
-
-Dette kan være identifikator som eksisterer i SAS (SATS, Extens).
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_993dfa346dbc36a8ad" name="medlem" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_96d66eb4ef5e72a282" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_96d66eb4ef5e72a282" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_96d66eb4ef5e72a282">
-                  <body>Alle deltakere i medlemskapet. Det er viktig å notere at det er både elevene og lærere som inngår i medlemskap i grupper.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_0269d06b713cbd7d6e" name="fortløpendeVurdering" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_abe38941732b44c330" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_abe38941732b44c330" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_abe38941732b44c330">
-                  <body>Fortløpende vurdering som eleven har fått som resultat av deltakelse i en gruppe
-
-# Eksempler
-
-- Terminkarakter
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_2e30deb33b9d9cf34a" name="gruppe" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_1fa7d1d866f8a2c2f8" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_1fa7d1d866f8a2c2f8" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_1fa7d1d866f8a2c2f8">
-                  <body>Gruppen som omtales i medlemskapet
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_91b26d4b901be7bfcc" name="endeligVurdering" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_0ddf5d550b01866ca0" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_0ddf5d550b01866ca0" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_0ddf5d550b01866ca0">
-                  <body>Den endelige vurderingen som eleven har fått som resultat av deltakelse i en gruppe
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_4320b92c76464e1ecb" name="fravær" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_d3f8303297bf41390a" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_d3f8303297bf41390a" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_d3f8303297bf41390a">
-                  <body>Fraværet til både lærer og elev som har vært registrert innen en gitt gruppe.
 </body>
                   </ownedComment>
                 </ownedAttribute>
@@ -10095,12 +9407,12 @@ En skoleresurs kan ha flere undervisningsforhold, men kun ett undervisningsforho
 </body>
                   </ownedComment>
                 </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_bbabea0a95aaa88aa7" name="basisgruppe" visibility="public">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_3845109a70b1757cb9" name="klasse" visibility="public">
                 <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_6a90a5ceb6af659727" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_6a90a5ceb6af659727" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_6a90a5ceb6af659727">
-                  <body>Alle basisgrupper tilknyttet læreren.
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_bfc687ade67f7e9481" value="0" />
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_bfc687ade67f7e9481" value="*" />
+                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_bfc687ade67f7e9481">
+                  <body>Alle klasser tilknyttet læreren.
 </body>
                   </ownedComment>
                 </ownedAttribute>
@@ -10938,12 +10250,30 @@ De aktuelle fagtypene i henhold til [Registreringshåndboken A05](http://regbok.u
 * https://www.vigo.no/vigokv/index.action
 </body>
                 </ownedComment>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_d6e6b667c77cd42fc4" name="grepreferanse" visibility="public">
+                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_d2a4d873ad0b5090bc" value="0" />
+                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_d2a4d873ad0b5090bc" value="1" />
+                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_d2a4d873ad0b5090bc">
+                  <body>Referanse til GREP kodeverket.
+</body>
+                  </ownedComment>
+                </ownedAttribute>
               <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_a01add91a916a77b6b" name="programområde" visibility="public">
                 <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_b44caebbafeb5eba03" value="0" />
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_b44caebbafeb5eba03" value="*" />
                 <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_b44caebbafeb5eba03">
                   <body>Programområde faget tilhører.
+</body>
+                  </ownedComment>
+                </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_ca194fdd25edf8f528" name="vigoreferanse" visibility="public">
+                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_9d22afbb1906f03979" value="0" />
+                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_9d22afbb1906f03979" value="1" />
+                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_9d22afbb1906f03979">
+                  <body>Referanse til VIGO kodeverket.
 </body>
                   </ownedComment>
                 </ownedAttribute>
@@ -11254,15 +10584,6 @@ Se også [Faggruppe](/docs/timeplan_faggruppe).
 </body>
                   </ownedComment>
                 </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_929a9951ff9671f7a7" name="elevforhold" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_055fc4a070dcaf7099" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_055fc4a070dcaf7099" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_055fc4a070dcaf7099">
-                  <body>Alle elevforhold i undervisningsgruppen
-</body>
-                  </ownedComment>
-                </ownedAttribute>
               <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_e08e0e9966d70cb45f" name="undervisningsforhold" visibility="public">
                 <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_9ab622b573aad24b64" value="0" />
@@ -11358,6 +10679,15 @@ Programområdekoder som slutter på  `----` angir at det er standardversjon av pro
 * Grepwiki: http://grepwiki.udir.no/index.php?title=Programområde
 </body>
                 </ownedComment>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_2a6ecc06cc576cc409" name="grepreferanse" visibility="public">
+                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_ae72dea7f1e25ed4d4" value="0" />
+                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_ae72dea7f1e25ed4d4" value="1" />
+                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_ae72dea7f1e25ed4d4">
+                  <body>Referanse til GREP kodeverket.
+</body>
+                  </ownedComment>
+                </ownedAttribute>
               <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_0dc51685891595212a" name="utdanningsprogram" visibility="public">
                 <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_727bcba0ff79818586" value="1" />
@@ -11367,12 +10697,12 @@ Programområdekoder som slutter på  `----` angir at det er standardversjon av pro
 </body>
                   </ownedComment>
                 </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_d746754aadf44806f5" name="elevforhold" visibility="public">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_7b67f3abbf956764ff" name="vigoreferanse" visibility="public">
                 <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_ccd61bbaf22db58fbb" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_ccd61bbaf22db58fbb" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_ccd61bbaf22db58fbb">
-                  <body>Alle elevforhold på programområde
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_80f6b03391c9053b00" value="0" />
+                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_80f6b03391c9053b00" value="1" />
+                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_80f6b03391c9053b00">
+                  <body>Referanse til VIGO kodeverket.
 </body>
                   </ownedComment>
                 </ownedAttribute>
@@ -11639,12 +10969,12 @@ Kilde er Vigo Kodeverkdatabase.
 </body>
                   </ownedComment>
                 </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_7d4fbcd6309f5b09ca" name="basisgruppe" visibility="public">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_feed71e1ac69ac9c40" name="klasse" visibility="public">
                 <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_7d405641fd58743750" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_7d405641fd58743750" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_7d405641fd58743750">
-                  <body>Alle basisgrupper ved en skole.
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_ee7124e52ba27d5562" value="0" />
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_ee7124e52ba27d5562" value="*" />
+                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_ee7124e52ba27d5562">
+                  <body>Alle klasser ved en skole.
 </body>
                   </ownedComment>
                 </ownedAttribute>
@@ -11697,6 +11027,24 @@ Synonym: Utdanningsgruppe
 </body>
                   </ownedComment>
                 </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_3332cf7beeba5acfb5" name="grepreferanse" visibility="public">
+                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_dad3fe64f146917eba" value="0" />
+                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_dad3fe64f146917eba" value="1" />
+                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_dad3fe64f146917eba">
+                  <body>Referanse til GREP kodeverket.
+</body>
+                  </ownedComment>
+                </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_314807340ce48e7bfc" name="vigoreferanse" visibility="public">
+                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_4136ef9c1070af34a9" value="0" />
+                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_4136ef9c1070af34a9" value="1" />
+                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_4136ef9c1070af34a9">
+                  <body>Referanse til VIGO kodeverket.
+</body>
+                  </ownedComment>
+                </ownedAttribute>
               <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_724235c053b2b9ddcb" name="programområde" visibility="public">
                 <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_9e6ad175e59843aa5c" value="0" />
@@ -11731,6 +11079,24 @@ Synonym: Utdanningsgruppe
 * http://psi.udir.no/ontologi/kl06/aarstrinn
 </body>
                 </ownedComment>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_a97304abe9222d6526" name="vigoreferanse" visibility="public">
+                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_67a08fb7a4bf32535b" value="0" />
+                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_67a08fb7a4bf32535b" value="1" />
+                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_67a08fb7a4bf32535b">
+                  <body>Referanse til VIGO kodeverket.
+</body>
+                  </ownedComment>
+                </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_95cfa997e2a1837e44" name="grepreferanse" visibility="public">
+                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_867951f7e3cb88d47e" value="0" />
+                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_867951f7e3cb88d47e" value="1" />
+                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_867951f7e3cb88d47e">
+                  <body>Referanse til GREP kodeverket.
+</body>
+                  </ownedComment>
+                </ownedAttribute>
               <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_2e929067e5016cb40d" name="programområde" visibility="public">
                 <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_9039e0f8c2b8b66341" value="0" />
@@ -11740,12 +11106,12 @@ Synonym: Utdanningsgruppe
 </body>
                   </ownedComment>
                 </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_f7dfb29cb81284198e" name="basisgruppe" visibility="public">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_370f0676a7d61eb96b" name="klasse" visibility="public">
                 <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_3193b416857c7bb7f7" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_3193b416857c7bb7f7" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_3193b416857c7bb7f7">
-                  <body>Basisgruppene som hører hjemme på dette trinnet
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_6cc7930d1f242cd70b" value="0" />
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_6cc7930d1f242cd70b" value="*" />
+                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_6cc7930d1f242cd70b">
+                  <body>Klassene som hører hjemme på dette trinnet
 </body>
                   </ownedComment>
                 </ownedAttribute>
@@ -11878,15 +11244,6 @@ ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
                 <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_7168072d67d749fbc2" value="1" />
                 <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_7168072d67d749fbc2">
                   <body>Eksamenen som skal avholdes.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_c65ceb67b4daa46549" name="elevforhold" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_2046726a999d59e20f" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_2046726a999d59e20f" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_2046726a999d59e20f">
-                  <body>Alle elevforhold i eksamensgruppen
 </body>
                   </ownedComment>
                 </ownedAttribute>
@@ -12283,15 +11640,6 @@ Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da
 </body>
                   </ownedComment>
                 </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_44f17b5274f9d42de6" name="undervisningsgruppe" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_8d88ccdf053ed8334e" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_8d88ccdf053ed8334e" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_8d88ccdf053ed8334e">
-                  <body>Undervisningsgruppe vurderingen er foretatt i.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
               <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_26466364f93dd5e55f" name="karakter" visibility="public">
                 <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_dd33a5b694c88a0ad7" value="0" />
@@ -12307,134 +11655,6 @@ Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da
                 <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_95f601a91b005cd523" value="1" />
                 <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_95f601a91b005cd523">
                   <body>Faget det er foretatt vurdering i.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              </packagedElement>
-            <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_ebac31792d99fa6926" name="Fravær">
-              <properties documentation="Manglende tilstedeværelse i opplæringen.&#10;&#10;# Beskrivelse&#10;&#10;Fravær føres med relasjon til den undervisningen eleven har vært fraværende fra.  Det må derfor være en relasjon til en Undervisningsgruppe.&#10;&#10;# Fraværsgrense &#10;&#10;* Elever i videregående skole skal møte opp og delta aktivt i opplæringen. &#10;* Fravær skal registreres, og det foreligger grenser på hvor mye fravær som tillates før rett til å få halvårsvurdering med karakter eller standpunktkarakter i et fag bortfaller. &#10;* Eleven må legge fram relevant dokumentasjon for å få fravær unntatt fra fraværsgrensen.&#10;* Fraværsgrensen gjelder timefravær i enkeltfag, ikke elevenes totale fravær.&#10;* Eleven skal få et varsel om han eller hun står i fare for å ikke få karakter på grunn av fravær.&#10;&#10;# Fravær eksamen&#10;Det føres ikke lenger fravær på eksamen. Dette vil bli satt som karakter. Pga dette utgår relasjonen til eksamensgruppe. Ved en senere hovedoppdatering av Informasjonsmodellen vil multiplisitet for relasjonen  undervisningsgruppe bli satt til 1.&#10;&#10;# Referanser&#10;&#10;* UDir Registreringshåndbok: http://regbok.udir.no/35004/3344/35042-1018643.html&#10;* Forskrift til opplæringslova &amp;#167; 3-3, siste ledd: https://lovdata.no/forskrift/2006-06-23-724/&amp;#167;3-3&#10;* Forskrift til opplæringslova &amp;#167; 3-47: https://lovdata.no/forskrift/2006-06-23-724/&amp;#167;3-47&#10;* UDir. Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet, pkt 8: https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/8-fravar/&#10;* SNL. Fravær: https://snl.no/fravær&#10;* Rundskriv Udir-3-2016: https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Vitnemal/fravarsgrense---udir-3-2016/&#10;* UDir. Fravær i videregående skole: https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Vitnemal/fravar-i-videregaende-skole/&#10;" stereotype="hovedklasse" />
-              <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_59abd69df4669f41d4">
-                <body>Manglende tilstedeværelse i opplæringen.
-
-# Beskrivelse
-
-Fravær føres med relasjon til den undervisningen eleven har vært fraværende fra.  Det må derfor være en relasjon til en Undervisningsgruppe.
-
-# Fraværsgrense 
-
-* Elever i videregående skole skal møte opp og delta aktivt i opplæringen. 
-* Fravær skal registreres, og det foreligger grenser på hvor mye fravær som tillates før rett til å få halvårsvurdering med karakter eller standpunktkarakter i et fag bortfaller. 
-* Eleven må legge fram relevant dokumentasjon for å få fravær unntatt fra fraværsgrensen.
-* Fraværsgrensen gjelder timefravær i enkeltfag, ikke elevenes totale fravær.
-* Eleven skal få et varsel om han eller hun står i fare for å ikke få karakter på grunn av fravær.
-
-# Fravær eksamen
-Det føres ikke lenger fravær på eksamen. Dette vil bli satt som karakter. Pga dette utgår relasjonen til eksamensgruppe. Ved en senere hovedoppdatering av Informasjonsmodellen vil multiplisitet for relasjonen  undervisningsgruppe bli satt til 1.
-
-# Referanser
-
-* UDir Registreringshåndbok: http://regbok.udir.no/35004/3344/35042-1018643.html
-* Forskrift til opplæringslova &amp;#167; 3-3, siste ledd: https://lovdata.no/forskrift/2006-06-23-724/&amp;#167;3-3
-* Forskrift til opplæringslova &amp;#167; 3-47: https://lovdata.no/forskrift/2006-06-23-724/&amp;#167;3-47
-* UDir. Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet, pkt 8: https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/8-fravar/
-* SNL. Fravær: https://snl.no/fravær
-* Rundskriv Udir-3-2016: https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Vitnemal/fravarsgrense---udir-3-2016/
-* UDir. Fravær i videregående skole: https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Vitnemal/fravar-i-videregaende-skole/
-</body>
-                </ownedComment>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_b9cc888d5a92f14f48" name="dokumentert" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_67c768e62b6505aa2c" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_67c768e62b6505aa2c" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_67c768e62b6505aa2c">
-                  <body>Angir om fraværet er dokumentert eller ikke (ja/nei).
-
-Hva slags fravær som betraktes som dokumentert følger av [Rundskriv Udir 3-2016](https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Vitnemal/fravarsgrense---udir-3-2016/).
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_6705818bc66182b1a5" name="føresPåVitnemål" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_35d5ff35cbce7848c7" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_35d5ff35cbce7848c7" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_35d5ff35cbce7848c7">
-                  <body>Angir om fraværet skal føres på vitnemål / kompetansebevis.
-
-Føring på vitnemål bestemmes av [forskrift til opplæringslova § 3-47](http://www.lovdata.no/for/sf/kd/xd-20060623-0724.html#3-47) og skriv fra Utdanningsdirektoratet om [Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet, pkt 8](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/8-fravar/).
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_51b1a29ad69b3495d7" name="gjelderPeriode" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_8c23dbf6cf246f3706" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_8c23dbf6cf246f3706" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_8c23dbf6cf246f3706">
-                  <body>Tidsperioden fraværet oppstod/gjelder for.
-
-Fravær skal registreres i dager eller timer (60-minutters enheter). Det er ikke tillatt å konvertere timer til dager.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_825b340e45737a775b" name="kommentar" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_7c92d0f9397a798e46" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_7c92d0f9397a798e46" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_7c92d0f9397a798e46">
-                  <body>Kommentar til fraværet, evt ekstrainformasjon
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_5c36282c9eb57248bb" name="systemId" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_cad06b7adf7b77b746" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_cad06b7adf7b77b746" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_cad06b7adf7b77b746">
-                  <body>Kildesystemets unike identifikator for fravær.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_2852921ca636725553" name="undervisningsgruppe" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_9c4e247ec9f7cec39c" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_9c4e247ec9f7cec39c" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_9c4e247ec9f7cec39c">
-                  <body>Undervisningsgruppe det er registrert fravær fra.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_a6384da98f575dd300" name="eksamensgruppe" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_1d63235fb912ce0ed4" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_1d63235fb912ce0ed4" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_1d63235fb912ce0ed4">
-                  <body>Eksamensgruppe det er registrert fravær fra.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_7274c3dc40022b14ca" name="elevforhold" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_7c0f658d40329f0e6b" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_7c0f658d40329f0e6b" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_7c0f658d40329f0e6b">
-                  <body>Elevforhold det er registrert fravær på.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_ad1d4e1fb8e136740c" name="registrertav" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_030703c26fa18bc176" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_030703c26fa18bc176" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_030703c26fa18bc176">
-                  <body>Den som har registrert fraværet.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_784067c943c3a32a16" name="fraværstype" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_38ada983f88a448336" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_38ada983f88a448336" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_38ada983f88a448336">
-                  <body>Type fravær.
 </body>
                   </ownedComment>
                 </ownedAttribute>
@@ -12662,15 +11882,6 @@ Vurdering i fag skal ha relasjon til den `Undervisningsgruppe` som vurderingen e
 * Forskrift til opplæringslova &amp;#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4)
 </body>
                 </ownedComment>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_d2b6a69161af8ea438" name="elevforhold" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_af4a1578d5a9ee7e5b" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_af4a1578d5a9ee7e5b" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_af4a1578d5a9ee7e5b">
-                  <body>Elevforholdet vurderingen gjelder.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
               <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_a7143a9f2c6903198a" name="elevvurdering" visibility="public">
                 <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_758013c0da5abec932" value="1" />
@@ -12697,15 +11908,6 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
 * Forskrift til opplæringslova &amp;#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4)
 </body>
                 </ownedComment>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_fa12bef9e9d2a9f987" name="elevforhold" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_541572355dae89dff1" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_541572355dae89dff1" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_541572355dae89dff1">
-                  <body>Elevforholdet vurderingen gjelder.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
               <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_b3497802b3da9c175d" name="elevvurdering" visibility="public">
                 <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_7acd851646da5431af" value="1" />
@@ -12997,15 +12199,6 @@ Vurderingen skal ha en relasjon til det angjeldende faget.
 * Forskrift til opplæringslova &amp;#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4)
 </body>
                 </ownedComment>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_36455e7e629e5ddc9e" name="elevforhold" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_cae5e677e13e3fdf0e" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_cae5e677e13e3fdf0e" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_cae5e677e13e3fdf0e">
-                  <body>Elevforholdet vurderingen gjelder.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
               <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_f688dba609ae1e7caf" name="eksamensgruppe" visibility="public">
                 <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_e0a6f0b175636a9d21" value="0" />
@@ -13050,15 +12243,6 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
 * Forskrift til opplæringslova &amp;#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4)
 </body>
                 </ownedComment>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_2ffd160d41cf12a72a" name="elevforhold" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_fc3b0a8aa30a0584fe" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_fc3b0a8aa30a0584fe" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_fc3b0a8aa30a0584fe">
-                  <body>Elevforholdet vurderingen gjelder.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
               <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_175708fc26b0b95b46" name="elevvurdering" visibility="public">
                 <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_0e79410a005325b402" value="1" />
@@ -13087,15 +12271,6 @@ Vurdering i fag skal ha relasjon til den `Undervisningsgruppe` som vurderingen e
 * Forskrift til opplæringslova &amp;#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4)
 </body>
                 </ownedComment>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_ee7b0b29930a982ba8" name="elevforhold" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_9771e1b15d6fc148a0" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_9771e1b15d6fc148a0" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_9771e1b15d6fc148a0">
-                  <body>Elevforholdet vurderingen gjelder.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
               <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_6e5a4875cb3a3141ac" name="elevvurdering" visibility="public">
                 <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_ab60c0145ec4bf3e95" value="1" />
@@ -13122,118 +12297,12 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
 * Forskrift til opplæringslova &amp;#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4)
 </body>
                 </ownedComment>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_22bd8a1fb5e8b806ef" name="elevforhold" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_4fc08e92088760072c" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_4fc08e92088760072c" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_4fc08e92088760072c">
-                  <body>Elevforholdet vurderingen gjelder.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
               <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_0ef78c04076fca41ab" name="elevvurdering" visibility="public">
                 <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_14157b6b94e12bc000" value="1" />
                 <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_14157b6b94e12bc000" value="1" />
                 <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_14157b6b94e12bc000">
                   <body>Vurderingsinformasjon for en elev.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              </packagedElement>
-            <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_83824b46425e766c13" name="Vurdering">
-              <properties documentation="Karakterer og andre vurderingsuttrykk.&#10;&#10;# Beskrivelse&#10;&#10;Vurdering gis for deltakelse av en elev i en gruppe. Dette kan være Halvårsvurdering, Standpunktkarakter, underveisvurdering eller annet. &#10;&#10;Vurdering i fag skal ha relasjon til den `Undervisningsgruppe` eller `Eksamensgruppe` som vurderingen er foretatt i. Det er også mulig å sette relasjon direkte til angjeldende fag.&#10;&#10;Vurderinger av orden og andre frittstående vurderinger gjøres uten relasjon til noen gruppe.&#10;&#10;# Referanser&#10;&#10;* UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)&#10;* Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)&#10;* Forskrift til opplæringslova &amp;#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4)&#10;" stereotype="hovedklasse" />
-              <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_fe03c5eb1de5d3a992">
-                <body>Karakterer og andre vurderingsuttrykk.
-
-# Beskrivelse
-
-Vurdering gis for deltakelse av en elev i en gruppe. Dette kan være Halvårsvurdering, Standpunktkarakter, underveisvurdering eller annet. 
-
-Vurdering i fag skal ha relasjon til den `Undervisningsgruppe` eller `Eksamensgruppe` som vurderingen er foretatt i. Det er også mulig å sette relasjon direkte til angjeldende fag.
-
-Vurderinger av orden og andre frittstående vurderinger gjøres uten relasjon til noen gruppe.
-
-# Referanser
-
-* UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)
-* Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)
-* Forskrift til opplæringslova &amp;#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4)
-</body>
-                </ownedComment>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_3c75f2068e2129c592" name="endelig" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_9acf4b60f2abf56e7d" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_9acf4b60f2abf56e7d" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_9acf4b60f2abf56e7d">
-                  <body>Angir om vurderingen er endelig.
-
-# Beskrivelse
-
-Vurderinger som ikke er endelige, regnes som underveisvurderinger.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_d919205b4bd48045bc" name="kommentar" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_a54b3e17bff2c151d6" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_a54b3e17bff2c151d6" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_a54b3e17bff2c151d6">
-                  <body>Kommentar til vurderingen.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_8dfc605179ac569cea" name="systemId" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_0570d5d9c12d177e63" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_0570d5d9c12d177e63" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_0570d5d9c12d177e63">
-                  <body>Kildesystemets unike identifikator for vurdering.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_61a6e3fe6586a31cd5" name="eksamensgruppe" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_6945a45e066da176bb" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_6945a45e066da176bb" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_6945a45e066da176bb">
-                  <body>Eksamensgruppe vurderingen er foretatt i.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_2e1f2226162dc58835" name="fag" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_d3c3635af1172df4da" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_d3c3635af1172df4da" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_d3c3635af1172df4da">
-                  <body>Hvilket fag vurderingen gjelder
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_1b113beedba23ffc00" name="elevforhold" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_0acde029a53bdd3e3b" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_0acde029a53bdd3e3b" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_0acde029a53bdd3e3b">
-                  <body>Elevforhold som er vurdert.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_160eaa7a1069d0d328" name="undervisningsgruppe" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_80f9f577e6638daa39" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_80f9f577e6638daa39" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_80f9f577e6638daa39">
-                  <body>Undervisningsgruppe vurderingen er foretatt i.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_2d92ab40e0758689a2" name="karakter" visibility="public">
-                <type href="http://schema.omg.org/spec/UML/2.1/uml.xml#String" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_6a4654ccadd3c185de" value="1" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_6a4654ccadd3c185de" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_6a4654ccadd3c185de">
-                  <body>Det aktuelle karakteren som er tildelt
 </body>
                   </ownedComment>
                 </ownedAttribute>
@@ -13267,9 +12336,6 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
         <tags />
         <properties documentation="Kontaktperson til en person.&#10;&#10;# Beskrivelse&#10;&#10;Kontaktperson er personer som kan kontaktes dersom det er behov for det.&#10;&#10;Kontaktperson kalles også pårørende.&#10;" stereotype="hovedklasse" />
         <attributes>
-          <attribute xmi:idref="EAID_PRP_ac8bbd596064b0870f" name="foreldreansvar">
-            <tags />
-            </attribute>
           <attribute xmi:idref="EAID_PRP_7a1829fcf8816c22b7" name="kontaktinformasjon">
             <tags />
             </attribute>
@@ -13283,9 +12349,6 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_05ec9d6bbfc69ec075" name="kontaktperson">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_e5eb4d42de212e67fb" name="person">
             <tags />
             </attribute>
           </attributes>
@@ -13386,9 +12449,6 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_0754b9d316506ffdf4" name="systemId">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_5414cdc530c1a79b9a" name="myndighet">
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_cb6042c9202c0d874e" name="ramme">
@@ -13540,11 +12600,7 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
       <element xmi:idref="EAID_CLS_b2d51228fff1754e2b" xmi:type="uml:Class" name="Kontodimensjon" scope="public">
         <tags />
         <properties documentation="Abstrakt fellesbegrep som beskriver dimensjon i kontoplan.&#10;&#10;# Beskrivelse&#10;&#10;Fellesbenevnelse for dimensjoner i en kontoplan.&#10;" stereotype="hovedklasse" />
-        <attributes>
-          <attribute xmi:idref="EAID_PRP_6643be1b439cc0439f" name="fullmakt">
-            <tags />
-            </attribute>
-          </attributes>
+        <attributes />
         </element>
       <element xmi:idref="EAID_CLS_97acd9c5e2c4898e8b" xmi:type="uml:Class" name="Kontrakt" scope="public">
         <tags />
@@ -13575,7 +12631,7 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
         </element>
       <element xmi:idref="EAID_CLS_1f265be5e72241d582" xmi:type="uml:Class" name="Organisasjonstype" scope="public">
         <tags />
-        <properties documentation="Typen til et organisasjonselement.&#10;&#10;# Eksempler&#10;&#10;* Virksomhet&#10;* Klinikk&#10;* Seksjon&#10;* Avdeling&#10;* Team&#10;* Divisjon&#10;* Stab&#10;* Skolegruppe&#10;" stereotype="hovedklasse" />
+        <properties documentation="Typen til et organisasjonselement.&#10;&#10;# Eksempler&#10;&#10;- Virksomhet&#10;- Klinikk&#10;- Seksjon&#10;- Avdeling&#10;- Team&#10;- Divisjon&#10;- Stab&#10;- Skolegruppe&#10;" stereotype="hovedklasse" />
         <attributes />
         </element>
       <element xmi:idref="EAID_CLS_0e902a06c5b70e4340" xmi:type="uml:Class" name="Personalressurskategori" scope="public">
@@ -13711,13 +12767,13 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
           <attribute xmi:idref="EAID_PRP_7cde0a036a69d445ff" name="organisasjonsKode">
             <tags />
             </attribute>
+          <attribute xmi:idref="EAID_PRP_71ead83a066aaed310" name="organisasjonstype">
+            <tags />
+            </attribute>
           <attribute xmi:idref="EAID_PRP_0739a6ded5022e2f3e" name="leder">
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_5064a6296f394f455d" name="ansvar">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_71ead83a066aaed310" name="organisasjonstype">
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_c2236976b005082939" name="overordnet">
@@ -13832,9 +12888,6 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_8838c60d1a354c6563" name="variabellønn">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_2ea8b49e3a350dea3c" name="lønn">
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_b7c0897e3f23794ca9" name="fastlønn">
@@ -14204,12 +13257,6 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
           <attribute xmi:idref="EAID_PRP_f51f66f8dd95b6d07b" name="klassifikasjonssystem">
             <tags />
             </attribute>
-          <attribute xmi:idref="EAID_PRP_3ea17e69815517d422" name="registrering">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_16021ed2197e74865f" name="mappe">
-            <tags />
-            </attribute>
           </attributes>
         </element>
       <element xmi:idref="EAID_CLS_0c3df74298539a0472" xmi:type="uml:Class" name="Arkivressurs" scope="public">
@@ -14340,9 +13387,6 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
         <properties documentation="Dokumentobjekt skal referere til &amp;#233;n og kun en dokumentfil. Dokumentfila inneholder selve dokumentet.&#10;" stereotype="hovedklasse" />
         <attributes>
           <attribute xmi:idref="EAID_PRP_8665f3cbd30f7d005f" name="filstorrelse">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_6199c93ba6743fc843" name="format">
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_7bbcb367d70957088b" name="formatDetaljer">
@@ -14552,9 +13596,6 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
           <attribute xmi:idref="EAID_PRP_7089d1dcbc923d184f" name="opprettetAv">
             <tags />
             </attribute>
-          <attribute xmi:idref="EAID_PRP_59b2dcf76137024572" name="arkivdel">
-            <tags />
-            </attribute>
           </attributes>
         </element>
       <element xmi:idref="EAID_CLS_581e2209c6211b8d2d" xmi:type="uml:Class" name="Merknad" scope="public">
@@ -14657,9 +13698,6 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
           <attribute xmi:idref="EAID_PRP_c418a5583234f555e4" name="tilgangsgruppe">
             <tags />
             </attribute>
-          <attribute xmi:idref="EAID_PRP_d0dd243b50e245ffad" name="arkivdel">
-            <tags />
-            </attribute>
           <attribute xmi:idref="EAID_PRP_d4b2ddd7d3f88287ba" name="arkivertAv">
             <tags />
             </attribute>
@@ -14680,9 +13718,6 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
         <tags />
         <properties documentation="Spesialisering av Mappe som tilsvarer en ”sak” i Noark.&#10;&#10;# Beskrivelse&#10;&#10;* Noark 5 versjon 5.0 standard - kap. 2.5 &#10;&#10;# Referanser&#10;&#10;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#10;" stereotype="hovedklasse" />
         <attributes>
-          <attribute xmi:idref="EAID_PRP_455b3b66fe59f4f874" name="arkivnotat">
-            <tags />
-            </attribute>
           <attribute xmi:idref="EAID_PRP_9bd3a1977be8f19d20" name="journalpost">
             <tags />
             </attribute>
@@ -15346,99 +14381,6 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
             </attribute>
           </attributes>
         </element>
-      <element xmi:idref="EAID_PKG_7edb421a6636ba1291" xmi:type="uml:Package" name="datautstyr" scope="public">
-        <tags />
-        </element>
-      <element xmi:idref="EAID_CLS_c1d876328a29930a25" xmi:type="uml:Class" name="DigitalEnhet" scope="public">
-        <tags />
-        <properties documentation="Beskriver ulike digitale enheter slik som feks pc, nettbrett, mobil.&#10;" stereotype="hovedklasse" />
-        <attributes>
-          <attribute xmi:idref="EAID_PRP_084724d4446b6dd20b" name="dataobjektId">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_1165f0fceda56f2c69" name="flerbrukerenhet">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_1a128e716fedc233e7" name="navn">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_41ec156bae78d79f40" name="privateid">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_c0437a6517ed85e157" name="serienummer">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_284e412d2d96406274" name="systemId">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_36e6a4943881bdbcb7" name="status">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_bef108042a9d9ac848" name="produsent">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_3c370864ebe3a6d9dc" name="enhetstype">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_beb6916aed0d30e7e5" name="elev">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_d15fa16f9188ed150e" name="administrator">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_ebd4dcf486f175cdc4" name="eier">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_59045f3ff993af80a9" name="plattform">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_cff9136eb4de3e4223" name="personalressurs">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_c7c41d704e8e6bca4a" name="enhetsgruppemedlemskap">
-            <tags />
-            </attribute>
-          </attributes>
-        </element>
-      <element xmi:idref="EAID_CLS_85fd8f3415c0fe0b42" xmi:type="uml:Class" name="Enhetsgruppe" scope="public">
-        <tags />
-        <properties documentation="Angir en gruppering av ensartede digitale enheter. Feks klassesett med iPader eller datalab med ekstra kraftige maskiner.&#10;" stereotype="hovedklasse" />
-        <attributes>
-          <attribute xmi:idref="EAID_PRP_3fd89cf27f312c635c" name="navn">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_3ae427a89ce064d642" name="systemId">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_e8dc7a142108224b0c" name="plattform">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_3b2a9cc6b597bba1a6" name="enhetstype">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_9ab7f48a6115991642" name="organisasjonsenhet">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_25b3c95a45da1da7f3" name="enhetsgruppemedlemskap">
-            <tags />
-            </attribute>
-          </attributes>
-        </element>
-      <element xmi:idref="EAID_CLS_53006277f1535f9ae9" xmi:type="uml:Class" name="Enhetsgruppemedlemskap" scope="public">
-        <tags />
-        <properties documentation="Medlemskap i enhetsgrupper.&#10;&#10;Gruppemedlemskap som knytter sammen Digitalenhet og Enhetsgrupper.&#10;" stereotype="hovedklasse" />
-        <attributes>
-          <attribute xmi:idref="EAID_PRP_8eb2617742239a1233" name="systemId">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_65fbbdbe5d6ec70185" name="digitalEnhet">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_01e33c33a44249c0eb" name="enhetsgruppe">
-            <tags />
-            </attribute>
-          </attributes>
-        </element>
       <element xmi:idref="EAID_PKG_c48245093616af666d" xmi:type="uml:Package" name="eiendel" scope="public">
         <tags />
         </element>
@@ -15548,11 +14490,6 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
         <properties documentation="De ulike brukertypene som kan benytte lisensen.&#10;&#10;Eksempler:&#10;&#10;* ELEV&#10;* ANSATTSKOLE&#10;* ANSATTADMINISTRASJON&#10;* EKSTERN&#10;" stereotype="hovedklasse" />
         <attributes />
         </element>
-      <element xmi:idref="EAID_CLS_9fc9ed03404204e554" xmi:type="uml:Class" name="Enhetstype" scope="public">
-        <tags />
-        <properties documentation="Kategori som den digitale enheten hører til.&#10;&#10;Eksempler:&#10;&#10;* mobiltelefon&#10;* datamaskin&#10;* nettbrett&#10;" stereotype="hovedklasse" />
-        <attributes />
-        </element>
       <element xmi:idref="EAID_CLS_7d9641c41e900d56d3" xmi:type="uml:Class" name="Håndhevingstype" scope="public">
         <tags />
         <properties documentation="Hvordan ulike lisensmodeller kan håndheves av systemer for forvaltning av applikasjonen.&#10;&#10;Eksempel:&#10;&#10;* Hardstopp (ikke lov å tildele flere lisenser enn det kildesystemet angir)&#10;* Ubegrenset (ingen begrensing på antall lisenser som kan tildeles)&#10;* Overallokering tillatt (kan tildeles lisenser utover maks antall. Ikke nødvendigvis ubegrenset)&#10;" stereotype="hovedklasse" />
@@ -15566,16 +14503,6 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
       <element xmi:idref="EAID_CLS_1671dc6cd6e8063b64" xmi:type="uml:Class" name="Plattform" scope="public">
         <tags />
         <properties documentation="Plattformen tjenesten kan leveres på.&#10;&#10;Eksempel:&#10;&#10;* Windows&#10;* MAC OS&#10;* Linux&#10;* IOS&#10;* Android&#10;" stereotype="hovedklasse" />
-        <attributes />
-        </element>
-      <element xmi:idref="EAID_CLS_62ae3d650ea9c83562" xmi:type="uml:Class" name="Produsent" scope="public">
-        <tags />
-        <properties documentation="Navn på produsenten av den  digitale enheten.&#10;&#10;Eksempler:&#10;&#10;* HP&#10;* Lenovo&#10;* Apple&#10;* Samsung&#10;" stereotype="hovedklasse" />
-        <attributes />
-        </element>
-      <element xmi:idref="EAID_CLS_f93d6f6a3c37517153" xmi:type="uml:Class" name="Status" scope="public">
-        <tags />
-        <properties documentation="Status på den digitale enheten i fagsystemet (feks ett asset management system):&#10;&#10;Eksempler:&#10;&#10;* i bruk&#10;* på lager&#10;* defekt&#10;* utgått&#10;" stereotype="hovedklasse" />
         <attributes />
         </element>
       <element xmi:idref="EAID_PKG_11747fd7c7dcca9ea3" xmi:type="uml:Package" name="tilgang" scope="public">
@@ -15621,19 +14548,7 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
           <attribute xmi:idref="EAID_PRP_0c8360396c2afa3023" name="navn">
             <tags />
             </attribute>
-          <attribute xmi:idref="EAID_PRP_451f64a30129f07684" name="periode">
-            <tags />
-            </attribute>
           <attribute xmi:idref="EAID_PRP_68fca34b52d9165eaf" name="systemId">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_c9848b25a06192b0c5" name="grepreferanse">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_c3138de8b5011c7d53" name="vigoreferanse">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_d154bcce901bd9bb56" name="medlemskap">
             <tags />
             </attribute>
           </attributes>
@@ -15660,55 +14575,10 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
           <attribute xmi:idref="EAID_PRP_8ba46235d77c4fc8d0" name="systemId">
             <tags />
             </attribute>
-          <attribute xmi:idref="EAID_PRP_c513ff85d383e8260c" name="medlemskap">
-            <tags />
-            </attribute>
           </attributes>
         </element>
       <element xmi:idref="EAID_PKG_c5ee21afe2335d549a" xmi:type="uml:Package" name="elev" scope="public">
         <tags />
-        </element>
-      <element xmi:idref="EAID_CLS_67991f31becd86403f" xmi:type="uml:Class" name="Basisgruppe" scope="public">
-        <tags />
-        <properties documentation="Elevgruppe som definert i Opplæringslova §8-2. &#10;&#10;# Beskrivelse&#10;&#10;I opplæringa skal elevane delast i klassar eller basisgrupper som skal vareta deira behov for sosialt tilhør. For delar av opplæringa kan elevane delast i andre grupper etter behov. Til vanleg skal organiseringa ikkje skje etter fagleg nivå, kjønn eller etnisk tilhør. Klassane, basisgruppene og gruppene må ikkje vere større enn det som er pedagogisk og tryggleiksmessig forsvarleg.&#10;&#10;Klassen eller basisgruppa skal ha ein eller fleire lærarar (kontaktlærarar) som har særleg ansvar for dei praktiske, administrative og sosialpedagogiske gjeremåla som gjeld klassen eller basisgruppa og dei elevane som er der, mellom anna kontakten med heimen.&#10;&#10;Begrepet som har tildligere vært kjent som &quot;klasse&quot;.&#10;&#10;&quot;Vanlig&quot; gruppe i SATS (klassegruppe)&#10;&#10;Viser informasjon om:&#10;* År på VGS person går i&#10;* Programområdet&#10;* A, B eller C klasse&#10;&#10;Synonym:&#10;* Klasse&#10;&#10;Øvre grense er beskrevet i Opplæringslova §8-3 eller i forskrift.&#10;" stereotype="hovedklasse" />
-        <attributes>
-          <attribute xmi:idref="EAID_PRP_e35e6beee7d339fed8" name="skoleår">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_89e78a8ca2a596ee13" name="elevforhold">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_73d2942de56b90d549" name="termin">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_28492f2ee5581b8275" name="trinn">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_62b43dbe265c4f0c54" name="skole">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_978693e7d3edd98944" name="undervisningsforhold">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_b562bd47508aa878b2" name="gruppemedlemskap">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_e6322d5df3a27d024f" name="kontaktlærergruppe">
-            <tags />
-            </attribute>
-          </attributes>
-        </element>
-      <element xmi:idref="EAID_CLS_ecdc9a880c641e072d" xmi:type="uml:Class" name="Basisgruppemedlemskap" scope="public">
-        <tags />
-        <properties documentation="Medlemskap i basisgrupper.&#10;&#10;# Beskrivelse&#10;&#10;Gruppemedlemskap som knytter sammen elevforhold og basisgrupper.&#10;" stereotype="hovedklasse" />
-        <attributes>
-          <attribute xmi:idref="EAID_PRP_ae379a71b03c294a9f" name="basisgruppe">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_a65accae4c99c9c86c" name="elevforhold">
-            <tags />
-            </attribute>
-          </attributes>
         </element>
       <element xmi:idref="EAID_CLS_389b7cf67bad56a453" xmi:type="uml:Class" name="Elev" scope="public">
         <tags />
@@ -15762,13 +14632,7 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
           <attribute xmi:idref="EAID_PRP_2a82ae51103f2c7837" name="tospråkligFagopplæring">
             <tags />
             </attribute>
-          <attribute xmi:idref="EAID_PRP_e7c222a05474f107c4" name="sidemål">
-            <tags />
-            </attribute>
           <attribute xmi:idref="EAID_PRP_064c0ef36d8b57ee55" name="kategori">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_7e26ba7b92c847dc04" name="kroppsøving">
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_c7369ae022a2f78fee" name="skole">
@@ -15792,27 +14656,6 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
           <attribute xmi:idref="EAID_PRP_5101841a10f694e6b5" name="undervisningsgruppemedlemskap">
             <tags />
             </attribute>
-          <attribute xmi:idref="EAID_PRP_9e2671ba84e1829b0a" name="basisgruppe">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_f25fb931d8a0b4651e" name="vurdering">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_4ac6f5f56bdbc6340c" name="sluttordensvurdering">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_8d86fed0300a7c3d48" name="kontaktlærergruppe">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_45165f4ba50a352aa1" name="underveisfagvurdering">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_29454559f79790b98b" name="halvårsfagvurdering">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_97000ccda4bb2df891" name="sluttfagvurdering">
-            <tags />
-            </attribute>
           <attribute xmi:idref="EAID_PRP_2f5e1dd0f9617388d9" name="persongruppemedlemskap">
             <tags />
             </attribute>
@@ -15828,31 +14671,13 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
           <attribute xmi:idref="EAID_PRP_a49e59493c4003fa6c" name="tilrettelegging">
             <tags />
             </attribute>
-          <attribute xmi:idref="EAID_PRP_49c9dd18223800a318" name="halvårsordensvurdering">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_e9f90bb0f84766fd1d" name="programområde">
-            <tags />
-            </attribute>
           <attribute xmi:idref="EAID_PRP_c0829b60271e7b8ead" name="elevvurdering">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_884a6e96c961971426" name="fravær">
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_a99dc6ac5e76eb4a98" name="programområdemedlemskap">
             <tags />
             </attribute>
-          <attribute xmi:idref="EAID_PRP_2348bfee3f542ab6cc" name="underveisordensvurdering">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_fc3d5f433194457371" name="eksamensgruppe">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_5a57e0906de5670f46" name="basisgruppemedlemskap">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_c6072d50f5a3a902ea" name="undervisningsgruppe">
+          <attribute xmi:idref="EAID_PRP_6739915c3e3255bac6" name="klassemedlemskap">
             <tags />
             </attribute>
           </attributes>
@@ -15878,14 +14703,50 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
             </attribute>
           </attributes>
         </element>
+      <element xmi:idref="EAID_CLS_a9ab455ab2f60a172a" xmi:type="uml:Class" name="Klasse" scope="public">
+        <tags />
+        <properties documentation="Elevgruppe som definert i Opplæringslova &amp;#167;8-2. &#10;&#10;# Beskrivelse&#10;&#10;I opplæringa skal elevane delast i klassar eller basisgrupper som skal vareta deira behov for sosialt tilhør. For delar av opplæringa kan elevane delast i andre grupper etter behov. Til vanleg skal organiseringa ikkje skje etter fagleg nivå, kjønn eller etnisk tilhør. Klassane, basisgruppene og gruppene må ikkje vere større enn det som er pedagogisk og tryggleiksmessig forsvarleg.&#10;&#10;Klassen eller basisgruppa skal ha ein eller fleire lærarar (kontaktlærarar) som har særleg ansvar for dei praktiske, administrative og sosialpedagogiske gjeremåla som gjeld klassen eller basisgruppa og dei elevane som er der, mellom anna kontakten med heimen.&#10;&#10;Begrepet som har tildligere vært kjent som &quot;klasse&quot;.&#10;&#10;&quot;Vanlig&quot; gruppe i SATS (klassegruppe)&#10;&#10;Viser informasjon om:&#10;* År på VGS person går i&#10;* Programområdet&#10;* A, B eller C klasse&#10;&#10;Synonym:&#10;* Klasse&#10;&#10;Øvre grense er beskrevet i Opplæringslova &amp;#167;8-3 eller i forskrift.&#10;" stereotype="hovedklasse" />
+        <attributes>
+          <attribute xmi:idref="EAID_PRP_0cf9e2e1969783ebef" name="skoleår">
+            <tags />
+            </attribute>
+          <attribute xmi:idref="EAID_PRP_bd3549a593eefeaa46" name="termin">
+            <tags />
+            </attribute>
+          <attribute xmi:idref="EAID_PRP_3a82837bd7dbc5c4bb" name="trinn">
+            <tags />
+            </attribute>
+          <attribute xmi:idref="EAID_PRP_40f0015c8838636231" name="skole">
+            <tags />
+            </attribute>
+          <attribute xmi:idref="EAID_PRP_0f53cfeab1b3476c8f" name="undervisningsforhold">
+            <tags />
+            </attribute>
+          <attribute xmi:idref="EAID_PRP_e9602ad6685efe9eb4" name="klassemedlemskap">
+            <tags />
+            </attribute>
+          <attribute xmi:idref="EAID_PRP_c08ff7f984c65a2fd1" name="kontaktlærergruppe">
+            <tags />
+            </attribute>
+          </attributes>
+        </element>
+      <element xmi:idref="EAID_CLS_bc18f199919735718f" xmi:type="uml:Class" name="Klassemedlemskap" scope="public">
+        <tags />
+        <properties documentation="Medlemskap i basisgrupper.&#10;&#10;# Beskrivelse&#10;&#10;Gruppemedlemskap som knytter sammen elevforhold og basisgrupper.&#10;" stereotype="hovedklasse" />
+        <attributes>
+          <attribute xmi:idref="EAID_PRP_a062731b78f80f8942" name="klasse">
+            <tags />
+            </attribute>
+          <attribute xmi:idref="EAID_PRP_91fc857a1f8d562e5b" name="elevforhold">
+            <tags />
+            </attribute>
+          </attributes>
+        </element>
       <element xmi:idref="EAID_CLS_11abbdc19270478625" xmi:type="uml:Class" name="Kontaktlærergruppe" scope="public">
         <tags />
         <properties documentation="Elevgruppe som ein kontaktlærer har særleg ansvar for.&#10;&#10;# Beskrivelse&#10;&#10;Kontaktlæreren har i denne gruppa særleg ansvar for dei praktiske, administrative og sosialpedagogiske gjeremåla som gjeld klassen eller basisgruppa og dei elevane som er der, mellom anna kontakten med heimen, jf Opplæringslova §8-2.&#10;" stereotype="hovedklasse" />
         <attributes>
           <attribute xmi:idref="EAID_PRP_dbca8ed7d94f938284" name="termin">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_be3c9472fd4d1478d8" name="elevforhold">
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_a745db24a39fdb30bf" name="skole">
@@ -15894,7 +14755,7 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
           <attribute xmi:idref="EAID_PRP_1dcb5212e0c9775a7c" name="skoleår">
             <tags />
             </attribute>
-          <attribute xmi:idref="EAID_PRP_3ada2cbe4da70befdb" name="basisgruppe">
+          <attribute xmi:idref="EAID_PRP_a216aeb83e40cc1a5b" name="klasse">
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_793de7c7eb783922d2" name="undervisningsforhold">
@@ -15913,30 +14774,6 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_8d0ff211c6febd1c7d" name="kontaktlærergruppe">
-            <tags />
-            </attribute>
-          </attributes>
-        </element>
-      <element xmi:idref="EAID_CLS_923314dcb9bf6b4540" xmi:type="uml:Class" name="Medlemskap" scope="public">
-        <tags />
-        <properties documentation="Måte å definere at en gitt elev eller lærer deltar i en gruppe. Informasjonen om fravær og elevens karakterer er definert ved hjelp av dette objektet.&#10;&#10;# Eksempler&#10;&#10;* Elevers medlemskap i Undervisningsgrupper&#10;* Lærerens medlemskap i Kontaktgruppe&#10;* Viser Elevens fravær fra en gitt undervisningsgruppe&#10;" stereotype="hovedklasse" />
-        <attributes>
-          <attribute xmi:idref="EAID_PRP_17eadbad799ba177f2" name="systemId">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_993dfa346dbc36a8ad" name="medlem">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_0269d06b713cbd7d6e" name="fortløpendeVurdering">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_2e30deb33b9d9cf34a" name="gruppe">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_91b26d4b901be7bfcc" name="endeligVurdering">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_4320b92c76464e1ecb" name="fravær">
             <tags />
             </attribute>
           </attributes>
@@ -16014,7 +14851,7 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
           <attribute xmi:idref="EAID_PRP_0bf9bb87330ed77a40" name="hovedskole">
             <tags />
             </attribute>
-          <attribute xmi:idref="EAID_PRP_bbabea0a95aaa88aa7" name="basisgruppe">
+          <attribute xmi:idref="EAID_PRP_3845109a70b1757cb9" name="klasse">
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_08206e76492e006cb4" name="arbeidsforhold">
@@ -16321,7 +15158,13 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
         <tags />
         <properties documentation="Emneområde i utdanning i henhold til læreplanverket.&#10;&#10;# Beskrivelse&#10;&#10;Utdanning gjennomføres i form av fag. Fag i videregående utdanning har en fagtype og en fagkode. Begge er definert i VIGO og Grep kodeverk.  For føring på vitnemål kan kun fagkoder fastsatt av Utdanningsdirektoratet benyttes.&#10;&#10;Fag og fagkoder kan slås opp hos Utdanningsdirektoratet på https://www.udir.no/laring-og-trivsel/lareplanverket/finn-fagkode/&#10;&#10;Fagkoder er også beskrevet i [Registreringshåndboken A04](http://regbok.udir.no/35004/3344/35042-1014304.html).&#10;&#10;# Fagtyper&#10;&#10;Fag grupperes etter  [Rundskriv Udir-01-2017](https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Innhold-i-opplaringen/udir-01-2017/) og skriv fra Utdanningsdirektoratet om [Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet, pkt 2.5](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/2-oppsett-av-vitnemal-og-kompetansebevis/#2.5-rekkefolge-for-foring-av-fag-og-fagtyper).&#10;&#10;De aktuelle fagtypene i henhold til [Registreringshåndboken A05](http://regbok.udir.no/35004/3344/35042-1014305.html) er:&#10;&#10;- Fellesfag&#10;- Felles programfag&#10;- Valgfrie programfag&#10;- Uspesifiserte programfag&#10;- Yrkesfaglig fordypning&#10;- Individuell opplæringsplan&#10;&#10;# Referanser&#10;&#10;* https://www.udir.no/laring-og-trivsel/lareplanverket/&#10;* https://www.udir.no/utdanningslopet/videregaende-opplaring/&#10;* http://regbok.udir.no/&#10;* http://grepwiki.udir.no/&#10;* https://www.vigo.no/vigokv/index.action&#10;" stereotype="hovedklasse" />
         <attributes>
+          <attribute xmi:idref="EAID_PRP_d6e6b667c77cd42fc4" name="grepreferanse">
+            <tags />
+            </attribute>
           <attribute xmi:idref="EAID_PRP_a01add91a916a77b6b" name="programområde">
+            <tags />
+            </attribute>
+          <attribute xmi:idref="EAID_PRP_ca194fdd25edf8f528" name="vigoreferanse">
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_3023e93cc268b23a5d" name="tilrettelegging">
@@ -16438,9 +15281,6 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
           <attribute xmi:idref="EAID_PRP_c2cf1ac1af49fd757f" name="fag">
             <tags />
             </attribute>
-          <attribute xmi:idref="EAID_PRP_929a9951ff9671f7a7" name="elevforhold">
-            <tags />
-            </attribute>
           <attribute xmi:idref="EAID_PRP_e08e0e9966d70cb45f" name="undervisningsforhold">
             <tags />
             </attribute>
@@ -16471,10 +15311,13 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
         <tags />
         <properties documentation="Programområde er et kurs i den videregående skolen. Et programområde strekker seg vanligvis over ett eller flere år og er gjerne en spesialisert retning eller område for fordypning innen utdanningsprogrammet.&#10;&#10;# Beskrivelse&#10;&#10;Innenfor utdanningsprogrammet studiespesialisering, er eksempler på programområder realfag, språk, samfunnsfag og økonomi og formgivingsfag.&#10;&#10;Innenfor utdanningsprogrammet naturbruk, finnes det for eksempel i andre klasse (Vg2) programområdene akvakultur, anleggsgartner og driftsoperatør idrettsanlegg, fiske og fangst, heste- og hovslagerfag, landbruk og gartneri, reindrift og skogbruk.&#10;&#10;Programområdekoder som slutter på  `----` angir at det er standardversjon av programområdet, og ikke en fylkeskommunal variant.&#10;&#10;# Eksempler&#10;&#10;* Anleggsmaskinførerf,PB&#10;* Asfaltfaget,PB&#10;* Banemontørfaget,PB&#10;* Betongfaget,PB&#10;* Bioenergi (D)&#10;* Byggdrifterfaget,PB&#10;* FDV-utdanning, 1 år (D)&#10;* Feierfaget,PB&#10;* Matrosfaget,PB&#10;* Modellbyggerfaget,PB&#10;* Motormannfaget,PB&#10;* Motormekanikerfaget,PB&#10;* Motorsykkelfaget,PB&#10;&#10;# Referanser&#10;&#10;* UDir Registreringshåndbok: [regbok.udir.no/35004/3344/35042-1014307.html](http://regbok.udir.no/35004/3344/35042-1014307.html)&#10;* Wikipedia: https://no.wikipedia.org/wiki/Programområde&#10;* Grepwiki: http://grepwiki.udir.no/index.php?title=Programområde&#10;" stereotype="hovedklasse" />
         <attributes>
+          <attribute xmi:idref="EAID_PRP_2a6ecc06cc576cc409" name="grepreferanse">
+            <tags />
+            </attribute>
           <attribute xmi:idref="EAID_PRP_0dc51685891595212a" name="utdanningsprogram">
             <tags />
             </attribute>
-          <attribute xmi:idref="EAID_PRP_d746754aadf44806f5" name="elevforhold">
+          <attribute xmi:idref="EAID_PRP_7b67f3abbf956764ff" name="vigoreferanse">
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_c3b488e76b5b29dbe9" name="fag">
@@ -16552,7 +15395,7 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
           <attribute xmi:idref="EAID_PRP_39d37dc643be68dc5a" name="undervisningsgruppe">
             <tags />
             </attribute>
-          <attribute xmi:idref="EAID_PRP_7d4fbcd6309f5b09ca" name="basisgruppe">
+          <attribute xmi:idref="EAID_PRP_feed71e1ac69ac9c40" name="klasse">
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_ced2ab2925fbbc890c" name="undervisningsforhold">
@@ -16567,6 +15410,12 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
           <attribute xmi:idref="EAID_PRP_5e39f07a49161d3faf" name="skole">
             <tags />
             </attribute>
+          <attribute xmi:idref="EAID_PRP_3332cf7beeba5acfb5" name="grepreferanse">
+            <tags />
+            </attribute>
+          <attribute xmi:idref="EAID_PRP_314807340ce48e7bfc" name="vigoreferanse">
+            <tags />
+            </attribute>
           <attribute xmi:idref="EAID_PRP_724235c053b2b9ddcb" name="programområde">
             <tags />
             </attribute>
@@ -16576,10 +15425,16 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
         <tags />
         <properties documentation="Hvert år i grunnopplæringen (grunnskole og videregående skole) kalles et årstrinn.&#10;&#10;# Eksempler&#10;&#10;* Vg1&#10;* Vg2&#10;* Vg3&#10;* Vg4&#10;&#10;# Synonym&#10;&#10;* Nivå (Rogaland)&#10;* Klassetrinn&#10;* Trinn&#10;&#10;# Referanser&#10;&#10;* http://grepwiki.udir.no/index.php?title=Årstrinn&#10;* http://psi.udir.no/ontologi/kl06/aarstrinn&#10;" stereotype="hovedklasse" />
         <attributes>
+          <attribute xmi:idref="EAID_PRP_a97304abe9222d6526" name="vigoreferanse">
+            <tags />
+            </attribute>
+          <attribute xmi:idref="EAID_PRP_95cfa997e2a1837e44" name="grepreferanse">
+            <tags />
+            </attribute>
           <attribute xmi:idref="EAID_PRP_2e929067e5016cb40d" name="programområde">
             <tags />
             </attribute>
-          <attribute xmi:idref="EAID_PRP_f7dfb29cb81284198e" name="basisgruppe">
+          <attribute xmi:idref="EAID_PRP_370f0676a7d61eb96b" name="klasse">
             <tags />
             </attribute>
           </attributes>
@@ -16625,9 +15480,6 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_00478186d346ef8755" name="eksamen">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_c65ceb67b4daa46549" name="elevforhold">
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_d1d21e3f1a07afc3dd" name="fag">
@@ -16759,49 +15611,10 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
           <attribute xmi:idref="EAID_PRP_cf43cd008637cbf913" name="skoleår">
             <tags />
             </attribute>
-          <attribute xmi:idref="EAID_PRP_44f17b5274f9d42de6" name="undervisningsgruppe">
-            <tags />
-            </attribute>
           <attribute xmi:idref="EAID_PRP_26466364f93dd5e55f" name="karakter">
             <tags />
             </attribute>
           <attribute xmi:idref="EAID_PRP_2c61814721a3cc289f" name="fag">
-            <tags />
-            </attribute>
-          </attributes>
-        </element>
-      <element xmi:idref="EAID_CLS_ebac31792d99fa6926" xmi:type="uml:Class" name="Fravær" scope="public">
-        <tags />
-        <properties documentation="Manglende tilstedeværelse i opplæringen.&#10;&#10;# Beskrivelse&#10;&#10;Fravær føres med relasjon til den undervisningen eleven har vært fraværende fra.  Det må derfor være en relasjon til en Undervisningsgruppe.&#10;&#10;# Fraværsgrense &#10;&#10;* Elever i videregående skole skal møte opp og delta aktivt i opplæringen. &#10;* Fravær skal registreres, og det foreligger grenser på hvor mye fravær som tillates før rett til å få halvårsvurdering med karakter eller standpunktkarakter i et fag bortfaller. &#10;* Eleven må legge fram relevant dokumentasjon for å få fravær unntatt fra fraværsgrensen.&#10;* Fraværsgrensen gjelder timefravær i enkeltfag, ikke elevenes totale fravær.&#10;* Eleven skal få et varsel om han eller hun står i fare for å ikke få karakter på grunn av fravær.&#10;&#10;# Fravær eksamen&#10;Det føres ikke lenger fravær på eksamen. Dette vil bli satt som karakter. Pga dette utgår relasjonen til eksamensgruppe. Ved en senere hovedoppdatering av Informasjonsmodellen vil multiplisitet for relasjonen  undervisningsgruppe bli satt til 1.&#10;&#10;# Referanser&#10;&#10;* UDir Registreringshåndbok: http://regbok.udir.no/35004/3344/35042-1018643.html&#10;* Forskrift til opplæringslova &amp;#167; 3-3, siste ledd: https://lovdata.no/forskrift/2006-06-23-724/&amp;#167;3-3&#10;* Forskrift til opplæringslova &amp;#167; 3-47: https://lovdata.no/forskrift/2006-06-23-724/&amp;#167;3-47&#10;* UDir. Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet, pkt 8: https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/8-fravar/&#10;* SNL. Fravær: https://snl.no/fravær&#10;* Rundskriv Udir-3-2016: https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Vitnemal/fravarsgrense---udir-3-2016/&#10;* UDir. Fravær i videregående skole: https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Vitnemal/fravar-i-videregaende-skole/&#10;" stereotype="hovedklasse" />
-        <attributes>
-          <attribute xmi:idref="EAID_PRP_b9cc888d5a92f14f48" name="dokumentert">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_6705818bc66182b1a5" name="føresPåVitnemål">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_51b1a29ad69b3495d7" name="gjelderPeriode">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_825b340e45737a775b" name="kommentar">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_5c36282c9eb57248bb" name="systemId">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_2852921ca636725553" name="undervisningsgruppe">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_a6384da98f575dd300" name="eksamensgruppe">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_7274c3dc40022b14ca" name="elevforhold">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_ad1d4e1fb8e136740c" name="registrertav">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_784067c943c3a32a16" name="fraværstype">
             <tags />
             </attribute>
           </attributes>
@@ -16879,9 +15692,6 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
         <tags />
         <properties documentation="Karakterer og andre vurderingsuttrykk.&#10;&#10;# Beskrivelse&#10;&#10;Halvårsvurdering gis for deltakelse av en elev i en gruppe.&#10;&#10;Vurdering i fag skal ha relasjon til den `Undervisningsgruppe` som vurderingen er foretatt i. Det er også mulig å sette relasjon direkte til angjeldende fag.&#10;&#10;# Referanser&#10;&#10;* UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)&#10;* Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)&#10;* Forskrift til opplæringslova &amp;#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4)&#10;" stereotype="hovedklasse" />
         <attributes>
-          <attribute xmi:idref="EAID_PRP_d2b6a69161af8ea438" name="elevforhold">
-            <tags />
-            </attribute>
           <attribute xmi:idref="EAID_PRP_a7143a9f2c6903198a" name="elevvurdering">
             <tags />
             </attribute>
@@ -16891,9 +15701,6 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
         <tags />
         <properties documentation="Halvårsvurdering av orden og atferd..&#10;&#10;# Beskrivelse&#10;&#10;Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et elevforhold.&#10;&#10;# Referanser&#10;&#10;* UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)&#10;* Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)&#10;* Forskrift til opplæringslova &amp;#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4)&#10;" stereotype="hovedklasse" />
         <attributes>
-          <attribute xmi:idref="EAID_PRP_fa12bef9e9d2a9f987" name="elevforhold">
-            <tags />
-            </attribute>
           <attribute xmi:idref="EAID_PRP_b3497802b3da9c175d" name="elevvurdering">
             <tags />
             </attribute>
@@ -16984,9 +15791,6 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
         <tags />
         <properties documentation="Karakterer og andre vurderingsuttrykk.&#10;&#10;# Beskrivelse&#10;&#10;Sluttvurdering (Standpunktkarakter) gis for deltakelse av en elev i en gruppe.&#10;&#10;Vurderingen skal ha en relasjon til det angjeldende faget.&#10;&#10;# Referanser&#10;&#10;* UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)&#10;* Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)&#10;* Forskrift til opplæringslova &amp;#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4)&#10;" stereotype="hovedklasse" />
         <attributes>
-          <attribute xmi:idref="EAID_PRP_36455e7e629e5ddc9e" name="elevforhold">
-            <tags />
-            </attribute>
           <attribute xmi:idref="EAID_PRP_f688dba609ae1e7caf" name="eksamensgruppe">
             <tags />
             </attribute>
@@ -17002,9 +15806,6 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
         <tags />
         <properties documentation="Sluttvurdering av orden og atferd..&#10;&#10;# Beskrivelse&#10;&#10;Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et elevforhold.&#10;&#10;# Referanser&#10;&#10;* UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)&#10;* Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)&#10;* Forskrift til opplæringslova &amp;#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4)&#10;" stereotype="hovedklasse" />
         <attributes>
-          <attribute xmi:idref="EAID_PRP_2ffd160d41cf12a72a" name="elevforhold">
-            <tags />
-            </attribute>
           <attribute xmi:idref="EAID_PRP_175708fc26b0b95b46" name="elevvurdering">
             <tags />
             </attribute>
@@ -17014,9 +15815,6 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
         <tags />
         <properties documentation="Karakterer og andre vurderingsuttrykk.&#10;&#10;# Beskrivelse&#10;&#10;Underveisvurdering gis for deltakelse av en elev i en gruppe.&#10;&#10;Vurdering i fag skal ha relasjon til den `Undervisningsgruppe` som vurderingen er foretatt i. Det er også mulig å sette relasjon direkte til angjeldende fag.&#10;&#10;# Referanser&#10;&#10;* UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)&#10;* Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)&#10;* Forskrift til opplæringslova &amp;#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4)&#10;" stereotype="hovedklasse" />
         <attributes>
-          <attribute xmi:idref="EAID_PRP_ee7b0b29930a982ba8" name="elevforhold">
-            <tags />
-            </attribute>
           <attribute xmi:idref="EAID_PRP_6e5a4875cb3a3141ac" name="elevvurdering">
             <tags />
             </attribute>
@@ -17026,40 +15824,7 @@ Vurderinger som ikke er endelige, regnes som underveisvurderinger.
         <tags />
         <properties documentation="Underveisvurdering av orden og atferd..&#10;&#10;# Beskrivelse&#10;&#10;Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et elevforhold.&#10;&#10;# Referanser&#10;&#10;* UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)&#10;* Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)&#10;* Forskrift til opplæringslova &amp;#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4)&#10;" stereotype="hovedklasse" />
         <attributes>
-          <attribute xmi:idref="EAID_PRP_22bd8a1fb5e8b806ef" name="elevforhold">
-            <tags />
-            </attribute>
           <attribute xmi:idref="EAID_PRP_0ef78c04076fca41ab" name="elevvurdering">
-            <tags />
-            </attribute>
-          </attributes>
-        </element>
-      <element xmi:idref="EAID_CLS_83824b46425e766c13" xmi:type="uml:Class" name="Vurdering" scope="public">
-        <tags />
-        <properties documentation="Karakterer og andre vurderingsuttrykk.&#10;&#10;# Beskrivelse&#10;&#10;Vurdering gis for deltakelse av en elev i en gruppe. Dette kan være Halvårsvurdering, Standpunktkarakter, underveisvurdering eller annet. &#10;&#10;Vurdering i fag skal ha relasjon til den `Undervisningsgruppe` eller `Eksamensgruppe` som vurderingen er foretatt i. Det er også mulig å sette relasjon direkte til angjeldende fag.&#10;&#10;Vurderinger av orden og andre frittstående vurderinger gjøres uten relasjon til noen gruppe.&#10;&#10;# Referanser&#10;&#10;* UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)&#10;* Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)&#10;* Forskrift til opplæringslova &amp;#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4)&#10;" stereotype="hovedklasse" />
-        <attributes>
-          <attribute xmi:idref="EAID_PRP_3c75f2068e2129c592" name="endelig">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_d919205b4bd48045bc" name="kommentar">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_8dfc605179ac569cea" name="systemId">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_61a6e3fe6586a31cd5" name="eksamensgruppe">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_2e1f2226162dc58835" name="fag">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_1b113beedba23ffc00" name="elevforhold">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_160eaa7a1069d0d328" name="undervisningsgruppe">
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_2d92ab40e0758689a2" name="karakter">
             <tags />
             </attribute>
           </attributes>

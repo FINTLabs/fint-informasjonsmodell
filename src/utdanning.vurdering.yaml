@@ -96,11 +96,6 @@ classes:
         range: Eksamen
         description: |
           Eksamenen som skal avholdes.
-      elevforhold:
-        range: Elevforhold
-        description: |
-          Alle elevforhold i eksamensgruppen
-        multivalued: true
       fag:
         range: Fag
         description: |
@@ -346,10 +341,6 @@ classes:
         range: Skoleår
         description: |
           Skoleåret vurderingen gjelder for.
-      undervisningsgruppe:
-        range: Undervisningsgruppe
-        description: |
-          Undervisningsgruppe vurderingen er foretatt i.
       karakter:
         range: Karakterverdi
         description: |
@@ -358,89 +349,6 @@ classes:
         range: Fag
         description: |
           Faget det er foretatt vurdering i.
-        required: true
-
-  Fravær:
-    description: |
-      Manglende tilstedeværelse i opplæringen.
-      
-      # Beskrivelse
-      
-      Fravær føres med relasjon til den undervisningen eleven har vært fraværende fra.  Det må derfor være en relasjon til en Undervisningsgruppe.
-      
-      # Fraværsgrense 
-      
-      * Elever i videregående skole skal møte opp og delta aktivt i opplæringen. 
-      * Fravær skal registreres, og det foreligger grenser på hvor mye fravær som tillates før rett til å få halvårsvurdering med karakter eller standpunktkarakter i et fag bortfaller. 
-      * Eleven må legge fram relevant dokumentasjon for å få fravær unntatt fra fraværsgrensen.
-      * Fraværsgrensen gjelder timefravær i enkeltfag, ikke elevenes totale fravær.
-      * Eleven skal få et varsel om han eller hun står i fare for å ikke få karakter på grunn av fravær.
-      
-      # Fravær eksamen
-      Det føres ikke lenger fravær på eksamen. Dette vil bli satt som karakter. Pga dette utgår relasjonen til eksamensgruppe. Ved en senere hovedoppdatering av Informasjonsmodellen vil multiplisitet for relasjonen  undervisningsgruppe bli satt til 1.
-      
-      # Referanser
-      
-      * UDir Registreringshåndbok: http://regbok.udir.no/35004/3344/35042-1018643.html
-      * Forskrift til opplæringslova &#167; 3-3, siste ledd: https://lovdata.no/forskrift/2006-06-23-724/&#167;3-3
-      * Forskrift til opplæringslova &#167; 3-47: https://lovdata.no/forskrift/2006-06-23-724/&#167;3-47
-      * UDir. Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet, pkt 8: https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/8-fravar/
-      * SNL. Fravær: https://snl.no/fravær
-      * Rundskriv Udir-3-2016: https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Vitnemal/fravarsgrense---udir-3-2016/
-      * UDir. Fravær i videregående skole: https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Vitnemal/fravar-i-videregaende-skole/
-    attributes:
-      dokumentert:
-        range: string
-        description: |
-          Angir om fraværet er dokumentert eller ikke (ja/nei).
-          
-          Hva slags fravær som betraktes som dokumentert følger av [Rundskriv Udir 3-2016](https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Vitnemal/fravarsgrense---udir-3-2016/).
-        required: true
-      føresPåVitnemål:
-        range: string
-        description: |
-          Angir om fraværet skal føres på vitnemål / kompetansebevis.
-          
-          Føring på vitnemål bestemmes av [forskrift til opplæringslova § 3-47](http://www.lovdata.no/for/sf/kd/xd-20060623-0724.html#3-47) og skriv fra Utdanningsdirektoratet om [Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet, pkt 8](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/8-fravar/).
-        required: true
-      gjelderPeriode:
-        range: Periode
-        description: |
-          Tidsperioden fraværet oppstod/gjelder for.
-          
-          Fravær skal registreres i dager eller timer (60-minutters enheter). Det er ikke tillatt å konvertere timer til dager.
-        required: true
-      kommentar:
-        range: string
-        description: |
-          Kommentar til fraværet, evt ekstrainformasjon
-        required: true
-      systemId:
-        range: Identifikator
-        description: |
-          Kildesystemets unike identifikator for fravær.
-        required: true
-      undervisningsgruppe:
-        range: Undervisningsgruppe
-        description: |
-          Undervisningsgruppe det er registrert fravær fra.
-      eksamensgruppe:
-        range: Eksamensgruppe
-        description: |
-          Eksamensgruppe det er registrert fravær fra.
-      elevforhold:
-        range: Elevforhold
-        description: |
-          Elevforhold det er registrert fravær på.
-        required: true
-      registrertav:
-        range: Skoleressurs
-        description: |
-          Den som har registrert fraværet.
-      fraværstype:
-        range: Fraværstype
-        description: |
-          Type fravær.
         required: true
 
   Fraværsoversikt:
@@ -588,11 +496,6 @@ classes:
       * Forskrift til opplæringslova &#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4)
     is_a: Fagvurdering
     attributes:
-      elevforhold:
-        range: Elevforhold
-        description: |
-          Elevforholdet vurderingen gjelder.
-        required: true
       elevvurdering:
         range: Elevvurdering
         description: |
@@ -614,11 +517,6 @@ classes:
       * Forskrift til opplæringslova &#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4)
     is_a: Ordensvurdering
     attributes:
-      elevforhold:
-        range: Elevforhold
-        description: |
-          Elevforholdet vurderingen gjelder.
-        required: true
       elevvurdering:
         range: Elevvurdering
         description: |
@@ -816,11 +714,6 @@ classes:
       * Forskrift til opplæringslova &#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4)
     is_a: Fagvurdering
     attributes:
-      elevforhold:
-        range: Elevforhold
-        description: |
-          Elevforholdet vurderingen gjelder.
-        required: true
       eksamensgruppe:
         range: Eksamensgruppe
         description: |
@@ -851,11 +744,6 @@ classes:
       * Forskrift til opplæringslova &#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4)
     is_a: Ordensvurdering
     attributes:
-      elevforhold:
-        range: Elevforhold
-        description: |
-          Elevforholdet vurderingen gjelder.
-        required: true
       elevvurdering:
         range: Elevvurdering
         description: |
@@ -879,11 +767,6 @@ classes:
       * Forskrift til opplæringslova &#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4)
     is_a: Fagvurdering
     attributes:
-      elevforhold:
-        range: Elevforhold
-        description: |
-          Elevforholdet vurderingen gjelder.
-        required: true
       elevvurdering:
         range: Elevvurdering
         description: |
@@ -905,72 +788,8 @@ classes:
       * Forskrift til opplæringslova &#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4)
     is_a: Ordensvurdering
     attributes:
-      elevforhold:
-        range: Elevforhold
-        description: |
-          Elevforholdet vurderingen gjelder.
-        required: true
       elevvurdering:
         range: Elevvurdering
         description: |
           Vurderingsinformasjon for en elev.
-        required: true
-
-  Vurdering:
-    description: |
-      Karakterer og andre vurderingsuttrykk.
-      
-      # Beskrivelse
-      
-      Vurdering gis for deltakelse av en elev i en gruppe. Dette kan være Halvårsvurdering, Standpunktkarakter, underveisvurdering eller annet. 
-      
-      Vurdering i fag skal ha relasjon til den `Undervisningsgruppe` eller `Eksamensgruppe` som vurderingen er foretatt i. Det er også mulig å sette relasjon direkte til angjeldende fag.
-      
-      Vurderinger av orden og andre frittstående vurderinger gjøres uten relasjon til noen gruppe.
-      
-      # Referanser
-      
-      * UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)
-      * Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)
-      * Forskrift til opplæringslova &#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4)
-    attributes:
-      endelig:
-        range: string
-        description: |
-          Angir om vurderingen er endelig.
-          
-          # Beskrivelse
-          
-          Vurderinger som ikke er endelige, regnes som underveisvurderinger.
-        required: true
-      kommentar:
-        range: string
-        description: |
-          Kommentar til vurderingen.
-        required: true
-      systemId:
-        range: Identifikator
-        description: |
-          Kildesystemets unike identifikator for vurdering.
-        required: true
-      eksamensgruppe:
-        range: Eksamensgruppe
-        description: |
-          Eksamensgruppe vurderingen er foretatt i.
-      fag:
-        range: Fag
-        description: |
-          Hvilket fag vurderingen gjelder
-      elevforhold:
-        range: Elevforhold
-        description: |
-          Elevforhold som er vurdert.
-      undervisningsgruppe:
-        range: Undervisningsgruppe
-        description: |
-          Undervisningsgruppe vurderingen er foretatt i.
-      karakter:
-        range: Karakterverdi
-        description: |
-          Det aktuelle karakteren som er tildelt
         required: true

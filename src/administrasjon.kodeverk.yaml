@@ -5,7 +5,6 @@ imports:
   - linkml:types
   - felles.basisklasser
   - felles.komplekse-datatyper
-  - administrasjon.fullmakt
   - administrasjon.organisasjon
 
 classes:
@@ -187,12 +186,6 @@ classes:
       Fellesbenevnelse for dimensjoner i en kontoplan.
     abstract: true
     is_a: Begrep
-    attributes:
-      fullmakt:
-        range: Fullmakt
-        description: |
-          Alle fullmakter knyttet til kontodimensjonen.
-        multivalued: true
 
   Kontrakt:
     description: |
@@ -253,14 +246,14 @@ classes:
       
       # Eksempler
       
-      * Virksomhet
-      * Klinikk
-      * Seksjon
-      * Avdeling
-      * Team
-      * Divisjon
-      * Stab
-      * Skolegruppe
+      - Virksomhet
+      - Klinikk
+      - Seksjon
+      - Avdeling
+      - Team
+      - Divisjon
+      - Stab
+      - Skolegruppe
     is_a: Begrep
 
   Personalressurskategori:

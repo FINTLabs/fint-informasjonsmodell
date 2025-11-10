@@ -85,11 +85,19 @@ classes:
       * https://www.vigo.no/vigokv/index.action
     is_a: Gruppe
     attributes:
+      grepreferanse:
+        range: Grepreferanse
+        description: |
+          Referanse til GREP kodeverket.
       programområde:
         range: Programområde
         description: |
           Programområde faget tilhører.
         multivalued: true
+      vigoreferanse:
+        range: Vigoreferanse
+        description: |
+          Referanse til VIGO kodeverket.
       tilrettelegging:
         range: Elevtilrettelegging
         description: |
@@ -274,11 +282,6 @@ classes:
           Fagene som det undervises i i gruppen
         multivalued: true
         required: true
-      elevforhold:
-        range: Elevforhold
-        description: |
-          Alle elevforhold i undervisningsgruppen
-        multivalued: true
       undervisningsforhold:
         range: Undervisningsforhold
         description: |

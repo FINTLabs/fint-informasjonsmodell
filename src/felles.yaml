@@ -24,10 +24,6 @@ classes:
       
       Kontaktperson kalles også pårørende.
     attributes:
-      foreldreansvar:
-        range: string
-        description: |
-          Angir om kontaktpersonen har foreldreansvar for personen vedkommende er pårørende for.
       kontaktinformasjon:
         range: Kontaktinformasjon
         description: |
@@ -59,10 +55,6 @@ classes:
         description: |
           Personer kontaktpersonen er pårørende for.
         multivalued: true
-      person:
-        range: Person
-        description: |
-          Person som er kontaktperson.
 
   Person:
     description: |

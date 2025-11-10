@@ -5,7 +5,6 @@ imports:
   - linkml:types
   - felles.basisklasser
   - felles.komplekse-datatyper
-  - utdanning.kodeverk
 
 classes:
 
@@ -43,17 +42,6 @@ classes:
         description: |
           Navn på gruppe
         required: true
-      periode:
-        range: Periode
-        description: |
-          Perioder som gruppen er gyldig eller relevant for.
-          
-          # Beskrivelse
-          
-          Kan brukes for å angi at en gruppe gjelder for et skoleår, en termin eller en eksamensperiode.
-          
-          Flere perioder kan knyttes til en gruppe. Dette kan eksempelvis benyttes for å representere komprimerte eller utvidete utdanningsløp.
-        multivalued: true
       systemId:
         range: Identifikator
         description: |
@@ -63,19 +51,6 @@ classes:
           
           Systemspesifikk id, som normalt ikke er synlig i fagsystemet.
         required: true
-      grepreferanse:
-        range: Grepreferanse
-        description: |
-          Referanse til Grep kodeverket.
-      vigoreferanse:
-        range: Vigoreferanse
-        description: |
-          Referanse til VIGO kodeverket.
-      medlemskap:
-        range: Medlemskap
-        description: |
-          Alle medlemene (medlemskapsforholdene) i en gruppe
-        multivalued: true
 
   Gruppemedlemskap:
     description: |
@@ -133,8 +108,3 @@ classes:
           
           Dette kan være identifikator som eksisterer i skoleadministrativt system.
         required: true
-      medlemskap:
-        range: Medlemskap
-        description: |
-          Alle gruppene som elev eller lærer er medlem av.
-        multivalued: true
