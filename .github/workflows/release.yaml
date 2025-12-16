@@ -61,7 +61,7 @@ jobs:
           path: ../java
 
       - name: Git checkout fint-informastion-model-java
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           repository: 'FINTLabs/fint-information-model-java'
           token: ${{secrets.GITHUBACTION_TOKEN}}
@@ -187,7 +187,7 @@ jobs:
           path: ../cs
 
       - name: Git checkout FINT.Information.Model
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           repository: 'FINTLabs/FINT.Information.Model'
           token: ${{secrets.GITHUBACTION_TOKEN}}
