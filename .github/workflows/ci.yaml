@@ -38,7 +38,7 @@ jobs:
     steps:
     
       - name: Download java model
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: java
           path: ../java
@@ -140,7 +140,7 @@ jobs:
     steps:
     
       - name: Download cs model
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: cs
           path: ../cs
