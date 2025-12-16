@@ -178,7 +178,7 @@ jobs:
   
   cs-model:
     needs: generate-model
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
     
       - name: Download cs model
