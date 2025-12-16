@@ -10,8 +10,8 @@ jobs:
       - name: Get version
         id: get-version
         run: |
-            echo "Version from published release: ${GITHUB_REF##*/}"
-            echo "version=${GITHUB_REF##*/}" >> "$GITHUB_OUTPUT"
+            echo "Version from published release: $GITHUB_REF_NAME"
+            echo "version=$GITHUB_REF_NAME" >> "$GITHUB_OUTPUT"
           
       - name: Generate model
         run: |
