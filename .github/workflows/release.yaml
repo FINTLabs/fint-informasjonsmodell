@@ -31,13 +31,13 @@ jobs:
           docker run -i -v ${GITHUB_WORKSPACE}:/src ghcr.io/fintlabs/fint-model:3.0.0-rc-2 --tag ${{ steps.get-version.outputs.version }} generate --lang ALL --resource
 
       - name: Upload Java model artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: java
           path: java
 
       - name: Upload CS model artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: cs
           path: cs
@@ -55,16 +55,15 @@ jobs:
           echo "MODEL_VERSION=$(echo ${{ needs.generate-model.outputs.version }} | sed "s/^v//")" >> $GITHUB_ENV
     
       - name: Download java model
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v7
         with:
           name: java
           path: ../java
 
       - name: Git checkout fint-informastion-model-java
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           repository: 'FINTLabs/fint-information-model-java'
-          ref: 'prepare-for-v4'
           token: ${{secrets.GITHUBACTION_TOKEN}}
 
       - name: Preparing the new release
@@ -182,16 +181,15 @@ jobs:
     steps:
     
       - name: Download cs model
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v7
         with:
           name: cs
           path: ../cs
 
       - name: Git checkout FINT.Information.Model
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           repository: 'FINTLabs/FINT.Information.Model'
-          ref: 'prepare-for-v4'
           token: ${{secrets.GITHUBACTION_TOKEN}}
 
       - name: Preparing the new release
