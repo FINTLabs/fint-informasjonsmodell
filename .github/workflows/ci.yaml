@@ -75,9 +75,8 @@ jobs:
 
       - name: fint-utdanning-resource-model-java
         run: |
-          git add fint-utdanning-resource-model-java/src/main/java/no/novari/fint/model/resource/
-          rm -rf fint-utdanning-resource-model-java/src/main/java/no/fint/model/resource/utdanning
-          mv ../java/resource/utdanning fint-utdanning-resource-model-java/src/main/java/no/fint/model/resource/
+          rm -rf fint-utdanning-resource-model-java/src/main/java/no/novari/fint/model/resource/utdanning
+          mv ../java/resource/utdanning fint-utdanning-resource-model-java/src/main/java/no/novari/fint/model/resource/
 
       - name: fint-arkiv-model-java
         run: |
