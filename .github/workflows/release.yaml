@@ -156,7 +156,13 @@ jobs:
           mkdir -p fint-ressurs-resource-model-java/src/main/java/no/novari/fint/model/resource/
           mv ../java/resource/ressurs fint-ressurs-resource-model-java/src/main/java/no/novari/fint/model/resource/
           git add fint-ressurs-resource-model-java/src/main/java/no/novari/fint/model/resource/
-  
+
+      - name: Spotless apply
+        run: |
+          ./gradlew spotlessApply
+          git add .
+          git commit -m 'Apply Spotless formatting'
+
       - name: Soon to be finished - pull request on it's way!
         run: |
           echo -e "# FINT Java Model\\n\\nVersion ${{ needs.generate-model.outputs.version }}\\n\\nGenerated $(date +'%Y-%m-%dT%H:%M:%S')" > README.md
