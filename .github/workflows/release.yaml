@@ -172,6 +172,8 @@ jobs:
         run: |
           ./gradlew spotlessApply
           git add .
+          git config --global user.email ${{github.actor}}@users.noreply.github.com
+          git config --global user.name ${{github.actor}}
           git commit -m 'Apply Spotless formatting'
 
       - name: Soon to be finished - pull request on it's way!
@@ -180,8 +182,6 @@ jobs:
           git add README.md 
           sed "s/^version=.*/version=${{env.MODEL_VERSION}}/" gradle.properties > temp && mv temp gradle.properties
           git add gradle.properties
-          git config --global user.email ${{github.actor}}@users.noreply.github.com
-          git config --global user.name ${{github.actor}}
           git commit -m 'Version ${{ needs.generate-model.outputs.version }}'
           git push https://github.com/FINTLabs/fint-information-model-java.git release-${{ needs.generate-model.outputs.version }}
           gh pr create --repo "FINTLabs/fint-information-model-java" --base master --head  release-${{ needs.generate-model.outputs.version }} --title "New release ready for review: ${{ needs.generate-model.outputs.version }}" --body "Please consider if this is ready for the public crowd! If so, push the green button." --reviewer nilsodd,oleanders,GoSoft-dev
