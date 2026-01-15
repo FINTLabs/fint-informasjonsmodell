@@ -157,6 +157,9 @@ jobs:
           mv ../java/resource/ressurs fint-ressurs-resource-model-java/src/main/java/no/novari/fint/model/resource/
           git add fint-ressurs-resource-model-java/src/main/java/no/novari/fint/model/resource/
 
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v5
+
       - name: Spotless apply
         run: |
           ./gradlew spotlessApply

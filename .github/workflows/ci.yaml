@@ -134,6 +134,10 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
   
+      - name: Spotless apply
+        run: |
+          ./gradlew spotlessApply
+
   cs-model:
     needs: generate-model
     runs-on: ubuntu-latest
