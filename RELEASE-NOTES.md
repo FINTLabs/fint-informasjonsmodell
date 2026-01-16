@@ -156,11 +156,9 @@
 * Removed attribute `periode` on `Undervisningsgruppe`.
 * Removed attribute `periode` on `Utdanningsprogram`.
 * Removed attribute `periode` on `Årstrinn`.
-<br/>
 * Removed class `Fravær`.
 * Removed class `Medlemskap`.
 * Removed class `Vurdering`.
-<br/>
 * Removed relation `basisgruppe` on `Elevforhold`.
 * Removed relation `eksamensgruppe` on `Elevforhold`.
 * Removed relation `fravær` on `Elevforhold`.
@@ -175,7 +173,6 @@
 * Removed relation `underveisfagvurdering` on `Elevforhold`.
 * Removed relation `underveisordensvurdering` on `Elevforhold`.
 * Removed relation `vurdering` on `Elevforhold`.
-<br/>
 * Removed relation `elevforhold` on `Basisgruppe`.
 * Removed relation `elevforhold` on `Eksamensgruppe`.
 * Removed relation `elevforhold` on `Halvårsfagvurdering`.
@@ -187,7 +184,6 @@
 * Removed relation `elevforhold` on `Underveisfagvurdering`.
 * Removed relation `elevforhold` on `Underveisordensvurdering`.
 * Removed relation `elevforhold` on `Undervisningsgruppe`.
-<br/>
 * Removed relation `medlemskap` on `Basisgruppe`.
 * Removed relation `medlemskap` on `Eksamensgruppe`.
 * Removed relation `medlemskap` on `Elevforhold`.
@@ -202,7 +198,6 @@
 * Removed relation `medlemskap` on `Utdanningsforhold`.
 * Removed relation `medlemskap` on `Utdanningsprogram`.
 * Removed relation `medlemskap` on `Årstrinn`.
-<br/>
 * Removed relation `undervisningsgruppe` on `Eksamensvurdering`.
 * Removed relation `undervisningsgruppe` on `Elevforhold`.
 * Removed relation `undervisningsgruppe` on `Fagvurdering`.
@@ -220,7 +215,6 @@
 ### Administrasjon: Removed deprecated elements
 * Removed relation `lønn` on `Arbeidsforhold`.
 * Removed relation `myndighet` on `Fullmakt`.
-<br/>
 * Removed relation `fullmakt` on `Aktivitet`.
 * Removed relation `fullmakt` on `Anlegg`.
 * Removed relation `fullmakt` on `Ansvar`.
@@ -262,23 +256,20 @@
 #### Utdanningsprogram
 * Added relation `grepreferanse` on `Årstrinn`.
 * Added relation `vigoreferanse` on `Årstrinn`.
-<br/>
 * Added relation `grepreferanse` on `Programområde`.
 * Added relation `vigoreferanse` on `Programområde`.
-<br/>
 * Added relation `grepreferanse` on `Utdanningsprogram`.
 * Added relation `vigoreferanse` on `Utdanningsprogram`.
 
 ### Arkiv: Removed relation to and use of abstract classes
-* Removed relation `mappe` on `Arkivdel`.
-* Removed relation `registrering` on `Arkivdel`.
-<br/>
 * Removed attribute `arkivnotat` on `DispensasjonAutomatiskFredaKulturminne`.
 * Removed attribute `arkivnotat` on `Personalmappe`.
 * Removed attribute `arkivnotat` on `Sak`.
 * Removed attribute `arkivnotat` on `Saksmappe`.
 * Removed attribute `arkivnotat` on `TilskuddFartøy`.
 * Removed attribute `arkivnotat` on `TilskuddFredaBygningPrivatEie`.
+* Removed relation `mappe` on `Arkivdel`.
+* Removed relation `registrering` on `Arkivdel`.
 
 ### Økonomi: Changed multiplicity 
 * Changed multiplicity for attribute `transaksjonsId` on `Transaksjon`, from 0..1 to 1.
