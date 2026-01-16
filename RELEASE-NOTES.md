@@ -3,15 +3,9 @@
 - [v4.0.0](#v400)
   - [Breaking changes](#breaking-changes)
     - [Utdanning: Removed deprecated elements](#utdanning-removed-deprecated-elements)
-      - [](#)
-      - [](#-1)
-      - [](#-2)
-      - [](#-3)
-      - [](#-4)
     - [Felles: Removed deprecated elements](#felles-removed-deprecated-elements)
     - [Arkiv: Removed deprecated elements](#arkiv-removed-deprecated-elements)
     - [Administrasjon: Removed deprecated elements](#administrasjon-removed-deprecated-elements)
-      - [](#-5)
     - [Utdanning: Changed name on Basisgruppe and Basisgruppemedlemskap](#utdanning-changed-name-on-basisgruppe-and-basisgruppemedlemskap)
       - [Klasse](#klasse)
       - [Klassemedlemskap](#klassemedlemskap)
@@ -19,10 +13,7 @@
       - [Basisklasser](#basisklasser)
       - [Timeplan](#timeplan)
       - [Utdanningsprogram](#utdanningsprogram)
-      - [](#-6)
-      - [](#-7)
     - [Arkiv: Removed relation to and use of abstract classes](#arkiv-removed-relation-to-and-use-of-abstract-classes)
-      - [](#-8)
     - [Økonomi: Changed multiplicity](#økonomi-changed-multiplicity)
 - [v3.21.10](#v32110)
   - [Features](#features)
@@ -165,11 +156,11 @@
 * Removed attribute `periode` on `Undervisningsgruppe`.
 * Removed attribute `periode` on `Utdanningsprogram`.
 * Removed attribute `periode` on `Årstrinn`.
-####
+<br/>
 * Removed class `Fravær`.
 * Removed class `Medlemskap`.
 * Removed class `Vurdering`.
-####
+<br/>
 * Removed relation `basisgruppe` on `Elevforhold`.
 * Removed relation `eksamensgruppe` on `Elevforhold`.
 * Removed relation `fravær` on `Elevforhold`.
@@ -184,7 +175,7 @@
 * Removed relation `underveisfagvurdering` on `Elevforhold`.
 * Removed relation `underveisordensvurdering` on `Elevforhold`.
 * Removed relation `vurdering` on `Elevforhold`.
-####
+<br/>
 * Removed relation `elevforhold` on `Basisgruppe`.
 * Removed relation `elevforhold` on `Eksamensgruppe`.
 * Removed relation `elevforhold` on `Halvårsfagvurdering`.
@@ -196,7 +187,7 @@
 * Removed relation `elevforhold` on `Underveisfagvurdering`.
 * Removed relation `elevforhold` on `Underveisordensvurdering`.
 * Removed relation `elevforhold` on `Undervisningsgruppe`.
-####
+<br/>
 * Removed relation `medlemskap` on `Basisgruppe`.
 * Removed relation `medlemskap` on `Eksamensgruppe`.
 * Removed relation `medlemskap` on `Elevforhold`.
@@ -211,7 +202,7 @@
 * Removed relation `medlemskap` on `Utdanningsforhold`.
 * Removed relation `medlemskap` on `Utdanningsprogram`.
 * Removed relation `medlemskap` on `Årstrinn`.
-####
+<br/>
 * Removed relation `undervisningsgruppe` on `Eksamensvurdering`.
 * Removed relation `undervisningsgruppe` on `Elevforhold`.
 * Removed relation `undervisningsgruppe` on `Fagvurdering`.
@@ -229,7 +220,7 @@
 ### Administrasjon: Removed deprecated elements
 * Removed relation `lønn` on `Arbeidsforhold`.
 * Removed relation `myndighet` on `Fullmakt`.
-####
+<br/>
 * Removed relation `fullmakt` on `Aktivitet`.
 * Removed relation `fullmakt` on `Anlegg`.
 * Removed relation `fullmakt` on `Ansvar`.
@@ -271,17 +262,17 @@
 #### Utdanningsprogram
 * Added relation `grepreferanse` on `Årstrinn`.
 * Added relation `vigoreferanse` on `Årstrinn`.
-####
+<br/>
 * Added relation `grepreferanse` on `Programområde`.
 * Added relation `vigoreferanse` on `Programområde`.
-####
+<br/>
 * Added relation `grepreferanse` on `Utdanningsprogram`.
 * Added relation `vigoreferanse` on `Utdanningsprogram`.
 
 ### Arkiv: Removed relation to and use of abstract classes
 * Removed relation `mappe` on `Arkivdel`.
 * Removed relation `registrering` on `Arkivdel`.
-####
+<br/>
 * Removed attribute `arkivnotat` on `DispensasjonAutomatiskFredaKulturminne`.
 * Removed attribute `arkivnotat` on `Personalmappe`.
 * Removed attribute `arkivnotat` on `Sak`.
