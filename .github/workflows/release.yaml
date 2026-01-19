@@ -28,7 +28,7 @@ jobs:
           
       - name: Generate model
         run: |
-          docker run -i -v ${GITHUB_WORKSPACE}:/src ghcr.io/fintlabs/fint-model:2.10.1 --tag ${{ steps.get-version.outputs.version }} generate --lang ALL --resource
+          docker run -i -v ${GITHUB_WORKSPACE}:/src ghcr.io/fintlabs/fint-model:3.0.8 --tag ${{ steps.get-version.outputs.version }} generate --lang ALL --resource
 
       - name: Upload Java model artifacts
         uses: actions/upload-artifact@v6
@@ -73,98 +73,115 @@ jobs:
     
       - name: fint-felles-model-java
         run: |
-          rm -rf fint-felles-model-java/src/main/java/no/fint/model/felles
-          mv ../java/felles fint-felles-model-java/src/main/java/no/fint/model/
-          git add fint-felles-model-java/src/main/java/no/fint/model/
+          rm -rf fint-felles-model-java/src/main/java/no/novari/fint/model/felles
+          mv ../java/felles fint-felles-model-java/src/main/java/no/novari/fint/model/
+          git add fint-felles-model-java/src/main/java/no/novari/fint/model/
 
       - name: fint-felles-resource-model-java
         run: |
-          rm -rf fint-felles-resource-model-java/src/main/java/no/fint/model/resource/felles
-          mv ../java/resource/felles fint-felles-resource-model-java/src/main/java/no/fint/model/resource/
-          git add fint-felles-resource-model-java/src/main/java/no/fint/model/resource/
+          rm -rf fint-felles-resource-model-java/src/main/java/no/novari/fint/model/resource/felles
+          mv ../java/resource/felles fint-felles-resource-model-java/src/main/java/no/novari/fint/model/resource/
+          git add fint-felles-resource-model-java/src/main/java/no/novari/fint/model/resource/
 
       - name: fint-administrasjon-model-java
         run: |
-          rm -rf fint-administrasjon-model-java/src/main/java/no/fint/model/administrasjon
-          mv ../java/administrasjon fint-administrasjon-model-java/src/main/java/no/fint/model/
-          git add fint-administrasjon-model-java/src/main/java/no/fint/model/
+          rm -rf fint-administrasjon-model-java/src/main/java/no/novari/fint/model/administrasjon
+          mv ../java/administrasjon fint-administrasjon-model-java/src/main/java/no/novari/fint/model/
+          git add fint-administrasjon-model-java/src/main/java/no/novari/fint/model/
 
       - name: fint-administrasjon-resource-model-java
         run: |
-          rm -rf fint-administrasjon-resource-model-java/src/main/java/no/fint/model/resource/administrasjon
-          mv ../java/resource/administrasjon fint-administrasjon-resource-model-java/src/main/java/no/fint/model/resource/
-          git add fint-administrasjon-resource-model-java/src/main/java/no/fint/model/resource/
+          rm -rf fint-administrasjon-resource-model-java/src/main/java/no/novari/fint/model/resource/administrasjon
+          mv ../java/resource/administrasjon fint-administrasjon-resource-model-java/src/main/java/no/novari/fint/model/resource/
+          git add fint-administrasjon-resource-model-java/src/main/java/no/novari/fint/model/resource/
 
       - name: fint-utdanning-model-java
         run: |
-          rm -rf fint-utdanning-model-java/src/main/java/no/fint/model/utdanning
-          mv ../java/utdanning fint-utdanning-model-java/src/main/java/no/fint/model/
-          git add fint-utdanning-model-java/src/main/java/no/fint/model/
+          rm -rf fint-utdanning-model-java/src/main/java/no/novari/fint/model/utdanning
+          mv ../java/utdanning fint-utdanning-model-java/src/main/java/no/novari/fint/model/
+          git add fint-utdanning-model-java/src/main/java/no/novari/fint/model/
 
       - name: fint-utdanning-resource-model-java
         run: |
-          rm -rf fint-utdanning-resource-model-java/src/main/java/no/fint/model/resource/utdanning
-          mv ../java/resource/utdanning fint-utdanning-resource-model-java/src/main/java/no/fint/model/resource/
-          git add fint-utdanning-resource-model-java/src/main/java/no/fint/model/resource/
+          rm -rf fint-utdanning-resource-model-java/src/main/java/no/novari/fint/model/resource/utdanning
+          mv ../java/resource/utdanning fint-utdanning-resource-model-java/src/main/java/no/novari/fint/model/resource/
+          git add fint-utdanning-resource-model-java/src/main/java/no/novari/fint/model/resource/
 
       - name: fint-arkiv-model-java
         run: |
-          rm -rf fint-arkiv-model-java/src/main/java/no/fint/model/arkiv
-          mv ../java/arkiv fint-arkiv-model-java/src/main/java/no/fint/model/
-          git add fint-arkiv-model-java/src/main/java/no/fint/model/
+          rm -rf fint-arkiv-model-java/src/main/java/no/novari/fint/model/arkiv
+          mv ../java/arkiv fint-arkiv-model-java/src/main/java/no/novari/fint/model/
+          git add fint-arkiv-model-java/src/main/java/no/novari/fint/model/
 
       - name: fint-arkiv-resource-model-java
         run: |
-          rm -rf fint-arkiv-resource-model-java/src/main/java/no/fint/model/resource/arkiv
-          mv ../java/resource/arkiv fint-arkiv-resource-model-java/src/main/java/no/fint/model/resource/
-          git add fint-arkiv-resource-model-java/src/main/java/no/fint/model/resource/
+          rm -rf fint-arkiv-resource-model-java/src/main/java/no/novari/fint/model/resource/arkiv
+          mv ../java/resource/arkiv fint-arkiv-resource-model-java/src/main/java/no/novari/fint/model/resource/
+          git add fint-arkiv-resource-model-java/src/main/java/no/novari/fint/model/resource/
 
       - name: fint-okonomi-model-java
         run: |
-          rm -rf fint-okonomi-model-java/src/main/java/no/fint/model/okonomi
-          mv ../java/okonomi fint-okonomi-model-java/src/main/java/no/fint/model/
-          git add fint-okonomi-model-java/src/main/java/no/fint/model/
+          rm -rf fint-okonomi-model-java/src/main/java/no/novari/fint/model/okonomi
+          mv ../java/okonomi fint-okonomi-model-java/src/main/java/no/novari/fint/model/
+          git add fint-okonomi-model-java/src/main/java/no/novari/fint/model/
 
       - name: fint-okonomi-resource-model-java
         run: |
-          rm -rf fint-okonomi-resource-model-java/src/main/java/no/fint/model/resource/okonomi
-          mv ../java/resource/okonomi fint-okonomi-resource-model-java/src/main/java/no/fint/model/resource/
-          git add fint-okonomi-resource-model-java/src/main/java/no/fint/model/resource/
+          rm -rf fint-okonomi-resource-model-java/src/main/java/no/novari/fint/model/resource/okonomi
+          mv ../java/resource/okonomi fint-okonomi-resource-model-java/src/main/java/no/novari/fint/model/resource/
+          git add fint-okonomi-resource-model-java/src/main/java/no/novari/fint/model/resource/
 
       - name: fint-personvern-model-java
         run: |
-          rm -rf fint-personvern-model-java/src/main/java/no/fint/model/personvern
-          mv ../java/personvern fint-personvern-model-java/src/main/java/no/fint/model/
-          git add fint-personvern-model-java/src/main/java/no/fint/model/
+          rm -rf fint-personvern-model-java/src/main/java/no/novari/fint/model/personvern
+          mv ../java/personvern fint-personvern-model-java/src/main/java/no/novari/fint/model/
+          git add fint-personvern-model-java/src/main/java/no/novari/fint/model/
 
       - name: fint-personvern-resource-model-java
         run: |
-          rm -rf fint-personvern-resource-model-java/src/main/java/no/fint/model/resource/personvern
-          mv ../java/resource/personvern fint-personvern-resource-model-java/src/main/java/no/fint/model/resource/
-          git add fint-personvern-resource-model-java/src/main/java/no/fint/model/resource/
+          rm -rf fint-personvern-resource-model-java/src/main/java/no/novari/fint/model/resource/personvern
+          mv ../java/resource/personvern fint-personvern-resource-model-java/src/main/java/no/novari/fint/model/resource/
+          git add fint-personvern-resource-model-java/src/main/java/no/novari/fint/model/resource/
 
       - name: fint-ressurs-model-java
         run: |
-          rm -rf fint-ressurs-model-java/src/main/java/no/fint/model/ressurs
-          mkdir -p fint-ressurs-model-java/src/main/java/no/fint/model/
-          mv ../java/ressurs fint-ressurs-model-java/src/main/java/no/fint/model/
-          git add fint-ressurs-model-java/src/main/java/no/fint/model/
+          rm -rf fint-ressurs-model-java/src/main/java/no/novari/fint/model/ressurs
+          mkdir -p fint-ressurs-model-java/src/main/java/no/novari/fint/model/
+          mv ../java/ressurs fint-ressurs-model-java/src/main/java/no/novari/fint/model/
+          git add fint-ressurs-model-java/src/main/java/no/novari/fint/model/
 
       - name: fint-ressurs-resource-model-java
         run: |
-          rm -rf fint-ressurs-resource-model-java/src/main/java/no/fint/model/resource/ressurs
-          mkdir -p fint-ressurs-resource-model-java/src/main/java/no/fint/model/resource/
-          mv ../java/resource/ressurs fint-ressurs-resource-model-java/src/main/java/no/fint/model/resource/
-          git add fint-ressurs-resource-model-java/src/main/java/no/fint/model/resource/
-  
+          rm -rf fint-ressurs-resource-model-java/src/main/java/no/novari/fint/model/resource/ressurs
+          mkdir -p fint-ressurs-resource-model-java/src/main/java/no/novari/fint/model/resource/
+          mv ../java/resource/ressurs fint-ressurs-resource-model-java/src/main/java/no/novari/fint/model/resource/
+          git add fint-ressurs-resource-model-java/src/main/java/no/novari/fint/model/resource/
+
+      - name: Setup Java 21
+        uses: actions/setup-java@v5
+        with:
+          distribution: adopt
+          java-version: 21
+
+      - uses: gradle/actions/wrapper-validation@v5
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v5
+
+      - name: Spotless apply
+        run: |
+          ./gradlew spotlessApply
+          git add .
+          git config --global user.email ${{github.actor}}@users.noreply.github.com
+          git config --global user.name ${{github.actor}}
+          git commit -m 'Apply Spotless formatting'
+
       - name: Soon to be finished - pull request on it's way!
         run: |
           echo -e "# FINT Java Model\\n\\nVersion ${{ needs.generate-model.outputs.version }}\\n\\nGenerated $(date +'%Y-%m-%dT%H:%M:%S')" > README.md
           git add README.md 
-          echo version=${{env.MODEL_VERSION}} > gradle.properties
+          sed "s/^version=.*/version=${{env.MODEL_VERSION}}/" gradle.properties > temp && mv temp gradle.properties
           git add gradle.properties
-          git config --global user.email ${{github.actor}}@users.noreply.github.com
-          git config --global user.name ${{github.actor}}
           git commit -m 'Version ${{ needs.generate-model.outputs.version }}'
           git push https://github.com/FINTLabs/fint-information-model-java.git release-${{ needs.generate-model.outputs.version }}
           gh pr create --repo "FINTLabs/fint-information-model-java" --base master --head  release-${{ needs.generate-model.outputs.version }} --title "New release ready for review: ${{ needs.generate-model.outputs.version }}" --body "Please consider if this is ready for the public crowd! If so, push the green button." --reviewer nilsodd,oleanders,GoSoft-dev
@@ -189,6 +206,7 @@ jobs:
       - name: Git checkout FINT.Information.Model
         uses: actions/checkout@v6
         with:
+          ref: 'prepare-for-v4'
           repository: 'FINTLabs/FINT.Information.Model'
           token: ${{secrets.GITHUBACTION_TOKEN}}
 
