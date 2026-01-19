@@ -138,7 +138,7 @@
 
 |      |                 |
 | ---- |-----------------|
-| Date | `10.03.2026`    |
+| Date | `19.01.2026`    |
 | Tag  | `v4.0.0` |
 
 
@@ -1264,3 +1264,4 @@ Since this version of the Information Model is the first to go live, we opted to
   * `Personal`
   * `Organisasjon`
   * `Kodeverk`
+
