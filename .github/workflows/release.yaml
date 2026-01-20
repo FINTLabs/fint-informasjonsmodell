@@ -206,7 +206,6 @@ jobs:
       - name: Git checkout FINT.Information.Model
         uses: actions/checkout@v6
         with:
-          ref: 'prepare-for-v4'
           repository: 'FINTLabs/FINT.Information.Model'
           token: ${{secrets.GITHUBACTION_TOKEN}}
 
