@@ -1,5 +1,7 @@
 <!-- MarkdownTOC autolink="true" -->
 
+- [v4.0.10](#v4010)
+  - [Changed direction (source → target) on relations](#changed-direction-source--target-on-relations)
 - [v4.0.0](#v400)
   - [Breaking changes](#breaking-changes)
     - [Utdanning: Removed deprecated elements](#utdanning-removed-deprecated-elements)
@@ -133,6 +135,23 @@
   - [Features](#features-30)
 
 <!-- /MarkdownTOC -->
+
+# v4.0.10
+
+|      |                 |
+| ---- |-----------------|
+| Date | `30.01.2026`    |
+| Tag  | `v4.0.10` |
+
+## Changed direction (source → target) on relations
+
+* `Undervisningsforhold.kontaktlærergruppe` → `Kontaktlærergruppe.undervisningsforhold`
+* `Undervisningsgruppe.undervisningsforhold` → `Undervisningsforhold.undervisningsgruppe` 
+* `Eksamensgruppe.undervisningsforhold` → `Undervisningsforhold.eksamensgruppe` 
+* `Programomrade.fag` → `Fag.programområde`
+* `Fag.skole` → `Skole.fag`
+* `Programomrade.trinn` → `Årstrinn.programområde`
+
 
 # v4.0.0
 
