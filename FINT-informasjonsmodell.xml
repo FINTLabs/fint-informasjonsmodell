@@ -4644,7 +4644,7 @@
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001119__6362_4f11_80FE_CFE6BA81E6CD" value="0"/>
 								<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI001120__6362_4f11_80FE_CFE6BA81E6CD" value="-1"/>
 							</ownedAttribute>
-							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_src6EB324_A237_4b4c_9BBA_338B1370DD50" name="Klasse" visibility="public" association="EAID_A76EB324_A237_4b4c_9BBA_338B1370DD50" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_src6EB324_A237_4b4c_9BBA_338B1370DD50" name="klasse" visibility="public" association="EAID_A76EB324_A237_4b4c_9BBA_338B1370DD50" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_DB6CD84D_FDEF_46cf_B1FF_23DA43330088"/>
 								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001121__A237_4b4c_9BBA_338B1370DD50" value="0"/>
 								<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI001122__A237_4b4c_9BBA_338B1370DD50" value="-1"/>
@@ -28062,7 +28062,7 @@
 			<connector xmi:idref="EAID_A76EB324_A237_4b4c_9BBA_338B1370DD50">
 				<source xmi:idref="EAID_DB6CD84D_FDEF_46cf_B1FF_23DA43330088">
 					<model ea_localid="98" type="Class" name="Klasse"/>
-					<role name="Klasse" visibility="Public" targetScope="instance"/>
+					<role name="klasse" visibility="Public" targetScope="instance"/>
 					<type multiplicity="0..*" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
@@ -28088,7 +28088,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels lb="0..*" lt="+Klasse" rb="0..*" rt="+undervisningsforhold"/>
+				<labels lb="0..*" lt="+klasse" rb="0..*" rt="+undervisningsforhold"/>
 				<extendedProperties virtualInheritance="0"/>
 				<style/>
 				<xrefs/>
