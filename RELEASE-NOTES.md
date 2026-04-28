@@ -1,7 +1,9 @@
 <!-- MarkdownTOC autolink="true" -->
 
-- [v4.0.10](#v4010)
+- [v4.0.20](#v4020)
   - [Changed direction (source → target) on relations](#changed-direction-source--target-on-relations)
+- [v4.0.10](#v4010)
+  - [Changed direction (source → target) on relations](#changed-direction-source--target-on-relations-1)
 - [v4.0.0](#v400)
   - [Breaking changes](#breaking-changes)
     - [Utdanning: Removed deprecated elements](#utdanning-removed-deprecated-elements)
@@ -135,6 +137,17 @@
   - [Features](#features-30)
 
 <!-- /MarkdownTOC -->
+
+# v4.0.20
+
+|      |                 |
+| ---- |-----------------|
+| Date | `28.04.2026`    |
+| Tag  | `v4.0.20` |
+
+## Changed direction (source → target) on relations
+
+* `Klasse.undervisningsforhold` → `Undervisningsforhold.klasse`
 
 # v4.0.10
 
