@@ -1,5 +1,7 @@
 <!-- MarkdownTOC autolink="true" -->
 
+- [v4.0.30](#v4030)
+- - [Changed the attribute Direction to `Bi-Directional` on three relations](#Changed-the-attribute-Direction-to-Bi-Directional-on-three-relations)
 - [v4.0.20](#v4020)
   - [Changed direction (source → target) on relations](#changed-direction-source--target-on-relations)
 - [v4.0.10](#v4010)
@@ -137,6 +139,19 @@
   - [Features](#features-30)
 
 <!-- /MarkdownTOC -->
+
+# v4.0.30
+
+|      |              |
+| ---- |--------------|
+| Date | `11.05.2026` |
+| Tag  | `v4.0.30`    |
+
+## Changed the attribute Direction to `Bi-Directional` on three relations
+
+* Relation `Organisasjonselement - Organisasjonselement`
+* Relation `Leverandør - Leverandørgruppe`
+* Relation `Elevforhold - Faggruppemedlemskap`
 
 # v4.0.20
 
