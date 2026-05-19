@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/utdanning/ot
+name: utdanning.ot
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+  - felles
+  - utdanning.kodeverk
+  - utdanning.utdanningsprogram
+
+classes:
+
+  OtUngdom:
+    description: |
+      Oppfølgingstjenesten (OT) har ansvar for å følge opp ungdom med rett til videregående opplæring som ikke er i opplæring eller arbeid.
+    attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Unik identifikator for OT-ungdom
+        required: true
+      status:
+        range: OtStatus
+        description: |
+          OT-statusen en OT-ungdom har.
+      enhet:
+        range: OtEnhet
+        description: |
+          OT-enheten en OT-ungdom er tilknyttet.
+      person:
+        range: Person
+        description: |
+          Person som er OT-ungdom.
+        required: true
+      programområde:
+        range: Programområde
+        description: |
+          Programområdet til OT-ungdom.

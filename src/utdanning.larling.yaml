@@ -1,0 +1,83 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/utdanning/larling
+name: utdanning.larling
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+  - felles
+  - utdanning.kodeverk
+  - utdanning.utdanningsprogram
+
+classes:
+
+  AvlagtPrøve:
+    description: |
+      Informasjon om en avlagt prøve for en person i et fag.
+    attributes:
+      prøvedato:
+        range: string
+        description: |
+          Dato for avlagt prøve i perioden.
+      systemId:
+        range: Identifikator
+        description: |
+          Unik identifikator i kildesystemet.
+        required: true
+      prøvestatus:
+        range: Prøvestatus
+        description: |
+          Resultat av avlagt prøve - Praktisk prøve + teori.
+      lærling:
+        range: Lærling
+        description: |
+          Lærling som tar prøve.
+        required: true
+      fullførtkode:
+        range: Fullførtkode
+        description: |
+          Status på hvordan eleven har gjennomført et programområde.
+      brevtype:
+        range: Brevtype
+        description: |
+          Hvilken prøve lærlingen/lærekandidaten går opp til.
+      bevistype:
+        range: Bevistype
+        description: |
+          Hvilken bevistype eleven har fått på opplæringen.
+
+  Lærling:
+    description: |
+      Å være lærling betyr at du utdanner deg til et yrke ved å jobbe i en bedrift.
+    attributes:
+      kontraktstype:
+        range: string
+        description: |
+          Kontraktstype for lærling.
+      læretid:
+        range: Periode
+        description: |
+          Tidsperiode for læretiden.
+      systemId:
+        range: Identifikator
+        description: |
+          Unik identifikator for en lærling.
+        required: true
+      programområde:
+        range: Programområde
+        description: |
+          Programområdet til lærling.
+      bedrift:
+        range: Virksomhet
+        description: |
+          Bedriften hvor lærlingen har sin læretid.
+      person:
+        range: Person
+        description: |
+          Person som er lærling.
+        required: true
+      avlagtprøve:
+        range: AvlagtPrøve
+        description: |
+          Avlagte prøver (Fagprøver m.m.)
+        multivalued: true

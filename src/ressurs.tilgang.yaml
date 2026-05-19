@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/ressurs/tilgang
+name: ressurs.tilgang
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+  - administrasjon.personal
+
+classes:
+
+  Identitet:
+    description: |
+      Identitet identifiserer innehaver av rettigheter i relasjonen til organisasjonen.
+      
+      Kilden for denne type informasjon vil typisk være identitetsforvaltningssystemet.
+    attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Intern identifikator som brukes i kildesystemet.
+        required: true
+      rettighet:
+        range: Rettighet
+        description: |
+          Rettigheter knyttet til identiteten.
+        multivalued: true
+      personalressurs:
+        range: Personalressurs
+        description: |
+          Personalressurs knyttet til identitet.
+
+  Rettighet:
+    description: |
+      Navngir en rettighet. Hva rettigheten gir tilgang til er systemspesifikt.
+    is_a: Begrep
+    attributes:
+      beskrivelse:
+        range: string
+        description: |
+          En beskrivelse av hva rettigheten innebærer.
+        required: true
+      identitet:
+        range: Identitet
+        description: |
+          Identiteter knyttet til rettigheten.
+        multivalued: true

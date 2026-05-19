@@ -1,0 +1,316 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/utdanning/kodeverk
+name: utdanning.kodeverk
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+  - felles.kodeverk
+  - utdanning.vurdering
+
+classes:
+
+  Avbruddsårsak:
+    description: |
+      Årsaken til at eleven avbryter utdanningsprogrammet (Vg1)/programområdet (Vg2/Vg3) ) i løpet av skoleåret  eller lærlingen/lærekandidaten hever lærekontrakten/opplæringskontrakten.
+      
+      # Referanse
+      
+      Registreringshåndbok: https://regbok.udir.no/35004/3344/35042-1014313.html
+    is_a: Begrep
+
+  Betalingsstatus:
+    description: |
+      Statuser for betaling av eksamen for privatister.
+    is_a: Begrep
+
+  Bevistype:
+    description: |
+      Viser hvilken bevistype eleven har fått på opplæringen.
+      
+      * KB - Kompetansebevis
+      * VM - Vitnemål
+      
+      
+      # Referanse
+      [UDIR - Registreringshåndbok - B22](https://regbok.udir.no/oversikt)
+    is_a: Begrep
+
+  Brevtype:
+    description: |
+      Beskriver hvilken prøve lærlingen/lærekandidaten går opp til.
+      * F - Fagbrev
+      * S - Svennebrev
+      * K - Kompetansebevis
+      * B - Praksisbrev
+      
+      # Referanse
+      [UDIR - Registreringshåndbok - C22](https://regbok.udir.no/oversikt)
+    is_a: Begrep
+
+  Eksamensform:
+    description: |
+      Eksamensordningens form.
+      
+      # Eksempler:
+      * Muntlig
+      * Skriftlig
+      * Praktisk
+      
+      # Referanser
+      
+      * https://www.vigo.no/vigokv/ekstype.action
+    is_a: Begrep
+
+  Elevkategori:
+    description: |
+      Kategori som et elevforhold befinner seg innenfor
+      
+      # Eksempel
+      
+      Gyldige verdier kan være:
+      * heltid
+      * deltid
+      * voksen
+      * privatist
+      * norsk-utv-i-utlandet
+      * utenlandsk-utv-i-norge
+    is_a: Begrep
+
+  Fagmerknad:
+    description: |
+      Merknader til vitnemål og kompetansebevis
+      
+      # Beskrivelse
+      
+      En fagmerknad er en merknad som har en eller flere av disse funksjonene
+      
+      - gir opplysninger om faget som ikke går fram av karakterer eller eksamensform
+      - utdyper opplysninger om karakterer og/eller eksamensform
+      - henviser til vedlegg som gir slike opplysninger
+      
+      # Referanser
+      
+      [Merknader til vitnemål og kompetansebevis](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/3-merknader-til-vitnemal-og-kompetansebevis/)
+    is_a: Begrep
+
+  Fagstatus:
+    description: |
+      Elevens, privatistens eller kandidatens (voksne) status på et gitt fag.
+      
+      # Beskrivelse
+      
+      Fagstatus er en kode for undervisningen og/eller grunnlaget for karakteren. Den gir informasjon om hvordan det enkelte faget er gjennomført eller evt. ikke gjennomført.
+      
+      # Eksempler
+      
+      * E - Elev
+      * F - Fritatt
+      
+      # Referanse
+      
+      [Registreringshåndbok]( https://regbok.udir.no/felt/?Id=1014315)
+    is_a: Begrep
+
+  Fraværstype:
+    description: |
+      Typer fravær.
+      
+      # Referanse
+      
+      https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/saksbehandling/fravar/fravar-i-videregaende/
+      
+      VIS:
+      https://inschool.zendesk.com/hc/no/articles/360023264091
+    is_a: Begrep
+
+  Fullførtkode:
+    description: |
+      Gir status på hvordan eleven har gjennomført et programområde ved (det normale) skoleårs slutt.
+      
+      # Referanse
+      [UDIR - Registreringshåndbok - B21](https://regbok.udir.no/oversikt)
+    is_a: Begrep
+
+  Grepreferanse:
+    description: |
+      Ekstern referanse til Grepkodeverket.
+      
+      # Beskrivelse
+      
+      Grep er den nasjonale databasen for fag, læreplaner og opplæringstilbud i grunnopplæringen.
+      
+      Referanser til Grepkodeverket skal referere til gyldige og unike koder i REST (JSON) API fra Udir.
+      
+      https://www.udir.no/om-udir/data/kl06-grep
+      
+      Det er viktig å bruke Grepreferanser og ikke Vigoreferanser. 
+      Bruk data.udir.no , ikke psi.udir.no, eksempelvis https://data.udir.no/kl06/SAL3001 (korrekt), ikke https://psi.udir.no/kl06/SAL3001 (feil).
+
+  Karakterskala:
+    description: |
+      Gruppering av karakterer etter skala (bokstav, orden osv). 
+      
+      # Eksempler
+      
+      * Bokstav – bokstavkarakterer
+      * Tall – tallkarakterer
+      * Binær – Bestått/Ikke-bestått
+      * Prosent – prosentpoeng.
+    is_a: Begrep
+    attributes:
+      vigoreferanse:
+        range: Vigoreferanse
+        description: |
+          Ekstern referanse til Vigo kodeverksdatabase.
+      verdi:
+        range: Karakterverdi
+        description: |
+          Alle karakterene som er definerte på en gitt skala
+          
+          # Eksempel
+          
+          * Tall skala har karaterer 1, 2. 3, 4, 5 og 6
+        multivalued: true
+
+  Karakterstatus:
+    description: |
+      Kode for karakterer som blir endret.
+      
+      # Referanse
+      
+      https://regbok.udir.no/35004/3344/35042-1015043.html
+    is_a: Begrep
+
+  OtEnhet:
+    description: |
+      Stedet hvor OT-ungdom er under oppfølging.
+    is_a: Begrep
+    attributes:
+      kommune:
+        range: Kommune
+        description: |
+          Kommunen hvor OT-enheten er lokalisert.
+        required: true
+
+  OtStatus:
+    description: |
+      Statuskoder angir hva som er ungdommens hovedaktivitet
+      
+      # Eksempel
+      
+      * OTAR – I arbeid
+      * OTMI – Er i militæret
+      * OTAP – Arbeidspraksis eller annet tiltak i regi av NAV
+      * OTUK – Ukjent aktivitet
+    is_a: Begrep
+    attributes:
+      beskrivelse:
+        range: string
+        description: |
+          Beskrivelse av OT-statusen.
+      type:
+        range: string
+        description: |
+          Viser type OT-status.
+          
+          # Verdier:
+          
+          * O = OT
+          * V = VIGO
+        required: true
+
+  Prøvestatus:
+    description: |
+      Resultat av avlagt prøve - Praktisk prøve + teori.
+      
+      # Referanse
+      [UDIR - Registreringshåndbok - C26](https://regbok.udir.no/oversikt)
+    is_a: Begrep
+
+  Skoleeiertype:
+    description: |
+      Angir hvem er det som eier skole
+      
+      # Eksempler
+      
+      1 = Fylke
+      2 = Stat
+      3 = Kommune
+      4 = Privat 
+      
+      # Referanser
+      
+      * Vigo Kodeverkdatabase. Skole: [vigo.no/vigokv/skole.action](https://www.vigo.no/vigokv/skole.action)
+    is_a: Begrep
+
+  Skoleår:
+    description: |
+      Del av året da skoler har undervisning (og ikke ferie).
+      
+      # Beskrivelse
+      
+      Et skoleår varer som hovedregel fra august til juni.
+    is_a: Begrep
+
+  Termin:
+    description: |
+      Inndeling av skoleåret
+      
+      # Beskrivelse
+      
+      Et skoleår er som hovedregel inndelt i to terminer. Første termin: medio august til medio januar. Andre termin: medio januar til medio juni.
+    is_a: Begrep
+
+  Tilrettelegging:
+    description: |
+      Tilrettelegging en elev kan ha på eksamen.
+    is_a: Begrep
+
+  Varseltype:
+    description: |
+      Viser hvilken type et varsel er.
+      
+      # Eksempel
+      
+      * Fravær
+      
+      * Orden
+      
+      * Atferd
+      
+      * Manglende vurderingsgrunnlag i fag
+      
+      # Referanse
+      
+      * [VIS - Opprette og sende varsel ](https://inschool.zendesk.com/hc/no/articles/360030859132-4b-21-Opprette-og-sende-varsel)
+      * [Forskrift til opplæringslova - &#167; 3-8. Varsling](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_5-1#%C2%A73-8)
+    is_a: Begrep
+
+  Vigoreferanse:
+    description: |
+      Ekstern referanse til VIGO Kodeverksbase.
+      
+      # Beskrivelse
+      
+      Kodeverket kommer fra Grep (Utdanningsdirektoratet sin læreplandatabase), Nasjonalt skoleregister og VIGO.
+      
+      Referanser til VIGO Kodeverksbase skal referere til gyldige og unike koder i REST (JSON) API fra Vigo IKS/FINTLabs.
+      
+      https://api.felleskomponent.no/utdanning/vigo/kodeverk/swagger-ui.html#/
+
+  Vitnemålsmerknad:
+    description: |
+      En vitnemålsmerknad har en eller flere av følgende funksjoner:
+      
+      * gir opplysninger som gjelder opplæringen generelt eller som gjelder hele vitnemålet/kompetansebeviset
+      
+      * henviser til vedlegg som gir slike opplysninger
+      
+      * utdyper en fagmerknad
+      
+      Det kan bare føres vitnemålsmerknader som er gitt av Utdanningsdirektoratet.
+      
+      # Referanser
+      [UDIR : Merknader til vitnemål og kompetansebevis](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/3-merknader-til-vitnemal-og-kompetansebevis/)
+    is_a: Begrep

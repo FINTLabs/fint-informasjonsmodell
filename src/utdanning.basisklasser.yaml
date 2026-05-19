@@ -1,0 +1,97 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/utdanning/basisklasser
+name: utdanning.basisklasser
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+
+classes:
+
+  Gruppe:
+    description: |
+      En generisk samling av elever og lærere
+      
+      # Beskrivelse 
+      
+      Gruppe representeres som en spesialisering (se tabell nedenfor).
+      
+      Grupper knyttes til Utdanningsforhold via Gruppemedlemskap eller direkte relasjoner.
+    abstract: true
+    attributes:
+      beskrivelse:
+        range: string
+        description: |
+          Utfyllende informasjon om gruppen
+        required: true
+      navn:
+        range: string
+        description: |
+          Navn på gruppe
+        required: true
+      systemId:
+        range: Identifikator
+        description: |
+          Unik intern system-id for gruppe
+          
+          # Beskrivelse
+          
+          Systemspesifikk id, som normalt ikke er synlig i fagsystemet.
+        required: true
+
+  Gruppemedlemskap:
+    description: |
+      Deltagelse i en gruppe
+      
+      # Beskrivelse
+      
+      Knytter sammen et elevforhold og en gruppe. Gjør det mulig å uttrykke gyldighetsperiode for et medlemskap.
+    abstract: true
+    attributes:
+      gyldighetsperiode:
+        range: Periode
+        description: |
+          Gyldig periode for et gitt gruppemedlemskap.
+          
+          # Beskrivelse
+          
+          Periode en elev (elevforhold) er (eller har vært) i et gruppemedlemskap. Inneholder en startdato. Kan inneholde en sluttdato.
+      systemId:
+        range: Identifikator
+        description: |
+          Unik identifikator for gruppemedlemskap
+          
+          # Beskrivelse
+          
+          Systemspesifikk id, som normalt ikke er synlig i fagsystemet.
+        required: true
+
+  Utdanningsforhold:
+    description: |
+      Et felles begrep for rollene til mennesker (elever, lærere, sensorer osv) som deltar i undervisning
+      
+      # Beskrivelse 
+      
+      Abstrakt klasse som inneholder relasjoner og informasjon som brukes som elevforhold eller undervisningsforhold.
+      
+      # Eksempel
+      
+      * Lærer
+      * Elev
+      * Sensor
+    abstract: true
+    attributes:
+      beskrivelse:
+        range: string
+        description: |
+          Beskrivende tekst om personens forhold
+        required: true
+      systemId:
+        range: Identifikator
+        description: |
+          Systemidentifikator i fagsystem
+          
+          # Beskrivelse 
+          
+          Dette kan være identifikator som eksisterer i skoleadministrativt system.
+        required: true

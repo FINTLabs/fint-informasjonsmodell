@@ -1,0 +1,457 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/felles/komplekse-datatyper
+name: felles.komplekse-datatyper
+imports:
+  - linkml:types
+  - felles.kodeverk
+  - felles.kodeverk.iso
+
+classes:
+
+  Adresse:
+    description: |
+      Fysisk adresse eller postadresse.
+      
+      # Beskrivelse
+      
+      Dette kan enten være en postadresse eller en fysisk adresse som det er mulig å besøke.
+      
+      # Eksempel
+      
+      |               adresse               |    poststed    | postnummer | land |
+      |-------------------------------------|----------------|------------|------|
+      | Nydalen allé 11                     | Oslo           |       0484 | NO   |
+      | Fakturamottak&lt;br&gt;Postboks 501 Lund  | Kristiansand   |       4605 | -    |
+      | Postboks 517 Lundsiden              | KRISTIANSAND S |       4605 | -    |
+      
+      
+      # Referanser
+      
+      - http://www.bring.no/radgivning/sende-noe/klargjoring/klargjoring-adressert/adressering-til-postmottakere-i-norge
+      - http://www.bring.no/radgivning/sende-noe/klargjoring/klargjoring-adressert/adressering-til-mottakere-i-utlandet
+    attributes:
+      adresselinje:
+        range: string
+        description: |
+          Adresseinformasjon
+          
+          # Beskrivelse
+          
+          Adresseinformasjon. Linjer representeres hver for seg, fra øverst til nederst.
+          
+          Dette kan være:
+          * Gateadresse
+          * Postboksadresse
+          * Bolignummer
+          * C/O adresse
+          * Attn:
+          * Mottak på vegne av andre
+          
+          # Format
+          
+          Som dokumentert i [referanser fra klassen](Class:Adresse).
+          
+          # Eksempler
+          
+          Se [eksempler fra klassen](Class:Adresse).
+        multivalued: true
+      postnummer:
+        range: string
+        description: |
+          Postnummer
+          
+          # Beskrivelse
+          
+          
+          # Format
+          
+          
+          # Eksempler
+      poststed:
+        range: string
+        description: |
+          Poststed
+          
+          # Beskrivelse
+          
+          
+          # Format
+          
+          
+          # Eksempler
+      land:
+        range: Landkode
+        description: |
+          Land hvor adressen befinner seg
+
+  Identifikator:
+    description: |
+      Unik identifikasjon til et objekt.
+      
+      # Beskrivelse
+      
+      En kombinasjon av tegn eller og/eller bokstaver som unikt identifiserer et objekt blant andre objekter av samme type uten arv.
+      
+      Identifikatorer må være stabile over tid, og henvise til samme objekt.
+      
+      Dersom identifikatorer konstrueres av sammensatte verdier må særskilt hensyn tas for å sikre at identifikatorverdien ikke endres over tid.
+      
+      # Eksempel
+      
+      Kan for eksempel brukes til å identifisere en person ut fra fødselsnummer eller ansattnummer.
+      
+      * For en person kan det være fødselsnummer
+      * For er personresurs kan det være ansattnummer eller signatur
+      * For er elev kan det være elevnummer.
+      * For organisasjonselement kan det være organisasjonsnummer fra Enhetsregistret.
+      * systemId kan være objektID eller rowID i underliggende database, dersom denne er stabil over tid.
+    attributes:
+      gyldighetsperiode:
+        range: Periode
+        description: |
+          Perioden, gitt i form av fra-og-med-dato og til-dato, som en gitt identifikator er gyldig.
+      identifikatorverdi:
+        range: string
+        description: |
+          En konkret kombinasjonen av tegn og/eller bokstaver som utgjør en bestemt identifikator.
+          
+          # Krav til identifikatorverdi
+          
+          - Må være et gyldig URI "path segment", ref. https://tools.ietf.org/html/rfc3986#section-3.3
+          - Må unikt identifisere en instans av en gitt type
+          - Kan ikke være tom
+          
+          # Eksempel
+          
+          For eksempel et fødselsnummer, ansattnummer, etc.
+        required: true
+
+  Kontaktinformasjon:
+    description: |
+      Informasjon som kan brukes for oppnå kontakt.
+      
+      # Beskrivelse
+      
+      Generell kontaktinformasjon, inneholder opplysninger om telefon, e-post, osv.
+      
+      En ikke-fysisk adresse, i motsetning til [Adresse](/docs/komplekse_datatyper_adresse) .
+    attributes:
+      epostadresse:
+        range: string
+        description: |
+          Navngitt elektronisk adresse for mottak av e-post
+          
+          # Referanser
+          
+          * [E-post adresse](https://en.wikipedia.org/wiki/Email_address)
+          * [RFC 5322. Internet Message Format](https://tools.ietf.org/html/rfc5322)
+          * [RFC 6854. Update to Internet Message Format](https://tools.ietf.org/html/rfc6854)
+      mobiltelefonnummer:
+        range: string
+        description: |
+          Person sitt mobiltelefonnummer.
+          
+          # Format
+          
+          Format må følge norsk nummerplan E.164, alternativt med `+` for å angi internasjonalt prefiks for internasjonale numre.
+          
+          # Referanser
+          
+          - [ITU E.164](https://www.itu.int/rec/T-REC-E.164/en)
+          - [Nummerplan (Wikipedia)](https://no.wikipedia.org/wiki/Nummerplan_(E.164))
+          
+          # Eksempel
+          ## Riktig:
+          
+          - 47845326
+          - +4747845326
+          - +1234234234234
+          - +79161238752
+          
+          ## Feil:
+          
+          - 456 45 334
+          - 0047 23 23 23 23
+          - 02643
+          - 0VAFK
+      nettsted:
+        range: string
+        description: |
+          Adresse til et nettsted
+          
+          # Beskrivelse
+          
+          Adresse til et nettsted/hjemmeside.
+          
+          # Format 
+          
+           Tilltate protokoller HTTP og HTTPS.
+          
+          # Eksempel
+          
+          ## Riktig
+          
+          * http://www.nrk.no
+          * https://www.nrk.no/qqq.html
+          * https://8.8.8.8/rdf/?qqq=rrr
+          
+          ## Ikke riktig
+          
+          * mailto:qqq@vafk.no
+          * tel:+4781506543
+          * ftp://petr:1o1Wut?@vafk.no
+          
+          # Referanser
+          
+          * [RFC 1738. Uniform Resource Locators](https://www.ietf.org/rfc/rfc1738.txt)
+          * [RFC 3986. Uniform Resource Identifier (URI): Generic Syntax](https://www.ietf.org/rfc/rfc3986.txt)
+      sip:
+        range: string
+        description: |
+          SIP, protokoll for VoIP (IP-telefoni)
+          
+          # Beskrivelse
+          
+          Kan typsisk være telefonnummer, brukernavn eller epostadresse. SIP «oversetter» et telefonnummer eller annen adresseinformasjon til en IP-adresse
+          
+          # Format 
+          
+          string
+          
+          # Eksempel
+          
+          * qqq@vafk.no
+          
+          # Referanser
+          
+          https://snl.no/SIP
+      telefonnummer:
+        range: string
+        description: |
+          Person sitt telefonnummer.
+          
+          # Format
+          
+          Format må følge norsk nummerplan E.164, alternativt med `+` for å angi internasjonalt prefiks for internasjonale numre.
+          
+          # Referanser
+          
+          - [ITU E.164](https://www.itu.int/rec/T-REC-E.164/en)
+          - [Nummerplan (Wikipedia)](https://no.wikipedia.org/wiki/Nummerplan_(E.164))
+          
+          # Eksempel
+          ## Riktig:
+          
+          - 47845326
+          - +4747845326
+          - +1234234234234
+          - +79161238752
+          
+          ## Feil:
+          
+          - 456 45 334
+          - 0047 23 23 23 23
+          - 02643
+          - 0VAFK
+
+  Matrikkelnummer:
+    description: |
+      Entydig identifisering av metrikkelenhet innen kommune, definert i matrikkelforskriften § 7.
+    attributes:
+      adresse:
+        range: Adresse
+        description: |
+          Adresse til matrikkelenhet.
+      bruksnummer:
+        range: string
+        description: |
+          Fortløpende nummerering av bruk under gårdsnummer
+      festenummer:
+        range: string
+        description: |
+          Fortløpende nummerering av fester under gårdsnummer/bruksnummer
+      gårdsnummer:
+        range: string
+        description: |
+          Nummerering av gårdsenhet i matrikkelen, nummeret er unikt innenfor kommune
+      seksjonsnummer:
+        range: string
+        description: |
+          Fortløpende nummerering av seksjoner under gårdsnummer/bruksnummer og eventuelt festenummer
+      kommunenummer:
+        range: Kommune
+        description: |
+          Nummerering av kommunen i henhold til Statistisk sentralbyrå sin offisielle liste
+
+  Periode:
+    description: |
+      Tidsperiode (start- og sluttdato).
+      
+      # Beskrivelse
+      
+      Tidsperiode (start- og slutttidspunkt). 
+      Slutttidspunkt må være senere eller lik starttidspunktet om det er definert.
+      Både start og slutt kan brukes som dato eller datotid.
+    attributes:
+      beskrivelse:
+        range: string
+        description: |
+          Brukes til å sette beskrivende navn på perioden.
+          
+          # Eksempel
+          
+          * 2010 – kalenderår
+          * 2010/2011 – skoleår
+          * H2010 – høstsemesteret
+          * V2011 – vårsemesteret
+      slutt:
+        range: string
+        description: |
+          Til tidspunkt
+          
+          # Beskrivelse
+          
+          Slutttidspunkt for perioden.
+          
+          Slutttidspunkt må være senere eller lik startdato om det er definert.
+          
+          # Når feltet brukes som et rent datofelt:
+          
+          ## Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).
+          
+          ## Eksempler
+          
+          29. mars 1990 -&gt; 1990-03-29T12:00:00Z
+          
+          29. juni 1990 -&gt; 1990-06-29T12:00:00Z
+          
+          # Når feltet brukes som et datotid felt:
+          
+          ## Format
+          
+          ISO 8601 format YYYY-MM-DDThh:mm:ssZ
+          
+          ## Eksempler
+          
+          29. mars 1990 klokken 13:30 (UTC +1) -&gt; 1990-03-29T12:30:00Z
+          
+          29. juni 1990 klokken 13:30 (UTC +2 sommertid) -&gt; 1990-06-29T11:30:00Z
+          
+          # Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+      start:
+        range: string
+        description: |
+          Fra tidspunkt
+          
+          # Beskrivelse
+          
+          Starttidspunkt for perioden.
+          
+          # Når feltet brukes som et rent datofelt:
+          
+          ## Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).
+          
+          ## Eksempler
+          
+          29. mars 1990 -&gt; 1990-03-29T12:00:00Z
+          
+          29. juni 1990 -&gt; 1990-06-29T12:00:00Z
+          
+          # Når feltet brukes som et datotid felt:
+          
+          ## Format
+          
+          ISO 8601 format YYYY-MM-DDThh:mm:ssZ
+          
+          ## Eksempler
+          
+          29. mars 1990 klokken 13:30 (UTC +1) -&gt; 1990-03-29T12:30:00Z
+          
+          29. juni 1990 klokken 13:30 (UTC +2 sommertid) -&gt; 1990-06-29T11:30:00Z
+          
+          # Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+        required: true
+
+  Personnavn:
+    description: |
+      Angir navn til en person
+      
+      # Beskrivelse
+      
+      Inneholder fornavn og etternavn for å beskrive navn til en person.
+      
+      Fornavn, mellomnavn og etternavn skal leveres fra fagsystemene som de er, uten noe endringer.
+      
+      # Referanse
+      
+      * [Navneloven](https://lovdata.no/dokument/NL/lov/2002-06-07-19/)
+      * [Håndbok i folkeregistrering](http://www.skatteetaten.no/no/Radgiver/Rettskilder/Handboker/Handbok-i-folkeregistrering/)
+      * [Skal du ha to etternavn?](http://www.skatteetaten.no/no/Person/Folkeregister/Endre-navn/Skal-du-ha-to-etternavn/)
+      
+      # Eksempler
+      
+      |            Navn           |       Fornavn       | Mellomnavn | Etternavn   |
+      |---------------------------|---------------------|------------|--------------|
+      | Ole Olsen                 | Ole                 | -          | Olsen        |
+      | Lise Sofie Fuglevik Olsen | Lise Sofie          | Fuglevik   | Olsen        |
+      | Lise Sofie Fuglevik Olsen | Lise Sofie Fuglevik | -          | Olsen        |
+      | Anne Kari Nilsen-Olsen    | Anne Kari           | -          | Nilsen-Olsen |
+    attributes:
+      etternavn:
+        range: string
+        description: |
+          Angir etternavn til en person.
+          
+          # Beskrivelse
+          Etternavn. 
+          
+          # Format
+          Ren tekst.
+          
+          # Eksempler
+          
+          [Se eksempler på Personnavn](/docs/komplekse_datatyper_personnavn)
+        required: true
+      fornavn:
+        range: string
+        description: |
+          Angir fornavn til en person.
+          
+          # Beskrivelse
+          Fornavn. 
+          
+          # Format
+          Ren tekst.
+          
+          # Eksempler
+          
+          [Se eksempler på Personnavn](/docs/komplekse_datatyper_personnavn)
+        required: true
+      mellomnavn:
+        range: string
+        description: |
+          Mellomnavn
+          
+          # Beskrivelse
+          
+          Mellomnavn
+          
+          # Format
+          
+          Ren tekst
+          
+          # Eksempler
+          
+          [Se eksempler på Personnavn](/docs/komplekse_datatyper_personnavn)
