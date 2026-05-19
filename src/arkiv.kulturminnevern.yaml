@@ -1,0 +1,90 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/arkiv/kulturminnevern
+name: arkiv.kulturminnevern
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+  - arkiv.noark
+
+classes:
+
+  DispensasjonAutomatiskFredaKulturminne:
+    description: |
+      Sak om søknad om dispensasjon for tiltak på automatisk freda kulturminne.
+    is_a: Saksmappe
+    attributes:
+      kulturminneId:
+        range: string
+        description: |
+          Kulturminnets ID i Askeladden.
+        required: true
+      matrikkelnummer:
+        range: Matrikkelnummer
+        description: |
+          Kulturminnets identifikator i Matrikkelen.
+        required: true
+      søknadsnummer:
+        range: Identifikator
+        description: |
+          Søknadsnummer fra Digisak.
+        required: true
+      tiltak:
+        range: string
+        description: |
+          Beskriver hvilket tiltak som skal utføres på eiendommen. 
+          
+          ## Beskrivelse
+          Årsaken til at det søkes dispensasjon. 
+          
+          ## Eksempel
+          Eksempler kan være ‘Utskifting av vannledning’, ‘Etablering av landbruksvei’ og ‘Graving av grøft’
+
+  TilskuddFartøy:
+    description: |
+      Sak om søknad om tilskudd til freda fartøy.
+    is_a: Saksmappe
+    attributes:
+      fartøyNavn:
+        range: string
+        description: |
+          Fartøyets navn.
+        required: true
+      kallesignal:
+        range: string
+        description: |
+          Fartøyets kallesignal.
+        required: true
+      kulturminneId:
+        range: string
+        description: |
+          Fartøyets ID i Askeladden.
+        required: true
+      søknadsnummer:
+        range: Identifikator
+        description: |
+          Søknadsnummer fra Digisak.
+        required: true
+
+  TilskuddFredaBygningPrivatEie:
+    description: |
+      Sak om søknad om tilskudd til freda bygninger i privat eie (FRIP).
+    is_a: Saksmappe
+    attributes:
+      bygningsnavn:
+        range: string
+        description: |
+          Bygningens navn.
+      kulturminneId:
+        range: string
+        description: |
+          Bygningens ID i Askeladden.
+        required: true
+      matrikkelnummer:
+        range: Matrikkelnummer
+        description: |
+          Bygningens identifikator i Matrikkelen.
+      søknadsnummer:
+        range: Identifikator
+        description: |
+          Søknadsnummer fra Digisak.

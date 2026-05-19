@@ -1,0 +1,256 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/okonomi/faktura
+name: okonomi.faktura
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+  - administrasjon.organisasjon
+  - felles
+  - okonomi.kodeverk
+
+classes:
+
+  Faktura:
+    description: |
+      Betalingskrav som er utformet og oversendt fra fakturautsteder til fakturamottaker. 
+      
+      # Beskrivelse
+      
+      Faktura opprettes med basis i ett fakturagrunnlag og ustedes til en eller flere mottakere.
+    attributes:
+      adresse:
+        range: Adresse
+        description: |
+          Adresse til mottaker.
+      beløp:
+        range: string
+        description: |
+          Beløp mottaker skal betale, i øre.
+        required: true
+      betalt:
+        range: string
+        description: |
+          Status på betaling.
+      dato:
+        range: string
+        description: |
+          Dato for utstedelse av faktura.
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990` -&gt; `1990-03-29T12:00:00Z`
+          
+          * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
+        required: true
+      fakturanummer:
+        range: Identifikator
+        description: |
+          Identifikator opprettet i fakturaprogram- eller blankett
+        required: true
+      fakturert:
+        range: string
+        description: |
+          Status på utsendelse
+      forfallsdato:
+        range: string
+        description: |
+          Frist for betaling
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990` -&gt; `1990-03-29T12:00:00Z`
+          
+          * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
+        required: true
+      kreditert:
+        range: string
+        description: |
+          Status på kreditering
+      mottaker:
+        range: string
+        description: |
+          Navn på mottaker
+        required: true
+      restbeløp:
+        range: string
+        description: |
+          Gjenstående beløp å betale, i øre.
+      fakturagrunnlag:
+        range: Fakturagrunnlag
+        description: |
+          Grunnlag for fakturering.
+        required: true
+
+  Fakturagrunnlag:
+    description: |
+      Grunnlag for fakturering.
+      
+      # Beskrivelse
+      
+      Dokumentasjon som danner grunnlag for å fakturere en kunde.
+      
+      Beskriver hvem som skal utstede faktura og dermed motta betaling, hvem som skal faktureres, og hvilke varer det skal faktureres for.
+    attributes:
+      avgiftsbeløp:
+        range: string
+        description: |
+          Del av totalbeløp som er avgifter, i øre.
+      fakturalinjer:
+        range: Fakturalinje
+        description: |
+          Linjer av varer eller tjenester som skal faktureres.
+          
+          # Beskrivelse
+          
+          Inneholder referanse til varer fra et vareregister.
+        multivalued: true
+        required: true
+      leveringsdato:
+        range: string
+        description: |
+          Dato varer eller tjenester ble levert.
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990` -&gt; `1990-03-29T12:00:00Z`
+          
+          * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
+      mottaker:
+        range: Fakturamottaker
+        description: |
+          Mottaker som skal betale faktura.
+        required: true
+      nettobeløp:
+        range: string
+        description: |
+          Del av totalbeløp som utgjør summen av fakturalinjene, i øre.
+      ordrenummer:
+        range: Identifikator
+        description: |
+          Unik identifikator for ordre det skal utstedes faktura på.
+        required: true
+      totalbeløp:
+        range: string
+        description: |
+          Totalt beløp på faktura inkludert avgifter, i øre.
+      faktura:
+        range: Faktura
+        description: |
+          Utstedte fakturaer for fakturagrunnlag
+        multivalued: true
+      fakturautsteder:
+        range: Fakturautsteder
+        description: |
+          Utsteder av faktura og mottaker av betaling.
+        required: true
+
+  Fakturalinje:
+    description: |
+      Del av Fakturagrunnlag som beskriver en enkelt vare.
+      
+      # Beskrivelse
+      
+      Inneholder referanse til vare i et vareregister.
+    attributes:
+      antall:
+        range: string
+        description: |
+          Mengde av varen levert.
+          
+          # Beskrivelse
+          
+          Mengdeenhet beskrives i referansen til Vare.
+        required: true
+      fritekst:
+        range: string
+        description: |
+          Fritekst som beskriver varen slik den er levert.
+        multivalued: true
+      pris:
+        range: string
+        description: |
+          Pris per enhet levert, i øre.
+        required: true
+      vare:
+        range: Vare
+        description: |
+          Vare i vareregisteret.
+        required: true
+
+  Fakturamottaker:
+    description: |
+      Aktør som skal betale faktura. 
+      
+      # Beskrivelse
+      
+      Mottaker er, per i dag, alltid en person.
+    attributes:
+      person:
+        range: Person
+        description: |
+          person som skal betale faktura
+        required: true
+
+  Fakturautsteder:
+    description: |
+      Enhet som utformer og oversender faktura og mottar betaling.
+      
+      # Beskrivelse
+      
+      Enhet som etter Regnskapsloven er pliktig å arkivere dokumentasjon for faktura.
+    attributes:
+      navn:
+        range: string
+        description: |
+          Juridisk navn på fakturautsteder.
+        required: true
+      systemId:
+        range: Identifikator
+        description: |
+          Fakturasystemets unike identifikator for fakturautsteder.
+        required: true
+      organisasjonselement:
+        range: Organisasjonselement
+        description: |
+          Organisasjonselement som kan utstede faktura.
+      vare:
+        range: Vare
+        description: |
+          Alle varer i vareregisteret.
+        multivalued: true
+      fakturagrunnlag:
+        range: Fakturagrunnlag
+        description: |
+          Alle fakturagrunnlag for fakturautsteder.
+        multivalued: true

@@ -1,0 +1,131 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/felles/basisklasser
+name: felles.basisklasser
+imports:
+  - linkml:types
+  - felles.komplekse-datatyper
+
+classes:
+
+  Aktør:
+    description: |
+      Person eller enhet vi samhandler med.
+      
+      # Beskrivelse
+      
+      Abstrakt klasse som inneholder relasjon til kontaktinformasjon og identifikator. Må enten brukes som Person, Enhet, eller annen underliggende klasse, som feks organisasjonselement.
+    abstract: true
+    attributes:
+      kontaktinformasjon:
+        range: Kontaktinformasjon
+        description: |
+          Den foretrukne måten for å komme i kontakt med en aktør.
+          
+          # Beskrivelse
+          
+          Den fortrukne måten å komme i kontakt med en aktør. En aktør kan blant annet være en privat person eller et organisasjonselement i organisasjonsstrukturen.
+      postadresse:
+        range: Adresse
+        description: |
+          Informasjon om postadresse til en aktør
+          
+          # Beskrivelse
+          
+          Den fortrukne måten å komme i kontakt per post med en aktør. En aktør kan blant annet være en privat person eller et organisasjonselement i organisasjonsstrukturen.
+
+  Begrep:
+    description: |
+      Overordnet beskrivelse av et element i et kodeverk
+      
+      # Beskrivelse
+      
+      * Overordnet element har ingen forelder
+      Sjekker ved innhenting av data:
+      * Det skal være bare 1 overordnet element i hver kodeverk
+      * Det er ingen sykluser definert med forelder forholdet
+      
+      # Eksempel
+    abstract: true
+    attributes:
+      gyldighetsperiode:
+        range: Periode
+        description: |
+          Angir gyldighetsperioden for et begrep/kode
+      kode:
+        range: string
+        description: |
+          Verdi som identifiserer begrepet
+        required: true
+      navn:
+        range: string
+        description: |
+          Hovednavn for begrepet
+        required: true
+      passiv:
+        range: string
+        description: |
+          Angir at koden er passiv, og ikke kan velges.
+          
+          # Beskrivelse
+          
+          Passive koder kan henvises til i eksisterende data, men kan ikke velges ved registrering av nye data.
+          
+          Medmindre attributten finnes og er satt til usann regnes koden som aktiv.
+      systemId:
+        range: Identifikator
+        description: |
+          Intern identifikator som brukes enten i kildesystemet eller i kildestandarden (for ISO, KS og lignende standarder)
+        required: true
+
+  Enhet:
+    description: |
+      Alle hovedenheter, underenheter og organisasjonsledd som er identifisert med et organisasjonsnummer
+      
+      # Beskrivelse
+      
+      Løs relasjon til BRREG.
+    abstract: true
+    is_a: Aktør
+    attributes:
+      forretningsadresse:
+        range: Adresse
+        description: |
+          Besøksadresse til en organisasjonsenhet i enhetsregisteret.
+          
+          # Beskrivelse
+          
+          
+          # Format
+          
+          
+          # Eksempler
+      organisasjonsnavn:
+        range: string
+        description: |
+          Navn på enhet som er registrert i Enhetsregisteret
+          
+          # Beskrivelse
+          
+          
+          # Format
+          
+          
+          # Eksempler
+      organisasjonsnummer:
+        range: Identifikator
+        description: |
+          Nisifret nummer som entydig identifiserer enheter i Enhetsregisteret
+          
+          # Beskrivelse
+          
+          Organisasjonsnummeret består av 9 siffer hvor det siste sifferet er et kontrollsiffer beregnet med standard vekter, modulus 11. Etter dette blir vektene 3, 2, 7, 6, 5, 4, 3 og 2 regnet fra første siffer.
+          
+          [Se brreg.no](https://www.brreg.no/om-oss/samfunnsoppdraget-vart/registera-vare/einingsregisteret/organisasjonsnummeret/)
+          
+          # Format
+          9 siffer 
+          
+          # Eksempler
+          
+          971042176
+          974770199

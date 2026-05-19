@@ -1,0 +1,153 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/ressurs/eiendel
+name: ressurs.eiendel
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+  - administrasjon.organisasjon
+  - ressurs.kodeverk
+
+classes:
+
+  Applikasjon:
+    description: |
+      En applikasjon med tilhørende ressurser. 
+      
+      En ressurs kan være en lisens eller en rolle som tilganger inne i en applikasjon. Applikasjonen kan være en desktopapplikasjon eller en skybasert tjeneste. Brukere kan da få tilgang til denne applikasjonen hvis vedkommende har fått tildelt en ressurs knyttet til applikasjonen.
+    attributes:
+      beskrivelse:
+        range: string
+        description: |
+          Beskrivelse av applikasjonen.
+      gyldighetsperiode:
+        range: Periode
+        description: |
+          Start- og sluttdato for gyldighetsperioden til applikasjonen.
+        required: true
+      navn:
+        range: string
+        description: |
+          Navn på applikasjonen.
+        required: true
+      systemId:
+        range: Identifikator
+        description: |
+          Unik identifikator i kildesystemet.
+        required: true
+      plattform:
+        range: Plattform
+        description: |
+          Den eller de plattform(ene) applikasjonen kan kjøre på.
+        multivalued: true
+      ressurs:
+        range: Applikasjonsressurs
+        description: |
+          Ulike ressurser (lisenser) som er knyttet til denne applikasjonen. Dette kan være flere da ulike organisasjonesenheter kan ha kjøpt inn lisenser separat. Evt at samme applikasjon har flere lisensmodeller.
+        multivalued: true
+      applikasjonskategori:
+        range: Applikasjonskategori
+        description: |
+          Kategorier av applikasjoner.
+        multivalued: true
+
+  Applikasjonsressurs:
+    description: |
+      Informasjon om hvor en applikasjon kan benyttes.
+      
+      En ressurs er knyttet til en avtale som beskriver antall lisenser, lisensmodell og hvem som kan benytte den.
+    attributes:
+      beskrivelse:
+        range: string
+        description: |
+          Beskrivelse av ressursen.
+      enhetskostnad:
+        range: string
+        description: |
+          Kostnad per ressurs.
+          
+          Oppgis i øre.
+      gyldighetsperiode:
+        range: Periode
+        description: |
+          Start- og sluttdato for gyldighetsperioden til ressursen.
+        required: true
+      kreverGodkjenning:
+        range: string
+        description: |
+          Settes true dersom tildeling av ressursen forutsetter godkjenning av leder/tjenesterforvalter eller tjenesteeier.
+          Årsaker kan være høy enhetskostnad som leder må godkjenne.
+      lisensantall:
+        range: string
+        description: |
+          Totalt antall lisenser
+          
+          Brukes kun når ressursene er lisenser.
+      navn:
+        range: string
+        description: |
+          Navn på ressursen.
+        required: true
+      systemId:
+        range: Identifikator
+        description: |
+          Unik identifikator i kildesystemet.
+        required: true
+      brukertype:
+        range: Brukertype
+        description: |
+          For hvilke brukertyper denne lisensen er gyldig.
+        multivalued: true
+        required: true
+      håndhevingstype:
+        range: Håndhevingstype
+        description: |
+          Hvordan det skal håndheves når lisensantall blir overskredet.
+      lisensmodell:
+        range: Lisensmodell
+        description: |
+          Hvilken lisensmodell applikasjonsressursen har.
+      ressurstilgjengelighet:
+        range: Applikasjonsressurstilgjengelighet
+        description: |
+          Angir hvilken orgenhet og hvor mange ressurser som skal tilordnes denne orgenheten.
+        multivalued: true
+      applikasjon:
+        range: Applikasjon
+        description: |
+          Ulike ressurs (lisenser) som er knyttet til denne applikasjonen. Dette kan være flere da ulike organisasjonesenheter kan ha kjøpt inn lisenser separat. Evt at samme applikasjon har flere lisensmodeller.
+        required: true
+      eier:
+        range: Organisasjonselement
+        description: |
+          Organisasjonselement som har eierskap til lisensen dvs inngått avtalen.
+        required: true
+
+  Applikasjonsressurstilgjengelighet:
+    description: |
+      Hvilke organisasjonselementers brukere som har tilgang til en ressurs.
+    attributes:
+      gyldighetsperiode:
+        range: Periode
+        description: |
+          Gyldighetsperioden til applikasjonsressurstilgjengeligheten.
+        required: true
+      lisensantall:
+        range: string
+        description: |
+          Totalt antall lisenser tilgjengelig for brukere tilhørende en konsument.
+      systemId:
+        range: Identifikator
+        description: |
+          Unik identifikator i kildesystemet.
+        required: true
+      konsument:
+        range: Organisasjonselement
+        description: |
+          Organisasjonselement som har tilgang til denne ressursen.
+        required: true
+      ressurs:
+        range: Applikasjonsressurs
+        description: |
+          Ressursen organisasjonselementet har tilgang til.
+        required: true
