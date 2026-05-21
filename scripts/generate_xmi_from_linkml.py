@@ -77,6 +77,7 @@ class SchemaClass:
     name: str
     package_path: Tuple[str, ...]
     import_paths: set[str]
+    explicit_stereotype: Optional[str]
     description: Optional[str]
     abstract: bool
     is_a: Optional[str]
@@ -143,6 +144,17 @@ def normalize_import_path(import_name: str) -> str:
     return ".".join(parts)
 
 
+def normalize_class_stereotype(value: Optional[str]) -> Optional[str]:
+    if value is None:
+        return None
+    token = str(value).strip().lower()
+    if token == "kompleks-datatype":
+        return "datatype"
+    if token in {"hovedklasse", "datatype", "abstrakt", "referanse"}:
+        return token
+    return None
+
+
 def display_package_name(segment: str) -> str:
     if not segment:
         return segment
@@ -182,6 +194,10 @@ def collect_classes(src_dir: Path) -> Tuple[List[SchemaClass], Dict[str, List[Sc
                 name=class_name,
                 package_path=package_path,
                 import_paths=normalized_imports,
+                explicit_stereotype=normalize_class_stereotype(
+                    (class_info.get("annotations") or {}).get("stereotype")
+                    or (class_info.get("annotations") or {}).get("fintStereotype")
+                ),
                 description=class_info.get("description"),
                 abstract=bool(class_info.get("abstract")),
                 is_a=class_info.get("is_a"),
@@ -231,6 +247,9 @@ def is_identifiable_class(
 def apply_default_stereotypes(classes: List[SchemaClass], name_index: Dict[str, List[SchemaClass]]) -> None:
     memo: Dict[Tuple[str, ...], bool] = {}
     for schema_class in classes:
+        if schema_class.explicit_stereotype:
+            schema_class.stereotypes = [schema_class.explicit_stereotype]
+            continue
         if schema_class.abstract:
             schema_class.stereotypes = ["abstrakt"]
             continue

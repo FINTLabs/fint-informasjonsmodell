@@ -72,9 +72,12 @@ Praktisk tommelfingerregel:
 
 ### Klasser
 
+Det er behov for å bevare EA-stereotype på klassenivå i LinkML. `hovedklasse` og `abstrakt` utledes fortsatt av generatorlogikken (`Identifikator`/arv/`abstract`) og trenger derfor ikke å settes eksplisitt i LinkML.
+
+
 #### hovedklasse
 
-Alle klasser som har en Identifikator er hovedklasser.
+Alle klasser som ikke har abstract = true og ikke har noen stereotype er hovedklasser. Disse må ha minst en Identifikator.
 
 ```yaml
 Person:
@@ -87,6 +90,16 @@ Person:
       range: Personnavn
       required: true
     ...
+```
+
+#### referanse
+
+Klasser med `annotations.stereotype: referanse` behandles som relasjonsmål i XMI/Java-generering, på samme måte som hovedklasser. Slotter som peker på disse blir derfor relasjoner (links), ikke felter.
+
+```yaml
+Vigoreferanse:
+  annotations:
+    stereotype: referanse
 ```
 
 #### abstrakt
@@ -108,6 +121,8 @@ Klasser som ikke er merket som abstrakt og ikke har noen identifikator er komple
 
 ```yaml
 Adresse:
+  annotations:
+    stereotype: kompleks-datatype
   attributes:
     adresselinje:
       range: Adresselinje

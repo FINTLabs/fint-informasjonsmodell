@@ -134,6 +134,7 @@ def sanitize_text(text: str) -> str:
 def build_doc_indexes(root: ET.Element):
     """Build maps for documentation and deprecation texts using EA extension blocks and connectors."""
     class_docs = {}
+    class_stereotypes = {}
     attr_docs = {}
     assoc_docs = {}
     class_deprecated = {}
@@ -154,6 +155,9 @@ def build_doc_indexes(root: ET.Element):
                 doc = props.get('documentation')
                 if doc:
                     class_docs[xmi_idref] = sanitize_text(doc.strip())
+                stereotype = (props.get('stereotype') or '').strip().lower()
+                if stereotype:
+                    class_stereotypes[xmi_idref] = stereotype
         tag_block = el.find('tags')
         if tag_block is not None and xmi_idref:
             for tag in tag_block.findall('tag'):
@@ -250,6 +254,7 @@ def build_doc_indexes(root: ET.Element):
             assoc_inverse[(assoc_id, target_role_name)] = source_role_name
     return (
         class_docs,
+        class_stereotypes,
         attr_docs,
         assoc_docs,
         class_deprecated,
@@ -555,6 +560,7 @@ def emit_yaml_for_package(
     assoc_source_class=None,
     attr_writeable=None,
     attr_model_type=None,
+    class_stereotypes=None,
 ):
     if not classes_for_pkg:
         return None
@@ -644,6 +650,12 @@ def emit_yaml_for_package(
             cid = cls_el.get(f'{{{XMI_NS}}}id')
             if cid and cid in class_deprecated:
                 append_deprecated(lines, 4, class_deprecated[cid])
+        cid = cls_el.get(f'{{{XMI_NS}}}id')
+        class_stereotype = (class_stereotypes or {}).get(cid, '') if cid else ''
+        if class_stereotype in {'referanse', 'datatype'}:
+            linkml_stereotype = 'kompleks-datatype' if class_stereotype == 'datatype' else class_stereotype
+            lines.append('    annotations:')
+            lines.append(f'      stereotype: {linkml_stereotype}')
         if (cls_el.get('isAbstract') or '').lower() == 'true':
             lines.append('    abstract: true')
         isa = parse_is_a(cls_el, class_index)
@@ -702,6 +714,7 @@ def main():
     root = read_xml(args.xmi)
     (
         class_docs,
+        class_stereotypes,
         attr_docs,
         assoc_docs,
         class_deprecated,
@@ -758,6 +771,7 @@ def main():
             assoc_source_class=assoc_source_class,
             attr_writeable=attr_writeable,
             attr_model_type=attr_model_type,
+            class_stereotypes=class_stereotypes,
         )
         if out:
             generated.append(out)
