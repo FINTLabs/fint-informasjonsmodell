@@ -7130,7 +7130,7 @@ https://inschool.zendesk.com/hc/no/articles/360023264091
               <generalization xmi:type="uml:Generalization" xmi:id="EAID_GEN_6109ac4e2a674b9d2c" general="EAID_CLS_3385458244847ec7db" />
               </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_c9f60b4d15aa43dab9" name="Grepreferanse">
-              <properties documentation="Ekstern referanse til Grepkodeverket.&#10;&#10;# Beskrivelse&#10;&#10;Grep er den nasjonale databasen for fag, læreplaner og opplæringstilbud i grunnopplæringen.&#10;&#10;Referanser til Grepkodeverket skal referere til gyldige og unike koder i REST (JSON) API fra Udir.&#10;&#10;https://www.udir.no/om-udir/data/kl06-grep&#10;&#10;Det er viktig å bruke Grepreferanser og ikke Vigoreferanser. &#10;Bruk data.udir.no , ikke psi.udir.no, eksempelvis https://data.udir.no/kl06/SAL3001 (korrekt), ikke https://psi.udir.no/kl06/SAL3001 (feil).&#10;" stereotype="datatype" />
+              <properties documentation="Ekstern referanse til Grepkodeverket.&#10;&#10;# Beskrivelse&#10;&#10;Grep er den nasjonale databasen for fag, læreplaner og opplæringstilbud i grunnopplæringen.&#10;&#10;Referanser til Grepkodeverket skal referere til gyldige og unike koder i REST (JSON) API fra Udir.&#10;&#10;https://www.udir.no/om-udir/data/kl06-grep&#10;&#10;Det er viktig å bruke Grepreferanser og ikke Vigoreferanser. &#10;Bruk data.udir.no , ikke psi.udir.no, eksempelvis https://data.udir.no/kl06/SAL3001 (korrekt), ikke https://psi.udir.no/kl06/SAL3001 (feil).&#10;" stereotype="referanse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_165d3b6352915160e3">
                 <body>Ekstern referanse til Grepkodeverket.
 
@@ -7161,15 +7161,6 @@ Bruk data.udir.no , ikke psi.udir.no, eksempelvis https://data.udir.no/kl06/SAL3
 </body>
                 </ownedComment>
               <generalization xmi:type="uml:Generalization" xmi:id="EAID_GEN_2107f91810b47f38a4" general="EAID_CLS_3385458244847ec7db" />
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_79c05c66d0b4de5ce0" name="vigoreferanse" visibility="public">
-                <type xmi:idref="EAID_CLS_9be83411188065746c" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_16eabf5a30d18fa6da" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_16eabf5a30d18fa6da" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_16eabf5a30d18fa6da">
-                  <body>Ekstern referanse til Vigo kodeverksdatabase.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
               </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_1d2ea71766e6f9ab9c" name="Karakterstatus">
               <properties documentation="Kode for karakterer som blir endret.&#10;&#10;# Referanse&#10;&#10;https://regbok.udir.no/35004/3344/35042-1015043.html&#10;" stereotype="hovedklasse" />
@@ -7315,7 +7306,7 @@ Et skoleår er som hovedregel inndelt i to terminer. Første termin: medio august 
               <generalization xmi:type="uml:Generalization" xmi:id="EAID_GEN_e414482ebea21cdfef" general="EAID_CLS_3385458244847ec7db" />
               </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_9be83411188065746c" name="Vigoreferanse">
-              <properties documentation="Ekstern referanse til VIGO Kodeverksbase.&#10;&#10;# Beskrivelse&#10;&#10;Kodeverket kommer fra Grep (Utdanningsdirektoratet sin læreplandatabase), Nasjonalt skoleregister og VIGO.&#10;&#10;Referanser til VIGO Kodeverksbase skal referere til gyldige og unike koder i REST (JSON) API fra Vigo IKS/FINTLabs.&#10;&#10;https://api.felleskomponent.no/utdanning/vigo/kodeverk/swagger-ui.html#/&#10;" stereotype="datatype" />
+              <properties documentation="Ekstern referanse til VIGO Kodeverksbase.&#10;&#10;# Beskrivelse&#10;&#10;Kodeverket kommer fra Grep (Utdanningsdirektoratet sin læreplandatabase), Nasjonalt skoleregister og VIGO.&#10;&#10;Referanser til VIGO Kodeverksbase skal referere til gyldige og unike koder i REST (JSON) API fra Vigo IKS/FINTLabs.&#10;&#10;https://api.felleskomponent.no/utdanning/vigo/kodeverk/swagger-ui.html#/&#10;" stereotype="referanse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_94e64b3f528d8a316e">
                 <body>Ekstern referanse til VIGO Kodeverksbase.
 
@@ -7517,24 +7508,6 @@ De aktuelle fagtypene i henhold til [Registreringshåndboken A05](http://regbok.u
 </body>
                 </ownedComment>
               <generalization xmi:type="uml:Generalization" xmi:id="EAID_GEN_5297fb1c9776456f97" general="EAID_CLS_a62447c9dd60a973b1" />
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_d6e6b667c77cd42fc4" name="grepreferanse" visibility="public">
-                <type xmi:idref="EAID_CLS_c9f60b4d15aa43dab9" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_d2a4d873ad0b5090bc" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_d2a4d873ad0b5090bc" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_d2a4d873ad0b5090bc">
-                  <body>Referanse til GREP kodeverket.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_ca194fdd25edf8f528" name="vigoreferanse" visibility="public">
-                <type xmi:idref="EAID_CLS_9be83411188065746c" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_9d22afbb1906f03979" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_9d22afbb1906f03979" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_9d22afbb1906f03979">
-                  <body>Referanse til VIGO kodeverket.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
               </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_a7dee6f3f81a7ce38f" name="Faggruppe">
               <properties documentation="Gruppe av elever som mottar undervisning i samme fag.&#10;&#10;# Beskrivelse&#10;&#10;Undervisningsgrupper har vanligvis en kode, men denne er lokalt definert, og varierer fra skole til skole, og fra fylke til fylke.&#10;&#10;Denne grupperingen omhandler faglig organisering av undervisningen.&#10;&#10;Se også [Undervisningsgruppe](/docs/timeplan_undervisningsgruppe).&#10;" stereotype="hovedklasse" />
@@ -7687,24 +7660,6 @@ Gruppemedlemskap som knytter sammen elevforhold og undervisningsgrupper.
 </body>
                 </ownedComment>
               <generalization xmi:type="uml:Generalization" xmi:id="EAID_GEN_7aca24a699321f2d2f" general="EAID_CLS_a62447c9dd60a973b1" />
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_a97304abe9222d6526" name="vigoreferanse" visibility="public">
-                <type xmi:idref="EAID_CLS_9be83411188065746c" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_67a08fb7a4bf32535b" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_67a08fb7a4bf32535b" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_67a08fb7a4bf32535b">
-                  <body>Referanse til VIGO kodeverket.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_95cfa997e2a1837e44" name="grepreferanse" visibility="public">
-                <type xmi:idref="EAID_CLS_c9f60b4d15aa43dab9" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_867951f7e3cb88d47e" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_867951f7e3cb88d47e" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_867951f7e3cb88d47e">
-                  <body>Referanse til GREP kodeverket.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
               </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_c317e0b3ba883a1162" name="Programområde">
               <properties documentation="Programområde er et kurs i den videregående skolen. Et programområde strekker seg vanligvis over ett eller flere år og er gjerne en spesialisert retning eller område for fordypning innen utdanningsprogrammet.&#10;&#10;# Beskrivelse&#10;&#10;Innenfor utdanningsprogrammet studiespesialisering, er eksempler på programområder realfag, språk, samfunnsfag og økonomi og formgivingsfag.&#10;&#10;Innenfor utdanningsprogrammet naturbruk, finnes det for eksempel i andre klasse (Vg2) programområdene akvakultur, anleggsgartner og driftsoperatør idrettsanlegg, fiske og fangst, heste- og hovslagerfag, landbruk og gartneri, reindrift og skogbruk.&#10;&#10;Programområdekoder som slutter på  `----` angir at det er standardversjon av programområdet, og ikke en fylkeskommunal variant.&#10;&#10;# Eksempler&#10;&#10;* Anleggsmaskinførerf,PB&#10;* Asfaltfaget,PB&#10;* Banemontørfaget,PB&#10;* Betongfaget,PB&#10;* Bioenergi (D)&#10;* Byggdrifterfaget,PB&#10;* FDV-utdanning, 1 år (D)&#10;* Feierfaget,PB&#10;* Matrosfaget,PB&#10;* Modellbyggerfaget,PB&#10;* Motormannfaget,PB&#10;* Motormekanikerfaget,PB&#10;* Motorsykkelfaget,PB&#10;&#10;# Referanser&#10;&#10;* UDir Registreringshåndbok: [regbok.udir.no/35004/3344/35042-1014307.html](http://regbok.udir.no/35004/3344/35042-1014307.html)&#10;* Wikipedia: https://no.wikipedia.org/wiki/Programområde&#10;* Grepwiki: http://grepwiki.udir.no/index.php?title=Programområde&#10;" stereotype="hovedklasse" />
@@ -7743,24 +7698,6 @@ Programområdekoder som slutter på  `----` angir at det er standardversjon av pro
 </body>
                 </ownedComment>
               <generalization xmi:type="uml:Generalization" xmi:id="EAID_GEN_411d06a84574bb96be" general="EAID_CLS_a62447c9dd60a973b1" />
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_2a6ecc06cc576cc409" name="grepreferanse" visibility="public">
-                <type xmi:idref="EAID_CLS_c9f60b4d15aa43dab9" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_ae72dea7f1e25ed4d4" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_ae72dea7f1e25ed4d4" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_ae72dea7f1e25ed4d4">
-                  <body>Referanse til GREP kodeverket.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_7b67f3abbf956764ff" name="vigoreferanse" visibility="public">
-                <type xmi:idref="EAID_CLS_9be83411188065746c" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_80f6b03391c9053b00" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_80f6b03391c9053b00" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_80f6b03391c9053b00">
-                  <body>Referanse til VIGO kodeverket.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
               </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_cd6654e733e9adbc78" name="Programområdemedlemskap">
               <properties documentation="Medlemskap i programområder.&#10;&#10;# Beskrivelse&#10;&#10;Gruppemedlemskap som knytter sammen elevforhold og programområder.&#10;" stereotype="hovedklasse" />
@@ -7870,15 +7807,6 @@ Systemspesifikk id, som normalt ikke er synlig i fagsystemet.
 </body>
                   </ownedComment>
                 </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_8937900734d184557e" name="vigoreferanse" visibility="public">
-                <type xmi:idref="EAID_CLS_9be83411188065746c" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_c5dbc316b6fea8c0b8" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_c5dbc316b6fea8c0b8" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_c5dbc316b6fea8c0b8">
-                  <body>Ekstern referanse til skoleinformasjon i Vigo kodeverksdatabase.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
               </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_e755c56f229ed4bfb5" name="Utdanningsprogram">
               <properties documentation="Utdanningsløpene i videregående skole som fører fram til studie- og/eller yrkeskompetanse/fagbrev&#10;&#10;Synonym: Utdanningsgruppe&#10;&#10;# Eksempler&#10;&#10;* Bygg- og anleggsteknikk&#10;* Design og håndverk&#10;* Elektrofag&#10;* Helse- og oppvekstfag&#10;* Idrettsfag&#10;* Kunst, design og arkitektur&#10;* Medier og kommunikasjon&#10;* Musikk, dans og drama&#10;* Naturbruk&#10;* Restaurant- og matfag&#10;* Service og samferdsel&#10;* Studiespesialisering&#10;* Teknikk og ind. produksjon&#10;&#10;# Referanser&#10;&#10;*  Fag- og timefordeling og tilbudsstruktur for Kunnskapsløftet Udir-1-2017 : https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Innhold-i-opplaringen/udir-01-2017/&#10;* UDir Registreringshåndbok: http://regbok.udir.no/35004/3344/35042-1018606.html&#10;* Grepwiki: http://grepwiki.udir.no/index.php?title=Utdanningsprogram&#10;" stereotype="hovedklasse" />
@@ -7911,24 +7839,6 @@ Synonym: Utdanningsgruppe
 </body>
                 </ownedComment>
               <generalization xmi:type="uml:Generalization" xmi:id="EAID_GEN_8f81b9051cb247fba3" general="EAID_CLS_a62447c9dd60a973b1" />
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_3332cf7beeba5acfb5" name="grepreferanse" visibility="public">
-                <type xmi:idref="EAID_CLS_c9f60b4d15aa43dab9" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_dad3fe64f146917eba" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_dad3fe64f146917eba" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_dad3fe64f146917eba">
-                  <body>Referanse til GREP kodeverket.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_314807340ce48e7bfc" name="vigoreferanse" visibility="public">
-                <type xmi:idref="EAID_CLS_9be83411188065746c" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_4136ef9c1070af34a9" value="0" />
-                <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_4136ef9c1070af34a9" value="1" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_4136ef9c1070af34a9">
-                  <body>Referanse til VIGO kodeverket.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
               </packagedElement>
             </packagedElement>
           <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_005aa392465e3500f2" name="Vurdering">
@@ -11616,21 +11526,14 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
       <element xmi:idref="EAID_CLS_c9f60b4d15aa43dab9" idref="EAID_CLS_c9f60b4d15aa43dab9" xmi:type="uml:Class" type="Class" name="Grepreferanse" scope="public">
         <model package="EAID_PKG_606159134ff04f6d3c" ea_eleType="element" />
         <tags />
-        <properties isAbstract="false" sType="Class" scope="public" documentation="Ekstern referanse til Grepkodeverket.&#10;&#10;# Beskrivelse&#10;&#10;Grep er den nasjonale databasen for fag, læreplaner og opplæringstilbud i grunnopplæringen.&#10;&#10;Referanser til Grepkodeverket skal referere til gyldige og unike koder i REST (JSON) API fra Udir.&#10;&#10;https://www.udir.no/om-udir/data/kl06-grep&#10;&#10;Det er viktig å bruke Grepreferanser og ikke Vigoreferanser. &#10;Bruk data.udir.no , ikke psi.udir.no, eksempelvis https://data.udir.no/kl06/SAL3001 (korrekt), ikke https://psi.udir.no/kl06/SAL3001 (feil).&#10;" stereotype="datatype" />
+        <properties isAbstract="false" sType="Class" scope="public" documentation="Ekstern referanse til Grepkodeverket.&#10;&#10;# Beskrivelse&#10;&#10;Grep er den nasjonale databasen for fag, læreplaner og opplæringstilbud i grunnopplæringen.&#10;&#10;Referanser til Grepkodeverket skal referere til gyldige og unike koder i REST (JSON) API fra Udir.&#10;&#10;https://www.udir.no/om-udir/data/kl06-grep&#10;&#10;Det er viktig å bruke Grepreferanser og ikke Vigoreferanser. &#10;Bruk data.udir.no , ikke psi.udir.no, eksempelvis https://data.udir.no/kl06/SAL3001 (korrekt), ikke https://psi.udir.no/kl06/SAL3001 (feil).&#10;" stereotype="referanse" />
         <attributes />
         </element>
       <element xmi:idref="EAID_CLS_a63adb50e6db0f2347" idref="EAID_CLS_a63adb50e6db0f2347" xmi:type="uml:Class" type="Class" name="Karakterskala" scope="public">
         <model package="EAID_PKG_606159134ff04f6d3c" ea_eleType="element" />
         <tags />
         <properties isAbstract="false" sType="Class" scope="public" documentation="Gruppering av karakterer etter skala (bokstav, orden osv). &#10;&#10;# Eksempler&#10;&#10;* Bokstav – bokstavkarakterer&#10;* Tall – tallkarakterer&#10;* Binær – Bestått/Ikke-bestått&#10;* Prosent – prosentpoeng.&#10;" stereotype="hovedklasse" />
-        <attributes>
-          <attribute xmi:idref="EAID_PRP_79c05c66d0b4de5ce0" idref="EAID_PRP_79c05c66d0b4de5ce0" name="vigoreferanse">
-            <properties type="Vigoreferanse" />
-            <bounds lower="0" upper="1" />
-            <stereotype stereotype="" />
-            <tags />
-            </attribute>
-          </attributes>
+        <attributes />
         </element>
       <element xmi:idref="EAID_CLS_1d2ea71766e6f9ab9c" idref="EAID_CLS_1d2ea71766e6f9ab9c" xmi:type="uml:Class" type="Class" name="Karakterstatus" scope="public">
         <model package="EAID_PKG_606159134ff04f6d3c" ea_eleType="element" />
@@ -11702,7 +11605,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
       <element xmi:idref="EAID_CLS_9be83411188065746c" idref="EAID_CLS_9be83411188065746c" xmi:type="uml:Class" type="Class" name="Vigoreferanse" scope="public">
         <model package="EAID_PKG_606159134ff04f6d3c" ea_eleType="element" />
         <tags />
-        <properties isAbstract="false" sType="Class" scope="public" documentation="Ekstern referanse til VIGO Kodeverksbase.&#10;&#10;# Beskrivelse&#10;&#10;Kodeverket kommer fra Grep (Utdanningsdirektoratet sin læreplandatabase), Nasjonalt skoleregister og VIGO.&#10;&#10;Referanser til VIGO Kodeverksbase skal referere til gyldige og unike koder i REST (JSON) API fra Vigo IKS/FINTLabs.&#10;&#10;https://api.felleskomponent.no/utdanning/vigo/kodeverk/swagger-ui.html#/&#10;" stereotype="datatype" />
+        <properties isAbstract="false" sType="Class" scope="public" documentation="Ekstern referanse til VIGO Kodeverksbase.&#10;&#10;# Beskrivelse&#10;&#10;Kodeverket kommer fra Grep (Utdanningsdirektoratet sin læreplandatabase), Nasjonalt skoleregister og VIGO.&#10;&#10;Referanser til VIGO Kodeverksbase skal referere til gyldige og unike koder i REST (JSON) API fra Vigo IKS/FINTLabs.&#10;&#10;https://api.felleskomponent.no/utdanning/vigo/kodeverk/swagger-ui.html#/&#10;" stereotype="referanse" />
         <attributes />
         </element>
       <element xmi:idref="EAID_CLS_437a8fea0eef7941c6" idref="EAID_CLS_437a8fea0eef7941c6" xmi:type="uml:Class" type="Class" name="Vitnemålsmerknad" scope="public">
@@ -11821,20 +11724,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
         <model package="EAID_PKG_b9ee1761619271cf21" ea_eleType="element" />
         <tags />
         <properties isAbstract="false" sType="Class" scope="public" documentation="Emneområde i utdanning i henhold til læreplanverket.&#10;&#10;# Beskrivelse&#10;&#10;Utdanning gjennomføres i form av fag. Fag i videregående utdanning har en fagtype og en fagkode. Begge er definert i VIGO og Grep kodeverk.  For føring på vitnemål kan kun fagkoder fastsatt av Utdanningsdirektoratet benyttes.&#10;&#10;Fag og fagkoder kan slås opp hos Utdanningsdirektoratet på https://www.udir.no/laring-og-trivsel/lareplanverket/finn-fagkode/&#10;&#10;Fagkoder er også beskrevet i [Registreringshåndboken A04](http://regbok.udir.no/35004/3344/35042-1014304.html).&#10;&#10;# Fagtyper&#10;&#10;Fag grupperes etter  [Rundskriv Udir-01-2017](https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Innhold-i-opplaringen/udir-01-2017/) og skriv fra Utdanningsdirektoratet om [Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet, pkt 2.5](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/2-oppsett-av-vitnemal-og-kompetansebevis/#2.5-rekkefolge-for-foring-av-fag-og-fagtyper).&#10;&#10;De aktuelle fagtypene i henhold til [Registreringshåndboken A05](http://regbok.udir.no/35004/3344/35042-1014305.html) er:&#10;&#10;- Fellesfag&#10;- Felles programfag&#10;- Valgfrie programfag&#10;- Uspesifiserte programfag&#10;- Yrkesfaglig fordypning&#10;- Individuell opplæringsplan&#10;&#10;# Referanser&#10;&#10;* https://www.udir.no/laring-og-trivsel/lareplanverket/&#10;* https://www.udir.no/utdanningslopet/videregaende-opplaring/&#10;* http://regbok.udir.no/&#10;* http://grepwiki.udir.no/&#10;* https://www.vigo.no/vigokv/index.action&#10;" stereotype="hovedklasse" />
-        <attributes>
-          <attribute xmi:idref="EAID_PRP_d6e6b667c77cd42fc4" idref="EAID_PRP_d6e6b667c77cd42fc4" name="grepreferanse">
-            <properties type="Grepreferanse" />
-            <bounds lower="0" upper="1" />
-            <stereotype stereotype="" />
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_ca194fdd25edf8f528" idref="EAID_PRP_ca194fdd25edf8f528" name="vigoreferanse">
-            <properties type="Vigoreferanse" />
-            <bounds lower="0" upper="1" />
-            <stereotype stereotype="" />
-            <tags />
-            </attribute>
-          </attributes>
+        <attributes />
         </element>
       <element xmi:idref="EAID_CLS_a7dee6f3f81a7ce38f" idref="EAID_CLS_a7dee6f3f81a7ce38f" xmi:type="uml:Class" type="Class" name="Faggruppe" scope="public">
         <model package="EAID_PKG_b9ee1761619271cf21" ea_eleType="element" />
@@ -11918,39 +11808,13 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
         <model package="EAID_PKG_62662c7b1bff5787c8" ea_eleType="element" />
         <tags />
         <properties isAbstract="false" sType="Class" scope="public" documentation="Hvert år i grunnopplæringen (grunnskole og videregående skole) kalles et årstrinn.&#10;&#10;# Eksempler&#10;&#10;* Vg1&#10;* Vg2&#10;* Vg3&#10;* Vg4&#10;&#10;# Synonym&#10;&#10;* Nivå (Rogaland)&#10;* Klassetrinn&#10;* Trinn&#10;&#10;# Referanser&#10;&#10;* http://grepwiki.udir.no/index.php?title=Årstrinn&#10;* http://psi.udir.no/ontologi/kl06/aarstrinn&#10;" stereotype="hovedklasse" />
-        <attributes>
-          <attribute xmi:idref="EAID_PRP_a97304abe9222d6526" idref="EAID_PRP_a97304abe9222d6526" name="vigoreferanse">
-            <properties type="Vigoreferanse" />
-            <bounds lower="0" upper="1" />
-            <stereotype stereotype="" />
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_95cfa997e2a1837e44" idref="EAID_PRP_95cfa997e2a1837e44" name="grepreferanse">
-            <properties type="Grepreferanse" />
-            <bounds lower="0" upper="1" />
-            <stereotype stereotype="" />
-            <tags />
-            </attribute>
-          </attributes>
+        <attributes />
         </element>
       <element xmi:idref="EAID_CLS_c317e0b3ba883a1162" idref="EAID_CLS_c317e0b3ba883a1162" xmi:type="uml:Class" type="Class" name="Programområde" scope="public">
         <model package="EAID_PKG_62662c7b1bff5787c8" ea_eleType="element" />
         <tags />
         <properties isAbstract="false" sType="Class" scope="public" documentation="Programområde er et kurs i den videregående skolen. Et programområde strekker seg vanligvis over ett eller flere år og er gjerne en spesialisert retning eller område for fordypning innen utdanningsprogrammet.&#10;&#10;# Beskrivelse&#10;&#10;Innenfor utdanningsprogrammet studiespesialisering, er eksempler på programområder realfag, språk, samfunnsfag og økonomi og formgivingsfag.&#10;&#10;Innenfor utdanningsprogrammet naturbruk, finnes det for eksempel i andre klasse (Vg2) programområdene akvakultur, anleggsgartner og driftsoperatør idrettsanlegg, fiske og fangst, heste- og hovslagerfag, landbruk og gartneri, reindrift og skogbruk.&#10;&#10;Programområdekoder som slutter på  `----` angir at det er standardversjon av programområdet, og ikke en fylkeskommunal variant.&#10;&#10;# Eksempler&#10;&#10;* Anleggsmaskinførerf,PB&#10;* Asfaltfaget,PB&#10;* Banemontørfaget,PB&#10;* Betongfaget,PB&#10;* Bioenergi (D)&#10;* Byggdrifterfaget,PB&#10;* FDV-utdanning, 1 år (D)&#10;* Feierfaget,PB&#10;* Matrosfaget,PB&#10;* Modellbyggerfaget,PB&#10;* Motormannfaget,PB&#10;* Motormekanikerfaget,PB&#10;* Motorsykkelfaget,PB&#10;&#10;# Referanser&#10;&#10;* UDir Registreringshåndbok: [regbok.udir.no/35004/3344/35042-1014307.html](http://regbok.udir.no/35004/3344/35042-1014307.html)&#10;* Wikipedia: https://no.wikipedia.org/wiki/Programområde&#10;* Grepwiki: http://grepwiki.udir.no/index.php?title=Programområde&#10;" stereotype="hovedklasse" />
-        <attributes>
-          <attribute xmi:idref="EAID_PRP_2a6ecc06cc576cc409" idref="EAID_PRP_2a6ecc06cc576cc409" name="grepreferanse">
-            <properties type="Grepreferanse" />
-            <bounds lower="0" upper="1" />
-            <stereotype stereotype="" />
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_7b67f3abbf956764ff" idref="EAID_PRP_7b67f3abbf956764ff" name="vigoreferanse">
-            <properties type="Vigoreferanse" />
-            <bounds lower="0" upper="1" />
-            <stereotype stereotype="" />
-            <tags />
-            </attribute>
-          </attributes>
+        <attributes />
         </element>
       <element xmi:idref="EAID_CLS_cd6654e733e9adbc78" idref="EAID_CLS_cd6654e733e9adbc78" xmi:type="uml:Class" type="Class" name="Programområdemedlemskap" scope="public">
         <model package="EAID_PKG_62662c7b1bff5787c8" ea_eleType="element" />
@@ -11993,32 +11857,13 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
             <stereotype stereotype="" />
             <tags />
             </attribute>
-          <attribute xmi:idref="EAID_PRP_8937900734d184557e" idref="EAID_PRP_8937900734d184557e" name="vigoreferanse">
-            <properties type="Vigoreferanse" />
-            <bounds lower="0" upper="1" />
-            <stereotype stereotype="" />
-            <tags />
-            </attribute>
           </attributes>
         </element>
       <element xmi:idref="EAID_CLS_e755c56f229ed4bfb5" idref="EAID_CLS_e755c56f229ed4bfb5" xmi:type="uml:Class" type="Class" name="Utdanningsprogram" scope="public">
         <model package="EAID_PKG_62662c7b1bff5787c8" ea_eleType="element" />
         <tags />
         <properties isAbstract="false" sType="Class" scope="public" documentation="Utdanningsløpene i videregående skole som fører fram til studie- og/eller yrkeskompetanse/fagbrev&#10;&#10;Synonym: Utdanningsgruppe&#10;&#10;# Eksempler&#10;&#10;* Bygg- og anleggsteknikk&#10;* Design og håndverk&#10;* Elektrofag&#10;* Helse- og oppvekstfag&#10;* Idrettsfag&#10;* Kunst, design og arkitektur&#10;* Medier og kommunikasjon&#10;* Musikk, dans og drama&#10;* Naturbruk&#10;* Restaurant- og matfag&#10;* Service og samferdsel&#10;* Studiespesialisering&#10;* Teknikk og ind. produksjon&#10;&#10;# Referanser&#10;&#10;*  Fag- og timefordeling og tilbudsstruktur for Kunnskapsløftet Udir-1-2017 : https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Innhold-i-opplaringen/udir-01-2017/&#10;* UDir Registreringshåndbok: http://regbok.udir.no/35004/3344/35042-1018606.html&#10;* Grepwiki: http://grepwiki.udir.no/index.php?title=Utdanningsprogram&#10;" stereotype="hovedklasse" />
-        <attributes>
-          <attribute xmi:idref="EAID_PRP_3332cf7beeba5acfb5" idref="EAID_PRP_3332cf7beeba5acfb5" name="grepreferanse">
-            <properties type="Grepreferanse" />
-            <bounds lower="0" upper="1" />
-            <stereotype stereotype="" />
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_314807340ce48e7bfc" idref="EAID_PRP_314807340ce48e7bfc" name="vigoreferanse">
-            <properties type="Vigoreferanse" />
-            <bounds lower="0" upper="1" />
-            <stereotype stereotype="" />
-            <tags />
-            </attribute>
-          </attributes>
+        <attributes />
         </element>
       <element xmi:idref="EAID_PKG_005aa392465e3500f2" idref="EAID_PKG_005aa392465e3500f2" xmi:type="uml:Package" type="Package" name="Vurdering" scope="public">
         <model package2="EAID_PKG_005aa392465e3500f2" ea_eleType="package" package="EAID_PKG_93ea470388b4d82056" />
@@ -17346,6 +17191,22 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
         <properties ea_type="Generalization" direction="Source -&gt; Destination" />
         <tags />
         </connector>
+      <connector xmi:idref="EAID_ASC_79c05c66d0b4de5ce0" idref="EAID_ASC_79c05c66d0b4de5ce0">
+        <source xmi:idref="EAID_CLS_a63adb50e6db0f2347" idref="EAID_CLS_a63adb50e6db0f2347">
+          <model type="Class" name="Karakterskala" />
+          <role visibility="Public" />
+          <type multiplicity="0..1" />
+          <tags />
+          </source>
+        <target xmi:idref="EAID_CLS_9be83411188065746c" idref="EAID_CLS_9be83411188065746c">
+          <model type="Class" name="Vigoreferanse" />
+          <role name="vigoreferanse" visibility="Public" />
+          <type multiplicity="0..1" />
+          <tags />
+          </target>
+        <properties ea_type="Association" direction="Source -&gt; Destination" />
+        <tags />
+        </connector>
       <connector xmi:idref="EAID_GEN_f4ed7d0f5489d06625" idref="EAID_GEN_f4ed7d0f5489d06625">
         <source xmi:idref="EAID_CLS_1d2ea71766e6f9ab9c" idref="EAID_CLS_1d2ea71766e6f9ab9c">
           <model type="Class" name="Karakterstatus" />
@@ -17746,6 +17607,22 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
         <properties ea_type="Generalization" direction="Source -&gt; Destination" />
         <tags />
         </connector>
+      <connector xmi:idref="EAID_ASC_d6e6b667c77cd42fc4" idref="EAID_ASC_d6e6b667c77cd42fc4">
+        <source xmi:idref="EAID_CLS_e92c2079bc89c6d11a" idref="EAID_CLS_e92c2079bc89c6d11a">
+          <model type="Class" name="Fag" />
+          <role visibility="Public" />
+          <type multiplicity="0..1" />
+          <tags />
+          </source>
+        <target xmi:idref="EAID_CLS_c9f60b4d15aa43dab9" idref="EAID_CLS_c9f60b4d15aa43dab9">
+          <model type="Class" name="Grepreferanse" />
+          <role name="grepreferanse" visibility="Public" />
+          <type multiplicity="0..1" />
+          <tags />
+          </target>
+        <properties ea_type="Association" direction="Source -&gt; Destination" />
+        <tags />
+        </connector>
       <connector xmi:idref="EAID_ASC_43047b819fec4b7c87" idref="EAID_ASC_43047b819fec4b7c87">
         <source xmi:idref="EAID_CLS_e92c2079bc89c6d11a" idref="EAID_CLS_e92c2079bc89c6d11a">
           <model type="Class" name="Fag" />
@@ -17760,6 +17637,22 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
           <tags />
           </target>
         <properties ea_type="Association" direction="Bi-Directional" />
+        <tags />
+        </connector>
+      <connector xmi:idref="EAID_ASC_ca194fdd25edf8f528" idref="EAID_ASC_ca194fdd25edf8f528">
+        <source xmi:idref="EAID_CLS_e92c2079bc89c6d11a" idref="EAID_CLS_e92c2079bc89c6d11a">
+          <model type="Class" name="Fag" />
+          <role visibility="Public" />
+          <type multiplicity="0..1" />
+          <tags />
+          </source>
+        <target xmi:idref="EAID_CLS_9be83411188065746c" idref="EAID_CLS_9be83411188065746c">
+          <model type="Class" name="Vigoreferanse" />
+          <role name="vigoreferanse" visibility="Public" />
+          <type multiplicity="0..1" />
+          <tags />
+          </target>
+        <properties ea_type="Association" direction="Source -&gt; Destination" />
         <tags />
         </connector>
       <connector xmi:idref="EAID_GEN_3ec1491aee624a6831" idref="EAID_GEN_3ec1491aee624a6831">
@@ -18082,6 +17975,38 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
         <properties ea_type="Generalization" direction="Source -&gt; Destination" />
         <tags />
         </connector>
+      <connector xmi:idref="EAID_ASC_a97304abe9222d6526" idref="EAID_ASC_a97304abe9222d6526">
+        <source xmi:idref="EAID_CLS_b2a41a5ceca288c6f4" idref="EAID_CLS_b2a41a5ceca288c6f4">
+          <model type="Class" name="Årstrinn" />
+          <role visibility="Public" />
+          <type multiplicity="0..1" />
+          <tags />
+          </source>
+        <target xmi:idref="EAID_CLS_9be83411188065746c" idref="EAID_CLS_9be83411188065746c">
+          <model type="Class" name="Vigoreferanse" />
+          <role name="vigoreferanse" visibility="Public" />
+          <type multiplicity="0..1" />
+          <tags />
+          </target>
+        <properties ea_type="Association" direction="Source -&gt; Destination" />
+        <tags />
+        </connector>
+      <connector xmi:idref="EAID_ASC_95cfa997e2a1837e44" idref="EAID_ASC_95cfa997e2a1837e44">
+        <source xmi:idref="EAID_CLS_b2a41a5ceca288c6f4" idref="EAID_CLS_b2a41a5ceca288c6f4">
+          <model type="Class" name="Årstrinn" />
+          <role visibility="Public" />
+          <type multiplicity="0..1" />
+          <tags />
+          </source>
+        <target xmi:idref="EAID_CLS_c9f60b4d15aa43dab9" idref="EAID_CLS_c9f60b4d15aa43dab9">
+          <model type="Class" name="Grepreferanse" />
+          <role name="grepreferanse" visibility="Public" />
+          <type multiplicity="0..1" />
+          <tags />
+          </target>
+        <properties ea_type="Association" direction="Source -&gt; Destination" />
+        <tags />
+        </connector>
       <connector xmi:idref="EAID_GEN_ff1627138680cbabcf" idref="EAID_GEN_ff1627138680cbabcf">
         <source xmi:idref="EAID_CLS_c317e0b3ba883a1162" idref="EAID_CLS_c317e0b3ba883a1162">
           <model type="Class" name="Programområde" />
@@ -18114,6 +18039,22 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
         <properties ea_type="Association" direction="Bi-Directional" />
         <tags />
         </connector>
+      <connector xmi:idref="EAID_ASC_2a6ecc06cc576cc409" idref="EAID_ASC_2a6ecc06cc576cc409">
+        <source xmi:idref="EAID_CLS_c317e0b3ba883a1162" idref="EAID_CLS_c317e0b3ba883a1162">
+          <model type="Class" name="Programområde" />
+          <role visibility="Public" />
+          <type multiplicity="0..1" />
+          <tags />
+          </source>
+        <target xmi:idref="EAID_CLS_c9f60b4d15aa43dab9" idref="EAID_CLS_c9f60b4d15aa43dab9">
+          <model type="Class" name="Grepreferanse" />
+          <role name="grepreferanse" visibility="Public" />
+          <type multiplicity="0..1" />
+          <tags />
+          </target>
+        <properties ea_type="Association" direction="Source -&gt; Destination" />
+        <tags />
+        </connector>
       <connector xmi:idref="EAID_ASC_c3b488e76b5b29dbe9" idref="EAID_ASC_c3b488e76b5b29dbe9">
         <source xmi:idref="EAID_CLS_c317e0b3ba883a1162" idref="EAID_CLS_c317e0b3ba883a1162">
           <model type="Class" name="Programområde" />
@@ -18144,6 +18085,22 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
           <tags />
           </target>
         <properties ea_type="Association" direction="Bi-Directional" />
+        <tags />
+        </connector>
+      <connector xmi:idref="EAID_ASC_7b67f3abbf956764ff" idref="EAID_ASC_7b67f3abbf956764ff">
+        <source xmi:idref="EAID_CLS_c317e0b3ba883a1162" idref="EAID_CLS_c317e0b3ba883a1162">
+          <model type="Class" name="Programområde" />
+          <role visibility="Public" />
+          <type multiplicity="0..1" />
+          <tags />
+          </source>
+        <target xmi:idref="EAID_CLS_9be83411188065746c" idref="EAID_CLS_9be83411188065746c">
+          <model type="Class" name="Vigoreferanse" />
+          <role name="vigoreferanse" visibility="Public" />
+          <type multiplicity="0..1" />
+          <tags />
+          </target>
+        <properties ea_type="Association" direction="Source -&gt; Destination" />
         <tags />
         </connector>
       <connector xmi:idref="EAID_GEN_7fceb9c90875ee88e7" idref="EAID_GEN_7fceb9c90875ee88e7">
@@ -18242,6 +18199,22 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
         <properties ea_type="Association" direction="Bi-Directional" />
         <tags />
         </connector>
+      <connector xmi:idref="EAID_ASC_8937900734d184557e" idref="EAID_ASC_8937900734d184557e">
+        <source xmi:idref="EAID_CLS_64e904f2ebf8b9f538" idref="EAID_CLS_64e904f2ebf8b9f538">
+          <model type="Class" name="Skole" />
+          <role visibility="Public" />
+          <type multiplicity="0..1" />
+          <tags />
+          </source>
+        <target xmi:idref="EAID_CLS_9be83411188065746c" idref="EAID_CLS_9be83411188065746c">
+          <model type="Class" name="Vigoreferanse" />
+          <role name="vigoreferanse" visibility="Public" />
+          <type multiplicity="0..1" />
+          <tags />
+          </target>
+        <properties ea_type="Association" direction="Source -&gt; Destination" />
+        <tags />
+        </connector>
       <connector xmi:idref="EAID_GEN_511676e691e2ffeaac" idref="EAID_GEN_511676e691e2ffeaac">
         <source xmi:idref="EAID_CLS_e755c56f229ed4bfb5" idref="EAID_CLS_e755c56f229ed4bfb5">
           <model type="Class" name="Utdanningsprogram" />
@@ -18272,6 +18245,38 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
           <tags />
           </target>
         <properties ea_type="Association" direction="Bi-Directional" />
+        <tags />
+        </connector>
+      <connector xmi:idref="EAID_ASC_3332cf7beeba5acfb5" idref="EAID_ASC_3332cf7beeba5acfb5">
+        <source xmi:idref="EAID_CLS_e755c56f229ed4bfb5" idref="EAID_CLS_e755c56f229ed4bfb5">
+          <model type="Class" name="Utdanningsprogram" />
+          <role visibility="Public" />
+          <type multiplicity="0..1" />
+          <tags />
+          </source>
+        <target xmi:idref="EAID_CLS_c9f60b4d15aa43dab9" idref="EAID_CLS_c9f60b4d15aa43dab9">
+          <model type="Class" name="Grepreferanse" />
+          <role name="grepreferanse" visibility="Public" />
+          <type multiplicity="0..1" />
+          <tags />
+          </target>
+        <properties ea_type="Association" direction="Source -&gt; Destination" />
+        <tags />
+        </connector>
+      <connector xmi:idref="EAID_ASC_314807340ce48e7bfc" idref="EAID_ASC_314807340ce48e7bfc">
+        <source xmi:idref="EAID_CLS_e755c56f229ed4bfb5" idref="EAID_CLS_e755c56f229ed4bfb5">
+          <model type="Class" name="Utdanningsprogram" />
+          <role visibility="Public" />
+          <type multiplicity="0..1" />
+          <tags />
+          </source>
+        <target xmi:idref="EAID_CLS_9be83411188065746c" idref="EAID_CLS_9be83411188065746c">
+          <model type="Class" name="Vigoreferanse" />
+          <role name="vigoreferanse" visibility="Public" />
+          <type multiplicity="0..1" />
+          <tags />
+          </target>
+        <properties ea_type="Association" direction="Source -&gt; Destination" />
         <tags />
         </connector>
       <connector xmi:idref="EAID_ASC_24d710f9aa1a624b3f" idref="EAID_ASC_24d710f9aa1a624b3f">

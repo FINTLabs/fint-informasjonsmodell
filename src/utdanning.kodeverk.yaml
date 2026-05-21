@@ -146,6 +146,8 @@ classes:
       
       Det er viktig å bruke Grepreferanser og ikke Vigoreferanser. 
       Bruk data.udir.no , ikke psi.udir.no, eksempelvis https://data.udir.no/kl06/SAL3001 (korrekt), ikke https://psi.udir.no/kl06/SAL3001 (feil).
+    annotations:
+      stereotype: referanse
 
   Karakterskala:
     description: |
@@ -299,6 +301,8 @@ classes:
       Referanser til VIGO Kodeverksbase skal referere til gyldige og unike koder i REST (JSON) API fra Vigo IKS/FINTLabs.
       
       https://api.felleskomponent.no/utdanning/vigo/kodeverk/swagger-ui.html#/
+    annotations:
+      stereotype: referanse
 
   Vitnemålsmerknad:
     description: |
