@@ -584,6 +584,7 @@ def build_xmi(classes: List[SchemaClass], name_index: Dict[str, List[SchemaClass
                             "general": super_id,
                         })
                         gen_conn = ET.SubElement(ext_connectors, "connector", {
+                            f"{{{XMI_NS}}}type": "uml:Generalization",
                             f"{{{XMI_NS}}}idref": make_id("GEN", "/".join(class_key), "ext"),
                             "idref": make_id("GEN", "/".join(class_key), "ext"),
                         })
@@ -670,6 +671,7 @@ def build_xmi(classes: List[SchemaClass], name_index: Dict[str, List[SchemaClass
                         source_end_doc = source_doc if (slot.inverse and not slot.primary_relation) else inverse_doc
 
                         assoc_conn = ET.SubElement(ext_connectors, "connector", {
+                            f"{{{XMI_NS}}}type": "uml:Association",
                             f"{{{XMI_NS}}}idref": assoc_id,
                             "idref": assoc_id,
                             "start": source_id,
