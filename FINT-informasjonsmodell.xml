@@ -7705,15 +7705,6 @@ Gruppemedlemskap som knytter sammen elevforhold og undervisningsgrupper.
 </body>
                   </ownedComment>
                 </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_370f0676a7d61eb96b" name="klasse" visibility="public">
-                <type xmi:idref="EAID_CLS_64d08b021afec81525" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_6cc7930d1f242cd70b" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_6cc7930d1f242cd70b" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_6cc7930d1f242cd70b">
-                  <body>Klassene som hører hjemme på dette trinnet
-</body>
-                  </ownedComment>
-                </ownedAttribute>
               </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_c317e0b3ba883a1162" name="Programområde">
               <properties documentation="Programområde er et kurs i den videregående skolen. Et programområde strekker seg vanligvis over ett eller flere år og er gjerne en spesialisert retning eller område for fordypning innen utdanningsprogrammet.&#10;&#10;# Beskrivelse&#10;&#10;Innenfor utdanningsprogrammet studiespesialisering, er eksempler på programområder realfag, språk, samfunnsfag og økonomi og formgivingsfag.&#10;&#10;Innenfor utdanningsprogrammet naturbruk, finnes det for eksempel i andre klasse (Vg2) programområdene akvakultur, anleggsgartner og driftsoperatør idrettsanlegg, fiske og fangst, heste- og hovslagerfag, landbruk og gartneri, reindrift og skogbruk.&#10;&#10;Programområdekoder som slutter på  `----` angir at det er standardversjon av programområdet, og ikke en fylkeskommunal variant.&#10;&#10;# Eksempler&#10;&#10;* Anleggsmaskinførerf,PB&#10;* Asfaltfaget,PB&#10;* Banemontørfaget,PB&#10;* Betongfaget,PB&#10;* Bioenergi (D)&#10;* Byggdrifterfaget,PB&#10;* FDV-utdanning, 1 år (D)&#10;* Feierfaget,PB&#10;* Matrosfaget,PB&#10;* Modellbyggerfaget,PB&#10;* Motormannfaget,PB&#10;* Motormekanikerfaget,PB&#10;* Motorsykkelfaget,PB&#10;&#10;# Referanser&#10;&#10;* UDir Registreringshåndbok: [regbok.udir.no/35004/3344/35042-1014307.html](http://regbok.udir.no/35004/3344/35042-1014307.html)&#10;* Wikipedia: https://no.wikipedia.org/wiki/Programområde&#10;* Grepwiki: http://grepwiki.udir.no/index.php?title=Programområde&#10;" stereotype="hovedklasse" />
@@ -7885,15 +7876,6 @@ Systemspesifikk id, som normalt ikke er synlig i fagsystemet.
                 <upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_UPR_c5dbc316b6fea8c0b8" value="1" />
                 <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_c5dbc316b6fea8c0b8">
                   <body>Ekstern referanse til skoleinformasjon i Vigo kodeverksdatabase.
-</body>
-                  </ownedComment>
-                </ownedAttribute>
-              <ownedAttribute xmi:type="uml:Property" xmi:id="EAID_PRP_feed71e1ac69ac9c40" name="klasse" visibility="public">
-                <type xmi:idref="EAID_CLS_64d08b021afec81525" />
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LWR_ee7124e52ba27d5562" value="0" />
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_UPR_ee7124e52ba27d5562" value="*" />
-                <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_ee7124e52ba27d5562">
-                  <body>Alle klasser ved en skole.
 </body>
                   </ownedComment>
                 </ownedAttribute>
@@ -11949,12 +11931,6 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
             <stereotype stereotype="" />
             <tags />
             </attribute>
-          <attribute xmi:idref="EAID_PRP_370f0676a7d61eb96b" idref="EAID_PRP_370f0676a7d61eb96b" name="klasse">
-            <properties type="Klasse" />
-            <bounds lower="0" upper="*" />
-            <stereotype stereotype="" />
-            <tags />
-            </attribute>
           </attributes>
         </element>
       <element xmi:idref="EAID_CLS_c317e0b3ba883a1162" idref="EAID_CLS_c317e0b3ba883a1162" xmi:type="uml:Class" type="Class" name="Programområde" scope="public">
@@ -12020,12 +11996,6 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
           <attribute xmi:idref="EAID_PRP_8937900734d184557e" idref="EAID_PRP_8937900734d184557e" name="vigoreferanse">
             <properties type="Vigoreferanse" />
             <bounds lower="0" upper="1" />
-            <stereotype stereotype="" />
-            <tags />
-            </attribute>
-          <attribute xmi:idref="EAID_PRP_feed71e1ac69ac9c40" idref="EAID_PRP_feed71e1ac69ac9c40" name="klasse">
-            <properties type="Klasse" />
-            <bounds lower="0" upper="*" />
             <stereotype stereotype="" />
             <tags />
             </attribute>
@@ -15207,7 +15177,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
           <type multiplicity="0..1" />
           <tags />
           </source>
-        <target xmi:idref="EAID_CLS_5f1fef9b7872cf088d" idref="EAID_CLS_5f1fef9b7872cf088d">
+        <target xmi:idref="EAID_CLS_8753acc43028e1c1f0" idref="EAID_CLS_8753acc43028e1c1f0">
           <model type="Class" name="Rolle" />
           <role name="rolle" visibility="Public" />
           <type multiplicity="1" />
@@ -18887,7 +18857,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
           <type multiplicity="0..1" />
           <tags />
           </source>
-        <target xmi:idref="EAID_CLS_4fbf27adb2c39ef587" idref="EAID_CLS_4fbf27adb2c39ef587">
+        <target xmi:idref="EAID_CLS_3076a148b4be460dce" idref="EAID_CLS_3076a148b4be460dce">
           <model type="Class" name="Fraværstype" />
           <role name="fraværstype" visibility="Public" />
           <type multiplicity="1" />
