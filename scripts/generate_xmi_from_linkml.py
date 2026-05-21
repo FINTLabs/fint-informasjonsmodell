@@ -657,9 +657,23 @@ def build_xmi(classes: List[SchemaClass], name_index: Dict[str, List[SchemaClass
                                 continue
                             emitted_bidirectional_associations.add(canonical_key)
 
+                        assoc_id = make_id("ASC", "/".join(class_key), slot.name)
+                        ET.SubElement(pkg_element, "packagedElement", {
+                            f"{{{XMI_NS}}}type": "uml:Association",
+                            f"{{{XMI_NS}}}id": assoc_id,
+                            "visibility": "public",
+                        })
+
+                        source_doc = sanitize_attribute_text((slot.description or "").strip()) if slot.description else None
+                        inverse_doc = sanitize_attribute_text((inverse_slot.description or "").strip()) if (inverse_slot and inverse_slot.description) else None
+                        target_doc = inverse_doc if (slot.inverse and not slot.primary_relation) else source_doc
+                        source_end_doc = source_doc if (slot.inverse and not slot.primary_relation) else inverse_doc
+
                         assoc_conn = ET.SubElement(ext_connectors, "connector", {
-                            f"{{{XMI_NS}}}idref": make_id("ASC", "/".join(class_key), slot.name),
-                            "idref": make_id("ASC", "/".join(class_key), slot.name),
+                            f"{{{XMI_NS}}}idref": assoc_id,
+                            "idref": assoc_id,
+                            "start": source_id,
+                            "end": target_id,
                         })
                         assoc_source = ET.SubElement(assoc_conn, "source", {
                             f"{{{XMI_NS}}}idref": source_id,
@@ -671,6 +685,8 @@ def build_xmi(classes: List[SchemaClass], name_index: Dict[str, List[SchemaClass
                             source_role_attrs["name"] = source_role_name
                         ET.SubElement(assoc_source, "role", source_role_attrs)
                         ET.SubElement(assoc_source, "type", {"multiplicity": source_multiplicity})
+                        if source_end_doc:
+                            ET.SubElement(assoc_source, "documentation", {"value": source_end_doc})
                         ET.SubElement(assoc_source, "tags")
 
                         assoc_target = ET.SubElement(assoc_conn, "target", {
@@ -683,6 +699,8 @@ def build_xmi(classes: List[SchemaClass], name_index: Dict[str, List[SchemaClass
                             "visibility": "Public",
                         })
                         ET.SubElement(assoc_target, "type", {"multiplicity": target_multiplicity})
+                        if target_doc:
+                            ET.SubElement(assoc_target, "documentation", {"value": target_doc})
                         ET.SubElement(assoc_target, "tags")
 
                         ET.SubElement(assoc_conn, "properties", {
@@ -738,6 +756,10 @@ def build_xmi(classes: List[SchemaClass], name_index: Dict[str, List[SchemaClass
                     "upper": "*" if slot.multivalued else "1",
                 })
                 ET.SubElement(attr_ext, "stereotype", {"stereotype": "writable" if slot.writeable else ""})
+                if slot.description:
+                    ET.SubElement(attr_ext, "documentation", {
+                        "value": sanitize_attribute_text(slot.description),
+                    })
                 attr_tags = ET.SubElement(attr_ext, "tags")
                 append_deprecated_tag(attr_tags, slot.deprecated)
 
