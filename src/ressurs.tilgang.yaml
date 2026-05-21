@@ -22,6 +22,9 @@ classes:
         required: true
       rettighet:
         range: Rettighet
+        inverse: identitet
+        annotations:
+          primaryRelation: true
         description: |
           Rettigheter knyttet til identiteten.
         multivalued: true
@@ -42,6 +45,7 @@ classes:
         required: true
       identitet:
         range: Identitet
+        inverse: rettighet
         description: |
           Identiteter knyttet til rettigheten.
         multivalued: true

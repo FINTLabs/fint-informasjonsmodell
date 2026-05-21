@@ -20,12 +20,12 @@ classes:
       Anmerkninger for en elev for et elevforhold.
     attributes:
       atferd:
-        range: string
+        range: integer
         description: |
           Antall anmerkninger for atferd for eleven
         required: true
       orden:
-        range: string
+        range: integer
         description: |
           Antall anmerkninger for orden for eleven
         required: true
@@ -57,7 +57,9 @@ classes:
     is_a: Gruppe
     attributes:
       eksamensdato:
-        range: string
+        range: datetime
+        annotations:
+          writeable: true
         description: |
           Dato og klokkeslett for eksamen
           
@@ -76,6 +78,9 @@ classes:
           * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
       skole:
         range: Skole
+        inverse: eksamensgruppe
+        annotations:
+          primaryRelation: true
         description: |
           Skolen eksamensgruppen tilhører.
         required: true
@@ -94,25 +99,36 @@ classes:
           Skoleår for eksamensgruppe
       undervisningsforhold:
         range: Undervisningsforhold
+        inverse: eksamensgruppe
+        annotations:
+          primaryRelation: true
         description: |
           Alle lærerne tilknyttet eksamensgruppen.
         multivalued: true
       eksamen:
         range: Eksamen
+        inverse: eksamensgruppe
+        annotations:
+          primaryRelation: true
         description: |
           Eksamenen som skal avholdes.
       fag:
         range: Fag
+        inverse: eksamensgruppe
+        annotations:
+          primaryRelation: true
         description: |
           Det faget som eksamen har vært i
         required: true
       gruppemedlemskap:
         range: Eksamensgruppemedlemskap
+        inverse: eksamensgruppe
         description: |
           Gruppemedlemskapene til en eksamensgruppe.
         multivalued: true
       sensor:
         range: Sensor
+        inverse: eksamensgruppe
         description: |
           Sensorer for eksamensgruppe.
         multivalued: true
@@ -127,7 +143,7 @@ classes:
     is_a: Gruppemedlemskap
     attributes:
       delegert:
-        range: string
+        range: boolean
         description: |
           Viser om det er en delegert kandidat.
       kandidatnummer:
@@ -136,6 +152,9 @@ classes:
           PAS kandidatnummer.
       eksamensgruppe:
         range: Eksamensgruppe
+        inverse: gruppemedlemskap
+        annotations:
+          primaryRelation: true
         description: |
           Eksamensgruppen et gruppemedlemskap tilhører.
         required: true
@@ -145,6 +164,9 @@ classes:
           Skole hvor kandidaten foretrekker å ha eksamen.
       elevforhold:
         range: Elevforhold
+        inverse: eksamensgruppemedlemskap
+        annotations:
+          primaryRelation: true
         description: |
           Elevforhold et eksamensgruppemedlemskap tilhører.
         required: true
@@ -187,6 +209,9 @@ classes:
         required: true
       elevvurdering:
         range: Elevvurdering
+        inverse: eksamensvurdering
+        annotations:
+          primaryRelation: true
         description: |
           Vurderingsinformasjon for en elev.
         required: true
@@ -227,11 +252,15 @@ classes:
         required: true
       fraværsregistrering:
         range: Fraværsregistrering
+        inverse: elevfravær
+        annotations:
+          primaryRelation: true
         description: |
           Liste av fraværsregistreringer.
         multivalued: true
       elevforhold:
         range: Elevforhold
+        inverse: fraværsregistreringer
         description: |
           Elevforholdet fraværet er registrert på.
         required: true
@@ -247,11 +276,17 @@ classes:
         required: true
       sluttfagvurdering:
         range: Sluttfagvurdering
+        inverse: elevvurdering
+        annotations:
+          primaryRelation: true
         description: |
           Sluttvurdering i fag for eleven.
         multivalued: true
       underveisordensvurdering:
         range: Underveisordensvurdering
+        inverse: elevvurdering
+        annotations:
+          primaryRelation: true
         description: |
           Underveisvurdering av orden og atferd for eleven.
         multivalued: true
@@ -262,31 +297,47 @@ classes:
         multivalued: true
       underveisfagvurdering:
         range: Underveisfagvurdering
+        inverse: elevvurdering
+        annotations:
+          primaryRelation: true
         description: |
           Underveisvurdering i fag for eleven.
         multivalued: true
       halvårsordensvurdering:
         range: Halvårsordensvurdering
+        inverse: elevvurdering
+        annotations:
+          primaryRelation: true
         description: |
           Halvårsvurdering av orden og atferd for eleven.
         multivalued: true
       elevforhold:
         range: Elevforhold
+        inverse: elevvurdering
+        annotations:
+          primaryRelation: true
         description: |
           Elevforholdet til eleven vurderingsinformasjonen gjelder.
         required: true
       halvårsfagvurdering:
         range: Halvårsfagvurdering
+        inverse: elevvurdering
+        annotations:
+          primaryRelation: true
         description: |
           Halvårsvurdering i fag for eleven.
         multivalued: true
       sluttordensvurdering:
         range: Sluttordensvurdering
+        inverse: elevvurdering
+        annotations:
+          primaryRelation: true
         description: |
           Sluttvurdering av orden og atferd for eleven.
         multivalued: true
       eksamensvurdering:
         range: Eksamensvurdering
+        inverse: elevvurdering
         description: |
           Eksamensvurdering i fag for eleven.
         multivalued: true
@@ -317,7 +368,7 @@ classes:
           Systemidentifikator i fagsystem
         required: true
       vurderingsdato:
-        range: string
+        range: datetime
         description: |
           Datoen vurderingen er foretatt.
           
@@ -390,6 +441,9 @@ classes:
         required: true
       elevforhold:
         range: Elevforhold
+        inverse: elevfravær
+        annotations:
+          primaryRelation: true
         description: |
           Elevforholdet fraværsoversikten gjelder for.
         required: true
@@ -404,12 +458,12 @@ classes:
       Fraværsdata for en periode.
     attributes:
       fraværstimer:
-        range: string
+        range: integer
         description: |
           Antall timer udokumentert fravær. Oppgis i hundredeler.
         required: true
       prosent:
-        range: string
+        range: integer
         description: |
           Udokumentert fravær i prosent.
           
@@ -423,7 +477,7 @@ classes:
           * 58,73 prosent vil ha verdien 5873
         required: true
       undervisningstimer:
-        range: string
+        range: integer
         description: |
           Antall timer planlagt undervisning. Oppgis i hundredeler.
         required: true
@@ -433,7 +487,7 @@ classes:
       Manglende tilstedeværelse i opplæringen.
     attributes:
       føresPåVitnemål:
-        range: string
+        range: boolean
         description: |
           Angir om fraværet skal føres på vitnemål / kompetansebevis.
           
@@ -475,6 +529,7 @@ classes:
         required: true
       elevfravær:
         range: Elevfravær
+        inverse: fraværsregistrering
         description: |
           Samling av fraværsregistreringer for en elev.
         required: true
@@ -498,6 +553,7 @@ classes:
     attributes:
       elevvurdering:
         range: Elevvurdering
+        inverse: halvårsfagvurdering
         description: |
           Vurderingsinformasjon for en elev.
         required: true
@@ -519,6 +575,7 @@ classes:
     attributes:
       elevvurdering:
         range: Elevvurdering
+        inverse: halvårsordensvurdering
         description: |
           Vurderingsinformasjon for en elev.
         required: true
@@ -528,7 +585,7 @@ classes:
       Endringer på fastsatt karakter.
     attributes:
       endretDato:
-        range: string
+        range: datetime
         description: |
           Dato for endring av karakter.
           
@@ -599,6 +656,9 @@ classes:
     attributes:
       skala:
         range: Karakterskala
+        inverse: verdi
+        annotations:
+          primaryRelation: true
         description: |
           Skala som karakter er definert i
           
@@ -633,7 +693,7 @@ classes:
           Systemidentifikator i fagsystem
         required: true
       vurderingsdato:
-        range: string
+        range: datetime
         description: |
           Datoen vurderingen er foretatt.
           
@@ -673,12 +733,12 @@ classes:
       Skoleressurs som sensurerer eksamensbesvarelser.
     attributes:
       aktiv:
-        range: string
+        range: boolean
         description: |
           Viser om dette er en aktiv sensor for eksamensgruppen.
         required: true
       sensornummer:
-        range: string
+        range: integer
         description: |
           Viser om det er sensor 1 eller sensor 2
       systemId:
@@ -688,11 +748,17 @@ classes:
         required: true
       skoleressurs:
         range: Skoleressurs
+        inverse: sensor
+        annotations:
+          primaryRelation: true
         description: |
           Skoleressurs som er sensor.
         required: true
       eksamensgruppe:
         range: Eksamensgruppe
+        inverse: sensor
+        annotations:
+          primaryRelation: true
         description: |
           Eksamensgruppe sensoren tilhører.
         required: true
@@ -726,6 +792,7 @@ classes:
         multivalued: true
       elevvurdering:
         range: Elevvurdering
+        inverse: sluttfagvurdering
         description: |
           Vurderingsinformasjon for en elev.
         required: true
@@ -747,6 +814,7 @@ classes:
     attributes:
       elevvurdering:
         range: Elevvurdering
+        inverse: sluttordensvurdering
         description: |
           Vurderingsinformasjon for en elev.
         required: true
@@ -770,6 +838,7 @@ classes:
     attributes:
       elevvurdering:
         range: Elevvurdering
+        inverse: underveisfagvurdering
         description: |
           Vurderingsinformasjon for en elev.
         required: true
@@ -791,6 +860,7 @@ classes:
     attributes:
       elevvurdering:
         range: Elevvurdering
+        inverse: underveisordensvurdering
         description: |
           Vurderingsinformasjon for en elev.
         required: true

@@ -20,11 +20,15 @@ classes:
     attributes:
       organisasjonsnavn:
         range: string
+        annotations:
+          writeable: true
         description: |
           Organisasjonsnavn til foretak som har søkt om drosjeløyve.
         required: true
       organisasjonsnummer:
         range: string
+        annotations:
+          writeable: true
         description: |
           Organisasjonsnummer til foretak som har søkt om drosjeløyve.
         required: true

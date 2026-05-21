@@ -22,7 +22,9 @@ classes:
       Personopplysninger skal bare brukes for spesifikke, uttrykkelige, angitte og legitime formål. Virksomheten har plikt til å gi den enkelte informasjon om formålet med behandling av personopplysning samt behandlingsgrunnlaget.
     attributes:
       aktiv:
-        range: string
+        range: boolean
+        annotations:
+          writeable: true
         description: |
           Status på behandling.
         required: true
@@ -36,7 +38,9 @@ classes:
           Personopplysninger skal bare brukes for spesifikke, uttrykkelige, angitte og legitime formål. Virksomheten har plikt til å gi den enkelte informasjon om formålet med behandling av personopplysninger på en forståelig måte.
         required: true
       slettet:
-        range: string
+        range: datetime
+        annotations:
+          writeable: true
         description: |
           Tidspunkt behandlingen er slettet.
           
@@ -70,11 +74,13 @@ classes:
         required: true
       samtykke:
         range: Samtykke
+        inverse: behandling
         description: |
           Samtykker tilknyttet en behandling.
         multivalued: true
       tjeneste:
         range: Tjeneste
+        inverse: behandling
         description: |
           Tjeneste som behandling tilhører
         required: true
@@ -89,11 +95,13 @@ classes:
     attributes:
       gyldighetsperiode:
         range: Periode
+        annotations:
+          writeable: true
         description: |
           Tidsrom som samtykke er gyldig.
         required: true
       opprettet:
-        range: string
+        range: datetime
         description: |
           Dato når samtykke ble opprettet.
           
@@ -127,6 +135,9 @@ classes:
           Organisasjon tilknyttet samtykke
       behandling:
         range: Behandling
+        inverse: samtykke
+        annotations:
+          primaryRelation: true
         description: |
           Behandling som omfattes av samtykke.
         required: true
@@ -141,11 +152,15 @@ classes:
     attributes:
       navn:
         range: string
+        annotations:
+          writeable: true
         description: |
           Tittel på tjeneste.
         required: true
       slettet:
-        range: string
+        range: datetime
+        annotations:
+          writeable: true
         description: |
           Tidspunkt tjenesten er slettet.
           
@@ -169,6 +184,9 @@ classes:
         required: true
       behandling:
         range: Behandling
+        inverse: tjeneste
+        annotations:
+          primaryRelation: true
         description: |
           Alle behandlinger til en tjeneste
         multivalued: true

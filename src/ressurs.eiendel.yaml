@@ -42,6 +42,9 @@ classes:
         multivalued: true
       ressurs:
         range: Applikasjonsressurs
+        inverse: applikasjon
+        annotations:
+          primaryRelation: true
         description: |
           Ulike ressurser (lisenser) som er knyttet til denne applikasjonen. Dette kan være flere da ulike organisasjonesenheter kan ha kjøpt inn lisenser separat. Evt at samme applikasjon har flere lisensmodeller.
         multivalued: true
@@ -62,7 +65,7 @@ classes:
         description: |
           Beskrivelse av ressursen.
       enhetskostnad:
-        range: string
+        range: integer
         description: |
           Kostnad per ressurs.
           
@@ -73,12 +76,12 @@ classes:
           Start- og sluttdato for gyldighetsperioden til ressursen.
         required: true
       kreverGodkjenning:
-        range: string
+        range: boolean
         description: |
           Settes true dersom tildeling av ressursen forutsetter godkjenning av leder/tjenesterforvalter eller tjenesteeier.
           Årsaker kan være høy enhetskostnad som leder må godkjenne.
       lisensantall:
-        range: string
+        range: integer
         description: |
           Totalt antall lisenser
           
@@ -109,11 +112,15 @@ classes:
           Hvilken lisensmodell applikasjonsressursen har.
       ressurstilgjengelighet:
         range: Applikasjonsressurstilgjengelighet
+        inverse: ressurs
+        annotations:
+          primaryRelation: true
         description: |
           Angir hvilken orgenhet og hvor mange ressurser som skal tilordnes denne orgenheten.
         multivalued: true
       applikasjon:
         range: Applikasjon
+        inverse: ressurs
         description: |
           Ulike ressurs (lisenser) som er knyttet til denne applikasjonen. Dette kan være flere da ulike organisasjonesenheter kan ha kjøpt inn lisenser separat. Evt at samme applikasjon har flere lisensmodeller.
         required: true
@@ -133,7 +140,7 @@ classes:
           Gyldighetsperioden til applikasjonsressurstilgjengeligheten.
         required: true
       lisensantall:
-        range: string
+        range: integer
         description: |
           Totalt antall lisenser tilgjengelig for brukere tilhørende en konsument.
       systemId:
@@ -148,6 +155,7 @@ classes:
         required: true
       ressurs:
         range: Applikasjonsressurs
+        inverse: ressurstilgjengelighet
         description: |
           Ressursen organisasjonselementet har tilgang til.
         required: true

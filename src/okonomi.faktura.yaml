@@ -24,16 +24,16 @@ classes:
         description: |
           Adresse til mottaker.
       beløp:
-        range: string
+        range: integer
         description: |
           Beløp mottaker skal betale, i øre.
         required: true
       betalt:
-        range: string
+        range: boolean
         description: |
           Status på betaling.
       dato:
-        range: string
+        range: date
         description: |
           Dato for utstedelse av faktura.
           
@@ -59,11 +59,13 @@ classes:
           Identifikator opprettet i fakturaprogram- eller blankett
         required: true
       fakturert:
-        range: string
+        range: boolean
         description: |
           Status på utsendelse
       forfallsdato:
-        range: string
+        range: date
+        annotations:
+          writeable: true
         description: |
           Frist for betaling
           
@@ -84,7 +86,9 @@ classes:
           * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
         required: true
       kreditert:
-        range: string
+        range: boolean
+        annotations:
+          writeable: true
         description: |
           Status på kreditering
       mottaker:
@@ -93,11 +97,14 @@ classes:
           Navn på mottaker
         required: true
       restbeløp:
-        range: string
+        range: integer
+        annotations:
+          writeable: true
         description: |
           Gjenstående beløp å betale, i øre.
       fakturagrunnlag:
         range: Fakturagrunnlag
+        inverse: faktura
         description: |
           Grunnlag for fakturering.
         required: true
@@ -113,11 +120,15 @@ classes:
       Beskriver hvem som skal utstede faktura og dermed motta betaling, hvem som skal faktureres, og hvilke varer det skal faktureres for.
     attributes:
       avgiftsbeløp:
-        range: string
+        range: integer
+        annotations:
+          writeable: true
         description: |
           Del av totalbeløp som er avgifter, i øre.
       fakturalinjer:
         range: Fakturalinje
+        annotations:
+          writeable: true
         description: |
           Linjer av varer eller tjenester som skal faktureres.
           
@@ -127,7 +138,9 @@ classes:
         multivalued: true
         required: true
       leveringsdato:
-        range: string
+        range: date
+        annotations:
+          writeable: true
         description: |
           Dato varer eller tjenester ble levert.
           
@@ -148,29 +161,43 @@ classes:
           * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
       mottaker:
         range: Fakturamottaker
+        annotations:
+          writeable: true
         description: |
           Mottaker som skal betale faktura.
         required: true
       nettobeløp:
-        range: string
+        range: integer
+        annotations:
+          writeable: true
         description: |
           Del av totalbeløp som utgjør summen av fakturalinjene, i øre.
       ordrenummer:
         range: Identifikator
+        annotations:
+          writeable: true
         description: |
           Unik identifikator for ordre det skal utstedes faktura på.
         required: true
       totalbeløp:
-        range: string
+        range: integer
+        annotations:
+          writeable: true
         description: |
           Totalt beløp på faktura inkludert avgifter, i øre.
       faktura:
         range: Faktura
+        inverse: fakturagrunnlag
+        annotations:
+          primaryRelation: true
         description: |
           Utstedte fakturaer for fakturagrunnlag
         multivalued: true
       fakturautsteder:
         range: Fakturautsteder
+        inverse: fakturagrunnlag
+        annotations:
+          primaryRelation: true
         description: |
           Utsteder av faktura og mottaker av betaling.
         required: true
@@ -184,7 +211,9 @@ classes:
       Inneholder referanse til vare i et vareregister.
     attributes:
       antall:
-        range: string
+        range: float
+        annotations:
+          writeable: true
         description: |
           Mengde av varen levert.
           
@@ -194,11 +223,15 @@ classes:
         required: true
       fritekst:
         range: string
+        annotations:
+          writeable: true
         description: |
           Fritekst som beskriver varen slik den er levert.
         multivalued: true
       pris:
-        range: string
+        range: integer
+        annotations:
+          writeable: true
         description: |
           Pris per enhet levert, i øre.
         required: true
@@ -246,11 +279,13 @@ classes:
           Organisasjonselement som kan utstede faktura.
       vare:
         range: Vare
+        inverse: fakturautsteder
         description: |
           Alle varer i vareregisteret.
         multivalued: true
       fakturagrunnlag:
         range: Fakturagrunnlag
+        inverse: fakturautsteder
         description: |
           Alle fakturagrunnlag for fakturautsteder.
         multivalued: true

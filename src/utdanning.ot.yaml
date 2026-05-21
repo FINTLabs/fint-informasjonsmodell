@@ -30,6 +30,9 @@ classes:
           OT-enheten en OT-ungdom er tilknyttet.
       person:
         range: Person
+        inverse: otungdom
+        annotations:
+          primaryRelation: true
         description: |
           Person som er OT-ungdom.
         required: true

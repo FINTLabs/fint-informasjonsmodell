@@ -18,6 +18,8 @@ classes:
     attributes:
       kontaktinformasjon:
         range: Kontaktinformasjon
+        annotations:
+          writeable: true
         description: |
           Den foretrukne måten for å komme i kontakt med en aktør.
           
@@ -26,6 +28,8 @@ classes:
           Den fortrukne måten å komme i kontakt med en aktør. En aktør kan blant annet være en privat person eller et organisasjonselement i organisasjonsstrukturen.
       postadresse:
         range: Adresse
+        annotations:
+          writeable: true
         description: |
           Informasjon om postadresse til en aktør
           
@@ -62,7 +66,7 @@ classes:
           Hovednavn for begrepet
         required: true
       passiv:
-        range: string
+        range: boolean
         description: |
           Angir at koden er passiv, og ikke kan velges.
           
@@ -89,6 +93,8 @@ classes:
     attributes:
       forretningsadresse:
         range: Adresse
+        annotations:
+          writeable: true
         description: |
           Besøksadresse til en organisasjonsenhet i enhetsregisteret.
           
