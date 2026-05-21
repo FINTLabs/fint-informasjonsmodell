@@ -161,6 +161,13 @@ def display_package_name(segment: str) -> str:
     return segment[0].upper() + segment[1:]
 
 
+def should_emit_class_stereotype(value: str) -> bool:
+    token = (value or "").strip().lower()
+    # EA kildefil markerer normalt ikke komplekse datatyper med stereotypeverdi.
+    # De fremgår av modellstruktur/pakker. Behold eksplisitte stereotyper for øvrige klasser.
+    return token in {"hovedklasse", "abstrakt", "referanse"}
+
+
 def collect_classes(src_dir: Path) -> Tuple[List[SchemaClass], Dict[str, List[SchemaClass]]]:
     classes: List[SchemaClass] = []
     name_index: Dict[str, List[SchemaClass]] = defaultdict(list)
@@ -523,7 +530,9 @@ def build_xmi(classes: List[SchemaClass], name_index: Dict[str, List[SchemaClass
             if doc_text:
                 props_attrs["documentation"] = doc_text
             if schema_class.stereotypes:
-                props_attrs["stereotype"] = schema_class.stereotypes[0]
+                stereotype = schema_class.stereotypes[0]
+                if should_emit_class_stereotype(stereotype):
+                    props_attrs["stereotype"] = stereotype
             if props_attrs:
                 ET.SubElement(class_el, "properties", props_attrs)
 
@@ -548,7 +557,9 @@ def build_xmi(classes: List[SchemaClass], name_index: Dict[str, List[SchemaClass
             if doc_text:
                 class_props["documentation"] = doc_text
             if schema_class.stereotypes:
-                class_props["stereotype"] = schema_class.stereotypes[0]
+                stereotype = schema_class.stereotypes[0]
+                if should_emit_class_stereotype(stereotype):
+                    class_props["stereotype"] = stereotype
             ET.SubElement(class_ext, "properties", class_props)
 
             class_attributes_ext = ET.SubElement(class_ext, "attributes")
