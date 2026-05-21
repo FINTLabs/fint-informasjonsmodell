@@ -373,6 +373,7 @@ def parse_attributes(
         # multiplicity
         required = False
         multivalued = False
+        range_package = None
         lower = None
         upper = None
         lv = a.find('lowerValue')
@@ -419,6 +420,7 @@ def parse_attributes(
                     # reference to a class
                     if ref:
                         rng = ref['el'].get('name') or 'string'
+                        range_package = ref['package']
                     else:
                         rng = 'string'
             elif xmi_type:
@@ -430,6 +432,7 @@ def parse_attributes(
             xmi_idref = a.get(f'{{{XMI_NS}}}idref')
             if xmi_idref and xmi_idref in class_index:
                 rng = class_index[xmi_idref]['el'].get('name') or 'string'
+                range_package = class_index[xmi_idref]['package']
 
         attr_ids = []
         for key in (f'{{{XMI_NS}}}id', f'{{{XMI_NS}}}idref'):
@@ -495,6 +498,7 @@ def parse_attributes(
         attrs.append({
             'name': name,
             'range': rng,
+            'range_package': range_package,
             'required': required,
             'multivalued': multivalued,
             'description': desc,
@@ -518,6 +522,11 @@ def parse_is_a(cls_el: ET.Element, class_index):
 def collect_dependencies(attrs, class_index, self_package):
     deps = set()
     for a in attrs:
+        if a.get('range_package'):
+            pkg = a['range_package']
+            if pkg != self_package:
+                deps.add(pkg)
+            continue
         rng = a['range']
         # if range is another class, try to find its package
         for cid, info in class_index.items():

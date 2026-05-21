@@ -76,6 +76,7 @@ class Slot:
 class SchemaClass:
     name: str
     package_path: Tuple[str, ...]
+    import_paths: set[str]
     description: Optional[str]
     abstract: bool
     is_a: Optional[str]
@@ -137,6 +138,11 @@ def parse_package_path(schema_id: str) -> Tuple[str, ...]:
     return tuple(segment.replace("-", "") for segment in rest.strip("/").split("/") if segment)
 
 
+def normalize_import_path(import_name: str) -> str:
+    parts = [part.replace("-", "") for part in str(import_name).split(".") if part]
+    return ".".join(parts)
+
+
 def collect_classes(src_dir: Path) -> Tuple[List[SchemaClass], Dict[str, List[SchemaClass]]]:
     classes: List[SchemaClass] = []
     name_index: Dict[str, List[SchemaClass]] = defaultdict(list)
@@ -147,6 +153,8 @@ def collect_classes(src_dir: Path) -> Tuple[List[SchemaClass], Dict[str, List[Sc
         if not schema_id:
             continue
         package_path = parse_package_path(schema_id)
+        imports = schema.get("imports", []) or []
+        normalized_imports = {normalize_import_path(imp) for imp in imports if isinstance(imp, str)}
         class_defs = schema.get("classes", {}) or {}
         for class_name, class_info in class_defs.items():
             attributes: List[Slot] = []
@@ -167,6 +175,7 @@ def collect_classes(src_dir: Path) -> Tuple[List[SchemaClass], Dict[str, List[Sc
             schema_class = SchemaClass(
                 name=class_name,
                 package_path=package_path,
+                import_paths=normalized_imports,
                 description=class_info.get("description"),
                 abstract=bool(class_info.get("abstract")),
                 is_a=class_info.get("is_a"),
@@ -199,7 +208,12 @@ def is_identifiable_class(
     result = has_identifikator_attribute(schema_class)
 
     if not result and schema_class.is_a:
-        parent = resolve_class_reference(schema_class.is_a, schema_class.package_path, name_index)
+        parent = resolve_class_reference(
+            schema_class.is_a,
+            schema_class.package_path,
+            name_index,
+            schema_class.import_paths,
+        )
         if parent is not None:
             result = is_identifiable_class(parent, name_index, memo, visiting)
 
@@ -230,6 +244,7 @@ def resolve_class_reference(
     ref_name: str,
     current_package: Tuple[str, ...],
     name_index: Dict[str, List[SchemaClass]],
+    current_imports: Optional[set[str]] = None,
 ) -> Optional[SchemaClass]:
     candidates = name_index.get(ref_name, [])
     if not candidates:
@@ -238,6 +253,16 @@ def resolve_class_reference(
     for candidate in candidates:
         if candidate.package_path == current_package:
             return candidate
+    if current_imports:
+        imported_candidates = [
+            candidate
+            for candidate in candidates
+            if ".".join(candidate.package_path) in current_imports
+        ]
+        if len(imported_candidates) == 1:
+            return imported_candidates[0]
+        if imported_candidates:
+            return imported_candidates[0]
     # Otherwise return first occurrence (deterministic thanks to load order)
     return candidates[0]
 
@@ -282,7 +307,7 @@ def set_slot_type(
         ET.SubElement(attr_el, "type", {"href": PRIMITIVE_HREF[rng_lower]})
         return
 
-    target_cls = resolve_class_reference(rng_name, owner.package_path, name_index)
+    target_cls = resolve_class_reference(rng_name, owner.package_path, name_index, owner.import_paths)
     if target_cls:
         target_key = target_cls.package_path + (target_cls.name,)
         target_id = class_id_lookup.get(target_key)
@@ -507,7 +532,12 @@ def build_xmi(classes: List[SchemaClass], name_index: Dict[str, List[SchemaClass
                 add_comment(class_el, schema_class.description, make_id("CMT", "/".join(class_key)))
 
             if schema_class.is_a:
-                superclass = resolve_class_reference(schema_class.is_a, schema_class.package_path, name_index)
+                superclass = resolve_class_reference(
+                    schema_class.is_a,
+                    schema_class.package_path,
+                    name_index,
+                    schema_class.import_paths,
+                )
                 if superclass:
                     super_key = superclass.package_path + (superclass.name,)
                     super_id = class_id_lookup.get(super_key)
@@ -545,7 +575,12 @@ def build_xmi(classes: List[SchemaClass], name_index: Dict[str, List[SchemaClass
 
             # Attributter
             for slot in schema_class.attributes:
-                target_cls = resolve_class_reference(slot.range or "", schema_class.package_path, name_index)
+                target_cls = resolve_class_reference(
+                    slot.range or "",
+                    schema_class.package_path,
+                    name_index,
+                    schema_class.import_paths,
+                )
                 if target_cls is not None and not is_datatype_class(target_cls):
                     target_id = class_id_lookup.get(target_cls.package_path + (target_cls.name,))
                     if target_id:
