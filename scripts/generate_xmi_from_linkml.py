@@ -578,15 +578,20 @@ def build_xmi(classes: List[SchemaClass], name_index: Dict[str, List[SchemaClass
                     super_key = superclass.package_path + (superclass.name,)
                     super_id = class_id_lookup.get(super_key)
                     if super_id:
+                        gen_id = make_id("GEN", "/".join(class_key))
                         ET.SubElement(class_el, "generalization", {
                             f"{{{XMI_NS}}}type": "uml:Generalization",
-                            f"{{{XMI_NS}}}id": make_id("GEN", "/".join(class_key)),
+                            f"{{{XMI_NS}}}id": gen_id,
                             "general": super_id,
+                            "start": class_id_map[class_key],
+                            "end": super_id,
                         })
                         gen_conn = ET.SubElement(ext_connectors, "connector", {
                             f"{{{XMI_NS}}}type": "uml:Generalization",
-                            f"{{{XMI_NS}}}idref": make_id("GEN", "/".join(class_key), "ext"),
-                            "idref": make_id("GEN", "/".join(class_key), "ext"),
+                            f"{{{XMI_NS}}}idref": gen_id,
+                            "idref": gen_id,
+                            "start": class_id_map[class_key],
+                            "end": super_id,
                         })
                         gen_source = ET.SubElement(gen_conn, "source", {
                             f"{{{XMI_NS}}}idref": class_id_map[class_key],
@@ -663,6 +668,8 @@ def build_xmi(classes: List[SchemaClass], name_index: Dict[str, List[SchemaClass
                             f"{{{XMI_NS}}}type": "uml:Association",
                             f"{{{XMI_NS}}}id": assoc_id,
                             "visibility": "public",
+                            "start": source_id,
+                            "end": target_id,
                         })
 
                         source_doc = sanitize_attribute_text((slot.description or "").strip()) if slot.description else None
