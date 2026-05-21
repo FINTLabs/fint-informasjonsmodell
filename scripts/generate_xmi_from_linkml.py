@@ -143,6 +143,12 @@ def normalize_import_path(import_name: str) -> str:
     return ".".join(parts)
 
 
+def display_package_name(segment: str) -> str:
+    if not segment:
+        return segment
+    return segment[0].upper() + segment[1:]
+
+
 def collect_classes(src_dir: Path) -> Tuple[List[SchemaClass], Dict[str, List[SchemaClass]]]:
     classes: List[SchemaClass] = []
     name_index: Dict[str, List[SchemaClass]] = defaultdict(list)
@@ -451,7 +457,7 @@ def build_xmi(classes: List[SchemaClass], name_index: Dict[str, List[SchemaClass
     for pkg_path in sorted(packages.keys(), key=lambda p: (len(p), p)):
         parent_path = pkg_path[:-1]
         parent_element = package_elements.get(parent_path, model)
-        schema_name = pkg_path[-1] if pkg_path else "FINT"
+        schema_name = display_package_name(pkg_path[-1]) if pkg_path else "FINT"
         apply_application_schema = is_top_level_application_schema(pkg_path)
 
         # Selve pakken i UML-delen

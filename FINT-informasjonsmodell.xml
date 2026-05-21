@@ -3,8 +3,8 @@
   <uml:Model xmi:type="uml:Model" xmi:id="EAID_MODEL_a9f33ee9b573bc5045" name="EA_Model">
     <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_68c2cc7f0ceaa3e499" name="Model">
       <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_58bd5b0e37fbcdd8ac" name="FINT">
-        <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_87452f10731000f560" name="administrasjon">
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_231fbd2cc7d6403ec0" name="fullmakt">
+        <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_87452f10731000f560" name="Administrasjon">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_231fbd2cc7d6403ec0" name="Fullmakt">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_7448e1a279ec7a138b" name="Fullmakt">
               <properties documentation="Fullmakt til å gjøre handlinger i forhold til en gitt Rolle.&#10;&#10;# Beskrivelse&#10;&#10;Fullmakter innehas av fysiske eller juridiske personer, og er knyttet til kontodimensjon eller organisasjonselement. Fullmakter er delegert til personer, disse benevnes som fullmektige.&#10;&#10;Fullmektige kan ha stedfortreder. Stedfortrederen kan utøve den samme fullmakten som den fullmektige.&#10;&#10;Fullmakter beskrives i delegasjonsreglementet for organisasjonen. For fylkeskommuner er dette et reglement besluttet av Fylkestinget og videre delegert av Fylkesrådmannen.&#10;&#10;Dersom fullmakt har relasjon til mer enn en kontodimensjon (og organisasjonselement) er det å regne som en kombinasjonsfullmakt. &#10;&#10;# Eksempler&#10;&#10;Rektor ved Eidsvoll VGS har anvisningsfullmakt for ansvar 241.&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_0155d96e810f369444">
@@ -77,7 +77,7 @@ De vanligste rollene er:
                 </ownedAttribute>
               </packagedElement>
             </packagedElement>
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_bffb9eb00a2f968a52" name="kodeverk">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_bffb9eb00a2f968a52" name="Kodeverk">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_00e9ec8784c8936cea" name="Aktivitet">
               <properties documentation="Aktivitet er en del av kontostrengen og er en detaljering av funksjon.&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_c3f83bfe2deba1a56c">
@@ -469,7 +469,7 @@ Kode   |     Beskrivelse
               <generalization xmi:type="uml:Generalization" xmi:id="EAID_GEN_3d479f6ddf771bd512" general="EAID_CLS_3385458244847ec7db" />
               </packagedElement>
             </packagedElement>
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_2e3c4bbc1f1692c7e1" name="kompleksedatatyper">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_2e3c4bbc1f1692c7e1" name="Kompleksedatatyper">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_f287e1ac31a6f4340e" name="Kontostreng">
               <properties documentation="Sammensetning av kontodimensjoner for bokføring&#10;&#10;# Beskrivelse&#10;&#10;Henvisninger til koder i alle kontodimensjoner for kontering av en kostnad eller inntekt.&#10;" stereotype="datatype" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_bb85e0fd722d6d078b">
@@ -482,7 +482,7 @@ Henvisninger til koder i alle kontodimensjoner for kontering av en kostnad eller
                 </ownedComment>
               </packagedElement>
             </packagedElement>
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_0dfb51061c4b93cb2e" name="organisasjon">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_0dfb51061c4b93cb2e" name="Organisasjon">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_3bccc0e11110e4d90b" name="Arbeidslokasjon">
               <properties documentation="Fysisk lokasjon hvor en ansatt har sitt arbeidssted.&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_d3fa4eea6aed475e90">
@@ -637,7 +637,7 @@ Verdien må være unik innenfor en gitt gyldighetsperiode.
                 </ownedAttribute>
               </packagedElement>
             </packagedElement>
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_b8abbe9c3c43e8a841" name="personal">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_b8abbe9c3c43e8a841" name="Personal">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_0205423290c9bc7553" name="Fastlønn">
               <properties documentation="Informasjon om fast lønnsbeskjeftigelse.&#10;&#10;Inneholder beskjeftigelse av den ansattes lønnsprosent.&#10;&#10;Summen av prosentene på beskjeftigelsene skal være lønnsprosent for en fullt dekket stilling.&#10;&#10;Dersom beskjeftigelsene ikke fyller lønnsprosenten har arbeidsforholdet teknisk undertid. &#10;&#10;I motsatt fall har arbeidsforholdet overtid.&#10;&#10;# Lovlige endringer&#10;&#10;## Opprettelse av ny fastlønn&#10;&#10;- `periode` angir periode som beskjeftigelsen skal gjelde for.  &#10;- Periode uten `slutt` betyr at beskjeftigelsen gjelder inntil videre.&#10;&#10;## Endring av eksisterende fastlønn&#10;&#10;- Kun endring av `slutt` på `periode` er lovlig.&#10;&#10;## Sletting av eksisterende fastlønn&#10;&#10;- Ikke tillatt.&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_ec7b2850aa40c56108">
@@ -1407,8 +1407,8 @@ Angitt fra 0 til 10000 i hundredelsprosent.
               </packagedElement>
             </packagedElement>
           </packagedElement>
-        <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_0ae92956e80722d32a" name="arkiv">
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_5284d8b4387ebb8937" name="kodeverk">
+        <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_0ae92956e80722d32a" name="Arkiv">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_5284d8b4387ebb8937" name="Kodeverk">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_a9ec71533d674a1f0c" name="DokumentStatus">
               <properties documentation="Kodeverk for status til et dokument.&#10;&#10;# Beskrivelse&#10;&#10;* Noark 5 versjon 5.0 metadatakatalog - nr. M054&#10;&#10;# Referanser&#10;&#10;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_20384666ba40d3785c">
@@ -1696,7 +1696,7 @@ Dette er ikke en del av Noark standarden.
               <generalization xmi:type="uml:Generalization" xmi:id="EAID_GEN_a2bb1b9fafbaad4f3f" general="EAID_CLS_3385458244847ec7db" />
               </packagedElement>
             </packagedElement>
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_05799dcebb6c6bc59c" name="kulturminnevern">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_05799dcebb6c6bc59c" name="Kulturminnevern">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_47e4516c1637e91679" name="DispensasjonAutomatiskFredaKulturminne">
               <properties documentation="Sak om søknad om dispensasjon for tiltak på automatisk freda kulturminne.&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_42e50a12f5e791a89b">
@@ -1836,7 +1836,7 @@ Eksempler kan være ‘Utskifting av vannledning’, ‘Etablering av landbruksvei’ og 
                 </ownedAttribute>
               </packagedElement>
             </packagedElement>
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_988980828c6918b827" name="noark">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_988980828c6918b827" name="Noark">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_2a150f8f4cf8a5c1b9" name="AdministrativEnhet">
               <properties documentation="Navn på avdeling, kontor eller annen administrativ enhet som har ansvaret for saksbehandlingen.&#10;&#10;# Beskrivelse&#10;&#10;* Noark 5 versjon 5.0 standard - kap. 4.2&#10;* Noark 5 versjon 5.0 metadatakatalog - nr. M086&#10;&#10;# Referanser&#10;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_323a838d4197958d38">
@@ -4015,7 +4015,7 @@ Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da
                 </ownedAttribute>
               </packagedElement>
             </packagedElement>
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_16d56cb471d99d51cc" name="personal">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_16d56cb471d99d51cc" name="Personal">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_1a212e2cd6fd9822f7" name="Personalmappe">
               <properties documentation="Saksmappe med opplysninger om den enkelte arbeidstakers arbeidsforhold.&#10;&#10;# Beskrivelse&#10;&#10;Opplysninger i en personalmappe kan være personalia, arbeidskontrakt og annen korrespondanse som berører arbeidsforholdet.&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_2d8f1709628d119471">
@@ -4038,7 +4038,7 @@ Opplysninger i en personalmappe kan være personalia, arbeidskontrakt og annen ko
                 </ownedAttribute>
               </packagedElement>
             </packagedElement>
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_477ac905c7239e892e" name="samferdsel">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_477ac905c7239e892e" name="Samferdsel">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_52bf0ce8d8de81bc73" name="SøknadDrosjeløyve">
               <properties documentation="Sak om søknad om løyve (tillatelse til å) kjøre drosje.&#10;&#10;# Beskrivelse&#10;&#10; Et drosjeløyve er en tillatelse til å transportere mennesker i personbil mot betaling.&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_8a5f840fa074e8b18c">
@@ -4071,7 +4071,7 @@ Opplysninger i en personalmappe kan være personalia, arbeidskontrakt og annen ko
               </packagedElement>
             </packagedElement>
           </packagedElement>
-        <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_38f7bf53c51db64eb4" name="felles">
+        <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_38f7bf53c51db64eb4" name="Felles">
           <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_f5cc7e74d95638309a" name="Kontaktperson">
             <properties documentation="Kontaktperson til en person.&#10;&#10;# Beskrivelse&#10;&#10;Kontaktperson er personer som kan kontaktes dersom det er behov for det.&#10;&#10;Kontaktperson kalles også pårørende.&#10;" stereotype="hovedklasse" />
             <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_7169e35666d2406bb6">
@@ -4256,7 +4256,7 @@ Se beskrivelse for [Personnavn klasse](Class:Personnavn)
                 </ownedComment>
               </ownedAttribute>
             </packagedElement>
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_29ed5f4335a77f3f29" name="basisklasser">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_29ed5f4335a77f3f29" name="Basisklasser">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_225ef60f99e8325a09" name="Aktør" isAbstract="true">
               <properties documentation="Person eller enhet vi samhandler med.&#10;&#10;# Beskrivelse&#10;&#10;Abstrakt klasse som inneholder relasjon til kontaktinformasjon og identifikator. Må enten brukes som Person, Enhet, eller annen underliggende klasse, som feks organisasjonselement.&#10;" stereotype="abstrakt" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_4d8a9c267cc90620f7">
@@ -4431,7 +4431,7 @@ Organisasjonsnummeret består av 9 siffer hvor det siste sifferet er et kontrolls
                 </ownedAttribute>
               </packagedElement>
             </packagedElement>
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_7356e937b9da6c2de4" name="kodeverk">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_7356e937b9da6c2de4" name="Kodeverk">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_f64277f4a90f494b7b" name="Fylke">
               <properties documentation="Liste over Norges fylker&#10;&#10;# Referanser&#10;&#10;* &quot;SSB: Standard for fylkesinndeling&quot;:http://www.ssb.no/klass/#!/klassifikasjoner/104&#10;* &quot;data.norge.no&quot;:&#10;http://data.norge.no/data/statistisk-sentralbyr%C3%A5/fylkesinndeling&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_522931d5eb338054d4">
@@ -4496,7 +4496,7 @@ I henhold til [ISO 4217](https://no.wikipedia.org/wiki/ISO_4217)
                   </ownedComment>
                 </ownedAttribute>
               </packagedElement>
-            <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_4699b21dd27ec6815d" name="iso">
+            <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_4699b21dd27ec6815d" name="Iso">
               <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_6d25024112361642d4" name="Kjønn">
                 <properties documentation="Liste over verdier for kjønn basert på ISO/IEC 5218.&#10;&#10;# Beskrivelse&#10;&#10;Liste over verdier for kjønn basert på ISO/IEC 5218.&#10;&#10;Når vi i daglig tale prater om kjønn presiserer vi sjelden hva vi mener. Avhengig av sammenheng kan vi mene enten biologisk, sosialt, mentalt eller juridisk kjønn. Kjønn kan med andre ord betraktes som et samlebegrep.&#10;Kilde: llh.no  &#10;&#10;# Referanser&#10;&#10;* [FINT API for ISO/IEC 5218](https://api.felleskomponent.no/felles/kodeverk/kjonn)&#10;* [ISO/IEC 5218:2004](https://iso.org/standard/36266.html)&#10;* [Wikipedia artikkel](https://en.wikipedia.org/wiki/ISO/IEC_5218)&#10;&#10;# Eksempler&#10;&#10;    0 = uvisst (not known)&#10;    1 = mann (male)&#10;    2 = kvinne (female)&#10;    9 = gjelder ikke (not applicable)&#10;" stereotype="hovedklasse" />
                 <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_4c9033ccab0c9d5ff7">
@@ -4568,7 +4568,7 @@ NO, NB, NN, DA, etc.
                 </packagedElement>
               </packagedElement>
             </packagedElement>
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_f86973cf2c8168a1e8" name="kompleksedatatyper">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_f86973cf2c8168a1e8" name="Kompleksedatatyper">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_16032b22e35475cac5" name="Adresse">
               <properties documentation="Fysisk adresse eller postadresse.&#10;&#10;# Beskrivelse&#10;&#10;Dette kan enten være en postadresse eller en fysisk adresse som det er mulig å besøke.&#10;&#10;# Eksempel&#10;&#10;|               adresse               |    poststed    | postnummer | land |&#10;|-------------------------------------|----------------|------------|------|&#10;| Nydalen allé 11                     | Oslo           |       0484 | NO   |&#10;| Fakturamottak&amp;lt;br&amp;gt;Postboks 501 Lund  | Kristiansand   |       4605 | -    |&#10;| Postboks 517 Lundsiden              | KRISTIANSAND S |       4605 | -    |&#10;&#10;&#10;# Referanser&#10;&#10;- http://www.bring.no/radgivning/sende-noe/klargjoring/klargjoring-adressert/adressering-til-postmottakere-i-norge&#10;- http://www.bring.no/radgivning/sende-noe/klargjoring/klargjoring-adressert/adressering-til-mottakere-i-utlandet&#10;" stereotype="datatype" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_cc265e54f46b13cc0a">
@@ -5123,8 +5123,8 @@ Ren tekst
               </packagedElement>
             </packagedElement>
           </packagedElement>
-        <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_6167796250140b5466" name="okonomi">
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_d126aa650fe717083f" name="faktura">
+        <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_6167796250140b5466" name="Okonomi">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_d126aa650fe717083f" name="Faktura">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_622215b9bf047ca9d2" name="Faktura">
               <properties documentation="Betalingskrav som er utformet og oversendt fra fakturautsteder til fakturamottaker. &#10;&#10;# Beskrivelse&#10;&#10;Faktura opprettes med basis i ett fakturagrunnlag og ustedes til en eller flere mottakere.&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_beaf1578d2a8a59a2c">
@@ -5437,7 +5437,7 @@ Enhet som etter Regnskapsloven er pliktig å arkivere dokumentasjon for faktura.
                 </ownedAttribute>
               </packagedElement>
             </packagedElement>
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_004ca20b6e1959ae14" name="kodeverk">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_004ca20b6e1959ae14" name="Kodeverk">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_88eb6fa6e16e9ed1c1" name="Merverdiavgift">
               <properties documentation="Kodeverk for merverdiavgifter.&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_b0549660a3abea579e">
@@ -5516,7 +5516,7 @@ Konteringen som varen har i økonomisystemet kan også angis.
                 </ownedAttribute>
               </packagedElement>
             </packagedElement>
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_723062f8814f44fcdb" name="regnskap">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_723062f8814f44fcdb" name="Regnskap">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_b7bd61ab91823f2e55" name="Bilag">
               <properties documentation="Dokumentasjon til en transaksjon.&#10;" stereotype="datatype" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_a95429a607ecb983dc">
@@ -5822,8 +5822,8 @@ ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
               </packagedElement>
             </packagedElement>
           </packagedElement>
-        <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_b51dbf691147b92836" name="personvern">
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_f25478e3239844f1ca" name="kodeverk">
+        <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_b51dbf691147b92836" name="Personvern">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_f25478e3239844f1ca" name="Kodeverk">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_14d417a32baf64e200" name="Behandlingsgrunnlag">
               <properties documentation="Rettslig grunnlag for behandling av personopplysninger.&#10;&#10;# Beskrivelse&#10;&#10;All behandling av personopplysninger må ha et rettslig grunnlag for å være lov. Det må finnes et behandlingsgrunnlag for behandling av hver enkelt personopplysning til hvert enkelt formål.&#10;&#10;Virksomheten har også plikt til å informere den enkelte om hvilket grunnlag  personopplysningene deres behandles på. &#10;&#10;# Eksempler&#10;&#10;* Samtykke&#10;* Nødvendig for å oppfylle en avtale&#10;* Nødvendig for å oppfylle en rettslig plikt&#10;* Nødvendig for å beskytte vitale interesser&#10;* Nødvendig for å utføre en oppgave i offentlig interesse eller utøve offentlig myndighet&#10;* Nødvendig for å ivareta legitime interesser - interesseavveiing&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_11da25c0683b0393b3">
@@ -5864,7 +5864,7 @@ Personvernforordningen artikkel 4
               <generalization xmi:type="uml:Generalization" xmi:id="EAID_GEN_ebffa0c113d07e35aa" general="EAID_CLS_3385458244847ec7db" />
               </packagedElement>
             </packagedElement>
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_0728537f42d29a1e98" name="samtykke">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_0728537f42d29a1e98" name="Samtykke">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_8fae47cb7779cd09d9" name="Behandling">
               <properties documentation="All bruk av personopplysninger&#10;&#10;# Beskrivelse&#10;&#10;All bruk av personopplysninger, slik som innsamling, registrering, sammenstilling, lagring og utlevering, eller en kombinasjon av slike bruksmåter.&#10;&#10;Personopplysninger skal bare brukes for spesifikke, uttrykkelige, angitte og legitime formål. Virksomheten har plikt til å gi den enkelte informasjon om formålet med behandling av personopplysning samt behandlingsgrunnlaget.&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_0f4bb7e38fc89ca902">
@@ -6038,8 +6038,8 @@ ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
               </packagedElement>
             </packagedElement>
           </packagedElement>
-        <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_a79bb65b39f7246e3f" name="ressurs">
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_7edb421a6636ba1291" name="datautstyr">
+        <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_a79bb65b39f7246e3f" name="Ressurs">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_7edb421a6636ba1291" name="Datautstyr">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_c1d876328a29930a25" name="DigitalEnhet">
               <properties documentation="Beskriver ulike digitale enheter slik som feks pc, nettbrett, mobil.&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_e14dcee5db346ed612">
@@ -6157,7 +6157,7 @@ Gruppemedlemskap som knytter sammen Digitalenhet og Enhetsgrupper.
                 </ownedAttribute>
               </packagedElement>
             </packagedElement>
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_c48245093616af666d" name="eiendel">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_c48245093616af666d" name="Eiendel">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_c51850746191a0b2ab" name="Applikasjon">
               <properties documentation="En applikasjon med tilhørende ressurser. &#10;&#10;En ressurs kan være en lisens eller en rolle som tilganger inne i en applikasjon. Applikasjonen kan være en desktopapplikasjon eller en skybasert tjeneste. Brukere kan da få tilgang til denne applikasjonen hvis vedkommende har fått tildelt en ressurs knyttet til applikasjonen.&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_e99826aacbd6dda383">
@@ -6315,7 +6315,7 @@ Brukes kun når ressursene er lisenser.
                 </ownedAttribute>
               </packagedElement>
             </packagedElement>
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_8eecacff2524336d0e" name="kodeverk">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_8eecacff2524336d0e" name="Kodeverk">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_e3592ca6d4ed5f9bee" name="Applikasjonskategori">
               <properties documentation="Kategorier av applikasjoner.&#10;&#10;Eksempel:&#10;&#10;* Pedagogisk programvare&#10;* Kontorstøtte&#10;* Fagsystemer&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_1a1cba47adb83c62a2">
@@ -6402,7 +6402,7 @@ Eksempel:
               <generalization xmi:type="uml:Generalization" xmi:id="EAID_GEN_3935407cb7e9db0d72" general="EAID_CLS_3385458244847ec7db" />
               </packagedElement>
             </packagedElement>
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_11747fd7c7dcca9ea3" name="tilgang">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_11747fd7c7dcca9ea3" name="Tilgang">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_0c13ad97f810aa744d" name="Identitet">
               <properties documentation="Identitet identifiserer innehaver av rettigheter i relasjonen til organisasjonen.&#10;&#10;Kilden for denne type informasjon vil typisk være identitetsforvaltningssystemet.&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_40c32959b72c392715">
@@ -6440,8 +6440,8 @@ Kilden for denne type informasjon vil typisk være identitetsforvaltningssystemet
               </packagedElement>
             </packagedElement>
           </packagedElement>
-        <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_93ea470388b4d82056" name="utdanning">
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_e292aace01a8566dda" name="basisklasser">
+        <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_93ea470388b4d82056" name="Utdanning">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_e292aace01a8566dda" name="Basisklasser">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_a62447c9dd60a973b1" name="Gruppe" isAbstract="true">
               <properties documentation="En generisk samling av elever og lærere&#10;&#10;# Beskrivelse &#10;&#10;Gruppe representeres som en spesialisering (se tabell nedenfor).&#10;&#10;Grupper knyttes til Utdanningsforhold via Gruppemedlemskap eller direkte relasjoner.&#10;" stereotype="abstrakt" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_a009494b5beb442c77">
@@ -6563,7 +6563,7 @@ Dette kan være identifikator som eksisterer i skoleadministrativt system.
                 </ownedAttribute>
               </packagedElement>
             </packagedElement>
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_c5ee21afe2335d549a" name="elev">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_c5ee21afe2335d549a" name="Elev">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_389b7cf67bad56a453" name="Elev">
               <properties documentation="Informasjon om en person som mottar undervisning.&#10;&#10;# Beskrivelse &#10;&#10;Beskriver informasjon relatert til undervisning for en Person.&#10;&#10;Tilsvarende finnes for ansatte: __Personalressurs__.&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_c40f516f7800094492">
@@ -6976,7 +6976,7 @@ I informasjonsmodellen oppgis en prosentverdi som et heltall. Dette tallet er an
                 </ownedAttribute>
               </packagedElement>
             </packagedElement>
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_606159134ff04f6d3c" name="kodeverk">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_606159134ff04f6d3c" name="Kodeverk">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_d8c10b1c582791aca9" name="Avbruddsårsak">
               <properties documentation="Årsaken til at eleven avbryter utdanningsprogrammet (Vg1)/programområdet (Vg2/Vg3) ) i løpet av skoleåret  eller lærlingen/lærekandidaten hever lærekontrakten/opplæringskontrakten.&#10;&#10;# Referanse&#10;&#10;Registreringshåndbok: https://regbok.udir.no/35004/3344/35042-1014313.html&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_af0243aae03a89e7d0">
@@ -7349,7 +7349,7 @@ Det kan bare føres vitnemålsmerknader som er gitt av Utdanningsdirektoratet.
               <generalization xmi:type="uml:Generalization" xmi:id="EAID_GEN_09b1804d9a517e92c8" general="EAID_CLS_3385458244847ec7db" />
               </packagedElement>
             </packagedElement>
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_d69b36e7b348f13887" name="larling">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_d69b36e7b348f13887" name="Larling">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_01f8bc9a3b754da043" name="AvlagtPrøve">
               <properties documentation="Informasjon om en avlagt prøve for en person i et fag.&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_6052a9e73a75c8164e">
@@ -7410,7 +7410,7 @@ Det kan bare føres vitnemålsmerknader som er gitt av Utdanningsdirektoratet.
                 </ownedAttribute>
               </packagedElement>
             </packagedElement>
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_6238ff01a241e19e6a" name="ot">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_6238ff01a241e19e6a" name="Ot">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_a7ae662a3b8e1364cf" name="OtUngdom">
               <properties documentation="Oppfølgingstjenesten (OT) har ansvar for å følge opp ungdom med rett til videregående opplæring som ikke er i opplæring eller arbeid.&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_c2981abf2d5b3029f1">
@@ -7428,7 +7428,7 @@ Det kan bare føres vitnemålsmerknader som er gitt av Utdanningsdirektoratet.
                 </ownedAttribute>
               </packagedElement>
             </packagedElement>
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_b9ee1761619271cf21" name="timeplan">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_b9ee1761619271cf21" name="Timeplan">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_c1bdb0a99745f93933" name="Eksamen">
               <properties documentation="En eksamen som avholdes på en skole.&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_e653b7f81377378e20">
@@ -7661,7 +7661,7 @@ Gruppemedlemskap som knytter sammen elevforhold og undervisningsgrupper.
               <generalization xmi:type="uml:Generalization" xmi:id="EAID_GEN_2c0b8228b01362fa9c" general="EAID_CLS_0d161f922b39eccebe" />
               </packagedElement>
             </packagedElement>
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_62662c7b1bff5787c8" name="utdanningsprogram">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_62662c7b1bff5787c8" name="Utdanningsprogram">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_b2a41a5ceca288c6f4" name="Årstrinn">
               <properties documentation="Hvert år i grunnopplæringen (grunnskole og videregående skole) kalles et årstrinn.&#10;&#10;# Eksempler&#10;&#10;* Vg1&#10;* Vg2&#10;* Vg3&#10;* Vg4&#10;&#10;# Synonym&#10;&#10;* Nivå (Rogaland)&#10;* Klassetrinn&#10;* Trinn&#10;&#10;# Referanser&#10;&#10;* http://grepwiki.udir.no/index.php?title=Årstrinn&#10;* http://psi.udir.no/ontologi/kl06/aarstrinn&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_7aca24a699321f2d2f">
@@ -7931,7 +7931,7 @@ Synonym: Utdanningsgruppe
                 </ownedAttribute>
               </packagedElement>
             </packagedElement>
-          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_005aa392465e3500f2" name="vurdering">
+          <packagedElement xmi:type="uml:Package" xmi:id="EAID_PKG_005aa392465e3500f2" name="Vurdering">
             <packagedElement xmi:type="uml:Class" xmi:id="EAID_CLS_183d00614805171fd3" name="Anmerkninger">
               <properties documentation="Anmerkninger for en elev for et elevforhold.&#10;" stereotype="hovedklasse" />
               <ownedComment xmi:type="uml:Comment" xmi:id="EAID_CMT_b950e519c778f8a2f2">
@@ -8596,17 +8596,17 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
         <model package2="EAID_PKG_58bd5b0e37fbcdd8ac" ea_eleType="package" package="EAID_PKG_68c2cc7f0ceaa3e499" />
         <tags />
         </element>
-      <element xmi:idref="EAID_PKG_87452f10731000f560" idref="EAID_PKG_87452f10731000f560" xmi:type="uml:Package" type="Package" name="administrasjon" scope="public">
+      <element xmi:idref="EAID_PKG_87452f10731000f560" idref="EAID_PKG_87452f10731000f560" xmi:type="uml:Package" type="Package" name="Administrasjon" scope="public">
         <model package2="EAID_PKG_87452f10731000f560" ea_eleType="package" package="EAID_PKG_58bd5b0e37fbcdd8ac" />
         <tags />
         <properties stereotype="ApplicationSchema" />
         </element>
-      <element xmi:idref="EAID_PKG_0ae92956e80722d32a" idref="EAID_PKG_0ae92956e80722d32a" xmi:type="uml:Package" type="Package" name="arkiv" scope="public">
+      <element xmi:idref="EAID_PKG_0ae92956e80722d32a" idref="EAID_PKG_0ae92956e80722d32a" xmi:type="uml:Package" type="Package" name="Arkiv" scope="public">
         <model package2="EAID_PKG_0ae92956e80722d32a" ea_eleType="package" package="EAID_PKG_58bd5b0e37fbcdd8ac" />
         <tags />
         <properties stereotype="ApplicationSchema" />
         </element>
-      <element xmi:idref="EAID_PKG_38f7bf53c51db64eb4" idref="EAID_PKG_38f7bf53c51db64eb4" xmi:type="uml:Package" type="Package" name="felles" scope="public">
+      <element xmi:idref="EAID_PKG_38f7bf53c51db64eb4" idref="EAID_PKG_38f7bf53c51db64eb4" xmi:type="uml:Package" type="Package" name="Felles" scope="public">
         <model package2="EAID_PKG_38f7bf53c51db64eb4" ea_eleType="package" package="EAID_PKG_58bd5b0e37fbcdd8ac" />
         <tags />
         <properties stereotype="ApplicationSchema" />
@@ -8692,27 +8692,27 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
             </attribute>
           </attributes>
         </element>
-      <element xmi:idref="EAID_PKG_6167796250140b5466" idref="EAID_PKG_6167796250140b5466" xmi:type="uml:Package" type="Package" name="okonomi" scope="public">
+      <element xmi:idref="EAID_PKG_6167796250140b5466" idref="EAID_PKG_6167796250140b5466" xmi:type="uml:Package" type="Package" name="Okonomi" scope="public">
         <model package2="EAID_PKG_6167796250140b5466" ea_eleType="package" package="EAID_PKG_58bd5b0e37fbcdd8ac" />
         <tags />
         <properties stereotype="ApplicationSchema" />
         </element>
-      <element xmi:idref="EAID_PKG_b51dbf691147b92836" idref="EAID_PKG_b51dbf691147b92836" xmi:type="uml:Package" type="Package" name="personvern" scope="public">
+      <element xmi:idref="EAID_PKG_b51dbf691147b92836" idref="EAID_PKG_b51dbf691147b92836" xmi:type="uml:Package" type="Package" name="Personvern" scope="public">
         <model package2="EAID_PKG_b51dbf691147b92836" ea_eleType="package" package="EAID_PKG_58bd5b0e37fbcdd8ac" />
         <tags />
         <properties stereotype="ApplicationSchema" />
         </element>
-      <element xmi:idref="EAID_PKG_a79bb65b39f7246e3f" idref="EAID_PKG_a79bb65b39f7246e3f" xmi:type="uml:Package" type="Package" name="ressurs" scope="public">
+      <element xmi:idref="EAID_PKG_a79bb65b39f7246e3f" idref="EAID_PKG_a79bb65b39f7246e3f" xmi:type="uml:Package" type="Package" name="Ressurs" scope="public">
         <model package2="EAID_PKG_a79bb65b39f7246e3f" ea_eleType="package" package="EAID_PKG_58bd5b0e37fbcdd8ac" />
         <tags />
         <properties stereotype="ApplicationSchema" />
         </element>
-      <element xmi:idref="EAID_PKG_93ea470388b4d82056" idref="EAID_PKG_93ea470388b4d82056" xmi:type="uml:Package" type="Package" name="utdanning" scope="public">
+      <element xmi:idref="EAID_PKG_93ea470388b4d82056" idref="EAID_PKG_93ea470388b4d82056" xmi:type="uml:Package" type="Package" name="Utdanning" scope="public">
         <model package2="EAID_PKG_93ea470388b4d82056" ea_eleType="package" package="EAID_PKG_58bd5b0e37fbcdd8ac" />
         <tags />
         <properties stereotype="ApplicationSchema" />
         </element>
-      <element xmi:idref="EAID_PKG_231fbd2cc7d6403ec0" idref="EAID_PKG_231fbd2cc7d6403ec0" xmi:type="uml:Package" type="Package" name="fullmakt" scope="public">
+      <element xmi:idref="EAID_PKG_231fbd2cc7d6403ec0" idref="EAID_PKG_231fbd2cc7d6403ec0" xmi:type="uml:Package" type="Package" name="Fullmakt" scope="public">
         <model package2="EAID_PKG_231fbd2cc7d6403ec0" ea_eleType="package" package="EAID_PKG_87452f10731000f560" />
         <tags />
         </element>
@@ -8754,7 +8754,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
             </attribute>
           </attributes>
         </element>
-      <element xmi:idref="EAID_PKG_bffb9eb00a2f968a52" idref="EAID_PKG_bffb9eb00a2f968a52" xmi:type="uml:Package" type="Package" name="kodeverk" scope="public">
+      <element xmi:idref="EAID_PKG_bffb9eb00a2f968a52" idref="EAID_PKG_bffb9eb00a2f968a52" xmi:type="uml:Package" type="Package" name="Kodeverk" scope="public">
         <model package2="EAID_PKG_bffb9eb00a2f968a52" ea_eleType="package" package="EAID_PKG_87452f10731000f560" />
         <tags />
         </element>
@@ -8904,7 +8904,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
         <properties isAbstract="false" sType="Class" scope="public" documentation="Timer per uke i 100 % stilling&#10;&#10;# Beskrivelse&#10;&#10;# Eksempel&#10;&#10;## Eksempel fra Agresso - Arbeidsplan:  &#10;&#10;Kode   |     Beskrivelse&#10;---|---&#10;33,6   |     33,6 timers uke&#10;34,0    |    34,0 timers uke&#10;34,5     |   34,5 timers uke&#10;35,0     |   35,0 timers uke&#10;35,5     |   35,5 timers uke&#10;36,0     |   36,0 timers uke&#10;37,5     |   37,5 timers uke&#10;...    | ...&#10;" stereotype="hovedklasse" />
         <attributes />
         </element>
-      <element xmi:idref="EAID_PKG_2e3c4bbc1f1692c7e1" idref="EAID_PKG_2e3c4bbc1f1692c7e1" xmi:type="uml:Package" type="Package" name="kompleksedatatyper" scope="public">
+      <element xmi:idref="EAID_PKG_2e3c4bbc1f1692c7e1" idref="EAID_PKG_2e3c4bbc1f1692c7e1" xmi:type="uml:Package" type="Package" name="Kompleksedatatyper" scope="public">
         <model package2="EAID_PKG_2e3c4bbc1f1692c7e1" ea_eleType="package" package="EAID_PKG_87452f10731000f560" />
         <tags />
         </element>
@@ -8914,7 +8914,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
         <properties isAbstract="false" sType="Class" scope="public" documentation="Sammensetning av kontodimensjoner for bokføring&#10;&#10;# Beskrivelse&#10;&#10;Henvisninger til koder i alle kontodimensjoner for kontering av en kostnad eller inntekt.&#10;" stereotype="datatype" />
         <attributes />
         </element>
-      <element xmi:idref="EAID_PKG_0dfb51061c4b93cb2e" idref="EAID_PKG_0dfb51061c4b93cb2e" xmi:type="uml:Package" type="Package" name="organisasjon" scope="public">
+      <element xmi:idref="EAID_PKG_0dfb51061c4b93cb2e" idref="EAID_PKG_0dfb51061c4b93cb2e" xmi:type="uml:Package" type="Package" name="Organisasjon" scope="public">
         <model package2="EAID_PKG_0dfb51061c4b93cb2e" ea_eleType="package" package="EAID_PKG_87452f10731000f560" />
         <tags />
         </element>
@@ -8974,7 +8974,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
             </attribute>
           </attributes>
         </element>
-      <element xmi:idref="EAID_PKG_b8abbe9c3c43e8a841" idref="EAID_PKG_b8abbe9c3c43e8a841" xmi:type="uml:Package" type="Package" name="personal" scope="public">
+      <element xmi:idref="EAID_PKG_b8abbe9c3c43e8a841" idref="EAID_PKG_b8abbe9c3c43e8a841" xmi:type="uml:Package" type="Package" name="Personal" scope="public">
         <model package2="EAID_PKG_b8abbe9c3c43e8a841" ea_eleType="package" package="EAID_PKG_87452f10731000f560" />
         <tags />
         </element>
@@ -9237,7 +9237,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
             </attribute>
           </attributes>
         </element>
-      <element xmi:idref="EAID_PKG_5284d8b4387ebb8937" idref="EAID_PKG_5284d8b4387ebb8937" xmi:type="uml:Package" type="Package" name="kodeverk" scope="public">
+      <element xmi:idref="EAID_PKG_5284d8b4387ebb8937" idref="EAID_PKG_5284d8b4387ebb8937" xmi:type="uml:Package" type="Package" name="Kodeverk" scope="public">
         <model package2="EAID_PKG_5284d8b4387ebb8937" ea_eleType="package" package="EAID_PKG_0ae92956e80722d32a" />
         <tags />
         </element>
@@ -9343,7 +9343,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
         <properties isAbstract="false" sType="Class" scope="public" documentation="Angivelse av hvilken variant et dokument forekommer i.&#10;&#10;# Beskrivelse&#10;&#10;* Noark 5 versjon 5.0 metadatakatalog - nr. M700&#10;&#10;# Referanser&#10;&#10;* https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden&#10;" stereotype="hovedklasse" />
         <attributes />
         </element>
-      <element xmi:idref="EAID_PKG_05799dcebb6c6bc59c" idref="EAID_PKG_05799dcebb6c6bc59c" xmi:type="uml:Package" type="Package" name="kulturminnevern" scope="public">
+      <element xmi:idref="EAID_PKG_05799dcebb6c6bc59c" idref="EAID_PKG_05799dcebb6c6bc59c" xmi:type="uml:Package" type="Package" name="Kulturminnevern" scope="public">
         <model package2="EAID_PKG_05799dcebb6c6bc59c" ea_eleType="package" package="EAID_PKG_0ae92956e80722d32a" />
         <tags />
         </element>
@@ -9440,7 +9440,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
             </attribute>
           </attributes>
         </element>
-      <element xmi:idref="EAID_PKG_988980828c6918b827" idref="EAID_PKG_988980828c6918b827" xmi:type="uml:Package" type="Package" name="noark" scope="public">
+      <element xmi:idref="EAID_PKG_988980828c6918b827" idref="EAID_PKG_988980828c6918b827" xmi:type="uml:Package" type="Package" name="Noark" scope="public">
         <model package2="EAID_PKG_988980828c6918b827" ea_eleType="package" package="EAID_PKG_0ae92956e80722d32a" />
         <tags />
         </element>
@@ -10194,7 +10194,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
             </attribute>
           </attributes>
         </element>
-      <element xmi:idref="EAID_PKG_16d56cb471d99d51cc" idref="EAID_PKG_16d56cb471d99d51cc" xmi:type="uml:Package" type="Package" name="personal" scope="public">
+      <element xmi:idref="EAID_PKG_16d56cb471d99d51cc" idref="EAID_PKG_16d56cb471d99d51cc" xmi:type="uml:Package" type="Package" name="Personal" scope="public">
         <model package2="EAID_PKG_16d56cb471d99d51cc" ea_eleType="package" package="EAID_PKG_0ae92956e80722d32a" />
         <tags />
         </element>
@@ -10211,7 +10211,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
             </attribute>
           </attributes>
         </element>
-      <element xmi:idref="EAID_PKG_477ac905c7239e892e" idref="EAID_PKG_477ac905c7239e892e" xmi:type="uml:Package" type="Package" name="samferdsel" scope="public">
+      <element xmi:idref="EAID_PKG_477ac905c7239e892e" idref="EAID_PKG_477ac905c7239e892e" xmi:type="uml:Package" type="Package" name="Samferdsel" scope="public">
         <model package2="EAID_PKG_477ac905c7239e892e" ea_eleType="package" package="EAID_PKG_0ae92956e80722d32a" />
         <tags />
         </element>
@@ -10234,7 +10234,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
             </attribute>
           </attributes>
         </element>
-      <element xmi:idref="EAID_PKG_29ed5f4335a77f3f29" idref="EAID_PKG_29ed5f4335a77f3f29" xmi:type="uml:Package" type="Package" name="basisklasser" scope="public">
+      <element xmi:idref="EAID_PKG_29ed5f4335a77f3f29" idref="EAID_PKG_29ed5f4335a77f3f29" xmi:type="uml:Package" type="Package" name="Basisklasser" scope="public">
         <model package2="EAID_PKG_29ed5f4335a77f3f29" ea_eleType="package" package="EAID_PKG_38f7bf53c51db64eb4" />
         <tags />
         </element>
@@ -10319,7 +10319,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
             </attribute>
           </attributes>
         </element>
-      <element xmi:idref="EAID_PKG_7356e937b9da6c2de4" idref="EAID_PKG_7356e937b9da6c2de4" xmi:type="uml:Package" type="Package" name="kodeverk" scope="public">
+      <element xmi:idref="EAID_PKG_7356e937b9da6c2de4" idref="EAID_PKG_7356e937b9da6c2de4" xmi:type="uml:Package" type="Package" name="Kodeverk" scope="public">
         <model package2="EAID_PKG_7356e937b9da6c2de4" ea_eleType="package" package="EAID_PKG_38f7bf53c51db64eb4" />
         <tags />
         </element>
@@ -10360,7 +10360,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
             </attribute>
           </attributes>
         </element>
-      <element xmi:idref="EAID_PKG_f86973cf2c8168a1e8" idref="EAID_PKG_f86973cf2c8168a1e8" xmi:type="uml:Package" type="Package" name="kompleksedatatyper" scope="public">
+      <element xmi:idref="EAID_PKG_f86973cf2c8168a1e8" idref="EAID_PKG_f86973cf2c8168a1e8" xmi:type="uml:Package" type="Package" name="Kompleksedatatyper" scope="public">
         <model package2="EAID_PKG_f86973cf2c8168a1e8" ea_eleType="package" package="EAID_PKG_38f7bf53c51db64eb4" />
         <tags />
         </element>
@@ -10532,7 +10532,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
             </attribute>
           </attributes>
         </element>
-      <element xmi:idref="EAID_PKG_d126aa650fe717083f" idref="EAID_PKG_d126aa650fe717083f" xmi:type="uml:Package" type="Package" name="faktura" scope="public">
+      <element xmi:idref="EAID_PKG_d126aa650fe717083f" idref="EAID_PKG_d126aa650fe717083f" xmi:type="uml:Package" type="Package" name="Faktura" scope="public">
         <model package2="EAID_PKG_d126aa650fe717083f" ea_eleType="package" package="EAID_PKG_6167796250140b5466" />
         <tags />
         </element>
@@ -10702,7 +10702,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
             </attribute>
           </attributes>
         </element>
-      <element xmi:idref="EAID_PKG_004ca20b6e1959ae14" idref="EAID_PKG_004ca20b6e1959ae14" xmi:type="uml:Package" type="Package" name="kodeverk" scope="public">
+      <element xmi:idref="EAID_PKG_004ca20b6e1959ae14" idref="EAID_PKG_004ca20b6e1959ae14" xmi:type="uml:Package" type="Package" name="Kodeverk" scope="public">
         <model package2="EAID_PKG_004ca20b6e1959ae14" ea_eleType="package" package="EAID_PKG_6167796250140b5466" />
         <tags />
         </element>
@@ -10744,7 +10744,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
             </attribute>
           </attributes>
         </element>
-      <element xmi:idref="EAID_PKG_723062f8814f44fcdb" idref="EAID_PKG_723062f8814f44fcdb" xmi:type="uml:Package" type="Package" name="regnskap" scope="public">
+      <element xmi:idref="EAID_PKG_723062f8814f44fcdb" idref="EAID_PKG_723062f8814f44fcdb" xmi:type="uml:Package" type="Package" name="Regnskap" scope="public">
         <model package2="EAID_PKG_723062f8814f44fcdb" ea_eleType="package" package="EAID_PKG_6167796250140b5466" />
         <tags />
         </element>
@@ -10915,7 +10915,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
             </attribute>
           </attributes>
         </element>
-      <element xmi:idref="EAID_PKG_f25478e3239844f1ca" idref="EAID_PKG_f25478e3239844f1ca" xmi:type="uml:Package" type="Package" name="kodeverk" scope="public">
+      <element xmi:idref="EAID_PKG_f25478e3239844f1ca" idref="EAID_PKG_f25478e3239844f1ca" xmi:type="uml:Package" type="Package" name="Kodeverk" scope="public">
         <model package2="EAID_PKG_f25478e3239844f1ca" ea_eleType="package" package="EAID_PKG_b51dbf691147b92836" />
         <tags />
         </element>
@@ -10931,7 +10931,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
         <properties isAbstract="false" sType="Class" scope="public" documentation="Opplysninger og vurderinger som kan knyttes til enkeltpersoner.&#10;&#10;# Beskrivelse&#10;&#10;Typiske personopplysninger er navn, adresse, telefonnummer, e-post og fødselsnummer. Et bilde regnes som en personopplysning dersom personer kan gjenkjennes. &#10;&#10;# Referanser&#10;&#10;Personvernforordningen artikkel 4&#10;" stereotype="hovedklasse" />
         <attributes />
         </element>
-      <element xmi:idref="EAID_PKG_0728537f42d29a1e98" idref="EAID_PKG_0728537f42d29a1e98" xmi:type="uml:Package" type="Package" name="samtykke" scope="public">
+      <element xmi:idref="EAID_PKG_0728537f42d29a1e98" idref="EAID_PKG_0728537f42d29a1e98" xmi:type="uml:Package" type="Package" name="Samtykke" scope="public">
         <model package2="EAID_PKG_0728537f42d29a1e98" ea_eleType="package" package="EAID_PKG_b51dbf691147b92836" />
         <tags />
         </element>
@@ -11016,7 +11016,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
             </attribute>
           </attributes>
         </element>
-      <element xmi:idref="EAID_PKG_7edb421a6636ba1291" idref="EAID_PKG_7edb421a6636ba1291" xmi:type="uml:Package" type="Package" name="datautstyr" scope="public">
+      <element xmi:idref="EAID_PKG_7edb421a6636ba1291" idref="EAID_PKG_7edb421a6636ba1291" xmi:type="uml:Package" type="Package" name="Datautstyr" scope="public">
         <model package2="EAID_PKG_7edb421a6636ba1291" ea_eleType="package" package="EAID_PKG_a79bb65b39f7246e3f" />
         <tags />
         </element>
@@ -11095,7 +11095,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
             </attribute>
           </attributes>
         </element>
-      <element xmi:idref="EAID_PKG_c48245093616af666d" idref="EAID_PKG_c48245093616af666d" xmi:type="uml:Package" type="Package" name="eiendel" scope="public">
+      <element xmi:idref="EAID_PKG_c48245093616af666d" idref="EAID_PKG_c48245093616af666d" xmi:type="uml:Package" type="Package" name="Eiendel" scope="public">
         <model package2="EAID_PKG_c48245093616af666d" ea_eleType="package" package="EAID_PKG_a79bb65b39f7246e3f" />
         <tags />
         </element>
@@ -11204,7 +11204,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
             </attribute>
           </attributes>
         </element>
-      <element xmi:idref="EAID_PKG_8eecacff2524336d0e" idref="EAID_PKG_8eecacff2524336d0e" xmi:type="uml:Package" type="Package" name="kodeverk" scope="public">
+      <element xmi:idref="EAID_PKG_8eecacff2524336d0e" idref="EAID_PKG_8eecacff2524336d0e" xmi:type="uml:Package" type="Package" name="Kodeverk" scope="public">
         <model package2="EAID_PKG_8eecacff2524336d0e" ea_eleType="package" package="EAID_PKG_a79bb65b39f7246e3f" />
         <tags />
         </element>
@@ -11256,7 +11256,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
         <properties isAbstract="false" sType="Class" scope="public" stereotype="hovedklasse" />
         <attributes />
         </element>
-      <element xmi:idref="EAID_PKG_11747fd7c7dcca9ea3" idref="EAID_PKG_11747fd7c7dcca9ea3" xmi:type="uml:Package" type="Package" name="tilgang" scope="public">
+      <element xmi:idref="EAID_PKG_11747fd7c7dcca9ea3" idref="EAID_PKG_11747fd7c7dcca9ea3" xmi:type="uml:Package" type="Package" name="Tilgang" scope="public">
         <model package2="EAID_PKG_11747fd7c7dcca9ea3" ea_eleType="package" package="EAID_PKG_a79bb65b39f7246e3f" />
         <tags />
         </element>
@@ -11286,7 +11286,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
             </attribute>
           </attributes>
         </element>
-      <element xmi:idref="EAID_PKG_e292aace01a8566dda" idref="EAID_PKG_e292aace01a8566dda" xmi:type="uml:Package" type="Package" name="basisklasser" scope="public">
+      <element xmi:idref="EAID_PKG_e292aace01a8566dda" idref="EAID_PKG_e292aace01a8566dda" xmi:type="uml:Package" type="Package" name="Basisklasser" scope="public">
         <model package2="EAID_PKG_e292aace01a8566dda" ea_eleType="package" package="EAID_PKG_93ea470388b4d82056" />
         <tags />
         </element>
@@ -11353,7 +11353,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
             </attribute>
           </attributes>
         </element>
-      <element xmi:idref="EAID_PKG_c5ee21afe2335d549a" idref="EAID_PKG_c5ee21afe2335d549a" xmi:type="uml:Package" type="Package" name="elev" scope="public">
+      <element xmi:idref="EAID_PKG_c5ee21afe2335d549a" idref="EAID_PKG_c5ee21afe2335d549a" xmi:type="uml:Package" type="Package" name="Elev" scope="public">
         <model package2="EAID_PKG_c5ee21afe2335d549a" ea_eleType="package" package="EAID_PKG_93ea470388b4d82056" />
         <tags />
         </element>
@@ -11549,7 +11549,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
             </attribute>
           </attributes>
         </element>
-      <element xmi:idref="EAID_PKG_606159134ff04f6d3c" idref="EAID_PKG_606159134ff04f6d3c" xmi:type="uml:Package" type="Package" name="kodeverk" scope="public">
+      <element xmi:idref="EAID_PKG_606159134ff04f6d3c" idref="EAID_PKG_606159134ff04f6d3c" xmi:type="uml:Package" type="Package" name="Kodeverk" scope="public">
         <model package2="EAID_PKG_606159134ff04f6d3c" ea_eleType="package" package="EAID_PKG_93ea470388b4d82056" />
         <tags />
         </element>
@@ -11711,7 +11711,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
         <properties isAbstract="false" sType="Class" scope="public" documentation="En vitnemålsmerknad har en eller flere av følgende funksjoner:&#10;&#10;* gir opplysninger som gjelder opplæringen generelt eller som gjelder hele vitnemålet/kompetansebeviset&#10;&#10;* henviser til vedlegg som gir slike opplysninger&#10;&#10;* utdyper en fagmerknad&#10;&#10;Det kan bare føres vitnemålsmerknader som er gitt av Utdanningsdirektoratet.&#10;&#10;# Referanser&#10;[UDIR : Merknader til vitnemål og kompetansebevis](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/3-merknader-til-vitnemal-og-kompetansebevis/)&#10;" stereotype="hovedklasse" />
         <attributes />
         </element>
-      <element xmi:idref="EAID_PKG_d69b36e7b348f13887" idref="EAID_PKG_d69b36e7b348f13887" xmi:type="uml:Package" type="Package" name="larling" scope="public">
+      <element xmi:idref="EAID_PKG_d69b36e7b348f13887" idref="EAID_PKG_d69b36e7b348f13887" xmi:type="uml:Package" type="Package" name="Larling" scope="public">
         <model package2="EAID_PKG_d69b36e7b348f13887" ea_eleType="package" package="EAID_PKG_93ea470388b4d82056" />
         <tags />
         </element>
@@ -11759,7 +11759,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
             </attribute>
           </attributes>
         </element>
-      <element xmi:idref="EAID_PKG_6238ff01a241e19e6a" idref="EAID_PKG_6238ff01a241e19e6a" xmi:type="uml:Package" type="Package" name="ot" scope="public">
+      <element xmi:idref="EAID_PKG_6238ff01a241e19e6a" idref="EAID_PKG_6238ff01a241e19e6a" xmi:type="uml:Package" type="Package" name="Ot" scope="public">
         <model package2="EAID_PKG_6238ff01a241e19e6a" ea_eleType="package" package="EAID_PKG_93ea470388b4d82056" />
         <tags />
         </element>
@@ -11776,7 +11776,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
             </attribute>
           </attributes>
         </element>
-      <element xmi:idref="EAID_PKG_b9ee1761619271cf21" idref="EAID_PKG_b9ee1761619271cf21" xmi:type="uml:Package" type="Package" name="timeplan" scope="public">
+      <element xmi:idref="EAID_PKG_b9ee1761619271cf21" idref="EAID_PKG_b9ee1761619271cf21" xmi:type="uml:Package" type="Package" name="Timeplan" scope="public">
         <model package2="EAID_PKG_b9ee1761619271cf21" ea_eleType="package" package="EAID_PKG_93ea470388b4d82056" />
         <tags />
         </element>
@@ -11910,7 +11910,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
         <properties isAbstract="false" sType="Class" scope="public" documentation="Medlemskap i undervisningsgrupper.&#10;&#10;# Beskrivelse&#10;&#10;Gruppemedlemskap som knytter sammen elevforhold og undervisningsgrupper.&#10;" stereotype="hovedklasse" />
         <attributes />
         </element>
-      <element xmi:idref="EAID_PKG_62662c7b1bff5787c8" idref="EAID_PKG_62662c7b1bff5787c8" xmi:type="uml:Package" type="Package" name="utdanningsprogram" scope="public">
+      <element xmi:idref="EAID_PKG_62662c7b1bff5787c8" idref="EAID_PKG_62662c7b1bff5787c8" xmi:type="uml:Package" type="Package" name="Utdanningsprogram" scope="public">
         <model package2="EAID_PKG_62662c7b1bff5787c8" ea_eleType="package" package="EAID_PKG_93ea470388b4d82056" />
         <tags />
         </element>
@@ -12020,7 +12020,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
             </attribute>
           </attributes>
         </element>
-      <element xmi:idref="EAID_PKG_005aa392465e3500f2" idref="EAID_PKG_005aa392465e3500f2" xmi:type="uml:Package" type="Package" name="vurdering" scope="public">
+      <element xmi:idref="EAID_PKG_005aa392465e3500f2" idref="EAID_PKG_005aa392465e3500f2" xmi:type="uml:Package" type="Package" name="Vurdering" scope="public">
         <model package2="EAID_PKG_005aa392465e3500f2" ea_eleType="package" package="EAID_PKG_93ea470388b4d82056" />
         <tags />
         </element>
@@ -12330,7 +12330,7 @@ Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et 
         <properties isAbstract="false" sType="Class" scope="public" documentation="Underveisvurdering av orden og atferd..&#10;&#10;# Beskrivelse&#10;&#10;Vurderinger av orden og atferd gjøres uten relasjon til noen gruppe, kun til et elevforhold.&#10;&#10;# Referanser&#10;&#10;* UDir. Registreringshåndbok, Karakterer og andre vurderingsuttrykk: [regbok.udir.no/35004/3344/35042-1021153.html](http://regbok.udir.no/35004/3344/35042-1021153.html)&#10;* Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet 2017. Karakterer og andre vurderingsuttrykk: [https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/5-karakterer-og-andre-vurderingsuttrykk/)&#10;* Forskrift til opplæringslova &amp;#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&amp;#167;3-4)&#10;" stereotype="hovedklasse" />
         <attributes />
         </element>
-      <element xmi:idref="EAID_PKG_4699b21dd27ec6815d" idref="EAID_PKG_4699b21dd27ec6815d" xmi:type="uml:Package" type="Package" name="iso" scope="public">
+      <element xmi:idref="EAID_PKG_4699b21dd27ec6815d" idref="EAID_PKG_4699b21dd27ec6815d" xmi:type="uml:Package" type="Package" name="Iso" scope="public">
         <model package2="EAID_PKG_4699b21dd27ec6815d" ea_eleType="package" package="EAID_PKG_7356e937b9da6c2de4" />
         <tags />
         </element>
