@@ -16,7 +16,7 @@ classes:
     is_a: Begrep
     attributes:
       sats:
-        range: string
+        range: integer
         description: |
           Sats for merverdiavgift..
           
@@ -58,15 +58,22 @@ classes:
         required: true
       kontering:
         range: Kontostreng
+        annotations:
+          writeable: true
         description: |
           Varens kontering i økonomisystemet.
       pris:
-        range: string
+        range: integer
+        annotations:
+          writeable: true
         description: |
           Varens pris per enhet i vareregisteret, i øre.
         required: true
       fakturautsteder:
         range: Fakturautsteder
+        inverse: vare
+        annotations:
+          primaryRelation: true
         description: |
           Fakturautsteder for varen.
         required: true

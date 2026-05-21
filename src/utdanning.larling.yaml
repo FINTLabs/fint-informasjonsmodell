@@ -16,7 +16,7 @@ classes:
       Informasjon om en avlagt prøve for en person i et fag.
     attributes:
       prøvedato:
-        range: string
+        range: date
         description: |
           Dato for avlagt prøve i perioden.
       systemId:
@@ -30,6 +30,9 @@ classes:
           Resultat av avlagt prøve - Praktisk prøve + teori.
       lærling:
         range: Lærling
+        inverse: avlagtprøve
+        annotations:
+          primaryRelation: true
         description: |
           Lærling som tar prøve.
         required: true
@@ -69,15 +72,22 @@ classes:
           Programområdet til lærling.
       bedrift:
         range: Virksomhet
+        inverse: lærling
+        annotations:
+          primaryRelation: true
         description: |
           Bedriften hvor lærlingen har sin læretid.
       person:
         range: Person
+        inverse: lærling
+        annotations:
+          primaryRelation: true
         description: |
           Person som er lærling.
         required: true
       avlagtprøve:
         range: AvlagtPrøve
+        inverse: lærling
         description: |
           Avlagte prøver (Fagprøver m.m.)
         multivalued: true

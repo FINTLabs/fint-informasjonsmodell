@@ -15,6 +15,50 @@ imports:
 
 classes:
 
+  Årstrinn:
+    description: |
+      Hvert år i grunnopplæringen (grunnskole og videregående skole) kalles et årstrinn.
+      
+      # Eksempler
+      
+      * Vg1
+      * Vg2
+      * Vg3
+      * Vg4
+      
+      # Synonym
+      
+      * Nivå (Rogaland)
+      * Klassetrinn
+      * Trinn
+      
+      # Referanser
+      
+      * http://grepwiki.udir.no/index.php?title=Årstrinn
+      * http://psi.udir.no/ontologi/kl06/aarstrinn
+    is_a: Gruppe
+    attributes:
+      vigoreferanse:
+        range: Vigoreferanse
+        description: |
+          Referanse til VIGO kodeverket.
+      grepreferanse:
+        range: Grepreferanse
+        description: |
+          Referanse til GREP kodeverket.
+      programområde:
+        range: Programområde
+        inverse: trinn
+        description: |
+          Alle programområder som er relevante for trinnet.
+        multivalued: true
+      klasse:
+        range: Klasse
+        inverse: trinn
+        description: |
+          Klassene som hører hjemme på dette trinnet
+        multivalued: true
+
   Programområde:
     description: |
       Programområde er et kurs i den videregående skolen. Et programområde strekker seg vanligvis over ett eller flere år og er gjerne en spesialisert retning eller område for fordypning innen utdanningsprogrammet.
@@ -52,6 +96,9 @@ classes:
     attributes:
       trinn:
         range: Årstrinn
+        inverse: programområde
+        annotations:
+          primaryRelation: true
         description: |
           Alle trinn som finnes på dette programområdet.
         multivalued: true
@@ -61,11 +108,17 @@ classes:
           Referanse til GREP kodeverket.
       fag:
         range: Fag
+        inverse: programområde
+        annotations:
+          primaryRelation: true
         description: |
           Alle fag som er relatert til et gitt programområde.
         multivalued: true
       utdanningsprogram:
         range: Utdanningsprogram
+        inverse: programområde
+        annotations:
+          primaryRelation: true
         description: |
           Alle overordnede utdanningsprogram.
         multivalued: true
@@ -76,6 +129,7 @@ classes:
           Referanse til VIGO kodeverket.
       gruppemedlemskap:
         range: Programområdemedlemskap
+        inverse: programområde
         description: |
           Gruppemedlemskapene til et programområde.
         multivalued: true
@@ -91,11 +145,17 @@ classes:
     attributes:
       programområde:
         range: Programområde
+        inverse: gruppemedlemskap
+        annotations:
+          primaryRelation: true
         description: |
           Programområde et gruppemedlemskap tilhører.
         required: true
       elevforhold:
         range: Elevforhold
+        inverse: programområdemedlemskap
+        annotations:
+          primaryRelation: true
         description: |
           Elevforhold et programområdemedlemskap tilhører.
         required: true
@@ -190,6 +250,9 @@ classes:
           * Vigo Kodeverkdatabase: [vigo.no/vigokv/skole.action](https://www.vigo.no/vigokv/skole.action)
       organisasjon:
         range: Organisasjonselement
+        inverse: skole
+        annotations:
+          primaryRelation: true
         description: |
           Referanse til Adminsitrasjons domenet
       vigoreferanse:
@@ -198,51 +261,61 @@ classes:
           Ekstern referanse til skoleinformasjon i Vigo kodeverksdatabase.
       eksamensgruppe:
         range: Eksamensgruppe
+        inverse: skole
         description: |
           Alle eksamensgruppene ved en skole.
         multivalued: true
       faggruppe:
         range: Faggruppe
+        inverse: skole
         description: |
           Skolens faggrupper.
         multivalued: true
       utdanningsprogram:
         range: Utdanningsprogram
+        inverse: skole
         description: |
           Utdanningsprogram som inngår på en skole
         multivalued: true
       skoleressurs:
         range: Skoleressurs
+        inverse: skole
         description: |
           Alle ansatte ved skolen
         multivalued: true
       kontaktlærergruppe:
         range: Kontaktlærergruppe
+        inverse: skole
         description: |
           Alle kontaktlærergruppene ved skolen.
         multivalued: true
       elevforhold:
         range: Elevforhold
+        inverse: skole
         description: |
           Alle elevforhold ved skole.
         multivalued: true
       undervisningsgruppe:
         range: Undervisningsgruppe
+        inverse: skole
         description: |
           Alle undervisningsgruppene ved en skole.
         multivalued: true
       klasse:
         range: Klasse
+        inverse: skole
         description: |
           Alle klasser ved en skole.
         multivalued: true
       fag:
         range: Fag
+        inverse: skole
         description: |
           Fagene som skolen tilbyr.
         multivalued: true
       undervisningsforhold:
         range: Undervisningsforhold
+        inverse: skole
         description: |
           Alle undervisningsforhold (lærere) tilknyttet en skole.
         multivalued: true
@@ -278,6 +351,9 @@ classes:
     attributes:
       skole:
         range: Skole
+        inverse: utdanningsprogram
+        annotations:
+          primaryRelation: true
         description: |
           Alle skoler som tilbyr utdanningsprogrammet
         multivalued: true
@@ -291,48 +367,7 @@ classes:
           Referanse til VIGO kodeverket.
       programområde:
         range: Programområde
+        inverse: utdanningsprogram
         description: |
           Alle underliggende programområder.
-        multivalued: true
-
-  Årstrinn:
-    description: |
-      Hvert år i grunnopplæringen (grunnskole og videregående skole) kalles et årstrinn.
-      
-      # Eksempler
-      
-      * Vg1
-      * Vg2
-      * Vg3
-      * Vg4
-      
-      # Synonym
-      
-      * Nivå (Rogaland)
-      * Klassetrinn
-      * Trinn
-      
-      # Referanser
-      
-      * http://grepwiki.udir.no/index.php?title=Årstrinn
-      * http://psi.udir.no/ontologi/kl06/aarstrinn
-    is_a: Gruppe
-    attributes:
-      vigoreferanse:
-        range: Vigoreferanse
-        description: |
-          Referanse til VIGO kodeverket.
-      grepreferanse:
-        range: Grepreferanse
-        description: |
-          Referanse til GREP kodeverket.
-      programområde:
-        range: Programområde
-        description: |
-          Alle programområder som er relevante for trinnet.
-        multivalued: true
-      klasse:
-        range: Klasse
-        description: |
-          Klassene som hører hjemme på dette trinnet
         multivalued: true

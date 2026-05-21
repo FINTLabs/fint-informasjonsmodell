@@ -16,21 +16,29 @@ classes:
     attributes:
       kulturminneId:
         range: string
+        annotations:
+          writeable: true
         description: |
           Kulturminnets ID i Askeladden.
         required: true
       matrikkelnummer:
         range: Matrikkelnummer
+        annotations:
+          writeable: true
         description: |
           Kulturminnets identifikator i Matrikkelen.
         required: true
       søknadsnummer:
         range: Identifikator
+        annotations:
+          writeable: true
         description: |
           Søknadsnummer fra Digisak.
         required: true
       tiltak:
         range: string
+        annotations:
+          writeable: true
         description: |
           Beskriver hvilket tiltak som skal utføres på eiendommen. 
           
@@ -47,21 +55,29 @@ classes:
     attributes:
       fartøyNavn:
         range: string
+        annotations:
+          writeable: true
         description: |
           Fartøyets navn.
         required: true
       kallesignal:
         range: string
+        annotations:
+          writeable: true
         description: |
           Fartøyets kallesignal.
         required: true
       kulturminneId:
         range: string
+        annotations:
+          writeable: true
         description: |
           Fartøyets ID i Askeladden.
         required: true
       søknadsnummer:
         range: Identifikator
+        annotations:
+          writeable: true
         description: |
           Søknadsnummer fra Digisak.
         required: true
@@ -73,18 +89,26 @@ classes:
     attributes:
       bygningsnavn:
         range: string
+        annotations:
+          writeable: true
         description: |
           Bygningens navn.
       kulturminneId:
         range: string
+        annotations:
+          writeable: true
         description: |
           Bygningens ID i Askeladden.
         required: true
       matrikkelnummer:
         range: Matrikkelnummer
+        annotations:
+          writeable: true
         description: |
           Bygningens identifikator i Matrikkelen.
       søknadsnummer:
         range: Identifikator
+        annotations:
+          writeable: true
         description: |
           Søknadsnummer fra Digisak.

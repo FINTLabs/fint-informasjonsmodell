@@ -90,6 +90,9 @@ classes:
         required: true
       klassifikasjonssystem:
         range: Klassifikasjonssystem
+        inverse: arkivdel
+        annotations:
+          primaryRelation: true
         description: |
           Klassifikasjonssystemer benyttet i arkivdel.
         multivalued: true
@@ -108,6 +111,8 @@ classes:
     attributes:
       kildesystemId:
         range: Identifikator
+        annotations:
+          writeable: true
         description: |
           Kildesystemets identifikator av Arkivressurs.
       systemId:
@@ -121,11 +126,15 @@ classes:
         required: true
       autorisasjon:
         range: Autorisasjon
+        inverse: arkivressurs
+        annotations:
+          primaryRelation: true
         description: |
           Autorisasjoner for tilgangsrestriksjoner gitt til arkivressurs.
         multivalued: true
       tilgang:
         range: Tilgang
+        inverse: arkivressurs
         description: |
           Tilganger gitt til arkivressurs.
         multivalued: true
@@ -160,6 +169,7 @@ classes:
         multivalued: true
       arkivressurs:
         range: Arkivressurs
+        inverse: autorisasjon
         description: |
           Arkivressurser som har fått autorisasjon
         multivalued: true
@@ -178,6 +188,8 @@ classes:
     attributes:
       avskrevetAv:
         range: string
+        annotations:
+          writeable: true
         description: |
           Avskrevet av
           
@@ -190,7 +202,9 @@ classes:
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
         required: true
       avskrivningsdato:
-        range: string
+        range: datetime
+        annotations:
+          writeable: true
         description: |
           Dato og klokkelsett for avskrivning
           
@@ -218,6 +232,8 @@ classes:
         required: true
       avskrivningsmate:
         range: string
+        annotations:
+          writeable: true
         description: |
           Hvordan journalposten avskrives
           
@@ -254,6 +270,8 @@ classes:
     attributes:
       beskrivelse:
         range: string
+        annotations:
+          writeable: true
         description: |
           Tekstlig beskrivelse av arkivenheten.
           
@@ -265,7 +283,9 @@ classes:
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       dokumentnummer:
-        range: string
+        range: integer
+        annotations:
+          writeable: true
         description: |
           Identifikasjon av dokumentene innenfor en registrering.
           
@@ -278,6 +298,8 @@ classes:
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       dokumentobjekt:
         range: Dokumentobjekt
+        annotations:
+          writeable: true
         description: |
           Dokumentobjekt tilhørende dokumentbeskrivelsen.
           
@@ -291,6 +313,8 @@ classes:
         multivalued: true
       forfatter:
         range: string
+        annotations:
+          writeable: true
         description: |
           Navn på person (eller eventuelt organisasjon) som har forfattet eller skapt dokumentet.
           
@@ -303,7 +327,7 @@ classes:
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
         multivalued: true
       opprettetDato:
-        range: string
+        range: datetime
         description: |
           Dato og klokkeslett når arkivenheten ble opprettet/registrert.
           
@@ -330,6 +354,8 @@ classes:
           * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
       part:
         range: Part
+        annotations:
+          writeable: true
         description: |
           Parter til dokument.
           
@@ -343,6 +369,8 @@ classes:
         multivalued: true
       referanseArkivdel:
         range: string
+        annotations:
+          writeable: true
         description: |
           Referanse til arkivdelen som denne arkivenheten er tilknyttet.
           
@@ -356,6 +384,8 @@ classes:
         multivalued: true
       skjerming:
         range: Skjerming
+        annotations:
+          writeable: true
         description: |
           Skjerming av dokument.
           
@@ -367,7 +397,7 @@ classes:
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       tilknyttetDato:
-        range: string
+        range: datetime
         description: |
           Datoen et dokument ble knyttet til en registrering.
           
@@ -396,6 +426,8 @@ classes:
           * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
       tittel:
         range: string
+        annotations:
+          writeable: true
         description: |
           Tittel eller navn på arkivenheten.
           
@@ -492,15 +524,21 @@ classes:
     attributes:
       data:
         range: string
+        annotations:
+          writeable: true
         description: |
           Dokumentfilens data, kodet som Base64.
         required: true
       filnavn:
         range: string
+        annotations:
+          writeable: true
         description: |
           Dokumentfilens navn.
       format:
         range: string
+        annotations:
+          writeable: true
         description: |
           Format på dokumentfil, som IANA Media Type.
           
@@ -518,6 +556,8 @@ classes:
     attributes:
       filstorrelse:
         range: string
+        annotations:
+          writeable: true
         description: |
           Størrelsen på fila i antall bytes oppgitt med desimaltall.
           
@@ -530,6 +570,8 @@ classes:
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       formatDetaljer:
         range: string
+        annotations:
+          writeable: true
         description: |
           Nærmere spesifikasjon av dokuments format, f.eks. informasjon om komprimering.
           
@@ -542,6 +584,8 @@ classes:
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       sjekksum:
         range: string
+        annotations:
+          writeable: true
         description: |
           En verdi som beregnes ut fra innholdet i dokumentet, og som dermed gir integritetssikring til dokumentets innhold.
           
@@ -554,6 +598,8 @@ classes:
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       sjekksumAlgoritme:
         range: string
+        annotations:
+          writeable: true
         description: |
           Algoritmen som er brukt for å beregne sjekksummen.
           
@@ -565,7 +611,9 @@ classes:
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       versjonsnummer:
-        range: string
+        range: integer
+        annotations:
+          writeable: true
         description: |
           Identifikasjon av versjoner innenfor ett og samme dokument.
           
@@ -641,7 +689,9 @@ classes:
     is_a: Registrering
     attributes:
       antallVedlegg:
-        range: string
+        range: integer
+        annotations:
+          writeable: true
         description: |
           Antall fysiske vedlegg til et fysisk hoveddokument.
           
@@ -654,6 +704,8 @@ classes:
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       avskrivning:
         range: Avskrivning
+        annotations:
+          writeable: true
         description: |
           Avskrivning av journalpost
           
@@ -665,7 +717,9 @@ classes:
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       dokumentetsDato:
-        range: string
+        range: datetime
+        annotations:
+          writeable: true
         description: |
           Dato som er påført selve dokumentet.
           
@@ -693,7 +747,9 @@ classes:
           
           * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
       forfallsDato:
-        range: string
+        range: datetime
+        annotations:
+          writeable: true
         description: |
           Dato som angir fristen for når et inngående dokument må være besvart.
           
@@ -733,7 +789,7 @@ classes:
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       journalDato:
-        range: string
+        range: datetime
         description: |
           Datoen journalposten er opprettet/arkivert.
           
@@ -761,7 +817,7 @@ classes:
           
           * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
       journalPostnummer:
-        range: string
+        range: integer
         description: |
           Inngår i M004 journalpostID. Viser rekkefølgen journalpostene ble opprettet innenfor saksmappen, f.eks. 2011/3869-8 (dokument nr. 8 i sak 2011/3869).
           
@@ -773,7 +829,7 @@ classes:
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       journalSekvensnummer:
-        range: string
+        range: integer
         description: |
           Viser rekkefølgen når journalposten ble opprettet under året.
           
@@ -785,7 +841,9 @@ classes:
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       mottattDato:
-        range: string
+        range: datetime
+        annotations:
+          writeable: true
         description: |
           Dato et eksternt dokument ble mottatt.
           
@@ -813,7 +871,9 @@ classes:
           
           * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
       offentlighetsvurdertDato:
-        range: string
+        range: datetime
+        annotations:
+          writeable: true
         description: |
           Datoen da offentlighetsvurdering ble foretatt.
           
@@ -841,7 +901,9 @@ classes:
           
           * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
       sendtDato:
-        range: string
+        range: datetime
+        annotations:
+          writeable: true
         description: |
           Dato et internt produsert dokument ble sendt/ekspedert.
           
@@ -921,6 +983,8 @@ classes:
     attributes:
       klasseId:
         range: string
+        annotations:
+          writeable: true
         description: |
           Entydig identifikasjon av klassen innenfor klassifikasjonssystemet.
           
@@ -933,7 +997,9 @@ classes:
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
         required: true
       rekkefølge:
-        range: string
+        range: integer
+        annotations:
+          writeable: true
         description: |
           Rekkefølge for klassifiseringer
           
@@ -942,6 +1008,8 @@ classes:
           Angir i hvilken rekkefølge klassifiseringene skal brukes til å sortere / ordne lister m.m.
       skjerming:
         range: Skjerming
+        annotations:
+          writeable: true
         description: |
           Skjerming av klasse.
           
@@ -954,6 +1022,8 @@ classes:
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       tittel:
         range: string
+        annotations:
+          writeable: true
         description: |
           Tittel eller navn på arkivenheten
           
@@ -996,7 +1066,7 @@ classes:
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       avsluttetDato:
-        range: string
+        range: datetime
         description: |
           Dato og klokkeslett når arkivenheten ble avsluttet/lukket.
           
@@ -1053,7 +1123,7 @@ classes:
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
         required: true
       opprettetDato:
-        range: string
+        range: datetime
         description: |
           Dato og klokkeslett når arkivenheten ble opprettet/registrert.
           
@@ -1119,6 +1189,7 @@ classes:
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       arkivdel:
         range: Arkivdel
+        inverse: klassifikasjonssystem
         description: |
           Arkivdeler klassifikasjonssystemet benyttes i.
         multivalued: true
@@ -1138,6 +1209,8 @@ classes:
     attributes:
       adresse:
         range: Adresse
+        annotations:
+          writeable: true
         description: |
           Adressen til korrespondanseparten.
           
@@ -1150,12 +1223,16 @@ classes:
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       fødselsnummer:
         range: string
+        annotations:
+          writeable: true
         description: |
           Fødselsnummer til Korrespondansepart.
           
           Kun gyldig hvis Korrespondansepart er privatperson.
       kontaktinformasjon:
         range: Kontaktinformasjon
+        annotations:
+          writeable: true
         description: |
           Kontaktinformasjon til korrespondansepart.
           
@@ -1168,6 +1245,8 @@ classes:
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       kontaktperson:
         range: string
+        annotations:
+          writeable: true
         description: |
           Kontaktperson hos en organisasjon som er avsender eller mottaker, eller sakspart
           
@@ -1180,6 +1259,8 @@ classes:
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       korrespondansepartNavn:
         range: string
+        annotations:
+          writeable: true
         description: |
           Navn på person eller organisasjon som er avsender eller mottaker av dokumentet
           
@@ -1192,12 +1273,16 @@ classes:
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       organisasjonsnummer:
         range: string
+        annotations:
+          writeable: true
         description: |
           Organisasjonsnummer til Korrespondansepart.
           
           Kun gyldig hvis Korrespondansepart er en organisasjon.
       skjerming:
         range: Skjerming
+        annotations:
+          writeable: true
         description: |
           Skjerming av korrespodansepart.
           
@@ -1236,7 +1321,9 @@ classes:
     abstract: true
     attributes:
       avsluttetDato:
-        range: string
+        range: datetime
+        annotations:
+          writeable: true
         description: |
           Dato og klokkeslett når arkivenheten ble avsluttet/lukket
           
@@ -1263,6 +1350,8 @@ classes:
           * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
       beskrivelse:
         range: string
+        annotations:
+          writeable: true
         description: |
           Tekstlig beskrivelse av arkivenheten
           
@@ -1275,6 +1364,8 @@ classes:
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       klasse:
         range: Klasse
+        annotations:
+          writeable: true
         description: |
           Klassifisering av mappe.
           
@@ -1300,6 +1391,8 @@ classes:
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       merknad:
         range: Merknad
+        annotations:
+          writeable: true
         description: |
           Merknader knyttet til mappe.
           
@@ -1313,6 +1406,8 @@ classes:
         multivalued: true
       noekkelord:
         range: string
+        annotations:
+          writeable: true
         description: |
           Nøkkeord eller stikkord som beskriver innholdet i enheten
           
@@ -1327,6 +1422,8 @@ classes:
         multivalued: true
       offentligTittel:
         range: string
+        annotations:
+          writeable: true
         description: |
           Offentlig tittel på arkivenheten, ord som skal skjermes er fjernet fra innholdet i tittelen (erstattet med ******)
           
@@ -1338,7 +1435,7 @@ classes:
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       opprettetDato:
-        range: string
+        range: datetime
         description: |
           Dato og klokkeslett når arkivenheten ble opprettet/registrert
           
@@ -1365,6 +1462,8 @@ classes:
           * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
       part:
         range: Part
+        annotations:
+          writeable: true
         description: |
           Parter til mappe.
           
@@ -1378,6 +1477,8 @@ classes:
         multivalued: true
       skjerming:
         range: Skjerming
+        annotations:
+          writeable: true
         description: |
           Skjerming av mappe.
           
@@ -1402,6 +1503,8 @@ classes:
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       tittel:
         range: string
+        annotations:
+          writeable: true
         description: |
           Tittel eller navn på arkivenheten
           
@@ -1455,7 +1558,9 @@ classes:
       * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
     attributes:
       merknadsdato:
-        range: string
+        range: datetime
+        annotations:
+          writeable: true
         description: |
           Dato og klokkeslett når merknaden ble registrert
           
@@ -1483,6 +1588,8 @@ classes:
         required: true
       merknadstekst:
         range: string
+        annotations:
+          writeable: true
         description: |
           Merknad fra saksbehandler, leder eller arkivpersonale
           
@@ -1535,6 +1642,8 @@ classes:
     attributes:
       adresse:
         range: Adresse
+        annotations:
+          writeable: true
         description: |
           Adressen til saksparten.
           
@@ -1547,10 +1656,14 @@ classes:
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       fødselsnummer:
         range: string
+        annotations:
+          writeable: true
         description: |
           Fødselsnummer til part. Kun gyldig hvis Part er en Privatperson.
       kontaktinformasjon:
         range: Kontaktinformasjon
+        annotations:
+          writeable: true
         description: |
           Kontaktinformasjonen til saksparten.
           
@@ -1563,6 +1676,8 @@ classes:
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       kontaktperson:
         range: string
+        annotations:
+          writeable: true
         description: |
           Kontaktperson hos en organisasjon som er avsender eller mottaker, eller sakspart.
           
@@ -1575,10 +1690,14 @@ classes:
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       organisasjonsnummer:
         range: string
+        annotations:
+          writeable: true
         description: |
           Organisasjonsnummer til Part. Kun gyldig hvis Part er en organisasjon.
       partNavn:
         range: string
+        annotations:
+          writeable: true
         description: |
           Navn på virksomhet eller person som er part.
           
@@ -1617,7 +1736,9 @@ classes:
     abstract: true
     attributes:
       arkivertDato:
-        range: string
+        range: datetime
+        annotations:
+          writeable: true
         description: |
           Dato og klokkeslett når alle dokumentene som er tilknyttet registreringen ble arkivert
           
@@ -1644,6 +1765,8 @@ classes:
           * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
       beskrivelse:
         range: string
+        annotations:
+          writeable: true
         description: |
           Tekstlig beskrivelse av arkivenheten
           
@@ -1656,6 +1779,8 @@ classes:
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       dokumentbeskrivelse:
         range: Dokumentbeskrivelse
+        annotations:
+          writeable: true
         description: |
           Dokumentbeskrivelsene til en registrering.
           
@@ -1669,6 +1794,8 @@ classes:
         multivalued: true
       forfatter:
         range: string
+        annotations:
+          writeable: true
         description: |
           Navn på person (eller eventuelt organisasjon) som har forfattet eller skapt dokumentet.
           
@@ -1682,6 +1809,8 @@ classes:
         multivalued: true
       klasse:
         range: Klasse
+        annotations:
+          writeable: true
         description: |
           Klassifisering av registrering.
           
@@ -1694,6 +1823,8 @@ classes:
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       korrespondansepart:
         range: Korrespondansepart
+        annotations:
+          writeable: true
         description: |
           Mottaker eller sender av arkivdokumenter.
           
@@ -1707,6 +1838,8 @@ classes:
         multivalued: true
       merknad:
         range: Merknad
+        annotations:
+          writeable: true
         description: |
           Merknader til registrering.
           
@@ -1720,6 +1853,8 @@ classes:
         multivalued: true
       nokkelord:
         range: string
+        annotations:
+          writeable: true
         description: |
           Nøkkeord eller stikkord som beskriver innholdet i enheten.
           
@@ -1734,6 +1869,8 @@ classes:
         multivalued: true
       offentligTittel:
         range: string
+        annotations:
+          writeable: true
         description: |
           Offentlig tittel på arkivenheten, ord som skal skjermes er fjernet fra innholdet i tittelen (erstattet med ******)
           
@@ -1745,7 +1882,7 @@ classes:
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       opprettetDato:
-        range: string
+        range: datetime
         description: |
           Dato og klokkeslett når arkivenheten ble opprettet/registrert.
           
@@ -1772,6 +1909,8 @@ classes:
           * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
       part:
         range: Part
+        annotations:
+          writeable: true
         description: |
           Parter til registrering.
           
@@ -1785,6 +1924,8 @@ classes:
         multivalued: true
       referanseArkivDel:
         range: string
+        annotations:
+          writeable: true
         description: |
           Referanse til arkivdelen som denne arkivenheten er tilknyttet
           
@@ -1810,6 +1951,8 @@ classes:
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       skjerming:
         range: Skjerming
+        annotations:
+          writeable: true
         description: |
           Skjerming av registrering.
           
@@ -1822,6 +1965,8 @@ classes:
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       tittel:
         range: string
+        annotations:
+          writeable: true
         description: |
           Tittel eller navn på arkivenheten.
           
@@ -1913,6 +2058,8 @@ classes:
     attributes:
       journalpost:
         range: Journalpost
+        annotations:
+          writeable: true
         description: |
           Journalposter knyttet til saksmappe.
           
@@ -1937,7 +2084,7 @@ classes:
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       saksdato:
-        range: string
+        range: datetime
         description: |
           Datoen saken er opprettet
           
@@ -1977,7 +2124,7 @@ classes:
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       utlaantDato:
-        range: string
+        range: datetime
         description: |
           Dato når en fysisk saksmappe eller journalpost ble utlånt
           
@@ -2132,6 +2279,9 @@ classes:
         required: true
       arkivressurs:
         range: Arkivressurs
+        inverse: tilgang
+        annotations:
+          primaryRelation: true
         description: |
           Arkivressurser som er tildelt tilgangen.
         multivalued: true

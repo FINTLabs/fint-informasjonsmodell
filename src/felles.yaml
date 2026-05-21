@@ -26,10 +26,14 @@ classes:
     attributes:
       kontaktinformasjon:
         range: Kontaktinformasjon
+        annotations:
+          writeable: true
         description: |
           Kontaktinformasjon for kontaktperson.
       navn:
         range: Personnavn
+        annotations:
+          writeable: true
         description: |
           Navn på kontaktperson.
       systemId:
@@ -39,6 +43,8 @@ classes:
         required: true
       type:
         range: string
+        annotations:
+          writeable: true
         description: |
           Beskriver hva slags type kontaktperson.
           
@@ -52,6 +58,9 @@ classes:
         required: true
       kontaktperson:
         range: Person
+        inverse: pårørende
+        annotations:
+          primaryRelation: true
         description: |
           Personer kontaktpersonen er pårørende for.
         multivalued: true
@@ -87,6 +96,8 @@ classes:
           Det forutsettes at det er bilde med den beste oppløsningen mulig.
       bostedsadresse:
         range: Adresse
+        annotations:
+          writeable: true
         description: |
           Folkeregistrert adresse til person
           
@@ -94,7 +105,7 @@ classes:
           
           Se beskrivelse av [klasse Adresse](Class:Adresse)
       fødselsdato:
-        range: string
+        range: date
         description: |
           Dato for fødsel
           
@@ -159,6 +170,9 @@ classes:
           Se beskrivelse av [Kjønn klasse](Class:Kjønn)
       foreldreansvar:
         range: Person
+        inverse: foreldre
+        annotations:
+          primaryRelation: true
         description: |
           Personer denne personen har foreldreansvar for.
           
@@ -174,6 +188,9 @@ classes:
           Målform som denne personen foretrekker å bruke (eksempelvis nynorsk, bokmål eller samisk).
       personalressurs:
         range: Personalressurs
+        inverse: person
+        annotations:
+          primaryRelation: true
         description: |
           Personalressurs til person. Forhold som arbeidstaker.
       morsmål:
@@ -182,16 +199,21 @@ classes:
           Morsmål til en person
       lærling:
         range: Lærling
+        inverse: person
         description: |
           En person kan være en lærling.
         multivalued: true
       pårørende:
         range: Kontaktperson
+        inverse: kontaktperson
         description: |
           Pårørende kontaktperson til person.
         multivalued: true
       foreldre:
         range: Person
+        inverse: foreldreansvar
+        annotations:
+          primaryRelation: true
         description: |
           Den/De som har foreldreansvar til personen.
           
@@ -199,10 +221,12 @@ classes:
         multivalued: true
       elev:
         range: Elev
+        inverse: person
         description: |
           En person kan være en elev
       otungdom:
         range: OtUngdom
+        inverse: person
         description: |
           En person kan være en OT-ungdom.
 
@@ -218,6 +242,7 @@ classes:
         required: true
       lærling:
         range: Lærling
+        inverse: bedrift
         description: |
           Lærling i virksomheten.
         multivalued: true

@@ -18,10 +18,12 @@ classes:
     attributes:
       dataobjektId:
         range: Identifikator
+        annotations:
+          writeable: true
         description: |
           DataobjektId er enhetens Id i datakatalogen enheten er tilknyttet, for eksempel ObjectId i Azure AD.
       flerbrukerenhet:
-        range: string
+        range: boolean
         description: |
           Hvorvidt enheten er enbruker- eller flerbrukerenhet:
           
@@ -32,10 +34,14 @@ classes:
           * false - Enheten benyttes kun av en bruker (en elev/ansatts pc, mobiltefon, nettbrett)
       navn:
         range: string
+        annotations:
+          writeable: true
         description: |
           Navnet slik det fremkommer i fagsystemet/datakatalogen.
       privateid:
-        range: string
+        range: boolean
+        annotations:
+          writeable: true
         description: |
           Angir om enheten er eid av organisasjonen eller av privatperson.
           
@@ -46,6 +52,8 @@ classes:
           * true - Enheten er eid av privatperson
       serienummer:
         range: string
+        annotations:
+          writeable: true
         description: |
           Serienummer er unikt nummer fra enhetsprodusenten. Ikke nødvendigvis unikt på tvers av produsenter.
         required: true
@@ -91,6 +99,7 @@ classes:
           Angir hvilken ansatt som benytter enheten.
       enhetsgruppemedlemskap:
         range: Enhetsgruppemedlemskap
+        inverse: digitalEnhet
         description: |
           Angir hvilke enhetsgrupperinger enheten er medlem av.
         multivalued: true
@@ -126,6 +135,7 @@ classes:
         required: true
       enhetsgruppemedlemskap:
         range: Enhetsgruppemedlemskap
+        inverse: enhetsgruppe
         description: |
           Angir hvilke digitale enheter som er med i denne enhetsgruppen.
         multivalued: true
@@ -143,11 +153,17 @@ classes:
         required: true
       digitalEnhet:
         range: DigitalEnhet
+        inverse: enhetsgruppemedlemskap
+        annotations:
+          primaryRelation: true
         description: |
           Den digitale enheten et enhetsgruppemedlemskap tilhører.
         required: true
       enhetsgruppe:
         range: Enhetsgruppe
+        inverse: enhetsgruppemedlemskap
+        annotations:
+          primaryRelation: true
         description: |
           Enhetsgruppen et enhetsgruppemedlemskap tilhører.
         required: true

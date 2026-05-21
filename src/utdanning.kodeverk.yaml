@@ -165,6 +165,7 @@ classes:
           Ekstern referanse til Vigo kodeverksdatabase.
       verdi:
         range: Karakterverdi
+        inverse: skala
         description: |
           Alle karakterene som er definerte på en gitt skala
           
@@ -228,6 +229,15 @@ classes:
       [UDIR - Registreringshåndbok - C26](https://regbok.udir.no/oversikt)
     is_a: Begrep
 
+  Skoleår:
+    description: |
+      Del av året da skoler har undervisning (og ikke ferie).
+      
+      # Beskrivelse
+      
+      Et skoleår varer som hovedregel fra august til juni.
+    is_a: Begrep
+
   Skoleeiertype:
     description: |
       Angir hvem er det som eier skole
@@ -242,15 +252,6 @@ classes:
       # Referanser
       
       * Vigo Kodeverkdatabase. Skole: [vigo.no/vigokv/skole.action](https://www.vigo.no/vigokv/skole.action)
-    is_a: Begrep
-
-  Skoleår:
-    description: |
-      Del av året da skoler har undervisning (og ikke ferie).
-      
-      # Beskrivelse
-      
-      Et skoleår varer som hovedregel fra august til juni.
     is_a: Begrep
 
   Termin:

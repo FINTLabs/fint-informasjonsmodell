@@ -78,6 +78,9 @@ classes:
           Myndighet på kontodimensjon ansvar.
       stedfortreder:
         range: Personalressurs
+        inverse: stedfortreder
+        annotations:
+          primaryRelation: true
         description: |
           Personalressurs som er stedfortreder for den fullmektige.
           
@@ -92,6 +95,9 @@ classes:
           Myndighet på kontodimensjon kontrakt.
       fullmektig:
         range: Personalressurs
+        inverse: fullmakt
+        annotations:
+          primaryRelation: true
         description: |
           Personalressurs som har blitt gitt fullmakt til en gitt rolle.
       prosjekt:
@@ -104,6 +110,9 @@ classes:
           Formål viser aktivitet og tjenesteproduksjon
       rolle:
         range: Rolle
+        inverse: fullmakt
+        annotations:
+          primaryRelation: true
         description: |
           Hvilken type fullmakt
         required: true
@@ -111,7 +120,7 @@ classes:
         range: Løpenummer
         description: |
           Myndighet på kontodimensjon løpenummer.
-
+  
   Rolle:
     description: |
       Rettighet eller type fullmakt.
@@ -135,6 +144,7 @@ classes:
         required: true
       fullmakt:
         range: Fullmakt
+        inverse: rolle
         description: |
           Alle fullmakter av denne type
         multivalued: true
