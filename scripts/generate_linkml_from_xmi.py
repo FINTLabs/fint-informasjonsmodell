@@ -23,6 +23,7 @@ PRIMITIVE_MAP = {
     'Time': 'time',
     'DateTime': 'datetime',
 }
+PRIMITIVE_MAP_NORMALIZED = {k.lower(): v for k, v in PRIMITIVE_MAP.items()}
 
 EA_JAVA_PRIMITIVE_MAP = {
     'EAJava_string': 'string',
@@ -37,6 +38,7 @@ EA_JAVA_PRIMITIVE_MAP = {
     'EAnone_datetime': 'datetime',
     'EAnone_dateTime': 'datetime',
 }
+EA_JAVA_PRIMITIVE_MAP_NORMALIZED = {k.lower(): v for k, v in EA_JAVA_PRIMITIVE_MAP.items()}
 
 MODEL_PRIMITIVE_RANGE_MAP = {
     'string': 'string',
@@ -51,6 +53,7 @@ MODEL_PRIMITIVE_RANGE_MAP = {
     'dateTime': 'datetime',
     'unlimitednatural': 'integer',
 }
+MODEL_PRIMITIVE_RANGE_MAP_NORMALIZED = {k.lower(): v for k, v in MODEL_PRIMITIVE_RANGE_MAP.items()}
 
 HEADER = "# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json\n\n"
 
@@ -350,9 +353,9 @@ def get_text(node: ET.Element, attr: str, default=None):
 def map_primitive(href: str) -> str:
     # href usually like http://schema.omg.org/spec/UML/2.1/uml.xml#String
     if not href:
-        return 'string'
+        return ''
     t = href.split('#')[-1]
-    return PRIMITIVE_MAP.get(t, 'string')
+    return PRIMITIVE_MAP_NORMALIZED.get(t.lower(), '')
 
 
 def parse_attributes(
@@ -374,7 +377,7 @@ def parse_attributes(
         name = a.get('name')
         if not name:
             continue
-        rng = 'string'
+        rng = ''
         # multiplicity
         required = False
         multivalued = False
@@ -415,28 +418,27 @@ def parse_attributes(
             if href:
                 rng = map_primitive(href)
             elif xmi_idref:
-                if xmi_idref in EA_JAVA_PRIMITIVE_MAP:
-                    rng = EA_JAVA_PRIMITIVE_MAP[xmi_idref]
+                normalized_xmi_idref = xmi_idref.lower()
+                if normalized_xmi_idref in EA_JAVA_PRIMITIVE_MAP_NORMALIZED:
+                    rng = EA_JAVA_PRIMITIVE_MAP_NORMALIZED[normalized_xmi_idref]
                 elif xmi_idref.startswith('EAnone_'):
                     none_primitive = xmi_idref[len('EAnone_'):]
-                    rng = MODEL_PRIMITIVE_RANGE_MAP.get(none_primitive, 'string')
+                    rng = MODEL_PRIMITIVE_RANGE_MAP_NORMALIZED.get(none_primitive.lower(), '')
                 else:
                     ref = class_index.get(xmi_idref)
                     # reference to a class
                     if ref:
-                        rng = ref['el'].get('name') or 'string'
+                        rng = ref['el'].get('name') or ''
                         range_package = ref['package']
-                    else:
-                        rng = 'string'
             elif xmi_type:
                 # sometimes primitive has xmi:type only
                 prim = xmi_type.split(':')[-1]
-                rng = PRIMITIVE_MAP.get(prim, 'string')
+                rng = PRIMITIVE_MAP_NORMALIZED.get(prim.lower(), '')
         else:
             # some EA variants place type as attribute directly
             xmi_idref = a.get(f'{{{XMI_NS}}}idref')
             if xmi_idref and xmi_idref in class_index:
-                rng = class_index[xmi_idref]['el'].get('name') or 'string'
+                rng = class_index[xmi_idref]['el'].get('name') or ''
                 range_package = class_index[xmi_idref]['package']
 
         attr_ids = []
@@ -487,11 +489,11 @@ def parse_attributes(
             for aid in attr_ids:
                 mt = attr_model_type.get(aid)
                 if mt:
-                    if mt in MODEL_PRIMITIVE_RANGE_MAP:
+                    if mt.lower() in MODEL_PRIMITIVE_RANGE_MAP_NORMALIZED:
                         model_primitive_type = mt
                     break
         if model_primitive_type:
-            mapped_range = MODEL_PRIMITIVE_RANGE_MAP.get(model_primitive_type)
+            mapped_range = MODEL_PRIMITIVE_RANGE_MAP_NORMALIZED.get(model_primitive_type.lower())
             if mapped_range:
                 rng = mapped_range
 
