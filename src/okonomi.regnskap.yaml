@@ -86,13 +86,6 @@ classes:
         description: |
           Intern identifikator i økonomisystemet.
         required: true
-      leverandørgruppe:
-        range: Leverandørgruppe
-        inverse: leverandør
-        annotations:
-          primaryRelation: true
-        description: |
-          Gruppe av leverandører.
 
   Leverandørgruppe:
     description: |
@@ -110,12 +103,6 @@ classes:
         description: |
           Intern unik identifikator i økonomisystemet.
         required: true
-      leverandør:
-        range: Leverandør
-        inverse: leverandørgruppe
-        description: |
-          Leverandører i en leverandørgruppe.
-        multivalued: true
 
   Postering:
     description: |
@@ -236,7 +223,6 @@ classes:
         range: Identifikator
         description: |
           Intern unik identifikator i økonomisystemet.
-        required: true
       transaksjonstidspunkt:
         range: datetime
         annotations:

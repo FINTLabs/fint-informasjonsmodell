@@ -12,6 +12,70 @@ imports:
 
 classes:
 
+  Enhetsgruppemedlemskap:
+    description: |
+      Medlemskap i enhetsgrupper.
+      
+      Gruppemedlemskap som knytter sammen Digitalenhet og Enhetsgrupper.
+    attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Unik identifikator for enhetsgruppemedlemskapet.
+        required: true
+      digitalEnhet:
+        range: DigitalEnhet
+        inverse: enhetsgruppemedlemskap
+        annotations:
+          primaryRelation: true
+        description: |
+          Den digitale enheten et enhetsgruppemedlemskap tilhører.
+        required: true
+      enhetsgruppe:
+        range: Enhetsgruppe
+        inverse: enhetsgruppemedlemskap
+        annotations:
+          primaryRelation: true
+        description: |
+          Enhetsgruppen et enhetsgruppemedlemskap tilhører.
+        required: true
+
+  Enhetsgruppe:
+    description: |
+      Angir en gruppering av ensartede digitale enheter. Feks klassesett med iPader eller datalab med ekstra kraftige maskiner.
+    attributes:
+      navn:
+        range: string
+        description: |
+          Navnet slik det fremkommer i fagsystemet.
+        required: true
+      systemId:
+        range: Identifikator
+        description: |
+          Id i fagsystemet.
+        required: true
+      plattform:
+        range: Plattform
+        description: |
+          Operativsystemplattform: Windows, MAC OS, Linux, IOS, Android.
+        required: true
+      enhetstype:
+        range: Enhetstype
+        description: |
+          Type digital enhet: Mobiltelefon, datamaskin, nettbrett.
+        required: true
+      organisasjonsenhet:
+        range: Organisasjonselement
+        description: |
+          Angir hvilken organisasjonsenhet som grupperingen er tilknyttet.
+        required: true
+      enhetsgruppemedlemskap:
+        range: Enhetsgruppemedlemskap
+        inverse: enhetsgruppe
+        description: |
+          Angir hvilke digitale enheter som er med i denne enhetsgruppen.
+        multivalued: true
+
   DigitalEnhet:
     description: |
       Beskriver ulike digitale enheter slik som feks pc, nettbrett, mobil.
@@ -62,6 +126,19 @@ classes:
         description: |
           Enhetens id i fagsystemet.
         required: true
+      status:
+        range: Status
+        description: |
+          Status på enheten i fagsystemet.
+      produsent:
+        range: Produsent
+        description: |
+          Navn på produsent av enheten.
+      enhetstype:
+        range: Enhetstype
+        description: |
+          Type digital enhet: Mobiltelefon, datamaskin, nettbrett.
+        required: true
       elev:
         range: Elev
         description: |
@@ -71,28 +148,15 @@ classes:
         description: |
           Angir hvilken organisasjonsenhet som administrerer enheten.
         required: true
-      status:
-        range: Status
-        description: |
-          Status på enheten i fagsystemet.
       eier:
         range: Organisasjonselement
         description: |
           Angir hvilken organisasjonsenhet som eier enheten hvis ikke privateid.
-      enhetstype:
-        range: Enhetstype
-        description: |
-          Type digital enhet: Mobiltelefon, datamaskin, nettbrett
-        required: true
       plattform:
         range: Plattform
         description: |
           Operativsystemplattform: Windows, MAC OS, Linux, IOS, Android.
         required: true
-      produsent:
-        range: Produsent
-        description: |
-          Navn på produsent av enheten.
       personalressurs:
         range: Personalressurs
         description: |
@@ -103,67 +167,3 @@ classes:
         description: |
           Angir hvilke enhetsgrupperinger enheten er medlem av.
         multivalued: true
-
-  Enhetsgruppe:
-    description: |
-      Angir en gruppering av ensartede digitale enheter. Feks klassesett med iPader eller datalab med ekstra kraftige maskiner.
-    attributes:
-      navn:
-        range: string
-        description: |
-          Navnet slik det fremkommer i fagsystemet.
-        required: true
-      systemId:
-        range: Identifikator
-        description: |
-          Id i fagsystemet.
-        required: true
-      enhetstype:
-        range: Enhetstype
-        description: |
-          Type digital enhet: Mobiltelefon, datamaskin, nettbrett.
-        required: true
-      plattform:
-        range: Plattform
-        description: |
-          Operativsystemplattform: Windows, MAC OS, Linux, IOS, Android.
-        required: true
-      organisasjonsenhet:
-        range: Organisasjonselement
-        description: |
-          Angir hvilken organisasjonsenhet som grupperingen er tilknyttet.
-        required: true
-      enhetsgruppemedlemskap:
-        range: Enhetsgruppemedlemskap
-        inverse: enhetsgruppe
-        description: |
-          Angir hvilke digitale enheter som er med i denne enhetsgruppen.
-        multivalued: true
-
-  Enhetsgruppemedlemskap:
-    description: |
-      Medlemskap i enhetsgrupper.
-      
-      Gruppemedlemskap som knytter sammen Digitalenhet og Enhetsgrupper.
-    attributes:
-      systemId:
-        range: Identifikator
-        description: |
-          Unik identifikator for enhetsgruppemedlemskapet.
-        required: true
-      digitalEnhet:
-        range: DigitalEnhet
-        inverse: enhetsgruppemedlemskap
-        annotations:
-          primaryRelation: true
-        description: |
-          Den digitale enheten et enhetsgruppemedlemskap tilhører.
-        required: true
-      enhetsgruppe:
-        range: Enhetsgruppe
-        inverse: enhetsgruppemedlemskap
-        annotations:
-          primaryRelation: true
-        description: |
-          Enhetsgruppen et enhetsgruppemedlemskap tilhører.
-        required: true

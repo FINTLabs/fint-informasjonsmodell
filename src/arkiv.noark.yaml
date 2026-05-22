@@ -96,6 +96,18 @@ classes:
         description: |
           Klassifikasjonssystemer benyttet i arkivdel.
         multivalued: true
+      registrering:
+        range: Registrering
+        inverse: arkivdel
+        description: |
+          Registreringer som tilhører arkivdel.
+        multivalued: true
+      mappe:
+        range: Mappe
+        inverse: arkivdel
+        description: |
+          Mapper som tilhører arkivdel.
+        multivalued: true
 
   Arkivressurs:
     description: |
@@ -568,6 +580,21 @@ classes:
           # Referanser
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      format:
+        range: string
+        annotations:
+          writeable: true
+        description: |
+          Dokumentets format.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M701
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        deprecated: "Erstattes av relasjon til kodeverk Format."
       formatDetaljer:
         range: string
         annotations:
@@ -1542,6 +1569,9 @@ classes:
         required: true
       arkivdel:
         range: Arkivdel
+        inverse: mappe
+        annotations:
+          primaryRelation: true
         description: |
           Arkivdel som mappe tilhører.
 
@@ -1994,6 +2024,13 @@ classes:
         range: Tilgangsgruppe
         description: |
           Angir hvilken tilgangsgruppe som har tilgang til Registreringen
+      arkivdel:
+        range: Arkivdel
+        inverse: registrering
+        annotations:
+          primaryRelation: true
+        description: |
+          Arkivdel som registrering tilhører.
       arkivertAv:
         range: Arkivressurs
         description: |
@@ -2032,10 +2069,6 @@ classes:
           # Referanser
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
-      arkivdel:
-        range: Arkivdel
-        description: |
-          Arkivdel som registrering tilhører.
 
   Sak:
     description: |
@@ -2056,6 +2089,21 @@ classes:
     abstract: true
     is_a: Mappe
     attributes:
+      arkivnotat:
+        range: Registrering
+        annotations:
+          writeable: true
+        description: |
+          Arkivnotater knyttet til saksmappe.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 standard - kap. 2.6
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        multivalued: true
       journalpost:
         range: Journalpost
         annotations:

@@ -24,20 +24,6 @@
     required: true          # 1..*  
 ```
 
-#### Forskjell på felter og relasjoner
-
-I LinkML ser begge deler like ut (`attributes` med `range`), men i generert XMI/Java behandles de ulikt:
-
-- **Felt (attributt)**: `range` er en primitiv type (`string`, `boolean`, `integer`, osv.) eller en **kompleks datatype** (klasse uten `Identifikator` og uten `abstract: true`).
-  - Genereres som felt i Java (`private ...`).
-- **Relasjon**: `range` peker til en **hovedklasse** (klasse med `Identifikator`) eller en annen ikke-datatype klasse.
-  - Genereres som relasjon i Java (`Relasjonsnavn` / links i resource-klasser), ikke som vanlig felt.
-
-Praktisk tommelfingerregel:
-
-- `Identifikator` i målklassen => relasjon
-- Ingen `Identifikator` i målklassen => felt (kompleks datatype)
-
 #### Felter med komplekse datatyper
 
 ```yaml
@@ -72,12 +58,9 @@ Praktisk tommelfingerregel:
 
 ### Klasser
 
-Det er behov for å bevare EA-stereotype på klassenivå i LinkML. `hovedklasse` og `abstrakt` utledes fortsatt av generatorlogikken (`Identifikator`/arv/`abstract`) og trenger derfor ikke å settes eksplisitt i LinkML.
-
-
 #### hovedklasse
 
-Alle klasser som ikke har abstract = true og ikke har noen stereotype er hovedklasser. Disse må ha minst en Identifikator.
+Alle klasser som har en Identifikator er hovedklasser.
 
 ```yaml
 Person:
@@ -92,27 +75,17 @@ Person:
     ...
 ```
 
-#### referanse
-
-Klasser med `annotations.stereotype: referanse` behandles som relasjonsmål i XMI/Java-generering, på samme måte som hovedklasser. Slotter som peker på disse blir derfor relasjoner (links), ikke felter.
-
-```yaml
-Vigoreferanse:
-  annotations:
-    stereotype: referanse
-```
-
 #### abstrakt
 
 Klasser som er merket med abstract: true` er abstrakte klasser.
 
 ```yaml
 Aktør:
-  abstract: true
-  attributes:
-    kontaktinformasjon:
-      range: Kontaktinformasjon
-    ...
+    abstract: true
+    attributes:
+      kontaktinformasjon:
+        range: Kontaktinformasjon
+      ...
 ```
 
 #### kompleks datatype
@@ -121,8 +94,6 @@ Klasser som ikke er merket som abstrakt og ikke har noen identifikator er komple
 
 ```yaml
 Adresse:
-  annotations:
-    stereotype: kompleks-datatype
   attributes:
     adresselinje:
       range: Adresselinje
@@ -164,25 +135,6 @@ linkml-lint --validate src
 Åpnes dette i Visual Studio Code eller Windsurf er det satt opp tasks.json som gjør at denne kommandoen kan kjøres med `Command + Shift + B` (MacOS) eller `Control + Shift + B` (Windows).
 
 
-### Teste genering av Java
-
-Original java-kode:
-
-```
-docker run --rm -v $(pwd):/src ghcr.io/fintlabs/fint-model:3.0.8 --tag v4.0.30 generate --lang JAVA --resource 
-```
-
-Javakode fra XMI som er generert fra LinkML:
-
-```
-~/go/bin/fint-model --tag linkml --filename "FINT-informasjonsmodell.generated.xml"  generate --lang JAVA --resource
-docker run --rm -v $(pwd):/src ghcr.io/fintlabs/fint-model:3.0.8 --tag linkml --filename \"FINT-informasjonsmodell.generated.xml\"  generate --lang JAVA --resource
-
-Det ser ut som dette er trikset:
-~/go/bin/fint-model -f --tag linklm  generate --lang JAVA --resource
-cp FINT-informasjonsmodell.generated.xml ~/.fint-model/.cache/linklm.xml
-~/go/bin/fint-model --tag linklm  generate --lang JAVA --resource
-````
 
 ### Verktøy som blir tilgjengelig med LinkML
 

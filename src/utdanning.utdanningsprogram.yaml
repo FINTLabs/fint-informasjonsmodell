@@ -37,25 +37,19 @@ classes:
       * http://psi.udir.no/ontologi/kl06/aarstrinn
     is_a: Gruppe
     attributes:
-      vigoreferanse:
-        range: Vigoreferanse
-        description: |
-          Referanse til VIGO kodeverket.
-      grepreferanse:
-        range: Grepreferanse
-        description: |
-          Referanse til GREP kodeverket.
       programområde:
         range: Programområde
         inverse: trinn
+        annotations:
+          primaryRelation: true
         description: |
-          Alle programområder som er relevante for trinnet.
+          Alle programområder som er relevante for trinnet
         multivalued: true
-      klasse:
-        range: Klasse
+      basisgruppe:
+        range: Basisgruppe
         inverse: trinn
         description: |
-          Klassene som hører hjemme på dette trinnet
+          Basisgruppene som hører hjemme på dette trinnet
         multivalued: true
 
   Programområde:
@@ -93,26 +87,6 @@ classes:
       * Grepwiki: http://grepwiki.udir.no/index.php?title=Programområde
     is_a: Gruppe
     attributes:
-      trinn:
-        range: Årstrinn
-        inverse: programområde
-        annotations:
-          primaryRelation: true
-        description: |
-          Alle trinn som finnes på dette programområdet.
-        multivalued: true
-      grepreferanse:
-        range: Grepreferanse
-        description: |
-          Referanse til GREP kodeverket.
-      fag:
-        range: Fag
-        inverse: programområde
-        annotations:
-          primaryRelation: true
-        description: |
-          Alle fag som er relatert til et gitt programområde.
-        multivalued: true
       utdanningsprogram:
         range: Utdanningsprogram
         inverse: programområde
@@ -122,15 +96,32 @@ classes:
           Alle overordnede utdanningsprogram.
         multivalued: true
         required: true
-      vigoreferanse:
-        range: Vigoreferanse
+      elevforhold:
+        range: Elevforhold
+        inverse: programområde
+        annotations:
+          primaryRelation: true
         description: |
-          Referanse til VIGO kodeverket.
+          Alle elevforhold på programområde
+        deprecated: "Relasjonen erstattes av Elevforhold i Programområdemedlemskap."
+        multivalued: true
+      fag:
+        range: Fag
+        inverse: programområde
+        description: |
+          Alle fag som er relatert til et gitt programområde
+        multivalued: true
       gruppemedlemskap:
         range: Programområdemedlemskap
         inverse: programområde
         description: |
           Gruppemedlemskapene til et programområde.
+        multivalued: true
+      trinn:
+        range: Årstrinn
+        inverse: programområde
+        description: |
+          Alle trinn som finnes på dette programområdet
         multivalued: true
 
   Programområdemedlemskap:
@@ -258,6 +249,14 @@ classes:
         range: Vigoreferanse
         description: |
           Ekstern referanse til skoleinformasjon i Vigo kodeverksdatabase.
+      fag:
+        range: Fag
+        inverse: skole
+        annotations:
+          primaryRelation: true
+        description: |
+          Fagene som skolen tilbyr
+        multivalued: true
       eksamensgruppe:
         range: Eksamensgruppe
         inverse: skole
@@ -300,17 +299,11 @@ classes:
         description: |
           Alle undervisningsgruppene ved en skole.
         multivalued: true
-      klasse:
-        range: Klasse
+      basisgruppe:
+        range: Basisgruppe
         inverse: skole
         description: |
-          Alle klasser ved en skole.
-        multivalued: true
-      fag:
-        range: Fag
-        inverse: skole
-        description: |
-          Fagene som skolen tilbyr.
+          Alle basisgrupper ved en skole.
         multivalued: true
       undervisningsforhold:
         range: Undervisningsforhold
@@ -356,14 +349,6 @@ classes:
         description: |
           Alle skoler som tilbyr utdanningsprogrammet
         multivalued: true
-      grepreferanse:
-        range: Grepreferanse
-        description: |
-          Referanse til GREP kodeverket.
-      vigoreferanse:
-        range: Vigoreferanse
-        description: |
-          Referanse til VIGO kodeverket.
       programområde:
         range: Programområde
         inverse: utdanningsprogram

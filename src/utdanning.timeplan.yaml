@@ -27,7 +27,7 @@ classes:
           Navn på eksamenen.
         required: true
       oppmøtetidspunkt:
-        range: datetime
+        range: string
         description: |
           Seneste tidspunkt for fremmøte til eksamen.
       systemId:
@@ -89,39 +89,31 @@ classes:
       * https://www.vigo.no/vigokv/index.action
     is_a: Gruppe
     attributes:
-      grepreferanse:
-        range: Grepreferanse
-        description: |
-          Referanse til GREP kodeverket.
-      skole:
-        range: Skole
+      programområde:
+        range: Programområde
         inverse: fag
         annotations:
           primaryRelation: true
         description: |
-          Alle skoler som tilbyr faget.
+          Programområde faget tilhører.
         multivalued: true
-      vigoreferanse:
-        range: Vigoreferanse
-        description: |
-          Referanse til VIGO kodeverket.
       tilrettelegging:
         range: Elevtilrettelegging
         inverse: fag
         description: |
           Tilrettelegging i faget.
         multivalued: true
-      programområde:
-        range: Programområde
-        inverse: fag
-        description: |
-          Programområde faget tilhører.
-        multivalued: true
       faggruppe:
         range: Faggruppe
         inverse: fag
         description: |
           Faggruppe for faget.
+        multivalued: true
+      skole:
+        range: Skole
+        inverse: fag
+        description: |
+          Alle skoler som tilbyr faget
         multivalued: true
       undervisningsgruppe:
         range: Undervisningsgruppe
@@ -201,12 +193,6 @@ classes:
         inverse: faggruppemedlemskap
         description: |
           Faggruppe det er medlemskap i.
-        required: true
-      elevforhold:
-        range: Elevforhold
-        inverse: faggruppemedlemskap
-        description: |
-          Elevforholdet et faggruppemedlemskap tilhører.
         required: true
 
   Rom:
@@ -305,14 +291,6 @@ classes:
         description: |
           Terminer for undervisningsgruppe
         multivalued: true
-      undervisningsforhold:
-        range: Undervisningsforhold
-        inverse: undervisningsgruppe
-        annotations:
-          primaryRelation: true
-        description: |
-          Alle lærere i gruppen.
-        multivalued: true
       skole:
         range: Skole
         inverse: undervisningsgruppe
@@ -334,6 +312,21 @@ classes:
           Fagene som det undervises i i gruppen
         multivalued: true
         required: true
+      elevforhold:
+        range: Elevforhold
+        inverse: undervisningsgruppe
+        annotations:
+          primaryRelation: true
+        description: |
+          Alle elevforhold i undervisningsgruppen
+        deprecated: "Relasjonen erstattes med Gruppemedlemskap i Undervisningsgruppemedlemskap."
+        multivalued: true
+      undervisningsforhold:
+        range: Undervisningsforhold
+        inverse: undervisningsgruppe
+        description: |
+          Alle lærere i gruppen.
+        multivalued: true
       time:
         range: Time
         inverse: undervisningsgruppe
