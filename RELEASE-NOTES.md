@@ -1,5 +1,26 @@
 <!-- MarkdownTOC autolink="true" -->
 
+- [v4.0.30](#v4030)
+  - [Changed the attribute Direction to `Bi-Directional`](#changed-the-attribute-direction-to-bi-directional)
+- [v4.0.20](#v4020)
+  - [Changed direction (source → target) on relations](#changed-direction-source--target-on-relations)
+- [v4.0.10](#v4010)
+  - [Changed direction (source → target) on relations](#changed-direction-source--target-on-relations-1)
+- [v4.0.0](#v400)
+  - [Breaking changes](#breaking-changes)
+    - [Utdanning: Removed deprecated elements](#utdanning-removed-deprecated-elements)
+    - [Felles: Removed deprecated elements](#felles-removed-deprecated-elements)
+    - [Arkiv: Removed deprecated elements](#arkiv-removed-deprecated-elements)
+    - [Administrasjon: Removed deprecated elements](#administrasjon-removed-deprecated-elements)
+    - [Utdanning: Changed name on Basisgruppe and Basisgruppemedlemskap](#utdanning-changed-name-on-basisgruppe-and-basisgruppemedlemskap)
+      - [Klasse](#klasse)
+      - [Klassemedlemskap](#klassemedlemskap)
+    - [Utdanning: Moved Grepreferanse and Vigoreferanse](#utdanning-moved-grepreferanse-and-vigoreferanse)
+      - [Basisklasser](#basisklasser)
+      - [Timeplan](#timeplan)
+      - [Utdanningsprogram](#utdanningsprogram)
+    - [Arkiv: Removed relation to and use of abstract classes](#arkiv-removed-relation-to-and-use-of-abstract-classes)
+    - [Økonomi: Changed multiplicity](#økonomi-changed-multiplicity)
 - [v3.21.10](#v32110)
   - [Features](#features)
     - [Ressurs.Datautstyr](#ressursdatautstyr)
@@ -85,7 +106,7 @@
   - [Features](#features-21)
   - [Bugfixes](#bugfixes-11)
 - [v3.0.0](#v300)
-  - [Breaking changes](#breaking-changes)
+  - [Breaking changes](#breaking-changes-1)
   - [Features](#features-22)
   - [Bugfixes](#bugfixes-12)
 - [v2.8.0](#v280)
@@ -107,7 +128,7 @@
 - [v2.0.10](#v2010)
   - [Bugfixes](#bugfixes-17)
 - [v2.0.0](#v200)
-  - [Breaking changes](#breaking-changes-1)
+  - [Breaking changes](#breaking-changes-2)
   - [Features](#features-28)
   - [Bugfixes](#bugfixes-18)
 - [v1.0.1](#v101)
@@ -118,6 +139,189 @@
   - [Features](#features-30)
 
 <!-- /MarkdownTOC -->
+
+# v4.0.30
+
+|      |              |
+| ---- |--------------|
+| Date | `12.05.2026` |
+| Tag  | `v4.0.30`    |
+
+## Changed the attribute Direction to `Bi-Directional`
+
+* Relation between `Organisasjonselement.overordnet` and `Organisasjonselement.underordnet`.
+* Relation between `Leverandør.leverandørgruppe` and `Leverandørgruppe.leverandør`.
+* Relation between `Elevforhold.faggruppemedlemskap` and `Faggruppemedlemskap.elevforhold`.
+
+# v4.0.20
+
+|      |                 |
+| ---- |-----------------|
+| Date | `28.04.2026`    |
+| Tag  | `v4.0.20` |
+
+## Changed direction (source → target) on relations
+
+* `Klasse.undervisningsforhold` → `Undervisningsforhold.klasse`
+
+# v4.0.10
+
+|      |                 |
+| ---- |-----------------|
+| Date | `30.01.2026`    |
+| Tag  | `v4.0.10` |
+
+## Changed direction (source → target) on relations
+
+* `Undervisningsforhold.kontaktlærergruppe` → `Kontaktlærergruppe.undervisningsforhold`
+* `Undervisningsgruppe.undervisningsforhold` → `Undervisningsforhold.undervisningsgruppe` 
+* `Eksamensgruppe.undervisningsforhold` → `Undervisningsforhold.eksamensgruppe` 
+* `Programomrade.fag` → `Fag.programområde`
+* `Fag.skole` → `Skole.fag`
+* `Programomrade.trinn` → `Årstrinn.programområde`
+
+
+# v4.0.0
+
+|      |                 |
+| ---- |-----------------|
+| Date | `19.01.2026`    |
+| Tag  | `v4.0.0` |
+
+
+## Breaking changes
+
+### Utdanning: Removed deprecated elements
+* Removed attribute `periode` on `Basisgruppe`.
+* Removed attribute `periode` on `Eksamensgruppe`.
+* Removed attribute `periode` on `Fag`.
+* Removed attribute `periode` on `Faggruppe`.
+* Removed attribute `periode` on `Gruppe`.
+* Removed attribute `periode` on `Kontaktlærergruppe`.
+* Removed attribute `periode` on `Persongruppe`.
+* Removed attribute `periode` on `Programområde`.
+* Removed attribute `periode` on `Undervisningsgruppe`.
+* Removed attribute `periode` on `Utdanningsprogram`.
+* Removed attribute `periode` on `Årstrinn`.
+* Removed class `Fravær`.
+* Removed class `Medlemskap`.
+* Removed class `Vurdering`.
+* Removed relation `basisgruppe` on `Elevforhold`.
+* Removed relation `eksamensgruppe` on `Elevforhold`.
+* Removed relation `fravær` on `Elevforhold`.
+* Removed relation `halvårsfagvurdering` on `Elevforhold`.
+* Removed relation `halvårsordensvurdering` on `Elevforhold`.
+* Removed relation `kontaktlærergruppe` on `Elevforhold`.
+* Removed relation `kroppsøving` on `Elevforhold`.
+* Removed relation `programområde` on `Elevforhold`.
+* Removed relation `sidemål` on `Elevforhold`.
+* Removed relation `sluttfagvurdering` on `Elevforhold`.
+* Removed relation `sluttordensvurdering` on `Elevforhold`.
+* Removed relation `underveisfagvurdering` on `Elevforhold`.
+* Removed relation `underveisordensvurdering` on `Elevforhold`.
+* Removed relation `vurdering` on `Elevforhold`.
+* Removed relation `elevforhold` on `Basisgruppe`.
+* Removed relation `elevforhold` on `Eksamensgruppe`.
+* Removed relation `elevforhold` on `Halvårsfagvurdering`.
+* Removed relation `elevforhold` on `Halvårsordensvurdering`.
+* Removed relation `elevforhold` on `Kontaktlærergruppe`.
+* Removed relation `elevforhold` on `Programområde`.
+* Removed relation `elevforhold` on `Sluttfagvurdering`.
+* Removed relation `elevforhold` on `Sluttordensvurdering`.
+* Removed relation `elevforhold` on `Underveisfagvurdering`.
+* Removed relation `elevforhold` on `Underveisordensvurdering`.
+* Removed relation `elevforhold` on `Undervisningsgruppe`.
+* Removed relation `medlemskap` on `Basisgruppe`.
+* Removed relation `medlemskap` on `Eksamensgruppe`.
+* Removed relation `medlemskap` on `Elevforhold`.
+* Removed relation `medlemskap` on `Fag`.
+* Removed relation `medlemskap` on `Faggruppe`.
+* Removed relation `medlemskap` on `Gruppe`.
+* Removed relation `medlemskap` on `Kontaktlærergruppe`.
+* Removed relation `medlemskap` on `Persongruppe`.
+* Removed relation `medlemskap` on `Programområde`.
+* Removed relation `medlemskap` on `Undervisningsforhold`.
+* Removed relation `medlemskap` on `Undervisningsgruppe`.
+* Removed relation `medlemskap` on `Utdanningsforhold`.
+* Removed relation `medlemskap` on `Utdanningsprogram`.
+* Removed relation `medlemskap` on `Årstrinn`.
+* Removed relation `undervisningsgruppe` on `Eksamensvurdering`.
+* Removed relation `undervisningsgruppe` on `Elevforhold`.
+* Removed relation `undervisningsgruppe` on `Fagvurdering`.
+* Removed relation `undervisningsgruppe` on `Halvårsfagvurdering`.
+* Removed relation `undervisningsgruppe` on `Sluttfagvurdering`.
+* Removed relation `undervisningsgruppe` on `Underveisfagvurdering`.
+
+### Felles: Removed deprecated elements
+* Removed attribute `foreldreansvar` on `Kontaktperson`.
+* Removed relation `person` on `Kontaktperson`.
+
+### Arkiv: Removed deprecated elements
+* Removed attribute `format` on `Dokumentobject`.
+
+### Administrasjon: Removed deprecated elements
+* Removed relation `lønn` on `Arbeidsforhold`.
+* Removed relation `myndighet` on `Fullmakt`.
+* Removed relation `fullmakt` on `Aktivitet`.
+* Removed relation `fullmakt` on `Anlegg`.
+* Removed relation `fullmakt` on `Ansvar`.
+* Removed relation `fullmakt` on `Art`.
+* Removed relation `fullmakt` on `Diverse`.
+* Removed relation `fullmakt` on `Formål`.
+* Removed relation `fullmakt` on `Funksjon`.
+* Removed relation `fullmakt` on `Kontodimensjon`.
+* Removed relation `fullmakt` on `Kontrakt`.
+* Removed relation `fullmakt` on `Løpenummer`.
+* Removed relation `fullmakt` on `Objekt`.
+* Removed relation `fullmakt` on `Prosjekt`.
+* Removed relation `fullmakt` on `Prosjektart`.
+* Removed relation `fullmakt` on `Ramme`.
+
+### Utdanning: Changed name on Basisgruppe and Basisgruppemedlemskap
+* Changed name of class `Basisgruppe` to `Klasse`.
+* Changed name of class `Basisgruppemedlemskap` to `Klassemedlemskap`.
+
+#### Klasse
+* Changed relation `basisgruppe` on `Kontaktlærergruppe` to `klasse`.
+* Changed relation `basisgruppe` on `Skole` to `klasse`.
+* Changed relation `basisgruppe` on `Undervisningsforhold` to `klasse`.
+* Changed relation `basisgruppe` on `Årstrinn` to `klasse`.
+
+#### Klassemedlemskap
+* Changed relation `basisgruppemedlemskap` on `Elevforhold` to `klassemedlemskap`.
+
+### Utdanning: Moved Grepreferanse and Vigoreferanse
+
+#### Basisklasser
+* Removed relation `grepreferanse` on `Gruppe`.
+* Removed relation `vigoreferanse` on `Gruppe`.
+
+#### Timeplan
+* Added relation `grepreferanse` on `Fag`.
+* Added relation `vigoreferanse` on `Fag`.
+
+#### Utdanningsprogram
+* Added relation `grepreferanse` on `Årstrinn`.
+* Added relation `vigoreferanse` on `Årstrinn`.
+* Added relation `grepreferanse` on `Programområde`.
+* Added relation `vigoreferanse` on `Programområde`.
+* Added relation `grepreferanse` on `Utdanningsprogram`.
+* Added relation `vigoreferanse` on `Utdanningsprogram`.
+
+### Arkiv: Removed relation to and use of abstract classes
+* Removed attribute `arkivnotat` on `DispensasjonAutomatiskFredaKulturminne`.
+* Removed attribute `arkivnotat` on `Personalmappe`.
+* Removed attribute `arkivnotat` on `Sak`.
+* Removed attribute `arkivnotat` on `Saksmappe`.
+* Removed attribute `arkivnotat` on `TilskuddFartøy`.
+* Removed attribute `arkivnotat` on `TilskuddFredaBygningPrivatEie`.
+* Removed relation `mappe` on `Arkivdel`.
+* Removed relation `registrering` on `Arkivdel`.
+
+### Økonomi: Changed multiplicity 
+* Changed multiplicity for attribute `transaksjonsId` on `Transaksjon`, from 0..1 to 1.
+
+
 
 # v3.21.10
 
@@ -1107,3 +1311,4 @@ Since this version of the Information Model is the first to go live, we opted to
   * `Personal`
   * `Organisasjon`
   * `Kodeverk`
+
