@@ -24,6 +24,34 @@ PRIMITIVE_MAP = {
     'DateTime': 'datetime',
 }
 
+EA_JAVA_PRIMITIVE_MAP = {
+    'EAJava_string': 'string',
+    'EAJava_int': 'integer',
+    'EAJava_long': 'integer',
+    'EAJava_float': 'float',
+    'EAJava_boolean': 'boolean',
+    'EAJava_date': 'date',
+    'EAJava_datetime': 'datetime',
+    'EAJava_dateTime': 'datetime',
+    'EAnone_date': 'date',
+    'EAnone_datetime': 'datetime',
+    'EAnone_dateTime': 'datetime',
+}
+
+MODEL_PRIMITIVE_RANGE_MAP = {
+    'string': 'string',
+    'int': 'integer',
+    'integer': 'integer',
+    'long': 'integer',
+    'float': 'float',
+    'double': 'float',
+    'boolean': 'boolean',
+    'date': 'date',
+    'datetime': 'datetime',
+    'dateTime': 'datetime',
+    'unlimitednatural': 'integer',
+}
+
 HEADER = "# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json\n\n"
 
 
@@ -106,12 +134,17 @@ def sanitize_text(text: str) -> str:
 def build_doc_indexes(root: ET.Element):
     """Build maps for documentation and deprecation texts using EA extension blocks and connectors."""
     class_docs = {}
+    class_stereotypes = {}
     attr_docs = {}
     assoc_docs = {}
     class_deprecated = {}
     attr_deprecated = {}
     assoc_deprecated = {}
     assoc_role_deprecated = {}
+    assoc_inverse = {}
+    assoc_source_class = {}
+    attr_writeable = {}
+    attr_model_type = {}
     # EA stores extra info in non-namespaced blocks <element>, <attributes>/<attribute>
     for el in root.findall('.//element'):
         xmi_type = el.get(f'{{{XMI_NS}}}type')
@@ -122,6 +155,9 @@ def build_doc_indexes(root: ET.Element):
                 doc = props.get('documentation')
                 if doc:
                     class_docs[xmi_idref] = sanitize_text(doc.strip())
+                stereotype = (props.get('stereotype') or '').strip().lower()
+                if stereotype:
+                    class_stereotypes[xmi_idref] = stereotype
         tag_block = el.find('tags')
         if tag_block is not None and xmi_idref:
             for tag in tag_block.findall('tag'):
@@ -154,11 +190,30 @@ def build_doc_indexes(root: ET.Element):
                                 for aid in attr_ids:
                                     attr_deprecated[aid] = text
                                 break
+                stereotype = att.find('stereotype')
+                if stereotype is not None and (stereotype.get('stereotype') or '').lower() == 'writable':
+                    for aid in attr_ids:
+                        attr_writeable[aid] = True
+                props = att.find('properties')
+                if props is not None:
+                    model_type = props.get('type')
+                    if model_type:
+                        for aid in attr_ids:
+                            attr_model_type[aid] = model_type
     # EA connector blocks frequently contain documentation for association ends (slots)
     for conn in root.findall('.//connector'):
         assoc_id = conn.get(f'{{{XMI_NS}}}idref') or conn.get('xmi:idref')
         if not assoc_id:
             continue
+        props = conn.find('properties')
+        direction = props.get('direction') if props is not None else None
+        source_role_name = None
+        target_role_name = None
+        source_node = conn.find('source')
+        if source_node is not None:
+            source_id = source_node.get(f'{{{XMI_NS}}}idref') or source_node.get('idref')
+            if source_id:
+                assoc_source_class[assoc_id] = source_id
         tag_block = conn.find('tags')
         if tag_block is not None:
             for tag in tag_block.findall('tag'):
@@ -177,6 +232,10 @@ def build_doc_indexes(root: ET.Element):
             role_name = role_el.get('name')
             if not role_name:
                 continue
+            if node_name == 'source':
+                source_role_name = role_name
+            else:
+                target_role_name = role_name
             doc_el = node.find('documentation')
             if doc_el is not None:
                 val = doc_el.get('value')
@@ -190,14 +249,22 @@ def build_doc_indexes(root: ET.Element):
                         if text:
                             assoc_role_deprecated[(assoc_id, role_name)] = text
                             break
+        if direction == 'Bi-Directional' and source_role_name and target_role_name:
+            assoc_inverse[(assoc_id, source_role_name)] = target_role_name
+            assoc_inverse[(assoc_id, target_role_name)] = source_role_name
     return (
         class_docs,
+        class_stereotypes,
         attr_docs,
         assoc_docs,
         class_deprecated,
         attr_deprecated,
         assoc_deprecated,
         assoc_role_deprecated,
+        assoc_inverse,
+        assoc_source_class,
+        attr_writeable,
+        attr_model_type,
     )
 
 
@@ -296,6 +363,10 @@ def parse_attributes(
     attr_deprecated=None,
     assoc_deprecated=None,
     assoc_role_deprecated=None,
+    assoc_inverse=None,
+    assoc_source_class=None,
+    attr_writeable=None,
+    attr_model_type=None,
 ):
     attrs = []
     # owned attributes
@@ -307,6 +378,7 @@ def parse_attributes(
         # multiplicity
         required = False
         multivalued = False
+        range_package = None
         lower = None
         upper = None
         lv = a.find('lowerValue')
@@ -343,12 +415,19 @@ def parse_attributes(
             if href:
                 rng = map_primitive(href)
             elif xmi_idref:
-                # reference to a class
-                ref = class_index.get(xmi_idref)
-                if ref:
-                    rng = ref['el'].get('name') or 'string'
+                if xmi_idref in EA_JAVA_PRIMITIVE_MAP:
+                    rng = EA_JAVA_PRIMITIVE_MAP[xmi_idref]
+                elif xmi_idref.startswith('EAnone_'):
+                    none_primitive = xmi_idref[len('EAnone_'):]
+                    rng = MODEL_PRIMITIVE_RANGE_MAP.get(none_primitive, 'string')
                 else:
-                    rng = 'string'
+                    ref = class_index.get(xmi_idref)
+                    # reference to a class
+                    if ref:
+                        rng = ref['el'].get('name') or 'string'
+                        range_package = ref['package']
+                    else:
+                        rng = 'string'
             elif xmi_type:
                 # sometimes primitive has xmi:type only
                 prim = xmi_type.split(':')[-1]
@@ -358,6 +437,7 @@ def parse_attributes(
             xmi_idref = a.get(f'{{{XMI_NS}}}idref')
             if xmi_idref and xmi_idref in class_index:
                 rng = class_index[xmi_idref]['el'].get('name') or 'string'
+                range_package = class_index[xmi_idref]['package']
 
         attr_ids = []
         for key in (f'{{{XMI_NS}}}id', f'{{{XMI_NS}}}idref'):
@@ -391,13 +471,46 @@ def parse_attributes(
             elif assoc_deprecated and assoc_id in assoc_deprecated:
                 deprecated = assoc_deprecated[assoc_id]
 
+        inverse = None
+        if assoc_inverse is not None and assoc_id:
+            inverse = assoc_inverse.get((assoc_id, name))
+
+        writeable = False
+        if attr_writeable:
+            for aid in attr_ids:
+                if attr_writeable.get(aid):
+                    writeable = True
+                    break
+
+        model_primitive_type = None
+        if attr_model_type:
+            for aid in attr_ids:
+                mt = attr_model_type.get(aid)
+                if mt:
+                    if mt in MODEL_PRIMITIVE_RANGE_MAP:
+                        model_primitive_type = mt
+                    break
+        if model_primitive_type:
+            mapped_range = MODEL_PRIMITIVE_RANGE_MAP.get(model_primitive_type)
+            if mapped_range:
+                rng = mapped_range
+
+        primary_relation = False
+        class_id = cls_el.get(f'{{{XMI_NS}}}id')
+        if inverse and assoc_source_class is not None and assoc_id and class_id:
+            primary_relation = assoc_source_class.get(assoc_id) == class_id
+
         attrs.append({
             'name': name,
             'range': rng,
+            'range_package': range_package,
             'required': required,
             'multivalued': multivalued,
             'description': desc,
             'deprecated': deprecated,
+            'inverse': inverse,
+            'primary_relation': primary_relation,
+            'writeable': writeable,
         })
     return attrs
 
@@ -414,6 +527,11 @@ def parse_is_a(cls_el: ET.Element, class_index):
 def collect_dependencies(attrs, class_index, self_package):
     deps = set()
     for a in attrs:
+        if a.get('range_package'):
+            pkg = a['range_package']
+            if pkg != self_package:
+                deps.add(pkg)
+            continue
         rng = a['range']
         # if range is another class, try to find its package
         for cid, info in class_index.items():
@@ -438,6 +556,11 @@ def emit_yaml_for_package(
     attr_deprecated=None,
     assoc_deprecated=None,
     assoc_role_deprecated=None,
+    assoc_inverse=None,
+    assoc_source_class=None,
+    attr_writeable=None,
+    attr_model_type=None,
+    class_stereotypes=None,
 ):
     if not classes_for_pkg:
         return None
@@ -456,7 +579,6 @@ def emit_yaml_for_package(
         base_imports.extend(['felles.basisklasser', 'felles.komplekse-datatyper'])
     # Determine cross-package dependencies to include as imports
     cls_elements = [class_index[cid]['el'] for cid in classes_for_pkg]
-    cls_elements.sort(key=lambda e: (e.get('name') or '').lower())
     deps = set()
     self_pkg_full = ('FINT',) + tuple(pkg_path)
     for cls_el in cls_elements:
@@ -468,6 +590,10 @@ def emit_yaml_for_package(
             attr_deprecated=attr_deprecated,
             assoc_deprecated=assoc_deprecated,
             assoc_role_deprecated=assoc_role_deprecated,
+            assoc_inverse=assoc_inverse,
+            assoc_source_class=assoc_source_class,
+            attr_writeable=attr_writeable,
+            attr_model_type=attr_model_type,
         )
         deps |= collect_dependencies(ainfo, class_index, self_pkg_full)
         # also include superclass package deps
@@ -524,6 +650,12 @@ def emit_yaml_for_package(
             cid = cls_el.get(f'{{{XMI_NS}}}id')
             if cid and cid in class_deprecated:
                 append_deprecated(lines, 4, class_deprecated[cid])
+        cid = cls_el.get(f'{{{XMI_NS}}}id')
+        class_stereotype = (class_stereotypes or {}).get(cid, '') if cid else ''
+        if class_stereotype in {'referanse', 'datatype'}:
+            linkml_stereotype = 'kompleks-datatype' if class_stereotype == 'datatype' else class_stereotype
+            lines.append('    annotations:')
+            lines.append(f'      stereotype: {linkml_stereotype}')
         if (cls_el.get('isAbstract') or '').lower() == 'true':
             lines.append('    abstract: true')
         isa = parse_is_a(cls_el, class_index)
@@ -537,12 +669,24 @@ def emit_yaml_for_package(
             attr_deprecated=attr_deprecated,
             assoc_deprecated=assoc_deprecated,
             assoc_role_deprecated=assoc_role_deprecated,
+            assoc_inverse=assoc_inverse,
+            assoc_source_class=assoc_source_class,
+            attr_writeable=attr_writeable,
+            attr_model_type=attr_model_type,
         )
         if attrs:
             lines.append('    attributes:')
             for a in attrs:
                 lines.append(f'      {a["name"]}:')
                 lines.append(f'        range: {a["range"]}')
+                if a.get('inverse'):
+                    lines.append(f'        inverse: {a["inverse"]}')
+                if a.get('primary_relation') or a.get('writeable'):
+                    lines.append('        annotations:')
+                    if a.get('primary_relation'):
+                        lines.append('          primaryRelation: true')
+                    if a.get('writeable'):
+                        lines.append('          writeable: true')
                 if a.get('description'):
                     append_description(lines, 8, a['description'])
                 if a.get('deprecated'):
@@ -562,7 +706,7 @@ def emit_yaml_for_package(
 
 def main():
     ap = argparse.ArgumentParser(description='Generate LinkML YAML files from FINT XMI 2.1 (EA export).')
-    ap.add_argument('--xmi', default='FINT-informasjonsmodell.xml', help='Path to XMI file')
+    ap.add_argument('--xmi', default='FINT-informasjonsmodell-eap.xml', help='Path to XMI file')
     ap.add_argument('--out', default='src', help='Output directory for YAML files')
     ap.add_argument('--overwrite', action='store_true', help='Overwrite existing YAML files')
     args = ap.parse_args()
@@ -570,12 +714,17 @@ def main():
     root = read_xml(args.xmi)
     (
         class_docs,
+        class_stereotypes,
         attr_docs,
         assoc_docs,
         class_deprecated,
         attr_deprecated,
         assoc_deprecated,
         assoc_role_deprecated,
+        assoc_inverse,
+        assoc_source_class,
+        attr_writeable,
+        attr_model_type,
     ) = build_doc_indexes(root)
     model = root.find('.//uml:Model', NS)
     if model is None:
@@ -618,6 +767,11 @@ def main():
             attr_deprecated=attr_deprecated,
             assoc_deprecated=assoc_deprecated,
             assoc_role_deprecated=assoc_role_deprecated,
+            assoc_inverse=assoc_inverse,
+            assoc_source_class=assoc_source_class,
+            attr_writeable=attr_writeable,
+            attr_model_type=attr_model_type,
+            class_stereotypes=class_stereotypes,
         )
         if out:
             generated.append(out)

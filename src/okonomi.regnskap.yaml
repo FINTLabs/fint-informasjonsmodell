@@ -16,7 +16,9 @@ classes:
       Dokumentasjon til en transaksjon.
     attributes:
       bilagsdato:
-        range: string
+        range: date
+        annotations:
+          writeable: true
         description: |
           Dato bilaget er registrert.
           
@@ -42,18 +44,26 @@ classes:
           Nummer på bilaget.
       data:
         range: string
+        annotations:
+          writeable: true
         description: |
           Bilagets fil, kodet som Base64.
       filnavn:
         range: string
+        annotations:
+          writeable: true
         description: |
           Navn på bilagets fil.
       referanse:
         range: string
+        annotations:
+          writeable: true
         description: |
           Ekstern referanse, for eksempel fakturanummer.
       url:
         range: string
+        annotations:
+          writeable: true
         description: |
           URL til eksternt dokument.
 
@@ -63,6 +73,8 @@ classes:
     attributes:
       kontonummer:
         range: string
+        annotations:
+          writeable: true
         description: |
           Kontonummer til leverandøren.
       leverandørnummer:
@@ -81,6 +93,8 @@ classes:
     attributes:
       navn:
         range: string
+        annotations:
+          writeable: true
         description: |
           Navn på leverandørgruppen.
         required: true
@@ -95,7 +109,9 @@ classes:
       Føring på en konto i regnskapet.
     attributes:
       beløp:
-        range: string
+        range: integer
+        annotations:
+          writeable: true
         description: |
           Posteringens beløp med to desimaler.
           
@@ -103,7 +119,9 @@ classes:
           123,45 NOK tilsvarer verdien 12345.
         required: true
       debet:
-        range: string
+        range: boolean
+        annotations:
+          writeable: true
         description: |
           Angir om posteringen er debet eller kredit.
           
@@ -113,6 +131,8 @@ classes:
         required: true
       kontering:
         range: Kontostreng
+        annotations:
+          writeable: true
         description: |
           Kontodimmensjoner for posteringen.
         required: true
@@ -123,6 +143,9 @@ classes:
         required: true
       transaksjon:
         range: Transaksjon
+        inverse: postering
+        annotations:
+          primaryRelation: true
         description: |
           Transaksjonen posteringen tilhører.
 
@@ -131,7 +154,9 @@ classes:
       Overføring av penger til eller fra eksterne parter.
     attributes:
       beløp:
-        range: string
+        range: integer
+        annotations:
+          writeable: true
         description: |
           Transaksjonens beløp med to desimaler.
           
@@ -140,15 +165,21 @@ classes:
         required: true
       beskrivelse:
         range: string
+        annotations:
+          writeable: true
         description: |
           Beskrivelse av transaksjonen.
       bilag:
         range: Bilag
+        annotations:
+          writeable: true
         description: |
           Bilag til transaksjonen.
         multivalued: true
       forfallsdato:
-        range: string
+        range: date
+        annotations:
+          writeable: true
         description: |
           Dato transaksjonen forfaller.
           
@@ -169,7 +200,9 @@ classes:
           * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
         required: true
       oppdateringstidspunkt:
-        range: string
+        range: datetime
+        annotations:
+          writeable: true
         description: |
           Tidspunkt for siste endring i transaksjonen.
           
@@ -191,7 +224,9 @@ classes:
         description: |
           Intern unik identifikator i økonomisystemet.
       transaksjonstidspunkt:
-        range: string
+        range: datetime
+        annotations:
+          writeable: true
         description: |
           Tidspunkt for registrering av transaksjonen.
           
@@ -223,6 +258,7 @@ classes:
         required: true
       postering:
         range: Postering
+        inverse: transaksjon
         description: |
           Posteringer tilhørende transaksjonen.
         multivalued: true

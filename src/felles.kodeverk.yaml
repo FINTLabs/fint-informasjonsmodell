@@ -21,6 +21,7 @@ classes:
     attributes:
       kommune:
         range: Kommune
+        inverse: fylke
         description: |
           Alle kommuner som inngår i fylke
         multivalued: true
@@ -37,6 +38,9 @@ classes:
     attributes:
       fylke:
         range: Fylke
+        inverse: kommune
+        annotations:
+          primaryRelation: true
         description: |
           Fylke som kommune hører i
         required: true

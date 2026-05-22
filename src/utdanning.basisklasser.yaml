@@ -5,6 +5,7 @@ imports:
   - linkml:types
   - felles.basisklasser
   - felles.komplekse-datatyper
+  - utdanning.elev
   - utdanning.kodeverk
 
 classes:
@@ -74,6 +75,7 @@ classes:
           Referanse til VIGO kodeverket.
       medlemskap:
         range: Medlemskap
+        inverse: gruppe
         description: |
           Alle medlemene (medlemskapsforholdene) i en gruppe
         deprecated: "Erstattet av relasjon mellom Elevforhold / Undervisningsforhold og grupper."
@@ -137,6 +139,7 @@ classes:
         required: true
       medlemskap:
         range: Medlemskap
+        inverse: medlem
         description: |
           Alle gruppene som elev eller lærer er medlem av.
         deprecated: "Erstattet av relasjon mellom Undervisningsforhold og Elevforhold og grupper."

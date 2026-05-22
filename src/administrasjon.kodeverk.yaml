@@ -33,15 +33,22 @@ classes:
     attributes:
       overordnet:
         range: Ansvar
+        inverse: underordnet
+        annotations:
+          primaryRelation: true
         description: |
           Overordnet ansvar
       organisasjonselement:
         range: Organisasjonselement
+        inverse: ansvar
         description: |
           Organisasjonselement ansvar er knyttet til.
         multivalued: true
       underordnet:
         range: Ansvar
+        inverse: overordnet
+        annotations:
+          primaryRelation: true
         description: |
           Alle underansvar
         multivalued: true
@@ -170,10 +177,16 @@ classes:
     attributes:
       overordnet:
         range: Funksjon
+        inverse: underordnet
+        annotations:
+          primaryRelation: true
         description: |
           Overordnet funksjon.
       underordnet:
         range: Funksjon
+        inverse: overordnet
+        annotations:
+          primaryRelation: true
         description: |
           De underordnede funksjonene.
         multivalued: true
@@ -190,6 +203,7 @@ classes:
     attributes:
       fullmakt:
         range: Fullmakt
+        inverse: myndighet
         description: |
           Alle fullmakter knyttet til kontodimensjonen.
         deprecated: "Relasjonen til fullmakt ble fjernet i v3.8.0"
@@ -309,6 +323,9 @@ classes:
     attributes:
       prosjektart:
         range: Prosjektart
+        inverse: prosjekt
+        annotations:
+          primaryRelation: true
         description: |
           Deloppgave eller delprosjekt som hører til prosjektet.
         multivalued: true
@@ -344,15 +361,22 @@ classes:
     attributes:
       underordnet:
         range: Prosjektart
+        inverse: overordnet
+        annotations:
+          primaryRelation: true
         description: |
           Prosjektarter i nivået under i strukturen.
         multivalued: true
       prosjekt:
         range: Prosjekt
+        inverse: prosjektart
         description: |
           Prosjektet som er øverste nivå i en nedbrytningsstruktur.
       overordnet:
         range: Prosjektart
+        inverse: underordnet
+        annotations:
+          primaryRelation: true
         description: |
           Prosjektart i nivået over i strukturen.
 

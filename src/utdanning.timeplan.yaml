@@ -42,11 +42,15 @@ classes:
         required: true
       rom:
         range: Rom
+        inverse: eksamen
+        annotations:
+          primaryRelation: true
         description: |
           Lokale hvor eksamen skal avholdes.
         multivalued: true
       eksamensgruppe:
         range: Eksamensgruppe
+        inverse: eksamen
         description: |
           Eksamensgrupper som skal ha en eksamen.
         multivalued: true
@@ -87,31 +91,39 @@ classes:
     attributes:
       programområde:
         range: Programområde
+        inverse: fag
+        annotations:
+          primaryRelation: true
         description: |
           Programområde faget tilhører.
         multivalued: true
       tilrettelegging:
         range: Elevtilrettelegging
+        inverse: fag
         description: |
           Tilrettelegging i faget.
         multivalued: true
       faggruppe:
         range: Faggruppe
+        inverse: fag
         description: |
           Faggruppe for faget.
         multivalued: true
       skole:
         range: Skole
+        inverse: fag
         description: |
           Alle skoler som tilbyr faget
         multivalued: true
       undervisningsgruppe:
         range: Undervisningsgruppe
+        inverse: fag
         description: |
           Alle undervisningsgrupper i et gitt fag
         multivalued: true
       eksamensgruppe:
         range: Eksamensgruppe
+        inverse: fag
         description: |
           Alle relaterte eksamensgrupper
         multivalued: true
@@ -131,6 +143,9 @@ classes:
     attributes:
       skole:
         range: Skole
+        inverse: faggruppe
+        annotations:
+          primaryRelation: true
         description: |
           Skolen faggruppen tilhører.
       skoleår:
@@ -139,11 +154,17 @@ classes:
           Skoleåret faggruppen er aktiv.
       fag:
         range: Fag
+        inverse: faggruppe
+        annotations:
+          primaryRelation: true
         description: |
           Fag som gruppen gjelder for.
         required: true
       faggruppemedlemskap:
         range: Faggruppemedlemskap
+        inverse: faggruppe
+        annotations:
+          primaryRelation: true
         description: |
           Faggruppemedlemskapene i et fag.
         multivalued: true
@@ -163,11 +184,13 @@ classes:
           Status i faget.
       varsel:
         range: Varsel
+        inverse: faggruppemedlemskap
         description: |
           Varsel i faget.
         multivalued: true
       faggruppe:
         range: Faggruppe
+        inverse: faggruppemedlemskap
         description: |
           Faggruppe det er medlemskap i.
         required: true
@@ -187,11 +210,15 @@ classes:
         required: true
       time:
         range: Time
+        inverse: rom
+        annotations:
+          primaryRelation: true
         description: |
           Timene som gjennomføres på et bestemt rom
         multivalued: true
       eksamen:
         range: Eksamen
+        inverse: rom
         description: |
           Eksamen(er) som skal avholdes i rommet.
         multivalued: true
@@ -221,18 +248,23 @@ classes:
         required: true
       undervisningsgruppe:
         range: Undervisningsgruppe
+        inverse: time
+        annotations:
+          primaryRelation: true
         description: |
           Undervisningsgruppene som undervises i en gitt time
         multivalued: true
         required: true
       undervisningsforhold:
         range: Undervisningsforhold
+        inverse: time
         description: |
           Lærerne som underviser en bestemt time
         multivalued: true
         required: true
       rom:
         range: Rom
+        inverse: time
         description: |
           De aktuelle rommene hvor undervisningen foregår
         multivalued: true
@@ -261,6 +293,9 @@ classes:
         multivalued: true
       skole:
         range: Skole
+        inverse: undervisningsgruppe
+        annotations:
+          primaryRelation: true
         description: |
           Skolen en undervisningsgruppe tilhører.
         required: true
@@ -270,28 +305,37 @@ classes:
           Skoleår for undervisningsgruppe
       fag:
         range: Fag
+        inverse: undervisningsgruppe
+        annotations:
+          primaryRelation: true
         description: |
           Fagene som det undervises i i gruppen
         multivalued: true
         required: true
       elevforhold:
         range: Elevforhold
+        inverse: undervisningsgruppe
+        annotations:
+          primaryRelation: true
         description: |
           Alle elevforhold i undervisningsgruppen
         deprecated: "Relasjonen erstattes med Gruppemedlemskap i Undervisningsgruppemedlemskap."
         multivalued: true
       undervisningsforhold:
         range: Undervisningsforhold
+        inverse: undervisningsgruppe
         description: |
           Alle lærere i gruppen.
         multivalued: true
       time:
         range: Time
+        inverse: undervisningsgruppe
         description: |
           Timene hvor undervisningen til en undervisningsgruppe gjennomføres
         multivalued: true
       gruppemedlemskap:
         range: Undervisningsgruppemedlemskap
+        inverse: undervisningsgruppe
         description: |
           Gruppemedlemskapene til en undervisningsgruppe.
         multivalued: true
@@ -307,11 +351,17 @@ classes:
     attributes:
       elevforhold:
         range: Elevforhold
+        inverse: undervisningsgruppemedlemskap
+        annotations:
+          primaryRelation: true
         description: |
           Elevforhold et undervisningsgruppemedlemskap tilhører.
         required: true
       undervisningsgruppe:
         range: Undervisningsgruppe
+        inverse: gruppemedlemskap
+        annotations:
+          primaryRelation: true
         description: |
           Undervisningsgruppen et gruppemedlemskap tilhører.
         required: true

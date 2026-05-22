@@ -46,6 +46,9 @@ classes:
           Skoleår for basisgruppe
       elevforhold:
         range: Elevforhold
+        inverse: basisgruppe
+        annotations:
+          primaryRelation: true
         description: |
           Alle elevforhold i basisgruppen
         deprecated: "Relasjonen erstattes av Gruppemedlemskap i Basisgruppemedlemskap."
@@ -57,26 +60,35 @@ classes:
         multivalued: true
       trinn:
         range: Årstrinn
+        inverse: basisgruppe
+        annotations:
+          primaryRelation: true
         description: |
           Det overordnet trinnet som gruppen hører inn i
         required: true
       skole:
         range: Skole
+        inverse: basisgruppe
+        annotations:
+          primaryRelation: true
         description: |
           Skolen en basisgruppe tilhører.
         required: true
       undervisningsforhold:
         range: Undervisningsforhold
+        inverse: basisgruppe
         description: |
           Alle lærere tilknyttet basisgruppen.
         multivalued: true
       gruppemedlemskap:
         range: Basisgruppemedlemskap
+        inverse: basisgruppe
         description: |
           Gruppemedlemskapene til en basisgruppe.
         multivalued: true
       kontaktlærergruppe:
         range: Kontaktlærergruppe
+        inverse: basisgruppe
         description: |
           Grupper med en kontaktlærer og elever som ligger under en gitt basisgruppe
         multivalued: true
@@ -92,11 +104,17 @@ classes:
     attributes:
       basisgruppe:
         range: Basisgruppe
+        inverse: gruppemedlemskap
+        annotations:
+          primaryRelation: true
         description: |
           Basisgruppen et gruppemedlemskap tilhører.
         required: true
       elevforhold:
         range: Elevforhold
+        inverse: basisgruppemedlemskap
+        annotations:
+          primaryRelation: true
         description: |
           Elevforhold et basisgruppemedlemskap tilhører.
         required: true
@@ -113,6 +131,8 @@ classes:
     attributes:
       brukernavn:
         range: Identifikator
+        annotations:
+          writeable: true
         description: |
           Brukernavn til en elev
           
@@ -133,6 +153,8 @@ classes:
           Et unikt nummer som identifiserer en elev
       feidenavn:
         range: Identifikator
+        annotations:
+          writeable: true
         description: |
           Fullt Feide-navn
           
@@ -142,15 +164,19 @@ classes:
           # Eksempel
           - oleolsen@haugaland.fylkeskommune.no
       gjest:
-        range: string
+        range: boolean
         description: |
           Viser om eleven er gjesteelev.
       hybeladresse:
         range: Adresse
+        annotations:
+          writeable: true
         description: |
           Hybeladresse som ikke er folkeregistrert.
       kontaktinformasjon:
         range: Kontaktinformasjon
+        annotations:
+          writeable: true
         description: |
           Skolespesifikk kontaktinformasjon til en elev
           
@@ -168,6 +194,9 @@ classes:
         required: true
       person:
         range: Person
+        inverse: elev
+        annotations:
+          primaryRelation: true
         description: |
           Privatperson som er knyttet til en elev.
           
@@ -175,6 +204,7 @@ classes:
         required: true
       elevforhold:
         range: Elevforhold
+        inverse: elev
         description: |
           Elevforholdene til en elev
         multivalued: true
@@ -198,7 +228,7 @@ classes:
           Anmerkningene i elevforholdet.
         multivalued: true
       avbruddsdato:
-        range: string
+        range: date
         description: |
           Dato da elevforholdet ble avbrutt
           
@@ -226,7 +256,7 @@ classes:
           
           Periode en elev er (eller har vært) i et elevforhold. Inneholder en startdato. Kan inneholde en sluttdato.
       hovedskole:
-        range: string
+        range: boolean
         description: |
           Angir om elevforhold er tilknyttet hovedskole.
           
@@ -234,7 +264,7 @@ classes:
           
           En elev kan ha flere elevforhold, men kun ett elevforhold skal være tilknyttet en hovedskole.
       tospråkligFagopplæring:
-        range: string
+        range: boolean
         description: |
           Viser om eleven har rett på tospråklig fagopplæring (opplæring i fag på to språk).
           
@@ -260,6 +290,9 @@ classes:
         deprecated: "Bruk relasjon fra Faggruppemedlemskap."
       skole:
         range: Skole
+        inverse: elevforhold
+        annotations:
+          primaryRelation: true
         description: |
           Skole elevforhold er knyttet til.
         required: true
@@ -270,10 +303,16 @@ classes:
         multivalued: true
       fraværsregistreringer:
         range: Elevfravær
+        inverse: elevforhold
+        annotations:
+          primaryRelation: true
         description: |
           Liste av fraværsregistreringer.
       elev:
         range: Elev
+        inverse: elevforhold
+        annotations:
+          primaryRelation: true
         description: |
           Elev som elevforholdet gjelder for
         required: true
@@ -288,121 +327,143 @@ classes:
           Skoleåret elevforholdet gjelder for.
       undervisningsgruppemedlemskap:
         range: Undervisningsgruppemedlemskap
+        inverse: elevforhold
         description: |
           Undervisningsmedlemskapene til et elevforhold.
         multivalued: true
       basisgruppe:
         range: Basisgruppe
+        inverse: elevforhold
         description: |
           Alle basisgrupper elevforholdet er medlem av
         deprecated: "Relasjonen erstattes av Gruppemedlemskap i Basisgruppemedlemskap."
         multivalued: true
       vurdering:
         range: Vurdering
+        inverse: elevforhold
         description: |
           Alle vurderinger i et elevforhold
         deprecated: "Bruk Elevvurdering"
         multivalued: true
       sluttordensvurdering:
         range: Sluttordensvurdering
+        inverse: elevforhold
         description: |
           Sluttvurdering av orden og atferd for eleven
         deprecated: "Bruk Elevvurdering.sluttordensvurdering."
         multivalued: true
       kontaktlærergruppe:
         range: Kontaktlærergruppe
+        inverse: elevforhold
         description: |
           Alle kontaktlærergrupper elevforhold er medlem av
         deprecated: "Relasjonen erstattes av Elevforhold i Kontaktlærergruppemedlemskap."
         multivalued: true
       underveisfagvurdering:
         range: Underveisfagvurdering
+        inverse: elevforhold
         description: |
           Underveisvurdering i fag for eleven
         deprecated: "Bruk Elevvurdering.underveisfagvurdering."
         multivalued: true
       halvårsfagvurdering:
         range: Halvårsfagvurdering
+        inverse: elevforhold
         description: |
           Halvårsvurdering i fag for eleven
         deprecated: "Bruk Elevvurdering.halvårsfagvurdering."
         multivalued: true
       sluttfagvurdering:
         range: Sluttfagvurdering
+        inverse: elevforhold
         description: |
           Sluttvurdering i fag for eleven
         deprecated: "Bruk Elevvurdering.sluttfagvurdering."
         multivalued: true
       persongruppemedlemskap:
         range: Persongruppemedlemskap
+        inverse: elevforhold
         description: |
           Persongruppemedlemskapene til et elevforhold.
         multivalued: true
       eksamensgruppemedlemskap:
         range: Eksamensgruppemedlemskap
+        inverse: elevforhold
         description: |
           Eksamensgruppemedlemskapene til et elevforhold
         multivalued: true
       kontaktlærergruppemedlemskap:
         range: Kontaktlærergruppemedlemskap
+        inverse: elevforhold
         description: |
           Kontaktlærergruppemedlemskapene til et elevforhold.
         multivalued: true
       elevfravær:
         range: Fraværsoversikt
+        inverse: elevforhold
         description: |
           Fraværsoversikt for elevforholdet
         multivalued: true
       tilrettelegging:
         range: Elevtilrettelegging
+        inverse: elev
         description: |
           Tilrettelegginger for eleven.
         multivalued: true
       halvårsordensvurdering:
         range: Halvårsordensvurdering
+        inverse: elevforhold
         description: |
           Halvårsvurdering av orden og atferd for eleven.
         deprecated: "Bruk Elevvurdering.halvårsordensvurdering."
         multivalued: true
       programområde:
         range: Programområde
+        inverse: elevforhold
         description: |
           Programområde elevforhold tilhører
         deprecated: "Relasjonen erstattes av Elevforhold i Programområdemedlemskap."
       elevvurdering:
         range: Elevvurdering
+        inverse: elevforhold
         description: |
           Vurderingsinformasjon for en elev.
       fravær:
         range: Fravær
+        inverse: elevforhold
         description: |
           Alle fravær registrert på elevforhold.
         deprecated: "Bruk Elevfravær"
         multivalued: true
       programområdemedlemskap:
         range: Programområdemedlemskap
+        inverse: elevforhold
         description: |
           Programområdemedlemskapene til et elevforhold.
         multivalued: true
       underveisordensvurdering:
         range: Underveisordensvurdering
+        inverse: elevforhold
         description: |
           Underveisvurdering av orden og atferd for eleven.
         deprecated: "Bruk Elevvurdering.underveisordensvurdering."
         multivalued: true
       eksamensgruppe:
         range: Eksamensgruppe
+        inverse: elevforhold
         description: |
           Alle eksamensgruppene elevforhold er medlem av
         deprecated: "Relasjonen erstattes av Gruppemedlemskap i Eksamensgruppemedlemskap."
         multivalued: true
       basisgruppemedlemskap:
         range: Basisgruppemedlemskap
+        inverse: elevforhold
         description: |
           Basisgruppemedlemskapene til et elevforhold.
         multivalued: true
       undervisningsgruppe:
         range: Undervisningsgruppe
+        inverse: elevforhold
         description: |
           Alle undervisningsgruppene elevforhold er medlem av
         deprecated: "Relasjonen erstattes med Gruppemedlemskap i Undervisningsgruppemedlemskap."
@@ -425,6 +486,9 @@ classes:
         required: true
       fag:
         range: Fag
+        inverse: tilrettelegging
+        annotations:
+          primaryRelation: true
         description: |
           Faget tilretteleggingen gjelder for.
       tilrettelegging:
@@ -434,6 +498,9 @@ classes:
         required: true
       elev:
         range: Elevforhold
+        inverse: tilrettelegging
+        annotations:
+          primaryRelation: true
         description: |
           Eleven det skal tilrettelegges for.
         required: true
@@ -458,12 +525,18 @@ classes:
         multivalued: true
       elevforhold:
         range: Elevforhold
+        inverse: kontaktlærergruppe
+        annotations:
+          primaryRelation: true
         description: |
           Alle elevforhold i kontaktlærergruppen
         deprecated: "Relasjonen erstattes av Elevforhold i Kontaktlærergruppemedlemskap."
         multivalued: true
       skole:
         range: Skole
+        inverse: kontaktlærergruppe
+        annotations:
+          primaryRelation: true
         description: |
           Skolen kontaktlærergruppen tilhører.
         required: true
@@ -473,17 +546,22 @@ classes:
           Skoleår for kontaktlærergruppe
       basisgruppe:
         range: Basisgruppe
+        inverse: kontaktlærergruppe
+        annotations:
+          primaryRelation: true
         description: |
           De overordnede basisgruppene
         multivalued: true
         required: true
       undervisningsforhold:
         range: Undervisningsforhold
+        inverse: kontaktlærergruppe
         description: |
           Alle kontaktlærere i gruppen.
         multivalued: true
       gruppemedlemskap:
         range: Kontaktlærergruppemedlemskap
+        inverse: kontaktlærergruppe
         description: |
           Gruppemedlemskapene til en kontaktlærergruppe.
         multivalued: true
@@ -499,11 +577,17 @@ classes:
     attributes:
       elevforhold:
         range: Elevforhold
+        inverse: kontaktlærergruppemedlemskap
+        annotations:
+          primaryRelation: true
         description: |
           Elevforhold et kontaktlærergruppemedlemskap tilhører.
         required: true
       kontaktlærergruppe:
         range: Kontaktlærergruppe
+        inverse: gruppemedlemskap
+        annotations:
+          primaryRelation: true
         description: |
           Kontaktlærergruppen et gruppemedlemskap tilhører.
         required: true
@@ -531,6 +615,9 @@ classes:
         required: true
       medlem:
         range: Utdanningsforhold
+        inverse: medlemskap
+        annotations:
+          primaryRelation: true
         description: |
           Alle deltakere i medlemskapet. Det er viktig å notere at det er både elevene og lærere som inngår i medlemskap i grupper.
         deprecated: "Erstattet av relasjon mellom Undervisningsforhold og Elevforhold og grupper."
@@ -547,6 +634,9 @@ classes:
         multivalued: true
       gruppe:
         range: Gruppe
+        inverse: medlemskap
+        annotations:
+          primaryRelation: true
         description: |
           Gruppen som omtales i medlemskapet
         deprecated: "Erstattet av relasjon mellom Elevforhold / Undervisningsforhold og grupper."
@@ -570,6 +660,9 @@ classes:
     attributes:
       persongruppemedlemskap:
         range: Persongruppemedlemskap
+        inverse: persongruppe
+        annotations:
+          primaryRelation: true
         description: |
           Hvilke persongruppemedlemsskap som er knyttet til gruppen.
         multivalued: true
@@ -615,10 +708,14 @@ classes:
     attributes:
       elevforhold:
         range: Elevforhold
+        inverse: persongruppemedlemskap
+        annotations:
+          primaryRelation: true
         description: |
           Hvilket elevforhold som er medlem i gruppen.
       persongruppe:
         range: Persongruppe
+        inverse: persongruppemedlemskap
         description: |
           Hvilken gruppe det er medlemskap for.
         required: true
@@ -633,6 +730,8 @@ classes:
     attributes:
       feidenavn:
         range: Identifikator
+        annotations:
+          writeable: true
         description: |
           Fullt Feide-navn
           
@@ -648,16 +747,25 @@ classes:
         required: true
       undervisningsforhold:
         range: Undervisningsforhold
+        inverse: skoleressurs
+        annotations:
+          primaryRelation: true
         description: |
           Undervisningsforhold for skoleressurs.
         multivalued: true
       personalressurs:
         range: Personalressurs
+        inverse: skoleressurs
+        annotations:
+          primaryRelation: true
         description: |
           Relasjon til informasjon om ansettelsesforhold.
         required: true
       skole:
         range: Skole
+        inverse: skoleressurs
+        annotations:
+          primaryRelation: true
         description: |
           Tilknyttede skoler.
         multivalued: true
@@ -669,6 +777,7 @@ classes:
           Relasjonen skal gå til et personobjekt i administrasjonsdomenet.
       sensor:
         range: Sensor
+        inverse: skoleressurs
         description: |
           Sensoroppdrag.
         multivalued: true
@@ -687,7 +796,7 @@ classes:
     is_a: Utdanningsforhold
     attributes:
       hovedskole:
-        range: string
+        range: boolean
         description: |
           Angir om undervisningsforholdforhold er tilknyttet hovedskole.
           
@@ -696,41 +805,63 @@ classes:
           En skoleresurs kan ha flere undervisningsforhold, men kun ett undervisningsforhold skal være tilknyttet en hovedskole.
       basisgruppe:
         range: Basisgruppe
+        inverse: undervisningsforhold
+        annotations:
+          primaryRelation: true
         description: |
           Alle basisgrupper tilknyttet læreren.
         multivalued: true
       arbeidsforhold:
         range: Arbeidsforhold
+        inverse: undervisningsforhold
+        annotations:
+          primaryRelation: true
         description: |
           Relasjon til en tilsvarende objekt i Adminstrasjons domenet
         required: true
       kontaktlærergruppe:
         range: Kontaktlærergruppe
+        inverse: undervisningsforhold
+        annotations:
+          primaryRelation: true
         description: |
           Alle grupper læreren er kontaktlærer for.
         multivalued: true
       undervisningsgruppe:
         range: Undervisningsgruppe
+        inverse: undervisningsforhold
+        annotations:
+          primaryRelation: true
         description: |
           Alle undervisningsgrupper læreren deltar i.
         multivalued: true
       eksamensgruppe:
         range: Eksamensgruppe
+        inverse: undervisningsforhold
+        annotations:
+          primaryRelation: true
         description: |
           Alle eksamensgruppene tilknyttet læreren.
         multivalued: true
       time:
         range: Time
+        inverse: undervisningsforhold
+        annotations:
+          primaryRelation: true
         description: |
           Timer hvor lærer underviser
         multivalued: true
       skole:
         range: Skole
+        inverse: undervisningsforhold
+        annotations:
+          primaryRelation: true
         description: |
           Skole som undervisningsforhold er tilknyttet.
         required: true
       skoleressurs:
         range: Skoleressurs
+        inverse: undervisningsforhold
         description: |
           Skoleressurs for undervisningsforhold.
         required: true
@@ -745,7 +876,7 @@ classes:
       * [Forskrift til opplæringslova - &#167; 3-8. Varsling](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_5-1#%C2%A73-8)
     attributes:
       fraværsprosent:
-        range: string
+        range: integer
         description: |
           Fraværsprosenten i varselbrev for fravær.
           
@@ -759,7 +890,7 @@ classes:
           * 58,73 prosent vil ha verdien 5873
         required: true
       sendt:
-        range: string
+        range: date
         description: |
           Dato da varselet ble sendt.
         required: true
@@ -787,6 +918,9 @@ classes:
           Type varsel.
       faggruppemedlemskap:
         range: Faggruppemedlemskap
+        inverse: varsel
+        annotations:
+          primaryRelation: true
         description: |
           Elevens faggruppe varselet gjelder.
         required: true

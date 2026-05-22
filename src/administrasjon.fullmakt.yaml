@@ -8,7 +8,6 @@ imports:
   - administrasjon.kodeverk
   - administrasjon.organisasjon
   - administrasjon.personal
-  - arkiv.kodeverk
 
 classes:
 
@@ -42,6 +41,9 @@ classes:
         required: true
       myndighet:
         range: Kontodimensjon
+        inverse: fullmakt
+        annotations:
+          primaryRelation: true
         description: |
           Del av kontodimensjon som Personalressurs har blitt delegert en fullmakt for.
         deprecated: "Relasjonen til fullmakt ble fjernet i v3.8.0"
@@ -84,6 +86,9 @@ classes:
           Myndighet på kontodimensjon ansvar.
       stedfortreder:
         range: Personalressurs
+        inverse: stedfortreder
+        annotations:
+          primaryRelation: true
         description: |
           Personalressurs som er stedfortreder for den fullmektige.
           
@@ -98,6 +103,9 @@ classes:
           Myndighet på kontodimensjon kontrakt.
       fullmektig:
         range: Personalressurs
+        inverse: fullmakt
+        annotations:
+          primaryRelation: true
         description: |
           Personalressurs som har blitt gitt fullmakt til en gitt rolle.
       prosjekt:
@@ -110,6 +118,9 @@ classes:
           Formål viser aktivitet og tjenesteproduksjon
       rolle:
         range: Rolle
+        inverse: fullmakt
+        annotations:
+          primaryRelation: true
         description: |
           Hvilken type fullmakt
         required: true
@@ -141,6 +152,7 @@ classes:
         required: true
       fullmakt:
         range: Fullmakt
+        inverse: rolle
         description: |
           Alle fullmakter av denne type
         multivalued: true

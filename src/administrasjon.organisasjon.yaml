@@ -27,6 +27,7 @@ classes:
           Navn som beskriver en arbeidslokasjon.
       arbeidsforhold:
         range: Arbeidsforhold
+        inverse: arbeidslokasjon
         description: |
           Arbeidsforhold tilknyttet en arbeidslokasjon.
         multivalued: true
@@ -134,6 +135,9 @@ classes:
         required: true
       leder:
         range: Personalressurs
+        inverse: leder
+        annotations:
+          primaryRelation: true
         description: |
           Ansvarlig leder for organisasjonselementet
           
@@ -146,6 +150,9 @@ classes:
           # Eksempler
       ansvar:
         range: Ansvar
+        inverse: organisasjonselement
+        annotations:
+          primaryRelation: true
         description: |
           Ansvar i kontoplanen som organisasjonselement er knyttet til.
         multivalued: true
@@ -173,10 +180,12 @@ classes:
         required: true
       skole:
         range: Skole
+        inverse: organisasjon
         description: |
           Referanse til Utdannings domenet
       arbeidsforhold:
         range: Arbeidsforhold
+        inverse: arbeidssted
         description: |
           Alle arbeidsforhold til et organisasjonselement.
         multivalued: true
