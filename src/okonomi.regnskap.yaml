@@ -71,12 +71,6 @@ classes:
     description: |
       Person eller virksomhet som leverer produkter eller tjenester.
     attributes:
-      kontonummer:
-        range: string
-        annotations:
-          writeable: true
-        description: |
-          Kontonummer til leverandøren.
       leverandørnummer:
         range: Identifikator
         description: |
@@ -86,6 +80,12 @@ classes:
         description: |
           Intern identifikator i økonomisystemet.
         required: true
+      kontonummer:
+        range: string
+        annotations:
+          writeable: true
+        description: |
+          Kontonummer til leverandøren.
       leverandørgruppe:
         range: Leverandørgruppe
         inverse: leverandør
@@ -98,17 +98,17 @@ classes:
     description: |
       Gruppering av leverandører.
     attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Intern unik identifikator i økonomisystemet.
+        required: true
       navn:
         range: string
         annotations:
           writeable: true
         description: |
           Navn på leverandørgruppen.
-        required: true
-      systemId:
-        range: Identifikator
-        description: |
-          Intern unik identifikator i økonomisystemet.
         required: true
       leverandør:
         range: Leverandør
@@ -121,6 +121,11 @@ classes:
     description: |
       Føring på en konto i regnskapet.
     attributes:
+      posteringsId:
+        range: Identifikator
+        description: |
+          Intern unik identifikator i økonomisystemet.
+        required: true
       beløp:
         range: integer
         annotations:
@@ -149,11 +154,6 @@ classes:
         description: |
           Kontodimmensjoner for posteringen.
         required: true
-      posteringsId:
-        range: Identifikator
-        description: |
-          Intern unik identifikator i økonomisystemet.
-        required: true
       transaksjon:
         range: Transaksjon
         inverse: postering
@@ -166,6 +166,11 @@ classes:
     description: |
       Overføring av penger til eller fra eksterne parter.
     attributes:
+      transaksjonsId:
+        range: Identifikator
+        description: |
+          Intern unik identifikator i økonomisystemet.
+        required: true
       beløp:
         range: integer
         annotations:
@@ -232,11 +237,6 @@ classes:
           * `29. mars 1990 klokken 13:30 (UTC +1)` -&gt; `1990-03-29T12:30:00Z`
           
           * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
-      transaksjonsId:
-        range: Identifikator
-        description: |
-          Intern unik identifikator i økonomisystemet.
-        required: true
       transaksjonstidspunkt:
         range: datetime
         annotations:
@@ -265,15 +265,15 @@ classes:
         range: Leverandør
         description: |
           Leverandør knyttet  til transaksjonen.
-      valuta:
-        range: Valuta
-        description: |
-          Valuta for oppgitt beløp.
-        required: true
       postering:
         range: Postering
         inverse: transaksjon
         description: |
           Posteringer tilhørende transaksjonen.
         multivalued: true
+        required: true
+      valuta:
+        range: Valuta
+        description: |
+          Valuta for oppgitt beløp.
         required: true

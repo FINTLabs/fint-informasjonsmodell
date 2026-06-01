@@ -18,6 +18,11 @@ classes:
     description: |
       Anmerkninger for en elev for et elevforhold.
     attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Intern identifikator som brukes i kildesystemet.
+        required: true
       atferd:
         range: integer
         description: |
@@ -27,11 +32,6 @@ classes:
         range: integer
         description: |
           Antall anmerkninger for orden for eleven
-        required: true
-      systemId:
-        range: Identifikator
-        description: |
-          Intern identifikator som brukes i kildesystemet.
         required: true
       skoleår:
         range: Skoleår
@@ -75,35 +75,6 @@ classes:
           * `29. mars 1990 klokken 13:30 (UTC +1)` -&gt; `1990-03-29T12:30:00Z`
           
           * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
-      skole:
-        range: Skole
-        inverse: eksamensgruppe
-        annotations:
-          primaryRelation: true
-        description: |
-          Skolen eksamensgruppen tilhører.
-        required: true
-      termin:
-        range: Termin
-        description: |
-          Termin for eksamensgruppe
-        required: true
-      eksamensform:
-        range: Eksamensform
-        description: |
-          Eksamensform for eksamensgruppe.
-      skoleår:
-        range: Skoleår
-        description: |
-          Skoleår for eksamensgruppe
-      undervisningsforhold:
-        range: Undervisningsforhold
-        inverse: eksamensgruppe
-        annotations:
-          primaryRelation: true
-        description: |
-          Alle lærerne tilknyttet eksamensgruppen.
-        multivalued: true
       eksamen:
         range: Eksamen
         inverse: eksamensgruppe
@@ -111,6 +82,10 @@ classes:
           primaryRelation: true
         description: |
           Eksamenen som skal avholdes.
+      eksamensform:
+        range: Eksamensform
+        description: |
+          Eksamensform for eksamensgruppe.
       fag:
         range: Fag
         inverse: eksamensgruppe
@@ -131,6 +106,31 @@ classes:
         description: |
           Sensorer for eksamensgruppe.
         multivalued: true
+      skole:
+        range: Skole
+        inverse: eksamensgruppe
+        annotations:
+          primaryRelation: true
+        description: |
+          Skolen eksamensgruppen tilhører.
+        required: true
+      skoleår:
+        range: Skoleår
+        description: |
+          Skoleår for eksamensgruppe
+      termin:
+        range: Termin
+        description: |
+          Termin for eksamensgruppe
+        required: true
+      undervisningsforhold:
+        range: Undervisningsforhold
+        inverse: eksamensgruppe
+        annotations:
+          primaryRelation: true
+        description: |
+          Alle lærerne tilknyttet eksamensgruppen.
+        multivalued: true
 
   Eksamensgruppemedlemskap:
     description: |
@@ -149,6 +149,14 @@ classes:
         range: string
         description: |
           PAS kandidatnummer.
+      betalingsstatus:
+        range: Betalingsstatus
+        description: |
+          Status for betaling av eksamen for privatister.
+      delegertTil:
+        range: Fylke
+        description: |
+          Fylke en eksamenskandidat er deligert/overført til.
       eksamensgruppe:
         range: Eksamensgruppe
         inverse: gruppemedlemskap
@@ -157,10 +165,6 @@ classes:
         description: |
           Eksamensgruppen et gruppemedlemskap tilhører.
         required: true
-      foretrukketSkole:
-        range: Skole
-        description: |
-          Skole hvor kandidaten foretrekker å ha eksamen.
       elevforhold:
         range: Elevforhold
         inverse: eksamensgruppemedlemskap
@@ -169,6 +173,14 @@ classes:
         description: |
           Elevforhold et eksamensgruppemedlemskap tilhører.
         required: true
+      foretrukketSensor:
+        range: Sensor
+        description: |
+          Ønsket sensor 1 hos en ekstern kurstilbyder knyttet til eksamensoppmeldingen til en privatistkandidat fra den eksterne kurstilbyderen.
+      foretrukketSkole:
+        range: Skole
+        description: |
+          Skole hvor kandidaten foretrekker å ha eksamen.
       nus:
         range: Karakterstatus
         description: |
@@ -179,28 +191,12 @@ classes:
           # Referanser
           
           https://www.udir.no/eksamen-og-prover/eksamen/ny-utsatt-og-sarskilt-eksamen-nus-eksamen-/
-      betalingsstatus:
-        range: Betalingsstatus
-        description: |
-          Status for betaling av eksamen for privatister.
-      delegertTil:
-        range: Fylke
-        description: |
-          Fylke en eksamenskandidat er deligert/overført til.
-      foretrukketSensor:
-        range: Sensor
-        description: |
-          Ønsket sensor 1 hos en ekstern kurstilbyder knyttet til eksamensoppmeldingen til en privatistkandidat fra den eksterne kurstilbyderen.
 
   Eksamensvurdering:
     description: |
       Eksamensvurdering gis etter deltakelse på eksamen.
     is_a: Fagvurdering
     attributes:
-      karakterhistorie:
-        range: Karakterhistorie
-        description: |
-          Viser tidligere karakterer hvis karakter er endret.
       eksamensgruppe:
         range: Eksamensgruppe
         description: |
@@ -214,6 +210,10 @@ classes:
         description: |
           Vurderingsinformasjon for en elev.
         required: true
+      karakterhistorie:
+        range: Karakterhistorie
+        description: |
+          Viser tidligere karakterer hvis karakter er endret.
 
   Elevfravær:
     description: |
@@ -249,6 +249,12 @@ classes:
         description: |
           Kildesystemets unike identifikator
         required: true
+      elevforhold:
+        range: Elevforhold
+        inverse: fraværsregistreringer
+        description: |
+          Elevforholdet fraværet er registrert på.
+        required: true
       fraværsregistrering:
         range: Fraværsregistrering
         inverse: elevfravær
@@ -257,12 +263,6 @@ classes:
         description: |
           Liste av fraværsregistreringer.
         multivalued: true
-      elevforhold:
-        range: Elevforhold
-        inverse: fraværsregistreringer
-        description: |
-          Elevforholdet fraværet er registrert på.
-        required: true
 
   Elevvurdering:
     description: |
@@ -273,42 +273,11 @@ classes:
         description: |
           Systemidentifikator i fagsystemet.
         required: true
-      sluttfagvurdering:
-        range: Sluttfagvurdering
+      eksamensvurdering:
+        range: Eksamensvurdering
         inverse: elevvurdering
-        annotations:
-          primaryRelation: true
         description: |
-          Sluttvurdering i fag for eleven.
-        multivalued: true
-      underveisordensvurdering:
-        range: Underveisordensvurdering
-        inverse: elevvurdering
-        annotations:
-          primaryRelation: true
-        description: |
-          Underveisvurdering av orden og atferd for eleven.
-        multivalued: true
-      vitnemålsmerknad:
-        range: Vitnemålsmerknad
-        description: |
-          Elevens vitnemålsmerknader.
-        multivalued: true
-      underveisfagvurdering:
-        range: Underveisfagvurdering
-        inverse: elevvurdering
-        annotations:
-          primaryRelation: true
-        description: |
-          Underveisvurdering i fag for eleven.
-        multivalued: true
-      halvårsordensvurdering:
-        range: Halvårsordensvurdering
-        inverse: elevvurdering
-        annotations:
-          primaryRelation: true
-        description: |
-          Halvårsvurdering av orden og atferd for eleven.
+          Eksamensvurdering i fag for eleven.
         multivalued: true
       elevforhold:
         range: Elevforhold
@@ -326,6 +295,22 @@ classes:
         description: |
           Halvårsvurdering i fag for eleven.
         multivalued: true
+      halvårsordensvurdering:
+        range: Halvårsordensvurdering
+        inverse: elevvurdering
+        annotations:
+          primaryRelation: true
+        description: |
+          Halvårsvurdering av orden og atferd for eleven.
+        multivalued: true
+      sluttfagvurdering:
+        range: Sluttfagvurdering
+        inverse: elevvurdering
+        annotations:
+          primaryRelation: true
+        description: |
+          Sluttvurdering i fag for eleven.
+        multivalued: true
       sluttordensvurdering:
         range: Sluttordensvurdering
         inverse: elevvurdering
@@ -334,11 +319,26 @@ classes:
         description: |
           Sluttvurdering av orden og atferd for eleven.
         multivalued: true
-      eksamensvurdering:
-        range: Eksamensvurdering
+      underveisfagvurdering:
+        range: Underveisfagvurdering
         inverse: elevvurdering
+        annotations:
+          primaryRelation: true
         description: |
-          Eksamensvurdering i fag for eleven.
+          Underveisvurdering i fag for eleven.
+        multivalued: true
+      underveisordensvurdering:
+        range: Underveisordensvurdering
+        inverse: elevvurdering
+        annotations:
+          primaryRelation: true
+        description: |
+          Underveisvurdering av orden og atferd for eleven.
+        multivalued: true
+      vitnemålsmerknad:
+        range: Vitnemålsmerknad
+        description: |
+          Elevens vitnemålsmerknader.
         multivalued: true
 
   Fagvurdering:
@@ -356,15 +356,15 @@ classes:
       * Forskrift til opplæringslova &#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4)
     abstract: true
     attributes:
-      kommentar:
-        range: string
-        description: |
-          Kommentar til vurderingen
-        required: true
       systemId:
         range: Identifikator
         description: |
           Systemidentifikator i fagsystem
+        required: true
+      kommentar:
+        range: string
+        description: |
+          Kommentar til vurderingen
         required: true
       vurderingsdato:
         range: datetime
@@ -387,24 +387,29 @@ classes:
           
           * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
         required: true
-      skoleår:
-        range: Skoleår
-        description: |
-          Skoleåret vurderingen gjelder for.
-      karakter:
-        range: Karakterverdi
-        description: |
-          Det aktuelle karakteren som er tildelt
       fag:
         range: Fag
         description: |
           Faget det er foretatt vurdering i.
         required: true
+      karakter:
+        range: Karakterverdi
+        description: |
+          Det aktuelle karakteren som er tildelt
+      skoleår:
+        range: Skoleår
+        description: |
+          Skoleåret vurderingen gjelder for.
 
   Fraværsoversikt:
     description: |
       Aggregert fraværsoversikt for en elev i ett fag.
     attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          System-id fra kildesystemet
+        required: true
       halvår:
         range: Fraværsprosent
         description: |
@@ -432,11 +437,6 @@ classes:
           
           * 44 prosent vil ha verdien 4400.
           * 58,73 prosent vil ha verdien 5873
-        required: true
-      systemId:
-        range: Identifikator
-        description: |
-          System-id fra kildesystemet
         required: true
       elevforhold:
         range: Elevforhold
@@ -485,6 +485,11 @@ classes:
     description: |
       Manglende tilstedeværelse i opplæringen.
     attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Kildesystemets unike identifikator.
+        required: true
       føresPåVitnemål:
         range: boolean
         description: |
@@ -503,10 +508,11 @@ classes:
           
           Fravær skal registreres i dager eller timer (60-minutters enheter). Det er ikke tillatt å konvertere timer til dager.
         required: true
-      systemId:
-        range: Identifikator
+      elevfravær:
+        range: Elevfravær
+        inverse: fraværsregistrering
         description: |
-          Kildesystemets unike identifikator.
+          Samling av fraværsregistreringer for en elev.
         required: true
       faggruppe:
         range: Faggruppe
@@ -525,12 +531,6 @@ classes:
         range: Undervisningsgruppe
         description: |
           Undervisningsgruppen det er registrert fravær fra.
-        required: true
-      elevfravær:
-        range: Elevfravær
-        inverse: fraværsregistrering
-        description: |
-          Samling av fraværsregistreringer for en elev.
         required: true
 
   Halvårsfagvurdering:
@@ -583,6 +583,11 @@ classes:
     description: |
       Endringer på fastsatt karakter.
     attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Intern identifikator som brukes i kildesystemet.
+        required: true
       endretDato:
         range: datetime
         description: |
@@ -604,31 +609,26 @@ classes:
           
           * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
         required: true
-      systemId:
-        range: Identifikator
-        description: |
-          Intern identifikator som brukes i kildesystemet.
-        required: true
-      oppdatertAv:
-        range: Skoleressurs
-        description: |
-          Skoleresursen som har endret karakteren.
-      opprinneligKarakterverdi:
-        range: Karakterverdi
-        description: |
-          Den opprinnelige karakterverdien.
-      opprinneligKarakterstatus:
-        range: Karakterstatus
-        description: |
-          Opprinnelig karakterstatus.
-      karakterverdi:
-        range: Karakterverdi
-        description: |
-          Den gjeldende karakterverdien.
       karakterstatus:
         range: Karakterstatus
         description: |
           Den gjeldende karakterstatusen.
+      karakterverdi:
+        range: Karakterverdi
+        description: |
+          Den gjeldende karakterverdien.
+      oppdatertAv:
+        range: Skoleressurs
+        description: |
+          Skoleresursen som har endret karakteren.
+      opprinneligKarakterstatus:
+        range: Karakterstatus
+        description: |
+          Opprinnelig karakterstatus.
+      opprinneligKarakterverdi:
+        range: Karakterverdi
+        description: |
+          Den opprinnelige karakterverdien.
 
   Karakterverdi:
     description: |
@@ -681,15 +681,15 @@ classes:
       * Forskrift til opplæringslova &#167; 3-4: [https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_4-1#&#167;3-4)
     abstract: true
     attributes:
-      kommentar:
-        range: string
-        description: |
-          Kommentar til vurderingen
-        required: true
       systemId:
         range: Identifikator
         description: |
           Systemidentifikator i fagsystem
+        required: true
+      kommentar:
+        range: string
+        description: |
+          Kommentar til vurderingen
         required: true
       vurderingsdato:
         range: datetime
@@ -717,20 +717,25 @@ classes:
         description: |
           Det aktuelle karakteren som er tildelt i atferd
         required: true
-      skoleår:
-        range: Skoleår
-        description: |
-          Skoleåret vurderingen gjelder for.
       orden:
         range: Karakterverdi
         description: |
           Det aktuelle karakteren som er tildelt i orden
         required: true
+      skoleår:
+        range: Skoleår
+        description: |
+          Skoleåret vurderingen gjelder for.
 
   Sensor:
     description: |
       Skoleressurs som sensurerer eksamensbesvarelser.
     attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Intern identifikator som brukes i kildesystemet.
+        required: true
       aktiv:
         range: boolean
         description: |
@@ -740,10 +745,13 @@ classes:
         range: integer
         description: |
           Viser om det er sensor 1 eller sensor 2
-      systemId:
-        range: Identifikator
+      eksamensgruppe:
+        range: Eksamensgruppe
+        inverse: sensor
+        annotations:
+          primaryRelation: true
         description: |
-          Intern identifikator som brukes i kildesystemet.
+          Eksamensgruppe sensoren tilhører.
         required: true
       skoleressurs:
         range: Skoleressurs
@@ -752,14 +760,6 @@ classes:
           primaryRelation: true
         description: |
           Skoleressurs som er sensor.
-        required: true
-      eksamensgruppe:
-        range: Eksamensgruppe
-        inverse: sensor
-        annotations:
-          primaryRelation: true
-        description: |
-          Eksamensgruppe sensoren tilhører.
         required: true
 
   Sluttfagvurdering:
@@ -784,17 +784,17 @@ classes:
         description: |
           Eksamensgruppe vurderingen er foretatt i.
         deprecated: "Bruk Eksamensvurdering"
-      karakterhistorie:
-        range: Karakterhistorie
-        description: |
-          Viser tidligere karakter hvis karakter er endret.
-        multivalued: true
       elevvurdering:
         range: Elevvurdering
         inverse: sluttfagvurdering
         description: |
           Vurderingsinformasjon for en elev.
         required: true
+      karakterhistorie:
+        range: Karakterhistorie
+        description: |
+          Viser tidligere karakter hvis karakter er endret.
+        multivalued: true
 
   Sluttordensvurdering:
     description: |

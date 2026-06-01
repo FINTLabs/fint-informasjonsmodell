@@ -21,6 +21,11 @@ classes:
       
       Personopplysninger skal bare brukes for spesifikke, uttrykkelige, angitte og legitime formål. Virksomheten har plikt til å gi den enkelte informasjon om formålet med behandling av personopplysning samt behandlingsgrunnlaget.
     attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Intern identifikator som brukes i kildesystemet.
+        required: true
       aktiv:
         range: boolean
         annotations:
@@ -57,11 +62,6 @@ classes:
           * `29. mars 1990 klokken 13:30 (UTC +1)` -&gt; `1990-03-29T12:30:00Z`
           
           * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
-      systemId:
-        range: Identifikator
-        description: |
-          Intern identifikator som brukes i kildesystemet.
-        required: true
       behandlingsgrunnlag:
         range: Behandlingsgrunnlag
         description: |
@@ -93,6 +93,11 @@ classes:
       
       En virksomhet kan behandle personopplysninger dersom den har innhentet gyldig samtykke fra personen eller personene det gjelder.
     attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Intern identifikator som brukes i kildesystemet.
+        required: true
       gyldighetsperiode:
         range: Periode
         annotations:
@@ -119,20 +124,6 @@ classes:
           
           * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
         required: true
-      systemId:
-        range: Identifikator
-        description: |
-          Intern identifikator som brukes i kildesystemet.
-        required: true
-      person:
-        range: Person
-        description: |
-          Person som har gitt samtykke.
-        required: true
-      organisasjonselement:
-        range: Organisasjonselement
-        description: |
-          Organisasjon tilknyttet samtykke
       behandling:
         range: Behandling
         inverse: samtykke
@@ -140,6 +131,15 @@ classes:
           primaryRelation: true
         description: |
           Behandling som omfattes av samtykke.
+        required: true
+      organisasjonselement:
+        range: Organisasjonselement
+        description: |
+          Organisasjon tilknyttet samtykke
+      person:
+        range: Person
+        description: |
+          Person som har gitt samtykke.
         required: true
 
   Tjeneste:
@@ -150,6 +150,11 @@ classes:
       
       Tjeneste eller system som behandler personopplysninger må ha et behandlingsgrunnlag og formål for behandling av hver enkelt personopplysning.
     attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Intern identifikator som brukes i kildesystemet.
+        required: true
       navn:
         range: string
         annotations:
@@ -177,11 +182,6 @@ classes:
           * `29. mars 1990 klokken 13:30 (UTC +1)` -&gt; `1990-03-29T12:30:00Z`
           
           * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
-      systemId:
-        range: Identifikator
-        description: |
-          Intern identifikator som brukes i kildesystemet.
-        required: true
       behandling:
         range: Behandling
         inverse: tjeneste

@@ -22,6 +22,11 @@ classes:
           writeable: true
         description: |
           DataobjektId er enhetens Id i datakatalogen enheten er tilknyttet, for eksempel ObjectId i Azure AD.
+      systemId:
+        range: Identifikator
+        description: |
+          Enhetens id i fagsystemet.
+        required: true
       flerbrukerenhet:
         range: boolean
         description: |
@@ -57,33 +62,34 @@ classes:
         description: |
           Serienummer er unikt nummer fra enhetsprodusenten. Ikke nødvendigvis unikt på tvers av produsenter.
         required: true
-      systemId:
-        range: Identifikator
-        description: |
-          Enhetens id i fagsystemet.
-        required: true
-      elev:
-        range: Elev
-        description: |
-          Angir hvilken elev som benytter enheten.
       administrator:
         range: Organisasjonselement
         description: |
           Angir hvilken organisasjonsenhet som administrerer enheten.
         required: true
-      status:
-        range: Status
-        description: |
-          Status på enheten i fagsystemet.
       eier:
         range: Organisasjonselement
         description: |
           Angir hvilken organisasjonsenhet som eier enheten hvis ikke privateid.
+      elev:
+        range: Elev
+        description: |
+          Angir hvilken elev som benytter enheten.
+      enhetsgruppemedlemskap:
+        range: Enhetsgruppemedlemskap
+        inverse: digitalEnhet
+        description: |
+          Angir hvilke enhetsgrupperinger enheten er medlem av.
+        multivalued: true
       enhetstype:
         range: Enhetstype
         description: |
           Type digital enhet: Mobiltelefon, datamaskin, nettbrett
         required: true
+      personalressurs:
+        range: Personalressurs
+        description: |
+          Angir hvilken ansatt som benytter enheten.
       plattform:
         range: Plattform
         description: |
@@ -93,45 +99,24 @@ classes:
         range: Produsent
         description: |
           Navn på produsent av enheten.
-      personalressurs:
-        range: Personalressurs
+      status:
+        range: Status
         description: |
-          Angir hvilken ansatt som benytter enheten.
-      enhetsgruppemedlemskap:
-        range: Enhetsgruppemedlemskap
-        inverse: digitalEnhet
-        description: |
-          Angir hvilke enhetsgrupperinger enheten er medlem av.
-        multivalued: true
+          Status på enheten i fagsystemet.
 
   Enhetsgruppe:
     description: |
       Angir en gruppering av ensartede digitale enheter. Feks klassesett med iPader eller datalab med ekstra kraftige maskiner.
     attributes:
-      navn:
-        range: string
-        description: |
-          Navnet slik det fremkommer i fagsystemet.
-        required: true
       systemId:
         range: Identifikator
         description: |
           Id i fagsystemet.
         required: true
-      enhetstype:
-        range: Enhetstype
+      navn:
+        range: string
         description: |
-          Type digital enhet: Mobiltelefon, datamaskin, nettbrett.
-        required: true
-      plattform:
-        range: Plattform
-        description: |
-          Operativsystemplattform: Windows, MAC OS, Linux, IOS, Android.
-        required: true
-      organisasjonsenhet:
-        range: Organisasjonselement
-        description: |
-          Angir hvilken organisasjonsenhet som grupperingen er tilknyttet.
+          Navnet slik det fremkommer i fagsystemet.
         required: true
       enhetsgruppemedlemskap:
         range: Enhetsgruppemedlemskap
@@ -139,6 +124,21 @@ classes:
         description: |
           Angir hvilke digitale enheter som er med i denne enhetsgruppen.
         multivalued: true
+      enhetstype:
+        range: Enhetstype
+        description: |
+          Type digital enhet: Mobiltelefon, datamaskin, nettbrett.
+        required: true
+      organisasjonsenhet:
+        range: Organisasjonselement
+        description: |
+          Angir hvilken organisasjonsenhet som grupperingen er tilknyttet.
+        required: true
+      plattform:
+        range: Plattform
+        description: |
+          Operativsystemplattform: Windows, MAC OS, Linux, IOS, Android.
+        required: true
 
   Enhetsgruppemedlemskap:
     description: |

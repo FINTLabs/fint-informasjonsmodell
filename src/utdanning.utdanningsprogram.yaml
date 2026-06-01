@@ -37,26 +37,26 @@ classes:
       * http://psi.udir.no/ontologi/kl06/aarstrinn
     is_a: Gruppe
     attributes:
-      vigoreferanse:
-        range: Vigoreferanse
-        description: |
-          Referanse til VIGO kodeverket.
       grepreferanse:
         range: Grepreferanse
         description: |
           Referanse til GREP kodeverket.
-      programområde:
-        range: Programområde
-        inverse: trinn
-        description: |
-          Alle programområder som er relevante for trinnet.
-        multivalued: true
       klasse:
         range: Klasse
         inverse: trinn
         description: |
           Klassene som hører hjemme på dette trinnet
         multivalued: true
+      programområde:
+        range: Programområde
+        inverse: trinn
+        description: |
+          Alle programområder som er relevante for trinnet.
+        multivalued: true
+      vigoreferanse:
+        range: Vigoreferanse
+        description: |
+          Referanse til VIGO kodeverket.
 
   Programområde:
     description: |
@@ -93,18 +93,6 @@ classes:
       * Grepwiki: http://grepwiki.udir.no/index.php?title=Programområde
     is_a: Gruppe
     attributes:
-      trinn:
-        range: Årstrinn
-        inverse: programområde
-        annotations:
-          primaryRelation: true
-        description: |
-          Alle trinn som finnes på dette programområdet.
-        multivalued: true
-      grepreferanse:
-        range: Grepreferanse
-        description: |
-          Referanse til GREP kodeverket.
       fag:
         range: Fag
         inverse: programområde
@@ -112,6 +100,24 @@ classes:
           primaryRelation: true
         description: |
           Alle fag som er relatert til et gitt programområde.
+        multivalued: true
+      grepreferanse:
+        range: Grepreferanse
+        description: |
+          Referanse til GREP kodeverket.
+      gruppemedlemskap:
+        range: Programområdemedlemskap
+        inverse: programområde
+        description: |
+          Gruppemedlemskapene til et programområde.
+        multivalued: true
+      trinn:
+        range: Årstrinn
+        inverse: programområde
+        annotations:
+          primaryRelation: true
+        description: |
+          Alle trinn som finnes på dette programområdet.
         multivalued: true
       utdanningsprogram:
         range: Utdanningsprogram
@@ -126,12 +132,6 @@ classes:
         range: Vigoreferanse
         description: |
           Referanse til VIGO kodeverket.
-      gruppemedlemskap:
-        range: Programområdemedlemskap
-        inverse: programområde
-        description: |
-          Gruppemedlemskapene til et programområde.
-        multivalued: true
 
   Programområdemedlemskap:
     description: |
@@ -142,14 +142,6 @@ classes:
       Gruppemedlemskap som knytter sammen elevforhold og programområder.
     is_a: Gruppemedlemskap
     attributes:
-      programområde:
-        range: Programområde
-        inverse: gruppemedlemskap
-        annotations:
-          primaryRelation: true
-        description: |
-          Programområde et gruppemedlemskap tilhører.
-        required: true
       elevforhold:
         range: Elevforhold
         inverse: programområdemedlemskap
@@ -157,6 +149,14 @@ classes:
           primaryRelation: true
         description: |
           Elevforhold et programområdemedlemskap tilhører.
+        required: true
+      programområde:
+        range: Programområde
+        inverse: gruppemedlemskap
+        annotations:
+          primaryRelation: true
+        description: |
+          Programområde et gruppemedlemskap tilhører.
         required: true
 
   Skole:
@@ -181,29 +181,6 @@ classes:
       - Fengselsundervisning
     is_a: Enhet
     attributes:
-      domenenavn:
-        range: string
-        description: |
-          Domenenavn om det er tilgjengelig
-      juridiskNavn:
-        range: string
-        description: |
-          Det juridiske navnenet til skolen eller skoleeier slik det fremstår i Enhetsregisteret.
-      navn:
-        range: string
-        description: |
-          Navnet på utdanningsorganisasjonen
-          
-          # Beksrivelse 
-          
-          Navn på skole eller skoleeier
-          
-          # Eksempel
-          
-          * Drammen videregående skole (som Skole)
-          * Moelv videregående skole (som Skole)
-          * Telemark fylkeskommune (som Skoleeier)
-        required: true
       skolenummer:
         range: Identifikator
         description: |
@@ -231,6 +208,72 @@ classes:
           
           Systemspesifikk id, som normalt ikke er synlig i fagsystemet.
         required: true
+      domenenavn:
+        range: string
+        description: |
+          Domenenavn om det er tilgjengelig
+      juridiskNavn:
+        range: string
+        description: |
+          Det juridiske navnenet til skolen eller skoleeier slik det fremstår i Enhetsregisteret.
+      navn:
+        range: string
+        description: |
+          Navnet på utdanningsorganisasjonen
+          
+          # Beksrivelse 
+          
+          Navn på skole eller skoleeier
+          
+          # Eksempel
+          
+          * Drammen videregående skole (som Skole)
+          * Moelv videregående skole (som Skole)
+          * Telemark fylkeskommune (som Skoleeier)
+        required: true
+      eksamensgruppe:
+        range: Eksamensgruppe
+        inverse: skole
+        description: |
+          Alle eksamensgruppene ved en skole.
+        multivalued: true
+      elevforhold:
+        range: Elevforhold
+        inverse: skole
+        description: |
+          Alle elevforhold ved skole.
+        multivalued: true
+      fag:
+        range: Fag
+        inverse: skole
+        description: |
+          Fagene som skolen tilbyr.
+        multivalued: true
+      faggruppe:
+        range: Faggruppe
+        inverse: skole
+        description: |
+          Skolens faggrupper.
+        multivalued: true
+      klasse:
+        range: Klasse
+        inverse: skole
+        description: |
+          Alle klasser ved en skole.
+        multivalued: true
+      kontaktlærergruppe:
+        range: Kontaktlærergruppe
+        inverse: skole
+        description: |
+          Alle kontaktlærergruppene ved skolen.
+        multivalued: true
+      organisasjon:
+        range: Organisasjonselement
+        inverse: skole
+        annotations:
+          primaryRelation: true
+        description: |
+          Referanse til Adminsitrasjons domenet
       skoleeierType:
         range: Skoleeiertype
         description: |
@@ -247,70 +290,11 @@ classes:
           # Referanser
           
           * Vigo Kodeverkdatabase: [vigo.no/vigokv/skole.action](https://www.vigo.no/vigokv/skole.action)
-      organisasjon:
-        range: Organisasjonselement
-        inverse: skole
-        annotations:
-          primaryRelation: true
-        description: |
-          Referanse til Adminsitrasjons domenet
-      vigoreferanse:
-        range: Vigoreferanse
-        description: |
-          Ekstern referanse til skoleinformasjon i Vigo kodeverksdatabase.
-      eksamensgruppe:
-        range: Eksamensgruppe
-        inverse: skole
-        description: |
-          Alle eksamensgruppene ved en skole.
-        multivalued: true
-      faggruppe:
-        range: Faggruppe
-        inverse: skole
-        description: |
-          Skolens faggrupper.
-        multivalued: true
-      utdanningsprogram:
-        range: Utdanningsprogram
-        inverse: skole
-        description: |
-          Utdanningsprogram som inngår på en skole
-        multivalued: true
       skoleressurs:
         range: Skoleressurs
         inverse: skole
         description: |
           Alle ansatte ved skolen
-        multivalued: true
-      kontaktlærergruppe:
-        range: Kontaktlærergruppe
-        inverse: skole
-        description: |
-          Alle kontaktlærergruppene ved skolen.
-        multivalued: true
-      elevforhold:
-        range: Elevforhold
-        inverse: skole
-        description: |
-          Alle elevforhold ved skole.
-        multivalued: true
-      undervisningsgruppe:
-        range: Undervisningsgruppe
-        inverse: skole
-        description: |
-          Alle undervisningsgruppene ved en skole.
-        multivalued: true
-      klasse:
-        range: Klasse
-        inverse: skole
-        description: |
-          Alle klasser ved en skole.
-        multivalued: true
-      fag:
-        range: Fag
-        inverse: skole
-        description: |
-          Fagene som skolen tilbyr.
         multivalued: true
       undervisningsforhold:
         range: Undervisningsforhold
@@ -318,6 +302,22 @@ classes:
         description: |
           Alle undervisningsforhold (lærere) tilknyttet en skole.
         multivalued: true
+      undervisningsgruppe:
+        range: Undervisningsgruppe
+        inverse: skole
+        description: |
+          Alle undervisningsgruppene ved en skole.
+        multivalued: true
+      utdanningsprogram:
+        range: Utdanningsprogram
+        inverse: skole
+        description: |
+          Utdanningsprogram som inngår på en skole
+        multivalued: true
+      vigoreferanse:
+        range: Vigoreferanse
+        description: |
+          Ekstern referanse til skoleinformasjon i Vigo kodeverksdatabase.
 
   Utdanningsprogram:
     description: |
@@ -348,6 +348,16 @@ classes:
       * Grepwiki: http://grepwiki.udir.no/index.php?title=Utdanningsprogram
     is_a: Gruppe
     attributes:
+      grepreferanse:
+        range: Grepreferanse
+        description: |
+          Referanse til GREP kodeverket.
+      programområde:
+        range: Programområde
+        inverse: utdanningsprogram
+        description: |
+          Alle underliggende programområder.
+        multivalued: true
       skole:
         range: Skole
         inverse: utdanningsprogram
@@ -356,17 +366,7 @@ classes:
         description: |
           Alle skoler som tilbyr utdanningsprogrammet
         multivalued: true
-      grepreferanse:
-        range: Grepreferanse
-        description: |
-          Referanse til GREP kodeverket.
       vigoreferanse:
         range: Vigoreferanse
         description: |
           Referanse til VIGO kodeverket.
-      programområde:
-        range: Programområde
-        inverse: utdanningsprogram
-        description: |
-          Alle underliggende programområder.
-        multivalued: true

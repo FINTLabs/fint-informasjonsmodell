@@ -54,6 +54,7 @@ MODEL_PRIMITIVE_RANGE_MAP = {
     'unlimitednatural': 'integer',
 }
 MODEL_PRIMITIVE_RANGE_MAP_NORMALIZED = {k.lower(): v for k, v in MODEL_PRIMITIVE_RANGE_MAP.items()}
+PRIMITIVE_RANGES = set(PRIMITIVE_MAP_NORMALIZED.values()) | set(EA_JAVA_PRIMITIVE_MAP_NORMALIZED.values()) | set(MODEL_PRIMITIVE_RANGE_MAP_NORMALIZED.values())
 
 HEADER = "# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json\n\n"
 
@@ -94,6 +95,111 @@ def detect_declared_encoding(raw: bytes) -> str | None:
         except Exception:
             return None
     return None
+
+
+def is_primitive_range(range_name: str) -> bool:
+    return (range_name or '').strip().lower() in PRIMITIVE_RANGES
+
+
+def resolve_range_class(range_name, range_package, class_index):
+    if not range_name:
+        return None
+
+    matches = []
+    for cid, info in class_index.items():
+        class_name = info['el'].get('name') or ''
+        if class_name != range_name:
+            continue
+        if range_package and info['package'] != range_package:
+            continue
+        matches.append((cid, info))
+
+    if len(matches) == 1:
+        return matches[0]
+    return None
+
+
+def class_has_identifikator(class_id, class_index, cache, visiting=None):
+    if class_id in cache:
+        return cache[class_id]
+
+    if visiting is None:
+        visiting = set()
+    if class_id in visiting:
+        return False
+    visiting.add(class_id)
+
+    info = class_index.get(class_id)
+    if not info:
+        cache[class_id] = False
+        visiting.discard(class_id)
+        return False
+
+    cls_el = info['el']
+    has_identifikator = False
+    for a in cls_el.findall('ownedAttribute'):
+        t = a.find('type')
+        xmi_idref = None
+        if t is not None:
+            xmi_idref = t.get(f'{{{XMI_NS}}}idref')
+        if not xmi_idref:
+            xmi_idref = a.get(f'{{{XMI_NS}}}idref')
+        if not xmi_idref:
+            continue
+        ref = class_index.get(xmi_idref)
+        if ref and (ref['el'].get('name') or '') == 'Identifikator':
+            has_identifikator = True
+            break
+
+    if not has_identifikator:
+        gen = cls_el.find('generalization')
+        if gen is not None:
+            super_id = gen.get('general')
+            if super_id and super_id in class_index:
+                has_identifikator = class_has_identifikator(super_id, class_index, cache, visiting)
+
+    cache[class_id] = has_identifikator
+    visiting.discard(class_id)
+    return has_identifikator
+
+
+def is_relation_target_class(class_id, class_index, class_stereotypes, identifikator_cache):
+    info = class_index.get(class_id)
+    if not info:
+        return False
+
+    stereotype = (class_stereotypes or {}).get(class_id, '').strip().lower()
+    if stereotype == 'referanse':
+        return True
+    if stereotype == 'datatype':
+        return False
+
+    cls_el = info['el']
+    if (cls_el.get('isAbstract') or '').lower() == 'true':
+        return False
+
+    return class_has_identifikator(class_id, class_index, identifikator_cache)
+
+
+def sort_attributes_for_output(attrs, class_index, class_stereotypes):
+    identifikator_cache = {}
+
+    def sort_bucket(attr):
+        range_name = attr.get('range') or ''
+        if range_name == 'Identifikator':
+            return 0
+
+        if is_primitive_range(range_name):
+            return 1
+
+        resolved = resolve_range_class(range_name, attr.get('range_package'), class_index)
+        if not resolved:
+            return 1
+
+        class_id, _ = resolved
+        return 2 if is_relation_target_class(class_id, class_index, class_stereotypes, identifikator_cache) else 1
+
+    return sorted(attrs, key=lambda a: (sort_bucket(a), (a.get('name') or '').lower(), (a.get('name') or '')))
 
 
 def read_xml(path: str) -> ET.Element:
@@ -676,6 +782,7 @@ def emit_yaml_for_package(
             attr_writeable=attr_writeable,
             attr_model_type=attr_model_type,
         )
+        attrs = sort_attributes_for_output(attrs, class_index, class_stereotypes or {})
         if attrs:
             lines.append('    attributes:')
             for a in attrs:

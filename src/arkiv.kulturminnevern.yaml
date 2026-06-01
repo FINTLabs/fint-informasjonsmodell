@@ -14,6 +14,13 @@ classes:
       Sak om søknad om dispensasjon for tiltak på automatisk freda kulturminne.
     is_a: Saksmappe
     attributes:
+      søknadsnummer:
+        range: Identifikator
+        annotations:
+          writeable: true
+        description: |
+          Søknadsnummer fra Digisak.
+        required: true
       kulturminneId:
         range: string
         annotations:
@@ -27,13 +34,6 @@ classes:
           writeable: true
         description: |
           Kulturminnets identifikator i Matrikkelen.
-        required: true
-      søknadsnummer:
-        range: Identifikator
-        annotations:
-          writeable: true
-        description: |
-          Søknadsnummer fra Digisak.
         required: true
       tiltak:
         range: string
@@ -53,6 +53,13 @@ classes:
       Sak om søknad om tilskudd til freda fartøy.
     is_a: Saksmappe
     attributes:
+      søknadsnummer:
+        range: Identifikator
+        annotations:
+          writeable: true
+        description: |
+          Søknadsnummer fra Digisak.
+        required: true
       fartøyNavn:
         range: string
         annotations:
@@ -74,19 +81,18 @@ classes:
         description: |
           Fartøyets ID i Askeladden.
         required: true
-      søknadsnummer:
-        range: Identifikator
-        annotations:
-          writeable: true
-        description: |
-          Søknadsnummer fra Digisak.
-        required: true
 
   TilskuddFredaBygningPrivatEie:
     description: |
       Sak om søknad om tilskudd til freda bygninger i privat eie (FRIP).
     is_a: Saksmappe
     attributes:
+      søknadsnummer:
+        range: Identifikator
+        annotations:
+          writeable: true
+        description: |
+          Søknadsnummer fra Digisak.
       bygningsnavn:
         range: string
         annotations:
@@ -106,9 +112,3 @@ classes:
           writeable: true
         description: |
           Bygningens identifikator i Matrikkelen.
-      søknadsnummer:
-        range: Identifikator
-        annotations:
-          writeable: true
-        description: |
-          Søknadsnummer fra Digisak.

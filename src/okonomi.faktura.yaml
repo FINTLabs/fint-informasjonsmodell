@@ -19,6 +19,11 @@ classes:
       
       Faktura opprettes med basis i ett fakturagrunnlag og ustedes til en eller flere mottakere.
     attributes:
+      fakturanummer:
+        range: Identifikator
+        description: |
+          Identifikator opprettet i fakturaprogram- eller blankett
+        required: true
       adresse:
         range: Adresse
         description: |
@@ -52,11 +57,6 @@ classes:
           * `29. mars 1990` -&gt; `1990-03-29T12:00:00Z`
           
           * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
-        required: true
-      fakturanummer:
-        range: Identifikator
-        description: |
-          Identifikator opprettet i fakturaprogram- eller blankett
         required: true
       fakturert:
         range: boolean
@@ -119,6 +119,13 @@ classes:
       
       Beskriver hvem som skal utstede faktura og dermed motta betaling, hvem som skal faktureres, og hvilke varer det skal faktureres for.
     attributes:
+      ordrenummer:
+        range: Identifikator
+        annotations:
+          writeable: true
+        description: |
+          Unik identifikator for ordre det skal utstedes faktura på.
+        required: true
       avgiftsbeløp:
         range: integer
         annotations:
@@ -172,13 +179,6 @@ classes:
           writeable: true
         description: |
           Del av totalbeløp som utgjør summen av fakturalinjene, i øre.
-      ordrenummer:
-        range: Identifikator
-        annotations:
-          writeable: true
-        description: |
-          Unik identifikator for ordre det skal utstedes faktura på.
-        required: true
       totalbeløp:
         range: integer
         annotations:
@@ -263,16 +263,22 @@ classes:
       
       Enhet som etter Regnskapsloven er pliktig å arkivere dokumentasjon for faktura.
     attributes:
-      navn:
-        range: string
-        description: |
-          Juridisk navn på fakturautsteder.
-        required: true
       systemId:
         range: Identifikator
         description: |
           Fakturasystemets unike identifikator for fakturautsteder.
         required: true
+      navn:
+        range: string
+        description: |
+          Juridisk navn på fakturautsteder.
+        required: true
+      fakturagrunnlag:
+        range: Fakturagrunnlag
+        inverse: fakturautsteder
+        description: |
+          Alle fakturagrunnlag for fakturautsteder.
+        multivalued: true
       organisasjonselement:
         range: Organisasjonselement
         description: |
@@ -282,10 +288,4 @@ classes:
         inverse: fakturautsteder
         description: |
           Alle varer i vareregisteret.
-        multivalued: true
-      fakturagrunnlag:
-        range: Fakturagrunnlag
-        inverse: fakturautsteder
-        description: |
-          Alle fakturagrunnlag for fakturautsteder.
         multivalued: true

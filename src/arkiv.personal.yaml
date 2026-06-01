@@ -28,20 +28,20 @@ classes:
         description: |
           Navn på arbeidstaker personalmappe gjelder for.
         required: true
-      person:
-        range: Person
+      arbeidssted:
+        range: Organisasjonselement
         description: |
-          Person som personalmappe gjelder for.
+          Organisasjonselement som er arbeidstakers arbeidssted.
         required: true
       leder:
         range: Personalressurs
         description: |
           Personalressurs som er arbeidstakers leder.
         required: true
-      arbeidssted:
-        range: Organisasjonselement
+      person:
+        range: Person
         description: |
-          Organisasjonselement som er arbeidstakers arbeidssted.
+          Person som personalmappe gjelder for.
         required: true
       personalressurs:
         range: Personalressurs

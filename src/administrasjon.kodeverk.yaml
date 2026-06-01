@@ -30,6 +30,12 @@ classes:
       Alternative navn: `Kostsenter`, `Koststed`.
     is_a: Kontodimensjon
     attributes:
+      organisasjonselement:
+        range: Organisasjonselement
+        inverse: ansvar
+        description: |
+          Organisasjonselement ansvar er knyttet til.
+        multivalued: true
       overordnet:
         range: Ansvar
         inverse: underordnet
@@ -37,12 +43,6 @@ classes:
           primaryRelation: true
         description: |
           Overordnet ansvar
-      organisasjonselement:
-        range: Organisasjonselement
-        inverse: ansvar
-        description: |
-          Organisasjonselement ansvar er knyttet til.
-        multivalued: true
       underordnet:
         range: Ansvar
         inverse: overordnet
@@ -350,6 +350,18 @@ classes:
       * [Prosjektnedbrytningsstruktur(PNS/WBS)](http://ledelsesspire.blogspot.com/2013/10/prosjektnedbrytningsstruktur-pnswbs.html)
     is_a: Kontodimensjon
     attributes:
+      overordnet:
+        range: Prosjektart
+        inverse: underordnet
+        annotations:
+          primaryRelation: true
+        description: |
+          Prosjektart i nivået over i strukturen.
+      prosjekt:
+        range: Prosjekt
+        inverse: prosjektart
+        description: |
+          Prosjektet som er øverste nivå i en nedbrytningsstruktur.
       underordnet:
         range: Prosjektart
         inverse: overordnet
@@ -358,18 +370,6 @@ classes:
         description: |
           Prosjektarter i nivået under i strukturen.
         multivalued: true
-      prosjekt:
-        range: Prosjekt
-        inverse: prosjektart
-        description: |
-          Prosjektet som er øverste nivå i en nedbrytningsstruktur.
-      overordnet:
-        range: Prosjektart
-        inverse: underordnet
-        annotations:
-          primaryRelation: true
-        description: |
-          Prosjektart i nivået over i strukturen.
 
   Ramme:
     description: |
