@@ -23,6 +23,11 @@ classes:
       # Referanser
       * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
     attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Unik intern systemidentifikasjon for administrativ enhet
+        required: true
       gyldighetsperiode:
         range: Periode
         description: |
@@ -39,11 +44,6 @@ classes:
           # Referanser
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
-        required: true
-      systemId:
-        range: Identifikator
-        description: |
-          Unik intern systemidentifikasjon for administrativ enhet
         required: true
       organisasjonselement:
         range: Organisasjonselement
@@ -119,11 +119,6 @@ classes:
         range: Identifikator
         description: |
           Unik intern systemidentifikasjon for arkivressurs.
-      personalressurs:
-        range: Personalressurs
-        description: |
-          Informasjon om ansettelsesforhold.
-        required: true
       autorisasjon:
         range: Autorisasjon
         inverse: arkivressurs
@@ -132,6 +127,11 @@ classes:
         description: |
           Autorisasjoner for tilgangsrestriksjoner gitt til arkivressurs.
         multivalued: true
+      personalressurs:
+        range: Personalressurs
+        description: |
+          Informasjon om ansettelsesforhold.
+        required: true
       tilgang:
         range: Tilgang
         inverse: arkivressurs
@@ -156,12 +156,6 @@ classes:
         description: |
           Unik intern systemidentifikasjon for autorisasjon.
         required: true
-      tilgangsrestriksjon:
-        range: Tilgangsrestriksjon
-        description: |
-          Tilgangsrestriksjoner autorisasjon er gitt for
-        multivalued: true
-        required: true
       administrativenhet:
         range: AdministrativEnhet
         description: |
@@ -173,6 +167,12 @@ classes:
         description: |
           Arkivressurser som har fått autorisasjon
         multivalued: true
+      tilgangsrestriksjon:
+        range: Tilgangsrestriksjon
+        description: |
+          Tilgangsrestriksjoner autorisasjon er gitt for
+        multivalued: true
+        required: true
 
   Avskrivning:
     description: |
@@ -439,6 +439,19 @@ classes:
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
         required: true
+      dokumentstatus:
+        range: DokumentStatus
+        description: |
+          Status til dokumentet.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M054
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
       dokumentType:
         range: DokumentType
         description: |
@@ -456,19 +469,6 @@ classes:
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden#!#block-body-2
         required: true
-      tilknyttetAv:
-        range: Arkivressurs
-        description: |
-          Navn på person som knyttet et dokument til en registrering.
-          
-          # Beskrivelse
-          
-          * Noark 5 versjon 5.0 metadatakatalog - nr. M621
-          
-          # Referanser
-          
-          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
-        required: true
       opprettetAv:
         range: Arkivressurs
         description: |
@@ -482,14 +482,14 @@ classes:
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
         required: true
-      dokumentstatus:
-        range: DokumentStatus
+      tilknyttetAv:
+        range: Arkivressurs
         description: |
-          Status til dokumentet.
+          Navn på person som knyttet et dokument til en registrering.
           
           # Beskrivelse
           
-          * Noark 5 versjon 5.0 metadatakatalog - nr. M054
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M621
           
           # Referanser
           
@@ -522,6 +522,11 @@ classes:
       
       * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
     attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Unik intern systemidentifikasjon for dokumentfil.
+        required: true
       data:
         range: string
         annotations:
@@ -543,11 +548,6 @@ classes:
           Format på dokumentfil, som IANA Media Type.
           
           Se https://www.iana.org/assignments/media-types/media-types.xhtml for en oversikt over lovlige verdier.
-        required: true
-      systemId:
-        range: Identifikator
-        description: |
-          Unik intern systemidentifikasjon for dokumentfil.
         required: true
 
   Dokumentobjekt:
@@ -624,6 +624,31 @@ classes:
           # Referanser
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      filformat:
+        range: Format
+        description: |
+          Dokumentets format.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M701
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      opprettetAv:
+        range: Arkivressurs
+        description: |
+          Navn på person som opprettet/registrerte arkivenheten.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M601
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
       referanseDokumentfil:
         range: Dokumentfil
         description: |
@@ -649,31 +674,6 @@ classes:
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
         required: true
-      opprettetAv:
-        range: Arkivressurs
-        description: |
-          Navn på person som opprettet/registrerte arkivenheten.
-          
-          # Beskrivelse
-          
-          * Noark 5 versjon 5.0 metadatakatalog - nr. M601
-          
-          # Referanser
-          
-          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
-        required: true
-      filformat:
-        range: Format
-        description: |
-          Dokumentets format.
-          
-          # Beskrivelse
-          
-          * Noark 5 versjon 5.0 metadatakatalog - nr. M701
-          
-          # Referanser
-          
-          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
 
   Journalpost:
     description: |
@@ -930,19 +930,6 @@ classes:
           * `29. mars 1990` -&gt; `1990-03-29T12:00:00Z`
           
           * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
-      journalstatus:
-        range: JournalStatus
-        description: |
-          Status til journalposten, dvs. om dokumentet er registrert, under behandling eller endelig arkivert.
-          
-          # Beskrivelse
-          
-          * Noark 5 versjon 5.0 metadatakatalog - nr. M053
-          
-          # Referanser
-          
-          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
-        required: true
       journalenhet:
         range: AdministrativEnhet
         description: |
@@ -963,6 +950,19 @@ classes:
           # Beskrivelse
           
           * Noark 5 versjon 5.0 metadatakatalog - nr. M082
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
+      journalstatus:
+        range: JournalStatus
+        description: |
+          Status til journalposten, dvs. om dokumentet er registrert, under behandling eller endelig arkivert.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M053
           
           # Referanser
           
@@ -1053,6 +1053,19 @@ classes:
       
       * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
     attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Globalt unik identifikasjon av arkivenheten (UID).
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M001
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
       avsluttetAv:
         range: string
         description: |
@@ -1149,19 +1162,6 @@ classes:
           
           * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
         required: true
-      systemId:
-        range: Identifikator
-        description: |
-          Globalt unik identifikasjon av arkivenheten (UID).
-          
-          # Beskrivelse
-          
-          * Noark 5 versjon 5.0 metadatakatalog - nr. M001
-          
-          # Referanser
-          
-          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
-        required: true
       tittel:
         range: string
         description: |
@@ -1175,6 +1175,13 @@ classes:
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
         required: true
+      arkivdel:
+        range: Arkivdel
+        inverse: klassifikasjonssystem
+        description: |
+          Arkivdeler klassifikasjonssystemet benyttes i.
+        multivalued: true
+        required: true
       klassifikasjonstype:
         range: Klassifikasjonstype
         description: |
@@ -1187,13 +1194,6 @@ classes:
           # Referanser
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
-      arkivdel:
-        range: Arkivdel
-        inverse: klassifikasjonssystem
-        description: |
-          Arkivdeler klassifikasjonssystemet benyttes i.
-        multivalued: true
-        required: true
 
   Korrespondansepart:
     description: |
@@ -1320,6 +1320,30 @@ classes:
       * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
     abstract: true
     attributes:
+      mappeId:
+        range: Identifikator
+        description: |
+          Entydig identifikasjon av mappen innenfor det arkivet mappen tilhører. 
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M003
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      systemId:
+        range: Identifikator
+        description: |
+          Globalt unik identifikasjon av arkivenheten (UID).
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M001
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       avsluttetDato:
         range: datetime
         annotations:
@@ -1377,18 +1401,6 @@ classes:
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
         multivalued: true
-      mappeId:
-        range: Identifikator
-        description: |
-          Entydig identifikasjon av mappen innenfor det arkivet mappen tilhører. 
-          
-          # Beskrivelse
-          
-          * Noark 5 versjon 5.0 metadatakatalog - nr. M003
-          
-          # Referanser
-          
-          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       merknad:
         range: Merknad
         annotations:
@@ -1489,18 +1501,6 @@ classes:
           # Referanser
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
-      systemId:
-        range: Identifikator
-        description: |
-          Globalt unik identifikasjon av arkivenheten (UID).
-          
-          # Beskrivelse
-          
-          * Noark 5 versjon 5.0 metadatakatalog - nr. M001
-          
-          # Referanser
-          
-          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
       tittel:
         range: string
         annotations:
@@ -1515,6 +1515,10 @@ classes:
           # Referanser
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      arkivdel:
+        range: Arkivdel
+        description: |
+          Arkivdel som mappe tilhører.
       avsluttetAv:
         range: Arkivressurs
         description: |
@@ -1540,10 +1544,6 @@ classes:
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
         required: true
-      arkivdel:
-        range: Arkivdel
-        description: |
-          Arkivdel som mappe tilhører.
 
   Merknad:
     description: |
@@ -1978,22 +1978,22 @@ classes:
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
         required: true
-      saksbehandler:
-        range: Arkivressurs
+      administrativEnhet:
+        range: AdministrativEnhet
         description: |
-          Navn på person som er saksbehandler.
+          Navn på avdeling, kontor eller annen administrativ enhet som har ansvaret for saksbehandlingen.
           
           # Beskrivelse
           
-          * Noark 5 versjon 5.0 metadatakatalog - nr. M307
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M305
           
           # Referanser
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
-      tilgangsgruppe:
-        range: Tilgangsgruppe
+      arkivdel:
+        range: Arkivdel
         description: |
-          Angir hvilken tilgangsgruppe som har tilgang til Registreringen
+          Arkivdel som registrering tilhører.
       arkivertAv:
         range: Arkivressurs
         description: |
@@ -2020,22 +2020,22 @@ classes:
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
         required: true
-      administrativEnhet:
-        range: AdministrativEnhet
+      saksbehandler:
+        range: Arkivressurs
         description: |
-          Navn på avdeling, kontor eller annen administrativ enhet som har ansvaret for saksbehandlingen.
+          Navn på person som er saksbehandler.
           
           # Beskrivelse
           
-          * Noark 5 versjon 5.0 metadatakatalog - nr. M305
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M307
           
           # Referanser
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
-      arkivdel:
-        range: Arkivdel
+      tilgangsgruppe:
+        range: Tilgangsgruppe
         description: |
-          Arkivdel som registrering tilhører.
+          Angir hvilken tilgangsgruppe som har tilgang til Registreringen
 
   Sak:
     description: |
@@ -2151,6 +2151,19 @@ classes:
           29. mars 1990 -&gt; `1990-03-29T12:00:00Z`
           
           29. juni 1990 -&gt; `1990-06-29T12:00:00Z`
+      administrativEnhet:
+        range: AdministrativEnhet
+        description: |
+          Navn på avdeling, kontor eller annen administrativ enhet som har ansvaret for saksbehandlingen.
+          
+          # Beskrivelse
+          
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M305
+          
+          # Referanser
+          
+          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+        required: true
       journalenhet:
         range: AdministrativEnhet
         description: |
@@ -2163,19 +2176,6 @@ classes:
           # Referanser
           
           * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
-      saksstatus:
-        range: Saksstatus
-        description: |
-          Registreres automatisk gjennom forskjellig saksbehandlings- funksjonalitet, eller overstyres manuelt.
-          
-          # Beskrivelse
-          
-          * Noark 5 versjon 5.0 metadatakatalog - nr. M052
-          
-          # Referanser
-          
-          * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
-        required: true
       saksansvarlig:
         range: Arkivressurs
         description: |
@@ -2193,14 +2193,14 @@ classes:
         range: Saksmappetype
         description: |
           Type saksmappe.
-      administrativEnhet:
-        range: AdministrativEnhet
+      saksstatus:
+        range: Saksstatus
         description: |
-          Navn på avdeling, kontor eller annen administrativ enhet som har ansvaret for saksbehandlingen.
+          Registreres automatisk gjennom forskjellig saksbehandlings- funksjonalitet, eller overstyres manuelt.
           
           # Beskrivelse
           
-          * Noark 5 versjon 5.0 metadatakatalog - nr. M305
+          * Noark 5 versjon 5.0 metadatakatalog - nr. M052
           
           # Referanser
           
@@ -2272,19 +2272,6 @@ classes:
         description: |
           Tittel eller navn på tilgangen.
         required: true
-      rolle:
-        range: Rolle
-        description: |
-          Rolle tilknyttet tilgangen.
-        required: true
-      arkivressurs:
-        range: Arkivressurs
-        inverse: tilgang
-        annotations:
-          primaryRelation: true
-        description: |
-          Arkivressurser som er tildelt tilgangen.
-        multivalued: true
       administrativEnhet:
         range: AdministrativEnhet
         description: |
@@ -2293,3 +2280,16 @@ classes:
         range: Arkivdel
         description: |
           Arkivdel tilknyttet tilgangen.
+      arkivressurs:
+        range: Arkivressurs
+        inverse: tilgang
+        annotations:
+          primaryRelation: true
+        description: |
+          Arkivressurser som er tildelt tilgangen.
+        multivalued: true
+      rolle:
+        range: Rolle
+        description: |
+          Rolle tilknyttet tilgangen.
+        required: true

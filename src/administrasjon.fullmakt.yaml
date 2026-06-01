@@ -29,24 +29,59 @@ classes:
       
       Rektor ved Eidsvoll VGS har anvisningsfullmakt for ansvar 241.
     attributes:
-      gyldighetsperiode:
-        range: Periode
-        description: |
-          Periode som fullmakten er gyldig for.
-        required: true
       systemId:
         range: Identifikator
         description: |
           Kildesystemets unike identifikator for fullmakten.
         required: true
-      ramme:
-        range: Ramme
+      gyldighetsperiode:
+        range: Periode
         description: |
-          Myndighet på kontodimensjon ramme.
+          Periode som fullmakten er gyldig for.
+        required: true
+      aktivitet:
+        range: Aktivitet
+        description: |
+          Myndighet på kontodimensjon aktivitet.
+      anlegg:
+        range: Anlegg
+        description: |
+          Myndighet på kontodimensjon anlegg.
+      ansvar:
+        range: Ansvar
+        description: |
+          Myndighet på kontodimensjon ansvar.
+      art:
+        range: Art
+        description: |
+          Myndighet på kontodimensjon art.
+      diverse:
+        range: Diverse
+        description: |
+          Myndighet på kontodimensjon diverse.
+      formål:
+        range: Formål
+        description: |
+          Formål viser aktivitet og tjenesteproduksjon
+      fullmektig:
+        range: Personalressurs
+        inverse: fullmakt
+        annotations:
+          primaryRelation: true
+        description: |
+          Personalressurs som har blitt gitt fullmakt til en gitt rolle.
       funksjon:
         range: Funksjon
         description: |
           Myndighet på kontodimensjon funksjon.
+      kontrakt:
+        range: Kontrakt
+        description: |
+          Myndighet på kontodimensjon kontrakt.
+      løpenummer:
+        range: Løpenummer
+        description: |
+          Myndighet på kontodimensjon løpenummer.
       objekt:
         range: Objekt
         description: |
@@ -55,26 +90,22 @@ classes:
         range: Organisasjonselement
         description: |
           Myndighet på organisasjonselement.
-      art:
-        range: Art
+      prosjekt:
+        range: Prosjekt
         description: |
-          Myndighet på kontodimensjon art.
-      anlegg:
-        range: Anlegg
+          Myndighet på kontodimensjon prosjekt.
+      ramme:
+        range: Ramme
         description: |
-          Myndighet på kontodimensjon anlegg.
-      diverse:
-        range: Diverse
+          Myndighet på kontodimensjon ramme.
+      rolle:
+        range: Rolle
+        inverse: fullmakt
+        annotations:
+          primaryRelation: true
         description: |
-          Myndighet på kontodimensjon diverse.
-      aktivitet:
-        range: Aktivitet
-        description: |
-          Myndighet på kontodimensjon aktivitet.
-      ansvar:
-        range: Ansvar
-        description: |
-          Myndighet på kontodimensjon ansvar.
+          Hvilken type fullmakt
+        required: true
       stedfortreder:
         range: Personalressurs
         inverse: stedfortreder
@@ -88,37 +119,6 @@ classes:
           Gjeldende stedfortreder innenfor angitt gyldighetsperiode til fullmakten.
           
           Dersom det finnes flere stedfortredere må kildesystemet velge den stedfortreder som er den primære. Stedfortreder må være tilgjengelig i perioden som fullmakten er gyldig.
-      kontrakt:
-        range: Kontrakt
-        description: |
-          Myndighet på kontodimensjon kontrakt.
-      fullmektig:
-        range: Personalressurs
-        inverse: fullmakt
-        annotations:
-          primaryRelation: true
-        description: |
-          Personalressurs som har blitt gitt fullmakt til en gitt rolle.
-      prosjekt:
-        range: Prosjekt
-        description: |
-          Myndighet på kontodimensjon prosjekt.
-      formål:
-        range: Formål
-        description: |
-          Formål viser aktivitet og tjenesteproduksjon
-      rolle:
-        range: Rolle
-        inverse: fullmakt
-        annotations:
-          primaryRelation: true
-        description: |
-          Hvilken type fullmakt
-        required: true
-      løpenummer:
-        range: Løpenummer
-        description: |
-          Myndighet på kontodimensjon løpenummer.
 
   Rolle:
     description: |
@@ -131,15 +131,15 @@ classes:
       - Bestiller
       - Kontering
     attributes:
-      beskrivelse:
-        range: string
-        description: |
-          Utfyllende beskrivelse av hva rollen gir fullmakt til.
-        required: true
       navn:
         range: Identifikator
         description: |
           Navn på rolle. Unik identifikator.
+        required: true
+      beskrivelse:
+        range: string
+        description: |
+          Utfyllende beskrivelse av hva rollen gir fullmakt til.
         required: true
       fullmakt:
         range: Fullmakt

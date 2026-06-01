@@ -17,6 +17,11 @@ classes:
     description: |
       En eksamen som avholdes på en skole.
     attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Unik identifikator for eksamenen.
+        required: true
       beskrivelse:
         range: string
         description: |
@@ -30,16 +35,17 @@ classes:
         range: datetime
         description: |
           Seneste tidspunkt for fremmøte til eksamen.
-      systemId:
-        range: Identifikator
-        description: |
-          Unik identifikator for eksamenen.
-        required: true
       tidsrom:
         range: Periode
         description: |
           Dato og tid for eksamenen.
         required: true
+      eksamensgruppe:
+        range: Eksamensgruppe
+        inverse: eksamen
+        description: |
+          Eksamensgrupper som skal ha en eksamen.
+        multivalued: true
       rom:
         range: Rom
         inverse: eksamen
@@ -47,12 +53,6 @@ classes:
           primaryRelation: true
         description: |
           Lokale hvor eksamen skal avholdes.
-        multivalued: true
-      eksamensgruppe:
-        range: Eksamensgruppe
-        inverse: eksamen
-        description: |
-          Eksamensgrupper som skal ha en eksamen.
         multivalued: true
 
   Fag:
@@ -89,10 +89,28 @@ classes:
       * https://www.vigo.no/vigokv/index.action
     is_a: Gruppe
     attributes:
+      eksamensgruppe:
+        range: Eksamensgruppe
+        inverse: fag
+        description: |
+          Alle relaterte eksamensgrupper
+        multivalued: true
+      faggruppe:
+        range: Faggruppe
+        inverse: fag
+        description: |
+          Faggruppe for faget.
+        multivalued: true
       grepreferanse:
         range: Grepreferanse
         description: |
           Referanse til GREP kodeverket.
+      programområde:
+        range: Programområde
+        inverse: fag
+        description: |
+          Programområde faget tilhører.
+        multivalued: true
       skole:
         range: Skole
         inverse: fag
@@ -101,27 +119,11 @@ classes:
         description: |
           Alle skoler som tilbyr faget.
         multivalued: true
-      vigoreferanse:
-        range: Vigoreferanse
-        description: |
-          Referanse til VIGO kodeverket.
       tilrettelegging:
         range: Elevtilrettelegging
         inverse: fag
         description: |
           Tilrettelegging i faget.
-        multivalued: true
-      programområde:
-        range: Programområde
-        inverse: fag
-        description: |
-          Programområde faget tilhører.
-        multivalued: true
-      faggruppe:
-        range: Faggruppe
-        inverse: fag
-        description: |
-          Faggruppe for faget.
         multivalued: true
       undervisningsgruppe:
         range: Undervisningsgruppe
@@ -129,12 +131,10 @@ classes:
         description: |
           Alle undervisningsgrupper i et gitt fag
         multivalued: true
-      eksamensgruppe:
-        range: Eksamensgruppe
-        inverse: fag
+      vigoreferanse:
+        range: Vigoreferanse
         description: |
-          Alle relaterte eksamensgrupper
-        multivalued: true
+          Referanse til VIGO kodeverket.
 
   Faggruppe:
     description: |
@@ -149,17 +149,6 @@ classes:
       Se også [Undervisningsgruppe](/docs/timeplan_undervisningsgruppe).
     is_a: Gruppe
     attributes:
-      skole:
-        range: Skole
-        inverse: faggruppe
-        annotations:
-          primaryRelation: true
-        description: |
-          Skolen faggruppen tilhører.
-      skoleår:
-        range: Skoleår
-        description: |
-          Skoleåret faggruppen er aktiv.
       fag:
         range: Fag
         inverse: faggruppe
@@ -176,12 +165,35 @@ classes:
         description: |
           Faggruppemedlemskapene i et fag.
         multivalued: true
+      skole:
+        range: Skole
+        inverse: faggruppe
+        annotations:
+          primaryRelation: true
+        description: |
+          Skolen faggruppen tilhører.
+      skoleår:
+        range: Skoleår
+        description: |
+          Skoleåret faggruppen er aktiv.
 
   Faggruppemedlemskap:
     description: |
       Medlemskap i faggruppe.
     is_a: Gruppemedlemskap
     attributes:
+      elevforhold:
+        range: Elevforhold
+        inverse: faggruppemedlemskap
+        description: |
+          Elevforholdet et faggruppemedlemskap tilhører.
+        required: true
+      faggruppe:
+        range: Faggruppe
+        inverse: faggruppemedlemskap
+        description: |
+          Faggruppe det er medlemskap i.
+        required: true
       fagmerknad:
         range: Fagmerknad
         description: |
@@ -196,32 +208,20 @@ classes:
         description: |
           Varsel i faget.
         multivalued: true
-      faggruppe:
-        range: Faggruppe
-        inverse: faggruppemedlemskap
-        description: |
-          Faggruppe det er medlemskap i.
-        required: true
-      elevforhold:
-        range: Elevforhold
-        inverse: faggruppemedlemskap
-        description: |
-          Elevforholdet et faggruppemedlemskap tilhører.
-        required: true
 
   Rom:
     description: |
       Rom hvor timene gjennomføres.
     attributes:
-      navn:
-        range: string
-        description: |
-          Navn på rommet
       systemId:
         range: Identifikator
         description: |
           Id av rommet
         required: true
+      navn:
+        range: string
+        description: |
+          Navn på rommet
       time:
         range: Time
         inverse: rom
@@ -241,6 +241,11 @@ classes:
     description: |
       Timen når undervisning foregår.
     attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Kildesystemets interne identifikator for timen.
+        required: true
       beskrivelse:
         range: string
         description: |
@@ -250,15 +255,23 @@ classes:
         description: |
           Navn på timen slik den fremkommer i timeplanen.
         required: true
-      systemId:
-        range: Identifikator
-        description: |
-          Kildesystemets interne identifikator for timen.
-        required: true
       tidsrom:
         range: Periode
         description: |
           Beskriver når timen foregår.
+        required: true
+      rom:
+        range: Rom
+        inverse: time
+        description: |
+          De aktuelle rommene hvor undervisningen foregår
+        multivalued: true
+      undervisningsforhold:
+        range: Undervisningsforhold
+        inverse: time
+        description: |
+          Lærerne som underviser en bestemt time
+        multivalued: true
         required: true
       undervisningsgruppe:
         range: Undervisningsgruppe
@@ -269,19 +282,6 @@ classes:
           Undervisningsgruppene som undervises i en gitt time
         multivalued: true
         required: true
-      undervisningsforhold:
-        range: Undervisningsforhold
-        inverse: time
-        description: |
-          Lærerne som underviser en bestemt time
-        multivalued: true
-        required: true
-      rom:
-        range: Rom
-        inverse: time
-        description: |
-          De aktuelle rommene hvor undervisningen foregår
-        multivalued: true
 
   Undervisningsgruppe:
     description: |
@@ -300,18 +300,26 @@ classes:
       Se også [Faggruppe](/docs/timeplan_faggruppe).
     is_a: Gruppe
     attributes:
-      termin:
-        range: Termin
+      time:
+        range: Time
+        inverse: undervisningsgruppe
         description: |
-          Terminer for undervisningsgruppe
+          Timene hvor undervisningen til en undervisningsgruppe gjennomføres
         multivalued: true
-      undervisningsforhold:
-        range: Undervisningsforhold
+      fag:
+        range: Fag
         inverse: undervisningsgruppe
         annotations:
           primaryRelation: true
         description: |
-          Alle lærere i gruppen.
+          Fagene som det undervises i i gruppen
+        multivalued: true
+        required: true
+      gruppemedlemskap:
+        range: Undervisningsgruppemedlemskap
+        inverse: undervisningsgruppe
+        description: |
+          Gruppemedlemskapene til en undervisningsgruppe.
         multivalued: true
       skole:
         range: Skole
@@ -325,26 +333,18 @@ classes:
         range: Skoleår
         description: |
           Skoleår for undervisningsgruppe
-      fag:
-        range: Fag
+      termin:
+        range: Termin
+        description: |
+          Terminer for undervisningsgruppe
+        multivalued: true
+      undervisningsforhold:
+        range: Undervisningsforhold
         inverse: undervisningsgruppe
         annotations:
           primaryRelation: true
         description: |
-          Fagene som det undervises i i gruppen
-        multivalued: true
-        required: true
-      time:
-        range: Time
-        inverse: undervisningsgruppe
-        description: |
-          Timene hvor undervisningen til en undervisningsgruppe gjennomføres
-        multivalued: true
-      gruppemedlemskap:
-        range: Undervisningsgruppemedlemskap
-        inverse: undervisningsgruppe
-        description: |
-          Gruppemedlemskapene til en undervisningsgruppe.
+          Alle lærere i gruppen.
         multivalued: true
 
   Undervisningsgruppemedlemskap:

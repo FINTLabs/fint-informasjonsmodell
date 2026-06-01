@@ -51,6 +51,11 @@ classes:
       # Eksempel
     abstract: true
     attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Intern identifikator som brukes enten i kildesystemet eller i kildestandarden (for ISO, KS og lignende standarder)
+        required: true
       gyldighetsperiode:
         range: Periode
         description: |
@@ -75,11 +80,6 @@ classes:
           Passive koder kan henvises til i eksisterende data, men kan ikke velges ved registrering av nye data.
           
           Medmindre attributten finnes og er satt til usann regnes koden som aktiv.
-      systemId:
-        range: Identifikator
-        description: |
-          Intern identifikator som brukes enten i kildesystemet eller i kildestandarden (for ISO, KS og lignende standarder)
-        required: true
 
   Enhet:
     description: |
@@ -91,6 +91,24 @@ classes:
     abstract: true
     is_a: Aktør
     attributes:
+      organisasjonsnummer:
+        range: Identifikator
+        description: |
+          Nisifret nummer som entydig identifiserer enheter i Enhetsregisteret
+          
+          # Beskrivelse
+          
+          Organisasjonsnummeret består av 9 siffer hvor det siste sifferet er et kontrollsiffer beregnet med standard vekter, modulus 11. Etter dette blir vektene 3, 2, 7, 6, 5, 4, 3 og 2 regnet fra første siffer.
+          
+          [Se brreg.no](https://www.brreg.no/om-oss/samfunnsoppdraget-vart/registera-vare/einingsregisteret/organisasjonsnummeret/)
+          
+          # Format
+          9 siffer 
+          
+          # Eksempler
+          
+          971042176
+          974770199
       forretningsadresse:
         range: Adresse
         annotations:
@@ -117,21 +135,3 @@ classes:
           
           
           # Eksempler
-      organisasjonsnummer:
-        range: Identifikator
-        description: |
-          Nisifret nummer som entydig identifiserer enheter i Enhetsregisteret
-          
-          # Beskrivelse
-          
-          Organisasjonsnummeret består av 9 siffer hvor det siste sifferet er et kontrollsiffer beregnet med standard vekter, modulus 11. Etter dette blir vektene 3, 2, 7, 6, 5, 4, 3 og 2 regnet fra første siffer.
-          
-          [Se brreg.no](https://www.brreg.no/om-oss/samfunnsoppdraget-vart/registera-vare/einingsregisteret/organisasjonsnummeret/)
-          
-          # Format
-          9 siffer 
-          
-          # Eksempler
-          
-          971042176
-          974770199

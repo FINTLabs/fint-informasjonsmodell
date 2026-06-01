@@ -161,10 +161,6 @@ classes:
       * Prosent – prosentpoeng.
     is_a: Begrep
     attributes:
-      vigoreferanse:
-        range: Vigoreferanse
-        description: |
-          Ekstern referanse til Vigo kodeverksdatabase.
       verdi:
         range: Karakterverdi
         inverse: skala
@@ -175,6 +171,10 @@ classes:
           
           * Tall skala har karaterer 1, 2. 3, 4, 5 og 6
         multivalued: true
+      vigoreferanse:
+        range: Vigoreferanse
+        description: |
+          Ekstern referanse til Vigo kodeverksdatabase.
 
   Karakterstatus:
     description: |

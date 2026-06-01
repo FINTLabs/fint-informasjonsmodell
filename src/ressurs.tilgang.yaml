@@ -20,6 +20,10 @@ classes:
         description: |
           Intern identifikator som brukes i kildesystemet.
         required: true
+      personalressurs:
+        range: Personalressurs
+        description: |
+          Personalressurs knyttet til identitet.
       rettighet:
         range: Rettighet
         inverse: identitet
@@ -28,10 +32,6 @@ classes:
         description: |
           Rettigheter knyttet til identiteten.
         multivalued: true
-      personalressurs:
-        range: Personalressurs
-        description: |
-          Personalressurs knyttet til identitet.
 
   Rettighet:
     description: |

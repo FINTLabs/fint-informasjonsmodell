@@ -16,6 +16,11 @@ classes:
       
       En ressurs kan være en lisens eller en rolle som tilganger inne i en applikasjon. Applikasjonen kan være en desktopapplikasjon eller en skybasert tjeneste. Brukere kan da få tilgang til denne applikasjonen hvis vedkommende har fått tildelt en ressurs knyttet til applikasjonen.
     attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Unik identifikator i kildesystemet.
+        required: true
       beskrivelse:
         range: string
         description: |
@@ -30,11 +35,11 @@ classes:
         description: |
           Navn på applikasjonen.
         required: true
-      systemId:
-        range: Identifikator
+      applikasjonskategori:
+        range: Applikasjonskategori
         description: |
-          Unik identifikator i kildesystemet.
-        required: true
+          Kategorier av applikasjoner.
+        multivalued: true
       plattform:
         range: Plattform
         description: |
@@ -48,11 +53,6 @@ classes:
         description: |
           Ulike ressurser (lisenser) som er knyttet til denne applikasjonen. Dette kan være flere da ulike organisasjonesenheter kan ha kjøpt inn lisenser separat. Evt at samme applikasjon har flere lisensmodeller.
         multivalued: true
-      applikasjonskategori:
-        range: Applikasjonskategori
-        description: |
-          Kategorier av applikasjoner.
-        multivalued: true
 
   Applikasjonsressurs:
     description: |
@@ -60,6 +60,11 @@ classes:
       
       En ressurs er knyttet til en avtale som beskriver antall lisenser, lisensmodell og hvem som kan benytte den.
     attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Unik identifikator i kildesystemet.
+        required: true
       beskrivelse:
         range: string
         description: |
@@ -91,16 +96,22 @@ classes:
         description: |
           Navn på ressursen.
         required: true
-      systemId:
-        range: Identifikator
+      applikasjon:
+        range: Applikasjon
+        inverse: ressurs
         description: |
-          Unik identifikator i kildesystemet.
+          Ulike ressurs (lisenser) som er knyttet til denne applikasjonen. Dette kan være flere da ulike organisasjonesenheter kan ha kjøpt inn lisenser separat. Evt at samme applikasjon har flere lisensmodeller.
         required: true
       brukertype:
         range: Brukertype
         description: |
           For hvilke brukertyper denne lisensen er gyldig.
         multivalued: true
+        required: true
+      eier:
+        range: Organisasjonselement
+        description: |
+          Organisasjonselement som har eierskap til lisensen dvs inngått avtalen.
         required: true
       håndhevingstype:
         range: Håndhevingstype
@@ -118,22 +129,16 @@ classes:
         description: |
           Angir hvilken orgenhet og hvor mange ressurser som skal tilordnes denne orgenheten.
         multivalued: true
-      applikasjon:
-        range: Applikasjon
-        inverse: ressurs
-        description: |
-          Ulike ressurs (lisenser) som er knyttet til denne applikasjonen. Dette kan være flere da ulike organisasjonesenheter kan ha kjøpt inn lisenser separat. Evt at samme applikasjon har flere lisensmodeller.
-        required: true
-      eier:
-        range: Organisasjonselement
-        description: |
-          Organisasjonselement som har eierskap til lisensen dvs inngått avtalen.
-        required: true
 
   Applikasjonsressurstilgjengelighet:
     description: |
       Hvilke organisasjonselementers brukere som har tilgang til en ressurs.
     attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Unik identifikator i kildesystemet.
+        required: true
       gyldighetsperiode:
         range: Periode
         description: |
@@ -143,11 +148,6 @@ classes:
         range: integer
         description: |
           Totalt antall lisenser tilgjengelig for brukere tilhørende en konsument.
-      systemId:
-        range: Identifikator
-        description: |
-          Unik identifikator i kildesystemet.
-        required: true
       konsument:
         range: Organisasjonselement
         description: |

@@ -20,10 +20,6 @@ classes:
         description: |
           Unik identifikator for OT-ungdom
         required: true
-      status:
-        range: OtStatus
-        description: |
-          OT-statusen en OT-ungdom har.
       enhet:
         range: OtEnhet
         description: |
@@ -40,3 +36,7 @@ classes:
         range: Programområde
         description: |
           Programområdet til OT-ungdom.
+      status:
+        range: OtStatus
+        description: |
+          OT-statusen en OT-ungdom har.

@@ -59,6 +59,15 @@ classes:
           
           # Eksempel
           - oleolsen@haugaland.fylkeskommune.no
+      systemId:
+        range: Identifikator
+        description: |
+          Systemidentifikator til en elev.
+          
+          # Beskrivelse 
+          
+          Dette kan være identifikator som eksisterer i SAS/SIS (IPOS/OID).
+        required: true
       gjest:
         range: boolean
         description: |
@@ -79,15 +88,12 @@ classes:
           # Beskrivelse
           
           Den fortrukne måten å komme i kontakt med en elev på skolen.
-      systemId:
-        range: Identifikator
+      elevforhold:
+        range: Elevforhold
+        inverse: elev
         description: |
-          Systemidentifikator til en elev.
-          
-          # Beskrivelse 
-          
-          Dette kan være identifikator som eksisterer i SAS/SIS (IPOS/OID).
-        required: true
+          Elevforholdene til en elev
+        multivalued: true
       person:
         range: Person
         inverse: elev
@@ -98,12 +104,6 @@ classes:
           
           Relasjonen skal gå til et personobjekt i utdanningsdomenet.
         required: true
-      elevforhold:
-        range: Elevforhold
-        inverse: elev
-        description: |
-          Elevforholdene til en elev
-        multivalued: true
 
   Elevforhold:
     description: |
@@ -118,11 +118,6 @@ classes:
       En elev kan være i elevforhold med status privatist og deltid samtidig. Eller en elev kan ha flere elevforhold på flere forskjellige skoler.
     is_a: Utdanningsforhold
     attributes:
-      anmerkninger:
-        range: Anmerkninger
-        description: |
-          Anmerkningene i elevforholdet.
-        multivalued: true
       avbruddsdato:
         range: date
         description: |
@@ -169,30 +164,22 @@ classes:
           * UDir Registreringshåndbok:
           https://regbok.udir.no/felt/?B11_S%C3%A6rskilt%20spr%C3%A5koppl%C3%A6ring%20for%20elever%20fra%20spr%C3%A5klige%20minoriteter.&amp;Id=1014318
           * Lovdata: https://lovdata.no/lov/1998-07-17-61/&#167;3-12
-      kategori:
-        range: Elevkategori
+      anmerkninger:
+        range: Anmerkninger
         description: |
-          Kategori på et elevforhold
-      skole:
-        range: Skole
-        inverse: elevforhold
-        annotations:
-          primaryRelation: true
-        description: |
-          Skole elevforhold er knyttet til.
-        required: true
+          Anmerkningene i elevforholdet.
+        multivalued: true
       avbruddsårsak:
         range: Avbruddsårsak
         description: |
           Årsak til avbrudd av elevforholdet.
         multivalued: true
-      fraværsregistreringer:
-        range: Elevfravær
+      eksamensgruppemedlemskap:
+        range: Eksamensgruppemedlemskap
         inverse: elevforhold
-        annotations:
-          primaryRelation: true
         description: |
-          Liste av fraværsregistreringer.
+          Eksamensgruppemedlemskapene til et elevforhold
+        multivalued: true
       elev:
         range: Elev
         inverse: elevforhold
@@ -201,6 +188,17 @@ classes:
         description: |
           Elev som elevforholdet gjelder for
         required: true
+      elevfravær:
+        range: Fraværsoversikt
+        inverse: elevforhold
+        description: |
+          Fraværsoversikt for elevforholdet
+        multivalued: true
+      elevvurdering:
+        range: Elevvurdering
+        inverse: elevforhold
+        description: |
+          Vurderingsinformasjon for en elev.
       faggruppemedlemskap:
         range: Faggruppemedlemskap
         inverse: elevforhold
@@ -209,27 +207,22 @@ classes:
         description: |
           Faggruppemedlemskapene til et elevforhold.
         multivalued: true
-      skoleår:
-        range: Skoleår
+      fraværsregistreringer:
+        range: Elevfravær
+        inverse: elevforhold
+        annotations:
+          primaryRelation: true
         description: |
-          Skoleåret elevforholdet gjelder for.
-      undervisningsgruppemedlemskap:
-        range: Undervisningsgruppemedlemskap
+          Liste av fraværsregistreringer.
+      kategori:
+        range: Elevkategori
+        description: |
+          Kategori på et elevforhold
+      klassemedlemskap:
+        range: Klassemedlemskap
         inverse: elevforhold
         description: |
-          Undervisningsmedlemskapene til et elevforhold.
-        multivalued: true
-      persongruppemedlemskap:
-        range: Persongruppemedlemskap
-        inverse: elevforhold
-        description: |
-          Persongruppemedlemskapene til et elevforhold.
-        multivalued: true
-      eksamensgruppemedlemskap:
-        range: Eksamensgruppemedlemskap
-        inverse: elevforhold
-        description: |
-          Eksamensgruppemedlemskapene til et elevforhold
+          Klassemedlemskapene til et elevforhold.
         multivalued: true
       kontaktlærergruppemedlemskap:
         range: Kontaktlærergruppemedlemskap
@@ -237,34 +230,41 @@ classes:
         description: |
           Kontaktlærergruppemedlemskapene til et elevforhold.
         multivalued: true
-      elevfravær:
-        range: Fraværsoversikt
+      persongruppemedlemskap:
+        range: Persongruppemedlemskap
         inverse: elevforhold
         description: |
-          Fraværsoversikt for elevforholdet
+          Persongruppemedlemskapene til et elevforhold.
         multivalued: true
-      tilrettelegging:
-        range: Elevtilrettelegging
-        inverse: elev
-        description: |
-          Tilrettelegginger for eleven.
-        multivalued: true
-      elevvurdering:
-        range: Elevvurdering
-        inverse: elevforhold
-        description: |
-          Vurderingsinformasjon for en elev.
       programområdemedlemskap:
         range: Programområdemedlemskap
         inverse: elevforhold
         description: |
           Programområdemedlemskapene til et elevforhold.
         multivalued: true
-      klassemedlemskap:
-        range: Klassemedlemskap
+      skole:
+        range: Skole
+        inverse: elevforhold
+        annotations:
+          primaryRelation: true
+        description: |
+          Skole elevforhold er knyttet til.
+        required: true
+      skoleår:
+        range: Skoleår
+        description: |
+          Skoleåret elevforholdet gjelder for.
+      tilrettelegging:
+        range: Elevtilrettelegging
+        inverse: elev
+        description: |
+          Tilrettelegginger for eleven.
+        multivalued: true
+      undervisningsgruppemedlemskap:
+        range: Undervisningsgruppemedlemskap
         inverse: elevforhold
         description: |
-          Klassemedlemskapene til et elevforhold.
+          Undervisningsmedlemskapene til et elevforhold.
         multivalued: true
 
   Elevtilrettelegging:
@@ -282,6 +282,18 @@ classes:
         description: |
           Intern identifikator som brukes i kildesystemet
         required: true
+      eksamensform:
+        range: Eksamensform
+        description: |
+          Eksamensformen tilretteleggingen gjelder for.
+      elev:
+        range: Elevforhold
+        inverse: tilrettelegging
+        annotations:
+          primaryRelation: true
+        description: |
+          Eleven det skal tilrettelegges for.
+        required: true
       fag:
         range: Fag
         inverse: tilrettelegging
@@ -294,18 +306,6 @@ classes:
         description: |
           Angir hvilken tilrettelegging som skal gis.
         required: true
-      elev:
-        range: Elevforhold
-        inverse: tilrettelegging
-        annotations:
-          primaryRelation: true
-        description: |
-          Eleven det skal tilrettelegges for.
-        required: true
-      eksamensform:
-        range: Eksamensform
-        description: |
-          Eksamensformen tilretteleggingen gjelder for.
 
   Klasse:
     description: |
@@ -332,6 +332,26 @@ classes:
       Øvre grense er beskrevet i Opplæringslova &#167;8-3 eller i forskrift.
     is_a: Gruppe
     attributes:
+      klassemedlemskap:
+        range: Klassemedlemskap
+        inverse: klasse
+        description: |
+          Klassemedlemskapene til en klasse
+        multivalued: true
+      kontaktlærergruppe:
+        range: Kontaktlærergruppe
+        inverse: klasse
+        description: |
+          Grupper med en kontaktlærer og elever som ligger under en gitt klasse.
+        multivalued: true
+      skole:
+        range: Skole
+        inverse: klasse
+        annotations:
+          primaryRelation: true
+        description: |
+          Skolen en klasse tilhører.
+        required: true
       skoleår:
         range: Skoleår
         description: |
@@ -357,26 +377,6 @@ classes:
         description: |
           Alle lærere tilknyttet klassen.
         multivalued: true
-      skole:
-        range: Skole
-        inverse: klasse
-        annotations:
-          primaryRelation: true
-        description: |
-          Skolen en klasse tilhører.
-        required: true
-      klassemedlemskap:
-        range: Klassemedlemskap
-        inverse: klasse
-        description: |
-          Klassemedlemskapene til en klasse
-        multivalued: true
-      kontaktlærergruppe:
-        range: Kontaktlærergruppe
-        inverse: klasse
-        description: |
-          Grupper med en kontaktlærer og elever som ligger under en gitt klasse.
-        multivalued: true
 
   Klassemedlemskap:
     description: |
@@ -387,14 +387,6 @@ classes:
       Gruppemedlemskap som knytter sammen elevforhold og klasser.
     is_a: Gruppemedlemskap
     attributes:
-      klasse:
-        range: Klasse
-        inverse: klassemedlemskap
-        annotations:
-          primaryRelation: true
-        description: |
-          Klassen et klassemedlemskap tilhører.
-        required: true
       elevforhold:
         range: Elevforhold
         inverse: klassemedlemskap
@@ -402,6 +394,14 @@ classes:
           primaryRelation: true
         description: |
           Elevforhold et klassemedlemskap tilhører.
+        required: true
+      klasse:
+        range: Klasse
+        inverse: klassemedlemskap
+        annotations:
+          primaryRelation: true
+        description: |
+          Klassen et klassemedlemskap tilhører.
         required: true
 
   Kontaktlærergruppe:
@@ -413,11 +413,21 @@ classes:
       Kontaktlæreren har i denne gruppa særleg ansvar for dei praktiske, administrative og sosialpedagogiske gjeremåla som gjeld klassen eller basisgruppa og dei elevane som er der, mellom anna kontakten med heimen, jf Opplæringslova §8-2.
     is_a: Gruppe
     attributes:
-      termin:
-        range: Termin
+      gruppemedlemskap:
+        range: Kontaktlærergruppemedlemskap
+        inverse: kontaktlærergruppe
         description: |
-          Terminer for kontaktlærergruppe
+          Gruppemedlemskapene til en kontaktlærergruppe.
         multivalued: true
+      klasse:
+        range: Klasse
+        inverse: kontaktlærergruppe
+        annotations:
+          primaryRelation: true
+        description: |
+          De overordnede klassene
+        multivalued: true
+        required: true
       skole:
         range: Skole
         inverse: kontaktlærergruppe
@@ -430,15 +440,11 @@ classes:
         range: Skoleår
         description: |
           Skoleår for kontaktlærergruppe
-      klasse:
-        range: Klasse
-        inverse: kontaktlærergruppe
-        annotations:
-          primaryRelation: true
+      termin:
+        range: Termin
         description: |
-          De overordnede klassene
+          Terminer for kontaktlærergruppe
         multivalued: true
-        required: true
       undervisningsforhold:
         range: Undervisningsforhold
         inverse: kontaktlærergruppe
@@ -446,12 +452,6 @@ classes:
           primaryRelation: true
         description: |
           Alle kontaktlærere i gruppen.
-        multivalued: true
-      gruppemedlemskap:
-        range: Kontaktlærergruppemedlemskap
-        inverse: kontaktlærergruppe
-        description: |
-          Gruppemedlemskapene til en kontaktlærergruppe.
         multivalued: true
 
   Kontaktlærergruppemedlemskap:
@@ -485,6 +485,11 @@ classes:
       Gruppe av personer som ikke handler om undervisning. Dette kan f.eks. være grupper av elever som skal faktureres.
     is_a: Gruppe
     attributes:
+      elev:
+        range: Elev
+        description: |
+          Hvilke elever som er knyttet til gruppen.
+        multivalued: true
       persongruppemedlemskap:
         range: Persongruppemedlemskap
         inverse: persongruppe
@@ -492,21 +497,6 @@ classes:
           primaryRelation: true
         description: |
           Hvilke persongruppemedlemsskap som er knyttet til gruppen.
-        multivalued: true
-      termin:
-        range: Termin
-        description: |
-          Hvilke termineer gruppen gjelder for.
-        multivalued: true
-      undervisningsforhold:
-        range: Undervisningsforhold
-        description: |
-          Hvilke undervisningsforhold som er knyttet til gruppen
-        multivalued: true
-      elev:
-        range: Elev
-        description: |
-          Hvilke elever som er knyttet til gruppen.
         multivalued: true
       skole:
         range: Skole
@@ -522,6 +512,16 @@ classes:
         range: Skoleår
         description: |
           Hvilke skoleår gruppen gjelder for.
+        multivalued: true
+      termin:
+        range: Termin
+        description: |
+          Hvilke termineer gruppen gjelder for.
+        multivalued: true
+      undervisningsforhold:
+        range: Undervisningsforhold
+        description: |
+          Hvilke undervisningsforhold som er knyttet til gruppen
         multivalued: true
 
   Persongruppemedlemskap:
@@ -572,14 +572,12 @@ classes:
         description: |
           Kildesystemets interne identifikator for skoleressurs.
         required: true
-      undervisningsforhold:
-        range: Undervisningsforhold
-        inverse: skoleressurs
-        annotations:
-          primaryRelation: true
+      person:
+        range: Person
         description: |
-          Undervisningsforhold for skoleressurs.
-        multivalued: true
+          Privatperson som er knyttet til en skoleressurs.
+          
+          Relasjonen skal gå til et personobjekt i administrasjonsdomenet.
       personalressurs:
         range: Personalressurs
         inverse: skoleressurs
@@ -588,6 +586,12 @@ classes:
         description: |
           Relasjon til informasjon om ansettelsesforhold.
         required: true
+      sensor:
+        range: Sensor
+        inverse: skoleressurs
+        description: |
+          Sensoroppdrag.
+        multivalued: true
       skole:
         range: Skole
         inverse: skoleressurs
@@ -596,17 +600,13 @@ classes:
         description: |
           Tilknyttede skoler.
         multivalued: true
-      person:
-        range: Person
-        description: |
-          Privatperson som er knyttet til en skoleressurs.
-          
-          Relasjonen skal gå til et personobjekt i administrasjonsdomenet.
-      sensor:
-        range: Sensor
+      undervisningsforhold:
+        range: Undervisningsforhold
         inverse: skoleressurs
+        annotations:
+          primaryRelation: true
         description: |
-          Sensoroppdrag.
+          Undervisningsforhold for skoleressurs.
         multivalued: true
 
   Undervisningsforhold:
@@ -630,6 +630,14 @@ classes:
           # Beskrivelse
           
           En skoleresurs kan ha flere undervisningsforhold, men kun ett undervisningsforhold skal være tilknyttet en hovedskole.
+      time:
+        range: Time
+        inverse: undervisningsforhold
+        annotations:
+          primaryRelation: true
+        description: |
+          Timer hvor lærer underviser
+        multivalued: true
       arbeidsforhold:
         range: Arbeidsforhold
         inverse: undervisningsforhold
@@ -638,13 +646,23 @@ classes:
         description: |
           Relasjon til en tilsvarende objekt i Adminstrasjons domenet
         required: true
-      time:
-        range: Time
+      eksamensgruppe:
+        range: Eksamensgruppe
         inverse: undervisningsforhold
-        annotations:
-          primaryRelation: true
         description: |
-          Timer hvor lærer underviser
+          Alle eksamensgruppene tilknyttet læreren.
+        multivalued: true
+      klasse:
+        range: Klasse
+        inverse: undervisningsforhold
+        description: |
+          Alle klasser tilknyttet læreren.
+        multivalued: true
+      kontaktlærergruppe:
+        range: Kontaktlærergruppe
+        inverse: undervisningsforhold
+        description: |
+          Alle grupper læreren er kontaktlærer for.
         multivalued: true
       skole:
         range: Skole
@@ -666,24 +684,6 @@ classes:
         description: |
           Alle undervisningsgrupper læreren deltar i.
         multivalued: true
-      eksamensgruppe:
-        range: Eksamensgruppe
-        inverse: undervisningsforhold
-        description: |
-          Alle eksamensgruppene tilknyttet læreren.
-        multivalued: true
-      klasse:
-        range: Klasse
-        inverse: undervisningsforhold
-        description: |
-          Alle klasser tilknyttet læreren.
-        multivalued: true
-      kontaktlærergruppe:
-        range: Kontaktlærergruppe
-        inverse: undervisningsforhold
-        description: |
-          Alle grupper læreren er kontaktlærer for.
-        multivalued: true
 
   Varsel:
     description: |
@@ -694,6 +694,11 @@ classes:
       * [VIS - Opprette og sende varsel ](https://inschool.zendesk.com/hc/no/articles/360030859132-4b-21-Opprette-og-sende-varsel)
       * [Forskrift til opplæringslova - &#167; 3-8. Varsling](https://lovdata.no/dokument/SF/forskrift/2006-06-23-724/KAPITTEL_5-1#%C2%A73-8)
     attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Unik identifikator for varselet.
+        required: true
       fraværsprosent:
         range: integer
         description: |
@@ -713,28 +718,11 @@ classes:
         description: |
           Dato da varselet ble sendt.
         required: true
-      systemId:
-        range: Identifikator
-        description: |
-          Unik identifikator for varselet.
-        required: true
       tekst:
         range: string
         description: |
           Varselets tekstinnhold.
         required: true
-      karakteransvarlig:
-        range: Undervisningsforhold
-        description: |
-          Læreren i faggruppen. Hovedfaglærer hvis der er flere.
-      utsteder:
-        range: Skoleressurs
-        description: |
-          Den som utsteder brevet.
-      type:
-        range: Varseltype
-        description: |
-          Type varsel.
       faggruppemedlemskap:
         range: Faggruppemedlemskap
         inverse: varsel
@@ -743,3 +731,15 @@ classes:
         description: |
           Elevens faggruppe varselet gjelder.
         required: true
+      karakteransvarlig:
+        range: Undervisningsforhold
+        description: |
+          Læreren i faggruppen. Hovedfaglærer hvis der er flere.
+      type:
+        range: Varseltype
+        description: |
+          Type varsel.
+      utsteder:
+        range: Skoleressurs
+        description: |
+          Den som utsteder brevet.

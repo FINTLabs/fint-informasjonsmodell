@@ -17,46 +17,12 @@ classes:
       
       Henvisninger til koder i alle kontodimensjoner for kontering av en kostnad eller inntekt.
     attributes:
-      funksjon:
-        range: Funksjon
+      aktivitet:
+        range: Aktivitet
         description: |
-          Det som blir produsert eller tjenesten som blir levert.
-        required: true
-      ramme:
-        range: Ramme
-        description: |
-          Budsjettramme som skal bære kostnadene.
-      løpenummer:
-        range: Løpenummer
-        description: |
-          Løpenummer i en nummerserie.
-      kontrakt:
-        range: Kontrakt
-        description: |
-          Kontostrengens kontraktsegment.
-      prosjekt:
-        range: Prosjekt
-        description: |
-          Kontostrengens prosjektsegment.
-      diverse:
-        range: Diverse
-        description: |
-          Spesifikasjon som ikke fremkommer i øvrige dimensjoner.
+          Detaljering av funksjon.
       anlegg:
         range: Anlegg
-        description: |
-          Objekt som skal aktiveres eller avskrives.
-      art:
-        range: Art
-        description: |
-          Typen inntekt eller utgift.
-        required: true
-      prosjektart:
-        range: Prosjektart
-        description: |
-          Deloppgave eller delprosjekt.
-      objekt:
-        range: Objekt
         description: |
           Objekt som skal aktiveres eller avskrives.
       ansvar:
@@ -64,11 +30,45 @@ classes:
         description: |
           Ansvarlig for en utgift eller inntekt.
         required: true
-      aktivitet:
-        range: Aktivitet
+      art:
+        range: Art
         description: |
-          Detaljering av funksjon.
+          Typen inntekt eller utgift.
+        required: true
+      diverse:
+        range: Diverse
+        description: |
+          Spesifikasjon som ikke fremkommer i øvrige dimensjoner.
       formål:
         range: Formål
         description: |
           Formål viser aktivitet og tjenesteproduksjon
+      funksjon:
+        range: Funksjon
+        description: |
+          Det som blir produsert eller tjenesten som blir levert.
+        required: true
+      kontrakt:
+        range: Kontrakt
+        description: |
+          Kontostrengens kontraktsegment.
+      løpenummer:
+        range: Løpenummer
+        description: |
+          Løpenummer i en nummerserie.
+      objekt:
+        range: Objekt
+        description: |
+          Objekt som skal aktiveres eller avskrives.
+      prosjekt:
+        range: Prosjekt
+        description: |
+          Kontostrengens prosjektsegment.
+      prosjektart:
+        range: Prosjektart
+        description: |
+          Deloppgave eller delprosjekt.
+      ramme:
+        range: Ramme
+        description: |
+          Budsjettramme som skal bære kostnadene.

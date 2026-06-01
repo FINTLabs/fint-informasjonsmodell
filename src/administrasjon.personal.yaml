@@ -58,10 +58,6 @@ classes:
           * 44 prosent vil ha verdien 4400.
           * 58,73 prosent vil ha verdien 5873
         required: true
-      lønnsart:
-        range: Lønnsart
-        description: |
-          Lønnsart for fastlønn.
       arbeidsforhold:
         range: Arbeidsforhold
         inverse: fastlønn
@@ -70,6 +66,10 @@ classes:
         description: |
           Arbeidsforhold fastlønn gjelder for.
         required: true
+      lønnsart:
+        range: Lønnsart
+        description: |
+          Lønnsart for fastlønn.
 
   Fasttillegg:
     description: |
@@ -121,6 +121,16 @@ classes:
       
       Representerer fravær fra et gitt arbeidsforhold. Fraværet har en type og en varighet, og kan være helt eller delvis.
     attributes:
+      kildesystemId:
+        range: Identifikator
+        annotations:
+          writeable: true
+        description: |
+          Kildesystemets unike identifikator for fravær.
+      systemId:
+        range: Identifikator
+        description: |
+          Unik identifikator i personalsystemet for fraværet.
       godkjent:
         range: datetime
         annotations:
@@ -141,12 +151,6 @@ classes:
           * `29. mars 1990 klokken 13:30 (UTC +1)` -&gt; `1990-03-29T12:30:00Z`
           
           * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
-      kildesystemId:
-        range: Identifikator
-        annotations:
-          writeable: true
-        description: |
-          Kildesystemets unike identifikator for fravær.
       periode:
         range: Periode
         annotations:
@@ -180,19 +184,6 @@ classes:
           - 50% permisjon:
             - 5000
         required: true
-      systemId:
-        range: Identifikator
-        description: |
-          Unik identifikator i personalsystemet for fraværet.
-      fraværstype:
-        range: Fraværstype
-        description: |
-          Type fravær.
-        required: true
-      fraværsgrunn:
-        range: Fraværsgrunn
-        description: |
-          Grunn til fraværet.
       arbeidsforhold:
         range: Arbeidsforhold
         inverse: fravær
@@ -211,10 +202,6 @@ classes:
           primaryRelation: true
         description: |
           Fortsettende fravær.
-      godkjenner:
-        range: Personalressurs
-        description: |
-          Personalressurs som har godkjent fraværsmeldingen.
       fortsetter:
         range: Fravær
         inverse: fortsettelse
@@ -222,6 +209,19 @@ classes:
           primaryRelation: true
         description: |
           Fraværet som dette fraværet er fortsettende for.
+      fraværsgrunn:
+        range: Fraværsgrunn
+        description: |
+          Grunn til fraværet.
+      fraværstype:
+        range: Fraværstype
+        description: |
+          Type fravær.
+        required: true
+      godkjenner:
+        range: Personalressurs
+        description: |
+          Personalressurs som har godkjent fraværsmeldingen.
 
   Lønn:
     description: |
@@ -236,6 +236,20 @@ classes:
       Lønn utbetales til et arbeidsforhold, for en gitt periode.
     abstract: true
     attributes:
+      kildesystemId:
+        range: Identifikator
+        annotations:
+          writeable: true
+        description: |
+          Kildesystemets unike identifikator for lønn.
+          
+          # Beskrivelse
+          
+          Forsystem som oppretter lønnstransaksjon kan angi en unik identifikator for transaksjonen.  Denne identifikatoren kan brukes av lønnssystemet for å oppdage duplikate transaksjoner.
+      systemId:
+        range: Identifikator
+        description: |
+          Lønnssystemets unike identifikator for lønn.
       anvist:
         range: datetime
         annotations:
@@ -293,16 +307,6 @@ classes:
           - Reisestrekning for kilometergodtgjørelse
           - Beskrivelse av tillegg.
         required: true
-      kildesystemId:
-        range: Identifikator
-        annotations:
-          writeable: true
-        description: |
-          Kildesystemets unike identifikator for lønn.
-          
-          # Beskrivelse
-          
-          Forsystem som oppretter lønnstransaksjon kan angi en unik identifikator for transaksjonen.  Denne identifikatoren kan brukes av lønnssystemet for å oppdage duplikate transaksjoner.
       kontert:
         range: datetime
         annotations:
@@ -354,22 +358,18 @@ classes:
           - 01.08.2017 og inntil videre (for øvrige faste ansatte)
           - 13.09.2017 - 15.09.2017 (for en vikar eller en sensor)
         required: true
-      systemId:
-        range: Identifikator
-        description: |
-          Lønnssystemets unike identifikator for lønn.
       anviser:
         range: Personalressurs
         description: |
           Personalressurs som har anvist lønnsmeldingen etter fullmakt.
-      konterer:
-        range: Personalressurs
-        description: |
-          Personalressurs som har kontert lønnsmeldingen etter fullmakt.
       attestant:
         range: Personalressurs
         description: |
           Personalressurs som har attestert lønnsmeldingen etter fullmakt.
+      konterer:
+        range: Personalressurs
+        description: |
+          Personalressurs som har kontert lønnsmeldingen etter fullmakt.
 
   Variabellønn:
     description: |
@@ -431,11 +431,6 @@ classes:
         range: integer
         description: |
           Beløp i øre som skal utbetales. Beregnes av lønnssystemet basert på antall og lønnsart.
-      lønnsart:
-        range: Lønnsart
-        description: |
-          Lønnsart for variabel lønn.
-        required: true
       arbeidsforhold:
         range: Arbeidsforhold
         inverse: variabellønn
@@ -443,6 +438,11 @@ classes:
           primaryRelation: true
         description: |
           Arbeidsforhold variabellønn gjelder for.
+        required: true
+      lønnsart:
+        range: Lønnsart
+        description: |
+          Lønnsart for variabel lønn.
         required: true
 
   Personalressurs:
@@ -474,6 +474,28 @@ classes:
           
           Identifiserer en personalressurs unikt. En personalressurs vil kun være registert med ett ansattnummer.
         required: true
+      brukernavn:
+        range: Identifikator
+        annotations:
+          writeable: true
+        description: |
+          Brukernavn til en ansatt
+          
+          # Beskrivelse
+          
+          Skal inneholde brukernavn for pålogging, som finnes i katalogtjenesten (feks Active Directory). Brukes som en identifikator som består, når fødselsnummer og/eller andre identifikatorer endrer seg.
+          
+          # Format
+          
+          Brukernavn i det format en personalressurs trenger for å logge seg på systemer i organisasjonen.
+      systemId:
+        range: Identifikator
+        description: |
+          Unik intern system-id for personalressurs
+          
+          # Beskrivelse
+          
+          Systemspesifikk id, som normalt ikke er synlig i fagsystemet.
       ansettelsesperiode:
         range: Periode
         description: |
@@ -514,20 +536,6 @@ classes:
           * `29. mars 1990` -&gt; `1990-03-29T12:00:00Z`
           
           * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
-      brukernavn:
-        range: Identifikator
-        annotations:
-          writeable: true
-        description: |
-          Brukernavn til en ansatt
-          
-          # Beskrivelse
-          
-          Skal inneholde brukernavn for pålogging, som finnes i katalogtjenesten (feks Active Directory). Brukes som en identifikator som består, når fødselsnummer og/eller andre identifikatorer endrer seg.
-          
-          # Format
-          
-          Brukernavn i det format en personalressurs trenger for å logge seg på systemer i organisasjonen.
       jobbtittel:
         range: string
         annotations:
@@ -548,14 +556,50 @@ classes:
           # Beskrivelse
           
           Den fortrukne måten å komme i kontakt med en personalressurs.
-      systemId:
-        range: Identifikator
+      arbeidsforhold:
+        range: Arbeidsforhold
+        inverse: personalressurs
+        annotations:
+          primaryRelation: true
         description: |
-          Unik intern system-id for personalressurs
+          Arbeidsforhold til en personalressurs
+        multivalued: true
+      fullmakt:
+        range: Fullmakt
+        inverse: fullmektig
+        description: |
+          Fullmakter som Personalressursen har blitt gitt.
+        multivalued: true
+      leder:
+        range: Organisasjonselement
+        inverse: leder
+        description: |
+          Ansvarlig leder for organisasjonselementet
+          
+          # Beskrivelse
+          Normalt vil dette være leder som har personal- og økonomi-ansvar for dette organisasjonselementet.
+          
+          # Format
+          Relasjon til en bestemt leder (Personalressurs).
+          
+          # Eksempler
+        multivalued: true
+      person:
+        range: Person
+        inverse: personalressurs
+        description: |
+          Person som er en personalressurs
+        required: true
+      personalansvar:
+        range: Arbeidsforhold
+        inverse: personalleder
+        description: |
+          Arbeidsforhold som Personalressurs har personalansvar for.
           
           # Beskrivelse
           
-          Systemspesifikk id, som normalt ikke er synlig i fagsystemet.
+          Personalansvar
+        multivalued: true
       personalressurskategori:
         range: Personalressurskategori
         description: |
@@ -573,38 +617,6 @@ classes:
           
           Se kodeverk Personalressurskategori for utvidet eksempel.
         required: true
-      arbeidsforhold:
-        range: Arbeidsforhold
-        inverse: personalressurs
-        annotations:
-          primaryRelation: true
-        description: |
-          Arbeidsforhold til en personalressurs
-        multivalued: true
-      personalansvar:
-        range: Arbeidsforhold
-        inverse: personalleder
-        description: |
-          Arbeidsforhold som Personalressurs har personalansvar for.
-          
-          # Beskrivelse
-          
-          Personalansvar
-        multivalued: true
-      leder:
-        range: Organisasjonselement
-        inverse: leder
-        description: |
-          Ansvarlig leder for organisasjonselementet
-          
-          # Beskrivelse
-          Normalt vil dette være leder som har personal- og økonomi-ansvar for dette organisasjonselementet.
-          
-          # Format
-          Relasjon til en bestemt leder (Personalressurs).
-          
-          # Eksempler
-        multivalued: true
       skoleressurs:
         range: Skoleressurs
         inverse: personalressurs
@@ -622,18 +634,6 @@ classes:
           
           Dersom det finnes flere stedfortredere må kildesystemet velge den stedfortreder som er den primære. Stedfortreder må være tilgjengelig i perioden som fullmakten er gyldig.
         multivalued: true
-      fullmakt:
-        range: Fullmakt
-        inverse: fullmektig
-        description: |
-          Fullmakter som Personalressursen har blitt gitt.
-        multivalued: true
-      person:
-        range: Person
-        inverse: personalressurs
-        description: |
-          Person som er en personalressurs
-        required: true
 
   Arbeidsforhold:
     description: |
@@ -648,6 +648,15 @@ classes:
       * Ansatt som rådgiver i fast stilling
       * Vikariat for en annen person som er i permisjon fra sitt arbeidsforhold
     attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Unik identifikator innenfor alle arbeidsforhold
+          
+          # Beskrivelse
+          
+          Unik identifikator innenfor alle arbeidsforhold til alle ansatte.
+        required: true
       ansettelsesprosent:
         range: integer
         description: |
@@ -680,18 +689,6 @@ classes:
           * For en gitt transaksjonsdato (f.eks. dagens dato):  Finn de instansene av Arbeidsforhold-objektet (versjon av arbeidsforhold) hvor transaksjonsdatoen faller innenfor gyldighetsperioden, dvs: gyldighetsperiode.start &lt;= transaksjonsdato &lt;= gyldighetsperiode.slutt
           
           * Kontroller transaksjonsdato mot arbeidsforholdsperiode:  For at en gitt instans av Arbeidsforhold skal regnes som aktiv for timeplanlegging og registrering av lønn og fravær må arbeidsforholdsperiode.start &lt;= transaksjonsdato &lt;= arbeidsforholdsperiode.slutt
-      årslønn:
-        range: integer
-        description: |
-          Årslønn/grunnlønn i 100 % stilling.
-          
-          # Beskrivelse
-          Lønn i 100% stilling. Inneholder ikke definerte tillegg. Angis i øre.
-          
-          # Eksempel
-          
-          * `40000000` tilsvarer 400 000
-        required: true
       gyldighetsperiode:
         range: Periode
         description: |
@@ -785,15 +782,6 @@ classes:
           
           * "IT-sjef" (mens stillingsbenevnelse kan være "SEKSJONSLEDER"
           * "Rådgiver, IT" (mens stillingsbenevnelse kan være "Rådgiver 1"
-      systemId:
-        range: Identifikator
-        description: |
-          Unik identifikator innenfor alle arbeidsforhold
-          
-          # Beskrivelse
-          
-          Unik identifikator innenfor alle arbeidsforhold til alle ansatte.
-        required: true
       tilstedeprosent:
         range: integer
         description: |
@@ -814,63 +802,22 @@ classes:
           * `8000` tilsvarer 80 %
           * `10000` tilsvarer 100 %
         required: true
-      timerPerUke:
-        range: Uketimetall
+      årslønn:
+        range: integer
         description: |
-          Timer pr uke i 100% stilling
+          Årslønn/grunnlønn i 100 % stilling.
           
           # Beskrivelse
+          Lønn i 100% stilling. Inneholder ikke definerte tillegg. Angis i øre.
           
-          Ulike type stillinger kan ha ulikt timetall for en 100% stilling
+          # Eksempel
           
-          # Format
-          
-          
-          # Eksempler
-      arbeidsforholdstype:
-        range: Arbeidsforholdstype
-        description: |
-          Beskrivende kode som kategoriserer hva slags funksjon stillingen grupperes til
-          
-          # Beskrivelse
-          
-          Beskrivende kode som kategoriserer hva slags funksjon stillingen grupperes til.
-          
-          Ansattkode eller stillingskategori som den også kalles.
-          
-          # Eksempler
-          
-          Se eksempel i Arbeidsforholdstype-kodeverk
-      personalleder:
-        range: Personalressurs
-        inverse: personalansvar
-        annotations:
-          primaryRelation: true
-        description: |
-          Personalleder til et arbeidsforhold.
-          
-          # Beskrivelse
-          
-          Indikerer personalleder til et arbeidsforhold.
-      arbeidslokasjon:
-        range: Arbeidslokasjon
-        inverse: arbeidsforhold
-        annotations:
-          primaryRelation: true
-        description: |
-          Fysisk lokasjon hvor den ansatte har sitt arbeidssted.
-      formål:
-        range: Formål
-        description: |
-          Formål viser aktivitet og tjenesteproduksjon
+          * `40000000` tilsvarer 400 000
+        required: true
       aktivitet:
         range: Aktivitet
         description: |
           Aktivitet arbeidsforhold er tilknyttet.
-      prosjekt:
-        range: Prosjekt
-        description: |
-          Prosjekt arbeidsforhold tilknyttet.
       anlegg:
         range: Anlegg
         description: |
@@ -887,29 +834,27 @@ classes:
           Synonymer:  kostsenter, kostnadsbærer.
           
           Se kodeverk [Ansvar](/docs/kodeverk_ansvar).
-      funksjon:
-        range: Funksjon
+      arbeidsforholdstype:
+        range: Arbeidsforholdstype
         description: |
-          Arbeidsforholdets relasjon til funksjon. 
+          Beskrivende kode som kategoriserer hva slags funksjon stillingen grupperes til
           
           # Beskrivelse
           
-          Beskriver hvilken funksjon arbeidsforholdet vanligvis knyttes til.
+          Beskrivende kode som kategoriserer hva slags funksjon stillingen grupperes til.
           
-          Synonymer:  Tjeneste
-          
-          Se kodeverk [Funksjon](/docs/kodeverk_funksjon). 
-          
+          Ansattkode eller stillingskategori som den også kalles.
           
           # Eksempler
           
-          R1 Visma 2 kostra funksjoner:
-          
-          For eksempel koden til "Studiespesialisering" eller "PEDAGOGISK LEDELSE OG PEDAGOGISKE FELLESUTGIFTER".
-      objekt:
-        range: Objekt
+          Se eksempel i Arbeidsforholdstype-kodeverk
+      arbeidslokasjon:
+        range: Arbeidslokasjon
+        inverse: arbeidsforhold
+        annotations:
+          primaryRelation: true
         description: |
-          Objekt arbeidsforhold er tilknyttet.
+          Fysisk lokasjon hvor den ansatte har sitt arbeidssted.
       arbeidssted:
         range: Organisasjonselement
         inverse: arbeidsforhold
@@ -938,10 +883,55 @@ classes:
           
           # Eksempler
         required: true
+      art:
+        range: Art
+        description: |
+          Art arbeidsforhold er tilknyttet.
       diverse:
         range: Diverse
         description: |
           Diverse arbeidsforhold er tilknyttet.
+      fastlønn:
+        range: Fastlønn
+        inverse: arbeidsforhold
+        description: |
+          All fastlønn for arbeidsforhold.
+        multivalued: true
+      fasttillegg:
+        range: Fasttillegg
+        inverse: arbeidsforhold
+        description: |
+          Alle faste tillegg for arbeidsforhold.
+        multivalued: true
+      formål:
+        range: Formål
+        description: |
+          Formål viser aktivitet og tjenesteproduksjon
+      fravær:
+        range: Fravær
+        inverse: arbeidsforhold
+        description: |
+          Alle fravær knyttet til arbeidsforhold.
+        multivalued: true
+      funksjon:
+        range: Funksjon
+        description: |
+          Arbeidsforholdets relasjon til funksjon. 
+          
+          # Beskrivelse
+          
+          Beskriver hvilken funksjon arbeidsforholdet vanligvis knyttes til.
+          
+          Synonymer:  Tjeneste
+          
+          Se kodeverk [Funksjon](/docs/kodeverk_funksjon). 
+          
+          
+          # Eksempler
+          
+          R1 Visma 2 kostra funksjoner:
+          
+          For eksempel koden til "Studiespesialisering" eller "PEDAGOGISK LEDELSE OG PEDAGOGISKE FELLESUTGIFTER".
       kontrakt:
         range: Kontrakt
         description: |
@@ -950,10 +940,31 @@ classes:
         range: Løpenummer
         description: |
           Løpenummer arbeidsforhold er tilknyttet.
-      art:
-        range: Art
+      objekt:
+        range: Objekt
         description: |
-          Art arbeidsforhold er tilknyttet.
+          Objekt arbeidsforhold er tilknyttet.
+      personalleder:
+        range: Personalressurs
+        inverse: personalansvar
+        annotations:
+          primaryRelation: true
+        description: |
+          Personalleder til et arbeidsforhold.
+          
+          # Beskrivelse
+          
+          Indikerer personalleder til et arbeidsforhold.
+      personalressurs:
+        range: Personalressurs
+        inverse: arbeidsforhold
+        description: |
+          Pesonalressurs til et arbeidsforhold
+        required: true
+      prosjekt:
+        range: Prosjekt
+        description: |
+          Prosjekt arbeidsforhold tilknyttet.
       ramme:
         range: Ramme
         description: |
@@ -966,18 +977,19 @@ classes:
           # Beskrivelse
           
           Se kodeverk Stillingskode.
-      fasttillegg:
-        range: Fasttillegg
-        inverse: arbeidsforhold
+      timerPerUke:
+        range: Uketimetall
         description: |
-          Alle faste tillegg for arbeidsforhold.
-        multivalued: true
-      fravær:
-        range: Fravær
-        inverse: arbeidsforhold
-        description: |
-          Alle fravær knyttet til arbeidsforhold.
-        multivalued: true
+          Timer pr uke i 100% stilling
+          
+          # Beskrivelse
+          
+          Ulike type stillinger kan ha ulikt timetall for en 100% stilling
+          
+          # Format
+          
+          
+          # Eksempler
       undervisningsforhold:
         range: Undervisningsforhold
         inverse: arbeidsforhold
@@ -989,15 +1001,3 @@ classes:
         description: |
           All variabel lønn for arbeidsforhold.
         multivalued: true
-      fastlønn:
-        range: Fastlønn
-        inverse: arbeidsforhold
-        description: |
-          All fastlønn for arbeidsforhold.
-        multivalued: true
-      personalressurs:
-        range: Personalressurs
-        inverse: arbeidsforhold
-        description: |
-          Pesonalressurs til et arbeidsforhold
-        required: true

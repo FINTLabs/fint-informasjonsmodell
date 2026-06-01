@@ -54,44 +54,6 @@ classes:
       | F12.10.44.10    |      70 | ASKI Personal- og renholdsstab       |              39 |
     is_a: Enhet
     attributes:
-      gyldighetsperiode:
-        range: Periode
-        description: |
-          Tidsperiode for når organisasjonselementer er gjeldene
-      kortnavn:
-        range: string
-        description: |
-          Forkortet navn som beskriver organisasjonselementet. 
-          
-          # Beskrivelse
-          Akronym navnet til organisasjonselementet.
-          
-          # Format
-          Tekst
-          
-          # Eksempler
-          
-          * ASKI (Askim videregående skole)
-          * IT (IT-seksjonen)
-          * FRS (Fylkesrådmannens stab)
-      navn:
-        range: string
-        description: |
-          Navnet til organisasjonsselemetet.
-          
-          # Beskrivelse
-          
-          
-          # Format
-          Tekst
-          
-          # Eksempler
-          
-          For eksempel:
-          * IT-seksjonen.
-          * Faggruppe lønn
-          * Askim Videregående skole
-          * Avdeling for helse og sosial
       organisasjonsId:
         range: Identifikator
         description: |
@@ -133,10 +95,58 @@ classes:
           * 321502 Ungdomsskoleavdelingen - grunnskoleopplæring
           * 321503 Ungdomsavdelingen - VGO
         required: true
-      organisasjonstype:
-        range: Organisasjonstype
+      gyldighetsperiode:
+        range: Periode
         description: |
-          Hvilken type organisasjonselement dette er.
+          Tidsperiode for når organisasjonselementer er gjeldene
+      kortnavn:
+        range: string
+        description: |
+          Forkortet navn som beskriver organisasjonselementet. 
+          
+          # Beskrivelse
+          Akronym navnet til organisasjonselementet.
+          
+          # Format
+          Tekst
+          
+          # Eksempler
+          
+          * ASKI (Askim videregående skole)
+          * IT (IT-seksjonen)
+          * FRS (Fylkesrådmannens stab)
+      navn:
+        range: string
+        description: |
+          Navnet til organisasjonsselemetet.
+          
+          # Beskrivelse
+          
+          
+          # Format
+          Tekst
+          
+          # Eksempler
+          
+          For eksempel:
+          * IT-seksjonen.
+          * Faggruppe lønn
+          * Askim Videregående skole
+          * Avdeling for helse og sosial
+      ansvar:
+        range: Ansvar
+        inverse: organisasjonselement
+        annotations:
+          primaryRelation: true
+        description: |
+          Ansvar i kontoplanen som organisasjonselement er knyttet til.
+        multivalued: true
+      arbeidsforhold:
+        range: Arbeidsforhold
+        inverse: arbeidssted
+        description: |
+          Alle arbeidsforhold til et organisasjonselement.
+        multivalued: true
       leder:
         range: Personalressurs
         inverse: leder
@@ -152,14 +162,10 @@ classes:
           Relasjon til en bestemt leder (Personalressurs).
           
           # Eksempler
-      ansvar:
-        range: Ansvar
-        inverse: organisasjonselement
-        annotations:
-          primaryRelation: true
+      organisasjonstype:
+        range: Organisasjonstype
         description: |
-          Ansvar i kontoplanen som organisasjonselement er knyttet til.
-        multivalued: true
+          Hvilken type organisasjonselement dette er.
       overordnet:
         range: Organisasjonselement
         inverse: underordnet
@@ -186,12 +192,6 @@ classes:
         inverse: organisasjon
         description: |
           Referanse til Utdannings domenet
-      arbeidsforhold:
-        range: Arbeidsforhold
-        inverse: arbeidssted
-        description: |
-          Alle arbeidsforhold til et organisasjonselement.
-        multivalued: true
       underordnet:
         range: Organisasjonselement
         inverse: overordnet

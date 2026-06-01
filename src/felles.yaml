@@ -24,6 +24,11 @@ classes:
       
       Kontaktperson kalles også pårørende.
     attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Kildesystemets unike identifikator for kontaktperson.
+        required: true
       kontaktinformasjon:
         range: Kontaktinformasjon
         annotations:
@@ -36,11 +41,6 @@ classes:
           writeable: true
         description: |
           Navn på kontaktperson.
-      systemId:
-        range: Identifikator
-        description: |
-          Kildesystemets unike identifikator for kontaktperson.
-        required: true
       type:
         range: string
         annotations:
@@ -88,6 +88,24 @@ classes:
       * [Wiki side](https://no.wikipedia.org/wiki/Fysisk_person)
     is_a: Aktør
     attributes:
+      fødselsnummer:
+        range: Identifikator
+        description: |
+          Fødselsnummer eller en av de fiktive variantene
+          
+          # Beskrivelse
+          
+          Et ellevesifret identifikasjonsnummer som alle folkeregistrerte i Norge har. Fødselsnummeret består av fødselsdato (6 siffer) og personnummer (5 siffer).
+          
+          # Format 
+          
+          11 siffer
+          
+          # Referanser
+          
+          * [Wiki side](https://no.wikipedia.org/wiki/Fødselsnummer)
+          * [Registreringshåndboken A01.Fødselsnummer](http://regbok.udir.no/35004/3344/35042-1027331.html)
+        required: true
       bilde:
         range: string
         description: |
@@ -124,24 +142,6 @@ classes:
           * `29. mars 1990` -&gt; `1990-03-29T12:00:00Z`
           
           * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
-      fødselsnummer:
-        range: Identifikator
-        description: |
-          Fødselsnummer eller en av de fiktive variantene
-          
-          # Beskrivelse
-          
-          Et ellevesifret identifikasjonsnummer som alle folkeregistrerte i Norge har. Fødselsnummeret består av fødselsdato (6 siffer) og personnummer (5 siffer).
-          
-          # Format 
-          
-          11 siffer
-          
-          # Referanser
-          
-          * [Wiki side](https://no.wikipedia.org/wiki/Fødselsnummer)
-          * [Registreringshåndboken A01.Fødselsnummer](http://regbok.udir.no/35004/3344/35042-1027331.html)
-        required: true
       navn:
         range: Personnavn
         description: |
@@ -151,23 +151,21 @@ classes:
           
           Se beskrivelse for [Personnavn klasse](Class:Personnavn)
         required: true
-      statsborgerskap:
-        range: Landkode
+      elev:
+        range: Elev
+        inverse: person
         description: |
-          Alle statsborgerskap som personen har
+          En person kan være en elev
+      foreldre:
+        range: Person
+        inverse: foreldreansvar
+        annotations:
+          primaryRelation: true
+        description: |
+          Den/De som har foreldreansvar til personen.
+          
+          Dette kan være personens foreldre eller adoptivforeldre.
         multivalued: true
-      kommune:
-        range: Kommune
-        description: |
-          Kommune hvor personen er bosatt
-      kjønn:
-        range: Kjønn
-        description: |
-          Kjønn for person.
-          
-          # Beskrivelse
-          
-          Se beskrivelse av [Kjønn klasse](Class:Kjønn)
       foreldreansvar:
         range: Person
         inverse: foreldre
@@ -182,10 +180,37 @@ classes:
           - Barnelova §§ 2-7
           - https://www.skatteetaten.no/person/folkeregister/fodsel-og-navnevalg/barn-fodt-i-norge/farskap-og-foreldreansvar/
         multivalued: true
+      kjønn:
+        range: Kjønn
+        description: |
+          Kjønn for person.
+          
+          # Beskrivelse
+          
+          Se beskrivelse av [Kjønn klasse](Class:Kjønn)
+      kommune:
+        range: Kommune
+        description: |
+          Kommune hvor personen er bosatt
+      lærling:
+        range: Lærling
+        inverse: person
+        description: |
+          En person kan være en lærling.
+        multivalued: true
+      morsmål:
+        range: Språk
+        description: |
+          Morsmål til en person
       målform:
         range: Språk
         description: |
           Målform som denne personen foretrekker å bruke (eksempelvis nynorsk, bokmål eller samisk).
+      otungdom:
+        range: OtUngdom
+        inverse: person
+        description: |
+          En person kan være en OT-ungdom.
       personalressurs:
         range: Personalressurs
         inverse: person
@@ -193,42 +218,17 @@ classes:
           primaryRelation: true
         description: |
           Personalressurs til person. Forhold som arbeidstaker.
-      morsmål:
-        range: Språk
-        description: |
-          Morsmål til en person
-      lærling:
-        range: Lærling
-        inverse: person
-        description: |
-          En person kan være en lærling.
-        multivalued: true
       pårørende:
         range: Kontaktperson
         inverse: kontaktperson
         description: |
           Pårørende kontaktperson til person.
         multivalued: true
-      foreldre:
-        range: Person
-        inverse: foreldreansvar
-        annotations:
-          primaryRelation: true
+      statsborgerskap:
+        range: Landkode
         description: |
-          Den/De som har foreldreansvar til personen.
-          
-          Dette kan være personens foreldre eller adoptivforeldre.
+          Alle statsborgerskap som personen har
         multivalued: true
-      elev:
-        range: Elev
-        inverse: person
-        description: |
-          En person kan være en elev
-      otungdom:
-        range: OtUngdom
-        inverse: person
-        description: |
-          En person kan være en OT-ungdom.
 
   Virksomhet:
     description: |
