@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/felles/kodeverk/iso
+name: felles.kodeverk.iso
+imports:
+  - linkml:types
+  - felles.basisklasser
+
+classes:
+
+  Kjønn:
+    description: |
+      Liste over verdier for kjønn basert på ISO/IEC 5218.
+      
+      # Beskrivelse
+      
+      Liste over verdier for kjønn basert på ISO/IEC 5218.
+      
+      Når vi i daglig tale prater om kjønn presiserer vi sjelden hva vi mener. Avhengig av sammenheng kan vi mene enten biologisk, sosialt, mentalt eller juridisk kjønn. Kjønn kan med andre ord betraktes som et samlebegrep.
+      Kilde: llh.no  
+      
+      # Referanser
+      
+      * [FINT API for ISO/IEC 5218](https://api.felleskomponent.no/felles/kodeverk/kjonn)
+      * [ISO/IEC 5218:2004](https://iso.org/standard/36266.html)
+      * [Wikipedia artikkel](https://en.wikipedia.org/wiki/ISO/IEC_5218)
+      
+      # Eksempler
+      
+          0 = uvisst (not known)
+          1 = mann (male)
+          2 = kvinne (female)
+          9 = gjelder ikke (not applicable)
+    is_a: Begrep
+
+  Landkode:
+    description: |
+      Landskode i ISO 3166-1 alpha-2 format.
+      
+      # Beskrivelse
+      
+      Landskode i ISO 3166-1 alpha-2 format.
+      
+      # Referanser
+      
+      * [FINT api for ISO 3166-1 alpha-2](https://api.felleskomponent.no/felles/kodeverk/iso/31661alpha2/)
+      * "ISO standards page":http://www.iso.org/iso/country_codes.htm
+      * Søk i kodeliste: "https://www.iso.org/obp/ui/#search":https://www.iso.org/obp/ui/#search
+      * "XML data":http://www.iso.org/iso/home/standards/country_codes/country_names_and_code_elements_xml-temp.htm
+      * "Wiki side":https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+      * "SSB datasett":http://data.norge.no/data/statistisk-sentralbyr%C3%A5/land-og-landkoder
+    is_a: Begrep
+
+  Språk:
+    description: |
+      Liste over verdier for språk  (2 bokstav)
+      
+      # Beskrivelse
+      
+      Liste over alle språk etter ISO 639-1 standard (2 bokstav)
+      
+      # Eksempler
+      
+      NO, NB, NN, DA, etc.
+      
+      # Referanse 
+      
+      [FINT api for ISO 639-1 Alpha2](https://api.felleskomponent.no/felles/kodeverk/iso/6391alpha2)
+    is_a: Begrep

@@ -1,0 +1,93 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/utdanning/larling
+name: utdanning.larling
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+  - felles
+  - utdanning.kodeverk
+  - utdanning.utdanningsprogram
+
+classes:
+
+  AvlagtPrøve:
+    description: |
+      Informasjon om en avlagt prøve for en person i et fag.
+    attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Unik identifikator i kildesystemet.
+        required: true
+      prøvedato:
+        range: date
+        description: |
+          Dato for avlagt prøve i perioden.
+      bevistype:
+        range: Bevistype
+        description: |
+          Hvilken bevistype eleven har fått på opplæringen.
+      brevtype:
+        range: Brevtype
+        description: |
+          Hvilken prøve lærlingen/lærekandidaten går opp til.
+      fullførtkode:
+        range: Fullførtkode
+        description: |
+          Status på hvordan eleven har gjennomført et programområde.
+      lærling:
+        range: Lærling
+        inverse: avlagtprøve
+        annotations:
+          primaryRelation: true
+        description: |
+          Lærling som tar prøve.
+        required: true
+      prøvestatus:
+        range: Prøvestatus
+        description: |
+          Resultat av avlagt prøve - Praktisk prøve + teori.
+
+  Lærling:
+    description: |
+      Å være lærling betyr at du utdanner deg til et yrke ved å jobbe i en bedrift.
+    attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Unik identifikator for en lærling.
+        required: true
+      kontraktstype:
+        range: string
+        description: |
+          Kontraktstype for lærling.
+      læretid:
+        range: Periode
+        description: |
+          Tidsperiode for læretiden.
+      avlagtprøve:
+        range: AvlagtPrøve
+        inverse: lærling
+        description: |
+          Avlagte prøver (Fagprøver m.m.)
+        multivalued: true
+      bedrift:
+        range: Virksomhet
+        inverse: lærling
+        annotations:
+          primaryRelation: true
+        description: |
+          Bedriften hvor lærlingen har sin læretid.
+      person:
+        range: Person
+        inverse: lærling
+        annotations:
+          primaryRelation: true
+        description: |
+          Person som er lærling.
+        required: true
+      programområde:
+        range: Programområde
+        description: |
+          Programområdet til lærling.
