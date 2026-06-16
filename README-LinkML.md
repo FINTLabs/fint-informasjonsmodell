@@ -102,6 +102,18 @@ Vigoreferanse:
     stereotype: referanse
 ```
 
+Kunne det i stedet vært som følger: 
+
+```yaml
+Referanse:
+  abstract: true
+
+Vigoreferanse:
+  is_a: Referanse
+```
+Blir rart å gjøre det samme for `kompleks datatype`?
+
+
 #### abstrakt
 
 Klasser som er merket med abstract: true` er abstrakte klasser.
@@ -130,6 +142,18 @@ Adresse:
       inlined_as_list: true
     ...
 ```
+
+#### Hva gjør vi med isSource/primaryRelation?
+
+```yaml
+...
+  kontaktperson:
+    range: Person
+    inverse: pårørende
+    annotations:
+      primaryRelation: true # isSource, 
+```
+
 
 ## Utvikling
 
