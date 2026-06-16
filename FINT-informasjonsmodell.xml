@@ -5913,7 +5913,7 @@
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst182CE7_91B5_479f_89BA_CF4194194697" name="fag" visibility="public" association="EAID_3E182CE7_91B5_479f_89BA_CF4194194697" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 								<type xmi:idref="EAID_F2E6050D_5E67_4dc5_9BB4_B43B9E99E43A"/>
-								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001433__91B5_479f_89BA_CF4194194697" value="1"/>
+								<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001433__91B5_479f_89BA_CF4194194697" value="0"/>
 								<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001434__91B5_479f_89BA_CF4194194697" value="1"/>
 							</ownedAttribute>
 							<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst3F4757_FECB_4814_B684_43CAD23915EA" name="faggruppe" visibility="public" association="EAID_743F4757_FECB_4814_B684_43CAD23915EA" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
@@ -29725,7 +29725,7 @@
 				<target xmi:idref="EAID_F2E6050D_5E67_4dc5_9BB4_B43B9E99E43A">
 					<model ea_localid="105" type="Class" name="Fag"/>
 					<role name="fag" visibility="Public" targetScope="instance"/>
-					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
+					<type multiplicity="0..1" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
@@ -29739,7 +29739,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels rb="1" rt="+fag"/>
+				<labels rb="0..1" rt="+fag"/>
 				<extendedProperties virtualInheritance="0"/>
 				<style/>
 				<xrefs/>
@@ -29974,7 +29974,7 @@
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-					<documentation value="Et av fagene som det undervises i i gruppen.&#xA;Dette er data fra feltet Fagi Rediger Undervisningsgruppe i InSchool."/>
+					<documentation value="Et av fagene som det undervises i i gruppen.&#xA;Dette er data fra feltet Fag i Rediger Undervisningsgruppe i InSchool."/>
 					<xrefs/>
 					<tags/>
 				</target>
