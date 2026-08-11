@@ -146,7 +146,7 @@
 
 |      |              |
 | ---- |--------------|
-| Date | `30.06.2026` |
+| Date | `11.08.2026` |
 | Tag  | `v4.1.0`     |
 
 ## Features
@@ -155,6 +155,7 @@
 
 * Added class `Aktivitetsfravær` .
 * Added relation `fag` on `Fraværsregistrering`.
+* Added relation `aktivitetsfravær` on `Elevfravær`
 
 ### Ressurs.Datautstyr
 
