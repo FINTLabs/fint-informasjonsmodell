@@ -1,0 +1,374 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/utdanning/timeplan
+name: utdanning.timeplan
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+  - utdanning.basisklasser
+  - utdanning.elev
+  - utdanning.kodeverk
+  - utdanning.utdanningsprogram
+  - utdanning.vurdering
+
+classes:
+
+  Eksamen:
+    description: |
+      En eksamen som avholdes på en skole.
+    attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Unik identifikator for eksamenen.
+        required: true
+      beskrivelse:
+        range: string
+        description: |
+          Utfyllende beskrivelse av eksamenen.
+      navn:
+        range: string
+        description: |
+          Navn på eksamenen.
+        required: true
+      oppmøtetidspunkt:
+        range: datetime
+        description: |
+          Seneste tidspunkt for fremmøte til eksamen.
+      tidsrom:
+        range: Periode
+        description: |
+          Dato og tid for eksamenen.
+        required: true
+      eksamensgruppe:
+        range: Eksamensgruppe
+        inverse: eksamen
+        description: |
+          Eksamensgrupper som skal ha en eksamen.
+        multivalued: true
+      rom:
+        range: Rom
+        inverse: eksamen
+        annotations:
+          primaryRelation: true
+        description: |
+          Lokale hvor eksamen skal avholdes.
+        multivalued: true
+
+  Fag:
+    description: |
+      Emneområde i utdanning i henhold til læreplanverket.
+      
+      # Beskrivelse
+      
+      Utdanning gjennomføres i form av fag. Fag i videregående utdanning har en fagtype og en fagkode. Begge er definert i VIGO og Grep kodeverk.  For føring på vitnemål kan kun fagkoder fastsatt av Utdanningsdirektoratet benyttes.
+      
+      Fag og fagkoder kan slås opp hos Utdanningsdirektoratet på https://www.udir.no/laring-og-trivsel/lareplanverket/finn-fagkode/
+      
+      Fagkoder er også beskrevet i [Registreringshåndboken A04](http://regbok.udir.no/35004/3344/35042-1014304.html).
+      
+      # Fagtyper
+      
+      Fag grupperes etter  [Rundskriv Udir-01-2017](https://www.udir.no/regelverk-og-tilsyn/finn-regelverk/etter-tema/Innhold-i-opplaringen/udir-01-2017/) og skriv fra Utdanningsdirektoratet om [Føring av vitnemål og kompetansebevis for videregående opplæring i Kunnskapsløftet, pkt 2.5](https://www.udir.no/eksamen-og-prover/dokumentasjon/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs/2-oppsett-av-vitnemal-og-kompetansebevis/#2.5-rekkefolge-for-foring-av-fag-og-fagtyper).
+      
+      De aktuelle fagtypene i henhold til [Registreringshåndboken A05](http://regbok.udir.no/35004/3344/35042-1014305.html) er:
+      
+      - Fellesfag
+      - Felles programfag
+      - Valgfrie programfag
+      - Uspesifiserte programfag
+      - Yrkesfaglig fordypning
+      - Individuell opplæringsplan
+      
+      # Referanser
+      
+      * https://www.udir.no/laring-og-trivsel/lareplanverket/
+      * https://www.udir.no/utdanningslopet/videregaende-opplaring/
+      * http://regbok.udir.no/
+      * http://grepwiki.udir.no/
+      * https://www.vigo.no/vigokv/index.action
+    is_a: Gruppe
+    attributes:
+      eksamensgruppe:
+        range: Eksamensgruppe
+        inverse: fag
+        description: |
+          Alle relaterte eksamensgrupper
+        multivalued: true
+      faggruppe:
+        range: Faggruppe
+        inverse: fag
+        description: |
+          Faggruppe for faget.
+        multivalued: true
+      grepreferanse:
+        range: Grepreferanse
+        description: |
+          Referanse til GREP kodeverket.
+      programområde:
+        range: Programområde
+        inverse: fag
+        description: |
+          Programområde faget tilhører.
+        multivalued: true
+      skole:
+        range: Skole
+        inverse: fag
+        annotations:
+          primaryRelation: true
+        description: |
+          Alle skoler som tilbyr faget.
+        multivalued: true
+      tilrettelegging:
+        range: Elevtilrettelegging
+        inverse: fag
+        description: |
+          Tilrettelegging i faget.
+        multivalued: true
+      undervisningsgruppe:
+        range: Undervisningsgruppe
+        inverse: fag
+        description: |
+          Alle undervisningsgrupper i et gitt fag
+        multivalued: true
+      vigoreferanse:
+        range: Vigoreferanse
+        description: |
+          Referanse til VIGO kodeverket.
+
+  Faggruppe:
+    description: |
+      Gruppe av elever som mottar undervisning i samme fag.
+      
+      # Beskrivelse
+      
+      Undervisningsgrupper har vanligvis en kode, men denne er lokalt definert, og varierer fra skole til skole, og fra fylke til fylke.
+      
+      Denne grupperingen omhandler faglig organisering av undervisningen.
+      
+      Se også [Undervisningsgruppe](/docs/timeplan_undervisningsgruppe).
+    is_a: Gruppe
+    attributes:
+      fag:
+        range: Fag
+        inverse: faggruppe
+        annotations:
+          primaryRelation: true
+        description: |
+          Fag som gruppen gjelder for.
+        required: true
+      faggruppemedlemskap:
+        range: Faggruppemedlemskap
+        inverse: faggruppe
+        annotations:
+          primaryRelation: true
+        description: |
+          Faggruppemedlemskapene i et fag.
+        multivalued: true
+      skole:
+        range: Skole
+        inverse: faggruppe
+        annotations:
+          primaryRelation: true
+        description: |
+          Skolen faggruppen tilhører.
+      skoleår:
+        range: Skoleår
+        description: |
+          Skoleåret faggruppen er aktiv.
+
+  Faggruppemedlemskap:
+    description: |
+      Medlemskap i faggruppe.
+    is_a: Gruppemedlemskap
+    attributes:
+      elevforhold:
+        range: Elevforhold
+        inverse: faggruppemedlemskap
+        description: |
+          Elevforholdet et faggruppemedlemskap tilhører.
+        required: true
+      faggruppe:
+        range: Faggruppe
+        inverse: faggruppemedlemskap
+        description: |
+          Faggruppe det er medlemskap i.
+        required: true
+      fagmerknad:
+        range: Fagmerknad
+        description: |
+          Merknad om faget.
+      fagstatus:
+        range: Fagstatus
+        description: |
+          Status i faget.
+      varsel:
+        range: Varsel
+        inverse: faggruppemedlemskap
+        description: |
+          Varsel i faget.
+        multivalued: true
+
+  Rom:
+    description: |
+      Rom hvor timene gjennomføres.
+    attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Id av rommet
+        required: true
+      navn:
+        range: string
+        description: |
+          Navn på rommet
+      time:
+        range: Time
+        inverse: rom
+        annotations:
+          primaryRelation: true
+        description: |
+          Timene som gjennomføres på et bestemt rom
+        multivalued: true
+      eksamen:
+        range: Eksamen
+        inverse: rom
+        description: |
+          Eksamen(er) som skal avholdes i rommet.
+        multivalued: true
+
+  Time:
+    description: |
+      Timen når undervisning foregår.
+    attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Kildesystemets interne identifikator for timen.
+        required: true
+      beskrivelse:
+        range: string
+        description: |
+          Lengre beskrivelse av timen.
+      navn:
+        range: string
+        description: |
+          Navn på timen slik den fremkommer i timeplanen.
+        required: true
+      tidsrom:
+        range: Periode
+        description: |
+          Beskriver når timen foregår.
+        required: true
+      rom:
+        range: Rom
+        inverse: time
+        description: |
+          De aktuelle rommene hvor undervisningen foregår
+        multivalued: true
+      undervisningsforhold:
+        range: Undervisningsforhold
+        inverse: time
+        description: |
+          Lærerne som underviser en bestemt time
+        multivalued: true
+        required: true
+      undervisningsgruppe:
+        range: Undervisningsgruppe
+        inverse: time
+        annotations:
+          primaryRelation: true
+        description: |
+          Undervisningsgruppene som undervises i en gitt time
+        multivalued: true
+        required: true
+
+  Undervisningsgruppe:
+    description: |
+      Gruppering av elever som mottar undervisning. 
+      
+      # Beskrivelse
+      
+      Elever i forskjellige undervisningsgrupper kan ta samme faget.
+      Flere fag kan undervises i samme undervisningsgruppe.
+      Det kan være flere lærere i en undervisningsgruppe.
+      
+      Undervisningsgrupper har vanligvis en kode, men denne er lokalt definert, og varierer fra skole til skole, og fra fylke til fylke.
+      
+      Denne grupperingen omhandler administrering av undervisningen. 
+      
+      Se også [Faggruppe](/docs/timeplan_faggruppe).
+    is_a: Gruppe
+    attributes:
+      time:
+        range: Time
+        inverse: undervisningsgruppe
+        description: |
+          Timene hvor undervisningen til en undervisningsgruppe gjennomføres
+        multivalued: true
+      fag:
+        range: Fag
+        inverse: undervisningsgruppe
+        annotations:
+          primaryRelation: true
+        description: |
+          Fagene som det undervises i i gruppen
+        multivalued: true
+        required: true
+      gruppemedlemskap:
+        range: Undervisningsgruppemedlemskap
+        inverse: undervisningsgruppe
+        description: |
+          Gruppemedlemskapene til en undervisningsgruppe.
+        multivalued: true
+      skole:
+        range: Skole
+        inverse: undervisningsgruppe
+        annotations:
+          primaryRelation: true
+        description: |
+          Skolen en undervisningsgruppe tilhører.
+        required: true
+      skoleår:
+        range: Skoleår
+        description: |
+          Skoleår for undervisningsgruppe
+      termin:
+        range: Termin
+        description: |
+          Terminer for undervisningsgruppe
+        multivalued: true
+      undervisningsforhold:
+        range: Undervisningsforhold
+        inverse: undervisningsgruppe
+        annotations:
+          primaryRelation: true
+        description: |
+          Alle lærere i gruppen.
+        multivalued: true
+
+  Undervisningsgruppemedlemskap:
+    description: |
+      Medlemskap i undervisningsgrupper.
+      
+      # Beskrivelse
+      
+      Gruppemedlemskap som knytter sammen elevforhold og undervisningsgrupper.
+    is_a: Gruppemedlemskap
+    attributes:
+      elevforhold:
+        range: Elevforhold
+        inverse: undervisningsgruppemedlemskap
+        annotations:
+          primaryRelation: true
+        description: |
+          Elevforhold et undervisningsgruppemedlemskap tilhører.
+        required: true
+      undervisningsgruppe:
+        range: Undervisningsgruppe
+        inverse: gruppemedlemskap
+        annotations:
+          primaryRelation: true
+        description: |
+          Undervisningsgruppen et gruppemedlemskap tilhører.
+        required: true
