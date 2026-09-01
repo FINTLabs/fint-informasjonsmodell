@@ -4,7 +4,7 @@
 
 ### Kardinalitet/multiplisitet
 
-#### Relasjoner
+#### Felter og relasjoner
 
 ```yaml
   gyldighetsperiode:
