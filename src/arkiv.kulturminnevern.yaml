@@ -1,0 +1,114 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/arkiv/kulturminnevern
+name: arkiv.kulturminnevern
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+  - arkiv.noark
+
+classes:
+
+  DispensasjonAutomatiskFredaKulturminne:
+    description: |
+      Sak om søknad om dispensasjon for tiltak på automatisk freda kulturminne.
+    is_a: Saksmappe
+    attributes:
+      søknadsnummer:
+        range: Identifikator
+        annotations:
+          writeable: true
+        description: |
+          Søknadsnummer fra Digisak.
+        required: true
+      kulturminneId:
+        range: string
+        annotations:
+          writeable: true
+        description: |
+          Kulturminnets ID i Askeladden.
+        required: true
+      matrikkelnummer:
+        range: Matrikkelnummer
+        annotations:
+          writeable: true
+        description: |
+          Kulturminnets identifikator i Matrikkelen.
+        required: true
+      tiltak:
+        range: string
+        annotations:
+          writeable: true
+        description: |
+          Beskriver hvilket tiltak som skal utføres på eiendommen. 
+          
+          ## Beskrivelse
+          Årsaken til at det søkes dispensasjon. 
+          
+          ## Eksempel
+          Eksempler kan være ‘Utskifting av vannledning’, ‘Etablering av landbruksvei’ og ‘Graving av grøft’
+
+  TilskuddFartøy:
+    description: |
+      Sak om søknad om tilskudd til freda fartøy.
+    is_a: Saksmappe
+    attributes:
+      søknadsnummer:
+        range: Identifikator
+        annotations:
+          writeable: true
+        description: |
+          Søknadsnummer fra Digisak.
+        required: true
+      fartøyNavn:
+        range: string
+        annotations:
+          writeable: true
+        description: |
+          Fartøyets navn.
+        required: true
+      kallesignal:
+        range: string
+        annotations:
+          writeable: true
+        description: |
+          Fartøyets kallesignal.
+        required: true
+      kulturminneId:
+        range: string
+        annotations:
+          writeable: true
+        description: |
+          Fartøyets ID i Askeladden.
+        required: true
+
+  TilskuddFredaBygningPrivatEie:
+    description: |
+      Sak om søknad om tilskudd til freda bygninger i privat eie (FRIP).
+    is_a: Saksmappe
+    attributes:
+      søknadsnummer:
+        range: Identifikator
+        annotations:
+          writeable: true
+        description: |
+          Søknadsnummer fra Digisak.
+      bygningsnavn:
+        range: string
+        annotations:
+          writeable: true
+        description: |
+          Bygningens navn.
+      kulturminneId:
+        range: string
+        annotations:
+          writeable: true
+        description: |
+          Bygningens ID i Askeladden.
+        required: true
+      matrikkelnummer:
+        range: Matrikkelnummer
+        annotations:
+          writeable: true
+        description: |
+          Bygningens identifikator i Matrikkelen.

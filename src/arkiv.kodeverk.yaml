@@ -1,0 +1,244 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/arkiv/kodeverk
+name: arkiv.kodeverk
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+
+classes:
+
+  DokumentStatus:
+    description: |
+      Kodeverk for status til et dokument.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 metadatakatalog - nr. M054
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    is_a: Begrep
+
+  DokumentType:
+    description: |
+      Kodeverk for type dokument.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 metadatakatalog - nr. M083
+      
+      I Noark ble begrepet Dokumentkategori endret til Dokumenttype i versjon 4.
+      Begrepet Dokumentkategori brukes i Elements og P360.
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden#!#block-body-2
+    is_a: Begrep
+
+  Format:
+    description: |
+      Dokumentets format.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 metadatakatalog - nr. M701
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+      
+      * https://arkivverket.metakat.no/Objekttype/Index/EAID_A17DA4C4_5952_4511_B44F_C8CA6A790558
+      
+      * https://lovdata.no/forskrift/2017-12-19-2286/§5-17 (Godkjente filformater for arkivdokumenter ved avlevering eller deponering).
+      
+      # Eksempler
+      
+      * RA-TEKST
+      * RA-TIFF6
+      * RA-PDF
+      * RA-XML
+      * RA-JPEG
+      * RA-SOSI
+    is_a: Begrep
+
+  JournalpostType:
+    description: |
+      Navn på type journalpost.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 metadatakatalog - nr. M082
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    is_a: Begrep
+
+  JournalStatus:
+    description: |
+      Status til journalposten, dvs. om dokumentet er registrert, under behandling eller endelig arkivert.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 metadatakatalog - nr. M053
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    is_a: Begrep
+
+  Klassifikasjonstype:
+    description: |
+      Kodeverk for type klassifikasjonssystem.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 metadatakatalog - nr. M086
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    is_a: Begrep
+
+  KorrespondansepartType:
+    description: |
+      Kodeverk over korrespondansepart typer.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 metadatakatalog - nr. M087
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    is_a: Begrep
+
+  Merknadstype:
+    description: |
+      Navn på type merknad
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 metadatakatalog - nr. M084
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    is_a: Begrep
+
+  PartRolle:
+    description: |
+      Angivelse av rollen til parten.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 metadatakatalog - nr. M303
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    is_a: Begrep
+
+  Rolle:
+    description: |
+      Rollen til en arkivressurs.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 metadatakatalog - nr. M581
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    is_a: Begrep
+
+  Saksmappetype:
+    description: |
+      Saksmappetyper brukes for å differensiere innhold og etter hvilke rutiner saker skal behandles.
+      
+      Dette er ikke en del av Noark standarden.
+      
+      # Synonymer
+      <ul>
+       <li>Sakstype (P360)</li>
+      </ul>
+      
+      # Eksempel
+      
+      * Sak
+      * PE
+      * TS
+    is_a: Begrep
+
+  Saksstatus:
+    description: |
+      Status til saksmappen, dvs. hvor langt saksbehandlingen har kommet.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 metadatakatalog - nr. M052
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    is_a: Begrep
+
+  Skjermingshjemmel:
+    description: |
+      Henvisning til hjemmel (paragraf) i offentlighetsloven, sikkerhetsloven eller beskyttelsesinstruksen.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 metadatakatalog - nr. M501
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    is_a: Begrep
+
+  Tilgangsgruppe:
+    description: |
+      Tilgangsgruppe gir mulighet for å skjerme innhold internt for andre brukere.
+    is_a: Begrep
+
+  Tilgangsrestriksjon:
+    description: |
+      Angivelse av at dokumentene som tilhører arkivenheten ikke er offentligtilgjengelig i henhold til offentlighetsloven eller av en annen grunn.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 metadatakatalog - nr. M500
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    is_a: Begrep
+
+  TilknyttetRegistreringSom:
+    description: |
+      Angivelse av hvilken "rolle" dokumentet har i forhold til registreringen.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 metadatakatalog - nr. M217
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    is_a: Begrep
+
+  Variantformat:
+    description: |
+      Angivelse av hvilken variant et dokument forekommer i.
+      
+      # Beskrivelse
+      
+      * Noark 5 versjon 5.0 metadatakatalog - nr. M700
+      
+      # Referanser
+      
+      * https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
+    is_a: Begrep
