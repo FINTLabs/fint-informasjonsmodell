@@ -1,10 +1,14 @@
 # FINT Informasjonsmodell med LinkML
 
-<!-- TOC depthfrom:2 insertanchor:false detectandautosetsection:true -->
+<!-- TOC depthfrom:2 depthto:6 insertanchor:false detectandautosetsection:true -->
 
 - [Definisjon av informasjonsmodellen](#definisjon-av-informasjonsmodellen)
     - [Kardinalitet/multiplisitet](#kardinalitetmultiplisitet)
-        - [Felter og relasjoner](#felter-og-relasjoner)
+        - [Multiplisitet på felter og relasjoner](#multiplisitet-p%C3%A5-felter-og-relasjoner)
+            - [1](#1)
+            - [1](#1)
+            - [*](#)
+            - [*](#)
         - [Forskjell på felter og relasjoner](#forskjell-p%C3%A5-felter-og-relasjoner)
     - [Utgått/deprecated](#utg%C3%A5ttdeprecated)
         - [Felt som er utgått](#felt-som-er-utg%C3%A5tt)
@@ -15,9 +19,15 @@
         - [referanse](#referanse)
         - [abstrakt](#abstrakt)
         - [kompleks datatype](#kompleks-datatype)
+    - [Primærtyper](#prim%C3%A6rtyper)
 - [Pågående avklaringer og beslutninger](#p%C3%A5g%C3%A5ende-avklaringer-og-beslutninger)
-    - [Komplekse datatyper med inlined og inlined_as_list brukes ikkeikke](#komplekse-datatyper-med-inlined-og-inlined_as_list-brukes-ikkeikke)
-    - [Hva gjør vi med isSource/primaryRelation?](#hva-gj%C3%B8r-vi-med-issourceprimaryrelation)
+    - [Komplekse datatyper med inlined og inlined_as_list brukes ikke](#komplekse-datatyper-med-inlined-og-inlined_as_list-brukes-ikke)
+        - [1](#1)
+        - [1](#1)
+        - [*](#)
+        - [*](#)
+    - [Håndtering av isSource for Core](#h%C3%A5ndtering-av-issource-for-core)
+    - [Hvorfor bruker vi attributes i stedet for slots?](#hvorfor-bruker-vi-attributes-i-stedet-for-slots)
 - [Utvikling](#utvikling)
     - [Kom i gang](#kom-i-gang)
     - [Generer LinkML-modell fra Enterprise Architect sin XMI](#generer-linkml-modell-fra-enterprise-architect-sin-xmi)
@@ -37,26 +47,42 @@ LinkML brukes til å definere informasjonsmodellen for FINT. Denne filen beskriv
 
 LinkML bruker `required` og `multivalued` for å definere kardinalitet. Dette er en standard måte å gjøre det på i LinkML.
 
-#### Felter og relasjoner
+#### Multiplisitet på felter og relasjoner
 
 Både felter og relasjoner defineres med `range` i LinkML, men de kan ende opp med å behandles ulikt i generert XMI/Java.
 
+Standardverdi for `required` og `multivalued` er `false`, så da trenger den ikke å spesifiseres.
+
+##### `0..1`
+
 ```yaml
-  gyldighetsperiode:
-    range: Periode          # 0..1
+gyldighetsperiode:
+  range: Periode
+```
 
-  navn:
-    range: Personnavn
-    required: true          # 1..1
+##### `1..1`
 
-  adresser:
-    range: Adresse
-    multivalued: true       # 0..*
+```yaml
+navn:
+  range: Personnavn
+  required: true
+```
 
-  foreldre:
-    range: Person
-    multivalued: true
-    required: true          # 1..*  
+
+##### `0..*`
+
+```yaml
+adresser:
+  range: Adresse
+  multivalued: true
+```
+
+##### `1..*`
+```yaml
+foreldre:
+  range: Person
+  multivalued: true
+  required: true
 ```
 
 #### Forskjell på felter og relasjoner
@@ -179,36 +205,62 @@ Adresse:
     ...
 ```
 
+### Primærtyper
+
+Generatoren mapper UML-primærtypene som brukes i XMI-filen til innebygde LinkML-typer.
+
+| XMI | LinkML |
+| --- | --- |
+| `string` | `string` |
+| `int` | `integer` |
+| `long` | `integer` |
+| `float` | `float` |
+| `boolean` | `boolean` |
+| `date` | `date` |
+| `datetime` | `datetime` |
+
+`double` og `integer` er ikke i bruk i XMI-filen.
 
 ## Pågående avklaringer og beslutninger
 
-### Komplekse datatyper med inlined og inlined_as_list brukes ikkeikke
+### Komplekse datatyper med inlined og inlined_as_list brukes ikke
 
 Disse er brukt for å angi hvordan komplekse datatyper skal serialiseres i JSON, Java, etc. Ved brukt av standard verktøy i LinkML for export vil ikke "komplekse datatyper" bli generert/serialisert riktig.
 
+#### `0..1`
+
 ```yaml
-  postadresse: 
-    range: Adresse
-    inlined: true           # 0..1
-
-  bostedsadresse: 
-    range: Adresse
-    inlined: true           
-    required: true          # 1..1
-
-  adresselinje: 
-    range: Adresselinje
-    multivalued: true
-    inlined_as_list: true   # 0..*
-
-  adresselinje2:
-    range: Adresselinje
-    multivalued: true
-    inlined_as_list: true   
-    required: true          # 1..*
+postadresse: 
+  range: Adresse
+  inlined: true
 ```
 
-### Hva gjør vi med isSource/primaryRelation?
+#### `1..1`
+```yaml
+bostedsadresse: 
+  range: Adresse
+  inlined: true           
+  required: true
+```
+
+#### `0..*`
+```yaml
+adresselinje: 
+  range: Adresselinje
+  multivalued: true
+  inlined_as_list: true
+```
+
+#### `1..*`
+```yaml
+postadresselinje:
+  range: Adresselinje
+  multivalued: true
+  inlined_as_list: true   
+  required: true
+```
+
+### Håndtering av isSource for Core
 
 Bedre navn enn primaryRelation?
 
@@ -221,6 +273,9 @@ Bedre navn enn primaryRelation?
       primaryRelation: true # isSource, 
 ```
 
+### Hvorfor bruker vi attributes i stedet for slots?
+
+I LinkML kan man bruke `attributes` eller `slots` for å definere egenskaper. Vi bruker `attributes` fordi da får vi oppsett av egenskapene inline på objektet. Og så har vi ikke behov for å definere atributter/egenskaper som skal brukes på flere klasser.
 
 ## Utvikling
 
