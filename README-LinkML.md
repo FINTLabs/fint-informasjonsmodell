@@ -1,10 +1,45 @@
-# Er LinkML et alternativ til Enterprise Architect?
+# FINT Informasjonsmodell med LinkML
 
-## Definisjon av informasjonsmodell i LinkML
+<!-- TOC depthfrom:2 insertanchor:false detectandautosetsection:true -->
+
+- [Definisjon av informasjonsmodellen](#definisjon-av-informasjonsmodellen)
+    - [Kardinalitet/multiplisitet](#kardinalitetmultiplisitet)
+        - [Felter og relasjoner](#felter-og-relasjoner)
+        - [Forskjell på felter og relasjoner](#forskjell-p%C3%A5-felter-og-relasjoner)
+    - [Utgått/deprecated](#utg%C3%A5ttdeprecated)
+        - [Felt som er utgått](#felt-som-er-utg%C3%A5tt)
+        - [Klasse som er utgått](#klasse-som-er-utg%C3%A5tt)
+        - [Relasjon som er utgått](#relasjon-som-er-utg%C3%A5tt)
+    - [Stereotyper på klasser](#stereotyper-p%C3%A5-klasser)
+        - [hovedklasse](#hovedklasse)
+        - [referanse](#referanse)
+        - [abstrakt](#abstrakt)
+        - [kompleks datatype](#kompleks-datatype)
+- [Pågående avklaringer og beslutninger](#p%C3%A5g%C3%A5ende-avklaringer-og-beslutninger)
+    - [Komplekse datatyper med inlined og inlined_as_list brukes ikkeikke](#komplekse-datatyper-med-inlined-og-inlined_as_list-brukes-ikkeikke)
+    - [Hva gjør vi med isSource/primaryRelation?](#hva-gj%C3%B8r-vi-med-issourceprimaryrelation)
+- [Utvikling](#utvikling)
+    - [Kom i gang](#kom-i-gang)
+    - [Generer LinkML-modell fra Enterprise Architect sin XMI](#generer-linkml-modell-fra-enterprise-architect-sin-xmi)
+    - [Generer XMI som likner på Enterprise Architect sin XMI fra LinkML](#generer-xmi-som-likner-p%C3%A5-enterprise-architect-sin-xmi-fra-linkml)
+    - [Valider og lint LinkML-modellll](#valider-og-lint-linkml-modellll)
+    - [Teste genering av Java](#teste-genering-av-java)
+    - [Verktøy som blir tilgjengelig med LinkML](#verkt%C3%B8y-som-blir-tilgjengelig-med-linkml)
+    - [Andre verktøy](#andre-verkt%C3%B8y)
+
+<!-- /TOC -->
+
+## Definisjon av informasjonsmodellen
+
+LinkML brukes til å definere informasjonsmodellen for FINT. Denne filen beskriver hvordan vi bruker LinkML til å definere modellen.
 
 ### Kardinalitet/multiplisitet
 
+LinkML bruker `required` og `multivalued` for å definere kardinalitet. Dette er en standard måte å gjøre det på i LinkML.
+
 #### Felter og relasjoner
+
+Både felter og relasjoner defineres med `range` i LinkML, men de kan ende opp med å behandles ulikt i generert XMI/Java.
 
 ```yaml
   gyldighetsperiode:
@@ -26,11 +61,11 @@
 
 #### Forskjell på felter og relasjoner
 
-I LinkML ser begge deler like ut (`attributes` med `range`), men i generert XMI/Java behandles de ulikt:
+I LinkML ser begge deler like ut (`attributes` med `range`), men i generert XMI/Java/etc behandles de ulikt:
 
 - **Felt (attributt)**: `range` er en primitiv type (`string`, `boolean`, `integer`, osv.) eller en **kompleks datatype** (klasse uten `Identifikator` og uten `abstract: true`).
   - Genereres som felt i Java (`private ...`).
-- **Relasjon**: `range` peker til en **hovedklasse** (klasse med `Identifikator`) eller en annen ikke-datatype klasse.
+- **Relasjon**: `range` peker til en **hovedklasse** (klasse med `Identifikator`).
   - Genereres som relasjon i Java (`Relasjonsnavn` / links i resource-klasser), ikke som vanlig felt.
 
 Praktisk tommelfingerregel:
@@ -38,42 +73,43 @@ Praktisk tommelfingerregel:
 - `Identifikator` i målklassen => relasjon
 - Ingen `Identifikator` i målklassen => felt (kompleks datatype)
 
-#### Felter med komplekse datatyper
 
-```yaml
-  postadresse: 
-    range: Adresse
-    inlined: true           # 0..1
-
-  bostedsadresse: 
-    range: Adresse
-    inlined: true           
-    required: true          # 1..1
-
-  adresselinje: 
-    range: Adresselinje
-    multivalued: true
-    inlined_as_list: true   # 0..*
-
-  adresselinje2:
-    range: Adresselinje
-    multivalued: true
-    inlined_as_list: true   
-    required: true          # 1..*
-```
 
 ### Utgått/deprecated
 
+#### Felt som er utgått
+
 ```yaml
-  kommunenavn:
-    range: string
-    deprecated: Ikke i bruk. Bruk i stedet feltet kommune.
+  eksamensgruppe:
+    range: Eksamensgruppe
+    description: |
+Eksamensgruppe vurderingen er foretatt i.
+    deprecated: >  
+      Bruk Eksamensvurdering
 ```
 
-### Klasser
+#### Klasse som er utgått
+
+```yaml
+Medlemskap:
+  deprecated: >
+    Gruppemedlemskap representeres i stedet som relasjoner mellom
+    Elevforhold eller Undervisningsforhold og de aktuelle gruppene.
+```
+
+#### Relasjon som er utgått
+
+```yaml
+  attributes:
+    person:
+      deprecated: >
+        Kontaktperson inneholder nå navn og kontaktinformasjon,
+        som skal brukes i stedet.
+```
+
+### Stereotyper på klasser
 
 Det er behov for å bevare EA-stereotype på klassenivå i LinkML. `hovedklasse` og `abstrakt` utledes fortsatt av generatorlogikken (`Identifikator`/arv/`abstract`) og trenger derfor ikke å settes eksplisitt i LinkML.
-
 
 #### hovedklasse
 
@@ -129,7 +165,7 @@ Aktør:
 
 #### kompleks datatype
 
-Klasser som ikke er merket som abstrakt og ikke har noen identifikator er komplekse datatyper.
+Klasser som ikke er merket som abstrakt og ikke har noen identifikator er komplekse datatyper. Se [Se avklaringen om komplekse datatyper](#komplekse-datatyper-med-inlined-og-inlined_as_list-brukes-ikke)
 
 ```yaml
 Adresse:
@@ -143,7 +179,38 @@ Adresse:
     ...
 ```
 
-#### Hva gjør vi med isSource/primaryRelation?
+
+## Pågående avklaringer og beslutninger
+
+### Komplekse datatyper med inlined og inlined_as_list brukes ikkeikke
+
+Disse er brukt for å angi hvordan komplekse datatyper skal serialiseres i JSON, Java, etc. Ved brukt av standard verktøy i LinkML for export vil ikke "komplekse datatyper" bli generert/serialisert riktig.
+
+```yaml
+  postadresse: 
+    range: Adresse
+    inlined: true           # 0..1
+
+  bostedsadresse: 
+    range: Adresse
+    inlined: true           
+    required: true          # 1..1
+
+  adresselinje: 
+    range: Adresselinje
+    multivalued: true
+    inlined_as_list: true   # 0..*
+
+  adresselinje2:
+    range: Adresselinje
+    multivalued: true
+    inlined_as_list: true   
+    required: true          # 1..*
+```
+
+### Hva gjør vi med isSource/primaryRelation?
+
+Bedre navn enn primaryRelation?
 
 ```yaml
 ...
@@ -179,7 +246,7 @@ Dette gjøres for å beholde bakoverkompabilitet med XMI, og alle tjenester som 
 python scripts/generate_xmi_from_linkml.py --src src --out FINT-informasjonsmodell.xml
 ```
 
-### Valider og _lint_ LinkML-modell
+### Valider og lint LinkML-modellll
 
 ```bash
 linkml-lint --validate src
