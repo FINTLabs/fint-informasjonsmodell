@@ -43,15 +43,15 @@ EA_JAVA_PRIMITIVE_MAP_NORMALIZED = {k.lower(): v for k, v in EA_JAVA_PRIMITIVE_M
 MODEL_PRIMITIVE_RANGE_MAP = {
     'string': 'string',
     'int': 'integer',
-    'integer': 'integer',
+    # 'integer': 'integer',  # not used in XMI
     'long': 'integer',
     'float': 'float',
-    'double': 'float',
+    # 'double': 'float',  # not used in XMI
     'boolean': 'boolean',
     'date': 'date',
     'datetime': 'datetime',
     'dateTime': 'datetime',
-    'unlimitednatural': 'integer',
+    # 'unlimitednatural': 'integer',  # not used in XMI
 }
 MODEL_PRIMITIVE_RANGE_MAP_NORMALIZED = {k.lower(): v for k, v in MODEL_PRIMITIVE_RANGE_MAP.items()}
 PRIMITIVE_RANGES = set(PRIMITIVE_MAP_NORMALIZED.values()) | set(EA_JAVA_PRIMITIVE_MAP_NORMALIZED.values()) | set(MODEL_PRIMITIVE_RANGE_MAP_NORMALIZED.values())
