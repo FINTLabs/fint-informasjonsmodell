@@ -22,10 +22,8 @@
     - [Primærtyper](#prim%C3%A6rtyper)
 - [Pågående avklaringer og beslutninger](#p%C3%A5g%C3%A5ende-avklaringer-og-beslutninger)
     - [Komplekse datatyper med inlined og inlined_as_list brukes ikke](#komplekse-datatyper-med-inlined-og-inlined_as_list-brukes-ikke)
-        - [1](#1)
-        - [1](#1)
-        - [*](#)
-        - [*](#)
+        - [Single-valued x..1](#single-valued-x1)
+        - [Multi-valued x..*](#multi-valued-x)
     - [Håndtering av isSource for Core](#h%C3%A5ndtering-av-issource-for-core)
     - [Hvorfor bruker vi attributes i stedet for slots?](#hvorfor-bruker-vi-attributes-i-stedet-for-slots)
 - [Utvikling](#utvikling)
@@ -227,15 +225,10 @@ Generatoren mapper UML-primærtypene som brukes i XMI-filen til innebygde LinkML
 
 Disse er brukt for å angi hvordan komplekse datatyper skal serialiseres i JSON, Java, etc. Ved brukt av standard verktøy i LinkML for export vil ikke "komplekse datatyper" bli generert/serialisert riktig.
 
-#### `0..1`
+#### Single-valued (`x..1`)
 
-```yaml
-postadresse: 
-  range: Adresse
-  inlined: true
-```
+På alle single-valued felter (`1..1` eller `0..1`) som er komplekse datatyper, må `inlined: true` brukes.
 
-#### `1..1`
 ```yaml
 bostedsadresse: 
   range: Adresse
@@ -243,15 +236,10 @@ bostedsadresse:
   required: true
 ```
 
-#### `0..*`
-```yaml
-adresselinje: 
-  range: Adresselinje
-  multivalued: true
-  inlined_as_list: true
-```
+#### Multi-valued (`x..*`)
 
-#### `1..*`
+På alle multivalued felter (`1..*` eller `0..*`) som er komplekse datatyper, må `inlined_as_list: true` brukes.
+
 ```yaml
 postadresselinje:
   range: Adresselinje
@@ -265,7 +253,6 @@ postadresselinje:
 Bedre navn enn primaryRelation?
 
 ```yaml
-...
   kontaktperson:
     range: Person
     inverse: pårørende
@@ -283,6 +270,8 @@ I LinkML kan man bruke `attributes` eller `slots` for å definere egenskaper. Vi
 
 ```bash
 brew install uv
+# lage virutalenv for python
+uv venv
 ```
 
 ### Generer LinkML-modell fra Enterprise Architect sin XMI
