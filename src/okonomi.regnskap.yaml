@@ -1,0 +1,279 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/okonomi/regnskap
+name: okonomi.regnskap
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+  - administrasjon.komplekse-datatyper
+  - administrasjon.personal
+  - felles.kodeverk
+
+classes:
+
+  Bilag:
+    description: |
+      Dokumentasjon til en transaksjon.
+    attributes:
+      bilagsdato:
+        range: date
+        annotations:
+          writeable: true
+        description: |
+          Dato bilaget er registrert.
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990` -&gt; `1990-03-29T12:00:00Z`
+          
+          * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
+        required: true
+      bilagsnummer:
+        range: string
+        description: |
+          Nummer på bilaget.
+      data:
+        range: string
+        annotations:
+          writeable: true
+        description: |
+          Bilagets fil, kodet som Base64.
+      filnavn:
+        range: string
+        annotations:
+          writeable: true
+        description: |
+          Navn på bilagets fil.
+      referanse:
+        range: string
+        annotations:
+          writeable: true
+        description: |
+          Ekstern referanse, for eksempel fakturanummer.
+      url:
+        range: string
+        annotations:
+          writeable: true
+        description: |
+          URL til eksternt dokument.
+
+  Leverandør:
+    description: |
+      Person eller virksomhet som leverer produkter eller tjenester.
+    attributes:
+      leverandørnummer:
+        range: Identifikator
+        description: |
+          Nummer som identifiserer en leverandør.
+      systemId:
+        range: Identifikator
+        description: |
+          Intern identifikator i økonomisystemet.
+        required: true
+      kontonummer:
+        range: string
+        annotations:
+          writeable: true
+        description: |
+          Kontonummer til leverandøren.
+      leverandørgruppe:
+        range: Leverandørgruppe
+        inverse: leverandør
+        annotations:
+          primaryRelation: true
+        description: |
+          Gruppe av leverandører.
+
+  Leverandørgruppe:
+    description: |
+      Gruppering av leverandører.
+    attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Intern unik identifikator i økonomisystemet.
+        required: true
+      navn:
+        range: string
+        annotations:
+          writeable: true
+        description: |
+          Navn på leverandørgruppen.
+        required: true
+      leverandør:
+        range: Leverandør
+        inverse: leverandørgruppe
+        description: |
+          Leverandører i en leverandørgruppe.
+        multivalued: true
+
+  Postering:
+    description: |
+      Føring på en konto i regnskapet.
+    attributes:
+      posteringsId:
+        range: Identifikator
+        description: |
+          Intern unik identifikator i økonomisystemet.
+        required: true
+      beløp:
+        range: integer
+        annotations:
+          writeable: true
+        description: |
+          Posteringens beløp med to desimaler.
+          
+          # Eksempel
+          123,45 NOK tilsvarer verdien 12345.
+        required: true
+      debet:
+        range: boolean
+        annotations:
+          writeable: true
+        description: |
+          Angir om posteringen er debet eller kredit.
+          
+          True: debet
+          
+          False: kredit
+        required: true
+      kontering:
+        range: Kontostreng
+        annotations:
+          writeable: true
+        description: |
+          Kontodimmensjoner for posteringen.
+        required: true
+      transaksjon:
+        range: Transaksjon
+        inverse: postering
+        annotations:
+          primaryRelation: true
+        description: |
+          Transaksjonen posteringen tilhører.
+
+  Transaksjon:
+    description: |
+      Overføring av penger til eller fra eksterne parter.
+    attributes:
+      transaksjonsId:
+        range: Identifikator
+        description: |
+          Intern unik identifikator i økonomisystemet.
+        required: true
+      beløp:
+        range: integer
+        annotations:
+          writeable: true
+        description: |
+          Transaksjonens beløp med to desimaler.
+          
+          # Eksempel
+          123,45 NOK tilsvarer verdien 12345.
+        required: true
+      beskrivelse:
+        range: string
+        annotations:
+          writeable: true
+        description: |
+          Beskrivelse av transaksjonen.
+      bilag:
+        range: Bilag
+        annotations:
+          writeable: true
+        description: |
+          Bilag til transaksjonen.
+        multivalued: true
+      forfallsdato:
+        range: date
+        annotations:
+          writeable: true
+        description: |
+          Dato transaksjonen forfaller.
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990` -&gt; `1990-03-29T12:00:00Z`
+          
+          * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
+        required: true
+      oppdateringstidspunkt:
+        range: datetime
+        annotations:
+          writeable: true
+        description: |
+          Tidspunkt for siste endring i transaksjonen.
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990 klokken 13:30 (UTC +1)` -&gt; `1990-03-29T12:30:00Z`
+          
+          * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
+      transaksjonstidspunkt:
+        range: datetime
+        annotations:
+          writeable: true
+        description: |
+          Tidspunkt for registrering av transaksjonen.
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990 klokken 13:30 (UTC +1)` -&gt; `1990-03-29T12:30:00Z`
+          
+          * `29. juni 1990 klokken 13:30 (UTC +2 sommertid)` -&gt; `1990-06-29T11:30:00Z`
+      ansvarlig:
+        range: Personalressurs
+        description: |
+          Ansatt som er ansvarlig for å godkjenne transaksjonen.
+      leverandør:
+        range: Leverandør
+        description: |
+          Leverandør knyttet  til transaksjonen.
+      postering:
+        range: Postering
+        inverse: transaksjon
+        description: |
+          Posteringer tilhørende transaksjonen.
+        multivalued: true
+        required: true
+      valuta:
+        range: Valuta
+        description: |
+          Valuta for oppgitt beløp.
+        required: true

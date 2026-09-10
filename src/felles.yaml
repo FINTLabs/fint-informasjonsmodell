@@ -1,0 +1,248 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/felles
+name: felles
+imports:
+  - linkml:types
+  - administrasjon.personal
+  - felles.basisklasser
+  - felles.kodeverk
+  - felles.kodeverk.iso
+  - felles.komplekse-datatyper
+  - utdanning.elev
+  - utdanning.larling
+  - utdanning.ot
+
+classes:
+
+  Kontaktperson:
+    description: |
+      Kontaktperson til en person.
+      
+      # Beskrivelse
+      
+      Kontaktperson er personer som kan kontaktes dersom det er behov for det.
+      
+      Kontaktperson kalles også pårørende.
+    attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Kildesystemets unike identifikator for kontaktperson.
+        required: true
+      kontaktinformasjon:
+        range: Kontaktinformasjon
+        annotations:
+          writeable: true
+        description: |
+          Kontaktinformasjon for kontaktperson.
+      navn:
+        range: Personnavn
+        annotations:
+          writeable: true
+        description: |
+          Navn på kontaktperson.
+      type:
+        range: string
+        annotations:
+          writeable: true
+        description: |
+          Beskriver hva slags type kontaktperson.
+          
+          # Eksempel
+          
+          - forelder
+          - ektefelle
+          - barn
+          - søsken
+          - bestemor
+        required: true
+      kontaktperson:
+        range: Person
+        inverse: pårørende
+        annotations:
+          primaryRelation: true
+        description: |
+          Personer kontaktpersonen er pårørende for.
+        multivalued: true
+
+  Person:
+    description: |
+      Fysiske private personer
+      
+      # Beskrivelse
+      
+      Fysiske personer. Arver felter fra [Aktør](Class:Aktør).
+      
+      # Eksempler
+      
+      ## Riktig
+      
+      * Karl August Haraldsen
+      
+      ## Feil
+      
+      * Statsminister
+      
+      # Referanse
+      
+      * [Wiki side](https://no.wikipedia.org/wiki/Fysisk_person)
+    is_a: Aktør
+    attributes:
+      fødselsnummer:
+        range: Identifikator
+        description: |
+          Fødselsnummer eller en av de fiktive variantene
+          
+          # Beskrivelse
+          
+          Et ellevesifret identifikasjonsnummer som alle folkeregistrerte i Norge har. Fødselsnummeret består av fødselsdato (6 siffer) og personnummer (5 siffer).
+          
+          # Format 
+          
+          11 siffer
+          
+          # Referanser
+          
+          * [Wiki side](https://no.wikipedia.org/wiki/Fødselsnummer)
+          * [Registreringshåndboken A01.Fødselsnummer](http://regbok.udir.no/35004/3344/35042-1027331.html)
+        required: true
+      bilde:
+        range: string
+        description: |
+          HTTP(S) lenke til et bilde av en person.
+          
+          Det forutsettes at det er bilde med den beste oppløsningen mulig.
+      bostedsadresse:
+        range: Adresse
+        annotations:
+          writeable: true
+        description: |
+          Folkeregistrert adresse til person
+          
+          # Format
+          
+          Se beskrivelse av [klasse Adresse](Class:Adresse)
+      fødselsdato:
+        range: date
+        description: |
+          Dato for fødsel
+          
+          # Format
+          
+          ISO 8601 format `YYYY-MM-DDThh:mm:ssZ`
+          
+          Timedelen er egentlig unødvendig der bare dato har verdi. Det anbefales at en da setter den til klokken 12 på dagen (zulu). Derved kan dato leses direkte uten å gjøre om til lokaltid ( i Norge).
+          
+          ## Referanser
+          
+          * ISO 8601 : https://en.wikipedia.org/wiki/ISO_8601
+          
+          ## Eksempler
+          
+          * `29. mars 1990` -&gt; `1990-03-29T12:00:00Z`
+          
+          * `29. juni 1990` -&gt; `1990-06-29T12:00:00Z`
+      navn:
+        range: Personnavn
+        description: |
+          Angir navn på en person. 
+          
+          # Beskrivelse
+          
+          Se beskrivelse for [Personnavn klasse](Class:Personnavn)
+        required: true
+      elev:
+        range: Elev
+        inverse: person
+        description: |
+          En person kan være en elev
+      foreldre:
+        range: Person
+        inverse: foreldreansvar
+        annotations:
+          primaryRelation: true
+        description: |
+          Den/De som har foreldreansvar til personen.
+          
+          Dette kan være personens foreldre eller adoptivforeldre.
+        multivalued: true
+      foreldreansvar:
+        range: Person
+        inverse: foreldre
+        annotations:
+          primaryRelation: true
+        description: |
+          Personer denne personen har foreldreansvar for.
+          
+          # Referanser
+          
+          - Folkeregisterloven §3-1 og Folkeregisterforskriften  §3-1-1
+          - Barnelova §§ 2-7
+          - https://www.skatteetaten.no/person/folkeregister/fodsel-og-navnevalg/barn-fodt-i-norge/farskap-og-foreldreansvar/
+        multivalued: true
+      kjønn:
+        range: Kjønn
+        description: |
+          Kjønn for person.
+          
+          # Beskrivelse
+          
+          Se beskrivelse av [Kjønn klasse](Class:Kjønn)
+      kommune:
+        range: Kommune
+        description: |
+          Kommune hvor personen er bosatt
+      lærling:
+        range: Lærling
+        inverse: person
+        description: |
+          En person kan være en lærling.
+        multivalued: true
+      morsmål:
+        range: Språk
+        description: |
+          Morsmål til en person
+      målform:
+        range: Språk
+        description: |
+          Målform som denne personen foretrekker å bruke (eksempelvis nynorsk, bokmål eller samisk).
+      otungdom:
+        range: OtUngdom
+        inverse: person
+        description: |
+          En person kan være en OT-ungdom.
+      personalressurs:
+        range: Personalressurs
+        inverse: person
+        annotations:
+          primaryRelation: true
+        description: |
+          Personalressurs til person. Forhold som arbeidstaker.
+      pårørende:
+        range: Kontaktperson
+        inverse: kontaktperson
+        description: |
+          Pårørende kontaktperson til person.
+        multivalued: true
+      statsborgerskap:
+        range: Landkode
+        description: |
+          Alle statsborgerskap som personen har
+        multivalued: true
+
+  Virksomhet:
+    description: |
+      En juridisk organisasjon som produserer varer eller tjenester.
+    is_a: Enhet
+    attributes:
+      virksomhetsId:
+        range: Identifikator
+        description: |
+          Intern unik identifikator i økonomisystemet
+        required: true
+      lærling:
+        range: Lærling
+        inverse: bedrift
+        description: |
+          Lærling i virksomheten.
+        multivalued: true

@@ -1,0 +1,150 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/administrasjon/fullmakt
+name: administrasjon.fullmakt
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+  - administrasjon.kodeverk
+  - administrasjon.organisasjon
+  - administrasjon.personal
+
+classes:
+
+  Fullmakt:
+    description: |
+      Fullmakt til å gjøre handlinger i forhold til en gitt Rolle.
+      
+      # Beskrivelse
+      
+      Fullmakter innehas av fysiske eller juridiske personer, og er knyttet til kontodimensjon eller organisasjonselement. Fullmakter er delegert til personer, disse benevnes som fullmektige.
+      
+      Fullmektige kan ha stedfortreder. Stedfortrederen kan utøve den samme fullmakten som den fullmektige.
+      
+      Fullmakter beskrives i delegasjonsreglementet for organisasjonen. For fylkeskommuner er dette et reglement besluttet av Fylkestinget og videre delegert av Fylkesrådmannen.
+      
+      Dersom fullmakt har relasjon til mer enn en kontodimensjon (og organisasjonselement) er det å regne som en kombinasjonsfullmakt. 
+      
+      # Eksempler
+      
+      Rektor ved Eidsvoll VGS har anvisningsfullmakt for ansvar 241.
+    attributes:
+      systemId:
+        range: Identifikator
+        description: |
+          Kildesystemets unike identifikator for fullmakten.
+        required: true
+      gyldighetsperiode:
+        range: Periode
+        description: |
+          Periode som fullmakten er gyldig for.
+        required: true
+      aktivitet:
+        range: Aktivitet
+        description: |
+          Myndighet på kontodimensjon aktivitet.
+      anlegg:
+        range: Anlegg
+        description: |
+          Myndighet på kontodimensjon anlegg.
+      ansvar:
+        range: Ansvar
+        description: |
+          Myndighet på kontodimensjon ansvar.
+      art:
+        range: Art
+        description: |
+          Myndighet på kontodimensjon art.
+      diverse:
+        range: Diverse
+        description: |
+          Myndighet på kontodimensjon diverse.
+      formål:
+        range: Formål
+        description: |
+          Formål viser aktivitet og tjenesteproduksjon
+      fullmektig:
+        range: Personalressurs
+        inverse: fullmakt
+        annotations:
+          primaryRelation: true
+        description: |
+          Personalressurs som har blitt gitt fullmakt til en gitt rolle.
+      funksjon:
+        range: Funksjon
+        description: |
+          Myndighet på kontodimensjon funksjon.
+      kontrakt:
+        range: Kontrakt
+        description: |
+          Myndighet på kontodimensjon kontrakt.
+      løpenummer:
+        range: Løpenummer
+        description: |
+          Myndighet på kontodimensjon løpenummer.
+      objekt:
+        range: Objekt
+        description: |
+          Myndighet på kontodimensjon objekt.
+      organisasjonselement:
+        range: Organisasjonselement
+        description: |
+          Myndighet på organisasjonselement.
+      prosjekt:
+        range: Prosjekt
+        description: |
+          Myndighet på kontodimensjon prosjekt.
+      ramme:
+        range: Ramme
+        description: |
+          Myndighet på kontodimensjon ramme.
+      rolle:
+        range: Rolle
+        inverse: fullmakt
+        annotations:
+          primaryRelation: true
+        description: |
+          Hvilken type fullmakt
+        required: true
+      stedfortreder:
+        range: Personalressurs
+        inverse: stedfortreder
+        annotations:
+          primaryRelation: true
+        description: |
+          Personalressurs som er stedfortreder for den fullmektige.
+          
+          # Beskrivelse
+          
+          Gjeldende stedfortreder innenfor angitt gyldighetsperiode til fullmakten.
+          
+          Dersom det finnes flere stedfortredere må kildesystemet velge den stedfortreder som er den primære. Stedfortreder må være tilgjengelig i perioden som fullmakten er gyldig.
+
+  Rolle:
+    description: |
+      Rettighet eller type fullmakt.
+      
+      De vanligste rollene er:
+      
+      - Attestant
+      - Anviser
+      - Bestiller
+      - Kontering
+    attributes:
+      navn:
+        range: Identifikator
+        description: |
+          Navn på rolle. Unik identifikator.
+        required: true
+      beskrivelse:
+        range: string
+        description: |
+          Utfyllende beskrivelse av hva rollen gir fullmakt til.
+        required: true
+      fullmakt:
+        range: Fullmakt
+        inverse: rolle
+        description: |
+          Alle fullmakter av denne type
+        multivalued: true
+        required: true

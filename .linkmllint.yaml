@@ -1,0 +1,7 @@
+extends: recommended
+rules:
+  # Tillater å bruke norske tegn i klassenavn og attributter
+  standard_naming:
+    class_pattern: "^[A-ZÆØÅ][A-Za-zÆØÅæøå0-9_]*$"
+    slot_pattern: "^[a-zæøå_][A-Za-zÆØÅæøå0-9_]*$"
+    level: warning

@@ -1,0 +1,74 @@
+# yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
+id: https://w3id.org/novari/fint/administrasjon/komplekse-datatyper
+name: administrasjon.komplekse-datatyper
+imports:
+  - linkml:types
+  - felles.basisklasser
+  - felles.komplekse-datatyper
+  - administrasjon.kodeverk
+
+classes:
+
+  Kontostreng:
+    description: |
+      Sammensetning av kontodimensjoner for bokføring
+      
+      # Beskrivelse
+      
+      Henvisninger til koder i alle kontodimensjoner for kontering av en kostnad eller inntekt.
+    attributes:
+      aktivitet:
+        range: Aktivitet
+        description: |
+          Detaljering av funksjon.
+      anlegg:
+        range: Anlegg
+        description: |
+          Objekt som skal aktiveres eller avskrives.
+      ansvar:
+        range: Ansvar
+        description: |
+          Ansvarlig for en utgift eller inntekt.
+        required: true
+      art:
+        range: Art
+        description: |
+          Typen inntekt eller utgift.
+        required: true
+      diverse:
+        range: Diverse
+        description: |
+          Spesifikasjon som ikke fremkommer i øvrige dimensjoner.
+      formål:
+        range: Formål
+        description: |
+          Formål viser aktivitet og tjenesteproduksjon
+      funksjon:
+        range: Funksjon
+        description: |
+          Det som blir produsert eller tjenesten som blir levert.
+        required: true
+      kontrakt:
+        range: Kontrakt
+        description: |
+          Kontostrengens kontraktsegment.
+      løpenummer:
+        range: Løpenummer
+        description: |
+          Løpenummer i en nummerserie.
+      objekt:
+        range: Objekt
+        description: |
+          Objekt som skal aktiveres eller avskrives.
+      prosjekt:
+        range: Prosjekt
+        description: |
+          Kontostrengens prosjektsegment.
+      prosjektart:
+        range: Prosjektart
+        description: |
+          Deloppgave eller delprosjekt.
+      ramme:
+        range: Ramme
+        description: |
+          Budsjettramme som skal bære kostnadene.
