@@ -3,43 +3,58 @@
 <!-- TOC depthfrom:2 depthto:6 insertanchor:false detectandautosetsection:true -->
 
 - [Definisjon av informasjonsmodellen](#definisjon-av-informasjonsmodellen)
-    - [Kardinalitet/multiplisitet](#kardinalitetmultiplisitet)
-        - [Multiplisitet på felter og relasjoner](#multiplisitet-p%C3%A5-felter-og-relasjoner)
-            - [1](#1)
-            - [1](#1)
-            - [*](#)
-            - [*](#)
-        - [Forskjell på felter og relasjoner](#forskjell-p%C3%A5-felter-og-relasjoner)
-    - [Utgått/deprecated](#utg%C3%A5ttdeprecated)
-        - [Felt som er utgått](#felt-som-er-utg%C3%A5tt)
-        - [Klasse som er utgått](#klasse-som-er-utg%C3%A5tt)
-        - [Relasjon som er utgått](#relasjon-som-er-utg%C3%A5tt)
-    - [Stereotyper på klasser](#stereotyper-p%C3%A5-klasser)
-        - [hovedklasse](#hovedklasse)
-        - [referanse](#referanse)
-        - [abstrakt](#abstrakt)
-        - [kompleks datatype](#kompleks-datatype)
-    - [Primærtyper](#prim%C3%A6rtyper)
+  - [Stabile skjema-ID-er](#stabile-skjema-id-er)
+  - [Kardinalitet/multiplisitet](#kardinalitetmultiplisitet)
+    - [Multiplisitet på felter og relasjoner](#multiplisitet-p%C3%A5-felter-og-relasjoner)
+      - [0..1](#01)
+      - [1..1](#11)
+      - [0..*](#0)
+      - [1..*](#1)
+    - [Forskjell på felter og relasjoner](#forskjell-p%C3%A5-felter-og-relasjoner)
+  - [Utgått/deprecated](#utg%C3%A5ttdeprecated)
+    - [Felt som er utgått](#felt-som-er-utg%C3%A5tt)
+    - [Klasse som er utgått](#klasse-som-er-utg%C3%A5tt)
+    - [Relasjon som er utgått](#relasjon-som-er-utg%C3%A5tt)
+  - [Stereotyper på klasser](#stereotyper-p%C3%A5-klasser)
+    - [hovedklasse](#hovedklasse)
+    - [referanse](#referanse)
+    - [abstrakt](#abstrakt)
+    - [kompleks datatype](#kompleks-datatype)
+  - [Primærtyper](#prim%C3%A6rtyper)
+    - [Heltall og int32](#heltall-og-int32)
 - [Pågående avklaringer og beslutninger](#p%C3%A5g%C3%A5ende-avklaringer-og-beslutninger)
-    - [Komplekse datatyper med inlined og inlined_as_list brukes ikke](#komplekse-datatyper-med-inlined-og-inlined_as_list-brukes-ikke)
-        - [Single-valued x..1](#single-valued-x1)
-        - [Multi-valued x..*](#multi-valued-x)
-    - [Håndtering av isSource for Core](#h%C3%A5ndtering-av-issource-for-core)
-    - [Hvorfor bruker vi attributes i stedet for slots?](#hvorfor-bruker-vi-attributes-i-stedet-for-slots)
+  - [Komplekse datatyper med inlined og inlined_as_list brukes ikke](#komplekse-datatyper-med-inlined-og-inlined_as_list-brukes-ikke)
+    - [Single-valued (x..1)](#single-valued-x1)
+    - [Multi-valued (x..*)](#multi-valued-x)
+  - [Håndtering av isSource for Core](#h%C3%A5ndtering-av-issource-for-core)
+  - [Hvorfor bruker vi attributes i stedet for slots?](#hvorfor-bruker-vi-attributes-i-stedet-for-slots)
 - [Utvikling](#utvikling)
-    - [Kom i gang](#kom-i-gang)
-    - [Generer LinkML-modell fra Enterprise Architect sin XMI](#generer-linkml-modell-fra-enterprise-architect-sin-xmi)
-    - [Generer XMI som likner på Enterprise Architect sin XMI fra LinkML](#generer-xmi-som-likner-p%C3%A5-enterprise-architect-sin-xmi-fra-linkml)
-    - [Valider og lint LinkML-modellll](#valider-og-lint-linkml-modellll)
-    - [Teste genering av Java](#teste-genering-av-java)
-    - [Verktøy som blir tilgjengelig med LinkML](#verkt%C3%B8y-som-blir-tilgjengelig-med-linkml)
-    - [Andre verktøy](#andre-verkt%C3%B8y)
+  - [Kom i gang](#kom-i-gang)
+  - [Generer LinkML-modell fra Enterprise Architect sin XMI](#generer-linkml-modell-fra-enterprise-architect-sin-xmi)
+  - [Generer XMI (som likner på Enterprise Architect sin XMI) fra LinkML](#generer-xmi-som-likner-p%C3%A5-enterprise-architect-sin-xmi-fra-linkml)
+  - [Valider og lint LinkML-modellll](#valider-og-lint-linkml-modellll)
+  - [Teste genering av Java](#teste-genering-av-java)
+  - [Verktøy som blir tilgjengelig med LinkML](#verkt%C3%B8y-som-blir-tilgjengelig-med-linkml)
+  - [Andre verktøy](#andre-verkt%C3%B8y)
 
 <!-- /TOC -->
 
 ## Definisjon av informasjonsmodellen
 
 LinkML brukes til å definere informasjonsmodellen for FINT. Denne filen beskriver hvordan vi bruker LinkML til å definere modellen.
+
+### Stabile skjema-ID-er
+
+Alle FINT-skjemaer bruker `https://w3id.org/fint/` som prefiks i `id`. Eksempel fra [utdanning.vurdering](src/utdanning.vurdering.yaml):
+
+```yaml
+id: https://w3id.org/fint/utdanning/vurdering
+name: utdanning.vurdering
+```
+
+[w3id.org](https://w3id.org/) tilbyr permanente URL-er med videresending. Dette gjør at skjema-ID-en kan beholdes selv om stedet der skjemaet eller dokumentasjonen publiseres, endres.
+
+Delen etter prefikset følger modellens pakkehierarki. XMI-eksportskriptet bruker denne stien til å bygge pakkene i den genererte modellen.
 
 ### Kardinalitet/multiplisitet
 
@@ -218,6 +233,25 @@ Generatoren mapper UML-primærtypene som brukes i XMI-filen til innebygde LinkML
 | `datetime` | `datetime` |
 
 `double` og `integer` er ikke i bruk i XMI-filen.
+
+#### Heltall og int32
+
+LinkML-typen `integer` brukes både for `int`- og `long`-felter fra Enterprise Architect. Annotasjonen `int32: true` bevarer 32-bits heltall ved generering av XMI og videre til Java og C#.
+
+Eksempel fra [Anmerkninger.atferd](src/utdanning.vurdering.yaml):
+
+```yaml
+atferd:
+  range: integer
+  annotations:
+    int32: true
+  required: true
+```
+
+| LinkML | XMI | Java | C# |
+| --- | --- | --- | --- |
+| `integer` med `int32: true` | `int` | `Integer` | `int` |
+| `integer` uten annotasjonen `int32: false` | `long` | `Long` | `long` |
 
 ## Pågående avklaringer og beslutninger
 
