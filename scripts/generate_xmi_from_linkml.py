@@ -68,6 +68,7 @@ class Slot:
     inverse: Optional[str] = None
     primary_relation: bool = False
     writeable: bool = False
+    int32: bool = False
     description: Optional[str] = None
     deprecated: Optional[str] = None
 
@@ -193,6 +194,7 @@ def collect_classes(src_dir: Path) -> Tuple[List[SchemaClass], Dict[str, List[Sc
                     inverse=(str(slot_info.get("inverse")).strip() if slot_info.get("inverse") else None),
                     primary_relation=to_bool(annotations.get("primaryRelation")),
                     writeable=to_bool(annotations.get("writeable")),
+                    int32=to_bool(annotations.get("int32")),
                     description=slot_info.get("description"),
                     deprecated=normalize_metadata_text(slot_info.get("deprecated")),
                 )
@@ -368,6 +370,8 @@ def indent(elem: ET.Element, level: int = 0) -> None:
 def slot_type_name(slot: Slot) -> str:
     rng_name = slot.range or "string"
     rng_lower = rng_name.lower()
+    if rng_lower == "integer" and slot.int32:
+        return "int"
     if rng_lower in PRIMITIVE_MODEL_TYPE:
         return PRIMITIVE_MODEL_TYPE[rng_lower]
     return rng_name

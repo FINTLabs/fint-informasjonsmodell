@@ -484,6 +484,7 @@ def parse_attributes(
         if not name:
             continue
         rng = ''
+        int32 = False
         # multiplicity
         required = False
         multivalued = False
@@ -527,9 +528,11 @@ def parse_attributes(
                 normalized_xmi_idref = xmi_idref.lower()
                 if normalized_xmi_idref in EA_JAVA_PRIMITIVE_MAP_NORMALIZED:
                     rng = EA_JAVA_PRIMITIVE_MAP_NORMALIZED[normalized_xmi_idref]
+                    int32 = normalized_xmi_idref == 'eajava_int'
                 elif xmi_idref.startswith('EAnone_'):
                     none_primitive = xmi_idref[len('EAnone_'):]
                     rng = MODEL_PRIMITIVE_RANGE_MAP_NORMALIZED.get(none_primitive.lower(), '')
+                    int32 = none_primitive.lower() == 'int'
                 else:
                     ref = class_index.get(xmi_idref)
                     # reference to a class
@@ -602,6 +605,7 @@ def parse_attributes(
             mapped_range = MODEL_PRIMITIVE_RANGE_MAP_NORMALIZED.get(model_primitive_type.lower())
             if mapped_range:
                 rng = mapped_range
+                int32 = model_primitive_type.lower() == 'int'
 
         primary_relation = False
         class_id = cls_el.get(f'{{{XMI_NS}}}id')
@@ -619,6 +623,7 @@ def parse_attributes(
             'inverse': inverse,
             'primary_relation': primary_relation,
             'writeable': writeable,
+            'int32': int32,
         })
     return attrs
 
@@ -790,12 +795,14 @@ def emit_yaml_for_package(
                 lines.append(f'        range: {a["range"]}')
                 if a.get('inverse'):
                     lines.append(f'        inverse: {a["inverse"]}')
-                if a.get('primary_relation') or a.get('writeable'):
+                if a.get('primary_relation') or a.get('writeable') or a.get('int32'):
                     lines.append('        annotations:')
                     if a.get('primary_relation'):
                         lines.append('          primaryRelation: true')
                     if a.get('writeable'):
                         lines.append('          writeable: true')
+                    if a.get('int32'):
+                        lines.append('          int32: true')
                 if a.get('description'):
                     append_description(lines, 8, a['description'])
                 if a.get('deprecated'):
