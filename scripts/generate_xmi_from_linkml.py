@@ -28,7 +28,7 @@ except ImportError as exc:  # pragma: no cover
 UML_NS = "http://schema.omg.org/spec/UML/2.1"
 XMI_NS = "http://schema.omg.org/spec/XMI/2.1"
 NSMAP = {"xmi": XMI_NS, "uml": UML_NS}
-BASE_ID_PREFIX = "https://w3id.org/novari/fint/"
+BASE_ID_PREFIX = "https://w3id.org/fint/"
 
 PRIMITIVE_HREF = {
     "string": "http://schema.omg.org/spec/UML/2.1/uml.xml#String",

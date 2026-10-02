@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://w3id.org/linkml/meta.schema.json
-id: https://w3id.org/novari/fint/utdanning/vurdering
+id: https://w3id.org/fint/utdanning/vurdering
 name: utdanning.vurdering
 imports:
   - linkml:types
@@ -25,11 +25,15 @@ classes:
         required: true
       atferd:
         range: integer
+        annotations:
+          int32: true
         description: |
           Antall anmerkninger for atferd for eleven
         required: true
       orden:
         range: integer
+        annotations:
+          int32: true
         description: |
           Antall anmerkninger for orden for eleven
         required: true
@@ -458,11 +462,15 @@ classes:
     attributes:
       fraværstimer:
         range: integer
+        annotations:
+          int32: true
         description: |
           Antall timer udokumentert fravær. Oppgis i hundredeler.
         required: true
       prosent:
         range: integer
+        annotations:
+          int32: true
         description: |
           Udokumentert fravær i prosent.
           
@@ -477,6 +485,8 @@ classes:
         required: true
       undervisningstimer:
         range: integer
+        annotations:
+          int32: true
         description: |
           Antall timer planlagt undervisning. Oppgis i hundredeler.
         required: true
@@ -743,6 +753,8 @@ classes:
         required: true
       sensornummer:
         range: integer
+        annotations:
+          int32: true
         description: |
           Viser om det er sensor 1 eller sensor 2
       eksamensgruppe:

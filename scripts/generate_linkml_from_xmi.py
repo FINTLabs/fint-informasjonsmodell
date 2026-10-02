@@ -82,7 +82,7 @@ def dotted_name(segments):
 
 
 def id_url(segments):
-    return 'https://w3id.org/novari/fint/' + '/'.join(slugify(p) for p in segments)
+    return 'https://w3id.org/fint/' + '/'.join(slugify(p) for p in segments)
 
 
 def detect_declared_encoding(raw: bytes) -> str | None:
