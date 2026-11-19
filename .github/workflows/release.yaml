@@ -161,7 +161,8 @@ jobs:
         uses: actions/setup-java@v6
         with:
           distribution: temurin
-          java-version: 21
+          java-version: '21'
+          check-latest: true
 
       - uses: gradle/actions/wrapper-validation@v6
 
