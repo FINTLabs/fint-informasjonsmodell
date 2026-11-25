@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0",
+  // command + shift + b to run tasks
+  "tasks": [
+    {
+      "label": "LinkML Validate & Lint",
+      "type": "shell",
+      "command": "linkml-lint --validate src",
+      "problemMatcher": {
+        "owner": "python",
+        "fileLocation": ["absolute"],
+        "pattern": [
+          {
+            "regexp": "^(.*):(\\d+):(\\d+):\\s+(error|warning)\\s+(.*)$",
+            "file": 1,
+            "line": 2,
+            "column": 3,
+            "severity": 4,
+            "message": 5
+          }
+        ]
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
